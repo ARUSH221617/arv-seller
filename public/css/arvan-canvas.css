@@ -1,0 +1,694 @@
+/* ==========================================================================
+   Arvan Reseller Standalone Canvas Styles
+   Modern Dark Mode Design System
+   ========================================================================== */
+
+:root {
+	--arv-bg: #0b0f19;
+	--arv-surface: #111827;
+	--arv-surface-elevated: #1f2937;
+	--arv-border: rgba(255, 255, 255, 0.08);
+	--arv-border-active: #6366f1;
+	--arv-primary: #6366f1;
+	--arv-primary-hover: #4f46e5;
+	--arv-accent: #38bdf8;
+	--arv-success: #10b981;
+	--arv-warning: #f59e0b;
+	--arv-danger: #ef4444;
+	--arv-text: #f8fafc;
+	--arv-text-muted: #94a3b8;
+	--arv-text-subtle: #64748b;
+	--arv-radius: 12px;
+	--arv-radius-sm: 8px;
+	--arv-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body.arvan-canvas-app {
+	font-family: 'Plus Jakarta Sans', 'Vazirmatn', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	background-color: var(--arv-bg);
+	color: var(--arv-text);
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	min-height: 100vh;
+}
+
+.arvan-app-wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.arvan-container {
+	width: 100%;
+	max-width: 1240px;
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+
+.arvan-header {
+	background: rgba(17, 24, 39, 0.85);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border-bottom: 1px solid var(--arv-border);
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+.arvan-header-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 72px;
+	gap: 20px;
+}
+
+.arvan-brand {
+	display: flex;
+	align-items: center;
+}
+
+.arvan-logo-link {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	text-decoration: none;
+	color: var(--arv-text);
+	font-weight: 700;
+	font-size: 1.15rem;
+}
+
+.arvan-logo-icon {
+	background: linear-gradient(135deg, var(--arv-primary), var(--arv-accent));
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: var(--arv-radius-sm);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+}
+
+.arvan-nav {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.arvan-nav-link {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--arv-text-muted);
+	text-decoration: none;
+	padding: 8px 16px;
+	border-radius: var(--arv-radius-sm);
+	font-size: 0.95rem;
+	font-weight: 500;
+	transition: all 0.2s ease;
+}
+
+.arvan-nav-link:hover {
+	color: var(--arv-text);
+	background: rgba(255, 255, 255, 0.05);
+}
+
+.arvan-nav-link.active {
+	color: #fff;
+	background: rgba(99, 102, 241, 0.15);
+	border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.arvan-user-actions {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.arvan-wallet-pill {
+	display: flex;
+	align-items: center;
+	background: var(--arv-surface);
+	border: 1px solid var(--arv-border);
+	padding: 6px 14px;
+	border-radius: 999px;
+	font-size: 0.9rem;
+	gap: 6px;
+}
+
+.arvan-wallet-label {
+	color: var(--arv-text-subtle);
+}
+
+.arvan-wallet-amount {
+	font-weight: 700;
+	color: var(--arv-success);
+}
+
+.arvan-wallet-currency {
+	font-size: 0.75rem;
+	color: var(--arv-text-muted);
+}
+
+.arvan-wallet-topup-btn {
+	background: var(--arv-primary);
+	color: #fff;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 14px;
+	margin-left: 6px;
+	transition: transform 0.2s ease;
+}
+
+.arvan-wallet-topup-btn:hover {
+	transform: scale(1.1);
+}
+
+.arvan-user-menu {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.arvan-user-name {
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
+.arvan-btn-logout {
+	color: var(--arv-text-muted);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 6px;
+	border-radius: var(--arv-radius-sm);
+	transition: color 0.2s ease;
+}
+
+.arvan-btn-logout:hover {
+	color: var(--arv-danger);
+}
+
+/* ==========================================================================
+   Main Content Area & Cards
+   ========================================================================== */
+
+.arvan-main-content {
+	flex: 1;
+	padding: 36px 0 60px;
+}
+
+.arvan-page-header {
+	margin-bottom: 28px;
+}
+
+.arvan-page-title {
+	font-size: 1.85rem;
+	font-weight: 800;
+	color: #fff;
+	letter-spacing: -0.02em;
+	margin-bottom: 6px;
+}
+
+.arvan-page-description {
+	color: var(--arv-text-muted);
+	font-size: 1rem;
+	max-width: 680px;
+}
+
+.arvan-card {
+	background: var(--arv-surface);
+	border: 1px solid var(--arv-border);
+	border-radius: var(--arv-radius);
+	padding: 24px;
+	box-shadow: var(--arv-shadow);
+	margin-bottom: 24px;
+}
+
+.arvan-card-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.arvan-card-title {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #fff;
+}
+
+.arvan-card-subtitle {
+	font-size: 0.85rem;
+	color: var(--arv-text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.arvan-card-balance {
+	font-size: 2.2rem;
+	font-weight: 800;
+	color: #fff;
+	margin-top: 4px;
+}
+
+.arvan-curr {
+	font-size: 1.1rem;
+	color: var(--arv-text-muted);
+	font-weight: 500;
+}
+
+/* ==========================================================================
+   Grid Layouts
+   ========================================================================== */
+
+.arvan-dashboard-grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 24px;
+}
+
+.arvan-grid-col-12 { grid-column: span 12; }
+.arvan-grid-col-8 { grid-column: span 8; }
+.arvan-grid-col-4 { grid-column: span 4; }
+
+@media (max-width: 960px) {
+	.arvan-grid-col-8,
+	.arvan-grid-col-4 {
+		grid-column: span 12;
+	}
+	.arvan-header-inner {
+		flex-direction: column;
+		height: auto;
+		padding: 16px 0;
+	}
+	.arvan-nav {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+/* ==========================================================================
+   Top-up Form & Inputs
+   ========================================================================== */
+
+.arvan-amount-presets {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin: 16px 0;
+}
+
+.arvan-preset-btn {
+	background: var(--arv-surface-elevated);
+	border: 1px solid var(--arv-border);
+	color: var(--arv-text);
+	padding: 8px 16px;
+	border-radius: var(--arv-radius-sm);
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.arvan-preset-btn:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.arvan-preset-btn.active {
+	border-color: var(--arv-primary);
+	background: rgba(99, 102, 241, 0.15);
+	color: #fff;
+}
+
+.arvan-topup-inputs {
+	display: flex;
+	gap: 12px;
+}
+
+.arvan-input {
+	width: 100%;
+	background: var(--arv-surface-elevated);
+	border: 1px solid var(--arv-border);
+	color: #fff;
+	padding: 12px 16px;
+	border-radius: var(--arv-radius-sm);
+	font-size: 0.95rem;
+	outline: none;
+	transition: border-color 0.2s ease;
+}
+
+.arvan-input:focus {
+	border-color: var(--arv-primary);
+}
+
+.arvan-textarea {
+	resize: vertical;
+	min-height: 80px;
+}
+
+/* ==========================================================================
+   Buttons & Actions
+   ========================================================================== */
+
+.arvan-btn-primary {
+	background: linear-gradient(135deg, var(--arv-primary), #4338ca);
+	color: #fff;
+	border: none;
+	padding: 12px 24px;
+	border-radius: var(--arv-radius-sm);
+	font-size: 0.95rem;
+	font-weight: 600;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	text-decoration: none;
+	transition: all 0.2s ease;
+	box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.arvan-btn-primary:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 6px 16px rgba(99, 102, 241, 0.45);
+}
+
+.arvan-btn-sm {
+	padding: 6px 12px;
+	font-size: 0.85rem;
+	border-radius: var(--arv-radius-sm);
+	cursor: pointer;
+	border: 1px solid var(--arv-border);
+	background: var(--arv-surface-elevated);
+	color: var(--arv-text);
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.arvan-btn-outline:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.arvan-btn-danger:hover {
+	background: var(--arv-danger);
+	color: #fff;
+	border-color: var(--arv-danger);
+}
+
+.arvan-btn-block {
+	width: 100%;
+}
+
+.arvan-action-list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-top: 16px;
+}
+
+.arvan-action-item {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 12px 16px;
+	border-radius: var(--arv-radius-sm);
+	background: var(--arv-surface-elevated);
+	border: 1px solid var(--arv-border);
+	text-decoration: none;
+	color: var(--arv-text);
+	transition: all 0.2s ease;
+}
+
+.arvan-action-item:hover {
+	border-color: var(--arv-primary);
+	transform: translateX(4px);
+}
+
+.arvan-action-icon {
+	width: 40px;
+	height: 40px;
+	border-radius: var(--arv-radius-sm);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.arvan-icon-server { background: rgba(99, 102, 241, 0.2); color: var(--arv-primary); }
+.arvan-icon-cdn { background: rgba(56, 189, 248, 0.2); color: var(--arv-accent); }
+.arvan-icon-storage { background: rgba(16, 185, 129, 0.2); color: var(--arv-success); }
+
+.arvan-action-info {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.arvan-action-info strong { font-size: 0.95rem; }
+.arvan-action-info span { font-size: 0.8rem; color: var(--arv-text-muted); }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+.arvan-table-responsive {
+	overflow-x: auto;
+}
+
+.arvan-table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+body.is-rtl .arvan-table {
+	text-align: right;
+}
+
+.arvan-table th {
+	padding: 12px 16px;
+	border-bottom: 1px solid var(--arv-border);
+	color: var(--arv-text-muted);
+	font-size: 0.85rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.arvan-table td {
+	padding: 16px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+	font-size: 0.9rem;
+	vertical-align: middle;
+}
+
+.arvan-table tr:hover td {
+	background: rgba(255, 255, 255, 0.02);
+}
+
+.arvan-subtext {
+	display: block;
+	font-size: 0.75rem;
+	color: var(--arv-text-subtle);
+}
+
+.arvan-badge-status {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 4px 10px;
+	border-radius: 999px;
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+
+.arvan-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+}
+
+.arvan-badge-active { background: rgba(16, 185, 129, 0.15); color: var(--arv-success); }
+.arvan-badge-active .arvan-dot { background: var(--arv-success); }
+
+.arvan-badge-suspended { background: rgba(239, 68, 68, 0.15); color: var(--arv-danger); }
+.arvan-badge-suspended .arvan-dot { background: var(--arv-danger); }
+
+.arvan-text-green { color: var(--arv-success); }
+.arvan-text-red { color: var(--arv-danger); }
+
+/* ==========================================================================
+   Configurator Styles
+   ========================================================================== */
+
+.arvan-config-layout {
+	display: grid;
+	grid-template-columns: 1fr 340px;
+	gap: 28px;
+	align-items: start;
+}
+
+@media (max-width: 900px) {
+	.arvan-config-layout {
+		grid-template-columns: 1fr;
+	}
+}
+
+.arvan-step-header {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+	margin-bottom: 20px;
+}
+
+.arvan-step-num {
+	background: var(--arv-primary);
+	color: #fff;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: 0.95rem;
+	flex-shrink: 0;
+}
+
+.arvan-grid-cards,
+.arvan-plans-grid,
+.arvan-os-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 14px;
+}
+
+.arvan-select-box,
+.arvan-plan-card,
+.arvan-os-item {
+	background: var(--arv-surface-elevated);
+	border: 1px solid var(--arv-border);
+	border-radius: var(--arv-radius-sm);
+	padding: 16px;
+	cursor: pointer;
+	position: relative;
+	transition: all 0.2s ease;
+}
+
+.arvan-select-box input,
+.arvan-plan-card input,
+.arvan-os-item input {
+	position: absolute;
+	opacity: 0;
+}
+
+.arvan-select-box.active,
+.arvan-plan-card.active,
+.arvan-os-item.active {
+	border-color: var(--arv-primary);
+	background: rgba(99, 102, 241, 0.08);
+	box-shadow: 0 0 0 1px var(--arv-primary);
+}
+
+.arvan-plan-specs {
+	display: flex;
+	gap: 12px;
+	margin: 12px 0;
+	font-size: 0.85rem;
+}
+
+.arvan-plan-specs div {
+	display: flex;
+	flex-direction: column;
+}
+
+.arvan-plan-specs span {
+	font-size: 0.75rem;
+	color: var(--arv-text-muted);
+}
+
+.arvan-plan-price strong {
+	font-size: 1.25rem;
+	color: #fff;
+}
+
+.arvan-summary-card {
+	position: sticky;
+	top: 96px;
+}
+
+.arvan-summary-row {
+	display: flex;
+	justify-content: space-between;
+	padding: 8px 0;
+	font-size: 0.9rem;
+	color: var(--arv-text-muted);
+}
+
+.arvan-summary-row strong {
+	color: #fff;
+}
+
+.arvan-summary-divider {
+	height: 1px;
+	background: var(--arv-border);
+	margin: 16px 0;
+}
+
+.arvan-price-val {
+	font-size: 1.8rem;
+	color: var(--arv-accent);
+}
+
+.arvan-wallet-status-box {
+	background: rgba(255, 255, 255, 0.03);
+	border-radius: var(--arv-radius-sm);
+	padding: 12px;
+	margin: 16px 0;
+}
+
+.arvan-wallet-status-header {
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.85rem;
+}
+
+.arvan-warning-text {
+	color: var(--arv-warning);
+	font-size: 0.75rem;
+	margin-top: 6px;
+}
+
+.arvan-footer {
+	border-top: 1px solid var(--arv-border);
+	padding: 24px 0;
+	font-size: 0.85rem;
+	color: var(--arv-text-subtle);
+}
+
+.arvan-footer-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.arvan-footer-links a {
+	color: var(--arv-text-muted);
+	text-decoration: none;
+}
