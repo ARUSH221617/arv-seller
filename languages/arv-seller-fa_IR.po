@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
 "Report-Msgid-Bugs-To: https://arvancloud.ir\n"
-"POT-Creation-Date: 2026-08-21 10:40:06+0000\n"
-"PO-Revision-Date: 2026-08-21 10:40:06+0000\n"
+"POT-Creation-Date: 2026-08-21 11:41:25+0000\n"
+"PO-Revision-Date: 2026-08-21 11:41:25+0000\n"
 "Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
 "Language-Team: ArvanCloud Persian (Farsi) Team\n"
 "Language: fa_IR\n"
@@ -13,6 +13,42 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: ArvanCloud i18n Toolchain\n"
 "X-Domain: arv-seller\n"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:460
+msgid "+ Charge Wallet"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:58
+msgid "⚙️ Default Pre-Selections"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:72
+msgid "🇮🇷 Tabriz – Northwest (ir-tbz-dc1)"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:70
+msgid "🇮🇷 Tehran – Forough  (ir-thr-c2)"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:71
+msgid "🇮🇷 Tehran – Shahryar (ir-thr-sh1)"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:229 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:309
+msgid "✏️ Text & Copywriting"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:145 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:225
+msgid "🎨 Brand Colors"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:58 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:128
+msgid "📐 Layout & Visibility"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:176 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:256
+msgid "🔤 Typography & Digits"
+msgstr ""
 
 msgid "1-Click Master Theme Packs"
 msgstr "پک‌های تم جامع ۱-کلیکه"
@@ -103,6 +139,14 @@ msgstr "سرورهای فعال در حال اجرا"
 #: public/views/dashboard-customer.php:170
 msgid "Active Cloud Servers & Virtual Machines"
 msgstr "سرورهای ابری و ماشین‌های مجازی فعال"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:467
+msgid "Active Instances"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:434
+msgid "Active Instances · Billing · Wallet"
+msgstr ""
 
 msgid "activeCdnDomains"
 msgstr "دامنه‌های متصل به CDN"
@@ -201,7 +245,7 @@ msgstr "مبلغ تعدیل (تومان):"
 msgid "An error occurred during request."
 msgstr "خطایی در هنگام ارسال درخواست رخ داد."
 
-#: includes/class-arvan-blocks.php:144 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:196 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:314
+#: includes/class-arvan-blocks.php:144 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:154 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:234
 msgid "App Canvas Background"
 msgstr "پس‌زمینه کل بوم برنامه"
 
@@ -248,7 +292,7 @@ msgstr "کلید ارتباطی API ابر آروان"
 msgid "ArvanCloud API key is not configured. Please configure your API key in WP Admin > Arvan Reseller > Settings."
 msgstr "کلید API ابر آروان تنظیم نشده است. لطفاً کلید API خود را در پیشخوان وردپرس > نمایندگی آروان > تنظیمات پیکربندی نمایید."
 
-#: includes/class-arvan-blocks.php:137 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:36 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:289 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:451
+#: includes/class-arvan-blocks.php:137 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:33 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:239 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:404
 msgid "ArvanCloud Customer Dashboard"
 msgstr "داشبورد مشتریان ابر آروان"
 
@@ -260,7 +304,7 @@ msgstr "مدیریت نمایندگی ابر آروان"
 msgid "ArvanCloud Reseller Settings & Monetization"
 msgstr "تنظیمات نمایندگی و درآمدزایی ابر آروان"
 
-#: includes/class-arvan-blocks.php:135 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:36 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:599
+#: includes/class-arvan-blocks.php:135 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:33 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:506
 msgid "ArvanCloud Server Configurator"
 msgstr "کانفیگوراتور سرور ابری آروان"
 
@@ -318,17 +362,21 @@ msgstr "مانده موجودی"
 msgid "Base Body Font Size"
 msgstr "اندازه فونت پایه متن"
 
-#: includes/class-arvan-blocks.php:152 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:252 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:370
+#: includes/class-arvan-blocks.php:152 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:202 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:282
 msgid "Base Font Size (px)"
 msgstr ""
 
 msgid "baseDiskLabel"
 msgstr "پایه:"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:156 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:236
+msgid "Border / Divider"
+msgstr ""
+
 msgid "Border & Line Divider Color"
 msgstr "رنگ خطوط حاشیه و جداکننده‌ها"
 
-#: includes/class-arvan-blocks.php:146 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:214 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:332
+#: includes/class-arvan-blocks.php:146
 msgid "Border Color"
 msgstr ""
 
@@ -339,7 +387,7 @@ msgstr ""
 msgid "Boutique infrastructure, high-tier servers, and client portal language."
 msgstr "ادبیات حرفه‌ای متناسب با شرکت‌های طراحی سایت، نمایندگی‌ها و پرتال اختصاصی مشتریان."
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:98 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:216
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:84 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:164
 msgid "Boxed (1024px)"
 msgstr ""
 
@@ -359,14 +407,16 @@ msgstr "پالت رنگ برند و سطوح"
 msgid "Brand Colored Glow"
 msgstr "درخشش با رنگ برند"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:161 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:279
 msgid "Brand Colors & Surfaces"
 msgstr "رنگ‌های برند و پس‌زمینه سطوح"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:132 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:212
+msgid "Brand Glow"
+msgstr ""
 
 msgid "Brand Identity & Logo Assets"
 msgstr "هویت بصری، نام و لوگو"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:150 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:268
 msgid "Brand Neon Glow"
 msgstr ""
 
@@ -408,17 +458,21 @@ msgstr "انصراف"
 msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
 msgstr "امکان روشن کردن سرور وجود ندارد: موجودی کیف پول شما صفر یا منفی است. لطفاً ابتدا کیف پول خود را شارژ نمایید."
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:187 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:305
 msgid "Card & Surface Background"
 msgstr ""
 
 msgid "Card Elevation"
 msgstr "سبک سایه و برجستگی کارت‌ها"
 
-#: includes/class-arvan-blocks.php:148 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:143 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:261
+#: includes/class-arvan-blocks.php:148
 msgid "Card Elevation & Shadows"
 msgstr ""
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:125 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:205
+msgid "Card Shadow Style"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:153 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:233
 msgid "Card Surface Background"
 msgstr "پس‌زمینه سطوح و کارت‌ها"
 
@@ -472,7 +526,7 @@ msgstr "شورت‌کد سفارش سرور ابری (المنتور، دیوی�
 msgid "Cloud Services Platform"
 msgstr "سامانه خدمات ابری"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:307
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:259 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:405
 msgid "Cloud Wallet & Credit Balance"
 msgstr ""
 
@@ -488,13 +542,13 @@ msgstr "پالت‌های رنگی آماده"
 msgid "Colors & Palettes"
 msgstr "رنگ‌ها و پالت‌ها"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:99 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:179
 msgid "Compact"
 msgstr "فشرده"
 
 msgid "Compact (Tighter)"
 msgstr "فشرده (فاصله کمتر)"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:113 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:231
 msgid "Compact / Tight Padding"
 msgstr ""
 
@@ -504,10 +558,13 @@ msgstr "تراکم بالا (۱۰px)"
 msgid "compute"
 msgstr "پردازشی (High CPU)"
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:88
+msgid "Compute       (4 vCPU / 4 GB)"
+msgstr ""
+
 msgid "Compute Master"
 msgstr "محاسباتی پیشرفته (Compute Master)"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:104
 msgid "Compute Master (4 vCPU / 4 GB)"
 msgstr ""
 
@@ -587,12 +644,16 @@ msgstr ""
 msgid "connectionFailed"
 msgstr "برقراری ارتباط با زیرساخت ابر آروان ناموفق بود."
 
-#: includes/class-arvan-blocks.php:150 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:94 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:212
+#: includes/class-arvan-blocks.php:150 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:80 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:160
 msgid "Container Max Width"
 msgstr "حداکثر عرض کانتینر"
 
-#: includes/class-arvan-blocks.php:153 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:264 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:382
+#: includes/class-arvan-blocks.php:153
 msgid "Convert Digits to Persian (۰-۹)"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:214 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:294
+msgid "Convert to Persian Digits (۰–۹)"
 msgstr ""
 
 msgid "copied"
@@ -625,8 +686,11 @@ msgstr "هسته"
 msgid "Corner Border Radius"
 msgstr "میزان انحنای گوشه‌ها (Border Radius)"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:123 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:241
 msgid "Corner Border Radius (px)"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:109 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:189
+msgid "Corner Radius (px)"
 msgstr ""
 
 msgid "Create New S3 Storage Bucket"
@@ -657,7 +721,7 @@ msgstr ""
 msgid "Crimson Ember Studio"
 msgstr "استودیو شراره زرشکی (قرمز)"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:423
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:337
 msgid "CTA Button Text"
 msgstr ""
 
@@ -674,7 +738,10 @@ msgstr "مقدار فعلی"
 msgid "Custom Amount in Toman"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:314 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:432
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:268 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:348
+msgid "Custom CSS"
+msgstr ""
+
 msgid "Custom CSS Overrides"
 msgstr "کدهای CSS سفارشی"
 
@@ -699,14 +766,12 @@ msgstr "متن حق‌نشر یا اعلان پاورقی"
 msgid "Custom Footer Notice / SLA Guarantee Text"
 msgstr "متن کپی‌رایت / ضمانت آپ‌تایم و SLA فوتر"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:405
 msgid "Custom Header Title"
 msgstr ""
 
 msgid "Custom Store Logo URL"
 msgstr "آدرس اینترنتی لوگوی اختصاصی"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:414
 msgid "Custom Subtitle / Tagline"
 msgstr ""
 
@@ -719,7 +784,7 @@ msgstr "مثال: ۲۵۰,۰۰۰"
 msgid "Customer"
 msgstr "مشتری"
 
-#: includes/class-arvan-blocks.php:138 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:452
+#: includes/class-arvan-blocks.php:138
 msgid "Customer cloud server management and wallet billing dashboard."
 msgstr "داشبورد مدیریت سرورهای ابری، عملیات برق و مدیریت کیف پول و تراکنش‌های مشتریان."
 
@@ -764,21 +829,20 @@ msgstr "داشبورد مدیریت"
 msgid "Dashboard"
 msgstr "داشبورد"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:296
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:247
 msgid "Dashboard Description"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:287
 msgid "Dashboard Header Title"
 msgstr ""
 
 msgid "Dashboard Settings"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:74
 msgid "Dashboard Settings & Layout"
 msgstr "تنظیمات داشبورد و معماری چیدمان"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:237
 msgid "Dashboard Title"
 msgstr "عنوان داشبورد مشتری"
 
@@ -787,6 +851,10 @@ msgstr "نظارت لحظه‌ای بر کیف پول اتمیک، مدیریت 
 
 #: public/views/dashboard-customer.php:183
 msgid "Datacenter"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:66
+msgid "Datacenter Region"
 msgstr ""
 
 #: public/views/storefront-server.php:298
@@ -818,19 +886,16 @@ msgstr "پالت آبی کبالت لوکس سازمانی با انحناهای
 msgid "Default"
 msgstr "پیش‌فرض"
 
-#: admin/views/admin-settings.php:106 includes/class-arvan-blocks.php:140 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:82
+#: admin/views/admin-settings.php:106 includes/class-arvan-blocks.php:140
 msgid "Default Datacenter Region"
 msgstr "منطقه دیتاسنتر پیش‌فرض"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:96
 msgid "Default Hardware Flavor"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:113
 msgid "Default OS Distribution"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:74
 msgid "Default Pre-Selections"
 msgstr ""
 
@@ -844,7 +909,7 @@ msgstr ""
 msgid "Deploy Cloud Server"
 msgstr "سفارش سرور ابری"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:407 public/views/storefront-server.php:33
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:319 public/views/storefront-server.php:33
 msgid "Deploy Cloud Server (IaaS)"
 msgstr "سفارش سرور ابری (IaaS)"
 
@@ -855,8 +920,12 @@ msgstr "متن دکمه ثبت سفارش سرور"
 msgid "Deploy First Server"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:425 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:600
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:339
 msgid "Deploy Server"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:507
+msgid "Deploy Server Now"
 msgstr ""
 
 msgid "deployServer"
@@ -937,7 +1006,10 @@ msgstr ""
 msgid "Elementor Page Builder Widgets"
 msgstr "ویجت‌های صفحه‌ساز المنتور"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:149 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:267
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:131 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:211
+msgid "Elevated"
+msgstr ""
+
 msgid "Elevated (Modern 3D Shadow)"
 msgstr ""
 
@@ -976,6 +1048,10 @@ msgstr "کلید API کاربر ماشینی ابر آروان خود را وا�
 msgid "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
 msgstr ""
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:87
+msgid "Enterprise    (8 vCPU / 16 GB)"
+msgstr ""
+
 msgid "Enterprise B2B"
 msgstr "سازمانی و شرکتی B2B"
 
@@ -985,7 +1061,6 @@ msgstr "مدیریت زیرساخت چندمستأجری و کسب درآمد ن
 msgid "Enterprise Ultra"
 msgstr "سازمانی اولترا (Enterprise Ultra)"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:103
 msgid "Enterprise Ultra (8 vCPU / 16 GB)"
 msgstr ""
 
@@ -997,6 +1072,10 @@ msgstr ""
 msgid "Est. Runtime:"
 msgstr ""
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:568
+msgid "Estimated Monthly Cost"
+msgstr ""
+
 msgid "estimatedRuntime"
 msgstr "زمان باقیمانده تخمینی"
 
@@ -1005,6 +1084,10 @@ msgstr "باکت‌های ذخیره‌سازی موجود"
 
 msgid "Extra Large"
 msgstr "خیلی بزرگ"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:113
+msgid "Extra NVMe Disk (GB)"
+msgstr ""
 
 #: public/class-arvan-gateway.php:99
 msgid "Failed to connect to payment gateway."
@@ -1025,7 +1108,7 @@ msgstr ""
 msgid "Fixed Margin Addition (Toman)"
 msgstr "مبلغ ثابت افزوده (تومان)"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:147 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:265
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:129 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:209
 msgid "Flat (No Shadow)"
 msgstr ""
 
@@ -1038,10 +1121,14 @@ msgstr "پلن سخت‌افزاری"
 msgid "Fluid Full-Width"
 msgstr "شناور تمام‌صفحه (۱۴px)"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:184 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:264
+msgid "Font Family"
+msgstr ""
+
 msgid "Font Family Name"
 msgstr "نام خانواده فونت"
 
-#: includes/class-arvan-blocks.php:151 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:234 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:352
+#: includes/class-arvan-blocks.php:151
 msgid "Font Family Stack"
 msgstr ""
 
@@ -1051,10 +1138,10 @@ msgstr "پریست‌های اندازه فونت و تراکم"
 msgid "Forough"
 msgstr "فروغ"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:87 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:167
 msgid "Full Width (100%)"
 msgstr "تمام‌صفحه (۱۰۰٪)"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:101 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:219
 msgid "Full Width Fluid (100%)"
 msgstr ""
 
@@ -1103,9 +1190,17 @@ msgstr "بلوک‌های گوتنبرگ، ویجت‌های المنتور و �
 msgid "Gutenberg Ready"
 msgstr "آماده گوتنبرگ"
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:80
+msgid "Hardware Flavor"
+msgstr ""
+
 #: public/views/storefront-server.php:99
 msgid "Hardware Plan & Specifications"
 msgstr "پلن سخت‌افزاری و مشخصات سرور"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:317
+msgid "Header Title"
+msgstr ""
 
 msgid "Heading Scale Multiplier"
 msgstr "ضریب مقیاس عناوین و تیترها"
@@ -1114,7 +1209,7 @@ msgstr "ضریب مقیاس عناوین و تیترها"
 msgid "Healthy"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:85 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:155 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:167 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:179 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:191 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:203
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:69 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:148
 msgid "Hide"
 msgstr ""
 
@@ -1164,7 +1259,6 @@ msgstr "ساعت"
 msgid "HTTP Request Failed: %s"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:129
 msgid "Initial Extra NVMe Disk (GB)"
 msgstr ""
 
@@ -1214,11 +1308,11 @@ msgstr ""
 msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
 msgstr "تحویل آنی بر روی زیرساخت ابر آروان. دیسک‌های NVMe پرسرعت، IPv4 اختصاصی و شبکه داخلی زیر میلی‌ثانیه."
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:416
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:329
 msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD."
 msgstr ""
 
-#: includes/class-arvan-blocks.php:156 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:610
+#: includes/class-arvan-blocks.php:156
 msgid "Instant VM Provisioning • NVMe Storage • Pay-As-You-Go"
 msgstr "تحویل آنی ماشین مجازی • ذخیره‌سازی NVMe • پرداخت به میزان مصرف"
 
@@ -1266,7 +1360,6 @@ msgstr "ماشین‌های مجازی KVM، دسترسی روت کامل، پو
 msgid "Layout & Radii Architecture"
 msgstr "معماری چیدمان، انحنا و فواصل"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:144
 msgid "Layout & Section Visibility"
 msgstr ""
 
@@ -1289,12 +1382,27 @@ msgstr "عملیات مالی"
 msgid "Live ArvanCloud Server Configurator will render here on the frontend."
 msgstr "کانفیگوراتور زنده سرور ابری آروان در این بخش در سایت نمایش داده خواهد شد."
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:451
+msgid "Live balance loads on frontend"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:494
+msgid "Live dashboard renders on the published page."
+msgstr ""
+
 #: public/views/dashboard-customer.php:171
 msgid "Live instance power states, IP addresses, and real-time lifecycle controls."
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:618
 msgid "Live interactive ArvanCloud Server Configurator will render here on the frontend."
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:591
+msgid "Live interactive configurator renders on the published page."
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:573
+msgid "Live pricing loads on frontend"
 msgstr ""
 
 msgid "Live real-time preview updating instantly across all sliders & controls."
@@ -1306,16 +1414,22 @@ msgstr "پیش‌نمایش زنده قالب"
 msgid "liveInfrastructureOnly"
 msgstr "فقط زیرساخت تجاری لایو"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:440
 msgid "Loading ArvanCloud Customer Dashboard..."
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:384
+msgid "Loading ArvanCloud Customer Dashboard…"
 msgstr ""
 
 #: admin/class-arvan-admin.php:454
 msgid "Loading ArvanCloud Management Portal..."
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:586
 msgid "Loading ArvanCloud Server Configurator..."
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:486
+msgid "Loading ArvanCloud Server Configurator…"
 msgstr ""
 
 #: templates/frontend-canvas.php:114
@@ -1349,7 +1463,7 @@ msgstr "با نرخ مصرف ساعتی فعلی، موجودی شما در کم
 msgid "Main Brand & Action Texts"
 msgstr "متون اصلی برند و دکمه‌های اقدام"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:298
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:249
 msgid "Manage active cloud instances and billing."
 msgstr ""
 
@@ -1404,10 +1518,13 @@ msgstr "حداکثر بهره‌وری از عرض صفحه نمایش برای 
 msgid "memory"
 msgstr "حافظه بالا (High RAM)"
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:89
+msgid "Memory        (2 vCPU / 8 GB)"
+msgstr ""
+
 msgid "Memory Master"
 msgstr "حافظه پیشرفته (Memory Master)"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:105
 msgid "Memory Master (2 vCPU / 8 GB)"
 msgstr ""
 
@@ -1490,7 +1607,7 @@ msgstr ""
 msgid "nextGenCloudIaaS"
 msgstr "زیرساخت ابری نسل جدید (IaaS)"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:267 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:385
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:217 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:297
 msgid "No"
 msgstr ""
 
@@ -1517,7 +1634,10 @@ msgstr ""
 msgid "Nordic Slate Monochrome"
 msgstr "طوسی نوردیک مینیمال"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:114 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:232
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:100 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:180
+msgid "Normal"
+msgstr ""
+
 msgid "Normal / Standard Balanced"
 msgstr ""
 
@@ -1590,6 +1710,10 @@ msgstr "خلاصه سفارش و مشخصات سرور"
 msgid "os"
 msgstr "سیستم‌عامل"
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:97
+msgid "OS Distribution"
+msgstr ""
+
 msgid "Override text for this language"
 msgstr "متن سفارشی جایگزین برای این زبان"
 
@@ -1604,10 +1728,13 @@ msgstr ""
 msgid "Payment verification failed or was cancelled."
 msgstr ""
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:86
+msgid "Performance   (4 vCPU / 8 GB)"
+msgstr ""
+
 msgid "Performance Pro"
 msgstr "حرفه‌ای پرسرعت (Performance Pro)"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:102
 msgid "Performance Pro (4 vCPU / 8 GB)"
 msgstr ""
 
@@ -1617,6 +1744,10 @@ msgstr ""
 
 msgid "Personalize brand colors, typography, logos, and integrate native WordPress Gutenberg blocks or shortcodes anywhere on your site."
 msgstr "رنگ‌های برند، تایپوگرافی، لوگو و بلوک‌های اختصاصی گوتنبرگ و شورت‌کدها را برای استفاده در سراسر سایت سفارشی‌سازی کنید."
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:538
+msgid "Plan:"
+msgstr ""
 
 msgid "planSpecs"
 msgstr "پلن و مشخصات"
@@ -1670,11 +1801,15 @@ msgstr "روشن کردن"
 msgid "Primary Brand Accent Color"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:169 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:287
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:151 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:231
 msgid "Primary Brand Color"
 msgstr "رنگ اصلی برند"
 
-#: includes/class-arvan-blocks.php:145 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:205 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:323
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:155 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:235
+msgid "Primary Text"
+msgstr ""
+
+#: includes/class-arvan-blocks.php:145
 msgid "Primary Text Color"
 msgstr "رنگ متن اصلی"
 
@@ -1763,6 +1898,10 @@ msgstr "نوع رکورد"
 msgid "region"
 msgstr "دیتاسنتر"
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:538
+msgid "Region:"
+msgstr ""
+
 #: admin/views/admin-settings.php:126
 msgid "Reseller Brand / Store Name"
 msgstr "نام برند / عنوان فروشگاه"
@@ -1803,7 +1942,7 @@ msgstr "اجرای فوری چرخه محاسبه مصرف (Metering)"
 msgid "running"
 msgstr "در حال اجرا"
 
-#: public/views/dashboard-customer.php:208
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:470 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:475 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:483 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:484 public/views/dashboard-customer.php:208
 msgid "Running"
 msgstr ""
 
@@ -1887,7 +2026,7 @@ msgstr "جستجو بر اساس نام مشتری، نام سرور یا شنا
 msgid "searchWalletsPlaceholder"
 msgstr "جستجو بر اساس نام، ایمیل یا شناسه مشتری..."
 
-#: includes/class-arvan-blocks.php:142 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:178 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:296
+#: includes/class-arvan-blocks.php:142 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:152 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:232
 msgid "Secondary / Dark Accent"
 msgstr "رنگ ثانویه / مکمل"
 
@@ -1980,31 +2119,31 @@ msgstr "تیز و مینیمال (۴px)"
 msgid "Shiraz"
 msgstr "شیراز"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:84 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:154 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:166 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:178 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:190 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:202
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:68 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:147
 msgid "Show"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:152
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:135
 msgid "Show Header Banner"
 msgstr ""
 
-#: includes/class-arvan-blocks.php:154 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:200
+#: includes/class-arvan-blocks.php:154 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:139
 msgid "Show Hourly & Monthly Rates"
 msgstr "نمایش نرخ ساعتی و ماهانه"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:188
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:138
 msgid "Show OS Selector"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:164
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:136
 msgid "Show Region Selector"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:176
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:137
 msgid "Show Storage Slider"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:82
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:66
 msgid "Show Wallet Balance Card"
 msgstr ""
 
@@ -2026,14 +2165,14 @@ msgstr "فرم نرم، دلنشین و ارگونومیک با انحنای ب�
 msgid "Soft Reboot"
 msgstr ""
 
-#: includes/class-arvan-blocks.php:149 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:109 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:227
+#: includes/class-arvan-blocks.php:149 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:95 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:175
 msgid "Spacing Density"
 msgstr "تراکم فواصل و فاصله‌گذاری"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:101 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:181
 msgid "Spacious"
 msgstr "جادار"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:115 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:233
 msgid "Spacious / Relaxed Air"
 msgstr ""
 
@@ -2066,7 +2205,7 @@ msgstr "گواهی امنیتی SSL فعال است"
 msgid "Standard"
 msgstr "استاندارد"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:99 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:217
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:85 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:165
 msgid "Standard (1200px)"
 msgstr ""
 
@@ -2075,6 +2214,10 @@ msgstr "استاندارد (۱۲۸۰ پیکسل)"
 
 msgid "Standard / Balanced"
 msgstr "استاندارد / متعادل"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:85
+msgid "Standard ★    (2 vCPU / 4 GB)"
+msgstr ""
 
 msgid "Standard Cloud (balanced)"
 msgstr "ابر استاندارد (متعادل)"
@@ -2086,7 +2229,6 @@ msgstr ""
 msgid "Standard General"
 msgstr "استاندارد عمومی (Standard General)"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:101
 msgid "Standard General (2 vCPU / 4 GB - Popular)"
 msgstr ""
 
@@ -2096,7 +2238,10 @@ msgstr "استاندارد عمومی (g1-2-4)"
 msgid "Starter Eco"
 msgstr "پایه اقتصادی (Starter Eco)"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:100
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:84
+msgid "Starter Eco   (1 vCPU / 2 GB)"
+msgstr ""
+
 msgid "Starter Eco (1 vCPU / 2 GB)"
 msgstr ""
 
@@ -2128,6 +2273,10 @@ msgstr ""
 msgid "stopped"
 msgstr "خاموش"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:471
+msgid "Stopped"
+msgstr ""
+
 msgid "storage"
 msgstr "فضای دیسک"
 
@@ -2154,7 +2303,14 @@ msgstr "شخصی‌سازی برند و ظاهر ویترین"
 msgid "storefrontSubtitle"
 msgstr "فروشگاه و سامانه اختصاصی زیرساخت ابری"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:148 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:266
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:327
+msgid "Subtitle / Tagline"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:130 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:210
+msgid "Subtle"
+msgstr ""
+
 msgid "Subtle (Clean Soft Shadow)"
 msgstr ""
 
@@ -2193,7 +2349,7 @@ msgstr "موجودی کیف پول شما به صفر رسیده است. کلی�
 msgid "suspensionNotice"
 msgstr "اخطار: موجودی کیف پول به پایان رسیده است"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:244 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:362
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:194 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:274
 msgid "System Default UI"
 msgstr ""
 
@@ -2203,7 +2359,6 @@ msgstr "تبریز"
 msgid "Tabriz - Northwest"
 msgstr "تبریز - شمال‌غرب"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:88
 msgid "Tabriz - Northwest (ir-tbz-dc1)"
 msgstr ""
 
@@ -2222,14 +2377,12 @@ msgstr "تهران"
 msgid "Tehran - Forough"
 msgstr "تهران - فروغ"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:86
 msgid "Tehran - Forough (ir-thr-c2)"
 msgstr ""
 
 msgid "Tehran - Shahryar"
 msgstr "تهران - شهریار"
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:87
 msgid "Tehran - Shahryar (ir-thr-sh1)"
 msgstr ""
 
@@ -2254,11 +2407,9 @@ msgstr ""
 msgid "Text & Branding Overrides"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:397
 msgid "Text & Copywriting Overrides"
 msgstr "بازنویسی متون و عناوین"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:279
 msgid "Text Overrides"
 msgstr ""
 
@@ -2337,7 +2488,6 @@ msgstr "تایپوگرافی و فونت پیش‌فرض"
 msgid "Typography & Font Sizes"
 msgstr "تایپوگرافی و اندازه فونت‌ها"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:226 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:344
 msgid "Typography & Persian Digits"
 msgstr "تایپوگرافی و ارقام فارسی"
 
@@ -2403,7 +2553,7 @@ msgstr "شناسه کیف پول"
 msgid "Wallet is frozen. Cannot perform debit."
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:305
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:257
 msgid "Wallet Section Title"
 msgstr ""
 
@@ -2439,17 +2589,20 @@ msgstr "آدرس اینترنتی فایل CSS فونت (Google Fonts / CDN)"
 msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
 msgstr "در صورت فعال‌سازی، امکان تست آنی و شبیه‌سازی ساخت سرورها بدون اتصال به حساب تجاری آروان فراهم می‌شود."
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:86 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:166
+msgid "Wide (1400px)"
+msgstr ""
+
 msgid "Wide (1480px)"
 msgstr "عریض (۱۴۸۰ پیکسل)"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:100 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:218
 msgid "Wide Screen (1400px)"
 msgstr ""
 
 msgid "WordPress Gutenberg Block & Shortcodes Integration"
 msgstr "یکپارچه‌سازی با بلوک گوتنبرگ و شورت‌کدها"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:266 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:384
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:216 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:296
 msgid "Yes"
 msgstr ""
 
@@ -2473,19 +2626,15 @@ msgstr "تبریز"
 msgid "تهران"
 msgstr "تهران"
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:239 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:357
 msgid "ساحل (Sahel)"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:241 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:359
 msgid "شبنم (Shabnam)"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:240 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:358
 msgid "صمیم (Samim)"
 msgstr ""
 
-#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:238 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:356
 msgid "وزیرمتن (Vazirmatn - Standard)"
 msgstr ""
 
