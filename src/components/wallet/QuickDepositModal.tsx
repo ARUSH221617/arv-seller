@@ -60,7 +60,7 @@ export const QuickDepositModal: React.FC<QuickDepositModalProps> = ({
             <div>
               <DialogTitle>{t('topUp')}</DialogTitle>
               <DialogDescription className="text-xs">
-                Instant wallet recharge via online gateway / sandbox demo.
+                {t('quickDepositDesc')}
               </DialogDescription>
             </div>
           </div>
@@ -70,7 +70,7 @@ export const QuickDepositModal: React.FC<QuickDepositModalProps> = ({
           {/* Preset Chips */}
           <div>
             <label className="text-xs font-semibold text-slate-700 mb-2 block">
-              Select Preset Amount:
+              {t('selectPresetAmount')}
             </label>
             <div className="grid grid-cols-2 gap-2">
               {PRESETS.map((preset) => {
@@ -120,7 +120,7 @@ export const QuickDepositModal: React.FC<QuickDepositModalProps> = ({
 
           {/* Summary Box */}
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3.5 flex items-center justify-between">
-            <div className="text-xs text-slate-500">Total Deposit Amount:</div>
+            <div className="text-xs text-slate-500">{t('totalDepositAmount')}</div>
             <div className="text-base font-extrabold text-arvan-teal">
               {formatCurrency(activeAmount, currency, language)}
             </div>
@@ -143,7 +143,7 @@ export const QuickDepositModal: React.FC<QuickDepositModalProps> = ({
               {isProcessing ? (
                 <>
                   <Sparkles className="h-4 w-4 animate-spin" />
-                  <span>Processing...</span>
+                  <span>{t('processing')}</span>
                 </>
               ) : (
                 <>

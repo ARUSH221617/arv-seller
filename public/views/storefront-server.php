@@ -61,7 +61,7 @@ $flavors = array(
 								<span class="arvan-dot arvan-dot-green"></span>
 							</div>
 							<strong>Tehran &mdash; Forough</strong>
-							<span>Low Latency / IXP Direct</span>
+							<span><?php esc_html_e( 'Low Latency / IXP Direct', 'arv-seller' ); ?></span>
 						</div>
 					</label>
 
@@ -73,7 +73,7 @@ $flavors = array(
 								<span class="arvan-dot arvan-dot-green"></span>
 							</div>
 							<strong>Tehran &mdash; Shahryar</strong>
-							<span>Tier III Enterprise DC</span>
+							<span><?php esc_html_e( 'Tier III Enterprise DC', 'arv-seller' ); ?></span>
 						</div>
 					</label>
 
@@ -85,7 +85,7 @@ $flavors = array(
 								<span class="arvan-dot arvan-dot-green"></span>
 							</div>
 							<strong>Tabriz &mdash; Northwest</strong>
-							<span>Geo-Redundant Disaster Recovery</span>
+							<span><?php esc_html_e( 'Geo-Redundant Disaster Recovery', 'arv-seller' ); ?></span>
 						</div>
 					</label>
 				</div>
@@ -312,7 +312,7 @@ $flavors = array(
 				</div>
 				<div class="arvan-summary-row">
 					<span><?php esc_html_e( 'Dedicated IPv4:', 'arv-seller' ); ?></span>
-					<strong class="arvan-text-green">1x Public IP (Included)</strong>
+					<strong class="arvan-text-green"><?php esc_html_e( '1x Public IP (Included)', 'arv-seller' ); ?></strong>
 				</div>
 
 				<div class="arvan-summary-divider"></div>

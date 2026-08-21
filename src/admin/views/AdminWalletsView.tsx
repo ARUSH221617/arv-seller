@@ -46,7 +46,7 @@ export const AdminWalletsView: React.FC<AdminWalletsViewProps> = ({
   const [selectedUser, setSelectedUser] = useState<AdminWalletItem | null>(null);
   const [adjustType, setAdjustType] = useState<'credit' | 'debit'>('credit');
   const [adjustAmount, setAdjustAmount] = useState<number>(50000);
-  const [adjustReason, setAdjustReason] = useState<string>('Manual administrative adjustment');
+  const [adjustReason, setAdjustReason] = useState<string>(t('manualAdjustmentDefaultReason'));
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const filtered = wallets.filter((w) => {
@@ -134,7 +134,7 @@ export const AdminWalletsView: React.FC<AdminWalletsViewProps> = ({
           <div className="relative w-full">
             <Search className="absolute start-3.5 top-3.5 h-4 w-4 text-slate-400" />
             <Input
-              placeholder="Search by customer name, email, or user ID..."
+              placeholder={t('searchWalletsPlaceholder')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="ps-10 text-xs"
@@ -212,7 +212,7 @@ export const AdminWalletsView: React.FC<AdminWalletsViewProps> = ({
                 <span>{t('Manual Ledger Adjustment')}: {selectedUser.userName}</span>
               </DialogTitle>
               <DialogDescription>
-                Directly debit or credit customer balance. An immutable audit record will be logged.
+                {t('adjustBalanceDesc')}
               </DialogDescription>
             </DialogHeader>
 
@@ -277,7 +277,7 @@ export const AdminWalletsView: React.FC<AdminWalletsViewProps> = ({
                   type="text"
                   value={adjustReason}
                   onChange={(e) => setAdjustReason(e.target.value)}
-                  placeholder="e.g. Compensation credit / Manual topup"
+                  placeholder={t('adjustReasonPlaceholder')}
                 />
               </div>
 

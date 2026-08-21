@@ -180,13 +180,13 @@ export function useArvan() {
       };
       setServers((prev) => [newServer, ...prev]);
       setBurnRate((prev) => prev + cost);
-      addToast('success', t('deployNow') + ': ' + newServer.name + ' (' + newServer.public_ip + ')');
+      addToast('success', t('instantDeploy') + ': ' + newServer.name + ' (' + newServer.public_ip + ')');
       return true;
     } else {
       if (res.data?.insufficient_funds) {
         setIsDepositOpen(true);
       }
-      addToast('error', res.data?.message || 'Failed to deploy server.');
+      addToast('error', res.data?.message || t('Failed to deploy server.'));
       return false;
     }
   };
@@ -194,7 +194,7 @@ export function useArvan() {
   const handleServerPower = async (serverId: number, actionType: 'power_on' | 'power_off' | 'reboot' | 'delete') => {
     if (actionType === 'delete') {
       setServers((prev) => prev.filter((s) => s.id !== serverId));
-      addToast('info', t('delete') + ' - ' + t('statusStopped'));
+      addToast('info', t('delete') + ': ' + t('stopped'));
       return;
     }
 
@@ -209,7 +209,7 @@ export function useArvan() {
       })
     );
 
-    addToast('success', `${actionType.toUpperCase()} command executed.`);
+    addToast('success', t('Action completed successfully.'));
   };
 
   const topupWallet = async (amount: number) => {
@@ -222,7 +222,7 @@ export function useArvan() {
         type: 'deposit',
         amount: depositAmount,
         balance_after: balance + depositAmount,
-        description: `Online Top-up: ${depositAmount.toLocaleString()} IRT (Ref: TRX-${Math.floor(Math.random() * 90000) + 10000})`,
+        description: `${t('txDeposit')}: ${depositAmount.toLocaleString()} ${rawData.currency} (Ref: TRX-${Math.floor(Math.random() * 90000) + 10000})`,
         created_at: new Date().toISOString().replace('T', ' ').substring(0, 19),
       },
       ...prev,

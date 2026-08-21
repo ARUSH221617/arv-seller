@@ -126,11 +126,11 @@ export const ObjectStorageView: React.FC<ObjectStorageViewProps> = ({
             <table className="w-full text-start text-xs">
               <thead className="bg-slate-50 text-slate-500 border-b border-slate-200 uppercase text-[11px] font-semibold">
                 <tr>
-                  <th className="py-3.5 px-5 text-start">Bucket Identifier</th>
-                  <th className="py-3.5 px-5 text-start">S3 Endpoint URL</th>
-                  <th className="py-3.5 px-5 text-start">Cluster Region</th>
-                  <th className="py-3.5 px-5 text-start">Rate (Monthly)</th>
-                  <th className="py-3.5 px-5 text-end">Action</th>
+                  <th className="py-3.5 px-5 text-start">{t('bucketIdentifier')}</th>
+                  <th className="py-3.5 px-5 text-start">{t('s3EndpointUrl')}</th>
+                  <th className="py-3.5 px-5 text-start">{t('clusterRegion')}</th>
+                  <th className="py-3.5 px-5 text-start">{t('rateMonthly')}</th>
+                  <th className="py-3.5 px-5 text-end">{t('action')}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 text-slate-800">
@@ -162,7 +162,7 @@ export const ObjectStorageView: React.FC<ObjectStorageViewProps> = ({
                         className="h-8 px-3 text-xs gap-1.5"
                       >
                         <Key className="h-3.5 w-3.5 text-arvan-teal" />
-                        <span>Credentials</span>
+                        <span>{t('credentials')}</span>
                       </Button>
                     </td>
                   </tr>
@@ -182,7 +182,7 @@ export const ObjectStorageView: React.FC<ObjectStorageViewProps> = ({
               <span>{t('viewApiKeys')}</span>
             </DialogTitle>
             <DialogDescription>
-              Use these credentials to authenticate with AWS CLI, Rclone, S3cmd, or WordPress backup plugins.
+              {t('s3CredsDesc')}
             </DialogDescription>
           </DialogHeader>
 
@@ -233,7 +233,7 @@ export const ObjectStorageView: React.FC<ObjectStorageViewProps> = ({
             <div className="rounded-2xl border border-slate-200 bg-slate-900 p-4 space-y-2 text-slate-100">
               <div className="text-[11px] font-bold text-slate-400 flex items-center gap-1.5 font-sans">
                 <Terminal className="h-3.5 w-3.5 text-arvan-teal" />
-                <span>AWS CLI Configuration Example:</span>
+                <span>{t('awsCliExample')}</span>
               </div>
               <pre className="text-[11px] text-slate-300 overflow-x-auto leading-relaxed font-mono">
 {`aws configure set aws_access_key_id ${mockCreds.accessKey}
@@ -245,7 +245,7 @@ aws s3 ls --endpoint-url ${mockCreds.endpointUrl}`}
 
           <DialogFooter>
             <Button variant="default" onClick={() => setIsCredsOpen(false)}>
-              Done
+              {t('done')}
             </Button>
           </DialogFooter>
         </DialogContent>

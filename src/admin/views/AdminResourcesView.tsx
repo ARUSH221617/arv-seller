@@ -133,7 +133,7 @@ export const AdminResourcesView: React.FC<AdminResourcesViewProps> = ({
           <div className="relative flex-1 w-full">
             <Search className="absolute start-3.5 top-3.5 h-4 w-4 text-slate-400" />
             <Input
-              placeholder="Search by customer, resource name, or Arvan UUID..."
+              placeholder={t('searchResourcesPlaceholder')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="ps-10 text-xs"
@@ -147,7 +147,7 @@ export const AdminResourcesView: React.FC<AdminResourcesViewProps> = ({
               onClick={() => setStatusFilter('all')}
               className="text-xs h-9"
             >
-              All ({resources.length})
+              {t('all')} ({resources.length})
             </Button>
             <Button
               size="sm"
@@ -155,7 +155,7 @@ export const AdminResourcesView: React.FC<AdminResourcesViewProps> = ({
               onClick={() => setStatusFilter('active')}
               className="text-xs h-9"
             >
-              Active ({resources.filter((r) => r.status === 'active').length})
+              {t('active')} ({resources.filter((r) => r.status === 'active').length})
             </Button>
             <Button
               size="sm"
@@ -163,7 +163,7 @@ export const AdminResourcesView: React.FC<AdminResourcesViewProps> = ({
               onClick={() => setStatusFilter('suspended')}
               className="text-xs h-9"
             >
-              Suspended ({resources.filter((r) => r.status === 'suspended').length})
+              {t('suspended')} ({resources.filter((r) => r.status === 'suspended').length})
             </Button>
           </div>
         </CardContent>
@@ -187,9 +187,9 @@ export const AdminResourcesView: React.FC<AdminResourcesViewProps> = ({
                     <th className="py-3.5 px-5 text-start">{t('Resource Name')}</th>
                     <th className="py-3.5 px-5 text-start">{t('Service')}</th>
                     <th className="py-3.5 px-5 text-start">{t('Arvan UUID / Identifier')}</th>
-                    <th className="py-3.5 px-5 text-start">Region</th>
+                    <th className="py-3.5 px-5 text-start">{t('region')}</th>
                     <th className="py-3.5 px-5 text-start">{t('Hourly Rate')}</th>
-                    <th className="py-3.5 px-5 text-start">Status</th>
+                    <th className="py-3.5 px-5 text-start">{t('status')}</th>
                     <th className="py-3.5 px-5 text-end">{t('Emergency Actions')}</th>
                   </tr>
                 </thead>
@@ -209,19 +209,19 @@ export const AdminResourcesView: React.FC<AdminResourcesViewProps> = ({
                         {res.status === 'active' && (
                           <Badge variant="success">
                             <span className="arvan-dot arvan-dot-green" />
-                            <span>Active</span>
+                            <span>{t('active')}</span>
                           </Badge>
                         )}
                         {res.status === 'suspended' && (
                           <Badge variant="warning">
                             <span className="arvan-dot arvan-dot-amber" />
-                            <span>Suspended</span>
+                            <span>{t('suspended')}</span>
                           </Badge>
                         )}
                         {res.status === 'stopped' && (
                           <Badge variant="destructive">
                             <span className="arvan-dot arvan-dot-red" />
-                            <span>Stopped</span>
+                            <span>{t('stopped')}</span>
                           </Badge>
                         )}
                       </td>

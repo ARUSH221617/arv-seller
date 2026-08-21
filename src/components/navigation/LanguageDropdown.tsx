@@ -46,7 +46,7 @@ export const LanguageDropdown: React.FC<LanguageDropdownProps> = ({
         <div className="absolute right-0 mt-2 w-48 origin-top-right rounded-2xl border border-slate-200 bg-white p-1.5 shadow-xl backdrop-blur-xl z-50 animate-in fade-in-0 zoom-in-95">
           <div className="px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 mb-1 flex items-center gap-1.5">
             <Globe className="h-3 w-3 text-arvan-teal" />
-            <span>Select Language</span>
+            <span>{LANGUAGES.find((l) => l.code === currentLanguage)?.name ? (currentLanguage === 'fa' ? 'انتخاب زبان' : currentLanguage === 'ar' ? 'اختيار اللغة' : currentLanguage === 'tr' ? 'Dil Seçin' : currentLanguage === 'zh' ? '选择语言' : currentLanguage === 'ru' ? 'Выбрать язык' : 'Select Language') : 'Select Language'}</span>
           </div>
           {LANGUAGES.map((lang) => {
             const isSelected = lang.code === currentLanguage;

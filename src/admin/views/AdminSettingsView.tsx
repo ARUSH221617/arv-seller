@@ -46,7 +46,7 @@ export const AdminSettingsView: React.FC<AdminSettingsViewProps> = ({
       const res = await onTestConnection(formData.apiKey);
       setTestResult({
         success: res.success,
-        message: res.message || (res.success ? 'Connected successfully!' : 'Connection failed.'),
+        message: res.message || (res.success ? t('connectedSuccessfully') : t('connectionFailed')),
       });
     } finally {
       setIsTesting(false);
@@ -133,7 +133,7 @@ export const AdminSettingsView: React.FC<AdminSettingsViewProps> = ({
               <div className="flex items-center gap-2">
                 <span className="font-bold text-sm text-slate-900">{t('Sandbox / Demo Mode')}</span>
                 <Badge variant={formData.sandboxMode ? 'default' : 'secondary'}>
-                  {formData.sandboxMode ? 'Active (Mock Fallback)' : 'Live Infrastructure Only'}
+                  {formData.sandboxMode ? t('activeMockFallback') : t('liveInfrastructureOnly')}
                 </Badge>
               </div>
               <p className="text-xs text-slate-500 mt-1">
@@ -292,7 +292,7 @@ export const AdminSettingsView: React.FC<AdminSettingsViewProps> = ({
             rel="noreferrer"
             className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm"
           >
-            <span className="font-bold">🚀 Server Configurator</span>
+            <span className="font-bold">{t('serverConfiguratorLink')}</span>
             <ExternalLink className="h-4 w-4 text-arvan-teal" />
           </a>
 
@@ -302,7 +302,7 @@ export const AdminSettingsView: React.FC<AdminSettingsViewProps> = ({
             rel="noreferrer"
             className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm"
           >
-            <span className="font-bold">📊 Customer Dashboard</span>
+            <span className="font-bold">{t('customerDashboardLink')}</span>
             <ExternalLink className="h-4 w-4 text-arvan-teal" />
           </a>
 
@@ -312,7 +312,7 @@ export const AdminSettingsView: React.FC<AdminSettingsViewProps> = ({
             rel="noreferrer"
             className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm"
           >
-            <span className="font-bold">🌐 CDN & DNS Manager</span>
+            <span className="font-bold">{t('cdnManagerLink')}</span>
             <ExternalLink className="h-4 w-4 text-arvan-teal" />
           </a>
 
@@ -322,7 +322,7 @@ export const AdminSettingsView: React.FC<AdminSettingsViewProps> = ({
             rel="noreferrer"
             className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm"
           >
-            <span className="font-bold">📦 S3 Object Storage</span>
+            <span className="font-bold">{t('s3StorageLink')}</span>
             <ExternalLink className="h-4 w-4 text-arvan-teal" />
           </a>
         </CardContent>

@@ -13,707 +13,437 @@ msgstr ""
 "X-Generator: Poedit 3.0\n"
 "X-Domain: arv-seller\n"
 
-msgid "Dashboard"
-msgstr "Kontrol Paneli"
-
-msgid "Cloud Server (IaaS)"
-msgstr "Bulut Sunucu (IaaS)"
-
-msgid "Cloud Servers"
-msgstr "Bulut Sunucular"
-
-msgid "CDN & DNS"
-msgstr "CDN ve DNS Yönetimi"
-
-msgid "Object Storage (S3)"
-msgstr "Nesne Depolama (S3)"
-
-msgid "Object Storage"
-msgstr "Nesne Depolama"
-
-msgid "Wallet:"
-msgstr "Cüzdan:"
-
-msgid "Top up balance"
-msgstr "Bakiye Yükle"
-
-msgid "Sign In / Register"
-msgstr "Giriş Yap / Kayıt Ol"
-
-msgid "Logout"
-msgstr "Çıkış Yap"
-
-msgid "Powered by ArvanCloud"
-msgstr "ArvanCloud Altyapısı ile Güçlendirilmiştir"
-
-msgid "All rights reserved."
-msgstr "Tüm hakları saklıdır."
-
-msgid "Enterprise Cloud Infrastructure Powered by ArvanCloud REST API."
-msgstr "ArvanCloud REST API entegrasyonlu kurumsal bulut altyapısı."
-
-msgid "Main Website"
-msgstr "Ana Sayfa"
-
-msgid "Support:"
-msgstr "Destek:"
-
-msgid "Email:"
-msgstr "E-posta:"
-
-msgid "Cloud Services Platform"
-msgstr "Bulut Hizmetleri Platformu"
-
-msgid "Cloud Services Portal"
-msgstr "Bulut Hizmetleri Portalı"
-
 msgid "Deploy Cloud Server"
 msgstr "Bulut Sunucu Başlat"
-
-msgid "Deploy Cloud Server (IaaS)"
-msgstr "Bulut Sunucu Başlat (IaaS)"
-
-msgid "High performance enterprise cloud virtual machines with NVMe storage, dedicated IPv4, and 10Gbps uplinks."
-msgstr "NVMe depolama ve tahsis edilmiş IPv4 ile yüksek performanslı kurumsal sanal sunucular."
-
-msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
-msgstr "ArvanCloud altyapısında anında kurulum, yüksek IOPS NVMe SSD ve özel IP."
-
-msgid "Choose Datacenter Region"
-msgstr "Veri Merkezi Bölgesini Seçin"
-
-msgid "Select the geographical location closest to your target audience."
-msgstr "Hedef kitlenize en yakın lokasyonu seçiniz."
-
-msgid "Hardware Plan & Specifications"
-msgstr "Donanım Planı ve Özellikleri"
-
-msgid "Compute resources can be dynamically scaled anytime."
-msgstr "Sunucu kaynakları dilediğiniz zaman ölçeklendirilebilir."
-
-msgid "All Plans"
-msgstr "Tüm Planlar"
-
-msgid "General Purpose"
-msgstr "Genel Amaçlı"
-
-msgid "Compute Optimized"
-msgstr "İşlemci Odaklı"
-
-msgid "Memory Optimized"
-msgstr "Yüksek Bellek"
-
-msgid "Popular"
-msgstr "Popüler"
-
-msgid "Most Popular"
-msgstr "En Çok Tercih Edilen"
-
-msgid "Processor"
-msgstr "İşlemci"
-
-msgid "RAM Memory"
-msgstr "RAM Bellek"
-
-msgid "NVMe Disk"
-msgstr "NVMe Disk"
-
-msgid "hr"
-msgstr "saat"
-
-msgid "NVMe Fast Storage Volume"
-msgstr "Hızlı NVMe Depolama Alanı"
-
-msgid "High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr)."
-msgstr "Kurumsal NVMe SSD, isteğe bağlı artırılabilir (+4 Toman/GB/saat)."
-
-msgid "Allocated NVMe Storage:"
-msgstr "Ayrılan NVMe Disk Alanı:"
-
-msgid "Operating System Image"
-msgstr "İşletim Sistemi Dağıtımı"
-
-msgid "Standard cloud images optimized for immediate SSH/RDP connection."
-msgstr "SSH ve RDP bağlantısına hazır standart bulut imajları."
-
-msgid "Select Operating System"
-msgstr "İşletim Sistemini Seçin"
-
-msgid "Pre-configured cloud distributions ready in under 60 seconds."
-msgstr "60 saniyeden kısa sürede hazır ön yapılandırmalı imajlar."
-
-msgid "Instance Access & Naming"
-msgstr "Sunucu Erişimi ve Adlandırma"
-
-msgid "Configure server hostname and authentication method."
-msgstr "Sunucu adını ve kimlik doğrulama yöntemini belirleyin."
-
-msgid "Server Hostname"
-msgstr "Sunucu Hostname"
-
-msgid "Authentication Mode:"
-msgstr "Kimlik Doğrulama Yöntemi:"
-
-msgid "SSH Public Key (Recommended)"
-msgstr "SSH Genel Anahtarı (Önerilen)"
-
-msgid "Root Password"
-msgstr "Root Şifresi"
-
-msgid "SSH Public Key"
-msgstr "SSH Genel Anahtarı"
-
-msgid "Root / Admin Password"
-msgstr "Root / Yönetici Şifresi"
-
-msgid "Minimum 12 characters"
-msgstr "En az 12 karakter"
-
-msgid "Generate"
-msgstr "Otomatik Üret"
-
-msgid "Order Summary & Cost"
-msgstr "Sipariş Özeti ve Maliyet"
-
-msgid "Summary & Cost"
-msgstr "Özet ve Maliyet"
-
-msgid "Datacenter:"
-msgstr "Veri Merkezi:"
-
-msgid "Location"
-msgstr "Lokasyon"
-
-msgid "Compute Specs:"
-msgstr "Donanım Özellikleri:"
-
-msgid "Plan"
-msgstr "Seçilen Plan"
-
-msgid "Storage Volume:"
-msgstr "Disk Kapasitesi:"
-
-msgid "Operating System:"
-msgstr "İşletim Sistemi:"
-
-msgid "Operating System"
-msgstr "İşletim Sistemi"
-
-msgid "Dedicated IPv4:"
-msgstr "Özel IPv4 Adresi:"
-
-msgid "Public IPv4"
-msgstr "Genel IP"
-
-msgid "1x Public IP (Included)"
-msgstr "1x Özel IP Adresi (Dahil)"
-
-msgid "1x Dedicated (Included)"
-msgstr "1x Özel IP Adresi (Dahil)"
-
-msgid "Hourly Burn Rate:"
-msgstr "Saatlik Ücret:"
-
-msgid "Hourly Rate:"
-msgstr "Saatlik Ücret:"
-
-msgid "Est. Monthly (720 hrs):"
-msgstr "Aylık Tahmini (720 saat):"
-
-msgid "Est. Monthly:"
-msgstr "Aylık Tahmini:"
-
-msgid "Your Available Balance:"
-msgstr "Kullanılabilir Bakiyeniz:"
-
-msgid "Your Balance:"
-msgstr "Bakiyeniz:"
-
-msgid "Notice: Deploying requires a minimum 24-hour run balance."
-msgstr "Uyarı: Sunucu kurulumu için en az 24 saatlik çalışma bakiyesi gereklidir."
-
-msgid "Instant Provision Cloud Server"
-msgstr "Bulut Sunucuyu Anında Başlat"
-
-msgid "Sign in to Access Your Cloud Portal"
-msgstr "Bulut Portalı için Giriş Yapın"
-
-msgid "Please sign in to access your cloud portal"
-msgstr "Bulut kontrol paneline erişmek için lütfen giriş yapın"
-
-msgid "Manage your virtual servers, CDN domains, S3 object storage buckets, and atomic wallet ledger in one place."
-msgstr "Sunucularınızı, CDN alan adlarınızı, S3 depolama alanlarınızı ve cüzdanınızı tek bir yerden yönetin."
-
-msgid "Sign In to Your Account"
-msgstr "Hesabınıza Giriş Yapın"
-
-msgid "Services Suspended Due to Zero Wallet Balance"
-msgstr "Cüzdan Bakiyesi Yetersiz Olduğundan Hizmetler Askıya Alındı"
-
-msgid "According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately."
-msgstr "Hizmet sonlandırma kuralları uyarınca sunucular durdurulmuştur. Erişimi açmak için bakiye yükleyin."
-
-msgid "Low Balance Warning"
-msgstr "Düşük Bakiye Uyarısı"
 
 msgid "Available Wallet Balance"
 msgstr "Kullanılabilir Cüzdan Bakiyesi"
 
-msgid "Account Balance"
-msgstr "Hesap Bakiyesi"
+msgid "ArvanCloud Reseller Settings & Monetization"
+msgstr "ArvanCloud Bayi Ayarları ve Fiyatlandırma"
 
-msgid "Active Account"
-msgstr "Aktif Hesap"
+msgid "Connected successfully to ArvanCloud infrastructure."
+msgstr "ArvanCloud altyapısına başarıyla bağlanıldı."
 
-msgid "Healthy"
-msgstr "Aktif ve Sağlıklı"
+msgid "Loading ArvanCloud Services Canvas..."
+msgstr "ArvanCloud Hizmetleri Paneli Yükleniyor..."
 
-msgid "Suspended"
-msgstr "Askıya Alındı"
+msgid "dashboard"
+msgstr "Kontrol Paneli"
 
-msgid "Burn Rate:"
-msgstr "Tüketim Hızı:"
+msgid "deployServer"
+msgstr "Bulut Sunucu Başlat"
 
-msgid "Est. Runtime:"
-msgstr "Tahmini Kalan Süre:"
+msgid "cdnDns"
+msgstr "CDN ve DNS Yönetimi"
 
-msgid "hours"
-msgstr "saat"
+msgid "objectStorage"
+msgstr "Nesne Depolama (S3)"
 
-msgid "Instant Online Wallet Top-Up"
-msgstr "Anında Online Bakiye Yükleme"
+msgid "walletBalance"
+msgstr "Cüzdan Bakiyesi"
 
-msgid "Top Up Wallet Balance"
-msgstr "Cüzdan Bakiyesi Yükle"
+msgid "availableBalance"
+msgstr "Kullanılabilir Bakiye"
 
-msgid "Custom Amount in Toman"
-msgstr "Özel Tutar (Toman)"
+msgid "topUp"
+msgstr "Bakiye Yükle"
 
-msgid "Custom Amount"
-msgstr "Özel Tutar"
+msgid "signIn"
+msgstr "Giriş Yap / Kaydol"
 
-msgid "Pay with Online Gateway"
-msgstr "Online Ödeme ile Yükle"
+msgid "logout"
+msgstr "Çıkış Yap"
 
-msgid "Deploy Cloud Resources"
-msgstr "Yeni Bulut Servisi Başlat"
-
-msgid "Deploy New Service"
-msgstr "Yeni Servis Başlat"
-
-msgid "Provision high performance cloud resources in seconds."
-msgstr "Saniyeler içinde yüksek performanslı bulut altyapısı kurun."
-
-msgid "New Cloud Server"
-msgstr "Yeni Bulut Sunucu"
-
-msgid "High IOPS NVMe with Dedicated IP"
-msgstr "Özel IP ve NVMe Depolama"
-
-msgid "Compute, NVMe & Dedicated IP"
-msgstr "İşlemci, NVMe ve Özel IP"
-
-msgid "Connect CDN Domain"
-msgstr "CDN Alan Adı Bağla"
-
-msgid "Add CDN Domain"
-msgstr "CDN Alan Adı Ekle"
-
-msgid "DDoS Protection & Anycast DNS"
-msgstr "DDoS Koruması ve Hızlı DNS"
-
-msgid "S3 Storage Bucket"
-msgstr "S3 Depolama Alanı"
-
-msgid "S3 Object Storage"
-msgstr "S3 Nesne Depolama"
-
-msgid "Unlimited S3 API Compatible Bucket"
-msgstr "S3 Uyumlu Sınırsız Depolama"
-
-msgid "Unlimited Object Storage"
-msgstr "Sınırsız Dosya ve Nesne Depolama"
-
-msgid "Active Cloud Servers & Virtual Machines"
-msgstr "Aktif Bulut Sunucular"
-
-msgid "Active Cloud Resources"
-msgstr "Aktif Bulut Kaynakları"
-
-msgid "Live instance power states, IP addresses, and real-time lifecycle controls."
-msgstr "Canlı güç durumları, IP adresleri ve kontrol butonları."
-
-msgid "Instances"
-msgstr "Sunucu"
-
-msgid "Resources"
-msgstr "Kaynak"
-
-msgid "Server Instance"
-msgstr "Sunucu Adı ve ID"
-
-msgid "Name / ID"
-msgstr "İsim / ID"
-
-msgid "Assigned IP"
-msgstr "Tahsis Edilen IP"
-
-msgid "Datacenter"
-msgstr "Veri Merkezi"
-
-msgid "Region"
-msgstr "Bölge"
-
-msgid "Hourly Rate"
-msgstr "Saatlik Ücret"
-
-msgid "Rate (Hourly)"
-msgstr "Saatlik Ücret"
-
-msgid "Runtime Status"
-msgstr "Çalışma Durumu"
-
-msgid "Status"
-msgstr "Durum"
-
-msgid "Power Lifecycle"
-msgstr "Güç Yönetimi"
-
-msgid "Actions"
-msgstr "İşlemler"
-
-msgid "Running"
-msgstr "Çalışıyor"
-
-msgid "Suspended (0 Bal)"
-msgstr "Askıda (Bakiye 0)"
-
-msgid "Suspended / Off"
-msgstr "Askıda / Kapalı"
-
-msgid "Powered Off"
-msgstr "Kapalı"
-
-msgid "Stop"
-msgstr "Durdur"
-
-msgid "Reboot"
-msgstr "Yeniden Başlat"
-
-msgid "Power On"
-msgstr "Aç"
-
-msgid "No active cloud servers deployed yet"
-msgstr "Henüz aktif bir bulut sunucu oluşturulmadı"
-
-msgid "No active cloud resources found"
-msgstr "Aktif bulut kaynağı bulunamadı"
-
-msgid "Deploy First Server"
-msgstr "İlk Sunucuyu Başlat"
-
-msgid "Deploy First Cloud Server"
-msgstr "İlk Sunucuyu Başlat"
-
-msgid "Wallet Atomic Ledger Transactions"
-msgstr "Cüzdan Hesap Hareketleri"
-
-msgid "Recent Ledger Transactions"
-msgstr "Son Hesap Hareketleri"
-
-msgid "Date & Time"
-msgstr "Tarih ve Saat"
-
-msgid "Date"
-msgstr "Tarih"
-
-msgid "Transaction Type"
-msgstr "İşlem Türü"
-
-msgid "Type"
-msgstr "Tür"
-
-msgid "Description / Reference ID"
-msgstr "Açıklama / Referans No"
-
-msgid "Description / Reference"
-msgstr "Açıklama / Referans"
-
-msgid "Amount"
-msgstr "Tutar"
-
-msgid "Balance Snapshot"
-msgstr "İşlem Sonrası Bakiye"
-
-msgid "Balance After"
-msgstr "Sonraki Bakiye"
-
-msgid "No transactions recorded in wallet ledger yet."
-msgstr "Henüz cüzdan işlemi bulunmuyor."
-
-msgid "No transactions recorded yet."
-msgstr "Henüz işlem kaydedilmedi."
-
-msgid "Global CDN & Anycast Edge DNS"
-msgstr "Küresel CDN ve Anycast Edge DNS"
-
-msgid "CDN & Anycast DNS Management"
-msgstr "CDN ve Anycast DNS Yönetimi"
-
-msgid "Accelerate your websites globally with edge caching, SSL termination, and Layer 7 DDoS mitigation across 40+ PoPs."
-msgstr "Web sitelerinizi küresel çapta hızlandırın ve DDoS saldırılarına karşı koruyun."
-
-msgid "Connect New Domain to Edge CDN"
-msgstr "Yeni Alan Adını CDN'e Bağla"
-
-msgid "Connect New Domain to Global CDN"
-msgstr "Yeni Alan Adını CDN'e Bağla"
-
-msgid "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
-msgstr "Nameserver bilgilerini almak için alan adınızı giriniz."
-
-msgid "Activate Edge CDN"
-msgstr "CDN Hizmetini Başlat"
-
-msgid "Activate CDN"
-msgstr "CDN'i Etkinleştir"
-
-msgid "Connected CDN Domains"
-msgstr "Bağlı CDN Alan Adları"
-
-msgid "Active CDN Domains"
-msgstr "Aktif CDN Alan Adları"
-
-msgid "Manage DNS zones, edge caching, and SSL certificates."
-msgstr "DNS kayıtları, önbellek ve SSL sertifikası yönetimi."
-
-msgid "Domains"
-msgstr "Alan Adı"
-
-msgid "Domain Name"
-msgstr "Alan Adı"
-
-msgid "Assigned Nameservers"
-msgstr "Atanan Nameserverlar"
-
-msgid "SSL / TLS Mode"
-msgstr "SSL Modu"
-
-msgid "SSL Status"
-msgstr "SSL Durumu"
-
-msgid "Edge Caching"
-msgstr "Uç Nokta Önbelleği"
-
-msgid "DNS Management"
-msgstr "DNS Yönetimi"
-
-msgid "Managed Let's Encrypt (Active)"
-msgstr "Otomatik SSL (Aktif)"
-
-msgid "Purge Edge Cache"
-msgstr "Önbelleği Temizle"
-
-msgid "Protected"
-msgstr "CDN Korumalı"
-
-msgid "Active"
-msgstr "Aktif"
-
-msgid "DNS Zone Editor"
-msgstr "DNS Kayıt Düzenleyici"
-
-msgid "DNS Records"
-msgstr "DNS Kayıtları"
-
-msgid "No CDN domains configured yet"
-msgstr "Henüz bir CDN alan adı bağlanmadı"
-
-msgid "No CDN domains added yet. Enter a domain name above to get started."
-msgstr "Alan adı bulunamadı. Başlamak için yukarıdan alan adınızı girin."
-
-msgid "DNS Zone Records:"
-msgstr "DNS Kayıtları:"
-
-msgid "Record Type"
-msgstr "Kayıt Türü"
-
-msgid "Name / Host"
-msgstr "İsim / Host"
-
-msgid "Target Value / IP"
-msgstr "Hedef Değer / IP"
-
-msgid "Cloud Proxy"
-msgstr "Bulut Proxy"
-
-msgid "Add Record"
-msgstr "Kayıt Ekle"
-
-msgid "Value"
-msgstr "Değer"
-
-msgid "Proxy"
-msgstr "Proxy"
-
-msgid "Action"
-msgstr "İşlem"
-
-msgid "Loading records..."
-msgstr "Kayıtlar yükleniyor..."
-
-msgid "Delete"
-msgstr "Sil"
-
-msgid "S3-Compatible Object Storage"
-msgstr "S3 Uyumlu Nesne Depolama"
-
-msgid "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
-msgstr "AWS S3 API uyumlu, sınırsız ve yüksek erişilebilirlikli nesne depolama."
-
-msgid "Create New S3 Storage Bucket"
-msgstr "Yeni S3 Depolama Alanı (Bucket) Oluştur"
-
-msgid "Create New Storage Bucket"
-msgstr "Yeni Bucket Oluştur"
-
-msgid "Bucket names must be unique, lowercase alphanumeric characters with hyphens only."
-msgstr "Bucket adı benzersiz, küçük harf, rakam ve tire içermelidir."
-
-msgid "Create S3 Bucket"
-msgstr "S3 Bucket Oluştur"
-
-msgid "Create Bucket"
-msgstr "Bucket Oluştur"
-
-msgid "S3 API Credentials"
-msgstr "S3 API Erişim Anahtarları"
-
-msgid "Generate Access Key ID and Secret Access Key to connect via AWS SDK, Rclone, or backup plugins."
-msgstr "AWS SDK, Rclone ve yedekleme eklentileri için API anahtarları oluşturun."
-
-msgid "Generate S3 Access Keys"
-msgstr "S3 Erişim Anahtarı Üret"
-
-msgid "Your Storage Buckets"
-msgstr "Depolama Alanlarınız"
-
-msgid "Object storage buckets provisioned on ArvanCloud cluster."
-msgstr "ArvanCloud altyapısında oluşturulan depolama alanları."
-
-msgid "Buckets"
-msgstr "Bucket"
-
-msgid "Bucket Name"
-msgstr "Bucket Adı"
-
-msgid "S3 API Endpoint"
-msgstr "S3 API Endpoint Adresi"
-
-msgid "Endpoint (S3 API)"
-msgstr "Endpoint Adresi"
-
-msgid "Cluster Region"
-msgstr "Küme Bölgesi"
-
-msgid "Rate (Monthly)"
-msgstr "Aylık Ücret"
-
-msgid "Connection Info"
-msgstr "Bağlantı Bilgisi"
-
-msgid "View Setup Snippets"
-msgstr "Kurulum Örnekleri"
-
-msgid "Access Keys"
-msgstr "Erişim Anahtarları"
-
-msgid "No storage buckets created yet"
-msgstr "Henüz bir depolama alanı oluşturulmadı"
-
-msgid "No storage buckets created yet. Create your first bucket above."
-msgstr "Depolama alanı yok. İlk alanınızı yukarıdan oluşturun."
-
-msgid "S3 Storage API Credentials & Setup"
-msgstr "S3 API Bilgileri ve Kurulum Rehberi"
-
-msgid "S3 Endpoint URL:"
-msgstr "S3 Endpoint URL Adresi:"
-
-msgid "Access Key ID:"
-msgstr "Access Key ID:"
-
-msgid "Secret Access Key:"
-msgstr "Secret Access Key:"
-
-msgid "Copy"
-msgstr "Kopyala"
-
-msgid "AWS CLI & Rclone Configuration Example"
-msgstr "AWS CLI ve Rclone Yapılandırma Örneği"
-
-msgid "Quick Wallet Deposit"
-msgstr "Hızlı Bakiye Yükleme"
-
-msgid "Select an amount or enter custom deposit to instantly top up your wallet:"
-msgstr "Cüzdanınıza anında bakiye yüklemek için tutar seçin:"
-
-msgid "Amount in Toman:"
-msgstr "Tutar (Toman):"
-
-msgid "Proceed to Payment"
-msgstr "Ödemeye Geç"
-
-msgid "Permanently Destroy Server?"
-msgstr "Bu sunucuyu kalıcı olarak silmek istiyor musunuz?"
-
-msgid "Warning: This action is irreversible!"
-msgstr "Uyarı: Bu işlem geri alınamaz!"
-
-msgid "All data, NVMe storage disks, and attached network IP addresses on ArvanCloud infrastructure will be permanently erased."
-msgstr "Tüm disk verileri ve atanmış IP adresleri kalıcı olarak silinecektir."
-
-msgid "Cancel"
+msgid "cancel"
 msgstr "İptal"
 
-msgid "Confirm Permanent Deletion"
-msgstr "Kalıcı Olarak Silmeyi Onayla"
+msgid "confirm"
+msgstr "Onayla"
+
+msgid "done"
+msgstr "Tamam"
+
+msgid "save"
+msgstr "Ayarları Kaydet"
+
+msgid "copy"
+msgstr "Kopyala"
+
+msgid "copied"
+msgstr "Kopyalandı!"
+
+msgid "generate"
+msgstr "Oluştur"
+
+msgid "status"
+msgstr "Durum"
+
+msgid "actions"
+msgstr "İşlemler"
+
+msgid "running"
+msgstr "Çalışıyor"
+
+msgid "stopped"
+msgstr "Durduruldu"
+
+msgid "suspended"
+msgstr "Askıya Alındı"
+
+msgid "selectLanguage"
+msgstr "Dil Seçin"
+
+msgid "cores"
+msgstr "Çekirdek"
+
+msgid "total"
+msgstr "Toplam"
+
+msgid "hours"
+msgstr "Saat"
+
+msgid "unlimited"
+msgstr "Sınırsız"
+
+msgid "copyIp"
+msgstr "IP Kopyala"
+
+msgid "allocatingIp"
+msgstr "IP Tahsis Ediliyor..."
+
+msgid "backOffice"
+msgstr "Yönetim Paneli"
+
+msgid "storefrontSubtitle"
+msgstr "Bulut Altyapı Mağazası"
+
+msgid "nextGenCloudIaaS"
+msgstr "Yeni Nesil Bulut Bilişim (IaaS)"
+
+msgid "configuratorHeroDesc"
+msgstr "ArvanCloud veri merkezi altyapısıyla anında kullanıma hazır, yüksek performanslı NVMe bulut sanal sunucuları yapılandırın."
+
+msgid "step1Region"
+msgstr "1. Veri Merkezi Bölgesi Seçin"
+
+msgid "step2Flavor"
+msgstr "2. Donanım Özellikleri"
+
+msgid "step3Disk"
+msgstr "3. NVMe Depolama Diski"
+
+msgid "step4Image"
+msgstr "4. İşletim Sistemi İmajı"
+
+msgid "step5Auth"
+msgstr "5. Sunucu Adı ve Kimlik Doğrulama"
+
+msgid "allPlans"
+msgstr "Tüm Planlar"
+
+msgid "general"
+msgstr "Genel Amaçlı"
+
+msgid "compute"
+msgstr "İşlemci Odaklı"
+
+msgid "memory"
+msgstr "Bellek Odaklı"
+
+msgid "mostPopular"
+msgstr "En Popüler"
+
+msgid "hourlyRate"
+msgstr "Saatlik Ücret"
+
+msgid "hourlyBurn"
+msgstr "Saatlik Tüketim Oranı"
+
+msgid "monthlyEstimate"
+msgstr "Tahmini Aylık (720 saat)"
+
+msgid "additionalStorage"
+msgstr "Ek Depolama Alanı"
+
+msgid "instanceHostname"
+msgstr "Sunucu Adı (Hostname)"
+
+msgid "authCredentials"
+msgstr "Kimlik Doğrulama Yöntemi:"
+
+msgid "password"
+msgstr "Şifre"
+
+msgid "sshKey"
+msgstr "SSH Anahtarı"
+
+msgid "orderSummary"
+msgstr "Sipariş Özeti ve Özellikler"
+
+msgid "region"
+msgstr "Bölge"
+
+msgid "flavor"
+msgstr "Donanım Planı"
+
+msgid "specs"
+msgstr "Özellikler"
+
+msgid "storage"
+msgstr "Depolama"
+
+msgid "os"
+msgstr "İşletim Sistemi"
+
+msgid "minRequired"
+msgstr "Min. Gerekli Bakiye (24s)"
+
+msgid "instantDeploy"
+msgstr "Anında Dağıt"
+
+msgid "insufficientBalance"
+msgstr "Yetersiz Bakiye (Yükleme Gerekli)"
+
+msgid "vcpu"
+msgstr "İşlemci (vCPU)"
+
+msgid "ram"
+msgstr "Bellek (RAM)"
+
+msgid "baseDiskLabel"
+msgstr "Taban:"
+
+msgid "maxDiskLabel"
+msgstr "Maksimum:"
+
+msgid "provisioningInstance"
+msgstr "Sunucu Kuruluyor..."
+
+msgid "provisionTimeNote"
+msgstr "⚡ ArvanCloud Çekirdek Altyapısında 45 saniyeden kısa sürede hazır."
+
+msgid "dashboardDesc"
+msgstr "Gerçek zamanlı atomik cüzdan denetimi, canlı sunucu çalışma kontrolleri ve kaynak telemetrisi."
+
+msgid "suspensionNotice"
+msgstr "Askıya Alma Bildirimi: Bakiye Tükendi"
+
+msgid "suspensionDesc"
+msgstr "Cüzdan bakiyeniz tükendi. Borçlanmayı önlemek için çalışan tüm bulut sunucuları güvenli şekilde durduruldu. Hemen bakiye yükleyerek hizmeti yeniden başlatın."
+
+msgid "rechargeWalletNow"
+msgstr "Hemen Bakiye Yükle"
+
+msgid "lowBalanceAlert"
+msgstr "Uyarı: Düşük Bakiye"
+
+msgid "lowBalanceDesc"
+msgstr "Mevcut saatlik tüketim hızınıza göre bakiyeniz 12 saatten kısa sürede tükenecektir."
+
+msgid "quickTopUp"
+msgstr "Hızlı Yükleme"
+
+msgid "estimatedRuntime"
+msgstr "Tahmini Çalışma Süresi"
+
+msgid "activeInstances"
+msgstr "Aktif Sunucular"
+
+msgid "activeCloudVms"
+msgstr "Aktif Bulut Sanal Makineleri"
+
+msgid "noServers"
+msgstr "Henüz dağıtılmış bulut sunucusu yok."
+
+msgid "serverName"
+msgstr "Sunucu Adı"
+
+msgid "ipAddress"
+msgstr "Genel IP"
+
+msgid "planSpecs"
+msgstr "Plan Özellikleri"
+
+msgid "powerOn"
+msgstr "Aç"
+
+msgid "powerOff"
+msgstr "Kapat"
+
+msgid "reboot"
+msgstr "Yeniden Başlat"
+
+msgid "delete"
+msgstr "Sil"
+
+msgid "confirmDelete"
+msgstr "Bu sunucuyu kalıcı olarak silmek istediğinizden emin misiniz? Tüm disk verileri silinecektir."
+
+msgid "transactionHistory"
+msgstr "Cüzdan İşlem Defteri ve Denetim Kayıtları"
+
+msgid "timestamp"
+msgstr "Zaman Damgası"
+
+msgid "type"
+msgstr "Tür"
+
+msgid "description"
+msgstr "Açıklama"
+
+msgid "amount"
+msgstr "Tutar"
+
+msgid "balanceSnapshot"
+msgstr "Bakiye Özeti"
+
+msgid "noTransactions"
+msgstr "Henüz kaydedilmiş işlem yok."
+
+msgid "customAmount"
+msgstr "Özel Tutar"
+
+msgid "proceedPayment"
+msgstr "Ödemeye İlerle"
+
+msgid "txDeposit"
+msgstr "Yatırma"
+
+msgid "txMetered"
+msgstr "Kullanım"
+
+msgid "txAdjustment"
+msgstr "Düzeltme"
+
+msgid "cdnTitle"
+msgstr "CDN Alan Adı Bağlantısı ve Anycast DNS"
+
+msgid "cdnDesc"
+msgstr "Küresel uç CDN önbelleğe alma, DDoS koruması, Anycast DNS hızlandırma ve otomatik SSL sertifikası sağlama."
+
+msgid "connectDomain"
+msgstr "Alan Adını CDN'e Bağla"
+
+msgid "domainInput"
+msgstr "Alan Adı (ör. example.com)"
+
+msgid "activeCdnDomains"
+msgstr "Aktif CDN Alan Adları"
+
+msgid "assignedNameservers"
+msgstr "Atanan ArvanCloud Anycast Ad Sunucuları:"
+
+msgid "dnsRecords"
+msgstr "DNS Kayıtları"
+
+msgid "purgeCache"
+msgstr "Önbelleği Temizle"
+
+msgid "sslActive"
+msgstr "SSL Sertifikası Aktif"
+
+msgid "activePops"
+msgstr "40+ Küresel PoP Noktasında Aktif"
+
+msgid "dnsDialogDesc"
+msgstr "Anycast yayılımı ile anında DNS kayıtlarını ekleyin ve yönetin."
+
+msgid "dnsRecordNamePlaceholder"
+msgstr "Ad (@ veya alt alan)"
+
+msgid "dnsRecordTargetPlaceholder"
+msgstr "Hedef / IP"
+
+msgid "addRecord"
+msgstr "Kayıt Ekle"
+
+msgid "proxied"
+msgstr "Proxy Aktif"
+
+msgid "close"
+msgstr "Kapat"
+
+msgid "storageTitle"
+msgstr "S3 Nesne Depolama Paketleri"
+
+msgid "storageDesc"
+msgstr "Yüksek verimlilik, çoklu bölge çoğaltma ve standart API uyumluluğu ile sınırsız S3 uyumlu bulut nesne depolama."
+
+msgid "createBucket"
+msgstr "Yeni Paket Oluştur"
+
+msgid "bucketName"
+msgstr "Paket Adı (yalnızca küçük harfler ve sayılar)"
+
+msgid "existingBuckets"
+msgstr "Mevcut Depolama Paketleri"
+
+msgid "viewApiKeys"
+msgstr "S3 API Kimlik Bilgilerini Görüntüle"
+
+msgid "endpointUrl"
+msgstr "Uç Nokta (Endpoint) URL"
+
+msgid "accessKey"
+msgstr "Erişim Anahtarı (Access Key)"
+
+msgid "secretKey"
+msgstr "Gizli Anahtar (Secret Key)"
+
+msgid "bucketIdentifier"
+msgstr "Paket Tanımlayıcı"
+
+msgid "s3EndpointUrl"
+msgstr "S3 Uç Nokta URL"
+
+msgid "clusterRegion"
+msgstr "Küme Bölgesi"
+
+msgid "rateMonthly"
+msgstr "Aylık Ücret"
+
+msgid "action"
+msgstr "İşlem"
+
+msgid "credentials"
+msgstr "Kimlik Bilgileri"
+
+msgid "s3CredsDesc"
+msgstr "Bu kimlik bilgilerini AWS CLI, Rclone, S3cmd veya WordPress yedekleme eklentileriyle kullanın."
+
+msgid "awsCliExample"
+msgstr "AWS CLI Yapılandırma Örneği:"
+
+msgid "quickDepositDesc"
+msgstr "Çevrimiçi ödeme / demo modu ile anında cüzdan yükleme."
+
+msgid "selectPresetAmount"
+msgstr "Önceden Tanımlı Tutar Seçin:"
+
+msgid "totalDepositAmount"
+msgstr "Toplam Yatırılacak Tutar:"
+
+msgid "processing"
+msgstr "İşleniyor..."
 
 msgid "ArvanCloud Reseller"
-msgstr "ArvanCloud Bayi Yönetimi"
-
-msgid "Arvan Reseller"
-msgstr "ArvanCloud Bayi"
+msgstr "ArvanCloud Bayi Paneli"
 
 msgid "Settings & API"
 msgstr "Ayarlar ve API"
 
-msgid "Settings"
-msgstr "Ayarlar"
-
 msgid "Cloud Resources"
 msgstr "Bulut Kaynakları"
 
-msgid "All Resources"
-msgstr "Tüm Kaynaklar"
-
 msgid "Wallets & Ledger"
-msgstr "Cüzdanlar ve Hesap Hareketleri"
-
-msgid "Wallets Ledger"
-msgstr "Cüzdan Defteri"
-
-msgid "ArvanCloud Reseller Settings & Monetization"
-msgstr "ArvanCloud Bayi Ayarları ve Fiyatlandırma"
-
-msgid "Configure your ArvanCloud master API credentials, pricing markup margins, white-label branding, and sandbox mode."
-msgstr "Ana API anahtarınızı, kâr marjlarını, marka bilgilerinizi ve demo modunu yapılandırın."
+msgstr "Cüzdanlar ve Muhasebe"
 
 msgid "1. ArvanCloud API Authentication"
-msgstr "1. ArvanCloud API Kimlik Doğrulama"
+msgstr "1. ArvanCloud API Kimlik Doğrulaması"
 
 msgid "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
-msgstr "Ana ArvanCloud Machine User API anahtarınızı girin. Müşteri kaynakları bu hesap altında açılacaktır."
+msgstr "Ana ArvanCloud Machine User API anahtarınızı girin. Tüm müşteri kaynakları bu hesap altında sağlanacaktır."
 
 msgid "ArvanCloud API Key"
 msgstr "ArvanCloud API Anahtarı"
@@ -722,94 +452,82 @@ msgid "Test Connection"
 msgstr "Bağlantıyı Test Et"
 
 msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
-msgstr "API anahtarınızı ArvanCloud Kullanıcı Paneli > Profil > API Anahtarları bölümünden alabilirsiniz."
+msgstr "API Anahtarınızı ArvanCloud Kullanıcı Paneli > Profil > API Anahtarları bölümünden alın."
 
 msgid "Sandbox / Demo Mode"
 msgstr "Sandbox / Demo Modu"
 
-msgid "Enable Sandbox / Mock Fallback Mode"
-msgstr "Sandbox / Demo Modunu Etkinleştir"
-
 msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
-msgstr "Etkinleştirildiğinde canlı altyapıya bağlanmadan anında test ve demo bakiye yüklemeleri sağlar."
+msgstr "Etkinleştirildiğinde, canlı altyapıya bağlanmadan anında test, sahte dağıtım ve demo bakiye yüklemelerine izin verir."
 
 msgid "2. Dynamic Pricing & Reseller Markup Engine"
-msgstr "2. Dinamik Fiyatlandırma ve Kâr Marjı"
+msgstr "2. Dinamik Fiyatlandırma ve Bayi Kâr Marjı Motoru"
 
 msgid "Configure profit margins automatically calculated on top of wholesale ArvanCloud infrastructure rates."
-msgstr "ArvanCloud toptan fiyatları üzerine eklenecek kâr marjlarını yapılandırın."
+msgstr "Toptan ArvanCloud altyapı oranlarının üzerine otomatik olarak hesaplanan kâr marjlarını yapılandırın."
 
 msgid "Markup Percentage (%)"
 msgstr "Kâr Marjı Yüzdesi (%)"
 
 msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
-msgstr "Örnek: %20 marj, 450 Toman/saat toptan fiyatı 540 Toman/saat perakende fiyatına dönüştürür."
+msgstr "ör. %20 kâr marjı, 450 Toman toptan fiyatı müşteri için 540 Toman/saat perakende fiyatına dönüştürür."
 
 msgid "Fixed Margin Addition (Toman)"
-msgstr "Sabit Ek Ücret (Toman)"
+msgstr "Sabit Kâr İlavesi (Toman)"
 
 msgid "Optional fixed addition added after percentage markup calculation."
-msgstr "Yüzdelik kâr hesaplandıktan sonra eklenecek isteğe bağlı sabit tutar."
+msgstr "Yüzde marjı hesaplamasından sonra eklenen isteğe bağlı sabit tutar."
 
 msgid "Store Currency"
 msgstr "Mağaza Para Birimi"
-
-msgid "Toman (IRT)"
-msgstr "Toman (IRT)"
-
-msgid "Rial (IRR)"
-msgstr "Riyal (IRR)"
-
-msgid "US Dollar (USD)"
-msgstr "ABD Doları (USD)"
 
 msgid "Default Datacenter Region"
 msgstr "Varsayılan Veri Merkezi Bölgesi"
 
 msgid "3. Storefront White-Label Branding"
-msgstr "3. Mağaza ve Marka Bilgileri"
+msgstr "3. Mağaza Beyaz Etiket Markalama"
 
 msgid "Customization parameters injected into the standalone virtual canvas header and footer."
-msgstr "Bağımsız bulut portalı başlık ve altbilgisinde gösterilecek marka bilgileri."
+msgstr "Bağımsız sanal tuval başlığına ve altbilgisine eklenen özelleştirme parametreleri."
 
 msgid "Reseller Brand / Store Name"
-msgstr "Bayi / Mağaza Adı"
+msgstr "Bayi Markası / Mağaza Adı"
 
 msgid "Support Contact Email"
-msgstr "Destek E-posta Adresi"
+msgstr "Destek İletişim E-postası"
 
 msgid "Support Phone Number"
 msgstr "Destek Telefon Numarası"
 
-msgid "Save All Reseller Settings"
-msgstr "Tüm Ayarları Kaydet"
-
 msgid "Virtual Storefront Quick Links (Theme Isolated)"
-msgstr "Bulut Mağazası Hızlı Bağlantıları (Temadan Bağımsız)"
+msgstr "Sanal Mağaza Hızlı Bağlantıları (Temadan İzole)"
 
-msgid "Access standalone storefront and customer portal pages:"
-msgstr "Bağımsız mağaza ve müşteri kontrol paneli sayfalarına erişin:"
+msgid "Save All Reseller Settings"
+msgstr "Tüm Bayi Ayarlarını Kaydet"
 
 msgid "All Provisioned Cloud Resources"
-msgstr "Oluşturulan Tüm Bulut Kaynakları"
+msgstr "Tüm Sağlanan Bulut Kaynakları"
 
 msgid "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
-msgstr "Tüm müşteri sunucuları, CDN alan adları ve S3 depolama alanları üzerinde tam kontrol."
+msgstr "Tüm müşteri bulut sunucuları, alan adları ve paketleri üzerinde genel denetim ve yaşam döngüsü kontrolleri."
 
 msgid "Run Metering Cycle Now"
-msgstr "Faturalandırma Döngüsünü Çalıştır"
+msgstr "Faturalandırma Döngüsünü Şimdi Çalıştır"
 
 msgid "Total Cloud Instances"
-msgstr "Toplam Bulut Sunucusu"
+msgstr "Toplam Bulut Sunucu"
 
 msgid "Active / Running"
-msgstr "Aktif ve Çalışıyor"
+msgstr "Aktif / Çalışıyor"
 
 msgid "Suspended (0 Balance)"
-msgstr "Askıda (Bakiye 0)"
+msgstr "Askıda (0 Bakiye)"
 
 msgid "Monthly Run Rate (MRR)"
 msgstr "Aylık Tahmini Gelir (MRR)"
+
+msgid "No resources deployed yet."
+msgstr "Henüz dağıtılmış kaynak yok."
 
 msgid "Customer"
 msgstr "Müşteri"
@@ -818,13 +536,13 @@ msgid "Resource Name"
 msgstr "Kaynak Adı"
 
 msgid "Service"
-msgstr "Hizmet Türü"
+msgstr "Hizmet"
 
 msgid "Arvan UUID / Identifier"
 msgstr "Arvan UUID / Tanımlayıcı"
 
-msgid "Last Metered"
-msgstr "Son Faturalandırma"
+msgid "Hourly Rate"
+msgstr "Saatlik Ücret"
 
 msgid "Emergency Actions"
 msgstr "Acil Durum İşlemleri"
@@ -833,31 +551,34 @@ msgid "Power Off"
 msgstr "Kapat"
 
 msgid "Purge"
-msgstr "Kalıcı Sil"
+msgstr "Tamamen Sil"
 
-msgid "No resources deployed yet."
-msgstr "Henüz oluşturulmuş bir kaynak bulunmuyor."
+msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
+msgstr "Bu kaynağı ArvanCloud altyapısından kalıcı olarak silmek istediğinizden emin misiniz?"
 
 msgid "Customer Wallets & Ledger Audit"
-msgstr "Müşteri Cüzdanları ve Hesap Hareketleri"
+msgstr "Müşteri Cüzdanları ve Muhasebe Denetimi"
 
 msgid "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
-msgstr "Cüzdan hareketleri, anlık bakiye takibi ve manuel bakiye düzenleme araçları."
+msgstr "Gerçek zamanlı atomik defter denetimi, bakiye anlık görüntüleri ve manuel bakiye ayarlama araçları."
 
 msgid "Total Active Wallets"
 msgstr "Toplam Aktif Cüzdan"
 
 msgid "Total Outstanding Credit"
-msgstr "Toplam Kalan Müşteri Bakiyesi"
+msgstr "Toplam Müşteri Alacağı"
 
 msgid "Cumulative Deposits"
-msgstr "Toplam Yapılan Yüklemeler"
+msgstr "Kümülatif Yatırımlar"
 
 msgid "Total Metered Burn"
-msgstr "Toplam Tüketilen Bakiye"
+msgstr "Toplam Faturalandırılan Tüketim"
+
+msgid "No customer wallets initialized yet."
+msgstr "Henüz başlatılmış müşteri cüzdanı yok."
 
 msgid "Wallet ID"
-msgstr "Cüzdan No"
+msgstr "Cüzdan Kimliği"
 
 msgid "Customer Name"
 msgstr "Müşteri Adı"
@@ -865,11 +586,8 @@ msgstr "Müşteri Adı"
 msgid "Email"
 msgstr "E-posta"
 
-msgid "Available Balance"
-msgstr "Kullanılabilir Bakiye"
-
 msgid "Hourly Burn Rate"
-msgstr "Saatlik Tüketim Hızı"
+msgstr "Saatlik Tüketim Oranı"
 
 msgid "Created At"
 msgstr "Oluşturulma Tarihi"
@@ -878,13 +596,10 @@ msgid "Ledger Actions"
 msgstr "Defter İşlemleri"
 
 msgid "Adjust Balance"
-msgstr "Bakiye Düzenle"
-
-msgid "No customer wallets initialized yet."
-msgstr "Henüz oluşturulmuş bir cüzdan bulunmuyor."
+msgstr "Bakiye Ayarla"
 
 msgid "Manual Ledger Adjustment"
-msgstr "Manuel Cüzdan Bakiye Düzenleme"
+msgstr "Manuel Cüzdan Bakiyesi Düzeltmesi"
 
 msgid "Adjustment Type:"
 msgstr "İşlem Türü:"
@@ -899,16 +614,67 @@ msgid "Amount (Toman):"
 msgstr "Tutar (Toman):"
 
 msgid "Reason / Audit Note:"
-msgstr "Açıklama / Denetim Notu:"
+msgstr "Neden / Denetim Notu:"
 
 msgid "Apply Adjustment"
-msgstr "Değişikliği Uygula"
+msgstr "Düzeltmeyi Uygula"
 
-msgid "Testing connection to ArvanCloud API..."
-msgstr "ArvanCloud API bağlantısı test ediliyor..."
+msgid "Cancel"
+msgstr "İptal"
 
-msgid "Customer wallet balance updated successfully."
-msgstr "Müşteri cüzdan bakiyesi başarıyla güncellendi."
+msgid "All Cloud Datacenter Regions Operational (99.99% SLA)"
+msgstr "Tüm Bulut Veri Merkezi Bölgeleri Çalışıyor (%99,99 SLA)"
+
+msgid "Powered by ArvanCloud Infrastructure Reseller Engine"
+msgstr "ArvanCloud Altyapı Bayi Motoru ile Güçlendirilmiştir"
+
+msgid "Enterprise Multi-Tenant Infrastructure Management & Monetization"
+msgstr "Kurumsal Çok Kiracılı Altyapı Yönetimi ve Para Kazanma"
+
+msgid "connectedSuccessfully"
+msgstr "ArvanCloud altyapısına başarıyla bağlanıldı."
+
+msgid "connectionFailed"
+msgstr "ArvanCloud altyapısına bağlantı başarısız oldu."
+
+msgid "activeMockFallback"
+msgstr "Aktif (Demo Modu)"
+
+msgid "liveInfrastructureOnly"
+msgstr "Yalnızca Canlı Altyapı"
+
+msgid "searchResourcesPlaceholder"
+msgstr "Müşteri, kaynak adı veya Arvan UUID ile arayın..."
+
+msgid "searchWalletsPlaceholder"
+msgstr "Müşteri adı, e-posta veya kullanıcı kimliği ile arayın..."
+
+msgid "adjustBalanceDesc"
+msgstr "Müşteri bakiyesini doğrudan borçlandırın veya alacaklandırın. Değiştirilemez denetim kaydı tutulur."
+
+msgid "adjustReasonPlaceholder"
+msgstr "ör. Destek telafisi / Manuel yükleme"
+
+msgid "manualAdjustmentDefaultReason"
+msgstr "Manuel yönetici düzeltmesi"
+
+msgid "all"
+msgstr "Tümü"
+
+msgid "active"
+msgstr "Aktif"
+
+msgid "serverConfiguratorLink"
+msgstr "🚀 Sunucu Yapılandırıcısı"
+
+msgid "customerDashboardLink"
+msgstr "📊 Müşteri Paneli"
+
+msgid "cdnManagerLink"
+msgstr "🌐 CDN ve DNS Yöneticisi"
+
+msgid "s3StorageLink"
+msgstr "📦 S3 Nesne Depolama"
 
 msgid "Action completed successfully."
 msgstr "İşlem başarıyla tamamlandı."
@@ -916,51 +682,15 @@ msgstr "İşlem başarıyla tamamlandı."
 msgid "Manual metering cycle completed."
 msgstr "Manuel faturalandırma döngüsü tamamlandı."
 
-msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
-msgstr "Bu kaynağı ArvanCloud üzerinden kalıcı olarak silmek istediğinize emin misiniz?"
-
-msgid "Permission denied."
-msgstr "Erişim yetkisi reddedildi."
-
-msgid "Invalid user ID or amount."
-msgstr "Geçersiz kullanıcı ID veya tutar."
-
-msgid "Balance adjusted successfully."
-msgstr "Bakiye başarıyla güncellendi."
-
-msgid "Resource not found."
-msgstr "Kaynak bulunamadı."
+msgid "Instance purged by administrator."
+msgstr "Sunucu yönetici tarafından tamamen silindi."
 
 msgid "Instance powered off by administrator."
 msgstr "Sunucu yönetici tarafından kapatıldı."
 
-msgid "Instance purged by administrator."
-msgstr "Sunucu yönetici tarafından kalıcı olarak silindi."
+msgid "Balance adjusted successfully."
+msgstr "Bakiye başarıyla güncellendi."
 
-msgid "Unknown admin action."
-msgstr "Bilinmeyen yönetici işlemi."
-
-msgid "Connected successfully to ArvanCloud infrastructure."
-msgstr "ArvanCloud altyapısına başarıyla bağlanıldı."
-
-msgid "Network error while testing connection."
-msgstr "Bağlantı test edilirken ağ hatası oluştu."
-
-msgid "Network error."
-msgstr "Ağ hatası."
-
-msgid "Applying..."
-msgstr "Uygulanıyor..."
-
-msgid "Running Metering..."
-msgstr "Faturalandırma çalışıyor..."
-
-msgid "Adjust Wallet Balance: "
-msgstr "Cüzdan Bakiyesini Düzenle: "
-
-msgid "Loading ArvanCloud Services Canvas..."
-msgstr "ArvanCloud Hizmetleri Paneli Yükleniyor..."
-
-msgid "Loading ArvanCloud Management Portal..."
-msgstr "ArvanCloud Bayi Yönetim Paneli Yükleniyor..."
+msgid "Failed to deploy server."
+msgstr "Sunucu dağıtımı başarısız oldu."
 

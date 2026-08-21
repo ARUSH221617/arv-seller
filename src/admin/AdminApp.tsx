@@ -3,6 +3,7 @@ import { useAdminData } from './useAdminData';
 import { AdminSettingsView } from './views/AdminSettingsView';
 import { AdminResourcesView } from './views/AdminResourcesView';
 import { AdminWalletsView } from './views/AdminWalletsView';
+import { LanguageDropdown } from '../components/navigation/LanguageDropdown';
 import { ToastContainer } from '../components/ui/toast';
 import { Server, Settings, Wallet, Layers } from 'lucide-react';
 import { cn } from '../lib/utils';
@@ -51,7 +52,7 @@ export const AdminApp: React.FC = () => {
                 {t('ArvanCloud Reseller')}
               </h1>
               <span className="rounded-md bg-arvan-teal/10 px-2 py-0.5 text-[10px] font-bold text-arvan-teal-dark">
-                Back-Office
+                {t('backOffice')}
               </span>
             </div>
             <p className="text-xs text-slate-500 mt-0.5">
@@ -60,8 +61,13 @@ export const AdminApp: React.FC = () => {
           </div>
         </div>
 
-        {/* Navigation */}
+        {/* Navigation & Language Switcher */}
         <div className="flex flex-wrap items-center gap-3">
+          <LanguageDropdown
+            currentLanguage={language}
+            onSelectLanguage={setLanguage}
+          />
+
           <nav className="flex items-center gap-1 rounded-full border border-slate-200 bg-slate-100 p-1.5 shadow-inner">
             <button
               onClick={() => setActiveTab('settings')}

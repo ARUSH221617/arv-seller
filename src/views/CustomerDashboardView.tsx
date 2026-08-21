@@ -170,7 +170,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
               </div>
             </div>
             <div className="text-2xl font-black text-slate-900">
-              {burnRate > 0 ? `${remainingHours.toFixed(0)} Hours` : '∞ Unlimited'}
+              {burnRate > 0 ? `${remainingHours.toFixed(0)} ${t('hours')}` : `∞ ${t('unlimited')}`}
             </div>
           </CardContent>
         </Card>
@@ -189,7 +189,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
             <div className="text-2xl font-black text-slate-900">
               {servers.filter((s) => s.status === 'active').length}
               <span className="text-xs text-slate-500 font-normal ms-1.5">
-                / {servers.length} Total
+                / {servers.length} {t('total')}
               </span>
             </div>
           </CardContent>
@@ -245,7 +245,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
                             <button
                               onClick={() => handleCopyIp(srv.public_ip!)}
                               className="text-slate-400 hover:text-slate-700 p-1"
-                              title="Copy IP"
+                              title={t('copyIp')}
                             >
                               {copiedIp === srv.public_ip ? (
                                 <Check className="h-3.5 w-3.5 text-arvan-emerald" />
@@ -255,7 +255,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
                             </button>
                           </div>
                         ) : (
-                          <span className="text-slate-400">Allocating...</span>
+                          <span className="text-slate-400">{t('allocatingIp')}</span>
                         )}
                       </td>
                       <td className="py-4 px-5 font-medium text-slate-600">
@@ -376,17 +376,17 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
                         {tx.type === 'deposit' && (
                           <Badge variant="success" className="gap-1">
                             <ArrowDownLeft className="h-3 w-3" />
-                            <span>Deposit</span>
+                            <span>{t('txDeposit')}</span>
                           </Badge>
                         )}
                         {tx.type === 'metered_charge' && (
                           <Badge variant="secondary" className="gap-1 font-mono">
                             <Flame className="h-3 w-3 text-arvan-pink" />
-                            <span>Metered</span>
+                            <span>{t('txMetered')}</span>
                           </Badge>
                         )}
                         {tx.type === 'adjustment' && (
-                          <Badge variant="outline">Adjustment</Badge>
+                          <Badge variant="outline">{t('txAdjustment')}</Badge>
                         )}
                       </td>
                       <td className="py-3.5 px-5 text-slate-700">{tx.description}</td>

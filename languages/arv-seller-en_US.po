@@ -13,701 +13,431 @@ msgstr ""
 "X-Generator: Poedit 3.0\n"
 "X-Domain: arv-seller\n"
 
-msgid "Dashboard"
-msgstr "Dashboard"
-
-msgid "Cloud Server (IaaS)"
-msgstr "Cloud Server (IaaS)"
-
-msgid "Cloud Servers"
-msgstr "Cloud Servers"
-
-msgid "CDN & DNS"
-msgstr "CDN & DNS"
-
-msgid "Object Storage (S3)"
-msgstr "Object Storage (S3)"
-
-msgid "Object Storage"
-msgstr "Object Storage"
-
-msgid "Wallet:"
-msgstr "Wallet:"
-
-msgid "Top up balance"
-msgstr "Top up balance"
-
-msgid "Sign In / Register"
-msgstr "Sign In / Register"
-
-msgid "Logout"
-msgstr "Logout"
-
-msgid "Powered by ArvanCloud"
-msgstr "Powered by ArvanCloud"
-
-msgid "All rights reserved."
-msgstr "All rights reserved."
-
-msgid "Enterprise Cloud Infrastructure Powered by ArvanCloud REST API."
-msgstr "Enterprise Cloud Infrastructure Powered by ArvanCloud REST API."
-
-msgid "Main Website"
-msgstr "Main Website"
-
-msgid "Support:"
-msgstr "Support:"
-
-msgid "Email:"
-msgstr "Email:"
-
-msgid "Cloud Services Platform"
-msgstr "Cloud Services Platform"
-
-msgid "Cloud Services Portal"
-msgstr "Cloud Services Portal"
-
 msgid "Deploy Cloud Server"
 msgstr "Deploy Cloud Server"
-
-msgid "Deploy Cloud Server (IaaS)"
-msgstr "Deploy Cloud Server (IaaS)"
-
-msgid "High performance enterprise cloud virtual machines with NVMe storage, dedicated IPv4, and 10Gbps uplinks."
-msgstr "High performance enterprise cloud virtual machines with NVMe storage, dedicated IPv4, and 10Gbps uplinks."
-
-msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
-msgstr "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
-
-msgid "Choose Datacenter Region"
-msgstr "Choose Datacenter Region"
-
-msgid "Select the geographical location closest to your target audience."
-msgstr "Select the geographical location closest to your target audience."
-
-msgid "Hardware Plan & Specifications"
-msgstr "Hardware Plan & Specifications"
-
-msgid "Compute resources can be dynamically scaled anytime."
-msgstr "Compute resources can be dynamically scaled anytime."
-
-msgid "All Plans"
-msgstr "All Plans"
-
-msgid "General Purpose"
-msgstr "General Purpose"
-
-msgid "Compute Optimized"
-msgstr "Compute Optimized"
-
-msgid "Memory Optimized"
-msgstr "Memory Optimized"
-
-msgid "Popular"
-msgstr "Popular"
-
-msgid "Most Popular"
-msgstr "Most Popular"
-
-msgid "Processor"
-msgstr "Processor"
-
-msgid "RAM Memory"
-msgstr "RAM Memory"
-
-msgid "NVMe Disk"
-msgstr "NVMe Disk"
-
-msgid "hr"
-msgstr "hr"
-
-msgid "NVMe Fast Storage Volume"
-msgstr "NVMe Fast Storage Volume"
-
-msgid "High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr)."
-msgstr "High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr)."
-
-msgid "Allocated NVMe Storage:"
-msgstr "Allocated NVMe Storage:"
-
-msgid "Operating System Image"
-msgstr "Operating System Image"
-
-msgid "Standard cloud images optimized for immediate SSH/RDP connection."
-msgstr "Standard cloud images optimized for immediate SSH/RDP connection."
-
-msgid "Select Operating System"
-msgstr "Select Operating System"
-
-msgid "Pre-configured cloud distributions ready in under 60 seconds."
-msgstr "Pre-configured cloud distributions ready in under 60 seconds."
-
-msgid "Instance Access & Naming"
-msgstr "Instance Access & Naming"
-
-msgid "Configure server hostname and authentication method."
-msgstr "Configure server hostname and authentication method."
-
-msgid "Server Hostname"
-msgstr "Server Hostname"
-
-msgid "Authentication Mode:"
-msgstr "Authentication Mode:"
-
-msgid "SSH Public Key (Recommended)"
-msgstr "SSH Public Key (Recommended)"
-
-msgid "Root Password"
-msgstr "Root Password"
-
-msgid "SSH Public Key"
-msgstr "SSH Public Key"
-
-msgid "Root / Admin Password"
-msgstr "Root / Admin Password"
-
-msgid "Minimum 12 characters"
-msgstr "Minimum 12 characters"
-
-msgid "Generate"
-msgstr "Generate"
-
-msgid "Order Summary & Cost"
-msgstr "Order Summary & Cost"
-
-msgid "Summary & Cost"
-msgstr "Summary & Cost"
-
-msgid "Datacenter:"
-msgstr "Datacenter:"
-
-msgid "Location"
-msgstr "Location"
-
-msgid "Compute Specs:"
-msgstr "Compute Specs:"
-
-msgid "Plan"
-msgstr "Plan"
-
-msgid "Storage Volume:"
-msgstr "Storage Volume:"
-
-msgid "Operating System:"
-msgstr "Operating System:"
-
-msgid "Operating System"
-msgstr "Operating System"
-
-msgid "Dedicated IPv4:"
-msgstr "Dedicated IPv4:"
-
-msgid "Public IPv4"
-msgstr "Public IPv4"
-
-msgid "1x Public IP (Included)"
-msgstr "1x Public IP (Included)"
-
-msgid "1x Dedicated (Included)"
-msgstr "1x Dedicated (Included)"
-
-msgid "Hourly Burn Rate:"
-msgstr "Hourly Burn Rate:"
-
-msgid "Hourly Rate:"
-msgstr "Hourly Rate:"
-
-msgid "Est. Monthly (720 hrs):"
-msgstr "Est. Monthly (720 hrs):"
-
-msgid "Est. Monthly:"
-msgstr "Est. Monthly:"
-
-msgid "Your Available Balance:"
-msgstr "Your Available Balance:"
-
-msgid "Your Balance:"
-msgstr "Your Balance:"
-
-msgid "Notice: Deploying requires a minimum 24-hour run balance."
-msgstr "Notice: Deploying requires a minimum 24-hour run balance."
-
-msgid "Instant Provision Cloud Server"
-msgstr "Instant Provision Cloud Server"
-
-msgid "Sign in to Access Your Cloud Portal"
-msgstr "Sign in to Access Your Cloud Portal"
-
-msgid "Please sign in to access your cloud portal"
-msgstr "Please sign in to access your cloud portal"
-
-msgid "Manage your virtual servers, CDN domains, S3 object storage buckets, and atomic wallet ledger in one place."
-msgstr "Manage your virtual servers, CDN domains, S3 object storage buckets, and atomic wallet ledger in one place."
-
-msgid "Sign In to Your Account"
-msgstr "Sign In to Your Account"
-
-msgid "Services Suspended Due to Zero Wallet Balance"
-msgstr "Services Suspended Due to Zero Wallet Balance"
-
-msgid "According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately."
-msgstr "According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately."
-
-msgid "Low Balance Warning"
-msgstr "Low Balance Warning"
 
 msgid "Available Wallet Balance"
 msgstr "Available Wallet Balance"
 
-msgid "Account Balance"
-msgstr "Account Balance"
+msgid "ArvanCloud Reseller Settings & Monetization"
+msgstr "ArvanCloud Reseller Settings & Monetization"
 
-msgid "Active Account"
-msgstr "Active Account"
+msgid "Connected successfully to ArvanCloud infrastructure."
+msgstr "Connected successfully to ArvanCloud infrastructure."
 
-msgid "Healthy"
-msgstr "Healthy"
+msgid "Loading ArvanCloud Services Canvas..."
+msgstr "Loading ArvanCloud Services Canvas..."
 
-msgid "Suspended"
-msgstr "Suspended"
+msgid "dashboard"
+msgstr "Dashboard"
 
-msgid "Burn Rate:"
-msgstr "Burn Rate:"
+msgid "deployServer"
+msgstr "Deploy Cloud Server"
 
-msgid "Est. Runtime:"
-msgstr "Est. Runtime:"
+msgid "cdnDns"
+msgstr "CDN & DNS Management"
 
-msgid "hours"
-msgstr "hours"
+msgid "objectStorage"
+msgstr "Object Storage (S3)"
 
-msgid "Instant Online Wallet Top-Up"
-msgstr "Instant Online Wallet Top-Up"
+msgid "walletBalance"
+msgstr "Wallet Balance"
 
-msgid "Top Up Wallet Balance"
-msgstr "Top Up Wallet Balance"
+msgid "availableBalance"
+msgstr "Available Balance"
 
-msgid "Custom Amount in Toman"
-msgstr "Custom Amount in Toman"
+msgid "topUp"
+msgstr "Top Up"
 
-msgid "Custom Amount"
-msgstr "Custom Amount"
+msgid "signIn"
+msgstr "Sign In / Register"
 
-msgid "Pay with Online Gateway"
-msgstr "Pay with Online Gateway"
+msgid "logout"
+msgstr "Logout"
 
-msgid "Deploy Cloud Resources"
-msgstr "Deploy Cloud Resources"
-
-msgid "Deploy New Service"
-msgstr "Deploy New Service"
-
-msgid "Provision high performance cloud resources in seconds."
-msgstr "Provision high performance cloud resources in seconds."
-
-msgid "New Cloud Server"
-msgstr "New Cloud Server"
-
-msgid "High IOPS NVMe with Dedicated IP"
-msgstr "High IOPS NVMe with Dedicated IP"
-
-msgid "Compute, NVMe & Dedicated IP"
-msgstr "Compute, NVMe & Dedicated IP"
-
-msgid "Connect CDN Domain"
-msgstr "Connect CDN Domain"
-
-msgid "Add CDN Domain"
-msgstr "Add CDN Domain"
-
-msgid "DDoS Protection & Anycast DNS"
-msgstr "DDoS Protection & Anycast DNS"
-
-msgid "S3 Storage Bucket"
-msgstr "S3 Storage Bucket"
-
-msgid "S3 Object Storage"
-msgstr "S3 Object Storage"
-
-msgid "Unlimited S3 API Compatible Bucket"
-msgstr "Unlimited S3 API Compatible Bucket"
-
-msgid "Unlimited Object Storage"
-msgstr "Unlimited Object Storage"
-
-msgid "Active Cloud Servers & Virtual Machines"
-msgstr "Active Cloud Servers & Virtual Machines"
-
-msgid "Active Cloud Resources"
-msgstr "Active Cloud Resources"
-
-msgid "Live instance power states, IP addresses, and real-time lifecycle controls."
-msgstr "Live instance power states, IP addresses, and real-time lifecycle controls."
-
-msgid "Instances"
-msgstr "Instances"
-
-msgid "Resources"
-msgstr "Resources"
-
-msgid "Server Instance"
-msgstr "Server Instance"
-
-msgid "Name / ID"
-msgstr "Name / ID"
-
-msgid "Assigned IP"
-msgstr "Assigned IP"
-
-msgid "Datacenter"
-msgstr "Datacenter"
-
-msgid "Region"
-msgstr "Region"
-
-msgid "Hourly Rate"
-msgstr "Hourly Rate"
-
-msgid "Rate (Hourly)"
-msgstr "Rate (Hourly)"
-
-msgid "Runtime Status"
-msgstr "Runtime Status"
-
-msgid "Status"
-msgstr "Status"
-
-msgid "Power Lifecycle"
-msgstr "Power Lifecycle"
-
-msgid "Actions"
-msgstr "Actions"
-
-msgid "Running"
-msgstr "Running"
-
-msgid "Suspended (0 Bal)"
-msgstr "Suspended (0 Bal)"
-
-msgid "Suspended / Off"
-msgstr "Suspended / Off"
-
-msgid "Powered Off"
-msgstr "Powered Off"
-
-msgid "Stop"
-msgstr "Stop"
-
-msgid "Reboot"
-msgstr "Reboot"
-
-msgid "Power On"
-msgstr "Power On"
-
-msgid "No active cloud servers deployed yet"
-msgstr "No active cloud servers deployed yet"
-
-msgid "No active cloud resources found"
-msgstr "No active cloud resources found"
-
-msgid "Deploy First Server"
-msgstr "Deploy First Server"
-
-msgid "Deploy First Cloud Server"
-msgstr "Deploy First Cloud Server"
-
-msgid "Wallet Atomic Ledger Transactions"
-msgstr "Wallet Atomic Ledger Transactions"
-
-msgid "Recent Ledger Transactions"
-msgstr "Recent Ledger Transactions"
-
-msgid "Date & Time"
-msgstr "Date & Time"
-
-msgid "Date"
-msgstr "Date"
-
-msgid "Transaction Type"
-msgstr "Transaction Type"
-
-msgid "Type"
-msgstr "Type"
-
-msgid "Description / Reference ID"
-msgstr "Description / Reference ID"
-
-msgid "Description / Reference"
-msgstr "Description / Reference"
-
-msgid "Amount"
-msgstr "Amount"
-
-msgid "Balance Snapshot"
-msgstr "Balance Snapshot"
-
-msgid "Balance After"
-msgstr "Balance After"
-
-msgid "No transactions recorded in wallet ledger yet."
-msgstr "No transactions recorded in wallet ledger yet."
-
-msgid "No transactions recorded yet."
-msgstr "No transactions recorded yet."
-
-msgid "Global CDN & Anycast Edge DNS"
-msgstr "Global CDN & Anycast Edge DNS"
-
-msgid "CDN & Anycast DNS Management"
-msgstr "CDN & Anycast DNS Management"
-
-msgid "Accelerate your websites globally with edge caching, SSL termination, and Layer 7 DDoS mitigation across 40+ PoPs."
-msgstr "Accelerate your websites globally with edge caching, SSL termination, and Layer 7 DDoS mitigation across 40+ PoPs."
-
-msgid "Connect New Domain to Edge CDN"
-msgstr "Connect New Domain to Edge CDN"
-
-msgid "Connect New Domain to Global CDN"
-msgstr "Connect New Domain to Global CDN"
-
-msgid "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
-msgstr "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
-
-msgid "Activate Edge CDN"
-msgstr "Activate Edge CDN"
-
-msgid "Activate CDN"
-msgstr "Activate CDN"
-
-msgid "Connected CDN Domains"
-msgstr "Connected CDN Domains"
-
-msgid "Active CDN Domains"
-msgstr "Active CDN Domains"
-
-msgid "Manage DNS zones, edge caching, and SSL certificates."
-msgstr "Manage DNS zones, edge caching, and SSL certificates."
-
-msgid "Domains"
-msgstr "Domains"
-
-msgid "Domain Name"
-msgstr "Domain Name"
-
-msgid "Assigned Nameservers"
-msgstr "Assigned Nameservers"
-
-msgid "SSL / TLS Mode"
-msgstr "SSL / TLS Mode"
-
-msgid "SSL Status"
-msgstr "SSL Status"
-
-msgid "Edge Caching"
-msgstr "Edge Caching"
-
-msgid "DNS Management"
-msgstr "DNS Management"
-
-msgid "Managed Let's Encrypt (Active)"
-msgstr "Managed Let's Encrypt (Active)"
-
-msgid "Purge Edge Cache"
-msgstr "Purge Edge Cache"
-
-msgid "Protected"
-msgstr "Protected"
-
-msgid "Active"
-msgstr "Active"
-
-msgid "DNS Zone Editor"
-msgstr "DNS Zone Editor"
-
-msgid "DNS Records"
-msgstr "DNS Records"
-
-msgid "No CDN domains configured yet"
-msgstr "No CDN domains configured yet"
-
-msgid "No CDN domains added yet. Enter a domain name above to get started."
-msgstr "No CDN domains added yet. Enter a domain name above to get started."
-
-msgid "DNS Zone Records:"
-msgstr "DNS Zone Records:"
-
-msgid "Record Type"
-msgstr "Record Type"
-
-msgid "Name / Host"
-msgstr "Name / Host"
-
-msgid "Target Value / IP"
-msgstr "Target Value / IP"
-
-msgid "Cloud Proxy"
-msgstr "Cloud Proxy"
-
-msgid "Add Record"
-msgstr "Add Record"
-
-msgid "Value"
-msgstr "Value"
-
-msgid "Proxy"
-msgstr "Proxy"
-
-msgid "Action"
-msgstr "Action"
-
-msgid "Loading records..."
-msgstr "Loading records..."
-
-msgid "Delete"
-msgstr "Delete"
-
-msgid "S3-Compatible Object Storage"
-msgstr "S3-Compatible Object Storage"
-
-msgid "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
-msgstr "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
-
-msgid "Create New S3 Storage Bucket"
-msgstr "Create New S3 Storage Bucket"
-
-msgid "Create New Storage Bucket"
-msgstr "Create New Storage Bucket"
-
-msgid "Bucket names must be unique, lowercase alphanumeric characters with hyphens only."
-msgstr "Bucket names must be unique, lowercase alphanumeric characters with hyphens only."
-
-msgid "Create S3 Bucket"
-msgstr "Create S3 Bucket"
-
-msgid "Create Bucket"
-msgstr "Create Bucket"
-
-msgid "S3 API Credentials"
-msgstr "S3 API Credentials"
-
-msgid "Generate Access Key ID and Secret Access Key to connect via AWS SDK, Rclone, or backup plugins."
-msgstr "Generate Access Key ID and Secret Access Key to connect via AWS SDK, Rclone, or backup plugins."
-
-msgid "Generate S3 Access Keys"
-msgstr "Generate S3 Access Keys"
-
-msgid "Your Storage Buckets"
-msgstr "Your Storage Buckets"
-
-msgid "Object storage buckets provisioned on ArvanCloud cluster."
-msgstr "Object storage buckets provisioned on ArvanCloud cluster."
-
-msgid "Buckets"
-msgstr "Buckets"
-
-msgid "Bucket Name"
-msgstr "Bucket Name"
-
-msgid "S3 API Endpoint"
-msgstr "S3 API Endpoint"
-
-msgid "Endpoint (S3 API)"
-msgstr "Endpoint (S3 API)"
-
-msgid "Cluster Region"
-msgstr "Cluster Region"
-
-msgid "Rate (Monthly)"
-msgstr "Rate (Monthly)"
-
-msgid "Connection Info"
-msgstr "Connection Info"
-
-msgid "View Setup Snippets"
-msgstr "View Setup Snippets"
-
-msgid "Access Keys"
-msgstr "Access Keys"
-
-msgid "No storage buckets created yet"
-msgstr "No storage buckets created yet"
-
-msgid "No storage buckets created yet. Create your first bucket above."
-msgstr "No storage buckets created yet. Create your first bucket above."
-
-msgid "S3 Storage API Credentials & Setup"
-msgstr "S3 Storage API Credentials & Setup"
-
-msgid "S3 Endpoint URL:"
-msgstr "S3 Endpoint URL:"
-
-msgid "Access Key ID:"
-msgstr "Access Key ID:"
-
-msgid "Secret Access Key:"
-msgstr "Secret Access Key:"
-
-msgid "Copy"
-msgstr "Copy"
-
-msgid "AWS CLI & Rclone Configuration Example"
-msgstr "AWS CLI & Rclone Configuration Example"
-
-msgid "Quick Wallet Deposit"
-msgstr "Quick Wallet Deposit"
-
-msgid "Select an amount or enter custom deposit to instantly top up your wallet:"
-msgstr "Select an amount or enter custom deposit to instantly top up your wallet:"
-
-msgid "Amount in Toman:"
-msgstr "Amount in Toman:"
-
-msgid "Proceed to Payment"
-msgstr "Proceed to Payment"
-
-msgid "Permanently Destroy Server?"
-msgstr "Permanently Destroy Server?"
-
-msgid "Warning: This action is irreversible!"
-msgstr "Warning: This action is irreversible!"
-
-msgid "All data, NVMe storage disks, and attached network IP addresses on ArvanCloud infrastructure will be permanently erased."
-msgstr "All data, NVMe storage disks, and attached network IP addresses on ArvanCloud infrastructure will be permanently erased."
-
-msgid "Cancel"
+msgid "cancel"
 msgstr "Cancel"
 
-msgid "Confirm Permanent Deletion"
-msgstr "Confirm Permanent Deletion"
+msgid "confirm"
+msgstr "Confirm"
+
+msgid "done"
+msgstr "Done"
+
+msgid "save"
+msgstr "Save Settings"
+
+msgid "copy"
+msgstr "Copy"
+
+msgid "copied"
+msgstr "Copied!"
+
+msgid "generate"
+msgstr "Generate"
+
+msgid "status"
+msgstr "Status"
+
+msgid "actions"
+msgstr "Actions"
+
+msgid "running"
+msgstr "Running"
+
+msgid "stopped"
+msgstr "Stopped"
+
+msgid "suspended"
+msgstr "Suspended"
+
+msgid "selectLanguage"
+msgstr "Select Language"
+
+msgid "cores"
+msgstr "Core"
+
+msgid "total"
+msgstr "Total"
+
+msgid "hours"
+msgstr "Hours"
+
+msgid "unlimited"
+msgstr "Unlimited"
+
+msgid "copyIp"
+msgstr "Copy IP"
+
+msgid "allocatingIp"
+msgstr "Allocating IP..."
+
+msgid "backOffice"
+msgstr "Back-Office"
+
+msgid "storefrontSubtitle"
+msgstr "Cloud Infrastructure Storefront"
+
+msgid "nextGenCloudIaaS"
+msgstr "Next-Gen Cloud Compute (IaaS)"
+
+msgid "configuratorHeroDesc"
+msgstr "Configure high-performance NVMe cloud virtual machines powered by ArvanCloud data center infrastructure with instant provisioning."
+
+msgid "step1Region"
+msgstr "1. Select Datacenter Region"
+
+msgid "step2Flavor"
+msgstr "2. Hardware Specifications"
+
+msgid "step3Disk"
+msgstr "3. NVMe Storage Disk"
+
+msgid "step4Image"
+msgstr "4. Operating System Image"
+
+msgid "step5Auth"
+msgstr "5. Hostname & Authentication"
+
+msgid "allPlans"
+msgstr "All Plans"
+
+msgid "general"
+msgstr "General Purpose"
+
+msgid "compute"
+msgstr "Compute Optimized"
+
+msgid "memory"
+msgstr "Memory Optimized"
+
+msgid "mostPopular"
+msgstr "Most Popular"
+
+msgid "hourlyRate"
+msgstr "Hourly Rate"
+
+msgid "hourlyBurn"
+msgstr "Hourly Burn Rate"
+
+msgid "monthlyEstimate"
+msgstr "Estimated Monthly (720 hrs)"
+
+msgid "additionalStorage"
+msgstr "Additional Storage"
+
+msgid "instanceHostname"
+msgstr "Instance Hostname"
+
+msgid "authCredentials"
+msgstr "Authentication Credentials:"
+
+msgid "password"
+msgstr "Password"
+
+msgid "sshKey"
+msgstr "SSH Key"
+
+msgid "orderSummary"
+msgstr "Order Summary & Specifications"
+
+msgid "region"
+msgstr "Region"
+
+msgid "flavor"
+msgstr "Hardware Flavor"
+
+msgid "specs"
+msgstr "Specifications"
+
+msgid "storage"
+msgstr "Storage"
+
+msgid "os"
+msgstr "Operating System"
+
+msgid "minRequired"
+msgstr "Min Required (24h)"
+
+msgid "instantDeploy"
+msgstr "Instant Deploy"
+
+msgid "insufficientBalance"
+msgstr "Insufficient Balance (Recharge Needed)"
+
+msgid "vcpu"
+msgstr "vCPU"
+
+msgid "ram"
+msgstr "RAM"
+
+msgid "baseDiskLabel"
+msgstr "Base:"
+
+msgid "maxDiskLabel"
+msgstr "Max:"
+
+msgid "provisioningInstance"
+msgstr "Provisioning Instance..."
+
+msgid "provisionTimeNote"
+msgstr "⚡ Provisioned in < 45 seconds on ArvanCloud Core Infrastructure."
+
+msgid "dashboardDesc"
+msgstr "Real-time atomic wallet oversight, live server runtime controls, and resource telemetry."
+
+msgid "suspensionNotice"
+msgstr "Suspension Notice: Depleted Balance"
+
+msgid "suspensionDesc"
+msgstr "Your wallet balance has depleted to 0. All running cloud server instances have been safely powered down. Top up your balance to immediately recover operation."
+
+msgid "rechargeWalletNow"
+msgstr "Recharge Wallet Now"
+
+msgid "lowBalanceAlert"
+msgstr "Warning: Low Balance"
+
+msgid "lowBalanceDesc"
+msgstr "At your current hourly burn rate, your balance will deplete in less than 12 hours."
+
+msgid "quickTopUp"
+msgstr "Quick Top Up"
+
+msgid "estimatedRuntime"
+msgstr "Estimated Runtime"
+
+msgid "activeInstances"
+msgstr "Active Instances"
+
+msgid "activeCloudVms"
+msgstr "Active Cloud Virtual Machines"
+
+msgid "noServers"
+msgstr "No cloud servers deployed yet."
+
+msgid "serverName"
+msgstr "Server Name"
+
+msgid "ipAddress"
+msgstr "Public IP"
+
+msgid "planSpecs"
+msgstr "Plan Specs"
+
+msgid "powerOn"
+msgstr "Power On"
+
+msgid "powerOff"
+msgstr "Power Off"
+
+msgid "reboot"
+msgstr "Reboot"
+
+msgid "delete"
+msgstr "Delete"
+
+msgid "confirmDelete"
+msgstr "Are you sure you want to permanently delete this server? All disk data will be erased."
+
+msgid "transactionHistory"
+msgstr "Wallet Transaction Ledger & Audit Logs"
+
+msgid "timestamp"
+msgstr "Timestamp"
+
+msgid "type"
+msgstr "Type"
+
+msgid "description"
+msgstr "Transaction Description"
+
+msgid "amount"
+msgstr "Amount"
+
+msgid "balanceSnapshot"
+msgstr "Balance Snapshot"
+
+msgid "noTransactions"
+msgstr "No transactions recorded yet."
+
+msgid "customAmount"
+msgstr "Custom Amount"
+
+msgid "proceedPayment"
+msgstr "Proceed to Payment"
+
+msgid "txDeposit"
+msgstr "Deposit"
+
+msgid "txMetered"
+msgstr "Metered"
+
+msgid "txAdjustment"
+msgstr "Adjustment"
+
+msgid "cdnTitle"
+msgstr "CDN Domain Connection & Anycast DNS"
+
+msgid "cdnDesc"
+msgstr "Global edge CDN caching, DDoS protection, Anycast DNS acceleration, and automated SSL certificate provisioning."
+
+msgid "connectDomain"
+msgstr "Connect Domain to CDN"
+
+msgid "domainInput"
+msgstr "Domain Name (e.g. example.com)"
+
+msgid "activeCdnDomains"
+msgstr "Active CDN Edge Domains"
+
+msgid "assignedNameservers"
+msgstr "Assigned ArvanCloud Anycast Nameservers:"
+
+msgid "dnsRecords"
+msgstr "DNS Records"
+
+msgid "purgeCache"
+msgstr "Purge Edge Cache"
+
+msgid "sslActive"
+msgstr "SSL Certificate Active"
+
+msgid "activePops"
+msgstr "Active on 40+ Global PoPs"
+
+msgid "dnsDialogDesc"
+msgstr "Add and manage DNS zone records with instant Anycast propagation."
+
+msgid "dnsRecordNamePlaceholder"
+msgstr "Name (@ or sub)"
+
+msgid "dnsRecordTargetPlaceholder"
+msgstr "Target / IP"
+
+msgid "addRecord"
+msgstr "Add Record"
+
+msgid "proxied"
+msgstr "Proxied"
+
+msgid "close"
+msgstr "Close"
+
+msgid "storageTitle"
+msgstr "S3 Object Storage Buckets"
+
+msgid "storageDesc"
+msgstr "Unlimited S3-compatible cloud object storage with high throughput, multi-region replication, and standard API interoperability."
+
+msgid "createBucket"
+msgstr "Create New Bucket"
+
+msgid "bucketName"
+msgstr "Bucket Name (lowercase & numbers only)"
+
+msgid "existingBuckets"
+msgstr "Existing Storage Buckets"
+
+msgid "viewApiKeys"
+msgstr "View S3 API Credentials"
+
+msgid "endpointUrl"
+msgstr "Endpoint URL"
+
+msgid "accessKey"
+msgstr "Access Key ID"
+
+msgid "secretKey"
+msgstr "Secret Access Key"
+
+msgid "bucketIdentifier"
+msgstr "Bucket Identifier"
+
+msgid "s3EndpointUrl"
+msgstr "S3 Endpoint URL"
+
+msgid "clusterRegion"
+msgstr "Cluster Region"
+
+msgid "rateMonthly"
+msgstr "Rate (Monthly)"
+
+msgid "action"
+msgstr "Action"
+
+msgid "credentials"
+msgstr "Credentials"
+
+msgid "s3CredsDesc"
+msgstr "Use these credentials to authenticate with AWS CLI, Rclone, S3cmd, or WordPress backup plugins."
+
+msgid "awsCliExample"
+msgstr "AWS CLI Configuration Example:"
+
+msgid "quickDepositDesc"
+msgstr "Instant wallet recharge via online gateway / sandbox demo."
+
+msgid "selectPresetAmount"
+msgstr "Select Preset Amount:"
+
+msgid "totalDepositAmount"
+msgstr "Total Deposit Amount:"
+
+msgid "processing"
+msgstr "Processing..."
 
 msgid "ArvanCloud Reseller"
 msgstr "ArvanCloud Reseller"
 
-msgid "Arvan Reseller"
-msgstr "Arvan Reseller"
-
 msgid "Settings & API"
 msgstr "Settings & API"
-
-msgid "Settings"
-msgstr "Settings"
 
 msgid "Cloud Resources"
 msgstr "Cloud Resources"
 
-msgid "All Resources"
-msgstr "All Resources"
-
 msgid "Wallets & Ledger"
 msgstr "Wallets & Ledger"
-
-msgid "Wallets Ledger"
-msgstr "Wallets Ledger"
-
-msgid "ArvanCloud Reseller Settings & Monetization"
-msgstr "ArvanCloud Reseller Settings & Monetization"
-
-msgid "Configure your ArvanCloud master API credentials, pricing markup margins, white-label branding, and sandbox mode."
-msgstr "Configure your ArvanCloud master API credentials, pricing markup margins, white-label branding, and sandbox mode."
 
 msgid "1. ArvanCloud API Authentication"
 msgstr "1. ArvanCloud API Authentication"
@@ -726,9 +456,6 @@ msgstr "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys
 
 msgid "Sandbox / Demo Mode"
 msgstr "Sandbox / Demo Mode"
-
-msgid "Enable Sandbox / Mock Fallback Mode"
-msgstr "Enable Sandbox / Mock Fallback Mode"
 
 msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
 msgstr "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
@@ -754,15 +481,6 @@ msgstr "Optional fixed addition added after percentage markup calculation."
 msgid "Store Currency"
 msgstr "Store Currency"
 
-msgid "Toman (IRT)"
-msgstr "Toman (IRT)"
-
-msgid "Rial (IRR)"
-msgstr "Rial (IRR)"
-
-msgid "US Dollar (USD)"
-msgstr "US Dollar (USD)"
-
 msgid "Default Datacenter Region"
 msgstr "Default Datacenter Region"
 
@@ -781,14 +499,11 @@ msgstr "Support Contact Email"
 msgid "Support Phone Number"
 msgstr "Support Phone Number"
 
-msgid "Save All Reseller Settings"
-msgstr "Save All Reseller Settings"
-
 msgid "Virtual Storefront Quick Links (Theme Isolated)"
 msgstr "Virtual Storefront Quick Links (Theme Isolated)"
 
-msgid "Access standalone storefront and customer portal pages:"
-msgstr "Access standalone storefront and customer portal pages:"
+msgid "Save All Reseller Settings"
+msgstr "Save All Reseller Settings"
 
 msgid "All Provisioned Cloud Resources"
 msgstr "All Provisioned Cloud Resources"
@@ -811,6 +526,9 @@ msgstr "Suspended (0 Balance)"
 msgid "Monthly Run Rate (MRR)"
 msgstr "Monthly Run Rate (MRR)"
 
+msgid "No resources deployed yet."
+msgstr "No resources deployed yet."
+
 msgid "Customer"
 msgstr "Customer"
 
@@ -823,8 +541,8 @@ msgstr "Service"
 msgid "Arvan UUID / Identifier"
 msgstr "Arvan UUID / Identifier"
 
-msgid "Last Metered"
-msgstr "Last Metered"
+msgid "Hourly Rate"
+msgstr "Hourly Rate"
 
 msgid "Emergency Actions"
 msgstr "Emergency Actions"
@@ -835,8 +553,8 @@ msgstr "Power Off"
 msgid "Purge"
 msgstr "Purge"
 
-msgid "No resources deployed yet."
-msgstr "No resources deployed yet."
+msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
+msgstr "Are you sure you want to permanently delete this resource from ArvanCloud?"
 
 msgid "Customer Wallets & Ledger Audit"
 msgstr "Customer Wallets & Ledger Audit"
@@ -856,6 +574,9 @@ msgstr "Cumulative Deposits"
 msgid "Total Metered Burn"
 msgstr "Total Metered Burn"
 
+msgid "No customer wallets initialized yet."
+msgstr "No customer wallets initialized yet."
+
 msgid "Wallet ID"
 msgstr "Wallet ID"
 
@@ -864,9 +585,6 @@ msgstr "Customer Name"
 
 msgid "Email"
 msgstr "Email"
-
-msgid "Available Balance"
-msgstr "Available Balance"
 
 msgid "Hourly Burn Rate"
 msgstr "Hourly Burn Rate"
@@ -879,9 +597,6 @@ msgstr "Ledger Actions"
 
 msgid "Adjust Balance"
 msgstr "Adjust Balance"
-
-msgid "No customer wallets initialized yet."
-msgstr "No customer wallets initialized yet."
 
 msgid "Manual Ledger Adjustment"
 msgstr "Manual Ledger Adjustment"
@@ -904,11 +619,62 @@ msgstr "Reason / Audit Note:"
 msgid "Apply Adjustment"
 msgstr "Apply Adjustment"
 
-msgid "Testing connection to ArvanCloud API..."
-msgstr "Testing connection to ArvanCloud API..."
+msgid "Cancel"
+msgstr "Cancel"
 
-msgid "Customer wallet balance updated successfully."
-msgstr "Customer wallet balance updated successfully."
+msgid "All Cloud Datacenter Regions Operational (99.99% SLA)"
+msgstr "All Cloud Datacenter Regions Operational (99.99% SLA)"
+
+msgid "Powered by ArvanCloud Infrastructure Reseller Engine"
+msgstr "Powered by ArvanCloud Infrastructure Reseller Engine"
+
+msgid "Enterprise Multi-Tenant Infrastructure Management & Monetization"
+msgstr "Enterprise Multi-Tenant Infrastructure Management & Monetization"
+
+msgid "connectedSuccessfully"
+msgstr "Connected successfully to ArvanCloud infrastructure."
+
+msgid "connectionFailed"
+msgstr "Connection to ArvanCloud infrastructure failed."
+
+msgid "activeMockFallback"
+msgstr "Active (Mock Fallback)"
+
+msgid "liveInfrastructureOnly"
+msgstr "Live Infrastructure Only"
+
+msgid "searchResourcesPlaceholder"
+msgstr "Search by customer, resource name, or Arvan UUID..."
+
+msgid "searchWalletsPlaceholder"
+msgstr "Search by customer name, email, or user ID..."
+
+msgid "adjustBalanceDesc"
+msgstr "Directly debit or credit customer balance. An immutable audit record will be logged."
+
+msgid "adjustReasonPlaceholder"
+msgstr "e.g. Compensation credit / Manual topup"
+
+msgid "manualAdjustmentDefaultReason"
+msgstr "Manual administrative adjustment"
+
+msgid "all"
+msgstr "All"
+
+msgid "active"
+msgstr "Active"
+
+msgid "serverConfiguratorLink"
+msgstr "🚀 Server Configurator"
+
+msgid "customerDashboardLink"
+msgstr "📊 Customer Dashboard"
+
+msgid "cdnManagerLink"
+msgstr "🌐 CDN & DNS Manager"
+
+msgid "s3StorageLink"
+msgstr "📦 S3 Object Storage"
 
 msgid "Action completed successfully."
 msgstr "Action completed successfully."
@@ -916,51 +682,15 @@ msgstr "Action completed successfully."
 msgid "Manual metering cycle completed."
 msgstr "Manual metering cycle completed."
 
-msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
-msgstr "Are you sure you want to permanently delete this resource from ArvanCloud?"
-
-msgid "Permission denied."
-msgstr "Permission denied."
-
-msgid "Invalid user ID or amount."
-msgstr "Invalid user ID or amount."
-
-msgid "Balance adjusted successfully."
-msgstr "Balance adjusted successfully."
-
-msgid "Resource not found."
-msgstr "Resource not found."
+msgid "Instance purged by administrator."
+msgstr "Instance purged by administrator."
 
 msgid "Instance powered off by administrator."
 msgstr "Instance powered off by administrator."
 
-msgid "Instance purged by administrator."
-msgstr "Instance purged by administrator."
+msgid "Balance adjusted successfully."
+msgstr "Balance adjusted successfully."
 
-msgid "Unknown admin action."
-msgstr "Unknown admin action."
-
-msgid "Connected successfully to ArvanCloud infrastructure."
-msgstr "Connected successfully to ArvanCloud infrastructure."
-
-msgid "Network error while testing connection."
-msgstr "Network error while testing connection."
-
-msgid "Network error."
-msgstr "Network error."
-
-msgid "Applying..."
-msgstr "Applying..."
-
-msgid "Running Metering..."
-msgstr "Running Metering..."
-
-msgid "Adjust Wallet Balance: "
-msgstr "Adjust Wallet Balance: "
-
-msgid "Loading ArvanCloud Services Canvas..."
-msgstr "Loading ArvanCloud Services Canvas..."
-
-msgid "Loading ArvanCloud Management Portal..."
-msgstr "Loading ArvanCloud Management Portal..."
+msgid "Failed to deploy server."
+msgstr "Failed to deploy server."
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Server, LayoutDashboard, Globe, HardDrive, Plus, Wallet, LogIn } from 'lucide-react';
 import { Button } from '../ui/button';
+import { LanguageDropdown } from './LanguageDropdown';
 import { ActiveTab, SupportedLanguage } from '../../types';
 import { formatCurrency, cn } from '../../lib/utils';
 
@@ -8,6 +9,7 @@ interface TopAppBarProps {
   activeTab: ActiveTab;
   onSelectTab: (tab: ActiveTab) => void;
   language: SupportedLanguage;
+  onSelectLanguage?: (lang: SupportedLanguage) => void;
   balance: number;
   currency: string;
   isLogged: boolean;
@@ -20,6 +22,7 @@ export const TopAppBar: React.FC<TopAppBarProps> = ({
   activeTab,
   onSelectTab,
   language,
+  onSelectLanguage,
   balance,
   currency,
   isLogged,
@@ -45,7 +48,7 @@ export const TopAppBar: React.FC<TopAppBarProps> = ({
               </span>
             </div>
             <p className="text-[11px] font-medium text-slate-500">
-              Cloud Infrastructure Storefront
+              {t('storefrontSubtitle')}
             </p>
           </div>
         </div>
@@ -105,8 +108,15 @@ export const TopAppBar: React.FC<TopAppBarProps> = ({
           </button>
         </nav>
 
-        {/* 3. Action Cluster (Live Wallet Chip & User CTA) */}
-        <div className="flex items-center gap-3">
+        {/* 3. Action Cluster (Live Wallet Chip & User CTA & Language Switcher) */}
+        <div className="flex items-center gap-2.5">
+          {onSelectLanguage && (
+            <LanguageDropdown
+              currentLanguage={language}
+              onSelectLanguage={onSelectLanguage}
+            />
+          )}
+
           {isLogged ? (
             <div className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs shadow-sm">
               <Wallet className="h-4 w-4 text-arvan-teal" />

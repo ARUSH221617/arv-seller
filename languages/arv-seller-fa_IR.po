@@ -13,803 +13,521 @@ msgstr ""
 "X-Generator: Poedit 3.0\n"
 "X-Domain: arv-seller\n"
 
-msgid "Dashboard"
-msgstr "داشبورد"
-
-msgid "Cloud Server (IaaS)"
-msgstr "سرور ابری (IaaS)"
-
-msgid "Cloud Servers"
-msgstr "سرورهای ابری"
-
-msgid "CDN & DNS"
-msgstr "شبکه توزیع محتوا (CDN) و DNS"
-
-msgid "Object Storage (S3)"
-msgstr "فضای ابری (S3)"
-
-msgid "Object Storage"
-msgstr "فضای ابری"
-
-msgid "Wallet:"
-msgstr "کیف پول:"
-
-msgid "Top up balance"
-msgstr "افزایش موجودی"
-
-msgid "Sign In / Register"
-msgstr "ورود / عضویت"
-
-msgid "Logout"
-msgstr "خروج از حساب"
-
-msgid "Powered by ArvanCloud"
-msgstr "توسعه یافته بر پایه ابر آروان"
-
-msgid "All rights reserved."
-msgstr "تمامی حقوق محفوظ است."
-
-msgid "Enterprise Cloud Infrastructure Powered by ArvanCloud REST API."
-msgstr "زیرساخت ابری سازمانی با اتصال مستقیم به API ابر آروان."
-
-msgid "Main Website"
-msgstr "وب‌سایت اصلی"
-
-msgid "Support:"
-msgstr "پشتیبانی:"
-
-msgid "Email:"
-msgstr "ایمیل:"
-
-msgid "Cloud Services Platform"
-msgstr "سامانه خدمات ابری"
-
-msgid "Cloud Services Portal"
-msgstr "پورتال خدمات ابری"
-
 msgid "Deploy Cloud Server"
 msgstr "سفارش سرور ابری"
-
-msgid "Deploy Cloud Server (IaaS)"
-msgstr "سفارش سرور ابری (IaaS)"
-
-msgid "High performance enterprise cloud virtual machines with NVMe storage, dedicated IPv4, and 10Gbps uplinks."
-msgstr "ماشین‌های مجازی پرسرعت با حافظه NVMe، آی‌پی اختصاصی و شبکه ابری ۱۰ گیگابیت."
-
-msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
-msgstr "راه‌اندازی آنی روی زیرساخت ابر آروان با دیسک NVMe، آی‌پی اختصاصی و شبکه پرسرعت."
-
-msgid "Choose Datacenter Region"
-msgstr "انتخاب دیتاسنتر و موقعیت جغرافیایی"
-
-msgid "Select the geographical location closest to your target audience."
-msgstr "موقعیت سرور را متناسب با موقعیت کاربران خود انتخاب کنید."
-
-msgid "Hardware Plan & Specifications"
-msgstr "مشخصات سخت‌افزاری و پردازشی"
-
-msgid "Compute resources can be dynamically scaled anytime."
-msgstr "منابع پردازشی در هر زمان قابل ارتقا و تغییر هستند."
-
-msgid "All Plans"
-msgstr "همه پلن‌ها"
-
-msgid "General Purpose"
-msgstr "عمومی (General)"
-
-msgid "Compute Optimized"
-msgstr "پردازشی (Compute)"
-
-msgid "Memory Optimized"
-msgstr "حافظه بالا (Memory)"
-
-msgid "Popular"
-msgstr "پیشنهاد ویژه"
-
-msgid "Most Popular"
-msgstr "محبوب‌ترین پلن"
-
-msgid "Processor"
-msgstr "پردازنده"
-
-msgid "RAM Memory"
-msgstr "حافظه رم"
-
-msgid "NVMe Disk"
-msgstr "دیسک NVMe"
-
-msgid "hr"
-msgstr "ساعت"
-
-msgid "NVMe Fast Storage Volume"
-msgstr "فضای ذخیره‌سازی پرسرعت NVMe"
-
-msgid "High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr)."
-msgstr "دیسک سازمانی NVMe با قابلیت افزایش حجم (+۴ تومان بر گیگابایت در ساعت)."
-
-msgid "Allocated NVMe Storage:"
-msgstr "حجم دیسک NVMe انتخابی:"
-
-msgid "Operating System Image"
-msgstr "سیستم‌عامل و توزیع لینوکس/ویندوز"
-
-msgid "Standard cloud images optimized for immediate SSH/RDP connection."
-msgstr "تصاویر استاندارد ابری آماده اتصال فوری از طریق SSH و ریموت دسکتاپ."
-
-msgid "Select Operating System"
-msgstr "انتخاب سیستم‌عامل سرور"
-
-msgid "Pre-configured cloud distributions ready in under 60 seconds."
-msgstr "سیستم‌عامل‌های آماده در کمتر از ۶۰ ثانیه."
-
-msgid "Instance Access & Naming"
-msgstr "تنظیمات دسترسی و شناسه سرور"
-
-msgid "Configure server hostname and authentication method."
-msgstr "نام هاست و شیوه احراز هویت ورود به سرور را تعیین نمایید."
-
-msgid "Server Hostname"
-msgstr "نام هاست سرور"
-
-msgid "Authentication Mode:"
-msgstr "روش احراز هویت:"
-
-msgid "SSH Public Key (Recommended)"
-msgstr "کلید عمومی SSH (پیشنهادی)"
-
-msgid "Root Password"
-msgstr "رمز عبور ریشه (Password)"
-
-msgid "SSH Public Key"
-msgstr "کلید عمومی SSH"
-
-msgid "Root / Admin Password"
-msgstr "رمز عبور کاربر ریشه"
-
-msgid "Minimum 12 characters"
-msgstr "حداقل ۱۲ کاراکتر ترکیبی"
-
-msgid "Generate"
-msgstr "تولید خودکار"
-
-msgid "Order Summary & Cost"
-msgstr "خلاصه سفارش و برآورد هزینه"
-
-msgid "Summary & Cost"
-msgstr "خلاصه و برآورد هزینه"
-
-msgid "Datacenter:"
-msgstr "دیتاسنتر:"
-
-msgid "Location"
-msgstr "موقعیت"
-
-msgid "Compute Specs:"
-msgstr "مشخصات پردازشی:"
-
-msgid "Plan"
-msgstr "پلن انتخابی"
-
-msgid "Storage Volume:"
-msgstr "فضای دیسک:"
-
-msgid "Operating System:"
-msgstr "سیستم‌عامل:"
-
-msgid "Operating System"
-msgstr "سیستم‌عامل"
-
-msgid "Dedicated IPv4:"
-msgstr "آی‌پی اختصاصی:"
-
-msgid "Public IPv4"
-msgstr "آی‌پی عمومی"
-
-msgid "1x Public IP (Included)"
-msgstr "۱ عدد آی‌پی اختصاصی (رایگان)"
-
-msgid "1x Dedicated (Included)"
-msgstr "۱ عدد آی‌پی اختصاصی (رایگان)"
-
-msgid "Hourly Burn Rate:"
-msgstr "هزینه ساعتی:"
-
-msgid "Hourly Rate:"
-msgstr "هزینه ساعتی:"
-
-msgid "Est. Monthly (720 hrs):"
-msgstr "برآورد ماهانه (۷۲۰ ساعت):"
-
-msgid "Est. Monthly:"
-msgstr "برآورد ماهانه:"
-
-msgid "Your Available Balance:"
-msgstr "موجودی در دسترس شما:"
-
-msgid "Your Balance:"
-msgstr "موجودی شما:"
-
-msgid "Notice: Deploying requires a minimum 24-hour run balance."
-msgstr "توجه: سفارش سرور نیازمند حداقل موجودی به اندازه ۲۴ ساعت فعالیت است."
-
-msgid "Instant Provision Cloud Server"
-msgstr "راه‌اندازی و تحویل آنی سرور ابری"
-
-msgid "Sign in to Access Your Cloud Portal"
-msgstr "برای ورود به پورتال ابری وارد شوید"
-
-msgid "Please sign in to access your cloud portal"
-msgstr "برای ورود به پورتال ابری وارد شوید"
-
-msgid "Manage your virtual servers, CDN domains, S3 object storage buckets, and atomic wallet ledger in one place."
-msgstr "مدیریت سرورهای ابری، دامنه‌های CDN، فضاهای ذخیره‌سازی S3 و تراکنش‌های کیف پول در یک داشبورد یکپارچه."
-
-msgid "Sign In to Your Account"
-msgstr "ورود به حساب کاربری"
-
-msgid "Services Suspended Due to Zero Wallet Balance"
-msgstr "سرویس‌های شما به دلیل اتمام موجودی کیف پول معلق شده‌اند"
-
-msgid "According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately."
-msgstr "بر اساس قوانین حقوقی خاتمه سرویس ابر آروان، ماشین‌های مجازی خاموش شده و دسترسی به حالت فقط‌خواندنی تغییر یافته است. برای بازیابی دسترسی، کیف پول خود را افزایش دهید."
-
-msgid "Low Balance Warning"
-msgstr "هشدار موجودی ناکافی کیف پول"
 
 msgid "Available Wallet Balance"
 msgstr "موجودی قابل استفاده کیف پول"
 
-msgid "Account Balance"
-msgstr "موجودی حساب"
+msgid "ArvanCloud Reseller Settings & Monetization"
+msgstr "تنظیمات نمایندگی و درآمدزایی ابر آروان"
 
-msgid "Active Account"
-msgstr "حساب فعال"
+msgid "Connected successfully to ArvanCloud infrastructure."
+msgstr "اتصال به زیرساخت ابر آروان با موفقیت برقرار شد."
 
-msgid "Healthy"
-msgstr "وضعیت مطلوب"
+msgid "Loading ArvanCloud Services Canvas..."
+msgstr "در حال بارگذاری سامانه خدمات ابری آروان..."
 
-msgid "Suspended"
-msgstr "معلق شده"
+msgid "dashboard"
+msgstr "داشبورد مدیریت"
 
-msgid "Burn Rate:"
-msgstr "نرخ مصرف:"
+msgid "deployServer"
+msgstr "سفارش سرور ابری"
 
-msgid "Est. Runtime:"
-msgstr "مدت زمان کارکرد:"
+msgid "cdnDns"
+msgstr "شبکه توزیع محتوا و DNS"
+
+msgid "objectStorage"
+msgstr "فضای ذخیره‌سازی S3"
+
+msgid "walletBalance"
+msgstr "موجودی کیف پول"
+
+msgid "availableBalance"
+msgstr "موجودی در دسترس"
+
+msgid "topUp"
+msgstr "افزایش موجودی"
+
+msgid "signIn"
+msgstr "ورود / ثبت نام"
+
+msgid "logout"
+msgstr "خروج از حساب"
+
+msgid "cancel"
+msgstr "انصراف"
+
+msgid "confirm"
+msgstr "تأیید"
+
+msgid "done"
+msgstr "تأیید و بستن"
+
+msgid "save"
+msgstr "ذخیره تنظیمات"
+
+msgid "copy"
+msgstr "کپی"
+
+msgid "copied"
+msgstr "کپی شد!"
+
+msgid "generate"
+msgstr "تولید"
+
+msgid "status"
+msgstr "وضعیت"
+
+msgid "actions"
+msgstr "عملیات"
+
+msgid "running"
+msgstr "در حال اجرا"
+
+msgid "stopped"
+msgstr "خاموش"
+
+msgid "suspended"
+msgstr "معلق"
+
+msgid "selectLanguage"
+msgstr "انتخاب زبان"
+
+msgid "cores"
+msgstr "هسته"
+
+msgid "total"
+msgstr "مجموع"
 
 msgid "hours"
 msgstr "ساعت"
 
-msgid "Instant Online Wallet Top-Up"
-msgstr "افزایش آنی موجودی کیف پول"
+msgid "unlimited"
+msgstr "نامحدود"
 
-msgid "Top Up Wallet Balance"
-msgstr "افزایش موجودی کیف پول"
+msgid "copyIp"
+msgstr "کپی آدرس IP"
 
-msgid "Custom Amount in Toman"
-msgstr "مبلغ دلخواه به تومان"
+msgid "allocatingIp"
+msgstr "در حال تخصیص IP..."
 
-msgid "Custom Amount"
-msgstr "مبلغ دلخواه"
+msgid "backOffice"
+msgstr "پنل مدیریت"
 
-msgid "Pay with Online Gateway"
-msgstr "پرداخت از طریق درگاه آنلاین"
+msgid "storefrontSubtitle"
+msgstr "فروشگاه و سامانه اختصاصی زیرساخت ابری"
 
-msgid "Deploy Cloud Resources"
-msgstr "راه‌اندازی سرویس‌های جدید ابری"
+msgid "nextGenCloudIaaS"
+msgstr "زیرساخت ابری نسل جدید (IaaS)"
 
-msgid "Deploy New Service"
-msgstr "راه‌اندازی سرویس جدید"
+msgid "configuratorHeroDesc"
+msgstr "پیکربندی ماشین‌های مجازی ابری پرسرعت NVMe با سخت‌افزار دیتاسنتری ابر آروان و تحویل آنی."
 
-msgid "Provision high performance cloud resources in seconds."
-msgstr "راه‌اندازی زیرساخت ابری با کارایی بالا در چند ثانیه."
+msgid "step1Region"
+msgstr "۱. انتخاب دیتاسنتر و لوکیشن"
 
-msgid "New Cloud Server"
-msgstr "سرور ابری جدید"
+msgid "step2Flavor"
+msgstr "۲. مشخصات سخت‌افزاری سرور"
 
-msgid "High IOPS NVMe with Dedicated IP"
-msgstr "دیسک NVMe و آی‌پی اختصاصی"
+msgid "step3Disk"
+msgstr "۳. فضای ذخیره‌سازی NVMe SSD"
 
-msgid "Compute, NVMe & Dedicated IP"
-msgstr "پردازشگر، NVMe و آی‌پی اختصاصی"
+msgid "step4Image"
+msgstr "۴. سیستم‌عامل و توزیع لینوکس / ویندوز"
 
-msgid "Connect CDN Domain"
-msgstr "اتصال دامنه به CDN"
+msgid "step5Auth"
+msgstr "۵. نام هاست و احراز هویت"
 
-msgid "Add CDN Domain"
-msgstr "اتصال دامنه به CDN"
+msgid "allPlans"
+msgstr "همه پلن‌ها"
 
-msgid "DDoS Protection & Anycast DNS"
-msgstr "حفاظت DDoS و DNS سریع"
+msgid "general"
+msgstr "عمومی و استاندارد"
 
-msgid "S3 Storage Bucket"
-msgstr "فضای ابری S3"
+msgid "compute"
+msgstr "پردازشی (High CPU)"
 
-msgid "S3 Object Storage"
-msgstr "فضای ابری S3"
+msgid "memory"
+msgstr "حافظه بالا (High RAM)"
 
-msgid "Unlimited S3 API Compatible Bucket"
-msgstr "فضای نامحدود با سازگاری S3"
+msgid "mostPopular"
+msgstr "پیشنهاد ویژه"
 
-msgid "Unlimited Object Storage"
-msgstr "فضای نامحدود ذخیره‌سازی داده‌ها"
+msgid "hourlyRate"
+msgstr "هزینه ساعتی"
 
-msgid "Active Cloud Servers & Virtual Machines"
-msgstr "سرورهای ابری و ماشین‌های مجازی فعال"
+msgid "hourlyBurn"
+msgstr "مصرف ساعتی"
 
-msgid "Active Cloud Resources"
-msgstr "سرویس‌های ابری فعال"
+msgid "monthlyEstimate"
+msgstr "تخمین ماهانه (۷۲۰ ساعت)"
 
-msgid "Live instance power states, IP addresses, and real-time lifecycle controls."
-msgstr "وضعیت بلادرنگ سرورها، آدرس‌های آی‌پی و دکمه‌های کنترل قدرت."
+msgid "additionalStorage"
+msgstr "فضای ذخیره‌سازی اضافه"
 
-msgid "Instances"
-msgstr "سرور"
+msgid "instanceHostname"
+msgstr "نام سرور (Hostname)"
 
-msgid "Resources"
-msgstr "سرویس"
+msgid "authCredentials"
+msgstr "روش احراز هویت و ورود:"
 
-msgid "Server Instance"
-msgstr "شناسه و نام سرور"
+msgid "password"
+msgstr "رمز عبور"
 
-msgid "Name / ID"
-msgstr "نام و شناسه"
+msgid "sshKey"
+msgstr "کلید SSH"
 
-msgid "Assigned IP"
-msgstr "آی‌پی اختصاصی"
+msgid "orderSummary"
+msgstr "خلاصه سفارش و مشخصات سرور"
 
-msgid "Datacenter"
+msgid "region"
 msgstr "دیتاسنتر"
 
-msgid "Region"
-msgstr "منطقه"
+msgid "flavor"
+msgstr "پلن سخت‌افزاری"
 
-msgid "Hourly Rate"
-msgstr "هزینه ساعتی"
+msgid "specs"
+msgstr "مشخصات"
 
-msgid "Rate (Hourly)"
-msgstr "هزینه ساعتی"
+msgid "storage"
+msgstr "فضای دیسک"
 
-msgid "Runtime Status"
-msgstr "وضعیت اجرا"
+msgid "os"
+msgstr "سیستم‌عامل"
 
-msgid "Status"
-msgstr "وضعیت"
+msgid "minRequired"
+msgstr "حداقل موجودی (۲۴ ساعت)"
 
-msgid "Power Lifecycle"
-msgstr "مدیریت قدرت"
+msgid "instantDeploy"
+msgstr "ایجاد و تحویل آنی سرور"
 
-msgid "Actions"
-msgstr "عملیات"
+msgid "insufficientBalance"
+msgstr "موجودی ناکافی (نیاز به شارژ)"
 
-msgid "Running"
-msgstr "در حال اجرا"
+msgid "vcpu"
+msgstr "پردازنده"
 
-msgid "Suspended (0 Bal)"
-msgstr "معلق (عدم موجودی)"
+msgid "ram"
+msgstr "حافظه رم"
 
-msgid "Suspended / Off"
-msgstr "معلق / خاموش"
+msgid "baseDiskLabel"
+msgstr "پایه:"
 
-msgid "Powered Off"
-msgstr "خاموش"
+msgid "maxDiskLabel"
+msgstr "حداکثر:"
 
-msgid "Stop"
-msgstr "خاموش کردن"
+msgid "provisioningInstance"
+msgstr "در حال راه‌اندازی و تحویل سرور..."
 
-msgid "Reboot"
-msgstr "راه‌اندازی مجدد"
+msgid "provisionTimeNote"
+msgstr "⚡ تحویل آنی در کمتر از ۴۵ ثانیه بر روی هسته زیرساخت ابر آروان."
 
-msgid "Power On"
+msgid "dashboardDesc"
+msgstr "نظارت لحظه‌ای بر کیف پول اتمیک، مدیریت توان سرورها و پایش منابع ابری."
+
+msgid "suspensionNotice"
+msgstr "اخطار: موجودی کیف پول به پایان رسیده است"
+
+msgid "suspensionDesc"
+msgstr "موجودی کیف پول شما به صفر رسیده است. کلیه سرورهای فعال جهت جلوگیری از بدهی خاموش شده‌اند. با افزایش موجودی، سرورها بلافاصله در دسترس خواهند بود."
+
+msgid "rechargeWalletNow"
+msgstr "شارژ فوری کیف پول"
+
+msgid "lowBalanceAlert"
+msgstr "هشدار: موجودی رو به اتمام است"
+
+msgid "lowBalanceDesc"
+msgstr "با نرخ مصرف ساعتی فعلی، موجودی شما در کمتر از ۱۲ ساعت آینده به پایان می‌رسد."
+
+msgid "quickTopUp"
+msgstr "شارژ سریع"
+
+msgid "estimatedRuntime"
+msgstr "زمان باقیمانده تخمینی"
+
+msgid "activeInstances"
+msgstr "سرورهای فعال"
+
+msgid "activeCloudVms"
+msgstr "ماشین‌های مجازی ابری فعال"
+
+msgid "noServers"
+msgstr "هنوز هیچ سرور ابری ایجاد نکرده‌اید."
+
+msgid "serverName"
+msgstr "نام سرور"
+
+msgid "ipAddress"
+msgstr "آدرس آی‌پی (IP)"
+
+msgid "planSpecs"
+msgstr "پلن و مشخصات"
+
+msgid "powerOn"
 msgstr "روشن کردن"
 
-msgid "No active cloud servers deployed yet"
-msgstr "هیچ سرور ابری فعالی ایجاد نشده است"
+msgid "powerOff"
+msgstr "خاموش کردن"
 
-msgid "No active cloud resources found"
-msgstr "هیچ سرویس فعالی یافت نشد"
+msgid "reboot"
+msgstr "راه‌اندازی مجدد"
 
-msgid "Deploy First Server"
-msgstr "سفارش اولین سرور ابری"
+msgid "delete"
+msgstr "حذف دائم"
 
-msgid "Deploy First Cloud Server"
-msgstr "سفارش اولین سرور ابری"
+msgid "confirmDelete"
+msgstr "آیا از حذف دائم این سرور اطمینان دارید؟ تمامی اطلاعات پاک خواهد شد."
 
-msgid "Wallet Atomic Ledger Transactions"
-msgstr "تاریخچه تراکنش‌های اتمیک کیف پول"
+msgid "transactionHistory"
+msgstr "ریز تراکنش‌ها و گردش حساب کیف پول"
 
-msgid "Recent Ledger Transactions"
-msgstr "تراکنش‌های اخیر کیف پول"
+msgid "timestamp"
+msgstr "زمان تراکنش"
 
-msgid "Date & Time"
-msgstr "تاریخ و زمان"
-
-msgid "Date"
-msgstr "تاریخ"
-
-msgid "Transaction Type"
-msgstr "نوع تراکنش"
-
-msgid "Type"
+msgid "type"
 msgstr "نوع"
 
-msgid "Description / Reference ID"
-msgstr "توضیحات و شناسه پیگیری"
+msgid "description"
+msgstr "توضیحات تراکنش"
 
-msgid "Description / Reference"
-msgstr "توضیحات و شناسه"
-
-msgid "Amount"
+msgid "amount"
 msgstr "مبلغ"
 
-msgid "Balance Snapshot"
-msgstr "موجودی پس از تراکنش"
+msgid "balanceSnapshot"
+msgstr "مانده موجودی"
 
-msgid "Balance After"
-msgstr "موجودی پس از تراکنش"
-
-msgid "No transactions recorded in wallet ledger yet."
-msgstr "هنوز هیچ تراکنشی در کیف پول ثبت نشده است."
-
-msgid "No transactions recorded yet."
+msgid "noTransactions"
 msgstr "هنوز هیچ تراکنشی ثبت نشده است."
 
-msgid "Global CDN & Anycast Edge DNS"
-msgstr "شبکه جهانی CDN و سامانه Anycast DNS"
+msgid "customAmount"
+msgstr "مبلغ دلخواه"
 
-msgid "CDN & Anycast DNS Management"
-msgstr "مدیریت CDN و Anycast DNS"
+msgid "proceedPayment"
+msgstr "پرداخت آنلاین و شارژ کیف پول"
 
-msgid "Accelerate your websites globally with edge caching, SSL termination, and Layer 7 DDoS mitigation across 40+ PoPs."
-msgstr "افزایش سرعت بارگذاری، کش پیشرفته و حفاظت لایه ۷ در برابر حملات DDoS."
+msgid "txDeposit"
+msgstr "شارژ آنلاین"
 
-msgid "Connect New Domain to Edge CDN"
-msgstr "اتصال دامنه جدید به شبکه CDN"
+msgid "txMetered"
+msgstr "مصرف ساعتی"
 
-msgid "Connect New Domain to Global CDN"
-msgstr "اتصال دامنه جدید به شبکه CDN"
+msgid "txAdjustment"
+msgstr "تعدیل مالی"
 
-msgid "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
-msgstr "نام دامنه اصلی یا ساب‌دامین خود را جهت تولید نیم‌سرورها وارد نمایید."
+msgid "cdnTitle"
+msgstr "اتصال دامنه و مدیریت Anycast DNS"
 
-msgid "Activate Edge CDN"
-msgstr "فعال‌سازی CDN برای دامنه"
+msgid "cdnDesc"
+msgstr "کشینگ سراسری محتوا (CDN)، محافظت در برابر حملات DDoS، شتاب‌دهی Anycast DNS و صدور خودکار گواهی SSL."
 
-msgid "Activate CDN"
-msgstr "فعال‌سازی CDN"
+msgid "connectDomain"
+msgstr "اتصال دامنه به CDN"
 
-msgid "Connected CDN Domains"
+msgid "domainInput"
+msgstr "نام دامنه شما (مثال: example.com)"
+
+msgid "activeCdnDomains"
 msgstr "دامنه‌های متصل به CDN"
 
-msgid "Active CDN Domains"
-msgstr "دامنه‌های متصل به CDN"
+msgid "assignedNameservers"
+msgstr "نیم‌سرورهای اختصاصی شبکه ابر آروان:"
 
-msgid "Manage DNS zones, edge caching, and SSL certificates."
-msgstr "مدیریت رکوردهای DNS، پاک‌سازی کش و گواهی امنیتی SSL."
-
-msgid "Domains"
-msgstr "دامنه"
-
-msgid "Domain Name"
-msgstr "نام دامنه"
-
-msgid "Assigned Nameservers"
-msgstr "نیم‌سرورهای اختصاصی"
-
-msgid "SSL / TLS Mode"
-msgstr "وضعیت SSL"
-
-msgid "SSL Status"
-msgstr "وضعیت SSL"
-
-msgid "Edge Caching"
-msgstr "کش لبه شبکه"
-
-msgid "DNS Management"
-msgstr "مدیریت رکوردها"
-
-msgid "Managed Let's Encrypt (Active)"
-msgstr "گواهی SSL خودکار (فعال)"
-
-msgid "Purge Edge Cache"
-msgstr "پاک‌سازی کش لبه شبکه"
-
-msgid "Protected"
-msgstr "تحت حفاظت CDN"
-
-msgid "Active"
-msgstr "فعال"
-
-msgid "DNS Zone Editor"
-msgstr "ویرایشگر رکوردهای DNS"
-
-msgid "DNS Records"
+msgid "dnsRecords"
 msgstr "رکوردهای DNS"
 
-msgid "No CDN domains configured yet"
-msgstr "هیچ دامنه‌ای به CDN متصل نشده است"
+msgid "purgeCache"
+msgstr "پاکسازی کش"
 
-msgid "No CDN domains added yet. Enter a domain name above to get started."
-msgstr "هیچ دامنه‌ای ثبت نشده است. از فرم بالا نام دامنه را وارد کنید."
+msgid "sslActive"
+msgstr "گواهی امنیتی SSL فعال است"
 
-msgid "DNS Zone Records:"
-msgstr "رکوردهای DNS دامنه:"
+msgid "activePops"
+msgstr "فعال بر روی بیش از ۴۰ پاپ‌سایت جهانی"
 
-msgid "Record Type"
-msgstr "نوع رکورد"
+msgid "dnsDialogDesc"
+msgstr "افزودن و مدیریت رکوردهای دامنه با انتشار آنی بر روی شبکه Anycast."
 
-msgid "Name / Host"
-msgstr "نام / میزبان"
+msgid "dnsRecordNamePlaceholder"
+msgstr "نام رکورد (@ یا ساب‌دامین)"
 
-msgid "Target Value / IP"
-msgstr "مقدار / آی‌پی مقصد"
+msgid "dnsRecordTargetPlaceholder"
+msgstr "مقصد / آدرس IP"
 
-msgid "Cloud Proxy"
-msgstr "پراکسی ابری (Cloud)"
-
-msgid "Add Record"
+msgid "addRecord"
 msgstr "افزودن رکورد"
 
-msgid "Value"
-msgstr "مقدار"
+msgid "proxied"
+msgstr "پراکسی فعال"
 
-msgid "Proxy"
-msgstr "پراکسی"
+msgid "close"
+msgstr "بستن"
 
-msgid "Action"
-msgstr "عملیات"
+msgid "storageTitle"
+msgstr "فضای ذخیره‌سازی ابری S3 (Object Storage)"
 
-msgid "Loading records..."
-msgstr "در حال دریافت رکوردها..."
+msgid "storageDesc"
+msgstr "فضای ذخیره‌سازی نامحدود سازگار با S3 با توان عملیاتی بالا، تکثیر در چندین دیتاسنتر و پشتیبانی از ابزارهای استاندارد."
 
-msgid "Delete"
-msgstr "حذف"
-
-msgid "S3-Compatible Object Storage"
-msgstr "فضای ذخیره‌سازی ابری سازگار با S3"
-
-msgid "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
-msgstr "فضای ذخیره‌سازی داده‌های نامحدود با سازگاری کامل با پروتکل AWS S3 و ترافیک ورودی رایگان."
-
-msgid "Create New S3 Storage Bucket"
-msgstr "ایجاد باکت جدید در فضای ابری S3"
-
-msgid "Create New Storage Bucket"
+msgid "createBucket"
 msgstr "ایجاد باکت جدید"
 
-msgid "Bucket names must be unique, lowercase alphanumeric characters with hyphens only."
-msgstr "نام باکت باید منحصربه‌فرد و شامل حروف کوچک انگلیسی، اعداد و خط تیره باشد."
+msgid "bucketName"
+msgstr "نام باکت (فقط حروف کوچک و اعداد)"
 
-msgid "Create S3 Bucket"
-msgstr "ساخت باکت S3"
+msgid "existingBuckets"
+msgstr "باکت‌های ذخیره‌سازی موجود"
 
-msgid "Create Bucket"
-msgstr "ساخت باکت"
+msgid "viewApiKeys"
+msgstr "مشاهده کلیدهای اتصال API"
 
-msgid "S3 API Credentials"
-msgstr "کلیدهای دسترسی API فضای S3"
-
-msgid "Generate Access Key ID and Secret Access Key to connect via AWS SDK, Rclone, or backup plugins."
-msgstr "تولید Access Key و Secret Key جهت اتصال از طریق SDKها، نرم‌افزار Rclone و افزونه‌های وردپرس."
-
-msgid "Generate S3 Access Keys"
-msgstr "تولید کلیدهای دسترسی S3"
-
-msgid "Your Storage Buckets"
-msgstr "باکت‌های ذخیره‌سازی شما"
-
-msgid "Object storage buckets provisioned on ArvanCloud cluster."
-msgstr "باکت‌های ایجاد شده بر روی کلاستر ذخیره‌سازی ابر آروان."
-
-msgid "Buckets"
-msgstr "باکت"
-
-msgid "Bucket Name"
-msgstr "نام باکت"
-
-msgid "S3 API Endpoint"
-msgstr "آدرس Endpoint پروتکل S3"
-
-msgid "Endpoint (S3 API)"
+msgid "endpointUrl"
 msgstr "آدرس Endpoint"
 
-msgid "Cluster Region"
+msgid "accessKey"
+msgstr "شناسه دسترسی (Access Key)"
+
+msgid "secretKey"
+msgstr "کلید امنیتی (Secret Key)"
+
+msgid "bucketIdentifier"
+msgstr "شناسه باکت"
+
+msgid "s3EndpointUrl"
+msgstr "آدرس S3 Endpoint"
+
+msgid "clusterRegion"
 msgstr "منطقه کلاستر"
 
-msgid "Rate (Monthly)"
-msgstr "هزینه ماهانه"
+msgid "rateMonthly"
+msgstr "تعرفه ماهانه"
 
-msgid "Connection Info"
-msgstr "راهنمای اتصال"
+msgid "action"
+msgstr "عملیات"
 
-msgid "View Setup Snippets"
-msgstr "مشاهده راهنمای اتصال"
+msgid "credentials"
+msgstr "اطلاعات اتصال"
 
-msgid "Access Keys"
-msgstr "کلیدهای دسترسی"
+msgid "s3CredsDesc"
+msgstr "از این اطلاعات برای اتصال AWS CLI، Rclone، S3cmd یا افزونه‌های بکاپ وردپرس استفاده نمایید."
 
-msgid "No storage buckets created yet"
-msgstr "هنوز هیچ باکتی ایجاد نشده است"
+msgid "awsCliExample"
+msgstr "نمونه پیکربندی AWS CLI:"
 
-msgid "No storage buckets created yet. Create your first bucket above."
-msgstr "هیچ باکتی ایجاد نشده است. اولین باکت خود را از فرم بالا بسازید."
+msgid "quickDepositDesc"
+msgstr "افزایش آنی موجودی از طریق درگاه پرداخت بانکی / حالت شبیه‌ساز."
 
-msgid "S3 Storage API Credentials & Setup"
-msgstr "اطلاعات احراز هویت و راهنمای اتصال S3"
+msgid "selectPresetAmount"
+msgstr "انتخاب مبالغ پیشنهادی:"
 
-msgid "S3 Endpoint URL:"
-msgstr "آدرس Endpoint فضای S3:"
+msgid "totalDepositAmount"
+msgstr "مبلغ قابل پرداخت:"
 
-msgid "Access Key ID:"
-msgstr "شناسه کلید دسترسی (Access Key):"
-
-msgid "Secret Access Key:"
-msgstr "کلید امنیتی (Secret Key):"
-
-msgid "Copy"
-msgstr "کپی"
-
-msgid "AWS CLI & Rclone Configuration Example"
-msgstr "نمونه تنظیمات در AWS CLI و Rclone"
-
-msgid "Quick Wallet Deposit"
-msgstr "افزایش سریع موجودی کیف پول"
-
-msgid "Select an amount or enter custom deposit to instantly top up your wallet:"
-msgstr "مبلغ مورد نظر را انتخاب کرده یا مبلغ دلخواه را وارد نمایید:"
-
-msgid "Amount in Toman:"
-msgstr "مبلغ افزایش موجودی (تومان):"
-
-msgid "Proceed to Payment"
-msgstr "انتقال به درگاه و پرداخت"
-
-msgid "Permanently Destroy Server?"
-msgstr "آیا از حذف دائم این سرور اطمینان دارید؟"
-
-msgid "Warning: This action is irreversible!"
-msgstr "هشدار: این عملیات غیرقابل بازگشت است!"
-
-msgid "All data, NVMe storage disks, and attached network IP addresses on ArvanCloud infrastructure will be permanently erased."
-msgstr "تمام اطلاعات دیسک، پایگاه‌های داده و آی‌پی‌های متصل روی زیرساخت ابر آروان برای همیشه پاک خواهند شد."
-
-msgid "Cancel"
-msgstr "انصراف"
-
-msgid "Confirm Permanent Deletion"
-msgstr "تایید و حذف دائمی سرور"
+msgid "processing"
+msgstr "در حال پردازش..."
 
 msgid "ArvanCloud Reseller"
-msgstr "نمایندگی ابر آروان"
-
-msgid "Arvan Reseller"
-msgstr "فروشگاه آروان"
+msgstr "مدیریت نمایندگی ابر آروان"
 
 msgid "Settings & API"
-msgstr "تنظیمات و وب‌سرویس"
-
-msgid "Settings"
-msgstr "تنظیمات"
+msgstr "تنظیمات و ارتباط API"
 
 msgid "Cloud Resources"
-msgstr "منابع ابری"
-
-msgid "All Resources"
-msgstr "مدیریت کل منابع"
+msgstr "منابع ابری و سرورها"
 
 msgid "Wallets & Ledger"
-msgstr "کیف پول و تراکنش‌ها"
-
-msgid "Wallets Ledger"
-msgstr "دفترکل کیف‌پول‌ها"
-
-msgid "ArvanCloud Reseller Settings & Monetization"
-msgstr "تنظیمات نمایندگی و درآمدزایی ابر آروان"
-
-msgid "Configure your ArvanCloud master API credentials, pricing markup margins, white-label branding, and sandbox mode."
-msgstr "تنظیم اطلاعات کلید اصلی API ابر آروان، حاشیه سود قیمت‌گذاری، برندینگ اختصاصی و حالت آزمایشی."
+msgstr "کیف پول و دفترکل مالی"
 
 msgid "1. ArvanCloud API Authentication"
-msgstr "۱. احراز هویت وب‌سرویس ابر آروان"
+msgstr "۱. احراز هویت API ابر آروان"
 
 msgid "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
-msgstr "کلید API کاربر ماشینی (Machine User) حساب آروان خود را وارد نمایید. تمامی منابع کاربران بر روی این حساب ایجاد خواهند شد."
+msgstr "کلید API کاربر ماشینی ابر آروان خود را وارد نمایید. کلیه سفارشات مشتریان بر روی این حساب مادر ایجاد می‌شوند."
 
 msgid "ArvanCloud API Key"
-msgstr "کلید وب‌سرویس (API Key)"
+msgstr "کلید ارتباطی API ابر آروان"
 
 msgid "Test Connection"
-msgstr "تست برقراری ارتباط"
+msgstr "تست اتصال به API"
 
 msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
-msgstr "کلید دسترسی را از پنل کاربری ابر آروان > پروفایل کاربری > کلیدهای API دریافت کنید."
+msgstr "کلید API را از پنل کاربری ابر آروان > پروفایل > کلیدهای API / کاربران ماشینی دریافت نمایید."
 
 msgid "Sandbox / Demo Mode"
-msgstr "حالت سندباکس و دمو"
-
-msgid "Enable Sandbox / Mock Fallback Mode"
-msgstr "فعال‌سازی حالت شبیه‌ساز (Sandbox / Mock)"
+msgstr "حالت آزمایشی (Sandbox / Demo)"
 
 msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
-msgstr "در صورت فعال بودن، امکان تست سریع، تحویل آزمایشی و شارژ دمو بدون اتصال به زیرساخت واقعی ابر آروان فراهم می‌شود."
+msgstr "در صورت فعال‌سازی، امکان تست آنی و شبیه‌سازی ساخت سرورها بدون اتصال به حساب تجاری آروان فراهم می‌شود."
 
 msgid "2. Dynamic Pricing & Reseller Markup Engine"
-msgstr "۲. موتور قیمت‌گذاری پویا و حاشیه سود نمایندگی"
+msgstr "۲. موتور قیمت‌گذاری پویا و تعیین حاشیه سود"
 
 msgid "Configure profit margins automatically calculated on top of wholesale ArvanCloud infrastructure rates."
-msgstr "تنظیم درصد سود و مبلغ ثابت اضافه شده به تعرفه‌های پایه زیرساخت ابر آروان."
+msgstr "تنظیم درصد و مبالغ سودی که به صورت خودکار به تعرفه‌های پایه ابر آروان اضافه می‌شود."
 
 msgid "Markup Percentage (%)"
-msgstr "درصد افزایش قیمت (Markup %)"
+msgstr "درصد سود نمایندگی (%)"
 
 msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
-msgstr "برای مثال: ۲۰٪ سود قیمت پایه ۴۵۰ تومان را به ۵۴۰ تومان در ساعت تبدیل می‌کند."
+msgstr "برای مثال: سود ۲۰٪ هزینه عمده‌فروشی ۴۵۰ تومان را به ۵۴۰ تومان/ساعت تبدیل می‌کند."
 
 msgid "Fixed Margin Addition (Toman)"
-msgstr "مبلغ سود ثابت افزوده (تومان)"
+msgstr "مبلغ ثابت افزوده (تومان)"
 
 msgid "Optional fixed addition added after percentage markup calculation."
-msgstr "مبلغ ثابت اختیاری که پس از محاسبه درصد سود به قیمت اضافه می‌شود."
+msgstr "مبلغ ثابتی که پس از اعمال درصد سود به قیمت ساعتی اضافه می‌گردد."
 
 msgid "Store Currency"
-msgstr "واحد پول فروشگاه"
-
-msgid "Toman (IRT)"
-msgstr "تومان (IRT)"
-
-msgid "Rial (IRR)"
-msgstr "ریال (IRR)"
-
-msgid "US Dollar (USD)"
-msgstr "دلار آمریکا (USD)"
+msgstr "واحد پولی سامانه"
 
 msgid "Default Datacenter Region"
-msgstr "منطقه پیش‌فرض دیتاسنتر"
+msgstr "دیتاسنتر پیش‌فرض"
 
 msgid "3. Storefront White-Label Branding"
-msgstr "۳. برندینگ اختصاصی و نام تجاری"
+msgstr "۳. برندسازی و مشخصات پشتیبانی"
 
 msgid "Customization parameters injected into the standalone virtual canvas header and footer."
-msgstr "اطلاعات برندینگ اختصاصی نمایش داده شده در سربرگ و پاورقی پورتال ابری."
+msgstr "اطلاعاتی که در هدر، فوتر و بخش‌های اختصاصی فروشگاه سرور ابری نمایش داده می‌شوند."
 
 msgid "Reseller Brand / Store Name"
-msgstr "نام تجاری / فروشگاه ابری"
+msgstr "نام برند / عنوان فروشگاه"
 
 msgid "Support Contact Email"
-msgstr "ایمیل پشتیبانی فنی"
+msgstr "ایمیل پشتیبانی مشتریان"
 
 msgid "Support Phone Number"
 msgstr "شماره تماس پشتیبانی"
 
+msgid "Virtual Storefront Quick Links (Theme Isolated)"
+msgstr "دسترسی سریع به صفحات فروشگاه ابری (ایزوله از پوسته)"
+
 msgid "Save All Reseller Settings"
 msgstr "ذخیره کلیه تنظیمات نمایندگی"
 
-msgid "Virtual Storefront Quick Links (Theme Isolated)"
-msgstr "لینک‌های سریع پورتال ابری (مستقل از قالب)"
-
-msgid "Access standalone storefront and customer portal pages:"
-msgstr "دسترسی سریع به صفحات مستقل فروشگاه و پنل کاربری ابری:"
-
 msgid "All Provisioned Cloud Resources"
-msgstr "کلیه منابع ابری ایجاد شده"
+msgstr "کلیه منابع ابری ایجاد شده مشتریان"
 
 msgid "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
-msgstr "نظارت کامل و مدیریت چرخه حیات کلیه ماشین‌های مجازی، دامنه‌ها و باکت‌های مشتریان."
+msgstr "نظارت جامع، پایش مصرف و اعمال کنترل‌های اضطراری بر سرورها، دامنه‌ها و باکت‌های مشتریان."
 
 msgid "Run Metering Cycle Now"
-msgstr "اجرای آنی چرخه کسر موجودی (Metering)"
+msgstr "اجرای فوری چرخه محاسبه مصرف (Metering)"
 
 msgid "Total Cloud Instances"
 msgstr "کل ماشین‌های مجازی"
 
 msgid "Active / Running"
-msgstr "فعال و در حال کار"
+msgstr "سرورهای فعال در حال اجرا"
 
 msgid "Suspended (0 Balance)"
-msgstr "معلق (موجودی صفر)"
+msgstr "سرورهای معلق (موجودی صفر)"
 
 msgid "Monthly Run Rate (MRR)"
-msgstr "درآمد مستمر ماهانه (MRR)"
+msgstr "درآمد ناخالص ماهانه تخمینی (MRR)"
+
+msgid "No resources deployed yet."
+msgstr "هنوز هیچ منبع ابری ایجاد نشده است."
 
 msgid "Customer"
 msgstr "مشتری"
@@ -821,13 +539,13 @@ msgid "Service"
 msgstr "نوع سرویس"
 
 msgid "Arvan UUID / Identifier"
-msgstr "شناسه / UUID آروان"
+msgstr "شناسه اختصاصی آروان"
 
-msgid "Last Metered"
-msgstr "آخرین زمان محاسبه"
+msgid "Hourly Rate"
+msgstr "تعرفه ساعتی"
 
 msgid "Emergency Actions"
-msgstr "عملیات اضطراری"
+msgstr "کنترل‌های اضطراری"
 
 msgid "Power Off"
 msgstr "خاموش کردن"
@@ -835,26 +553,29 @@ msgstr "خاموش کردن"
 msgid "Purge"
 msgstr "حذف کامل"
 
-msgid "No resources deployed yet."
-msgstr "هنوز هیچ منبع ابری ایجاد نشده است."
+msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
+msgstr "آیا از حذف دائمی این منبع از زیرساخت ابر آروان اطمینان دارید؟"
 
 msgid "Customer Wallets & Ledger Audit"
-msgstr "حسابرسی کیف‌پول‌ها و دفترکل مشتریان"
+msgstr "دفترکل و حسابرسی کیف پول مشتریان"
 
 msgid "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
-msgstr "نظارت لحظه‌ای بر تراکنش‌های اتمیک، موجودی کاربران و ابزار تغییر دستی شارژ کیف پول."
+msgstr "نظارت اتمیک بر موجودی‌ها، تراکنش‌ها و ابزار دستی افزایش/کاهش موجودی کاربران."
 
 msgid "Total Active Wallets"
-msgstr "تعداد کل کیف‌پول‌ها"
+msgstr "تعداد کیف پول‌های فعال"
 
 msgid "Total Outstanding Credit"
-msgstr "کل مانده بستانکاری مشتریان"
+msgstr "مجموع بستانکاری مشتریان"
 
 msgid "Cumulative Deposits"
-msgstr "مجموع مبالغ واریز شده"
+msgstr "مجموع کل واریزی‌ها"
 
 msgid "Total Metered Burn"
-msgstr "مجموع کسر شده از مصرف"
+msgstr "مجموع مصرف ساعتی محاسبه‌شده"
+
+msgid "No customer wallets initialized yet."
+msgstr "هنوز کیف پولی ثبت نشده است."
 
 msgid "Wallet ID"
 msgstr "شناسه کیف پول"
@@ -863,104 +584,113 @@ msgid "Customer Name"
 msgstr "نام کاربر"
 
 msgid "Email"
-msgstr "ایمیل"
-
-msgid "Available Balance"
-msgstr "موجودی قابل استفاده"
+msgstr "پست الکترونیک"
 
 msgid "Hourly Burn Rate"
-msgstr "نرخ مصرف در ساعت"
+msgstr "نرخ مصرف ساعتی"
 
 msgid "Created At"
 msgstr "تاریخ ایجاد"
 
 msgid "Ledger Actions"
-msgstr "عملیات دفترکل"
+msgstr "عملیات مالی"
 
 msgid "Adjust Balance"
 msgstr "تغییر موجودی"
 
-msgid "No customer wallets initialized yet."
-msgstr "هنوز هیچ کیف پولی راه‌اندازی نشده است."
-
 msgid "Manual Ledger Adjustment"
-msgstr "تغییر دستی موجودی کاربر"
+msgstr "تعدیل دستی موجودی کیف پول"
 
 msgid "Adjustment Type:"
-msgstr "نوع عملیات:"
+msgstr "نوع عملیات مالی:"
 
 msgid "Credit (+ Deposit Funds)"
-msgstr "بستانکار (+ افزایش شارژ کاربر)"
+msgstr "بستانکار (+ افزایش موجودی)"
 
 msgid "Debit (- Deduct Funds)"
-msgstr "بدهکار (- کسر شارژ کاربر)"
+msgstr "بدهکار (- کسر از موجودی)"
 
 msgid "Amount (Toman):"
-msgstr "مبلغ (تومان):"
+msgstr "مبلغ تعدیل (تومان):"
 
 msgid "Reason / Audit Note:"
-msgstr "دلیل تغییر / یادداشت حسابداری:"
+msgstr "دلیل / یادداشت حسابرسی:"
 
 msgid "Apply Adjustment"
-msgstr "اعمال تغییر موجودی"
+msgstr "ثبت تراکنش در دفترکل"
 
-msgid "Testing connection to ArvanCloud API..."
-msgstr "در حال تست اتصال به وب‌سرویس ابر آروان..."
+msgid "Cancel"
+msgstr "انصراف"
 
-msgid "Customer wallet balance updated successfully."
-msgstr "موجودی کیف پول مشتری با موفقیت به‌روزرسانی شد."
+msgid "All Cloud Datacenter Regions Operational (99.99% SLA)"
+msgstr "تمامی دیتاسنترها و مناطق ابری فعال هستند (SLA ۹۹.۹۹٪)"
+
+msgid "Powered by ArvanCloud Infrastructure Reseller Engine"
+msgstr "طراحی‌شده با موتور نمایندگی زیرساخت ابری ابر آروان"
+
+msgid "Enterprise Multi-Tenant Infrastructure Management & Monetization"
+msgstr "مدیریت زیرساخت چندمستأجری و کسب درآمد نمایندگی ابری"
+
+msgid "connectedSuccessfully"
+msgstr "اتصال به زیرساخت ابر آروان با موفقیت برقرار شد."
+
+msgid "connectionFailed"
+msgstr "برقراری ارتباط با زیرساخت ابر آروان ناموفق بود."
+
+msgid "activeMockFallback"
+msgstr "فعال (شبیه‌ساز آزمایشی)"
+
+msgid "liveInfrastructureOnly"
+msgstr "فقط زیرساخت تجاری لایو"
+
+msgid "searchResourcesPlaceholder"
+msgstr "جستجو بر اساس نام مشتری، نام سرور یا شناسه آروان..."
+
+msgid "searchWalletsPlaceholder"
+msgstr "جستجو بر اساس نام، ایمیل یا شناسه مشتری..."
+
+msgid "adjustBalanceDesc"
+msgstr "تعدیل دستی بستانکاری یا بدهکاری کاربر. رکورد تغییرات به صورت تغییرناپذیر در دفترکل ثبت می‌شود."
+
+msgid "adjustReasonPlaceholder"
+msgstr "مثال: شارژ اهدایی پشتیبانی / اصلاح دستی"
+
+msgid "manualAdjustmentDefaultReason"
+msgstr "تعدیل دستی توسط مدیر سامانه"
+
+msgid "all"
+msgstr "همه"
+
+msgid "active"
+msgstr "فعال"
+
+msgid "serverConfiguratorLink"
+msgstr "🚀 سفارش سرور ابری"
+
+msgid "customerDashboardLink"
+msgstr "📊 داشبورد مشتری"
+
+msgid "cdnManagerLink"
+msgstr "🌐 مدیریت CDN و DNS"
+
+msgid "s3StorageLink"
+msgstr "📦 ذخیره‌سازی S3"
 
 msgid "Action completed successfully."
 msgstr "عملیات با موفقیت انجام شد."
 
 msgid "Manual metering cycle completed."
-msgstr "چرخه محاسبه مصرف و کسر موجودی به پایان رسید."
-
-msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
-msgstr "آیا از حذف دائم و قطعی این منبع از ابر آروان اطمینان دارید؟"
-
-msgid "Permission denied."
-msgstr "خطای عدم دسترسی کافی."
-
-msgid "Invalid user ID or amount."
-msgstr "شناسه کاربر یا مبلغ نامعتبر است."
-
-msgid "Balance adjusted successfully."
-msgstr "موجودی کاربر با موفقیت تغییر یافت."
-
-msgid "Resource not found."
-msgstr "منبع مورد نظر یافت نشد."
-
-msgid "Instance powered off by administrator."
-msgstr "سرور توسط مدیر سیستم خاموش گردید."
+msgstr "چرخه محاسبه مصرف ساعتی با موفقیت انجام شد."
 
 msgid "Instance purged by administrator."
-msgstr "سرور توسط مدیر سیستم برای همیشه حذف شد."
+msgstr "سرور توسط مدیر سامانه به طور کامل حذف شد."
 
-msgid "Unknown admin action."
-msgstr "عملیات نامعتبر است."
+msgid "Instance powered off by administrator."
+msgstr "سرور توسط مدیر سامانه خاموش شد."
 
-msgid "Connected successfully to ArvanCloud infrastructure."
-msgstr "اتصال به زیرساخت ابر آروان با موفقیت برقرار شد."
+msgid "Balance adjusted successfully."
+msgstr "موجودی کیف پول با موفقیت تغییر یافت."
 
-msgid "Network error while testing connection."
-msgstr "خطای شبکه هنگام تست اتصال."
-
-msgid "Network error."
-msgstr "خطای شبکه."
-
-msgid "Applying..."
-msgstr "در حال اعمال..."
-
-msgid "Running Metering..."
-msgstr "در حال محاسبه و کسر موجودی..."
-
-msgid "Adjust Wallet Balance: "
-msgstr "تغییر موجودی کاربر: "
-
-msgid "Loading ArvanCloud Services Canvas..."
-msgstr "در حال بارگذاری سامانه خدمات ابری آروان..."
-
-msgid "Loading ArvanCloud Management Portal..."
-msgstr "در حال بارگذاری پرتال مدیریت نمایندگی ابر آروان..."
+msgid "Failed to deploy server."
+msgstr "خطا در ساخت سرور ابری."
 

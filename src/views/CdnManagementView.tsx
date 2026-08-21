@@ -144,7 +144,7 @@ export const CdnManagementView: React.FC<CdnManagementViewProps> = ({
                   <div>
                     <h4 className="text-lg font-extrabold text-slate-900">{dom.domain}</h4>
                     <div className="flex items-center gap-2 mt-0.5">
-                      <Badge variant="success">Active on 40+ Global PoPs</Badge>
+                      <Badge variant="success">{t('activePops')}</Badge>
                       <Badge variant="default" className="gap-1">
                         <Lock className="h-3 w-3" />
                         <span>{t('sslActive')}</span>
@@ -196,14 +196,14 @@ export const CdnManagementView: React.FC<CdnManagementViewProps> = ({
             <DialogHeader>
               <DialogTitle>{t('dnsRecords')}: {selectedDomain.domain}</DialogTitle>
               <DialogDescription>
-                Add and manage DNS zone records with instant Anycast propagation.
+                {t('dnsDialogDesc')}
               </DialogDescription>
             </DialogHeader>
 
             {/* Add Record Form */}
             <form onSubmit={handleAddRecord} className="grid grid-cols-1 sm:grid-cols-4 gap-2 pt-2 border-b border-slate-100 pb-4">
               <Input
-                placeholder="Name (@ or sub)"
+                placeholder={t('dnsRecordNamePlaceholder')}
                 value={newRecName}
                 onChange={(e) => setNewRecName(e.target.value)}
               />
@@ -218,13 +218,13 @@ export const CdnManagementView: React.FC<CdnManagementViewProps> = ({
                 <option value="TXT">TXT</option>
               </select>
               <Input
-                placeholder="Target / IP"
+                placeholder={t('dnsRecordTargetPlaceholder')}
                 value={newRecValue}
                 onChange={(e) => setNewRecValue(e.target.value)}
               />
               <Button type="submit" size="sm" className="gap-1">
                 <Plus className="h-4 w-4" />
-                <span>Add</span>
+                <span>{t('addRecord')}</span>
               </Button>
             </form>
 
@@ -246,7 +246,7 @@ export const CdnManagementView: React.FC<CdnManagementViewProps> = ({
                   <div className="flex items-center gap-2">
                     {rec.cloud_proxied && (
                       <Badge variant="default" className="text-[10px]">
-                        Proxied
+                        {t('proxied')}
                       </Badge>
                     )}
                     <button
@@ -262,7 +262,7 @@ export const CdnManagementView: React.FC<CdnManagementViewProps> = ({
 
             <DialogFooter>
               <Button variant="ghost" onClick={() => setSelectedDomain(null)}>
-                Close
+                {t('close')}
               </Button>
             </DialogFooter>
           </DialogContent>

@@ -260,7 +260,7 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                       <div className="grid grid-cols-3 gap-2 border-t border-slate-100 pt-3 text-center">
                         <div className="rounded-xl bg-slate-50 p-2">
                           <span className="text-[10px] text-slate-500 block mb-0.5">{t('vcpu')}</span>
-                          <span className="text-xs font-extrabold text-slate-800">{vcpus} Core</span>
+                          <span className="text-xs font-extrabold text-slate-800">{vcpus} {t('cores')}</span>
                         </div>
                         <div className="rounded-xl bg-slate-50 p-2">
                           <span className="text-[10px] text-slate-500 block mb-0.5">{t('ram')}</span>
@@ -310,10 +310,10 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
               />
 
               <div className="flex justify-between text-[11px] font-mono text-slate-400">
-                <span>Base: {baseDisk} GB</span>
+                <span>{t('baseDiskLabel')} {baseDisk} GB</span>
                 <span>100 GB</span>
                 <span>250 GB</span>
-                <span>Max: 500 GB</span>
+                <span>{t('maxDiskLabel')} 500 GB</span>
               </div>
             </CardContent>
           </Card>
@@ -539,7 +539,7 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                 {isDeploying ? (
                   <>
                     <Sparkles className="h-4 w-4 animate-spin" />
-                    <span>Provisioning Instance...</span>
+                    <span>{t('provisioningInstance')}</span>
                   </>
                 ) : hasSufficientBalance ? (
                   <>
@@ -554,7 +554,7 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
               </Button>
 
               <p className="text-center text-[11px] text-slate-400">
-                ⚡ Provisioned in &lt; 45 seconds on ArvanCloud Core Infrastructure.
+                {t('provisionTimeNote')}
               </p>
             </CardContent>
           </Card>
