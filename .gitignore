@@ -23,7 +23,8 @@ Thumbs.db
 # Temporary & Cache files
 .cache/
 node_modules/
-vendor/
+# Build outputs
 /dist/
+public/dist/
 
 
