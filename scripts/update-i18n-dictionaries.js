@@ -57,7 +57,7 @@ const ALL_TRANSLATIONS = {
 
   // Brand & Platform Names
   arvanCloud: {
-    fa: 'ابر آروان',
+    fa: 'آروان کلاد',
     en: 'ArvanCloud',
     ar: 'آروان كلاود',
     tr: 'ArvanCloud',
@@ -65,7 +65,7 @@ const ALL_TRANSLATIONS = {
     ru: 'ArvanCloud',
   },
   'ArvanCloud': {
-    fa: 'ابر آروان',
+    fa: 'آروان کلاد',
     en: 'ArvanCloud',
     ar: 'آروان كلاود',
     tr: 'ArvanCloud',
