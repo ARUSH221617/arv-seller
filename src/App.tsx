@@ -76,7 +76,6 @@ export const App: React.FC = () => {
         activeTab={activeTab}
         onSelectTab={handleSelectTab}
         language={language}
-        onSelectLanguage={setLanguage}
         balance={balance}
         currency={currency}
         isLogged={isLogged}
