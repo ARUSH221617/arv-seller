@@ -173,18 +173,6 @@ assert_test( isset( $p_reb['success'] ) && $p_reb['success'] === true, "reboot_s
 $p_del = $client->delete_server( 'srv-123' );
 assert_test( isset( $p_del['success'] ) && $p_del['success'] === true, "delete_server() succeeds" );
 
-$cdn = $client->create_cdn_domain( 'mycompany.ir' );
-assert_test( is_array( $cdn ) && ! empty( $cdn['data']['ns_keys'] ), "create_cdn_domain() returns assigned Anycast nameservers" );
-
-$dns = $client->get_cdn_dns_records( 'mycompany.ir' );
-assert_test( is_array( $dns ) && ! empty( $dns['data'] ), "get_cdn_dns_records() returns DNS zone records" );
-
-$bucket = $client->create_storage_bucket( 'assets-storage' );
-assert_test( is_array( $bucket ) && ! empty( $bucket['data']['name'] ), "create_storage_bucket() returns bucket confirmation" );
-
-$s3keys = $client->create_storage_user_keys( 'Test Key' );
-assert_test( is_array( $s3keys ) && ! empty( $s3keys['data']['access_key'] ) && ! empty( $s3keys['data']['secret_key'] ), "create_storage_user_keys() returns S3 Access Key & Secret" );
-
 echo "\n=========================================================\n";
 echo "SUMMARY: {$passed} Passed, {$failed} Failed\n";
 echo "=========================================================\n";

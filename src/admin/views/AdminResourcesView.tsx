@@ -67,7 +67,7 @@ export const AdminResourcesView: React.FC<AdminResourcesViewProps> = ({
         <div>
           <h2 className="text-2xl font-extrabold text-slate-900">{t('All Provisioned Cloud Resources')}</h2>
           <p className="text-xs text-slate-500 mt-1">
-            {t('Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets.')}
+            {t('Master oversight and lifecycle controls across all customer cloud server instances.')}
           </p>
         </div>
         <Button

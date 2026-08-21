@@ -8,11 +8,9 @@ An independent, white-label WordPress plugin that allows website owners to resel
 
 ## Core Target Services
 
-The plugin auto-generates dedicated storefront, configuration, and provisioning interfaces for three primary ArvanCloud offerings:
+The plugin auto-generates dedicated storefront, configuration, and provisioning interfaces for the primary ArvanCloud compute offering:
 
-* **Cloud Server (سرور ابری):** Virtual instance sizing, OS image selection, SSH key management, and real-time lifecycle controls (start, stop, reboot).
-* **CDN (شبکه توزیع محتوا):** Domain registration, DNS record management, custom caching rules, and SSL certificate provisioning.
-* **Object Storage (فضای ابری):** S3-compatible bucket creation, storage quota allocation, and access/secret key management.
+* **Cloud Server (سرور ابری — ECC / IaaS):** Virtual instance sizing, multi-tier hardware flavor selection (General, Compute, Memory), OS image template selection (Ubuntu, Debian, AlmaLinux, Windows Server), dynamic NVMe storage expansion slider, SSH key/password management, and real-time lifecycle controls (start, stop, reboot, delete).
 
 ---
 
@@ -20,20 +18,20 @@ The plugin auto-generates dedicated storefront, configuration, and provisioning 
 
 ```
 [ End Customer ]
-       │  (1) Registers, Tops Up Wallet, Places Order with Reseller Markup
+       │  (1) Registers, Tops Up Wallet, Places Cloud Server Order with Reseller Markup
        ▼
 [ WordPress Reseller Portal ]
        │  (2) Deducts Balance & Dispatches Authenticated REST Request
        ▼
-[ ArvanCloud Infrastructure APIs ]
-       │  (3) Provisions Resource in Reseller Account & Returns Metadata
+[ ArvanCloud Infrastructure APIs (/ecc/v1) ]
+       │  (3) Provisions Instance in Reseller Account & Returns IP / UUID
        ▼
-[ End Customer Dashboard ] (Receives Instance IP, Bucket Keys, or CDN Nameservers)
+[ End Customer Dashboard ] (Receives Instance IP, Specs, and Real-Time Power Controls)
 
 ```
 
 * **Zero External Dependencies:** Built completely standalone—no dependencies on WooCommerce, third-party frameworks, or specific active themes.
-* **Direct REST Integration:** All background provisioning, monitoring, and deprovisioning operations execute via ArvanCloud's official REST API endpoints.
+* **Direct REST Integration:** All background provisioning, monitoring, and deprovisioning operations execute via ArvanCloud's official REST API endpoints (`/ecc/v1`).
 
 ---
 
@@ -41,33 +39,33 @@ The plugin auto-generates dedicated storefront, configuration, and provisioning 
 
 ### 1. Reseller Onboarding & Settings
 
-* **API Key & Access Token Validation:** Input panel for ArvanCloud API key(s) with token hash verification.
-* **Multi-Cluster Key Management:** Support for managing distinct API keys across different regional or service clusters.
-* **Storefront Branding:** White-label customization options for company name, logo, "About Us", and contact metadata.
+* **API Key & Access Token Validation:** Input panel for ArvanCloud API key(s) with live connection test to `/ecc/v1/regions`.
+* **Multi-Region Cluster Setup:** Support for configuring default datacenter regions (Tehran Forough, Shahryar, Tabriz).
+* **Storefront Branding:** White-label customization options for company name, logo, support contact, and branding primary color.
 
 ### 2. Service Catalog & Dynamic Pricing Engine
 
-* **Standalone Page Generator:** Automated creation of 3 responsive landing and ordering pages (CDN, Storage, Server).
-* **Markup Management:** Flexible profit margin settings (percentage or fixed addition on top of base ArvanCloud pricing).
-* **Dynamic Spec Calculators:** Real-time pricing calculations based on user-selected CPU, RAM, disk, traffic, and storage parameters.
+* **Standalone Page Generator:** Automated creation of responsive virtual storefront (`/cloud-services/server/`) and customer portal (`/cloud-services/dashboard/`).
+* **Markup Management:** Flexible profit margin settings (percentage or fixed addition on top of base ArvanCloud wholesale pricing).
+* **Dynamic Spec Calculators:** Real-time pricing calculations based on user-selected CPU, RAM, NVMe disk, and datacenter region.
 
 ### 3. Customer Wallet & Metered Billing
 
 * **Internal User Balance:** Dedicated ledger tracking customer deposits, credits, and historical billing transactions.
 * **Pay-As-You-Go & Hourly Metering:** Internal cron-driven balance deduction engine aligned with active resource consumption rates.
-* **Customer Resource Dashboard:** Single-pane view for customers to view active services, connection endpoints, credentials, and live resource status.
+* **Customer Resource Dashboard:** Single-pane view for customers to view active virtual machines, assigned dedicated IPs, credentials, and live resource status.
 
 ### 4. Lifecycle & Service Termination Engine
 
 Implements strict compliance with ArvanCloud's service termination policies based on customer wallet balance:
 
-* **Threshold Alerts:** Automated notification when balance drops below critical levels.
-* **Read-Only / Lock Mode:** Suspends modification rights and downgrades services when credits reach zero.
-* **Deactivation & Purge:** Automated API calls to stop virtual instances, detach DNS routing, or lock storage buckets once grace periods expire.
+* **Threshold Alerts:** Automated warning when wallet balance drops below 12 hours of total run cost.
+* **Read-Only / Lock Mode:** Suspends modification rights and powers off virtual instances when credits reach zero.
+* **Deactivation & Purge:** Automated API calls to power off virtual instances and flag overdue unpaid resources for permanent deletion.
 
 ### 5. UI/UX & Sorkhab Design Compliance
 
-* **Design System Integration:** Component design aligned with the **Sorkhab UI** (`sorkhab.arvancloud.ir`) style guidelines.
+* **Design System Integration:** Component design aligned with the **Sorkhab UI** (`sorkhab.arvancloud.ir`) style guidelines and Google Material Design 3 (M3 Light Mode).
 * **Full Viewport Responsiveness:** Optimized interfaces tailored for mobile, tablet, and desktop viewports.
 
 ---
@@ -84,10 +82,10 @@ Implements strict compliance with ArvanCloud's service termination policies base
 
 ## Reference Documentation
 
-* **Technical API Docs:** `[https://www.arvancloud.ir/fa/dev/api](https://www.arvancloud.ir/fa/dev/api)`
-* **Official Pricing Tables:** `[https://www.arvancloud.ir/fa/pricing/all](https://www.arvancloud.ir/fa/pricing/all)`
-* **Service Termination Policies:** `[https://www.arvancloud.ir/fa/legal/service-termination](https://www.arvancloud.ir/fa/legal/service-termination)`
-* **Sorkhab Design System:** `[https://sorkhab.arvancloud.ir](https://sorkhab.arvancloud.ir)`
+* **Technical API Docs:** `https://www.arvancloud.ir/fa/dev/api`
+* **Official Pricing Tables:** `https://www.arvancloud.ir/fa/pricing/all`
+* **Service Termination Policies:** `https://www.arvancloud.ir/fa/legal/service-termination`
+* **Sorkhab Design System:** `https://sorkhab.arvancloud.ir`
 
 ---
 
@@ -95,11 +93,11 @@ Implements strict compliance with ArvanCloud's service termination policies base
 
 | Criteria | Points | Focus |
 | --- | --- | --- |
-| **Feature Completeness** | **120** | Full REST API coverage, sales pipeline, instant resource provisioning, and lifecycle enforcement. |
-| **UI/UX & Responsiveness** | **70** | Sorkhab UI fidelity, onboarding smoothness, and dual-device (desktop/mobile) responsiveness. |
+| **Feature Completeness** | **120** | Full Cloud Server (ECC) REST API coverage, sales pipeline, instant resource provisioning, and lifecycle enforcement. |
+| **UI/UX & Responsiveness** | **70** | Sorkhab UI / M3 Light fidelity, onboarding smoothness, and dual-device (desktop/mobile) responsiveness. |
 | **Security & Hardening** | **70** | Nonce verification, strict capability checks, input/output sanitization, and credential security. |
 | **Presentation & Demo** | **40** | Coherent walkthrough, clear technical explanation, and smooth execution across devices. |
-| **Total** | **300** |  |
+| **Total** | **300** | |
 
 ---
 
@@ -107,13 +105,11 @@ Implements strict compliance with ArvanCloud's service termination policies base
 
 * [ ] **GitHub Repository:** Clean code structure, zero external plugin dependencies, and detailed setup guide in `README.md`.
 * [ ] **Demo Video Requirements ($\ge$ 5 Minutes):**
-* Presenter voiceover clearly explaining the technical architecture and user experience.
-* Complete end-to-end user scenario:
-1. Plugin installation & API key configuration.
-2. Pricing markup setup.
-3. Customer registration & wallet balance top-up.
-4. Service selection, customization, and instant provisioning.
-5. Balance depletion and termination/lockout enforcement test.
-
-
-* Side-by-side or sequential demonstration on **Desktop** and **Mobile** viewports.
+  * Presenter voiceover clearly explaining the technical architecture and user experience.
+  * Complete end-to-end user scenario:
+    1. Plugin installation & API key configuration.
+    2. Pricing markup setup.
+    3. Customer registration & wallet balance top-up.
+    4. Cloud server selection, customization, and instant provisioning.
+    5. Balance depletion and termination/lockout enforcement test.
+  * Side-by-side or sequential demonstration on **Desktop** and **Mobile** viewports.

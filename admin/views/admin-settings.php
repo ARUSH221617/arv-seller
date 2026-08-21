@@ -164,14 +164,6 @@ $sandbox_mode  = get_option( 'arvan_sandbox_mode', 1 );
 				<strong><span class="dashicons dashicons-dashboard" style="color: #008b8b; vertical-align: text-bottom; margin-right: 6px;"></span><?php esc_html_e( 'Customer Portal & Dashboard', 'arv-seller' ); ?></strong>
 				<code><a href="<?php echo esc_url( home_url( '/cloud-services/dashboard/' ) ); ?>" target="_blank"><?php echo esc_url( home_url( '/cloud-services/dashboard/' ) ); ?></a></code>
 			</div>
-			<div class="arvan-link-box">
-				<strong><span class="dashicons dashicons-networking" style="color: #008b8b; vertical-align: text-bottom; margin-right: 6px;"></span><?php esc_html_e( 'CDN & Edge DNS Manager', 'arv-seller' ); ?></strong>
-				<code><a href="<?php echo esc_url( home_url( '/cloud-services/cdn/' ) ); ?>" target="_blank"><?php echo esc_url( home_url( '/cloud-services/cdn/' ) ); ?></a></code>
-			</div>
-			<div class="arvan-link-box">
-				<strong><span class="dashicons dashicons-database" style="color: #008b8b; vertical-align: text-bottom; margin-right: 6px;"></span><?php esc_html_e( 'S3 Object Storage', 'arv-seller' ); ?></strong>
-				<code><a href="<?php echo esc_url( home_url( '/cloud-services/storage/' ) ); ?>" target="_blank"><?php echo esc_url( home_url( '/cloud-services/storage/' ) ); ?></a></code>
-			</div>
 		</div>
 	</div>
 </div>

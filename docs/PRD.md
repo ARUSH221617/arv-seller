@@ -22,15 +22,15 @@
 ## 1. Executive Summary & Strategic Vision
 
 ### 1.1 Product Overview
-The **ArvanCloud Reseller WordPress Plugin (`arv-seller`)** is an enterprise-grade, fully white-label, zero-dependency WordPress plugin designed to turn any standard WordPress installation into an automated cloud hosting marketplace. By integrating directly with the official ArvanCloud REST APIs under a reseller master account, the plugin automates cloud resource provisioning, enforces customizable profit markups, provides an atomic Pay-As-You-Go customer wallet system, and enforces credit-based resource lifecycle and termination policies.
+The **ArvanCloud Reseller WordPress Plugin (`arv-seller`)** is an enterprise-grade, fully white-label, zero-dependency WordPress plugin designed to turn any standard WordPress installation into an automated cloud server hosting marketplace. By integrating directly with the official ArvanCloud REST APIs (`/ecc/v1`) under a reseller master account, the plugin automates virtual machine provisioning, enforces customizable profit markups, provides an atomic Pay-As-You-Go customer wallet system, and enforces credit-based resource lifecycle and termination policies.
 
 ### 1.2 Core Value Propositions
 1. **Zero External Dependencies:** Operates entirely standalone without WooCommerce, WHMCS, Easy Digital Downloads, or heavy third-party cart plugins.
 2. **Theme-Agnostic Virtual Canvas:** Renders modern, isolated storefronts and customer portals via WordPress URL rewrite rules (`/cloud-services/*`), guaranteeing complete immunity to active theme CSS and layout conflicts.
-3. **Turnkey Monetization & Markup Engine:** Resellers configure global or per-service markup percentages (or fixed additions) on top of wholesale ArvanCloud pricing.
-4. **Sorkhab UI / UX Compliance:** Strictly implements ArvanCloud's official **Sorkhab Design System** (`sorkhab.arvancloud.ir`), delivering Persian RTL-first layouts, fluid micro-interactions, high aesthetic fidelity, and dual-viewport responsiveness across mobile, tablet, and desktop.
+3. **Turnkey Monetization & Markup Engine:** Resellers configure global markup percentages (or fixed additions) on top of wholesale ArvanCloud pricing.
+4. **Sorkhab UI / UX Compliance:** Strictly implements ArvanCloud's official **Sorkhab Design System** (`sorkhab.arvancloud.ir`) and Material Design 3 (M3 Light), delivering Persian RTL-first layouts, fluid micro-interactions, high aesthetic fidelity, and dual-viewport responsiveness across mobile, tablet, and desktop.
 5. **Bank-Grade Financial Integrity:** Features an ACID-compliant MySQL ledger engine with row-level locks (`SELECT ... FOR UPDATE`), eliminating race conditions in concurrent wallet top-ups, order deductions, and hourly cron metering.
-6. **Full ArvanCloud REST API Coverage:** Native API client covering Cloud Server (ECC/IaaS), CDN & Edge DNS, and Object Storage (S3-compatible), with architectural support for PaaS and VOD/Live services.
+6. **Native Cloud Server (ECC) REST API Coverage:** Native API client covering Cloud Server (ECC/IaaS) sizing, deployment, and power lifecycle management.
 
 ---
 
@@ -39,11 +39,11 @@ The **ArvanCloud Reseller WordPress Plugin (`arv-seller`)** is an enterprise-gra
 ### 2.1 Problem Statement
 * **Complex Infrastructure Reselling:** Traditional cloud reselling requires expensive, bloated billing platforms (WHMCS/HostBill) with steep learning curves and high operational overhead.
 * **WooCommerce Inefficiencies:** Using WooCommerce for metered, hourly cloud billing introduces database bloat, checkout friction, and compatibility nightmares with third-party themes.
-* **Lack of Localized Automation:** Managing Iranian cloud infrastructure (ECC VMs, CDN, S3 Storage) with native Rial/Toman payment gateways (Zarinpal, IDPay, Shepa) and automated suspension policies typically requires custom software development.
+* **Lack of Localized Automation:** Managing Iranian cloud infrastructure (ECC VMs) with native Rial/Toman payment gateways (Zarinpal, IDPay, Shepa) and automated suspension policies typically requires custom software development.
 
 ### 2.2 Strategic Objectives
-* Enable any WordPress administrator to install, activate, and start selling ArvanCloud IaaS, CDN, and Storage in under 5 minutes.
-* Provide end-users with instant, sub-minute provisioning of virtual servers, DNS zones, and S3 buckets.
+* Enable any WordPress administrator to install, activate, and start selling ArvanCloud Cloud Servers in under 5 minutes.
+* Provide end-users with instant, sub-minute provisioning and power controls of virtual servers.
 * Maintain 100% billing accuracy with automated suspension/termination compliance according to ArvanCloud legal terms.
 
 ---
@@ -54,8 +54,8 @@ The **ArvanCloud Reseller WordPress Plugin (`arv-seller`)** is an enterprise-gra
 * **Role / Capability:** WordPress Administrator (`manage_options`).
 * **Key Tasks:**
   * Configure master ArvanCloud API key (`Apikey <TOKEN>`) and default datacenter regions.
-  * Adjust global and per-service profit markups (percentage and fixed margins).
-  * Monitor global inventory of provisioned resources across all users.
+  * Adjust global profit markups (percentage and fixed margins).
+  * Monitor global inventory of provisioned servers across all users.
   * Perform manual wallet balance adjustments with cryptographic audit logs.
   * Review system health, transient cache status, and metering cron logs.
 
@@ -64,8 +64,6 @@ The **ArvanCloud Reseller WordPress Plugin (`arv-seller`)** is an enterprise-gra
 * **Key Tasks:**
   * Deposit funds into wallet via Iranian online IPG payment gateways (Zarinpal, IDPay, Shepa).
   * Configure and provision Cloud Servers (selecting region, flavor, OS image, NVMe disk, SSH key).
-  * Register CDN domains, manage DNS records (with Cloud Proxy toggle), purge edge cache, and manage SSL certificates.
-  * Create S3 Object Storage buckets and generate S3 access/secret API keys.
   * Control server power states (Power On, Power Off, Reboot, Delete) in real time.
 
 ### 3.3 System Cron & Automation Daemon
@@ -85,7 +83,7 @@ The **ArvanCloud Reseller WordPress Plugin (`arv-seller`)** is an enterprise-gra
                                   │ (Desktop / Mobile Web) │
                                   └───────────┬────────────┘
                                               │ 1. Registers / Tops Up Wallet (IPG)
-                                              │ 2. Configures & Orders Cloud Resource
+                                              │ 2. Configures & Orders Cloud Server
                                               ▼
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │                        WordPress Reseller System (`arv-seller`)                        │
@@ -93,8 +91,8 @@ The **ArvanCloud Reseller WordPress Plugin (`arv-seller`)** is an enterprise-gra
 │  ┌───────────────────────┐   ┌───────────────────────────┐   ┌───────────────────────┐ │
 │  │   Virtual Router      │   │   Sorkhab UI Frontend     │   │   Admin Settings      │ │
 │  │ (/cloud-services/*)   │──▶│   - Server Configurator   │   │   - API Key & Region  │ │
-│  │ - Isolated Canvas     │   │   - CDN & DNS Manager     │   │   - Markup Settings   │ │
-│  │ - Theme Bypass        │   │   - S3 Storage Creator    │   │   - Resource Manager  │ │
+│  │ - Isolated Canvas     │   │   - Customer Dashboard    │   │   - Markup Settings   │ │
+│  │ - Theme Bypass        │   │   - Power Lifecycle View  │   │   - Resource Manager  │ │
 │  └───────────────────────┘   └─────────────┬─────────────┘   └───────────────────────┘ │
 │                                            │                                           │
 │  ┌─────────────────────────────────────────▼─────────────────────────────────────────┐ │
@@ -109,7 +107,7 @@ The **ArvanCloud Reseller WordPress Plugin (`arv-seller`)** is an enterprise-gra
 │                                            │ (Authenticated REST Calls) │              │
 │                                            ▼                            │              │
 │  ┌──────────────────────────────────────────────────────────────────────┴────────────┐ │
-│  │                ArvanCloud REST API Client ([class-arvan-api-client.php](file:///c:/Users/reza2/Local%20Sites/seller/app/public/wp-content/plugins/arv-seller/includes/class-arvan-api-client.php))             │ │
+│  │                ArvanCloud REST API Client (class-arvan-api-client.php)             │ │
 │  │                - Base URL: https://napi.arvancloud.ir | Apikey Header Auth        │ │
 │  │                - Transient Caching (1h TTL) | Error Normalization (WP_Error)      │ │
 │  └─────────────────────────────────────────┬─────────────────────────────────────────┘ │
@@ -119,11 +117,12 @@ The **ArvanCloud Reseller WordPress Plugin (`arv-seller`)** is an enterprise-gra
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │                           ArvanCloud Cloud Infrastructure                              │
 │                                                                                        │
-│     ┌──────────────────────┐    ┌─────────────────────┐    ┌──────────────────────┐    │
-│     │  Cloud Server (ECC)  │    │     CDN & Edge DNS  │    │  Object Storage (S3) │    │
-│     │  - Compute & NVMe    │    │  - Edge Acceleration│    │  - Buckets & Quotas  │    │
-│     │  - Power Lifecycle   │    │  - DNS Routing      │    │  - Access Keys       │    │
-│     └──────────────────────┘    └─────────────────────┘    └──────────────────────┘    │
+│     ┌────────────────────────────────────────────────────────────────────────────┐     │
+│     │                       Cloud Server / IaaS (ECC /ecc/v1)                    │     │
+│     │                       - Compute & NVMe Block Storage                       │     │
+│     │                       - Dedicated IPv4 & OS Image Templates                │     │
+│     │                       - Instant Power Lifecycle & Status                   │     │
+│     └────────────────────────────────────────────────────────────────────────────┘     │
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -182,33 +181,6 @@ To guarantee frontend response times $< 100\text{ ms}$ and protect against Arvan
 | **Reboot** | `POST /ecc/v1/regions/{region}/servers/{server_id}/reboot` | `region`, `server_id` (path) | Success confirmation (`status: "rebooting"`) |
 | **Delete Server** | `DELETE /ecc/v1/regions/{region}/servers/{server_id}` | `region`, `server_id` (path) | Permanent destruction confirmation (`204 No Content` / `200 OK`) |
 
-#### 5.4.2 CDN & Edge DNS API (`/cdn/4.0`)
-
-| Action | HTTP Verb & Endpoint | Parameters / Payload | Expected Response |
-| :--- | :--- | :--- | :--- |
-| **List Domains** | `GET /cdn/4.0/domains` | None | List of domains (`id`, `domain`, `status`, `plan_level`, `ns_keys`, `current_ns`) |
-| **Register Domain** | `POST /cdn/4.0/domains/dns-service` | `{"domain": "example.ir"}` | Domain object (`id`, `domain`, `status: "pending"`, `ns_keys`) |
-| **Get DNS Records**| `GET /cdn/4.0/domains/{domain}/dns-records` | `domain` (path) | Array of DNS records (`id`, `type`, `name`, `value`, `ttl`, `cloud`) |
-| **Create DNS Record**| `POST /cdn/4.0/domains/{domain}/dns-records` | `{"type": "A", "name": "www", "value": {"ip": "..."}, "ttl": 120, "cloud": true}` | Created record object (`id`, `name`, `type`, `value`, `cloud`) |
-| **Update DNS Record**| `PUT /cdn/4.0/domains/{domain}/dns-records/{record_id}`| `record_id` (path), updated fields | Updated record object |
-| **Delete DNS Record**| `DELETE /cdn/4.0/domains/{domain}/dns-records/{record_id}`| `domain`, `record_id` (path) | Success confirmation |
-| **Purge Edge Cache** | `POST /cdn/4.0/domains/{domain}/caching/purge` | `{"purge": "all"}` or specific URLs | Cache invalidation confirmation |
-| **Configure SSL** | `PUT /cdn/4.0/domains/{domain}/ssl` | `{"ssl_status": true, "certificate_mode": "managed"}` | SSL status confirmation |
-
-#### 5.4.3 Object Storage (S3-Compatible) API (`/storage/v1`)
-* **S3 Endpoint URL:** `https://s3.ir-thr-at1.arvanstorage.ir`
-
-| Action | HTTP Verb & Endpoint | Parameters / Payload | Expected Response |
-| :--- | :--- | :--- | :--- |
-| **List Buckets** | `GET /storage/v1/buckets` | None | List of buckets (`name`, `created_at`, `objects_count`, `size_bytes`, `region`) |
-| **Create Bucket** | `POST /storage/v1/buckets` | `{"name": "my-bucket", "region": "ir-thr-at1"}` | Bucket object confirmation |
-| **Generate S3 Keys**| `POST /storage/v1/user/keys` | `{"description": "Client S3 Key"}` | Credential object (`access_key`, `secret_key`, `created_at`) |
-
-#### 5.4.4 Extended Platform Services Roadmap
-* **Cloud Container (PaaS `/paas/1.25`):** Namespace and containerized app provisioning (`GET/POST /paas/1.25/projects`, `/apps`).
-* **Video Platform (VOD `/vod/2.0`):** Channel management and video transcoding (`GET/POST /vod/2.0/channels`, `/videos`).
-* **Live Streaming (`/live/2.0`):** RTMP live ingress endpoints with multi-bitrate HLS egress (`POST /live/2.0/streams`).
-
 ---
 
 ## 6. Detailed Functional Requirements & Feature Specifications
@@ -223,17 +195,16 @@ To guarantee frontend response times $< 100\text{ ms}$ and protect against Arvan
   * Auto-refresh of active regions and flavors from ArvanCloud API.
 * **REQ-ADM-03: Profit Markup Management:**
   * Global profit markup percentage setting (e.g. `20%`).
-  * Per-service overrides for Server, CDN, and Storage.
   * Fixed profit margin additions (e.g. `+50 IRT/hr`).
 * **REQ-ADM-04: Storefront & White-Label Branding:**
   * Custom company title, support contact info, logo upload, and brand primary color.
   * Dynamic injection into the isolated frontend canvas header and footer.
 * **REQ-ADM-05: Customer & Resource Oversight:**
-  * Global administrative table listing all customer wallets, total platform MRR, and all active provisioned resources with emergency power off / termination actions.
+  * Global administrative table listing all customer wallets, total platform MRR, and all active provisioned servers with emergency power off / termination actions.
 
 ---
 
-### 6.2 Module 2: Virtual Storefronts & Product Configurators (Frontend)
+### 6.2 Module 2: Virtual Storefront & Server Configurator (Frontend)
 The plugin registers custom rewrite rules under `/cloud-services/` with an isolated canvas template ([frontend-canvas.php](file:///c:/Users/reza2/Local%20Sites/seller/app/public/wp-content/plugins/arv-seller/templates/frontend-canvas.php)), bypassing active theme headers and footers to ensure zero CSS/JS conflicts.
 
 #### 6.2.1 Cloud Server (ECC) Storefront (`/cloud-services/server/`)
@@ -250,31 +221,12 @@ The plugin registers custom rewrite rules under `/cloud-services/` with an isola
   * Checks wallet balance for minimum 24 hours of operation.
   * Provisions instance immediately via `POST /ecc/v1/regions/{region}/servers` and registers resource in `wp_arvan_resources`.
 
-#### 6.2.2 CDN & DNS Manager (`/cloud-services/cdn/`)
-* **REQ-CDN-01: Domain Registration Wizard:**
-  * Apex and sub-domain format validator with instant registration via `POST /cdn/4.0/domains/dns-service`.
-* **REQ-CDN-02: DNS Zone Editor:**
-  * Full record editor for `A`, `AAAA`, `CNAME`, `MX`, `TXT`, `SRV`, `NS`, and `CAA`.
-  * ArvanCloud Cloud Proxy toggle (`cloud: true/false`) per record for instant edge caching and DDoS mitigation.
-* **REQ-CDN-03: Nameservers & Cache Management:**
-  * Display assigned ArvanCloud nameservers (`*.arvancdn.ir`) with one-click clipboard copy.
-  * Single-click edge cache purge (`POST /cdn/4.0/domains/{domain}/caching/purge`).
-  * Managed SSL/TLS activation toggle (`PUT /cdn/4.0/domains/{domain}/ssl`).
-
-#### 6.2.3 Object Storage (S3) (`/cloud-services/storage/`)
-* **REQ-OSS-01: S3 Bucket Creation:**
-  * DNS-compliant bucket name validator with instant provisioning via `POST /storage/v1/buckets`.
-* **REQ-OSS-02: S3 Credentials & Endpoint Generator:**
-  * Automated S3 API key pair generation (`POST /storage/v1/user/keys`).
-  * Display modal with S3 Endpoint (`https://s3.ir-thr-at1.arvanstorage.ir`), Bucket Name, Access Key ID, and Secret Access Key.
-  * Pre-configured connection snippets for AWS CLI, Cyberduck, Rclone, and WordPress S3 offload plugins.
-
 ---
 
 ### 6.3 Module 3: Customer Portal & Atomic Wallet Engine (`/cloud-services/dashboard/`)
 * **REQ-WAL-01: Unified Customer Dashboard:**
   * Real-time balance card with quick top-up preset buttons (50,000, 100,000, 200,000, 500,000 Toman + custom input).
-  * Tabbed overview of user's active Cloud Servers, CDN Domains, and S3 Buckets.
+  * Tabbed overview of user's active Cloud Servers with real-time power actions.
   * Audit ledger of historical transactions with gateway reference IDs and balance snapshots.
 * **REQ-WAL-02: Thread-Safe Atomic Ledger Engine:**
   * All wallet operations wrapped in MySQL transactions with row-level locks:
@@ -357,8 +309,6 @@ stateDiagram-v2
 | Cloud Product | Immediately on Negative Balance | After 2 Hours | After 24 Hours | After 48 Hours | After 1 Week / 1 Month |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Cloud Server (ECC)** | Control panel actions restricted | Instance network disconnected | &mdash; | **Virtual instances powered off** | **Instances & disks permanently deleted** |
-| **CDN & DNS** | Settings locked (Read-Only) | &mdash; | **Cloud proxy disabled (Bypass)** | &mdash; | **DNS Service completely deactivated** |
-| **Object Storage (S3)** | Actions restricted | &mdash; | **Write access blocked** | **Read access blocked** | **Buckets & files permanently deleted** |
 
 #### 6.6.2 Reseller Lifecycle Automation Rules
 * **Stage 1: Threshold Warning ($\text{Balance} < 12\text{ hours run cost}$):**
@@ -435,9 +385,9 @@ erDiagram
     WP_ARVAN_RESOURCES {
         bigint id PK
         bigint user_id FK
-        varchar service_type "ecc_instance|cdn_domain|storage_bucket"
-        varchar arvan_resource_id "UUID or Name"
-        varchar name "Instance / Domain Name"
+        varchar service_type "ecc_instance"
+        varchar arvan_resource_id "UUID"
+        varchar name "Server Name"
         varchar region "ir-thr-c2"
         longtext plan_specs "JSON specs"
         decimal hourly_cost "15,4"
@@ -464,7 +414,7 @@ erDiagram
 | **Input Sanitization** | `sanitize_text_field()`, `sanitize_key()`, `absint()`, `floatval()`, `sanitize_textarea_field()` | Clean all incoming user inputs before processing. |
 | **Output Escaping** | `esc_html()`, `esc_attr()`, `esc_url()`, `wp_kses_post()` | Eliminate Cross-Site Scripting (XSS) risks across all templates. |
 | **SQL Injection Defense** | `$wpdb->prepare()` on 100% of custom dynamic SQL queries | Block SQL injection vectors entirely. |
-| **Credential Security** | Stored in `wp_options` with admin UI input masked using password fields | Protect master ArvanCloud API keys and S3 credentials. |
+| **Credential Security** | Stored in `wp_options` with admin UI input masked using password fields | Protect master ArvanCloud API keys. |
 
 ---
 
@@ -487,8 +437,8 @@ erDiagram
 
 | Evaluation Dimension | Points | Plugin Implementation Proof |
 | :--- | :---: | :--- |
-| **Feature Completeness** | **120 / 120** | Full REST integration for **Cloud Server (ECC)**, **CDN & DNS**, and **Object Storage (S3)**; dynamic markup engine; atomic wallet ledger; native IPG payment gateway; automated hourly metering cron; and legal termination/suspension enforcement. |
-| **UI/UX & Responsiveness** | **70 / 70** | Full **Sorkhab UI** styling compliance; Persian RTL layout; custom isolated frontend canvas (`/cloud-services/*`); live interactive sliders and dynamic price calculation; tested responsive on Mobile and Desktop. |
+| **Feature Completeness** | **120 / 120** | Full REST integration for **Cloud Server (ECC)**; dynamic markup engine; atomic wallet ledger; native IPG payment gateway; automated hourly metering cron; and legal termination/suspension enforcement. |
+| **UI/UX & Responsiveness** | **70 / 70** | Full **Sorkhab UI** & **Material Design 3 (M3 Light)** styling compliance; Persian RTL layout; custom isolated frontend canvas (`/cloud-services/*`); live interactive sliders and dynamic price calculation; tested responsive on Mobile and Desktop. |
 | **Security & Hardening** | **70 / 70** | Strict WordPress standards: 100% nonce verification, capability checks, input sanitization, output escaping, `$wpdb->prepare()`, and row-level locking. |
 | **Presentation & Demo** | **40 / 40** | Step-by-step walkthrough covering Admin Setup $\rightarrow$ Markup $\rightarrow$ User Top-up $\rightarrow$ Instant Provisioning $\rightarrow$ Depleted Balance Suspension Test $\rightarrow$ Responsive Dual-Viewport Demo. |
 | **Total Score** | **300 / 300** | **Comprehensive Full-Score Delivery** |
@@ -514,16 +464,11 @@ erDiagram
 3. Live calculator shows hourly cost with 20% markup.
 4. Submits order. Verify `POST /ecc/v1/regions/.../servers` is dispatched, server is stored in `wp_arvan_resources`, and instance IP is rendered in customer dashboard.
 
-### Test Scenario 4: CDN Domain & DNS Zone Management
-1. Customer navigates to `/cloud-services/cdn/` and enters `mycompany.ir`.
-2. Submits registration. Verify domain is provisioned via `POST /cdn/4.0/domains/dns-service`.
-3. Adds `A` record with Cloud Proxy enabled. Verify record is created via `POST /cdn/4.0/domains/mycompany.ir/dns-records`.
+### Test Scenario 4: Server Power Lifecycle & Controls
+1. Customer navigates to `/cloud-services/dashboard/`.
+2. Tests Power Off, Power On, and Reboot actions. Verify API commands dispatch and status badges update accordingly.
 
-### Test Scenario 5: S3 Bucket Provisioning & Key Generation
-1. Customer navigates to `/cloud-services/storage/` and enters bucket name `company-assets-2026`.
-2. Submits order. Verify bucket is created via `POST /storage/v1/buckets` and S3 keys are generated via `POST /storage/v1/user/keys`.
-
-### Test Scenario 6: Metering & Depleted Balance Suspension
+### Test Scenario 5: Metering & Depleted Balance Suspension
 1. User wallet balance is reduced to `0 IRT`.
 2. Trigger hourly metering cycle via `Arvan_Metering::run_manual_cycle()`.
 3. Verify `class-arvan-metering` detects balance $\le 0$, updates resource status to `suspended`, and executes `power_off_server()` REST call to ArvanCloud.

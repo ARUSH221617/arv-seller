@@ -5,7 +5,6 @@ import {
   Zap,
   DollarSign,
   Globe2,
-  Globe,
   Store,
   ExternalLink,
   Save,
@@ -14,7 +13,6 @@ import {
   AlertCircle,
   Server,
   LayoutDashboard,
-  Database,
 } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
@@ -289,12 +287,12 @@ export const AdminSettingsView: React.FC<AdminSettingsViewProps> = ({
             <span>{t('Virtual Storefront Quick Links (Theme Isolated)')}</span>
           </CardTitle>
         </CardHeader>
-        <CardContent className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <CardContent className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <a
             href="/cloud-services/server/"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm group"
+            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm group"
           >
             <div className="flex items-center gap-2.5">
               <Server className="h-4 w-4 text-arvan-teal shrink-0 group-hover:scale-110 transition-transform" />
@@ -307,37 +305,11 @@ export const AdminSettingsView: React.FC<AdminSettingsViewProps> = ({
             href="/cloud-services/dashboard/"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm group"
+            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm group"
           >
             <div className="flex items-center gap-2.5">
               <LayoutDashboard className="h-4 w-4 text-arvan-teal shrink-0 group-hover:scale-110 transition-transform" />
               <span className="font-bold">{t('Customer Portal & Dashboard')}</span>
-            </div>
-            <ExternalLink className="h-3.5 w-3.5 text-slate-400 group-hover:text-arvan-teal transition-colors" />
-          </a>
-
-          <a
-            href="/cloud-services/cdn/"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm group"
-          >
-            <div className="flex items-center gap-2.5">
-              <Globe className="h-4 w-4 text-arvan-teal shrink-0 group-hover:scale-110 transition-transform" />
-              <span className="font-bold">{t('CDN & Edge DNS Manager')}</span>
-            </div>
-            <ExternalLink className="h-3.5 w-3.5 text-slate-400 group-hover:text-arvan-teal transition-colors" />
-          </a>
-
-          <a
-            href="/cloud-services/storage/"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm group"
-          >
-            <div className="flex items-center gap-2.5">
-              <Database className="h-4 w-4 text-arvan-teal shrink-0 group-hover:scale-110 transition-transform" />
-              <span className="font-bold">{t('S3 Object Storage')}</span>
             </div>
             <ExternalLink className="h-3.5 w-3.5 text-slate-400 group-hover:text-arvan-teal transition-colors" />
           </a>

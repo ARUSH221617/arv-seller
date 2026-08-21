@@ -7,8 +7,6 @@ import {
   OsImage,
   CloudServerInstance,
   WalletTransaction,
-  CdnDomain,
-  StorageBucket,
 } from '../types';
 import { getTranslation, LANGUAGES } from '../i18n';
 
@@ -47,13 +45,13 @@ export function useArvan() {
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
 
   // Catalog State
-  const [regions, setRegions] = useState<DatacenterRegion[]>(rawData.initialData?.regions || [
+  const [regions] = useState<DatacenterRegion[]>(rawData.initialData?.regions || [
     { id: 'ir-thr-c2', name: 'Tehran - Forough', city: 'Tehran', country: 'Iran', flag: '🇮🇷', status: 'active', latency: '12ms' },
     { id: 'ir-thr-sh1', name: 'Tehran - Shahryar', city: 'Tehran', country: 'Iran', flag: '🇮🇷', status: 'active', latency: '15ms' },
     { id: 'ir-tbz-dc1', name: 'Tabriz - Northwest', city: 'Tabriz', country: 'Iran', flag: '🇮🇷', status: 'active', latency: '18ms' },
   ]);
 
-  const [flavors, setFlavors] = useState<HardwareFlavor[]>(rawData.initialData?.flavors || [
+  const [flavors] = useState<HardwareFlavor[]>(rawData.initialData?.flavors || [
     { id: 'g1-1-2', name: 'Starter Eco', category: 'general', vcpus: 1, ram_mb: 2048, disk_gb: 25, hourly_cost: 300 },
     { id: 'g1-2-4', name: 'Standard General', category: 'general', vcpus: 2, ram_mb: 4096, disk_gb: 40, hourly_cost: 540, is_popular: true },
     { id: 'g1-4-8', name: 'Performance Pro', category: 'general', vcpus: 4, ram_mb: 8192, disk_gb: 60, hourly_cost: 1068 },
@@ -78,14 +76,6 @@ export function useArvan() {
   const [transactions, setTransactions] = useState<WalletTransaction[]>(rawData.initialData?.transactions || [
     { id: 101, type: 'deposit', amount: 100000, balance_after: 100000, description: 'Initial Deposit / Sandbox Ref: TRX-9921', created_at: '2026-08-20 14:00:00' },
     { id: 102, type: 'hourly_charge', amount: -1080, balance_after: 98920, description: 'Automated Metering (2 active servers)', created_at: '2026-08-20 15:00:00' },
-  ]);
-
-  const [domains, setDomains] = useState<CdnDomain[]>(rawData.initialData?.domains || [
-    { id: 'dom-1', domain: 'api.cloud-enterprise.ir', plan: 'Professional CDN', status: 'active', nameservers: ['ns-a.arvancdn.ir', 'ns-b.arvancdn.ir'], ssl_enabled: true },
-  ]);
-
-  const [buckets, setBuckets] = useState<StorageBucket[]>(rawData.initialData?.buckets || [
-    { id: 'bkt-1', name: 'assets-media-cdn', region: 'ir-thr-c2', endpoint: 's3.ir-thr-c2.arvanstorage.ir', created_at: '2026-08-20' },
   ]);
 
   // Add Toast Notification
@@ -213,7 +203,7 @@ export function useArvan() {
   };
 
   const topupWallet = async (amount: number) => {
-    const res = await callAjax('arvan_topup_wallet', { amount });
+    await callAjax('arvan_topup_wallet', { amount });
     const depositAmount = Number(amount);
     setBalance((prev) => prev + depositAmount);
     setTransactions((prev) => [
@@ -229,31 +219,6 @@ export function useArvan() {
     ]);
     setIsDepositOpen(false);
     addToast('success', t('topUp') + ' + ' + depositAmount.toLocaleString() + ' ' + rawData.currency);
-  };
-
-  const registerCdn = async (domainName: string) => {
-    const newDomain: CdnDomain = {
-      id: `dom-${Date.now()}`,
-      domain: domainName,
-      plan: 'Professional Anycast CDN',
-      status: 'active',
-      nameservers: ['ns-a.arvancdn.ir', 'ns-b.arvancdn.ir'],
-      ssl_enabled: true,
-    };
-    setDomains((prev) => [newDomain, ...prev]);
-    addToast('success', t('connectDomain') + ': ' + domainName);
-  };
-
-  const createBucket = async (name: string) => {
-    const newBucket: StorageBucket = {
-      id: `bkt-${Date.now()}`,
-      name,
-      region: 'ir-thr-c2',
-      endpoint: 's3.ir-thr-c2.arvanstorage.ir',
-      created_at: new Date().toISOString().substring(0, 10),
-    };
-    setBuckets((prev) => [newBucket, ...prev]);
-    addToast('success', t('createBucket') + ': ' + name);
   };
 
   return {
@@ -273,8 +238,6 @@ export function useArvan() {
     images,
     servers,
     transactions,
-    domains,
-    buckets,
     toasts,
     removeToast,
     isDepositOpen,
@@ -282,7 +245,5 @@ export function useArvan() {
     deployServer,
     handleServerPower,
     topupWallet,
-    registerCdn,
-    createBucket,
   };
 }

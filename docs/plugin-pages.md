@@ -37,8 +37,6 @@ All frontend pages render through the isolated template [frontend-canvas.php](fi
   * **Navigation Links:**
     * 🚀 **Deploy Server (سفارش سرور ابری):** Links to `/cloud-services/server/`
     * 📊 **Dashboard (داشبورد مدیریت):** Links to `/cloud-services/dashboard/`
-    * 🌐 **CDN / DNS:** Links to `/cloud-services/cdn/`
-    * 📦 **Object Storage:** Links to `/cloud-services/storage/`
   * **User Profile & Quick Balance Chip (When Logged In):**
     * Live wallet balance in Persian numerals (e.g. `۱۲۵,۰۰۰ تومان`).
     * Direct "Top Up (+)" shortcut button.
@@ -178,7 +176,29 @@ All frontend pages render through the isolated template [frontend-canvas.php](fi
 
 ---
 
-### 3.2 Admin Page 2: Global Cloud Resources Oversight
+### 3.2 Admin Page 2: Customization, Branding & Gutenberg Hub
+* **Menu Path:** `WP Admin > Arvan Reseller > Customization & Branding`
+* **React View:** [AdminCustomizationView.tsx](file:///c:/Users/reza2/Local%20Sites/seller/app/public/wp-content/plugins/arv-seller/src/admin/views/AdminCustomizationView.tsx)
+* **Target Audience:** Administrator personalizing store visual theme, typography, logos, and embedding widgets.
+
+#### UI Sections & Controls:
+1. **Brand Color Palette & Presets:**
+   * One-click presets: *Arvan Sorkhab Teal*, *Royal Sapphire*, *Emerald Forest*, *Midnight Violet*, *Crimson Rose*, *Sunset Amber*.
+   * Primary Brand Color & Secondary / Dark Accent color pickers with hex code inputs.
+   * **Live Interactive Theme Preview Card:** Real-time mini preview card showing active button styles, badges, and pricing cards dynamically updating as colors are adjusted.
+2. **Brand Identity & Assets:**
+   * Store Brand Name, Tagline / Subtitle, Custom Store Logo URL, Custom Favicon URL, Custom Footer Copyright text.
+3. **Typography & Font Family:**
+   * Options: Vazirmatn (وزیرمتن), Shabnam (شبنم), Yekan Bakh (یکان بخ), Plus Jakarta Sans, Inter UI, System Default.
+4. **Native Gutenberg & Shortcode Integration Hub:**
+   * Documentation for `arvan/server-configurator` and `arvan/customer-dashboard` native Gutenberg blocks.
+   * One-click copy shortcodes: `[arvan_server_configurator]` and `[arvan_customer_dashboard]`.
+5. **Custom CSS Editor:**
+   * Monospace live code editor for injecting custom CSS rules into standalone canvas and embedded widgets.
+
+---
+
+### 3.3 Admin Page 3: Global Cloud Resources Oversight
 * **Menu Path:** `WP Admin > Arvan Reseller > All Resources`
 * **Controller:** [class-arvan-admin.php](file:///c:/Users/reza2/Local%20Sites/seller/app/public/wp-content/plugins/arv-seller/admin/class-arvan-admin.php)
 * **Target Audience:** Administrator monitoring all customer-provisioned infrastructure.
@@ -197,7 +217,7 @@ All frontend pages render through the isolated template [frontend-canvas.php](fi
 
 ---
 
-### 3.3 Admin Page 3: Customer Wallets & Master Ledger Audit
+### 3.4 Admin Page 4: Customer Wallets & Master Ledger Audit
 * **Menu Path:** `WP Admin > Arvan Reseller > Wallets Ledger`
 * **Controller:** [class-arvan-admin.php](file:///c:/Users/reza2/Local%20Sites/seller/app/public/wp-content/plugins/arv-seller/admin/class-arvan-admin.php)
 * **Target Audience:** Administrator reviewing finances, customer balances, and ledger adjustments.
@@ -214,9 +234,28 @@ All frontend pages render through the isolated template [frontend-canvas.php](fi
 
 ---
 
-## 4. Modals, Alerts & Micro-Component Specifications
+## 4. Native WordPress Gutenberg Block & Shortcodes Specification
 
-### 4.1 Server Deletion Two-Step Confirmation Modal
+### 4.1 Native Gutenberg Blocks
+1. **Block: `arvan/server-configurator` (ArvanCloud Server Configurator)**
+   * **Category:** `arvan-cloud` (with cloud icon).
+   * **Attributes / Inspector Controls:**
+     * `defaultRegion` (Default datacenter region dropdown: `ir-thr-c2`, `ir-thr-sh1`, `ir-tbz-dc1`).
+     * `accentColor` (Color hex input).
+     * `showHourlyPrice` (Toggle rate format).
+   * **Frontend Output:** Isolated `#arvan-cloud-app` container with automated script/style enqueuing.
+2. **Block: `arvan/customer-dashboard` (ArvanCloud Customer Dashboard)**
+   * Embedded customer cloud server management and wallet billing dashboard.
+
+### 4.2 Shortcodes
+* `[arvan_server_configurator]` or `[arvan_server_configurator region="ir-thr-c2" color="#008b8b"]`
+* `[arvan_customer_dashboard]`
+
+---
+
+## 5. Modals, Alerts & Micro-Component Specifications
+
+### 5.1 Server Deletion Two-Step Confirmation Modal
 * **Trigger:** Clicking the Delete icon on a server card.
 * **Content:**
   * ⚠️ Red warning icon and title: *"Are you sure you want to permanently delete this Cloud Server?"*
@@ -224,7 +263,7 @@ All frontend pages render through the isolated template [frontend-canvas.php](fi
   * Input field requiring user to type server name to confirm.
   * **Buttons:** "Cancel" and "Confirm Permanent Deletion" (Red).
 
-### 4.2 Insufficient Balance Deploy Modal
+### 5.2 Insufficient Balance Deploy Modal
 * **Trigger:** Submitting server deployment when wallet balance $< 24\text{ hours}$ cost.
 * **Content:**
   * Sorkhab Amber alert icon.
@@ -232,7 +271,7 @@ All frontend pages render through the isolated template [frontend-canvas.php](fi
   * Quick top-up preset buttons inside modal.
   * "Deposit & Continue Deploying" button.
 
-### 4.3 Interactive Toast Notification System
+### 5.3 Interactive Toast Notification System
 * Floating notification container in top-right / top-center for AJAX operations:
   * **Success Toast (Green):** *"Server deployed successfully! IP assigned: 185.143.232.45"*
   * **Info Toast (Blue):** *"Reboot command dispatched to ArvanCloud."*
@@ -241,13 +280,15 @@ All frontend pages render through the isolated template [frontend-canvas.php](fi
 
 ---
 
-## 5. Summary Mapping Table: Pages, Views & API Endpoints
+## 6. Summary Mapping Table: Pages, Views & API Endpoints
 
 | UI View / Page | URL / Entry Point | Template / View File | Associated REST Endpoints |
 | :--- | :--- | :--- | :--- |
 | **Canvas Shell** | `/cloud-services/*` | `templates/frontend-canvas.php` | N/A (Router Shell) |
-| **Server Configurator** | `/cloud-services/server/` | `public/views/storefront-server.php` | `GET /ecc/v1/regions`<br>`GET /ecc/v1/regions/{region}/sizes`<br>`GET /ecc/v1/regions/{region}/images`<br>`POST /ecc/v1/regions/{region}/servers` |
-| **Customer Dashboard** | `/cloud-services/dashboard/` | `public/views/dashboard-customer.php` | `GET /ecc/v1/regions/{region}/servers/{id}`<br>`POST /ecc/v1/regions/.../power-on`<br>`POST /ecc/v1/regions/.../power-off`<br>`POST /ecc/v1/regions/.../reboot`<br>`DELETE /ecc/v1/regions/.../{id}` |
-| **Admin Settings** | `WP Admin > Settings` | `admin/views/admin-settings.php` | `GET /ecc/v1/regions` (Test Connection) |
-| **Admin Resources** | `WP Admin > Resources` | `admin/class-arvan-admin.php` | Master index + Emergency power controls |
-| **Admin Wallets** | `WP Admin > Wallets` | `admin/class-arvan-admin.php` | Atomic ledger management |
+| **Server Configurator** | `/cloud-services/server/` or `[arvan_server_configurator]` | `public/views/storefront-server.php` | `GET /ecc/v1/regions`<br>`GET /ecc/v1/regions/{region}/sizes`<br>`GET /ecc/v1/regions/{region}/images`<br>`POST /ecc/v1/regions/{region}/servers` |
+| **Customer Dashboard** | `/cloud-services/dashboard/` or `[arvan_customer_dashboard]` | `public/views/dashboard-customer.php` | `GET /ecc/v1/regions/{region}/servers/{id}`<br>`POST /ecc/v1/regions/.../power-on`<br>`POST /ecc/v1/regions/.../power-off`<br>`POST /ecc/v1/regions/.../reboot`<br>`DELETE /ecc/v1/regions/.../{id}` |
+| **Admin Settings** | `WP Admin > Settings & API` | `src/admin/views/AdminSettingsView.tsx` | `GET /ecc/v1/regions` (Test Connection) |
+| **Admin Customization** | `WP Admin > Customization` | `src/admin/views/AdminCustomizationView.tsx` | `POST /wp-admin/admin-ajax.php` (`arvan_admin_save_settings`) |
+| **Admin Resources** | `WP Admin > All Resources` | `src/admin/views/AdminResourcesView.tsx` | Master index + Emergency power controls |
+| **Admin Wallets** | `WP Admin > Wallets Ledger` | `src/admin/views/AdminWalletsView.tsx` | Atomic ledger management |
+

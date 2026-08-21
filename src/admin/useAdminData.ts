@@ -139,11 +139,20 @@ export function useAdminData() {
       arvan_currency: newSettings.currency,
       arvan_default_region: newSettings.defaultRegion,
       arvan_store_name: newSettings.storeName,
+      arvan_store_tagline: newSettings.storeTagline || '',
+      arvan_store_logo_url: newSettings.logoUrl || '',
+      arvan_store_favicon_url: newSettings.faviconUrl || '',
+      arvan_brand_primary_color: newSettings.brandPrimaryColor || '#008b8b',
+      arvan_brand_secondary_color: newSettings.brandSecondaryColor || '#0b3a42',
+      arvan_font_family: newSettings.fontFamily || 'vazirmatn',
+      arvan_custom_css: newSettings.customCss || '',
+      arvan_show_hourly_toggle: newSettings.showHourlyToggle ? '1' : '0',
+      arvan_custom_footer_text: newSettings.customFooterText || '',
       arvan_support_email: newSettings.supportEmail,
       arvan_support_phone: newSettings.supportPhone,
     });
 
-    setSettings(newSettings);
+    setSettings((prev) => ({ ...prev, ...newSettings }));
     addToast('success', t('Action completed successfully.'));
     return res.success;
   };

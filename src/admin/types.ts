@@ -8,6 +8,15 @@ export interface AdminSettingsData {
   currency: 'IRT' | 'IRR' | 'USD';
   defaultRegion: string;
   storeName: string;
+  storeTagline?: string;
+  logoUrl?: string;
+  faviconUrl?: string;
+  brandPrimaryColor?: string;
+  brandSecondaryColor?: string;
+  fontFamily?: string;
+  customCss?: string;
+  showHourlyToggle?: boolean;
+  customFooterText?: string;
   supportEmail: string;
   supportPhone: string;
 }
@@ -49,7 +58,7 @@ export interface AdminKpiStats {
 export interface AdminWindowData {
   ajaxUrl: string;
   nonce: string;
-  activeTab: 'settings' | 'resources' | 'wallets';
+  activeTab: 'settings' | 'customization' | 'resources' | 'wallets';
   settings: AdminSettingsData;
   stats: AdminKpiStats;
   resources: AdminResourceItem[];

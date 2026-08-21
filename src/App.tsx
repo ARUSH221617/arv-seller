@@ -5,8 +5,6 @@ import { QuickDepositModal } from './components/wallet/QuickDepositModal';
 import { ToastContainer } from './components/ui/toast';
 import { ServerConfiguratorView } from './views/ServerConfiguratorView';
 import { CustomerDashboardView } from './views/CustomerDashboardView';
-import { CdnManagementView } from './views/CdnManagementView';
-import { ObjectStorageView } from './views/ObjectStorageView';
 import { ActiveTab } from './types';
 import { cn } from './lib/utils';
 
@@ -27,8 +25,6 @@ export const App: React.FC = () => {
     images,
     servers,
     transactions,
-    domains,
-    buckets,
     toasts,
     removeToast,
     isDepositOpen,
@@ -36,18 +32,14 @@ export const App: React.FC = () => {
     deployServer,
     handleServerPower,
     topupWallet,
-    registerCdn,
-    createBucket,
   } = useArvan();
 
   // Route Resolver based on window.location.pathname
   const resolveInitialTab = (): ActiveTab => {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname;
-      if (path.includes('/cloud-services/server')) return 'server';
-      if (path.includes('/cloud-services/cdn')) return 'cdn';
-      if (path.includes('/cloud-services/storage')) return 'storage';
       if (path.includes('/cloud-services/dashboard')) return 'dashboard';
+      if (path.includes('/cloud-services/server')) return 'server';
     }
     return 'server';
   };
@@ -113,24 +105,6 @@ export const App: React.FC = () => {
             onOpenDeposit={() => setIsDepositOpen(true)}
             onServerPower={handleServerPower}
             onNavigateDeploy={() => handleSelectTab('server')}
-          />
-        )}
-
-        {activeTab === 'cdn' && (
-          <CdnManagementView
-            domains={domains}
-            language={language}
-            t={t}
-            onRegisterDomain={registerCdn}
-          />
-        )}
-
-        {activeTab === 'storage' && (
-          <ObjectStorageView
-            buckets={buckets}
-            language={language}
-            t={t}
-            onCreateBucket={createBucket}
           />
         )}
       </main>

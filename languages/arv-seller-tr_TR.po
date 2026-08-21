@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
 "Report-Msgid-Bugs-To: https://arvancloud.ir\n"
-"POT-Creation-Date: 2026-08-21 02:50:57+0000\n"
-"PO-Revision-Date: 2026-08-21 02:50:57+0000\n"
+"POT-Creation-Date: 2026-08-21 03:13:22+0000\n"
+"PO-Revision-Date: 2026-08-21 03:13:22+0000\n"
 "Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
 "Language-Team: ArvanCloud Turkish Team\n"
 "Language: tr_TR\n"
@@ -30,15 +30,13 @@ msgstr "2. Dinamik Fiyatlandırma ve Bayi Kâr Marjı Motoru"
 msgid "3. Storefront White-Label Branding"
 msgstr "3. Mağaza Beyaz Etiket Markalama"
 
-#: public/class-arvan-public.php:349
+#: public/class-arvan-public.php:483
 msgid "A minimum balance of %1$s %3$s (24 hours run cost) is required to deploy this server. Your balance is %2$s %3$s."
 msgstr "Bu sunucuyu dağıtmak için en az %1$s %3$s (24 saatlik çalışma maliyeti) bakiye gereklidir. Bakiyeniz: %2$s %3$s."
 
-#: public/views/storefront-cdn.php:27
 msgid "Accelerate your websites globally with edge caching, SSL termination, and Layer 7 DDoS mitigation across 40+ PoPs."
 msgstr "40+ PoP noktasında uç önbelleğe alma, SSL sonlandırma ve Katman 7 DDoS koruması ile web sitelerinizi küresel olarak hızlandırın."
 
-#: public/views/storefront-storage.php:146
 msgid "Access Key ID:"
 msgstr "Erişim Anahtarı Kimliği:"
 
@@ -56,25 +54,22 @@ msgstr ""
 msgid "action"
 msgstr "İşlem"
 
-#: public/views/storefront-cdn.php:182
 msgid "Action"
 msgstr ""
 
-#: admin/class-arvan-admin.php:204
+#: admin/class-arvan-admin.php:215
 msgid "Action completed successfully."
 msgstr "İşlem başarıyla tamamlandı."
 
 msgid "actions"
 msgstr "İşlemler"
 
-#: public/views/storefront-cdn.php:49
 msgid "Activate Edge CDN"
 msgstr ""
 
 msgid "active"
 msgstr "Aktif"
 
-#: public/views/storefront-storage.php:102
 msgid "Active"
 msgstr ""
 
@@ -100,7 +95,6 @@ msgstr "Aktif (Demo Modu)"
 msgid "activePops"
 msgstr "40+ Küresel PoP Noktasında Aktif"
 
-#: public/views/storefront-cdn.php:167
 msgid "Add Record"
 msgstr ""
 
@@ -113,7 +107,7 @@ msgstr "Kayıt Ekle"
 msgid "Adjust Balance"
 msgstr "Bakiye Ayarla"
 
-#: admin/class-arvan-admin.php:213
+#: admin/class-arvan-admin.php:224
 msgid "Adjust Wallet Balance: "
 msgstr "Cüzdan Bakiyesini Düzenle: "
 
@@ -146,7 +140,7 @@ msgstr ""
 msgid "All Provisioned Cloud Resources"
 msgstr "Tüm Sağlanan Bulut Kaynakları"
 
-#: admin/class-arvan-admin.php:261
+#: admin/class-arvan-admin.php:281
 msgid "All Resources"
 msgstr "Tüm Kaynaklar"
 
@@ -170,27 +164,27 @@ msgstr ""
 msgid "Amount (Toman):"
 msgstr "Tutar (Toman):"
 
-#: public/class-arvan-public.php:271
+#: public/class-arvan-public.php:265 public/class-arvan-public.php:405
 msgid "An error occurred during request."
 msgstr "İstek sırasında bir hata oluştu."
 
-#: admin/class-arvan-admin.php:210
+#: admin/class-arvan-admin.php:221
 msgid "Apply Adjustment"
 msgstr "Düzeltmeyi Uygula"
 
-#: admin/class-arvan-admin.php:209
+#: admin/class-arvan-admin.php:220
 msgid "Applying..."
 msgstr "Uygulanıyor..."
 
-#: admin/class-arvan-admin.php:206
+#: admin/class-arvan-admin.php:217
 msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
 msgstr "Bu kaynağı ArvanCloud altyapısından kalıcı olarak silmek istediğinizden emin misiniz?"
 
-#: public/class-arvan-public.php:272
+#: public/class-arvan-public.php:266 public/class-arvan-public.php:406
 msgid "Are you sure you want to permanently destroy this server?"
 msgstr "Bu sunucuyu kalıcı olarak silmek istediğinizden emin misiniz?"
 
-#: admin/class-arvan-admin.php:241
+#: admin/class-arvan-admin.php:252
 msgid "Arvan Reseller"
 msgstr "ArvanCloud Bayi"
 
@@ -211,7 +205,11 @@ msgstr "ArvanCloud API Anahtarı"
 msgid "ArvanCloud API key is not configured. Please configure your API key in WP Admin > Arvan Reseller > Settings."
 msgstr "ArvanCloud API anahtarı yapılandırılmamış. Lütfen WP Yöneticisi > Arvan Bayi > Ayarlar menüsünden yapılandırın."
 
-#: admin/class-arvan-admin.php:240
+#: includes/class-arvan-blocks.php:119
+msgid "ArvanCloud Customer Dashboard"
+msgstr "ArvanCloud Müşteri Kontrol Paneli"
+
+#: admin/class-arvan-admin.php:251
 msgid "ArvanCloud Reseller"
 msgstr "ArvanCloud Bayi Paneli"
 
@@ -219,11 +217,18 @@ msgstr "ArvanCloud Bayi Paneli"
 msgid "ArvanCloud Reseller Settings & Monetization"
 msgstr "ArvanCloud Bayi Ayarları ve Fiyatlandırma"
 
+#: includes/class-arvan-blocks.php:117
+msgid "ArvanCloud Server Configurator"
+msgstr "ArvanCloud Bulut Sunucu Yapılandırıcı"
+
+#: includes/class-arvan-blocks.php:76
+msgid "ArvanCloud Services"
+msgstr "ArvanCloud Hizmetleri"
+
 #: public/views/dashboard-customer.php:182
 msgid "Assigned IP"
 msgstr "Atanan IP"
 
-#: public/views/storefront-cdn.php:72
 msgid "Assigned Nameservers"
 msgstr ""
 
@@ -244,7 +249,6 @@ msgstr "Kullanılabilir Cüzdan Bakiyesi"
 msgid "availableBalance"
 msgstr "Kullanılabilir Bakiye"
 
-#: public/views/storefront-storage.php:162
 msgid "AWS CLI & Rclone Configuration Example"
 msgstr "AWS CLI ve Rclone Yapılandırma Örneği"
 
@@ -254,7 +258,7 @@ msgstr "AWS CLI Yapılandırma Örneği:"
 msgid "backOffice"
 msgstr "Yönetim Paneli"
 
-#: admin/class-arvan-admin.php:429
+#: admin/class-arvan-admin.php:491
 msgid "Balance adjusted successfully."
 msgstr "Bakiye başarıyla güncellendi."
 
@@ -268,15 +272,25 @@ msgstr "Bakiye Özeti"
 msgid "baseDiskLabel"
 msgstr "Taban:"
 
-#: public/views/storefront-storage.php:84
+#: includes/class-arvan-blocks.php:123
+msgid "Brand Accent Color"
+msgstr "Marka Vurgu Rengi"
+
+msgid "Brand Color Palette"
+msgstr "Marka Renk Paleti"
+
+msgid "Brand Identity & Logo Assets"
+msgstr "Marka Kimliği ve Logo Varlıkları"
+
+msgid "Brand Tagline / Subtitle"
+msgstr "Marka Sloganı / Alt Başlık"
+
 msgid "Bucket Name"
 msgstr ""
 
-#: public/class-arvan-public.php:777
 msgid "Bucket name must contain only lowercase letters, numbers, and hyphens."
 msgstr "Paket adı yalnızca küçük harfler, rakamlar ve tire içermelidir."
 
-#: public/views/storefront-storage.php:40
 msgid "Bucket names must be unique, lowercase alphanumeric characters with hyphens only."
 msgstr ""
 
@@ -286,7 +300,6 @@ msgstr "Paket Tanımlayıcı"
 msgid "bucketName"
 msgstr "Paket Adı (yalnızca küçük harfler ve sayılar)"
 
-#: public/views/storefront-storage.php:76
 msgid "Buckets"
 msgstr "Depolama Paketleri"
 
@@ -300,19 +313,16 @@ msgstr "İptal"
 msgid "Cancel"
 msgstr "İptal"
 
-#: public/class-arvan-public.php:461
+#: public/class-arvan-public.php:595
 msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
 msgstr "Sunucu başlatılamıyor: Cüzdan bakiyeniz sıfır veya negatif. Lütfen önce cüzdanınızı doldurun."
 
-#: admin/views/admin-settings.php:168
 msgid "CDN & Edge DNS Manager"
 msgstr "CDN ve Uç DNS Yöneticisi"
 
-#: public/class-arvan-public.php:646
 msgid "CDN activated for \"%s\". Please set your nameservers."
 msgstr "\"%s\" için CDN etkinleştirildi. Lütfen ad sunucularınızı ayarlayın."
 
-#: public/class-arvan-public.php:269
 msgid "CDN domain connected successfully."
 msgstr "CDN alanı başarıyla bağlandı."
 
@@ -339,11 +349,10 @@ msgstr "IP kopyalamak için tıklayın"
 msgid "close"
 msgstr "Kapat"
 
-#: public/views/storefront-cdn.php:165
 msgid "Cloud Proxy"
 msgstr ""
 
-#: admin/class-arvan-admin.php:260
+#: admin/class-arvan-admin.php:280
 msgid "Cloud Resources"
 msgstr "Bulut Kaynakları"
 
@@ -351,16 +360,21 @@ msgstr "Bulut Kaynakları"
 msgid "Cloud Server Configurator"
 msgstr "Bulut Sunucu Yapılandırıcısı"
 
+msgid "Cloud Server Configurator Shortcode (Elementor / Divi / Classic)"
+msgstr "Bulut Sunucu Kısa Kodu (Elementor / Divi / Classic)"
+
 #: templates/frontend-canvas.php:26
 msgid "Cloud Services Platform"
 msgstr "Bulut Hizmetleri Platformu"
 
-#: public/views/storefront-storage.php:86
 msgid "Cluster Region"
 msgstr ""
 
 msgid "clusterRegion"
 msgstr "Küme Bölgesi"
+
+msgid "Color Presets"
+msgstr "Hazır Renk Şablonları"
 
 msgid "compute"
 msgstr "İşlemci Odaklı"
@@ -413,14 +427,12 @@ msgstr "Bu sunucuyu kalıcı olarak silmek istediğinizden emin misiniz? Tüm di
 msgid "Connect CDN Domain"
 msgstr ""
 
-#: public/views/storefront-cdn.php:38
 msgid "Connect New Domain to Edge CDN"
 msgstr ""
 
 msgid "connectDomain"
 msgstr "Alan Adını CDN'e Bağla"
 
-#: public/views/storefront-cdn.php:60
 msgid "Connected CDN Domains"
 msgstr ""
 
@@ -431,7 +443,6 @@ msgstr "ArvanCloud altyapısına başarıyla bağlanıldı."
 msgid "connectedSuccessfully"
 msgstr "ArvanCloud altyapısına başarıyla bağlanıldı."
 
-#: public/views/storefront-storage.php:89
 msgid "Connection Info"
 msgstr ""
 
@@ -441,12 +452,17 @@ msgstr "ArvanCloud altyapısına bağlantı başarısız oldu."
 msgid "copied"
 msgstr "Kopyalandı!"
 
+msgid "Copied"
+msgstr "Kopyalandı"
+
 msgid "copy"
 msgstr "Kopyala"
 
-#: public/views/storefront-storage.php:141 public/views/storefront-storage.php:149 public/views/storefront-storage.php:157
 msgid "Copy"
 msgstr ""
+
+msgid "Copy Shortcode"
+msgstr "Kısa Kodu Kopyala"
 
 msgid "copyIp"
 msgstr "IP Kopyala"
@@ -454,15 +470,12 @@ msgstr "IP Kopyala"
 msgid "cores"
 msgstr "Çekirdek"
 
-#: public/views/storefront-storage.php:39
 msgid "Create New S3 Storage Bucket"
 msgstr ""
 
-#: public/views/storefront-storage.php:50
 msgid "Create S3 Bucket"
 msgstr ""
 
-#: public/views/storefront-storage.php:119
 msgid "Create your first bucket to store and offload media, database backups, and large files."
 msgstr ""
 
@@ -489,11 +502,33 @@ msgstr "Kümülatif Yatırımlar"
 msgid "Custom Amount in Toman"
 msgstr ""
 
+msgid "Custom CSS Style Overrides"
+msgstr "Özel CSS Stil Geçersiz Kılmaları"
+
+msgid "Custom CSS will be injected into both the isolated standalone canvas and all embedded Gutenberg blocks/shortcodes."
+msgstr "Özel CSS, hem bağımsız vitrin tuvaline hem de tüm gömülü Gutenberg bloklarına ve kısa kodlara otomatik olarak eklenecektir."
+
+msgid "Custom Favicon URL"
+msgstr "Özel Favicon Bağlantısı"
+
+msgid "Custom Footer Notice / Copyright Text"
+msgstr "Özel Altbilgi / Telif Hakkı Metni"
+
+msgid "Custom Store Logo URL"
+msgstr "Özel Logo Bağlantısı (URL)"
+
 msgid "customAmount"
 msgstr "Özel Tutar"
 
 msgid "Customer"
 msgstr "Müşteri"
+
+#: includes/class-arvan-blocks.php:120
+msgid "Customer cloud server management and wallet billing dashboard."
+msgstr "Müşteri bulut sunucusu yönetimi ve cüzdan faturalandırma kontrol paneli."
+
+msgid "Customer Dashboard Shortcode"
+msgstr "Müşteri Paneli Kısa Kodu"
 
 msgid "Customer Name"
 msgstr "Müşteri Adı"
@@ -502,7 +537,7 @@ msgstr "Müşteri Adı"
 msgid "Customer Portal & Dashboard"
 msgstr "Müşteri Portalı ve Paneli"
 
-#: admin/class-arvan-admin.php:203
+#: admin/class-arvan-admin.php:214
 msgid "Customer wallet balance updated successfully."
 msgstr ""
 
@@ -511,6 +546,14 @@ msgstr "Müşteri Cüzdanları ve Muhasebe Denetimi"
 
 msgid "customerDashboardLink"
 msgstr "Müşteri Paneli"
+
+#: admin/class-arvan-admin.php:272
+msgid "Customization"
+msgstr "Özelleştirme"
+
+#: admin/class-arvan-admin.php:271
+msgid "Customization & Branding"
+msgstr "Özelleştirme ve Markalama"
 
 #: admin/views/admin-settings.php:121
 msgid "Customization parameters injected into the standalone virtual canvas header and footer."
@@ -549,7 +592,7 @@ msgstr ""
 msgid "Dedicated IPv4:"
 msgstr ""
 
-#: admin/views/admin-settings.php:106
+#: admin/views/admin-settings.php:106 includes/class-arvan-blocks.php:122
 msgid "Default Datacenter Region"
 msgstr "Varsayılan Veri Merkezi Bölgesi"
 
@@ -585,23 +628,18 @@ msgstr ""
 msgid "Destroy Instance"
 msgstr ""
 
-#: public/views/storefront-cdn.php:76
 msgid "DNS Management"
 msgstr ""
 
-#: public/class-arvan-public.php:699
 msgid "DNS record added."
 msgstr ""
 
-#: public/class-arvan-public.php:718
 msgid "DNS record deleted."
 msgstr ""
 
-#: public/views/storefront-cdn.php:109
 msgid "DNS Zone Editor"
 msgstr "DNS Kayıt Düzenleyici"
 
-#: public/views/storefront-cdn.php:135
 msgid "DNS Zone Records:"
 msgstr "DNS Bölge Kayıtları:"
 
@@ -617,18 +655,15 @@ msgstr "DNS Kayıtları"
 msgid "dnsRecordTargetPlaceholder"
 msgstr "Hedef / IP"
 
-#: public/views/storefront-cdn.php:71
 msgid "Domain Name"
 msgstr ""
 
-#: public/class-arvan-public.php:659
 msgid "Domain parameter required."
 msgstr ""
 
 msgid "domainInput"
 msgstr "Alan Adı (ör. example.com)"
 
-#: public/views/storefront-cdn.php:63
 msgid "Domains"
 msgstr ""
 
@@ -639,11 +674,9 @@ msgstr "Tamam"
 msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
 msgstr "ör. %20 kâr marjı, 450 Toman toptan fiyatı müşteri için 540 Toman/saat perakende fiyatına dönüştürür."
 
-#: public/class-arvan-public.php:736
 msgid "Edge cache purged across all global PoPs."
 msgstr ""
 
-#: public/views/storefront-cdn.php:74
 msgid "Edge Caching"
 msgstr ""
 
@@ -653,7 +686,6 @@ msgstr "E-posta"
 msgid "Emergency Actions"
 msgstr "Acil Durum İşlemleri"
 
-#: public/views/storefront-cdn.php:163
 msgid "Enable ArvanCloud Cloud Proxy & DDoS Protection"
 msgstr ""
 
@@ -664,7 +696,6 @@ msgstr ""
 msgid "endpointUrl"
 msgstr "Uç Nokta (Endpoint) URL"
 
-#: public/views/storefront-cdn.php:123
 msgid "Enter a domain name above to accelerate your traffic and protect from DDoS attacks."
 msgstr "Trafiğinizi hızlandırmak ve DDoS saldırılarından korumak için yukarıya bir alan adı girin."
 
@@ -672,7 +703,6 @@ msgstr "Trafiğinizi hızlandırmak ve DDoS saldırılarından korumak için yuk
 msgid "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
 msgstr "Ana ArvanCloud Machine User API anahtarınızı girin. Tüm müşteri kaynakları bu hesap altında sağlanacaktır."
 
-#: public/views/storefront-cdn.php:39
 msgid "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
 msgstr ""
 
@@ -735,11 +765,9 @@ msgstr "Oluştur"
 msgid "Generate"
 msgstr ""
 
-#: public/views/storefront-storage.php:60
 msgid "Generate Access Key ID and Secret Access Key to connect via AWS SDK, Rclone, or backup plugins."
 msgstr ""
 
-#: public/views/storefront-storage.php:63
 msgid "Generate S3 Access Keys"
 msgstr ""
 
@@ -747,9 +775,11 @@ msgstr ""
 msgid "Geo-Redundant Disaster Recovery"
 msgstr "Coğrafi Yedekli Felaket Kurtarma"
 
-#: public/views/storefront-cdn.php:26
 msgid "Global CDN & Anycast Edge DNS"
 msgstr ""
+
+msgid "Gutenberg Ready"
+msgstr "Gutenberg Uyumlu"
 
 #: public/views/storefront-server.php:99
 msgid "Hardware Plan & Specifications"
@@ -800,23 +830,23 @@ msgstr ""
 msgid "Instance Access & Naming"
 msgstr ""
 
-#: public/class-arvan-public.php:267
+#: public/class-arvan-public.php:263 public/class-arvan-public.php:403
 msgid "Instance permanently deleted."
 msgstr ""
 
-#: admin/class-arvan-admin.php:476
+#: admin/class-arvan-admin.php:538
 msgid "Instance powered off by administrator."
 msgstr "Sunucu yönetici tarafından kapatıldı."
 
-#: public/class-arvan-public.php:266
+#: public/class-arvan-public.php:262 public/class-arvan-public.php:402
 msgid "Instance powered off."
 msgstr ""
 
-#: public/class-arvan-public.php:265
+#: public/class-arvan-public.php:261 public/class-arvan-public.php:401
 msgid "Instance powered on."
 msgstr ""
 
-#: admin/class-arvan-admin.php:480
+#: admin/class-arvan-admin.php:542
 msgid "Instance purged by administrator."
 msgstr "Sunucu yönetici tarafından tamamen silindi."
 
@@ -839,6 +869,10 @@ msgstr ""
 msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
 msgstr "ArvanCloud altyapısında anında teslimat. Yüksek IOPS NVMe SSD, özel IPv4, milisaniyenin altında yerel ağ."
 
+#: includes/class-arvan-blocks.php:126
+msgid "Instant VM Provisioning • NVMe Storage • Pay-As-You-Go"
+msgstr "Anında Sanal Makine Dağıtımı • NVMe Depolama • Kullandıkça Öde"
+
 msgid "instantDeploy"
 msgstr "Anında Dağıt"
 
@@ -853,11 +887,15 @@ msgstr ""
 msgid "insufficientBalance"
 msgstr "Yetersiz Bakiye (Yükleme Gerekli)"
 
-#: public/class-arvan-public.php:496
+#: includes/class-arvan-blocks.php:118
+msgid "Interactive Cloud Server sizing, pricing calculator, and deployment widget."
+msgstr "Etkileşimli bulut sunucu boyutlandırma, canlı fiyat hesaplayıcı ve dağıtım bileşeni."
+
+#: public/class-arvan-public.php:630
 msgid "Invalid power action."
 msgstr ""
 
-#: admin/class-arvan-admin.php:416
+#: admin/class-arvan-admin.php:478
 msgid "Invalid user ID or amount."
 msgstr ""
 
@@ -876,14 +914,21 @@ msgstr "Kerec"
 msgid "Ledger Actions"
 msgstr "Defter İşlemleri"
 
+#: includes/class-arvan-blocks.php:125
+msgid "Live ArvanCloud Server Configurator will render here on the frontend."
+msgstr "Canlı ArvanCloud Sunucu Yapılandırıcı ön yüzde burada görüntülenecektir."
+
 #: public/views/dashboard-customer.php:171
 msgid "Live instance power states, IP addresses, and real-time lifecycle controls."
 msgstr ""
 
+msgid "Live Theme Preview"
+msgstr "Canlı Tema Önizlemesi"
+
 msgid "liveInfrastructureOnly"
 msgstr "Yalnızca Canlı Altyapı"
 
-#: admin/class-arvan-admin.php:301
+#: admin/class-arvan-admin.php:330
 msgid "Loading ArvanCloud Management Portal..."
 msgstr ""
 
@@ -891,7 +936,10 @@ msgstr ""
 msgid "Loading ArvanCloud Services Canvas..."
 msgstr "ArvanCloud Hizmetleri Paneli Yükleniyor..."
 
-#: public/views/storefront-cdn.php:186
+#: includes/class-arvan-blocks.php:254
+msgid "Loading Cloud Services..."
+msgstr "Bulut Hizmetleri Yükleniyor..."
+
 msgid "Loading records..."
 msgstr ""
 
@@ -912,7 +960,6 @@ msgstr "Uyarı: Düşük Bakiye"
 msgid "lowBalanceDesc"
 msgstr "Mevcut saatlik tüketim hızınıza göre bakiyeniz 12 saatten kısa sürede tükenecektir."
 
-#: public/views/storefront-cdn.php:61
 msgid "Manage DNS zones, edge caching, and SSL certificates."
 msgstr ""
 
@@ -920,14 +967,13 @@ msgstr ""
 msgid "Manage your virtual servers, CDN domains, S3 object storage buckets, and atomic wallet ledger in one place."
 msgstr ""
 
-#: public/views/storefront-cdn.php:96
 msgid "Managed Let's Encrypt (Active)"
 msgstr "Yönetilen Let's Encrypt (Aktif)"
 
 msgid "Manual Ledger Adjustment"
 msgstr "Manuel Cüzdan Bakiyesi Düzeltmesi"
 
-#: admin/class-arvan-admin.php:205
+#: admin/class-arvan-admin.php:216
 msgid "Manual metering cycle completed."
 msgstr "Manuel faturalandırma döngüsü tamamlandı."
 
@@ -957,7 +1003,7 @@ msgstr "Bellek Odaklı (Memory Master)"
 msgid "Memory Optimized"
 msgstr ""
 
-#: admin/class-arvan-admin.php:452
+#: admin/class-arvan-admin.php:514
 msgid "Metering cycle finished: Processed %1$d resources, debited %2$s Tomans, suspended %3$d accounts."
 msgstr ""
 
@@ -965,7 +1011,7 @@ msgstr ""
 msgid "Minimum 12 characters"
 msgstr ""
 
-#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:543
+#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:677
 msgid "Minimum deposit amount is 1,000 Tomans."
 msgstr ""
 
@@ -981,19 +1027,20 @@ msgstr "Tahmini Aylık (720 saat)"
 msgid "mostPopular"
 msgstr "En Popüler"
 
-#: public/views/storefront-cdn.php:178
 msgid "Name"
 msgstr ""
 
-#: public/views/storefront-cdn.php:155
 msgid "Name / Host"
 msgstr ""
 
-#: admin/class-arvan-admin.php:208
+msgid "Native Gutenberg Block: \"ArvanCloud Server Configurator\""
+msgstr "Yerel Gutenberg Bloğu: \"ArvanCloud Sunucu Yapılandırıcı\""
+
+#: admin/class-arvan-admin.php:219
 msgid "Network error while testing connection."
 msgstr ""
 
-#: admin/class-arvan-admin.php:207
+#: admin/class-arvan-admin.php:218
 msgid "Network error."
 msgstr ""
 
@@ -1008,7 +1055,6 @@ msgstr "Yeni Nesil Bulut Bilişim (IaaS)"
 msgid "No active cloud servers deployed yet"
 msgstr ""
 
-#: public/views/storefront-cdn.php:122
 msgid "No CDN domains configured yet"
 msgstr "Henüz yapılandırılmış CDN alanı yok"
 
@@ -1018,7 +1064,6 @@ msgstr "Henüz başlatılmış müşteri cüzdanı yok."
 msgid "No resources deployed yet."
 msgstr "Henüz dağıtılmış kaynak yok."
 
-#: public/views/storefront-storage.php:118
 msgid "No storage buckets created yet"
 msgstr ""
 
@@ -1047,7 +1092,6 @@ msgstr ""
 msgid "NVMe Fast Storage Volume"
 msgstr ""
 
-#: public/views/storefront-storage.php:74
 msgid "Object storage buckets provisioned on ArvanCloud cluster."
 msgstr ""
 
@@ -1058,7 +1102,7 @@ msgstr "Nesne Depolama (S3)"
 msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
 msgstr "API Anahtarınızı ArvanCloud Kullanıcı Paneli > Profil > API Anahtarları bölümünden alın."
 
-#: public/class-arvan-public.php:549
+#: public/class-arvan-public.php:683
 msgid "Online Top-up via Sandbox Gateway (Ref: %s)"
 msgstr ""
 
@@ -1098,26 +1142,27 @@ msgstr ""
 msgid "Performance Pro"
 msgstr "Performans Pro (Performance Pro)"
 
-#: admin/class-arvan-admin.php:344 admin/class-arvan-admin.php:365 admin/class-arvan-admin.php:406 admin/class-arvan-admin.php:441
+#: admin/class-arvan-admin.php:373 admin/class-arvan-admin.php:394 admin/class-arvan-admin.php:468 admin/class-arvan-admin.php:503
 msgid "Permission denied."
 msgstr ""
+
+msgid "Personalize brand colors, typography, logos, and integrate native WordPress Gutenberg blocks or shortcodes anywhere on your site."
+msgstr "Marka renklerinizi, tipografinizi, logolarınızı kişiselleştirin ve yerel WordPress Gutenberg bloklarını veya kısa kodları sitenizin herhangi bir yerine entegre edin."
 
 msgid "planSpecs"
 msgstr "Plan Özellikleri"
 
-#: public/class-arvan-public.php:609
 msgid "Please enter a valid domain name."
 msgstr ""
 
-#: public/class-arvan-public.php:305
+#: public/class-arvan-public.php:439
 msgid "Please sign in to deploy a cloud server."
 msgstr ""
 
-#: public/class-arvan-public.php:535
+#: public/class-arvan-public.php:669
 msgid "Please sign in to top up your wallet."
 msgstr ""
 
-#: public/class-arvan-public.php:602 public/class-arvan-public.php:769 public/class-arvan-public.php:823
 msgid "Please sign in."
 msgstr ""
 
@@ -1153,6 +1198,9 @@ msgstr "Kapat"
 msgid "powerOn"
 msgstr "Aç"
 
+msgid "Primary Brand Color"
+msgstr "Birincil Marka Rengi"
+
 msgid "proceedPayment"
 msgstr "Ödemeye İlerle"
 
@@ -1163,7 +1211,6 @@ msgstr "İşleniyor..."
 msgid "Processor"
 msgstr "İşlemci"
 
-#: public/views/storefront-cdn.php:105
 msgid "Protected"
 msgstr "Korumalı"
 
@@ -1176,14 +1223,12 @@ msgstr "⚡ ArvanCloud Çekirdek Altyapısında 45 saniyeden kısa sürede hazı
 msgid "proxied"
 msgstr "Proxy Aktif"
 
-#: public/views/storefront-cdn.php:180
 msgid "Proxy"
 msgstr ""
 
 msgid "Purge"
 msgstr "Tamamen Sil"
 
-#: public/views/storefront-cdn.php:101
 msgid "Purge Edge Cache"
 msgstr "Uç Önbelleği Temizle"
 
@@ -1203,7 +1248,6 @@ msgstr "Bellek (RAM)"
 msgid "RAM Memory"
 msgstr "RAM Bellek"
 
-#: public/views/storefront-storage.php:87
 msgid "Rate (Monthly)"
 msgstr ""
 
@@ -1223,14 +1267,13 @@ msgstr "Yeniden Başlat"
 msgid "Reboot"
 msgstr ""
 
-#: public/class-arvan-public.php:264
+#: public/class-arvan-public.php:260 public/class-arvan-public.php:400
 msgid "Reboot command dispatched to ArvanCloud."
 msgstr ""
 
 msgid "rechargeWalletNow"
 msgstr "Hemen Bakiye Yükle"
 
-#: public/views/storefront-cdn.php:145
 msgid "Record Type"
 msgstr "Kayıt Türü"
 
@@ -1244,11 +1287,11 @@ msgstr "Bayi Markası / Mağaza Adı"
 msgid "Resource Name"
 msgstr "Kaynak Adı"
 
-#: public/class-arvan-public.php:453
+#: public/class-arvan-public.php:587
 msgid "Resource not found or access denied."
 msgstr ""
 
-#: admin/class-arvan-admin.php:467
+#: admin/class-arvan-admin.php:529
 msgid "Resource not found."
 msgstr ""
 
@@ -1264,7 +1307,7 @@ msgstr ""
 msgid "Root Password"
 msgstr ""
 
-#: admin/class-arvan-admin.php:212
+#: admin/class-arvan-admin.php:223
 msgid "Run Metering Cycle Now"
 msgstr "Faturalandırma Döngüsünü Şimdi Çalıştır"
 
@@ -1275,7 +1318,7 @@ msgstr "Çalışıyor"
 msgid "Running"
 msgstr ""
 
-#: admin/class-arvan-admin.php:211
+#: admin/class-arvan-admin.php:222
 msgid "Running Metering..."
 msgstr ""
 
@@ -1283,31 +1326,24 @@ msgstr ""
 msgid "Runtime Status"
 msgstr ""
 
-#: public/class-arvan-public.php:841
 msgid "S3 Access credentials generated."
 msgstr ""
 
-#: public/views/storefront-storage.php:59
 msgid "S3 API Credentials"
 msgstr ""
 
-#: public/views/storefront-storage.php:85
 msgid "S3 API Endpoint"
 msgstr ""
 
-#: public/class-arvan-public.php:270
 msgid "S3 Bucket created successfully."
 msgstr ""
 
-#: public/views/storefront-storage.php:138
 msgid "S3 Endpoint URL:"
 msgstr ""
 
-#: admin/views/admin-settings.php:172
 msgid "S3 Object Storage"
 msgstr ""
 
-#: public/views/storefront-storage.php:131
 msgid "S3 Storage API Credentials & Setup"
 msgstr ""
 
@@ -1315,11 +1351,9 @@ msgstr ""
 msgid "S3 Storage Bucket"
 msgstr ""
 
-#: public/class-arvan-public.php:811
 msgid "S3 Storage Bucket \"%s\" created successfully."
 msgstr ""
 
-#: public/views/storefront-storage.php:27
 msgid "S3-Compatible Object Storage"
 msgstr ""
 
@@ -1343,7 +1377,9 @@ msgstr "Ayarları Kaydet"
 msgid "Save All Reseller Settings"
 msgstr "Tüm Bayi Ayarlarını Kaydet"
 
-#: public/views/storefront-storage.php:28
+msgid "Save Customization"
+msgstr "Özelleştirmeyi Kaydet"
+
 msgid "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
 msgstr ""
 
@@ -1353,7 +1389,9 @@ msgstr "Müşteri, kaynak adı veya Arvan UUID ile arayın..."
 msgid "searchWalletsPlaceholder"
 msgstr "Müşteri adı, e-posta veya kullanıcı kimliği ile arayın..."
 
-#: public/views/storefront-storage.php:154
+msgid "Secondary / Dark Accent"
+msgstr "İkincil / Koyu Vurgu Rengi"
+
 msgid "Secret Access Key:"
 msgstr ""
 
@@ -1370,11 +1408,15 @@ msgstr "Dil Seçin"
 msgid "selectPresetAmount"
 msgstr "Önceden Tanımlı Tutar Seçin:"
 
-#: public/class-arvan-public.php:421
+#: public/class-arvan-public.php:555
 msgid "Server \"%s\" provisioned successfully! IP: %s"
 msgstr ""
 
-#: public/class-arvan-public.php:263
+#: includes/class-arvan-blocks.php:121
+msgid "Server Configurator Settings"
+msgstr "Sunucu Yapılandırıcı Ayarları"
+
+#: public/class-arvan-public.php:259 public/class-arvan-public.php:399
 msgid "Server deployed successfully! IP assigned:"
 msgstr ""
 
@@ -1386,19 +1428,19 @@ msgstr ""
 msgid "Server Instance"
 msgstr ""
 
-#: public/class-arvan-public.php:492
+#: public/class-arvan-public.php:626
 msgid "Server permanently destroyed."
 msgstr ""
 
-#: public/class-arvan-public.php:480
+#: public/class-arvan-public.php:614
 msgid "Server powered off gracefully."
 msgstr ""
 
-#: public/class-arvan-public.php:474
+#: public/class-arvan-public.php:608
 msgid "Server powered on successfully."
 msgstr ""
 
-#: public/class-arvan-public.php:486
+#: public/class-arvan-public.php:620
 msgid "Server reboot command executed."
 msgstr ""
 
@@ -1415,15 +1457,15 @@ msgstr "Hizmet"
 msgid "Services Suspended Due to Zero Wallet Balance"
 msgstr ""
 
-#: admin/class-arvan-admin.php:252
+#: admin/class-arvan-admin.php:263
 msgid "Settings"
 msgstr ""
 
-#: admin/class-arvan-admin.php:251
+#: admin/class-arvan-admin.php:262
 msgid "Settings & API"
 msgstr "Ayarlar ve API"
 
-#: admin/class-arvan-admin.php:396
+#: admin/class-arvan-admin.php:458
 msgid "Settings saved successfully."
 msgstr ""
 
@@ -1432,6 +1474,10 @@ msgstr "Şehriyar"
 
 msgid "Shiraz"
 msgstr "Şiraz"
+
+#: includes/class-arvan-blocks.php:124
+msgid "Show Hourly & Monthly Rates"
+msgstr "Saatlik ve Aylık Fiyatları Göster"
 
 #: public/views/dashboard-customer.php:21
 msgid "Sign in to Access Your Cloud Portal"
@@ -1462,11 +1508,9 @@ msgstr ""
 msgid "sshKey"
 msgstr "SSH Anahtarı"
 
-#: public/views/storefront-cdn.php:73
 msgid "SSL / TLS Mode"
 msgstr ""
 
-#: public/class-arvan-public.php:755
 msgid "SSL configuration updated."
 msgstr ""
 
@@ -1486,7 +1530,6 @@ msgstr "Başlangıç Eko (Starter Eco)"
 msgid "status"
 msgstr "Durum"
 
-#: public/views/storefront-cdn.php:75 public/views/storefront-storage.php:88
 msgid "Status"
 msgstr ""
 
@@ -1525,9 +1568,15 @@ msgstr "Yüksek verimlilik, çoklu bölge çoğaltma ve standart API uyumluluğu
 msgid "storageTitle"
 msgstr "S3 Nesne Depolama Paketleri"
 
+msgid "Store Brand Name"
+msgstr "Mağaza Marka Adı"
+
 #: admin/views/admin-settings.php:95
 msgid "Store Currency"
 msgstr "Mağaza Para Birimi"
+
+msgid "Storefront Branding & Visual Customization"
+msgstr "Vitrin Markalama ve Görsel Özelleştirme"
 
 msgid "storefrontSubtitle"
 msgstr "Bulut Altyapı Mağazası"
@@ -1569,7 +1618,6 @@ msgstr "Tebriz - Kuzeybatı"
 msgid "Tabriz (Northwest)"
 msgstr "Tebriz (Kuzeybatı)"
 
-#: public/views/storefront-cdn.php:159
 msgid "Target Value / IP"
 msgstr "Hedef / IP"
 
@@ -1592,7 +1640,7 @@ msgstr "Tahran (Şehriyar)"
 msgid "Test Connection"
 msgstr "Bağlantıyı Test Et"
 
-#: admin/class-arvan-admin.php:202
+#: admin/class-arvan-admin.php:213
 msgid "Testing connection to ArvanCloud API..."
 msgstr ""
 
@@ -1607,7 +1655,6 @@ msgstr "Tier III Kurumsal Veri Merkezi"
 msgid "timestamp"
 msgstr "Zaman Damgası"
 
-#: public/views/storefront-cdn.php:95
 msgid "Toggle Managed SSL"
 msgstr ""
 
@@ -1643,7 +1690,6 @@ msgstr ""
 msgid "transactionHistory"
 msgstr "Cüzdan İşlem Defteri ve Denetim Kayıtları"
 
-#: public/views/storefront-cdn.php:181
 msgid "TTL"
 msgstr ""
 
@@ -1659,15 +1705,17 @@ msgstr "Kullanım"
 msgid "type"
 msgstr "Tür"
 
-#: public/views/storefront-cdn.php:177
 msgid "Type"
 msgstr ""
 
-#: public/class-arvan-public.php:433
+msgid "Typography & Font Family Stack"
+msgstr "Tipografi ve Yazı Tipi Ailesi"
+
+#: public/class-arvan-public.php:567
 msgid "Unauthorized."
 msgstr ""
 
-#: admin/class-arvan-admin.php:482
+#: admin/class-arvan-admin.php:544
 msgid "Unknown admin action."
 msgstr ""
 
@@ -1682,14 +1730,12 @@ msgstr ""
 msgid "US Dollar (USD)"
 msgstr ""
 
-#: public/views/storefront-cdn.php:179
 msgid "Value"
 msgstr ""
 
 msgid "vcpu"
 msgstr "İşlemci (vCPU)"
 
-#: public/views/storefront-storage.php:105
 msgid "View Setup Snippets"
 msgstr ""
 
@@ -1715,28 +1761,31 @@ msgstr "Cüzdan Kimliği"
 msgid "Wallet is frozen. Cannot perform debit."
 msgstr ""
 
-#: public/class-arvan-public.php:565
+#: public/class-arvan-public.php:699
 msgid "Wallet successfully credited with %1$s %2$s! RefID: %3$s"
 msgstr ""
 
-#: public/class-arvan-public.php:268
+#: public/class-arvan-public.php:264 public/class-arvan-public.php:404
 msgid "Wallet successfully credited!"
 msgstr ""
 
 msgid "walletBalance"
 msgstr "Cüzdan Bakiyesi"
 
-#: admin/class-arvan-admin.php:269
+#: admin/class-arvan-admin.php:289
 msgid "Wallets & Ledger"
 msgstr "Cüzdanlar ve Muhasebe"
 
-#: admin/class-arvan-admin.php:270
+#: admin/class-arvan-admin.php:290
 msgid "Wallets Ledger"
 msgstr ""
 
 #: admin/views/admin-settings.php:65
 msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
 msgstr "Etkinleştirildiğinde, canlı altyapıya bağlanmadan anında test, sahte dağıtım ve demo bakiye yüklemelerine izin verir."
+
+msgid "WordPress Gutenberg Block & Shortcodes Integration"
+msgstr "WordPress Gutenberg Bloğu ve Kısa Kod Entegrasyonu"
 
 #: public/views/storefront-server.php:333
 msgid "Your Available Balance:"
@@ -1746,7 +1795,6 @@ msgstr ""
 msgid "Your available wallet balance will only support active services for approximately %s hours. Please top up your wallet to prevent automated service interruption."
 msgstr ""
 
-#: public/views/storefront-storage.php:73
 msgid "Your Storage Buckets"
 msgstr ""
 

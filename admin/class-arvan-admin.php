@@ -163,6 +163,8 @@ class Arvan_Admin {
 				$current_page_tab = 'resources';
 			} elseif ( 'arvan-reseller-wallets' === $_GET['page'] ) {
 				$current_page_tab = 'wallets';
+			} elseif ( 'arvan-reseller-customization' === $_GET['page'] ) {
+				$current_page_tab = 'customization';
 			}
 		}
 
@@ -174,15 +176,24 @@ class Arvan_Admin {
 				'nonce'      => wp_create_nonce( 'arvan_admin_nonce' ),
 				'activeTab'  => $current_page_tab,
 				'settings'   => array(
-					'apiKey'        => get_option( 'arvan_api_key', '' ),
-					'sandboxMode'   => (bool) get_option( 'arvan_sandbox_mode', 1 ),
-					'markupPct'     => (float) get_option( 'arvan_markup_percentage', 20 ),
-					'fixedMargin'   => (float) get_option( 'arvan_fixed_margin', 0 ),
-					'currency'      => get_option( 'arvan_currency', 'IRT' ),
-					'defaultRegion' => get_option( 'arvan_default_region', 'ir-thr-c2' ),
-					'storeName'     => get_option( 'arvan_store_name', get_bloginfo( 'name' ) . ' Cloud' ),
-					'supportEmail'  => get_option( 'arvan_support_email', get_option( 'admin_email' ) ),
-					'supportPhone'  => get_option( 'arvan_support_phone', '021-88888888' ),
+					'apiKey'             => get_option( 'arvan_api_key', '' ),
+					'sandboxMode'        => (bool) get_option( 'arvan_sandbox_mode', 1 ),
+					'markupPct'          => (float) get_option( 'arvan_markup_percentage', 20 ),
+					'fixedMargin'        => (float) get_option( 'arvan_fixed_margin', 0 ),
+					'currency'           => get_option( 'arvan_currency', 'IRT' ),
+					'defaultRegion'      => get_option( 'arvan_default_region', 'ir-thr-c2' ),
+					'storeName'          => get_option( 'arvan_store_name', get_bloginfo( 'name' ) . ' Cloud' ),
+					'storeTagline'       => get_option( 'arvan_store_tagline', 'High Performance Cloud Computing & NVMe Storage' ),
+					'logoUrl'            => get_option( 'arvan_store_logo_url', '' ),
+					'faviconUrl'         => get_option( 'arvan_store_favicon_url', '' ),
+					'brandPrimaryColor'  => get_option( 'arvan_brand_primary_color', '#008b8b' ),
+					'brandSecondaryColor'=> get_option( 'arvan_brand_secondary_color', '#0b3a42' ),
+					'fontFamily'         => get_option( 'arvan_font_family', 'vazirmatn' ),
+					'customCss'          => get_option( 'arvan_custom_css', '' ),
+					'showHourlyToggle'   => (bool) get_option( 'arvan_show_hourly_toggle', 1 ),
+					'customFooterText'   => get_option( 'arvan_custom_footer_text', '' ),
+					'supportEmail'       => get_option( 'arvan_support_email', get_option( 'admin_email' ) ),
+					'supportPhone'       => get_option( 'arvan_support_phone', '021-88888888' ),
 				),
 				'stats'      => array(
 					'total_vms'           => isset( $stats['total_vms'] ) ? (int) $stats['total_vms'] : 0,
@@ -257,6 +268,15 @@ class Arvan_Admin {
 
 		add_submenu_page(
 			'arvan-reseller',
+			__( 'Customization & Branding', 'arv-seller' ),
+			__( 'Customization', 'arv-seller' ),
+			'manage_options',
+			'arvan-reseller-customization',
+			array( $this, 'render_admin_app' )
+		);
+
+		add_submenu_page(
+			'arvan-reseller',
 			__( 'Cloud Resources', 'arv-seller' ),
 			__( 'All Resources', 'arv-seller' ),
 			'manage_options',
@@ -284,6 +304,15 @@ class Arvan_Admin {
 		register_setting( 'arvan_settings_group', 'arvan_currency' );
 		register_setting( 'arvan_settings_group', 'arvan_default_region' );
 		register_setting( 'arvan_settings_group', 'arvan_store_name' );
+		register_setting( 'arvan_settings_group', 'arvan_store_tagline' );
+		register_setting( 'arvan_settings_group', 'arvan_store_logo_url' );
+		register_setting( 'arvan_settings_group', 'arvan_store_favicon_url' );
+		register_setting( 'arvan_settings_group', 'arvan_brand_primary_color' );
+		register_setting( 'arvan_settings_group', 'arvan_brand_secondary_color' );
+		register_setting( 'arvan_settings_group', 'arvan_font_family' );
+		register_setting( 'arvan_settings_group', 'arvan_custom_css' );
+		register_setting( 'arvan_settings_group', 'arvan_show_hourly_toggle' );
+		register_setting( 'arvan_settings_group', 'arvan_custom_footer_text' );
 		register_setting( 'arvan_settings_group', 'arvan_support_email' );
 		register_setting( 'arvan_settings_group', 'arvan_support_phone' );
 		register_setting( 'arvan_settings_group', 'arvan_sandbox_mode' );
@@ -385,6 +414,39 @@ class Arvan_Admin {
 		}
 		if ( isset( $_POST['arvan_store_name'] ) ) {
 			update_option( 'arvan_store_name', sanitize_text_field( wp_unslash( $_POST['arvan_store_name'] ) ) );
+		}
+		if ( isset( $_POST['arvan_store_tagline'] ) ) {
+			update_option( 'arvan_store_tagline', sanitize_text_field( wp_unslash( $_POST['arvan_store_tagline'] ) ) );
+		}
+		if ( isset( $_POST['arvan_store_logo_url'] ) ) {
+			update_option( 'arvan_store_logo_url', esc_url_raw( wp_unslash( $_POST['arvan_store_logo_url'] ) ) );
+		}
+		if ( isset( $_POST['arvan_store_favicon_url'] ) ) {
+			update_option( 'arvan_store_favicon_url', esc_url_raw( wp_unslash( $_POST['arvan_store_favicon_url'] ) ) );
+		}
+		if ( isset( $_POST['arvan_brand_primary_color'] ) ) {
+			$col = sanitize_hex_color( wp_unslash( $_POST['arvan_brand_primary_color'] ) );
+			if ( $col ) {
+				update_option( 'arvan_brand_primary_color', $col );
+			}
+		}
+		if ( isset( $_POST['arvan_brand_secondary_color'] ) ) {
+			$col2 = sanitize_hex_color( wp_unslash( $_POST['arvan_brand_secondary_color'] ) );
+			if ( $col2 ) {
+				update_option( 'arvan_brand_secondary_color', $col2 );
+			}
+		}
+		if ( isset( $_POST['arvan_font_family'] ) ) {
+			update_option( 'arvan_font_family', sanitize_key( wp_unslash( $_POST['arvan_font_family'] ) ) );
+		}
+		if ( isset( $_POST['arvan_custom_css'] ) ) {
+			update_option( 'arvan_custom_css', wp_strip_all_tags( wp_unslash( $_POST['arvan_custom_css'] ) ) );
+		}
+		if ( isset( $_POST['arvan_show_hourly_toggle'] ) ) {
+			update_option( 'arvan_show_hourly_toggle', '1' === $_POST['arvan_show_hourly_toggle'] || 'true' === $_POST['arvan_show_hourly_toggle'] ? 1 : 0 );
+		}
+		if ( isset( $_POST['arvan_custom_footer_text'] ) ) {
+			update_option( 'arvan_custom_footer_text', sanitize_text_field( wp_unslash( $_POST['arvan_custom_footer_text'] ) ) );
 		}
 		if ( isset( $_POST['arvan_support_email'] ) ) {
 			update_option( 'arvan_support_email', sanitize_email( wp_unslash( $_POST['arvan_support_email'] ) ) );

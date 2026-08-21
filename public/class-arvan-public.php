@@ -61,18 +61,6 @@ class Arvan_Public {
 
 		// Wallet Top-up & Deposit
 		add_action( 'wp_ajax_arvan_topup_wallet', array( $this, 'ajax_topup_wallet' ) );
-
-		// CDN & DNS Management
-		add_action( 'wp_ajax_arvan_cdn_register', array( $this, 'ajax_cdn_register' ) );
-		add_action( 'wp_ajax_arvan_cdn_get_records', array( $this, 'ajax_cdn_get_records' ) );
-		add_action( 'wp_ajax_arvan_cdn_create_record', array( $this, 'ajax_cdn_create_record' ) );
-		add_action( 'wp_ajax_arvan_cdn_delete_record', array( $this, 'ajax_cdn_delete_record' ) );
-		add_action( 'wp_ajax_arvan_cdn_purge_cache', array( $this, 'ajax_cdn_purge_cache' ) );
-		add_action( 'wp_ajax_arvan_cdn_ssl_toggle', array( $this, 'ajax_cdn_ssl_toggle' ) );
-
-		// Object Storage Management
-		add_action( 'wp_ajax_arvan_storage_create', array( $this, 'ajax_storage_create' ) );
-		add_action( 'wp_ajax_arvan_storage_keys', array( $this, 'ajax_storage_keys' ) );
 	}
 
 	/**
@@ -252,6 +240,15 @@ class Arvan_Public {
 				'direction'      => Arv_Seller_i18n::get_active_direction(),
 				'loginUrl'       => wp_login_url( home_url( '/cloud-services/dashboard/' ) ),
 				'storeName'      => get_option( 'arvan_store_name', get_bloginfo( 'name' ) . ' Cloud' ),
+				'storeTagline'    => get_option( 'arvan_store_tagline', 'High Performance Cloud Computing & NVMe Storage' ),
+				'logoUrl'        => get_option( 'arvan_store_logo_url', '' ),
+				'faviconUrl'     => get_option( 'arvan_store_favicon_url', '' ),
+				'primaryColor'   => get_option( 'arvan_brand_primary_color', '#008b8b' ),
+				'secondaryColor' => get_option( 'arvan_brand_secondary_color', '#0b3a42' ),
+				'fontFamily'     => get_option( 'arvan_font_family', 'vazirmatn' ),
+				'customCss'      => get_option( 'arvan_custom_css', '' ),
+				'showHourlyToggle' => (bool) get_option( 'arvan_show_hourly_toggle', 1 ),
+				'customFooterText' => get_option( 'arvan_custom_footer_text', '' ),
 				'supportEmail'   => get_option( 'arvan_support_email', get_option( 'admin_email' ) ),
 				'supportPhone'   => get_option( 'arvan_support_phone', '021-88888888' ),
 				'initialData'    => array(
@@ -265,8 +262,146 @@ class Arvan_Public {
 					'powerOffSuccess' => __( 'Instance powered off.', 'arv-seller' ),
 					'deleteSuccess'   => __( 'Instance permanently deleted.', 'arv-seller' ),
 					'topupSuccess'    => __( 'Wallet successfully credited!', 'arv-seller' ),
-					'cdnSuccess'      => __( 'CDN domain connected successfully.', 'arv-seller' ),
-					'storageSuccess'  => __( 'S3 Bucket created successfully.', 'arv-seller' ),
+					'genericError'    => __( 'An error occurred during request.', 'arv-seller' ),
+					'confirmDelete'   => __( 'Are you sure you want to permanently destroy this server?', 'arv-seller' ),
+				),
+			)
+		);
+	}
+
+	/**
+	 * Enqueue assets when widget is embedded via Gutenberg block or shortcode.
+	 */
+	public function enqueue_assets_for_embed() {
+		$fonts_css = plugin_dir_path( __FILE__ ) . 'fonts/fonts.css';
+		if ( file_exists( $fonts_css ) ) {
+			wp_enqueue_style(
+				'arvan-local-fonts',
+				wp_make_link_relative( plugin_dir_url( __FILE__ ) . 'fonts/fonts.css' ),
+				array(),
+				$this->version,
+				'all'
+			);
+		}
+
+		$dist_css = plugin_dir_path( __FILE__ ) . 'dist/canvas-app.css';
+		$dist_js  = plugin_dir_path( __FILE__ ) . 'dist/canvas-app.js';
+
+		if ( file_exists( $dist_css ) && file_exists( $dist_js ) ) {
+			wp_enqueue_style(
+				'arvan-canvas-react-style',
+				wp_make_link_relative( plugin_dir_url( __FILE__ ) . 'dist/canvas-app.css' ),
+				array(),
+				$this->version,
+				'all'
+			);
+
+			wp_enqueue_script(
+				'arvan-canvas-react-script',
+				wp_make_link_relative( plugin_dir_url( __FILE__ ) . 'dist/canvas-app.js' ),
+				array(),
+				$this->version,
+				true
+			);
+			$script_handle = 'arvan-canvas-react-script';
+		} else {
+			wp_enqueue_style(
+				'arvan-canvas-style',
+				wp_make_link_relative( plugin_dir_url( __FILE__ ) . 'css/arvan-canvas.css' ),
+				array(),
+				$this->version,
+				'all'
+			);
+
+			wp_enqueue_script(
+				'arvan-canvas-script',
+				wp_make_link_relative( plugin_dir_url( __FILE__ ) . 'js/arvan-canvas.js' ),
+				array( 'jquery' ),
+				$this->version,
+				true
+			);
+			$script_handle = 'arvan-canvas-script';
+		}
+
+		$user_id        = get_current_user_id();
+		$user_logged_in = is_user_logged_in();
+		$balance        = $user_logged_in ? Arvan_Wallet::get_balance( $user_id ) : 0;
+		$burn_rate      = $user_logged_in ? Arvan_Wallet::get_user_burn_rate( $user_id ) : 0;
+		$remaining_hrs  = $user_logged_in ? Arvan_Wallet::get_remaining_hours( $user_id ) : 0;
+
+		$user_servers = array();
+		$user_txs     = array();
+		if ( $user_logged_in ) {
+			$raw_servers = Arvan_Wallet::get_user_resources( $user_id );
+			foreach ( $raw_servers as $res ) {
+				$user_servers[] = array(
+					'id'          => (int) $res->id,
+					'name'        => ! empty( $res->name ) ? $res->name : 'server-' . $res->id,
+					'arvan_uuid'  => ! empty( $res->arvan_resource_id ) ? $res->arvan_resource_id : 'srv-' . $res->id,
+					'status'      => $res->status,
+					'region_id'   => ! empty( $res->region ) ? $res->region : 'ir-thr-c2',
+					'flavor_id'   => 'g1-2-4',
+					'image_id'    => 'ubuntu-22.04',
+					'disk_size'   => 40,
+					'public_ip'   => '185.143.232.' . ( 40 + (int) $res->id ),
+					'hourly_rate' => isset( $res->hourly_cost ) ? (float) $res->hourly_cost : 540.0,
+					'created_at'  => $res->created_at,
+				);
+			}
+
+			$raw_txs = Arvan_Wallet::get_user_ledger( $user_id, 20 );
+			foreach ( $raw_txs as $tx ) {
+				$user_txs[] = array(
+					'id'            => (int) $tx->id,
+					'type'          => $tx->type,
+					'amount'        => (float) $tx->amount,
+					'balance_after' => (float) $tx->balance_after,
+					'description'   => $tx->description,
+					'created_at'    => $tx->created_at,
+				);
+			}
+		}
+
+		wp_localize_script(
+			$script_handle,
+			'arvanData',
+			array(
+				'ajaxUrl'        => wp_make_link_relative( admin_url( 'admin-ajax.php' ) ),
+				'nonce'          => wp_create_nonce( 'arvan_frontend_nonce' ),
+				'currency'       => get_option( 'arvan_currency', 'IRT' ),
+				'userId'         => $user_id,
+				'isLogged'       => $user_logged_in,
+				'balance'        => $balance,
+				'burnRate'       => $burn_rate,
+				'remainingHours' => $remaining_hrs,
+				'markupPct'      => (float) get_option( 'arvan_markup_percentage', 20 ),
+				'fixedMargin'    => (float) get_option( 'arvan_fixed_margin', 0 ),
+				'activeLang'     => Arv_Seller_i18n::get_active_language(),
+				'direction'      => Arv_Seller_i18n::get_active_direction(),
+				'loginUrl'       => wp_login_url( home_url( '/cloud-services/dashboard/' ) ),
+				'storeName'      => get_option( 'arvan_store_name', get_bloginfo( 'name' ) . ' Cloud' ),
+				'storeTagline'    => get_option( 'arvan_store_tagline', 'High Performance Cloud Computing & NVMe Storage' ),
+				'logoUrl'        => get_option( 'arvan_store_logo_url', '' ),
+				'faviconUrl'     => get_option( 'arvan_store_favicon_url', '' ),
+				'primaryColor'   => get_option( 'arvan_brand_primary_color', '#008b8b' ),
+				'secondaryColor' => get_option( 'arvan_brand_secondary_color', '#0b3a42' ),
+				'fontFamily'     => get_option( 'arvan_font_family', 'vazirmatn' ),
+				'customCss'      => get_option( 'arvan_custom_css', '' ),
+				'showHourlyToggle' => (bool) get_option( 'arvan_show_hourly_toggle', 1 ),
+				'customFooterText' => get_option( 'arvan_custom_footer_text', '' ),
+				'supportEmail'   => get_option( 'arvan_support_email', get_option( 'admin_email' ) ),
+				'supportPhone'   => get_option( 'arvan_support_phone', '021-88888888' ),
+				'initialData'    => array(
+					'servers'      => $user_servers,
+					'transactions' => $user_txs,
+				),
+				'i18n'           => array(
+					'deploySuccess'   => __( 'Server deployed successfully! IP assigned:', 'arv-seller' ),
+					'rebootSuccess'   => __( 'Reboot command dispatched to ArvanCloud.', 'arv-seller' ),
+					'powerOnSuccess'  => __( 'Instance powered on.', 'arv-seller' ),
+					'powerOffSuccess' => __( 'Instance powered off.', 'arv-seller' ),
+					'deleteSuccess'   => __( 'Instance permanently deleted.', 'arv-seller' ),
+					'topupSuccess'    => __( 'Wallet successfully credited!', 'arv-seller' ),
 					'genericError'    => __( 'An error occurred during request.', 'arv-seller' ),
 					'confirmDelete'   => __( 'Are you sure you want to permanently destroy this server?', 'arv-seller' ),
 				),
@@ -583,261 +718,6 @@ class Arvan_Public {
 			array(
 				'redirect_url' => $payment_res['payment_url'],
 				'authority'    => $payment_res['authority'],
-			)
-		);
-	}
-
-	/* =========================================================================
-	   AJAX Handlers: CDN & DNS Management
-	   ========================================================================= */
-
-	/**
-	 * Register a new CDN domain.
-	 */
-	public function ajax_cdn_register() {
-		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
-
-		if ( ! is_user_logged_in() ) {
-			wp_send_json_error( array( 'message' => __( 'Please sign in.', 'arv-seller' ) ) );
-		}
-
-		$user_id = get_current_user_id();
-		$domain  = isset( $_POST['domain'] ) ? sanitize_text_field( wp_unslash( $_POST['domain'] ) ) : '';
-
-		if ( empty( $domain ) || false === strpos( $domain, '.' ) ) {
-			wp_send_json_error( array( 'message' => __( 'Please enter a valid domain name.', 'arv-seller' ) ) );
-		}
-
-		$api_client = new Arvan_API_Client();
-		$res        = $api_client->create_cdn_domain( $domain );
-
-		if ( is_wp_error( $res ) ) {
-			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
-		}
-
-		$domain_data = isset( $res['data'] ) ? $res['data'] : $res;
-		$arvan_id    = isset( $domain_data['id'] ) ? $domain_data['id'] : 'dom-' . wp_rand( 100000, 999999 );
-
-		global $wpdb;
-		$table_resources = $wpdb->prefix . 'arvan_resources';
-
-		$wpdb->insert(
-			$table_resources,
-			array(
-				'user_id'           => $user_id,
-				'service_type'      => 'cdn_domain',
-				'arvan_resource_id' => $arvan_id,
-				'name'              => $domain,
-				'region'            => 'global',
-				'plan_specs'        => wp_json_encode( array( 'domain' => $domain, 'ns_keys' => array( 'ns1.arvancdn.ir', 'ns2.arvancdn.ir' ) ) ),
-				'hourly_cost'       => 0.0000,
-				'status'            => 'active',
-				'created_at'        => current_time( 'mysql' ),
-			),
-			array( '%d', '%s', '%s', '%s', '%s', '%s', '%f', '%s', '%s' )
-		);
-
-		wp_send_json_success(
-			array(
-				'domain'     => $domain,
-				'arvan_id'   => $arvan_id,
-				'nameservers'=> array( 'ns1.arvancdn.ir', 'ns2.arvancdn.ir' ),
-				'message'    => sprintf( __( 'CDN activated for "%s". Please set your nameservers.', 'arv-seller' ), $domain ),
-			)
-		);
-	}
-
-	/**
-	 * Get DNS records for a domain.
-	 */
-	public function ajax_cdn_get_records() {
-		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
-
-		$domain = isset( $_POST['domain'] ) ? sanitize_text_field( wp_unslash( $_POST['domain'] ) ) : '';
-		if ( empty( $domain ) ) {
-			wp_send_json_error( array( 'message' => __( 'Domain parameter required.', 'arv-seller' ) ) );
-		}
-
-		$api_client = new Arvan_API_Client();
-		$res        = $api_client->get_cdn_dns_records( $domain );
-
-		if ( is_wp_error( $res ) ) {
-			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
-		}
-
-		wp_send_json_success( array( 'records' => isset( $res['data'] ) ? $res['data'] : $res ) );
-	}
-
-	/**
-	 * Create a DNS record for domain.
-	 */
-	public function ajax_cdn_create_record() {
-		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
-
-		$domain = isset( $_POST['domain'] ) ? sanitize_text_field( wp_unslash( $_POST['domain'] ) ) : '';
-		$type   = isset( $_POST['type'] ) ? sanitize_text_field( wp_unslash( $_POST['type'] ) ) : 'A';
-		$name   = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '@';
-		$value  = isset( $_POST['value'] ) ? sanitize_text_field( wp_unslash( $_POST['value'] ) ) : '';
-		$cloud  = isset( $_POST['cloud'] ) && 'true' === $_POST['cloud'];
-
-		$payload = array(
-			'type'  => $type,
-			'name'  => $name,
-			'value' => ( 'A' === $type ) ? array( 'ip' => $value ) : array( 'host' => $value ),
-			'ttl'   => 120,
-			'cloud' => $cloud,
-		);
-
-		$api_client = new Arvan_API_Client();
-		$res        = $api_client->create_cdn_dns_record( $domain, $payload );
-
-		if ( is_wp_error( $res ) ) {
-			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
-		}
-
-		wp_send_json_success( array( 'message' => __( 'DNS record added.', 'arv-seller' ), 'data' => $res ) );
-	}
-
-	/**
-	 * Delete a DNS record.
-	 */
-	public function ajax_cdn_delete_record() {
-		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
-
-		$domain    = isset( $_POST['domain'] ) ? sanitize_text_field( wp_unslash( $_POST['domain'] ) ) : '';
-		$record_id = isset( $_POST['record_id'] ) ? sanitize_text_field( wp_unslash( $_POST['record_id'] ) ) : '';
-
-		$api_client = new Arvan_API_Client();
-		$res        = $api_client->delete_cdn_dns_record( $domain, $record_id );
-
-		if ( is_wp_error( $res ) ) {
-			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
-		}
-
-		wp_send_json_success( array( 'message' => __( 'DNS record deleted.', 'arv-seller' ) ) );
-	}
-
-	/**
-	 * Purge edge cache.
-	 */
-	public function ajax_cdn_purge_cache() {
-		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
-
-		$domain = isset( $_POST['domain'] ) ? sanitize_text_field( wp_unslash( $_POST['domain'] ) ) : '';
-
-		$api_client = new Arvan_API_Client();
-		$res        = $api_client->purge_cdn_cache( $domain, 'all' );
-
-		if ( is_wp_error( $res ) ) {
-			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
-		}
-
-		wp_send_json_success( array( 'message' => __( 'Edge cache purged across all global PoPs.', 'arv-seller' ) ) );
-	}
-
-	/**
-	 * Configure SSL toggle.
-	 */
-	public function ajax_cdn_ssl_toggle() {
-		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
-
-		$domain = isset( $_POST['domain'] ) ? sanitize_text_field( wp_unslash( $_POST['domain'] ) ) : '';
-		$status = isset( $_POST['status'] ) && 'true' === $_POST['status'];
-
-		$api_client = new Arvan_API_Client();
-		$res        = $api_client->configure_cdn_ssl( $domain, $status, 'managed' );
-
-		if ( is_wp_error( $res ) ) {
-			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
-		}
-
-		wp_send_json_success( array( 'message' => __( 'SSL configuration updated.', 'arv-seller' ) ) );
-	}
-
-	/* =========================================================================
-	   AJAX Handlers: Object Storage (S3) Management
-	   ========================================================================= */
-
-	/**
-	 * Create S3 Object Storage Bucket.
-	 */
-	public function ajax_storage_create() {
-		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
-
-		if ( ! is_user_logged_in() ) {
-			wp_send_json_error( array( 'message' => __( 'Please sign in.', 'arv-seller' ) ) );
-		}
-
-		$user_id     = get_current_user_id();
-		$bucket_name = isset( $_POST['bucket_name'] ) ? sanitize_text_field( wp_unslash( $_POST['bucket_name'] ) ) : '';
-		$region      = isset( $_POST['region'] ) ? sanitize_text_field( wp_unslash( $_POST['region'] ) ) : 'ir-thr-at1';
-
-		if ( empty( $bucket_name ) || ! preg_match( '/^[a-z0-9\-]+$/', $bucket_name ) ) {
-			wp_send_json_error( array( 'message' => __( 'Bucket name must contain only lowercase letters, numbers, and hyphens.', 'arv-seller' ) ) );
-		}
-
-		$api_client = new Arvan_API_Client();
-		$res        = $api_client->create_storage_bucket( $bucket_name, $region );
-
-		if ( is_wp_error( $res ) ) {
-			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
-		}
-
-		global $wpdb;
-		$table_resources = $wpdb->prefix . 'arvan_resources';
-
-		$wpdb->insert(
-			$table_resources,
-			array(
-				'user_id'           => $user_id,
-				'service_type'      => 'storage_bucket',
-				'arvan_resource_id' => $bucket_name,
-				'name'              => $bucket_name,
-				'region'            => $region,
-				'plan_specs'        => wp_json_encode( array( 'endpoint' => Arvan_API_Client::S3_BASE_URL, 'region' => $region ) ),
-				'hourly_cost'       => 0.0000,
-				'status'            => 'active',
-				'created_at'        => current_time( 'mysql' ),
-			),
-			array( '%d', '%s', '%s', '%s', '%s', '%s', '%f', '%s', '%s' )
-		);
-
-		wp_send_json_success(
-			array(
-				'bucket_name' => $bucket_name,
-				'endpoint'    => Arvan_API_Client::S3_BASE_URL,
-				'region'      => $region,
-				'message'     => sprintf( __( 'S3 Storage Bucket "%s" created successfully.', 'arv-seller' ), $bucket_name ),
-			)
-		);
-	}
-
-	/**
-	 * Generate S3 API Access & Secret Key Pair.
-	 */
-	public function ajax_storage_keys() {
-		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
-
-		if ( ! is_user_logged_in() ) {
-			wp_send_json_error( array( 'message' => __( 'Please sign in.', 'arv-seller' ) ) );
-		}
-
-		$desc       = isset( $_POST['description'] ) ? sanitize_text_field( wp_unslash( $_POST['description'] ) ) : 'WordPress S3 Client Key';
-		$api_client = new Arvan_API_Client();
-		$res        = $api_client->create_storage_user_keys( $desc );
-
-		if ( is_wp_error( $res ) ) {
-			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
-		}
-
-		$key_data = isset( $res['data'] ) ? $res['data'] : $res;
-
-		wp_send_json_success(
-			array(
-				'access_key' => isset( $key_data['access_key'] ) ? $key_data['access_key'] : 'ARVAN_AKIA_' . strtoupper( substr( md5( wp_rand() ), 0, 16 ) ),
-				'secret_key' => isset( $key_data['secret_key'] ) ? $key_data['secret_key'] : 'ARVAN_SEC_' . strtoupper( md5( wp_rand() . time() ) ),
-				'endpoint'   => Arvan_API_Client::S3_BASE_URL,
-				'message'    => __( 'S3 Access credentials generated.', 'arv-seller' ),
 			)
 		);
 	}

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useAdminData } from './useAdminData';
 import { AdminSettingsView } from './views/AdminSettingsView';
+import { AdminCustomizationView } from './views/AdminCustomizationView';
 import { AdminResourcesView } from './views/AdminResourcesView';
 import { AdminWalletsView } from './views/AdminWalletsView';
 import { ToastContainer } from '../components/ui/toast';
-import { Server, Settings, Wallet, Layers } from 'lucide-react';
+import { Server, Settings, Palette, Wallet, Layers } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 export const AdminApp: React.FC = () => {
@@ -25,17 +26,18 @@ export const AdminApp: React.FC = () => {
     adjustBalance,
   } = useAdminData();
 
-  const resolveInitialTab = (): 'settings' | 'resources' | 'wallets' => {
+  const resolveInitialTab = (): 'settings' | 'customization' | 'resources' | 'wallets' => {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search);
       const page = urlParams.get('page');
+      if (page === 'arvan-reseller-customization') return 'customization';
       if (page === 'arvan-reseller-resources') return 'resources';
       if (page === 'arvan-reseller-wallets') return 'wallets';
     }
     return 'settings';
   };
 
-  const [activeTab, setActiveTab] = useState<'settings' | 'resources' | 'wallets'>(resolveInitialTab);
+  const [activeTab, setActiveTab] = useState<'settings' | 'customization' | 'resources' | 'wallets'>(resolveInitialTab);
 
   return (
     <div className={cn('min-h-screen bg-slate-50 text-slate-900 p-4 sm:p-8 rounded-3xl', `lang-${language}`)} dir={direction}>
@@ -77,6 +79,19 @@ export const AdminApp: React.FC = () => {
             </button>
 
             <button
+              onClick={() => setActiveTab('customization')}
+              className={cn(
+                'flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold transition-all',
+                activeTab === 'customization'
+                  ? 'bg-arvan-teal text-white font-bold shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+              )}
+            >
+              <Palette className="h-3.5 w-3.5" />
+              <span>{t('Customization & Branding')}</span>
+            </button>
+
+            <button
               onClick={() => setActiveTab('resources')}
               className={cn(
                 'flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold transition-all',
@@ -114,6 +129,15 @@ export const AdminApp: React.FC = () => {
             t={t}
             onSave={saveSettings}
             onTestConnection={testApiConnection}
+          />
+        )}
+
+        {activeTab === 'customization' && (
+          <AdminCustomizationView
+            settings={settings}
+            language={language}
+            t={t}
+            onSave={saveSettings}
           />
         )}
 

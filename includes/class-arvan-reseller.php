@@ -65,6 +65,13 @@ class Arvan_Reseller {
 	protected $metering;
 
 	/**
+	 * Blocks and shortcodes instance.
+	 *
+	 * @var Arvan_Blocks
+	 */
+	protected $blocks;
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
@@ -79,6 +86,7 @@ class Arvan_Reseller {
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 		$this->define_metering_hooks();
+		$this->define_block_hooks();
 	}
 
 	/**
@@ -90,6 +98,7 @@ class Arvan_Reseller {
 		require_once plugin_dir_path( __FILE__ ) . 'class-arvan-api-client.php';
 		require_once plugin_dir_path( __FILE__ ) . 'class-arvan-wallet.php';
 		require_once plugin_dir_path( __FILE__ ) . 'class-arvan-metering.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-arvan-blocks.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-arvan-admin.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-arvan-public.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-arvan-gateway.php';
@@ -101,6 +110,7 @@ class Arvan_Reseller {
 		$this->admin    = new Arvan_Admin( $this->get_plugin_name(), $this->get_version() );
 		$this->public   = new Arvan_Public( $this->get_plugin_name(), $this->get_version() );
 		$this->metering = new Arvan_Metering();
+		$this->blocks   = new Arvan_Blocks( $this->get_plugin_name(), $this->get_version() );
 	}
 
 	/**
@@ -128,6 +138,13 @@ class Arvan_Reseller {
 	 */
 	private function define_metering_hooks() {
 		$this->loader->add_action( 'arvan_hourly_metering_cron', $this->metering, 'process_hourly_metering' );
+	}
+
+	/**
+	 * Register Gutenberg blocks and shortcodes hooks.
+	 */
+	private function define_block_hooks() {
+		$this->blocks->init();
 	}
 
 	/**

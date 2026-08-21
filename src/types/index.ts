@@ -4,7 +4,7 @@
 
 export type SupportedLanguage = 'fa' | 'en' | 'ar' | 'tr' | 'zh' | 'ru';
 export type Direction = 'rtl' | 'ltr';
-export type ActiveTab = 'server' | 'dashboard' | 'cdn' | 'storage';
+export type ActiveTab = 'server' | 'dashboard';
 
 export interface DatacenterRegion {
   id: string;
@@ -59,39 +59,6 @@ export interface WalletTransaction {
   created_at: string;
 }
 
-export interface CdnDomain {
-  id: string;
-  domain: string;
-  plan: string;
-  status: 'active' | 'pending' | 'suspended';
-  nameservers: string[];
-  ssl_enabled: boolean;
-}
-
-export interface DnsRecord {
-  id: string;
-  domain_id: string;
-  name: string;
-  type: 'A' | 'AAAA' | 'CNAME' | 'MX' | 'TXT';
-  value: string;
-  ttl: number;
-  cloud_proxied: boolean;
-}
-
-export interface StorageBucket {
-  id: string;
-  name: string;
-  region: string;
-  endpoint: string;
-  created_at: string;
-}
-
-export interface S3Credentials {
-  access_key: string;
-  secret_key: string;
-  endpoint: string;
-}
-
 export interface ArvanWindowData {
   ajaxUrl: string;
   nonce: string;
@@ -116,8 +83,6 @@ export interface ArvanWindowData {
     images?: OsImage[];
     servers?: CloudServerInstance[];
     transactions?: WalletTransaction[];
-    domains?: CdnDomain[];
-    buckets?: StorageBucket[];
   };
 }
 

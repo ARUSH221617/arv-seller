@@ -31,22 +31,6 @@ ArvanCloud utilizes a **Pay-As-You-Go (PAYG)** metered billing model with sub-ho
 
 ---
 
-### 2.2 CDN & DNS Pricing Packages
-* **Basic (Free Tier):** Unlimited DNS queries, basic caching, Free Let's Encrypt SSL, 25 Page Rules.
-* **Pro Tier:** ~`150,000 IRT / Month` &mdash; Advanced WAF, Rate Limiting, Custom SSL, Image Optimization.
-* **Enterprise Tier:** ~`650,000 IRT / Month` &mdash; Dedicated DDoS mitigation, Smart Routing, Log Forwarding.
-
----
-
-### 2.3 Object Storage (S3) Pricing
-* **Storage Capacity:** `200 IRT / GB / Month` (~`0.27 IRT / GB / Hour`)
-* **Inbound Transfer (Upload):** `Free (0 IRT)`
-* **Outbound Transfer (Download):** `180 IRT / GB`
-* **API Requests (PUT/POST):** `10 IRT / 1,000 Requests`
-* **API Requests (GET/HEAD):** `2 IRT / 1,000 Requests`
-
----
-
 ## 3. Reseller Dynamic Markup Calculation Engine
 
 The plugin calculates retail customer prices dynamically using the formulas implemented in [Arvan_API_Client::calculate_price_with_markup()](file:///c:/Users/reza2/Local%20Sites/seller/app/public/wp-content/plugins/arv-seller/includes/class-arvan-api-client.php#L386-L398):

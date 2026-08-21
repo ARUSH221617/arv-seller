@@ -26,9 +26,7 @@ Both the **Frontend Storefront Portal** and the **WordPress Admin Management Hub
 ├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │  1. Storefront Shell: Brand Logo • Navigation Pills • Multi-Lang Dropdown • Live Wallet Chip • Avatar  │
 │     ├── 🚀 /cloud-services/server/   &rarr; Split 8:4 Configurator + Sticky Real-time Order Summary Panel │
-│     ├── 📊 /cloud-services/dashboard/&rarr; Financial KPI Cards + Server Lifecycle Table + Ledger Logs   │
-│     ├── 🌐 /cloud-services/cdn/      &rarr; Domain Connectivity + Anycast DNS Editor + Edge Cache        │
-│     └── 📦 /cloud-services/storage/  &rarr; S3 Bucket Provisioning + API Access Credentials Modal       │
+│     └── 📊 /cloud-services/dashboard/&rarr; Financial KPI Cards + Server Lifecycle Table + Ledger Logs   │
 ├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │  2. Admin Back-Office: Top App Bar • Reseller Sub-Tabs • Multi-Lang Switcher • Toast Alerts            │
 │     ├── ⚙️ Settings & API            &rarr; Live API Test, Sandbox Toggle, Markup Engine, Store Branding │
@@ -98,7 +96,7 @@ The plugin's WordPress Admin interface is mounted directly at `#arvan-admin-root
 - **API Credentials & Live Test:** Master Machine User API key input with an interactive "Test Connection" button calling ArvanCloud API in real time.
 - **Sandbox Mode Switch:** Interactive toggle allowing administrators to simulate provisioning and testing without calling live billing.
 - **Dynamic Pricing Engine:** Configurable percentage markup and fixed margin addition sliders with instant live calculation examples.
-- **White-Label Branding & Storefront Launchpad:** Custom store name, support contacts, and direct launch buttons for all four storefront canvas views.
+- **White-Label Branding & Storefront Launchpad:** Custom store name, support contacts, and direct launch buttons for standalone storefront canvas views (Server Configurator & Customer Dashboard).
 
 ### 4.2 Cloud Resources Oversight View (`AdminResourcesView.tsx`)
 - **Master Metrics:** Total VMs, Active Running Instances, Suspended (0 Balance) Accounts, and Total Monthly Run Rate (MRR).

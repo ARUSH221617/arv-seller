@@ -265,9 +265,80 @@ const SUPPLEMENTAL_TRANSLATIONS = {
   'customerDashboardLink': { fa: 'داشبورد مشتری', en: 'Customer Dashboard', ar: 'لوحة تحكم العميل', tr: 'Müşteri Paneli', zh: '客户控制台', ru: 'Панель клиента' },
   'cdnManagerLink': { fa: 'مدیریت CDN و DNS', en: 'CDN & DNS Manager', ar: 'إدارة CDN و DNS', tr: 'CDN ve DNS Yöneticisi', zh: 'CDN 与 DNS 管理器', ru: 'Управление CDN и DNS' },
   's3StorageLink': { fa: 'ذخیره‌سازی S3', en: 'S3 Object Storage', ar: 'تخزين الكائنات S3', tr: 'S3 Nesne Depolama', zh: 'S3 对象存储', ru: 'Объектное хранилище S3' },
-  'Cloud Server Configurator': { fa: 'سفارش سرور ابری', en: 'Cloud Server Configurator', ar: 'تهيئة الخادم السحابي', tr: 'Bulut Sunucu Yapılandırıcısı', zh: '云服务器配置中心', ru: 'Конфигуратор облачных серверов' },
-  'Customer Portal & Dashboard': { fa: 'پرتال و داشبورد مشتریان', en: 'Customer Portal & Dashboard', ar: 'بوابة ولوحة تحكم العملاء', tr: 'Müşteri Portalı ve Paneli', zh: '客户门户与控制台', ru: 'Клиентский портал и панель' },
-  'CDN & Edge DNS Manager': { fa: 'مدیریت CDN و DNS لبه', en: 'CDN & Edge DNS Manager', ar: 'إدارة CDN و Anycast DNS', tr: 'CDN ve Uç DNS Yöneticisi', zh: 'CDN 与边缘 DNS 管理器', ru: 'Управление CDN و Anycast DNS' },
+  'Customization & Branding': { fa: 'سفارشی‌سازی و ظاهر', ar: 'التخصيص والهوية البصرية', tr: 'Özelleştirme ve Markalama', zh: '自定义与品牌外观', ru: 'Кастомизация и брендинг' },
+  'Customization': { fa: 'سفارشی‌سازی', ar: 'التخصيص', tr: 'Özelleştirme', zh: '自定义', ru: 'Кастомизация' },
+  'Storefront Branding & Visual Customization': { fa: 'شخصی‌سازی برند و ظاهر ویترین', ar: 'تخصيص الهوية البصرية والمتجر', tr: 'Vitrin Markalama ve Görsel Özelleştirme', zh: '商城品牌与视觉自定义', ru: 'Брендинг витрины и визуальная настройка' },
+  'Personalize brand colors, typography, logos, and integrate native WordPress Gutenberg blocks or shortcodes anywhere on your site.': {
+    fa: 'رنگ‌های برند، تایپوگرافی، لوگو و بلوک‌های اختصاصی گوتنبرگ و شورت‌کدها را برای استفاده در سراسر سایت سفارشی‌سازی کنید.',
+    ar: 'قم بتخصيص ألوان علامتك التجارية والخطوط والشعارات ودمج مكونات غوتنبرغ المدمجة في أي مكان بموقعك.',
+    tr: 'Marka renklerinizi, tipografinizi, logolarınızı kişiselleştirin ve yerel WordPress Gutenberg bloklarını veya kısa kodları sitenizin herhangi bir yerine entegre edin.',
+    zh: '个性化定制品牌色彩、字体排版、Logo，并可在网站任意位置嵌入原生 WordPress Gutenberg 区块或短代码。',
+    ru: 'Настройте фирменные цвета, типографику, логотипы и интегрируйте нативные блоки Gutenberg или шорткоды в любом месте вашего сайта.'
+  },
+  'Save Customization': { fa: 'ذخیره تنظیمات ظاهر', ar: 'حفظ التخصيص', tr: 'Özelleştirmeyi Kaydet', zh: '保存自定义配置', ru: 'Сохранить настройки' },
+  'Brand Color Palette': { fa: 'پالت رنگ‌های برند', ar: 'لوحة ألوان العلامة التجارية', tr: 'Marka Renk Paleti', zh: '品牌色彩调色板', ru: 'Фирменная цветовая палитра' },
+  'Color Presets': { fa: 'پالت‌های رنگی آماده', ar: 'الأنماط اللونية الجاهزة', tr: 'Hazır Renk Şablonları', zh: '预设配色方案', ru: 'Готовые цветовые схемы' },
+  'Primary Brand Color': { fa: 'رنگ اصلی برند', ar: 'اللون الأساسي للعلامة', tr: 'Birincil Marka Rengi', zh: '品牌主色调', ru: 'Основной цвет бренда' },
+  'Secondary / Dark Accent': { fa: 'رنگ ثانویه / مکمل', ar: 'اللون الثانوي / الداكن', tr: 'İkincil / Koyu Vurgu Rengi', zh: '辅助色 / 深色强调', ru: 'Вторичный / темный акцент' },
+  'Live Theme Preview': { fa: 'پیش‌نمایش زنده قالب', ar: 'معاينة القالب المباشرة', tr: 'Canlı Tema Önizlemesi', zh: '实时主题预览', ru: 'Живой предпросмотр темы' },
+  'Brand Identity & Logo Assets': { fa: 'هویت بصری، نام و لوگو', ar: 'الهوية البصرية وأصول الشعار', tr: 'Marka Kimliği ve Logo Varlıkları', zh: '品牌标识与 Logo 资产', ru: 'Фирменный стиль и логотипы' },
+  'Store Brand Name': { fa: 'عنوان برند فروشگاه', ar: 'اسم متجر السحابة', tr: 'Mağaza Marka Adı', zh: '商城品牌名称', ru: 'Название магазина' },
+  'Brand Tagline / Subtitle': { fa: 'شعار یا زیرعنوان فروشگاه', ar: 'شعار العلامة التجارية الفرعي', tr: 'Marka Sloganı / Alt Başlık', zh: '品牌标语 / 副标题', ru: 'Слоган / подзаголовок' },
+  'Custom Store Logo URL': { fa: 'آدرس اینترنتی لوگوی اختصاصی', ar: 'رابط الشعار المخصص (URL)', tr: 'Özel Logo Bağlantısı (URL)', zh: '自定义 Logo 链接', ru: 'URL пользовательского логотипа' },
+  'Custom Favicon URL': { fa: 'آدرس اینترنتی فاوآیکون (Favicon)', ar: 'رابط أيقونة الموقع Favicon', tr: 'Özel Favicon Bağlantısı', zh: '自定义 Favicon 链接', ru: 'URL пользовательского Favicon' },
+  'Custom Footer Notice / Copyright Text': { fa: 'متن حق‌نشر یا اعلان پاورقی', ar: 'إشعار التذييل / نص حقوق النشر', tr: 'Özel Altbilgi / Telif Hakkı Metni', zh: '自定义页脚声明 / 版权文本', ru: 'Текст в подвале / авторские права' },
+  'Typography & Font Family Stack': { fa: 'تایپوگرافی و فونت پیش‌فرض', ar: 'الخطوط ومجموعة الطباعة', tr: 'Tipografi ve Yazı Tipi Ailesi', zh: '排版与字体系列', ru: 'Типографика и шрифты' },
+  'WordPress Gutenberg Block & Shortcodes Integration': { fa: 'یکپارچه‌سازی با بلوک گوتنبرگ و شورت‌کدها', ar: 'التكامل مع بلوكات غوتنبرغ والأكواد القصيرة', tr: 'WordPress Gutenberg Bloğu ve Kısa Kod Entegrasyonu', zh: 'WordPress Gutenberg 区块与短代码集成', ru: 'Интеграция с блоками Gutenberg и шорткодами' },
+  'Gutenberg Ready': { fa: 'آماده گوتنبرگ', ar: 'جاهز لـ Gutenberg', tr: 'Gutenberg Uyumlu', zh: '完美适配 Gutenberg', ru: 'Поддержка Gutenberg' },
+  'Native Gutenberg Block: "ArvanCloud Server Configurator"': { fa: 'بلوک بومی گوتنبرگ: «کانفیگوراتور سرور ابری آروان»', ar: 'بلوك غوتنبرغ المدمج: "أداة تكوين خوادم آروان"', tr: 'Yerel Gutenberg Bloğu: "ArvanCloud Sunucu Yapılandırıcı"', zh: '原生 Gutenberg 区块："ArvanCloud 云服务器配置器"', ru: 'Нативный блок Gutenberg: «Конфигуратор серверов ArvanCloud»' },
+  'Cloud Server Configurator Shortcode (Elementor / Divi / Classic)': { fa: 'شورت‌کد سفارش سرور ابری (المنتور، دیوی، کلاسیک)', ar: 'كود قصير لتكوين الخوادم (Elementor / Divi / Classic)', tr: 'Bulut Sunucu Kısa Kodu (Elementor / Divi / Classic)', zh: '云服务器配置器短代码（支持 Elementor / Divi / 经典编辑器）', ru: 'Шорткод конфигуратора серверов (Elementor / Divi / Classic)' },
+  'Customer Dashboard Shortcode': { fa: 'شورت‌کد داشبورد مشتریان', ar: 'كود قصير لبوابة العملاء', tr: 'Müşteri Paneli Kısa Kodu', zh: '客户仪表盘短代码', ru: 'Шорткод панели клиента' },
+  'Copy Shortcode': { fa: 'کپی شورت‌کد', ar: 'نسخ الكود القصير', tr: 'Kısa Kodu Kopyala', zh: '复制短代码', ru: 'Копировать шорткод' },
+  'Copied': { fa: 'کپی شد', ar: 'تم النسخ', tr: 'Kopyalandı', zh: '已复制', ru: 'Скопировано' },
+  'Custom CSS Style Overrides': { fa: 'کدهای CSS اختصاصی', ar: 'تجاوزات أنماط CSS المخصصة', tr: 'Özel CSS Stil Geçersiz Kılmaları', zh: '自定义 CSS 样式覆盖', ru: 'Пользовательские CSS стили' },
+  'Custom CSS will be injected into both the isolated standalone canvas and all embedded Gutenberg blocks/shortcodes.': {
+    fa: 'کدهای CSS به صورت خودکار به صفحه تمام‌صفحه و تمامی بلوک‌های گوتنبرگ و شورت‌کدها تزریق خواهند شد.',
+    ar: 'سيتم حقن كود CSS المخصص تلقائياً في صفحة المتجر المستقلة وجميع بلوكات غوتنبرغ المدمجة.',
+    tr: 'Özel CSS, hem bağımsız vitrin tuvaline hem de tüm gömülü Gutenberg bloklarına ve kısa kodlara otomatik olarak eklenecektir.',
+    zh: '自定义 CSS 将自动注入到独立全屏页面以及所有嵌入的 Gutenberg 区块和短代码中。',
+    ru: 'Пользовательский CSS будет автоматически внедрен как в полноэкранную витрину, так и во все блоки Gutenberg и шорткоды.'
+  },
+  'ArvanCloud Services': { fa: 'خدمات ابر آروان', ar: 'خدمات آروان السحابية', tr: 'ArvanCloud Hizmetleri', zh: 'ArvanCloud 云服务', ru: 'Сервисы ArvanCloud' },
+  'ArvanCloud Server Configurator': { fa: 'کانفیگوراتور سرور ابری آروان', ar: 'أداة تكوين خادم آروان السحابي', tr: 'ArvanCloud Bulut Sunucu Yapılandırıcı', zh: 'ArvanCloud 云服务器配置器', ru: 'Конфигуратор облачного сервера ArvanCloud' },
+  'Interactive Cloud Server sizing, pricing calculator, and deployment widget.': {
+    fa: 'ویجت تعاملی انتخاب منابع سرور ابری، محاسبه‌گر زنده قیمت و ساخت آنی ماشین مجازی.',
+    ar: 'أداة تفاعلية لتحديد أحجام الخوادم السحابية وحساب الأسعار فورياً والإنشاء السريع.',
+    tr: 'Etkileşimli bulut sunucu boyutlandırma, canlı fiyat hesaplayıcı ve dağıtım bileşeni.',
+    zh: '交互式云服务器配置选择、实时价格计算器和即时部署小组件。',
+    ru: 'Интерактивный конфигуратор облачных серверов, калькулятор цен и виджет развертывания.'
+  },
+  'ArvanCloud Customer Dashboard': { fa: 'داشبورد مشتریان ابر آروان', ar: 'لوحة تحكم عملاء آروان', tr: 'ArvanCloud Müşteri Kontrol Paneli', zh: 'ArvanCloud 客户仪表盘', ru: 'Панель управления клиента ArvanCloud' },
+  'Customer cloud server management and wallet billing dashboard.': {
+    fa: 'داشبورد مدیریت سرورهای ابری، عملیات برق و مدیریت کیف پول و تراکنش‌های مشتریان.',
+    ar: 'لوحة إدارة الخوادم السحابية للعملاء وإدارة الفواتير والمحفظة.',
+    tr: 'Müşteri bulut sunucusu yönetimi ve cüzdan faturalandırma kontrol paneli.',
+    zh: '客户云服务器运维管理与钱包账单仪表盘。',
+    ru: 'Панель управления облачными серверами клиента и биллинг кошелька.'
+  },
+  'Server Configurator Settings': { fa: 'تنظیمات کانفیگوراتور سرور', ar: 'إعدادات تكوين الخادم', tr: 'Sunucu Yapılandırıcı Ayarları', zh: '服务器配置器设置', ru: 'Настройки конфигуратора серверов' },
+  'Default Datacenter Region': { fa: 'منطقه دیتاسنتر پیش‌فرض', ar: 'منطقة مركز البيانات الافتراضية', tr: 'Varsayılan Veri Merkezi Bölgesi', zh: '默认数据中心区域', ru: 'Регион дата-центра по умолчанию' },
+  'Brand Accent Color': { fa: 'رنگ شاخص برند', ar: 'لون تمييز العلامة التجارية', tr: 'Marka Vurgu Rengi', zh: '品牌强调色', ru: 'Акцентный цвет бренда' },
+  'Show Hourly & Monthly Rates': { fa: 'نمایش نرخ ساعتی و ماهانه', ar: 'عرض الأسعار بالساعة والشهري', tr: 'Saatlik ve Aylık Fiyatları Göster', zh: '显示小时与月度费率', ru: 'Показывать почасовые и месячные тарифы' },
+  'Live ArvanCloud Server Configurator will render here on the frontend.': {
+    fa: 'کانفیگوراتور زنده سرور ابری آروان در این بخش در سایت نمایش داده خواهد شد.',
+    ar: 'سيتم عرض أداة تكوين الخوادم المباشرة هنا في واجهة الموقع.',
+    tr: 'Canlı ArvanCloud Sunucu Yapılandırıcı ön yüzde burada görüntülenecektir.',
+    zh: '实时 ArvanCloud 云服务器配置器将在前端此处渲染呈现。',
+    ru: 'Живой конфигуратор серверов ArvanCloud будет отображаться здесь на сайте.'
+  },
+  'Instant VM Provisioning • NVMe Storage • Pay-As-You-Go': {
+    fa: 'تحویل آنی ماشین مجازی • ذخیره‌سازی NVMe • پرداخت به میزان مصرف',
+    ar: 'إنشاء فوري للأجهزة الافتراضية • تخزين NVMe • الدفع حسب الاستخدام',
+    tr: 'Anında Sanal Makine Dağıtımı • NVMe Depolama • Kullandıkça Öde',
+    zh: '秒级虚拟机交付 • 高性能 NVMe 存储 • 按量计费',
+    ru: 'Мгновенное развертывание ВМ • Хранилище NVMe • Оплата по факту'
+  },
+  'Loading Cloud Services...': { fa: 'در حال بارگذاری خدمات ابری...', ar: 'جاري تحميل الخدمات السحابية...', tr: 'Bulut Hizmetleri Yükleniyor...', zh: '正在加载云服务...', ru: 'Загрузка облачных сервисов...' },
 };
 
 /**

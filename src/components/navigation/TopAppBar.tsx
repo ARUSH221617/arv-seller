@@ -1,5 +1,5 @@
 import React from 'react';
-import { Server, LayoutDashboard, Globe, HardDrive, Plus, Wallet, LogIn } from 'lucide-react';
+import { Server, LayoutDashboard, Plus, Wallet, LogIn } from 'lucide-react';
 import { Button } from '../ui/button';
 import { ActiveTab, SupportedLanguage } from '../../types';
 import { formatCurrency, cn } from '../../lib/utils';
@@ -73,32 +73,6 @@ export const TopAppBar: React.FC<TopAppBarProps> = ({
           >
             <LayoutDashboard className="h-4 w-4 text-arvan-teal" />
             <span>{t('dashboard')}</span>
-          </button>
-
-          <button
-            onClick={() => onSelectTab('cdn')}
-            className={cn(
-              'flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-200',
-              activeTab === 'cdn'
-                ? 'bg-white text-slate-950 font-bold shadow-sm'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-            )}
-          >
-            <Globe className="h-4 w-4 text-arvan-teal" />
-            <span>{t('cdnDns')}</span>
-          </button>
-
-          <button
-            onClick={() => onSelectTab('storage')}
-            className={cn(
-              'flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-200',
-              activeTab === 'storage'
-                ? 'bg-white text-slate-950 font-bold shadow-sm'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-            )}
-          >
-            <HardDrive className="h-4 w-4 text-arvan-teal" />
-            <span>{t('objectStorage')}</span>
           </button>
         </nav>
 

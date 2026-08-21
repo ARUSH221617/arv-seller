@@ -11,19 +11,11 @@ When a user's wallet balance drops below zero (becomes negative/debtor), ArvanCl
 
 ---
 
-## 2. Product-by-Product Service Termination Matrix
+## 2. Cloud Server Service Termination Matrix
 
-| Cloud Product | Immediately on Negative Balance | After 2 Hours | After 24 Hours | After 48 Hours | After 1 Week | After 2 Weeks | After 1 Month |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Cloud Server (سرور ابری)** | Control panel actions restricted | Instance network disconnected (by user tier) | &mdash; | **Virtual instances powered off** | **Instances, snapshots, backups, disks, IPs permanently deleted** | &mdash; | &mdash; |
-| **Dedicated Server (سرور اختصاصی)** | Control panel actions restricted | Instance network disconnected | &mdash; | Dedicated instances powered off | **Hardware released; disks, backups, and IPs purged** | &mdash; | &mdash; |
-| **CDN (شبکه توزیع محتوا)** | Setting modifications locked (Read-Only) | &mdash; | **Cloud proxy disabled (Cloud icon OFF / Bypass mode)** | &mdash; | &mdash; | **DNS Service completely deactivated** | &mdash; |
-| **Object Storage (فضای ابری)** | Control panel actions restricted | &mdash; | **Write access blocked (Read-Only mode)** | **Read access blocked** | &mdash; | &mdash; | **Buckets and stored files permanently deleted** |
-| **Cloud Database (دیتابیس ابری)** | Control panel actions restricted | &mdash; | **Database becomes Read-Only** | **Database instance powered off** | **Database deleted (last backup retained)** | &mdash; | **All historical backups permanently deleted** |
-| **Video Platform (پلتفرم ویدیو)** | New video uploads blocked | &mdash; | &mdash; | &mdash; | **Video playback disabled** | &mdash; | **All video files permanently deleted** |
-| **Live Streaming (پخش زنده)** | **Live stream disconnected** | &mdash; | &mdash; | **Stream configurations purged** | &mdash; | &mdash; | &mdash; |
-| **Cloud Container (PaaS)** | Panel access restricted | &mdash; | &mdash; | **Projects & pods powered down** | **Projects & persistent volumes deleted** | &mdash; | &mdash; |
-| **Cloud Shell** | &mdash; | &mdash; | &mdash; | **Service stopped** | &mdash; | **User workspace data purged** | &mdash; |
+| Cloud Product | Immediately on Negative Balance | After 2 Hours | After 24 Hours | After 48 Hours | After 1 Week |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Cloud Server (سرور ابری — ECC)** | Control panel actions restricted | Instance network disconnected (by user tier) | &mdash; | **Virtual instances powered off** | **Instances, snapshots, backups, disks, IPs permanently deleted** |
 
 ---
 
