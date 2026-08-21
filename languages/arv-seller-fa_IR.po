@@ -29,10 +29,10 @@ msgid "Loading ArvanCloud Services Canvas..."
 msgstr "در حال بارگذاری سامانه خدمات ابری آروان..."
 
 msgid "arvanCloud"
-msgstr "آروانکلاد"
+msgstr "آروان کلاد"
 
 msgid "ArvanCloud"
-msgstr "آروانکلاد"
+msgstr "آروان کلاد"
 
 msgid "Tehran"
 msgstr "تهران"
