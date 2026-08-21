@@ -1,32 +1,201 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-20 22:45+0330\n"
-"PO-Revision-Date: 2026-08-20 22:45+0330\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: zh\n"
+"Report-Msgid-Bugs-To: https://arvancloud.ir\n"
+"POT-Creation-Date: 2026-08-21 02:31:43+0000\n"
+"PO-Revision-Date: 2026-08-21 02:31:43+0000\n"
+"Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
+"Language-Team: ArvanCloud Chinese Simplified Team\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: ArvanCloud i18n Toolchain\n"
 "X-Domain: arv-seller\n"
 
-msgid "Deploy Cloud Server"
-msgstr "部署云服务器"
+#: admin/views/admin-settings.php:38
+msgid "1. ArvanCloud API Authentication"
+msgstr "1. ArvanCloud API 认证配置"
 
-msgid "Available Wallet Balance"
-msgstr "当前可用钱包余额"
+#: public/views/storefront-server.php:315
+msgid "1x Public IP (Included)"
+msgstr "1个公网IP（包含）"
 
-msgid "ArvanCloud Reseller Settings & Monetization"
-msgstr "ArvanCloud 云分销商系统设置与加价引擎"
+#: admin/views/admin-settings.php:73
+msgid "2. Dynamic Pricing & Reseller Markup Engine"
+msgstr "2. 动态定价与分销商利润加价引擎"
 
-msgid "Connected successfully to ArvanCloud infrastructure."
-msgstr "已成功连接至 ArvanCloud 云基础设施。"
+#: admin/views/admin-settings.php:120
+msgid "3. Storefront White-Label Branding"
+msgstr "3. 商城白标自定义品牌"
 
-msgid "Loading ArvanCloud Services Canvas..."
-msgstr "正在载入 ArvanCloud 云服务平台..."
+#: public/class-arvan-public.php:338
+msgid "A minimum balance of %1$s %3$s (24 hours run cost) is required to deploy this server. Your balance is %2$s %3$s."
+msgstr "部署此服务器需要至少 %1$s %3$s 的余额（24小时运行成本）。您当前的余额为 %2$s %3$s。"
+
+#: public/views/storefront-cdn.php:27
+msgid "Accelerate your websites globally with edge caching, SSL termination, and Layer 7 DDoS mitigation across 40+ PoPs."
+msgstr "通过遍布全球40多个节点的边缘缓存、SSL终止和第7层DDoS防护加速您的网站。"
+
+#: public/views/storefront-storage.php:146
+msgid "Access Key ID:"
+msgstr "访问密钥 ID："
+
+#: admin/views/admin-settings.php:156
+msgid "Access standalone storefront and customer portal pages:"
+msgstr "访问独立商城与客户门户页面："
+
+msgid "accessKey"
+msgstr "访问密钥 ID (Access Key)"
+
+#: public/views/dashboard-customer.php:55
+msgid "According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately."
+msgstr ""
+
+msgid "action"
+msgstr "操作"
+
+#: public/views/storefront-cdn.php:182
+msgid "Action"
+msgstr ""
+
+#: admin/class-arvan-admin.php:193
+msgid "Action completed successfully."
+msgstr "操作成功完成。"
+
+msgid "actions"
+msgstr "操作"
+
+#: public/views/storefront-cdn.php:49
+msgid "Activate Edge CDN"
+msgstr ""
+
+msgid "active"
+msgstr "活跃"
+
+#: public/views/storefront-storage.php:102
+msgid "Active"
+msgstr ""
+
+msgid "Active / Running"
+msgstr "正常运行中"
+
+#: public/views/dashboard-customer.php:170
+msgid "Active Cloud Servers & Virtual Machines"
+msgstr "运行中的云服务器与虚拟机"
+
+msgid "activeCdnDomains"
+msgstr "已接入 CDN 的域名列表"
+
+msgid "activeCloudVms"
+msgstr "活跃的云虚拟机"
+
+msgid "activeInstances"
+msgstr "运行中的实例"
+
+msgid "activeMockFallback"
+msgstr "已激活 (沙盒模拟)"
+
+msgid "activePops"
+msgstr "已部署在全球 40 多个边缘节点"
+
+#: public/views/storefront-cdn.php:167
+msgid "Add Record"
+msgstr ""
+
+msgid "additionalStorage"
+msgstr "额外存储空间"
+
+msgid "addRecord"
+msgstr "添加记录"
+
+msgid "Adjust Balance"
+msgstr "调整余额"
+
+#: admin/class-arvan-admin.php:202
+msgid "Adjust Wallet Balance: "
+msgstr "调整钱包余额："
+
+msgid "adjustBalanceDesc"
+msgstr "直接对客户余额进行增加或扣减，系统将记录不可篡改的审计日志。"
+
+msgid "Adjustment Type:"
+msgstr "调账类型:"
+
+msgid "adjustReasonPlaceholder"
+msgstr "例如：工单补偿 / 人工手动充值"
+
+#: includes/class-arvan-wallet.php:351
+msgid "Admin Adjustment: %1$s (by %2$s)"
+msgstr "管理员调整：%1$s（操作者：%2$s）"
+
+msgid "Ahvaz"
+msgstr "阿瓦士"
+
+msgid "all"
+msgstr "全部"
+
+msgid "All Cloud Datacenter Regions Operational (99.99% SLA)"
+msgstr "所有云数据中心区域正常运行中 (99.99% SLA 保证)"
+
+#: public/views/storefront-server.php:106
+msgid "All Plans"
+msgstr ""
+
+msgid "All Provisioned Cloud Resources"
+msgstr "全部已开通的客户云端资源"
+
+#: admin/class-arvan-admin.php:250
+msgid "All Resources"
+msgstr "所有资源"
+
+#: public/views/storefront-server.php:170
+msgid "Allocated NVMe Storage:"
+msgstr "已分配 NVMe 存储："
+
+msgid "allocatingIp"
+msgstr "正在分配 IP..."
+
+msgid "allPlans"
+msgstr "全部套餐"
+
+msgid "amount"
+msgstr "金额"
+
+#: public/views/dashboard-customer.php:272
+msgid "Amount"
+msgstr ""
+
+msgid "Amount (Toman):"
+msgstr "金额 (托曼):"
+
+#: public/class-arvan-public.php:260
+msgid "An error occurred during request."
+msgstr "请求过程中发生错误。"
+
+#: admin/class-arvan-admin.php:199
+msgid "Apply Adjustment"
+msgstr "提交并记入台账"
+
+#: admin/class-arvan-admin.php:198
+msgid "Applying..."
+msgstr "正在应用..."
+
+#: admin/class-arvan-admin.php:195
+msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
+msgstr "您确定要从 ArvanCloud 基础设施中永久删除此资源吗？"
+
+#: public/class-arvan-public.php:261
+msgid "Are you sure you want to permanently destroy this server?"
+msgstr "您确定要永久销毁此服务器吗？"
+
+#: admin/class-arvan-admin.php:230
+msgid "Arvan Reseller"
+msgstr "ArvanCloud 分销系统"
+
+msgid "Arvan UUID / Identifier"
+msgstr "Arvan UUID / 资源标识符"
 
 msgid "arvanCloud"
 msgstr "ArvanCloud"
@@ -34,179 +203,1276 @@ msgstr "ArvanCloud"
 msgid "ArvanCloud"
 msgstr "ArvanCloud"
 
-msgid "Tehran"
-msgstr "德黑兰"
+#: admin/views/admin-settings.php:44
+msgid "ArvanCloud API Key"
+msgstr "ArvanCloud API 密钥"
 
-msgid "تهران"
-msgstr "德黑兰"
+#: includes/class-arvan-api-client.php:100
+msgid "ArvanCloud API key is not configured. Please configure your API key in WP Admin > Arvan Reseller > Settings."
+msgstr "未配置 ArvanCloud API 密钥。请在 WP 后台 > Arvan Reseller > 设置 中进行配置。"
 
-msgid "Tabriz"
-msgstr "大不里士"
+#: admin/class-arvan-admin.php:229
+msgid "ArvanCloud Reseller"
+msgstr "ArvanCloud 分销商管理中心"
 
-msgid "تبریز"
-msgstr "大不里士"
+#: admin/views/admin-settings.php:26
+msgid "ArvanCloud Reseller Settings & Monetization"
+msgstr "ArvanCloud 云分销商系统设置与加价引擎"
 
-msgid "Iran"
-msgstr "伊朗"
+#: public/views/dashboard-customer.php:182
+msgid "Assigned IP"
+msgstr "分配的 IP"
 
-msgid "ایران"
-msgstr "伊朗"
+#: public/views/storefront-cdn.php:72
+msgid "Assigned Nameservers"
+msgstr ""
 
-msgid "Karaj"
-msgstr "卡拉季"
+msgid "assignedNameservers"
+msgstr "分配的 ArvanCloud Anycast 权威域名服务器:"
 
-msgid "Isfahan"
-msgstr "伊斯法罕"
+msgid "authCredentials"
+msgstr "登录认证方式:"
 
-msgid "Shiraz"
-msgstr "设拉子"
+#: public/views/storefront-server.php:268
+msgid "Authentication Mode:"
+msgstr "认证方式："
 
-msgid "Mashhad"
-msgstr "马什哈德"
-
-msgid "Ahvaz"
-msgstr "阿瓦士"
-
-msgid "Tehran - Forough"
-msgstr "德黑兰 - Forough"
-
-msgid "Tehran (Forough)"
-msgstr "德黑兰 (Forough)"
-
-msgid "Tehran - Shahryar"
-msgstr "德黑兰 - Shahryar"
-
-msgid "Tehran (Shahryar)"
-msgstr "德黑兰 (Shahryar)"
-
-msgid "Tabriz - Northwest"
-msgstr "大不里士 - 西北"
-
-msgid "Tabriz (Northwest)"
-msgstr "大不里士 (西北)"
-
-msgid "Forough"
-msgstr "Forough"
-
-msgid "Shahryar"
-msgstr "Shahryar"
-
-msgid "Northwest"
-msgstr "西北"
-
-msgid "Starter Eco"
-msgstr "入门经济型 (Starter Eco)"
-
-msgid "Standard General"
-msgstr "通用标准型 (Standard General)"
-
-msgid "Performance Pro"
-msgstr "高性能专业型 (Performance Pro)"
-
-msgid "Enterprise Ultra"
-msgstr "企业旗舰型 (Enterprise Ultra)"
-
-msgid "Compute Master"
-msgstr "计算增强型 (Compute Master)"
-
-msgid "Memory Master"
-msgstr "内存增强型 (Memory Master)"
-
-msgid "dashboard"
-msgstr "控制台"
-
-msgid "deployServer"
-msgstr "部署云服务器"
-
-msgid "cdnDns"
-msgstr "CDN 与 DNS 管理"
-
-msgid "objectStorage"
-msgstr "对象存储 (S3)"
-
-msgid "walletBalance"
-msgstr "钱包余额"
+#: public/views/dashboard-customer.php:77
+msgid "Available Wallet Balance"
+msgstr "当前可用钱包余额"
 
 msgid "availableBalance"
 msgstr "可用余额"
 
-msgid "topUp"
-msgstr "充值"
+#: public/views/storefront-storage.php:162
+msgid "AWS CLI & Rclone Configuration Example"
+msgstr "AWS CLI 和 Rclone 配置示例"
 
-msgid "signIn"
-msgstr "登录 / 注册"
-
-msgid "logout"
-msgstr "退出登录"
-
-msgid "cancel"
-msgstr "取消"
-
-msgid "confirm"
-msgstr "确认"
-
-msgid "done"
-msgstr "完成"
-
-msgid "save"
-msgstr "保存设置"
-
-msgid "copy"
-msgstr "复制"
-
-msgid "copied"
-msgstr "已复制！"
-
-msgid "generate"
-msgstr "生成"
-
-msgid "status"
-msgstr "状态"
-
-msgid "actions"
-msgstr "操作"
-
-msgid "running"
-msgstr "运行中"
-
-msgid "stopped"
-msgstr "已关机"
-
-msgid "suspended"
-msgstr "已暂停"
-
-msgid "selectLanguage"
-msgstr "选择语言"
-
-msgid "cores"
-msgstr "核"
-
-msgid "total"
-msgstr "总计"
-
-msgid "hours"
-msgstr "小时"
-
-msgid "unlimited"
-msgstr "无限制"
-
-msgid "copyIp"
-msgstr "复制 IP"
-
-msgid "allocatingIp"
-msgstr "正在分配 IP..."
+msgid "awsCliExample"
+msgstr "AWS CLI 配置示例:"
 
 msgid "backOffice"
 msgstr "管理后台"
 
-msgid "storefrontSubtitle"
-msgstr "云基础设施商城"
+#: admin/class-arvan-admin.php:418
+msgid "Balance adjusted successfully."
+msgstr "钱包余额调整成功。"
+
+#: public/views/dashboard-customer.php:273
+msgid "Balance Snapshot"
+msgstr ""
+
+msgid "balanceSnapshot"
+msgstr "结余余额"
+
+msgid "baseDiskLabel"
+msgstr "基础:"
+
+#: public/views/storefront-storage.php:84
+msgid "Bucket Name"
+msgstr ""
+
+#: public/class-arvan-public.php:766
+msgid "Bucket name must contain only lowercase letters, numbers, and hyphens."
+msgstr "存储桶名称只能包含小写字母、数字和连字符。"
+
+#: public/views/storefront-storage.php:40
+msgid "Bucket names must be unique, lowercase alphanumeric characters with hyphens only."
+msgstr ""
+
+msgid "bucketIdentifier"
+msgstr "存储桶名称"
+
+msgid "bucketName"
+msgstr "存储桶名称 (仅支持小写字母与数字)"
+
+#: public/views/storefront-storage.php:76
+msgid "Buckets"
+msgstr "存储桶"
+
+#: public/views/dashboard-customer.php:82
+msgid "Burn Rate:"
+msgstr "消耗速率："
+
+msgid "cancel"
+msgstr "取消"
+
+msgid "Cancel"
+msgstr "取消"
+
+#: public/class-arvan-public.php:450
+msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
+msgstr "无法开启服务器：您的钱包余额为零或负数。请先充值钱包。"
+
+#: public/class-arvan-public.php:635
+msgid "CDN activated for \"%s\". Please set your nameservers."
+msgstr "已为 \"%s\" 启用 CDN。请配置您的名称服务器。"
+
+#: public/class-arvan-public.php:258
+msgid "CDN domain connected successfully."
+msgstr "CDN 域名连接成功。"
+
+msgid "cdnDesc"
+msgstr "全球边缘 CDN 缓存加速、DDoS 攻击防护、Anycast DNS 解析以及免费自动申请 SSL 证书。"
+
+msgid "cdnDns"
+msgstr "CDN 与 DNS 管理"
+
+msgid "cdnManagerLink"
+msgstr "🌐 CDN与DNS管理"
+
+msgid "cdnTitle"
+msgstr "CDN 域名接入与 Anycast DNS 解析"
+
+#: public/views/storefront-server.php:50
+msgid "Choose Datacenter Region"
+msgstr "选择数据中心区域"
+
+#: public/views/dashboard-customer.php:200
+msgid "Click to copy IP"
+msgstr "点击复制 IP"
+
+msgid "close"
+msgstr "关闭"
+
+#: public/views/storefront-cdn.php:165
+msgid "Cloud Proxy"
+msgstr ""
+
+#: admin/class-arvan-admin.php:249
+msgid "Cloud Resources"
+msgstr "云端资源监控"
+
+#: templates/frontend-canvas.php:26
+msgid "Cloud Services Platform"
+msgstr "云服务平台"
+
+#: public/views/storefront-storage.php:86
+msgid "Cluster Region"
+msgstr ""
+
+msgid "clusterRegion"
+msgstr "集群区域"
+
+msgid "compute"
+msgstr "计算密集型"
+
+msgid "Compute Master"
+msgstr "计算增强型 (Compute Master)"
+
+#: public/views/storefront-server.php:108
+msgid "Compute Optimized"
+msgstr ""
+
+#: public/views/storefront-server.php:100
+msgid "Compute resources can be dynamically scaled anytime."
+msgstr "计算资源可随时动态弹性调整。"
+
+#: public/views/storefront-server.php:302
+msgid "Compute Specs:"
+msgstr "计算规格："
+
+#: public/views/dashboard-customer.php:134
+msgid "Compute, NVMe & Dedicated IP"
+msgstr "计算资源、NVMe 及独立 IP"
+
+msgid "configuratorHeroDesc"
+msgstr "配置基于 ArvanCloud 数据中心基础设施的高性能 NVMe 云服务器，即买即用。"
+
+#: public/views/dashboard-customer.php:250
+msgid "Configure high performance NVMe virtual servers ready in under 60 seconds."
+msgstr ""
+
+#: admin/views/admin-settings.php:74
+msgid "Configure profit margins automatically calculated on top of wholesale ArvanCloud infrastructure rates."
+msgstr "设置自动计算在 ArvanCloud 批发成本之上的利润百分比与固定加价。"
+
+#: public/views/storefront-server.php:257
+msgid "Configure server hostname and authentication method."
+msgstr ""
+
+#: admin/views/admin-settings.php:27
+msgid "Configure your ArvanCloud master API credentials, pricing markup margins, white-label branding, and sandbox mode."
+msgstr ""
+
+msgid "confirm"
+msgstr "确认"
+
+msgid "confirmDelete"
+msgstr "您确定要永久删除此服务器吗？磁盘中的所有数据将被清空。"
+
+#: public/views/dashboard-customer.php:144
+msgid "Connect CDN Domain"
+msgstr ""
+
+#: public/views/storefront-cdn.php:38
+msgid "Connect New Domain to Edge CDN"
+msgstr ""
+
+msgid "connectDomain"
+msgstr "接入域名至 CDN"
+
+#: public/views/storefront-cdn.php:60
+msgid "Connected CDN Domains"
+msgstr ""
+
+#: includes/class-arvan-api-client.php:523
+msgid "Connected successfully to ArvanCloud infrastructure."
+msgstr "已成功连接至 ArvanCloud 云基础设施。"
+
+msgid "connectedSuccessfully"
+msgstr "已成功连接至 ArvanCloud 基础设施。"
+
+#: public/views/storefront-storage.php:89
+msgid "Connection Info"
+msgstr ""
+
+msgid "connectionFailed"
+msgstr "连接 ArvanCloud 基础设施失败。"
+
+msgid "copied"
+msgstr "已复制！"
+
+msgid "copy"
+msgstr "复制"
+
+#: public/views/storefront-storage.php:141 public/views/storefront-storage.php:149 public/views/storefront-storage.php:157
+msgid "Copy"
+msgstr ""
+
+msgid "copyIp"
+msgstr "复制 IP"
+
+msgid "cores"
+msgstr "核"
+
+#: public/views/storefront-storage.php:39
+msgid "Create New S3 Storage Bucket"
+msgstr ""
+
+#: public/views/storefront-storage.php:50
+msgid "Create S3 Bucket"
+msgstr ""
+
+#: public/views/storefront-storage.php:119
+msgid "Create your first bucket to store and offload media, database backups, and large files."
+msgstr ""
+
+msgid "createBucket"
+msgstr "创建新存储桶"
+
+msgid "Created At"
+msgstr "注册时间"
+
+msgid "credentials"
+msgstr "访问凭据"
+
+msgid "Credit (+ Deposit Funds)"
+msgstr "入账 (+ 增加余额)"
+
+#: includes/class-arvan-wallet.php:140
+msgid "Credit amount must be greater than zero."
+msgstr ""
+
+msgid "Cumulative Deposits"
+msgstr "累计入金总额"
+
+#: public/views/dashboard-customer.php:110
+msgid "Custom Amount in Toman"
+msgstr ""
+
+msgid "customAmount"
+msgstr "自定义金额"
+
+msgid "Customer"
+msgstr "所属客户"
+
+msgid "Customer Name"
+msgstr "客户姓名"
+
+#: admin/class-arvan-admin.php:192
+msgid "Customer wallet balance updated successfully."
+msgstr ""
+
+msgid "Customer Wallets & Ledger Audit"
+msgstr "客户钱包与原子财务台账审计"
+
+msgid "customerDashboardLink"
+msgstr "📊 客户控制台"
+
+#: admin/views/admin-settings.php:121
+msgid "Customization parameters injected into the standalone virtual canvas header and footer."
+msgstr "注入到独立虚拟云商城页头与页脚的自定义品牌参数。"
+
+msgid "dashboard"
+msgstr "控制台"
+
+msgid "dashboardDesc"
+msgstr "原子钱包实时监控、服务器电源生命周期控制及资源遥测。"
+
+#: public/views/dashboard-customer.php:183
+msgid "Datacenter"
+msgstr ""
+
+#: public/views/storefront-server.php:298
+msgid "Datacenter:"
+msgstr ""
+
+#: public/views/dashboard-customer.php:269
+msgid "Date & Time"
+msgstr ""
+
+#: public/views/dashboard-customer.php:145
+msgid "DDoS Protection & Anycast DNS"
+msgstr ""
+
+msgid "Debit (- Deduct Funds)"
+msgstr "扣款 (- 扣减余额)"
+
+#: includes/class-arvan-wallet.php:240
+msgid "Debit amount must be greater than zero."
+msgstr ""
+
+#: public/views/storefront-server.php:314
+msgid "Dedicated IPv4:"
+msgstr ""
+
+#: admin/views/admin-settings.php:106
+msgid "Default Datacenter Region"
+msgstr "默认数据中心区域"
+
+msgid "delete"
+msgstr "删除"
+
+#: public/views/dashboard-customer.php:124
+msgid "Deploy Cloud Resources"
+msgstr ""
+
+msgid "Deploy Cloud Server"
+msgstr "部署云服务器"
+
+#: public/views/storefront-server.php:33
+msgid "Deploy Cloud Server (IaaS)"
+msgstr "部署云服务器 (IaaS)"
+
+#: public/views/dashboard-customer.php:252
+msgid "Deploy First Server"
+msgstr ""
+
+msgid "deployServer"
+msgstr "部署云服务器"
+
+msgid "description"
+msgstr "描述明细"
+
+#: public/views/dashboard-customer.php:271
+msgid "Description / Reference ID"
+msgstr ""
+
+#: public/views/dashboard-customer.php:234
+msgid "Destroy Instance"
+msgstr ""
+
+#: public/views/storefront-cdn.php:76
+msgid "DNS Management"
+msgstr ""
+
+#: public/class-arvan-public.php:688
+msgid "DNS record added."
+msgstr ""
+
+#: public/class-arvan-public.php:707
+msgid "DNS record deleted."
+msgstr ""
+
+#: public/views/storefront-cdn.php:109
+msgid "DNS Zone Editor"
+msgstr "DNS 记录编辑器"
+
+#: public/views/storefront-cdn.php:135
+msgid "DNS Zone Records:"
+msgstr "DNS 区域记录："
+
+msgid "dnsDialogDesc"
+msgstr "添加并管理 DNS 解析记录，享受 Anycast 全球即时生效。"
+
+msgid "dnsRecordNamePlaceholder"
+msgstr "主机记录 (@ 或 子域名)"
+
+msgid "dnsRecords"
+msgstr "DNS 解析记录"
+
+msgid "dnsRecordTargetPlaceholder"
+msgstr "记录值 / IP地址"
+
+#: public/views/storefront-cdn.php:71
+msgid "Domain Name"
+msgstr ""
+
+#: public/class-arvan-public.php:648
+msgid "Domain parameter required."
+msgstr ""
+
+msgid "domainInput"
+msgstr "您的域名 (例如 example.com)"
+
+#: public/views/storefront-cdn.php:63
+msgid "Domains"
+msgstr ""
+
+msgid "done"
+msgstr "完成"
+
+#: admin/views/admin-settings.php:82
+msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
+msgstr "例如：20% 加价将每小时 450 托曼的批发成本转化为 540 托曼的零售价。"
+
+#: public/class-arvan-public.php:725
+msgid "Edge cache purged across all global PoPs."
+msgstr ""
+
+#: public/views/storefront-cdn.php:74
+msgid "Edge Caching"
+msgstr ""
+
+msgid "Email"
+msgstr "电子邮箱"
+
+msgid "Emergency Actions"
+msgstr "管理应急操作"
+
+#: public/views/storefront-cdn.php:163
+msgid "Enable ArvanCloud Cloud Proxy & DDoS Protection"
+msgstr ""
+
+#: admin/views/admin-settings.php:63
+msgid "Enable Sandbox / Mock Fallback Mode"
+msgstr ""
+
+msgid "endpointUrl"
+msgstr "终端节点 URL (Endpoint)"
+
+#: public/views/storefront-cdn.php:123
+msgid "Enter a domain name above to accelerate your traffic and protect from DDoS attacks."
+msgstr "在上方输入域名以加速流量并防御 DDoS 攻击。"
+
+#: admin/views/admin-settings.php:39
+msgid "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
+msgstr "输入您的主 ArvanCloud Machine User API 密钥。所有下级客户资源都将在此母账号下开通。"
+
+#: public/views/storefront-cdn.php:39
+msgid "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
+msgstr ""
+
+msgid "Enterprise Multi-Tenant Infrastructure Management & Monetization"
+msgstr "企业级多租户基础设施管理与转售盈利平台"
+
+msgid "Enterprise Ultra"
+msgstr "企业旗舰型 (Enterprise Ultra)"
+
+#: public/views/storefront-server.php:326
+msgid "Est. Monthly (720 hrs):"
+msgstr ""
+
+#: public/views/dashboard-customer.php:85
+msgid "Est. Runtime:"
+msgstr ""
+
+msgid "estimatedRuntime"
+msgstr "预计可持续运行时间"
+
+msgid "existingBuckets"
+msgstr "现有存储桶列表"
+
+#: public/class-arvan-gateway.php:99
+msgid "Failed to connect to payment gateway."
+msgstr ""
+
+msgid "Failed to deploy server."
+msgstr "创建云服务器失败。"
+
+#: includes/class-arvan-wallet.php:202 includes/class-arvan-wallet.php:321
+msgid "Failed to log wallet transaction."
+msgstr ""
+
+#: includes/class-arvan-wallet.php:180 includes/class-arvan-wallet.php:299
+msgid "Failed to update wallet balance."
+msgstr ""
+
+#: admin/views/admin-settings.php:87
+msgid "Fixed Margin Addition (Toman)"
+msgstr "固定利润加价 (托曼)"
+
+msgid "flavor"
+msgstr "硬件配置"
+
+msgid "Forough"
+msgstr "Forough"
+
+msgid "general"
+msgstr "通用标准型"
+
+#: public/views/storefront-server.php:107
+msgid "General Purpose"
+msgstr ""
+
+msgid "generate"
+msgstr "生成"
+
+#: public/views/storefront-server.php:284
+msgid "Generate"
+msgstr ""
+
+#: public/views/storefront-storage.php:60
+msgid "Generate Access Key ID and Secret Access Key to connect via AWS SDK, Rclone, or backup plugins."
+msgstr ""
+
+#: public/views/storefront-storage.php:63
+msgid "Generate S3 Access Keys"
+msgstr ""
+
+#: public/views/storefront-server.php:88
+msgid "Geo-Redundant Disaster Recovery"
+msgstr "异地容灾与高可用"
+
+#: public/views/storefront-cdn.php:26
+msgid "Global CDN & Anycast Edge DNS"
+msgstr ""
+
+#: public/views/storefront-server.php:99
+msgid "Hardware Plan & Specifications"
+msgstr "硬件配置与规格"
+
+#: public/views/dashboard-customer.php:93
+msgid "Healthy"
+msgstr ""
+
+#: public/views/storefront-server.php:164
+msgid "High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr)."
+msgstr ""
+
+msgid "Hourly Burn Rate"
+msgstr "每小时扣费速率"
+
+#: public/views/storefront-server.php:322
+msgid "Hourly Burn Rate:"
+msgstr ""
+
+#: includes/class-arvan-metering.php:73
+msgid "Hourly metering for %1$s (%2$s)"
+msgstr ""
+
+#: public/views/dashboard-customer.php:184
+msgid "Hourly Rate"
+msgstr "每小时资费"
+
+msgid "hourlyBurn"
+msgstr "每小时消耗率"
+
+msgid "hourlyRate"
+msgstr "每小时费用"
+
+#: public/views/dashboard-customer.php:85
+msgid "hours"
+msgstr "小时"
+
+#: public/views/dashboard-customer.php:82 public/views/dashboard-customer.php:205 public/views/storefront-server.php:150 public/views/storefront-server.php:323
+msgid "hr"
+msgstr ""
+
+#: includes/class-arvan-api-client.php:154
+msgid "HTTP Request Failed: %s"
+msgstr ""
+
+#: public/views/storefront-server.php:256
+msgid "Instance Access & Naming"
+msgstr ""
+
+#: public/class-arvan-public.php:256
+msgid "Instance permanently deleted."
+msgstr ""
+
+#: admin/class-arvan-admin.php:465
+msgid "Instance powered off by administrator."
+msgstr "云主机已被管理员关机。"
+
+#: public/class-arvan-public.php:255
+msgid "Instance powered off."
+msgstr ""
+
+#: public/class-arvan-public.php:254
+msgid "Instance powered on."
+msgstr ""
+
+#: admin/class-arvan-admin.php:469
+msgid "Instance purged by administrator."
+msgstr "云主机已被管理员彻底删除。"
+
+msgid "instanceHostname"
+msgstr "实例主机名 (Hostname)"
+
+#: public/views/dashboard-customer.php:173
+msgid "Instances"
+msgstr ""
+
+#: public/views/dashboard-customer.php:99
+msgid "Instant Online Wallet Top-Up"
+msgstr ""
+
+#: public/views/storefront-server.php:343
+msgid "Instant Provision Cloud Server"
+msgstr ""
+
+#: public/views/storefront-server.php:34
+msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
+msgstr "在 ArvanCloud 基础设施上即时开通。高 IOPS NVMe SSD、独立 IPv4 和亚毫秒级本地网络。"
+
+msgid "instantDeploy"
+msgstr "立即创建并交付"
+
+#: public/views/dashboard-customer.php:125
+msgid "Instantly provision virtual machines, CDN zones, and S3 buckets."
+msgstr ""
+
+#: includes/class-arvan-wallet.php:275
+msgid "Insufficient wallet balance."
+msgstr ""
+
+msgid "insufficientBalance"
+msgstr "余额不足 (需要充值)"
+
+#: public/class-arvan-public.php:485
+msgid "Invalid power action."
+msgstr ""
+
+#: admin/class-arvan-admin.php:405
+msgid "Invalid user ID or amount."
+msgstr ""
+
+msgid "ipAddress"
+msgstr "公网 IP"
+
+msgid "Iran"
+msgstr "伊朗"
+
+msgid "Isfahan"
+msgstr "伊斯法罕"
+
+msgid "Karaj"
+msgstr "卡拉季"
+
+msgid "Ledger Actions"
+msgstr "财务操作"
+
+#: public/views/dashboard-customer.php:171
+msgid "Live instance power states, IP addresses, and real-time lifecycle controls."
+msgstr ""
+
+msgid "liveInfrastructureOnly"
+msgstr "仅真实生产环境"
+
+#: admin/class-arvan-admin.php:290
+msgid "Loading ArvanCloud Management Portal..."
+msgstr ""
+
+#: templates/frontend-canvas.php:41
+msgid "Loading ArvanCloud Services Canvas..."
+msgstr "正在载入 ArvanCloud 云服务平台..."
+
+#: public/views/storefront-cdn.php:186
+msgid "Loading records..."
+msgstr ""
+
+msgid "logout"
+msgstr "退出登录"
+
+#: public/views/dashboard-customer.php:64
+msgid "Low Balance Warning"
+msgstr ""
+
+#: public/views/storefront-server.php:64
+msgid "Low Latency / IXP Direct"
+msgstr "低延迟 / IXP 直连"
+
+msgid "lowBalanceAlert"
+msgstr "警告：余额即将用尽"
+
+msgid "lowBalanceDesc"
+msgstr "按照您当前的每小时消耗速率，您的余额将在不到12小时内耗尽。"
+
+#: public/views/storefront-cdn.php:61
+msgid "Manage DNS zones, edge caching, and SSL certificates."
+msgstr ""
+
+#: public/views/dashboard-customer.php:22
+msgid "Manage your virtual servers, CDN domains, S3 object storage buckets, and atomic wallet ledger in one place."
+msgstr ""
+
+#: public/views/storefront-cdn.php:96
+msgid "Managed Let's Encrypt (Active)"
+msgstr "托管 Let's Encrypt 证书（有效）"
+
+msgid "Manual Ledger Adjustment"
+msgstr "管理员手动调账"
+
+#: admin/class-arvan-admin.php:194
+msgid "Manual metering cycle completed."
+msgstr "按量计费结算周期已手动执行完毕。"
+
+msgid "manualAdjustmentDefaultReason"
+msgstr "管理员手动调账"
+
+#: admin/views/admin-settings.php:79
+msgid "Markup Percentage (%)"
+msgstr "加价百分比 (%)"
+
+msgid "Mashhad"
+msgstr "马什哈德"
+
+msgid "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
+msgstr "对所有客户的云服务器、CDN 域名及 S3 存储桶进行统一全生命周期监管与应急控制。"
+
+msgid "maxDiskLabel"
+msgstr "最大:"
+
+msgid "memory"
+msgstr "高内存型"
+
+msgid "Memory Master"
+msgstr "内存增强型 (Memory Master)"
+
+#: public/views/storefront-server.php:109
+msgid "Memory Optimized"
+msgstr ""
+
+#: admin/class-arvan-admin.php:441
+msgid "Metering cycle finished: Processed %1$d resources, debited %2$s Tomans, suspended %3$d accounts."
+msgstr ""
+
+#: public/views/storefront-server.php:283
+msgid "Minimum 12 characters"
+msgstr ""
+
+#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:532
+msgid "Minimum deposit amount is 1,000 Tomans."
+msgstr ""
+
+msgid "minRequired"
+msgstr "最低起充要求 (24小时)"
+
+msgid "Monthly Run Rate (MRR)"
+msgstr "预估月度经常性收入 (MRR)"
+
+msgid "monthlyEstimate"
+msgstr "月度预估 (720小时)"
+
+msgid "mostPopular"
+msgstr "最受欢迎"
+
+#: public/views/storefront-cdn.php:178
+msgid "Name"
+msgstr ""
+
+#: public/views/storefront-cdn.php:155
+msgid "Name / Host"
+msgstr ""
+
+#: admin/class-arvan-admin.php:197
+msgid "Network error while testing connection."
+msgstr ""
+
+#: admin/class-arvan-admin.php:196
+msgid "Network error."
+msgstr ""
+
+#: public/views/dashboard-customer.php:133
+msgid "New Cloud Server"
+msgstr ""
 
 msgid "nextGenCloudIaaS"
 msgstr "下一代云基础设施 (IaaS)"
 
-msgid "configuratorHeroDesc"
-msgstr "配置基于 ArvanCloud 数据中心基础设施的高性能 NVMe 云服务器，即买即用。"
+#: public/views/dashboard-customer.php:249
+msgid "No active cloud servers deployed yet"
+msgstr ""
+
+#: public/views/storefront-cdn.php:122
+msgid "No CDN domains configured yet"
+msgstr "尚未配置任何 CDN 域名"
+
+msgid "No customer wallets initialized yet."
+msgstr "暂无已初始化的客户钱包。"
+
+msgid "No resources deployed yet."
+msgstr "暂无开通的资源。"
+
+#: public/views/storefront-storage.php:118
+msgid "No storage buckets created yet"
+msgstr ""
+
+#: public/views/dashboard-customer.php:306
+msgid "No transactions recorded in wallet ledger yet."
+msgstr ""
+
+msgid "Northwest"
+msgstr "西北"
+
+msgid "noServers"
+msgstr "暂无已部署的云服务器。"
+
+#: public/views/storefront-server.php:337
+msgid "Notice: Deploying requires a minimum 24-hour run balance."
+msgstr ""
+
+msgid "noTransactions"
+msgstr "暂无交易记录。"
+
+#: public/views/storefront-server.php:145
+msgid "NVMe Disk"
+msgstr ""
+
+#: public/views/storefront-server.php:163
+msgid "NVMe Fast Storage Volume"
+msgstr ""
+
+#: public/views/storefront-storage.php:74
+msgid "Object storage buckets provisioned on ArvanCloud cluster."
+msgstr ""
+
+msgid "objectStorage"
+msgstr "对象存储 (S3)"
+
+#: admin/views/admin-settings.php:54
+msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
+msgstr "从 ArvanCloud 用户控制台 > 个人资料 > API 密钥 / 机器用户 中获取您的 API 密钥。"
+
+#: public/class-arvan-public.php:538
+msgid "Online Top-up via Sandbox Gateway (Ref: %s)"
+msgstr ""
+
+#: public/views/storefront-server.php:188
+msgid "Operating System Image"
+msgstr ""
+
+#: public/views/storefront-server.php:310
+msgid "Operating System:"
+msgstr ""
+
+#: admin/views/admin-settings.php:90
+msgid "Optional fixed addition added after percentage markup calculation."
+msgstr "在百分比加价计算之后额外累加的固定金额。"
+
+#: public/views/storefront-server.php:295
+msgid "Order Summary & Cost"
+msgstr ""
+
+msgid "orderSummary"
+msgstr "订单明细与服务器配置"
+
+msgid "os"
+msgstr "操作系统"
+
+msgid "password"
+msgstr "密码"
+
+#: public/views/dashboard-customer.php:113
+msgid "Pay with Online Gateway"
+msgstr ""
+
+#: public/class-arvan-gateway.php:139
+msgid "Payment verification failed or was cancelled."
+msgstr ""
+
+msgid "Performance Pro"
+msgstr "高性能专业型 (Performance Pro)"
+
+#: admin/class-arvan-admin.php:333 admin/class-arvan-admin.php:354 admin/class-arvan-admin.php:395 admin/class-arvan-admin.php:430
+msgid "Permission denied."
+msgstr ""
+
+msgid "planSpecs"
+msgstr "套餐配置"
+
+#: public/class-arvan-public.php:598
+msgid "Please enter a valid domain name."
+msgstr ""
+
+#: public/class-arvan-public.php:294
+msgid "Please sign in to deploy a cloud server."
+msgstr ""
+
+#: public/class-arvan-public.php:524
+msgid "Please sign in to top up your wallet."
+msgstr ""
+
+#: public/class-arvan-public.php:591 public/class-arvan-public.php:758 public/class-arvan-public.php:812
+msgid "Please sign in."
+msgstr ""
+
+#: public/views/dashboard-customer.php:186
+msgid "Power Lifecycle"
+msgstr ""
+
+msgid "Power Off"
+msgstr "强制关机"
+
+#: public/views/dashboard-customer.php:220
+msgid "Power Off Instance"
+msgstr ""
+
+#: public/views/dashboard-customer.php:231
+msgid "Power On"
+msgstr ""
+
+#: public/views/dashboard-customer.php:229
+msgid "Power On Instance"
+msgstr ""
+
+msgid "Powered by ArvanCloud Infrastructure Reseller Engine"
+msgstr "由 ArvanCloud 云基础设施转售引擎提供支持"
+
+#: public/views/dashboard-customer.php:212
+msgid "Powered Off"
+msgstr ""
+
+msgid "powerOff"
+msgstr "关机"
+
+msgid "powerOn"
+msgstr "开机"
+
+msgid "proceedPayment"
+msgstr "前往在线充值"
+
+msgid "processing"
+msgstr "处理中..."
+
+#: public/views/storefront-server.php:137
+msgid "Processor"
+msgstr "处理器"
+
+#: public/views/storefront-cdn.php:105
+msgid "Protected"
+msgstr "已受保护"
+
+msgid "provisioningInstance"
+msgstr "正在创建云主机..."
+
+msgid "provisionTimeNote"
+msgstr "⚡ 在 ArvanCloud 核心基础设施上 45 秒内即时交付。"
+
+msgid "proxied"
+msgstr "代理已开启"
+
+#: public/views/storefront-cdn.php:180
+msgid "Proxy"
+msgstr ""
+
+msgid "Purge"
+msgstr "彻底销毁"
+
+#: public/views/storefront-cdn.php:101
+msgid "Purge Edge Cache"
+msgstr "清理边缘缓存"
+
+msgid "purgeCache"
+msgstr "清除边缘缓存"
+
+msgid "quickDepositDesc"
+msgstr "通过在线网关 / 沙盒演示即时充值钱包。"
+
+msgid "quickTopUp"
+msgstr "快捷充值"
+
+msgid "ram"
+msgstr "内存 (RAM)"
+
+#: public/views/storefront-server.php:141
+msgid "RAM Memory"
+msgstr "内存"
+
+#: public/views/storefront-storage.php:87
+msgid "Rate (Monthly)"
+msgstr ""
+
+msgid "rateMonthly"
+msgstr "月度资费"
+
+msgid "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
+msgstr "实时原子对账台账监管、余额快照以及管理员手动调账工具。"
+
+msgid "Reason / Audit Note:"
+msgstr "调账原因 / 审计备注:"
+
+msgid "reboot"
+msgstr "重启"
+
+#: public/views/dashboard-customer.php:226
+msgid "Reboot"
+msgstr ""
+
+#: public/class-arvan-public.php:253
+msgid "Reboot command dispatched to ArvanCloud."
+msgstr ""
+
+msgid "rechargeWalletNow"
+msgstr "立即充值钱包"
+
+#: public/views/storefront-cdn.php:145
+msgid "Record Type"
+msgstr "记录类型"
+
+msgid "region"
+msgstr "数据中心区域"
+
+#: admin/views/admin-settings.php:126
+msgid "Reseller Brand / Store Name"
+msgstr "分销商品牌 / 商城名称"
+
+msgid "Resource Name"
+msgstr "资源名称"
+
+#: public/class-arvan-public.php:442
+msgid "Resource not found or access denied."
+msgstr ""
+
+#: admin/class-arvan-admin.php:456
+msgid "Resource not found."
+msgstr ""
+
+#: admin/views/admin-settings.php:99
+msgid "Rial (IRR)"
+msgstr ""
+
+#: public/views/storefront-server.php:281
+msgid "Root / Admin Password"
+msgstr ""
+
+#: public/views/storefront-server.php:271
+msgid "Root Password"
+msgstr ""
+
+#: admin/class-arvan-admin.php:201
+msgid "Run Metering Cycle Now"
+msgstr "立即执行按量计费结算"
+
+msgid "running"
+msgstr "运行中"
+
+#: public/views/dashboard-customer.php:208
+msgid "Running"
+msgstr ""
+
+#: admin/class-arvan-admin.php:200
+msgid "Running Metering..."
+msgstr ""
+
+#: public/views/dashboard-customer.php:185
+msgid "Runtime Status"
+msgstr ""
+
+#: public/class-arvan-public.php:830
+msgid "S3 Access credentials generated."
+msgstr ""
+
+#: public/views/storefront-storage.php:59
+msgid "S3 API Credentials"
+msgstr ""
+
+#: public/views/storefront-storage.php:85
+msgid "S3 API Endpoint"
+msgstr ""
+
+#: public/class-arvan-public.php:259
+msgid "S3 Bucket created successfully."
+msgstr ""
+
+#: public/views/storefront-storage.php:138
+msgid "S3 Endpoint URL:"
+msgstr ""
+
+#: public/views/storefront-storage.php:131
+msgid "S3 Storage API Credentials & Setup"
+msgstr ""
+
+#: public/views/dashboard-customer.php:155
+msgid "S3 Storage Bucket"
+msgstr ""
+
+#: public/class-arvan-public.php:800
+msgid "S3 Storage Bucket \"%s\" created successfully."
+msgstr ""
+
+#: public/views/storefront-storage.php:27
+msgid "S3-Compatible Object Storage"
+msgstr ""
+
+msgid "s3CredsDesc"
+msgstr "使用此凭据通过 AWS CLI、Rclone、S3cmd 或 WordPress 备份插件进行连接。"
+
+msgid "s3EndpointUrl"
+msgstr "S3 终端节点 URL"
+
+msgid "s3StorageLink"
+msgstr "📦 S3 对象存储"
+
+#: admin/views/admin-settings.php:59
+msgid "Sandbox / Demo Mode"
+msgstr "沙盒测试 / 演示模式 (Sandbox)"
+
+msgid "save"
+msgstr "保存设置"
+
+#: admin/views/admin-settings.php:150
+msgid "Save All Reseller Settings"
+msgstr "保存全部代理商设置"
+
+#: public/views/storefront-storage.php:28
+msgid "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
+msgstr ""
+
+msgid "searchResourcesPlaceholder"
+msgstr "按客户、资源名称或 Arvan UUID 搜索..."
+
+msgid "searchWalletsPlaceholder"
+msgstr "按客户姓名、邮箱或用户ID搜索..."
+
+#: public/views/storefront-storage.php:154
+msgid "Secret Access Key:"
+msgstr ""
+
+msgid "secretKey"
+msgstr "安全密钥 (Secret Key)"
+
+#: public/views/storefront-server.php:51
+msgid "Select the geographical location closest to your target audience."
+msgstr ""
+
+msgid "selectLanguage"
+msgstr "选择语言"
+
+msgid "selectPresetAmount"
+msgstr "选择预设充值金额:"
+
+#: public/class-arvan-public.php:410
+msgid "Server \"%s\" provisioned successfully! IP: %s"
+msgstr ""
+
+#: public/class-arvan-public.php:252
+msgid "Server deployed successfully! IP assigned:"
+msgstr ""
+
+#: public/views/storefront-server.php:263
+msgid "Server Hostname"
+msgstr ""
+
+#: public/views/dashboard-customer.php:181
+msgid "Server Instance"
+msgstr ""
+
+#: public/class-arvan-public.php:481
+msgid "Server permanently destroyed."
+msgstr ""
+
+#: public/class-arvan-public.php:469
+msgid "Server powered off gracefully."
+msgstr ""
+
+#: public/class-arvan-public.php:463
+msgid "Server powered on successfully."
+msgstr ""
+
+#: public/class-arvan-public.php:475
+msgid "Server reboot command executed."
+msgstr ""
+
+msgid "serverConfiguratorLink"
+msgstr "🚀 云服务器配置中心"
+
+msgid "serverName"
+msgstr "服务器名称"
+
+msgid "Service"
+msgstr "服务类型"
+
+#: public/views/dashboard-customer.php:54
+msgid "Services Suspended Due to Zero Wallet Balance"
+msgstr ""
+
+#: admin/class-arvan-admin.php:241
+msgid "Settings"
+msgstr ""
+
+#: admin/class-arvan-admin.php:240
+msgid "Settings & API"
+msgstr "系统设置与 API"
+
+#: admin/class-arvan-admin.php:385
+msgid "Settings saved successfully."
+msgstr ""
+
+msgid "Shahryar"
+msgstr "Shahryar"
+
+msgid "Shiraz"
+msgstr "设拉子"
+
+#: public/views/dashboard-customer.php:21
+msgid "Sign in to Access Your Cloud Portal"
+msgstr ""
+
+#: public/views/dashboard-customer.php:25
+msgid "Sign In to Your Account"
+msgstr ""
+
+msgid "signIn"
+msgstr "登录 / 注册"
+
+#: public/views/dashboard-customer.php:224
+msgid "Soft Reboot"
+msgstr ""
+
+msgid "specs"
+msgstr "规格"
+
+#: public/views/storefront-server.php:276
+msgid "SSH Public Key"
+msgstr ""
+
+#: public/views/storefront-server.php:270
+msgid "SSH Public Key (Recommended)"
+msgstr ""
+
+msgid "sshKey"
+msgstr "SSH 密钥"
+
+#: public/views/storefront-cdn.php:73
+msgid "SSL / TLS Mode"
+msgstr ""
+
+#: public/class-arvan-public.php:744
+msgid "SSL configuration updated."
+msgstr ""
+
+msgid "sslActive"
+msgstr "SSL 安全证书已生效"
+
+#: public/views/storefront-server.php:189
+msgid "Standard cloud images optimized for immediate SSH/RDP connection."
+msgstr ""
+
+msgid "Standard General"
+msgstr "通用标准型 (Standard General)"
+
+msgid "Starter Eco"
+msgstr "入门经济型 (Starter Eco)"
+
+msgid "status"
+msgstr "状态"
+
+#: public/views/storefront-cdn.php:75 public/views/storefront-storage.php:88
+msgid "Status"
+msgstr ""
 
 msgid "step1Region"
 msgstr "1. 选择数据中心区域"
@@ -223,173 +1489,150 @@ msgstr "4. 操作系统与镜像"
 msgid "step5Auth"
 msgstr "5. 主机名与访问凭证"
 
-msgid "allPlans"
-msgstr "全部套餐"
+#: public/views/dashboard-customer.php:222
+msgid "Stop"
+msgstr ""
 
-msgid "general"
-msgstr "通用标准型"
-
-msgid "compute"
-msgstr "计算密集型"
-
-msgid "memory"
-msgstr "高内存型"
-
-msgid "mostPopular"
-msgstr "最受欢迎"
-
-msgid "hourlyRate"
-msgstr "每小时费用"
-
-msgid "hourlyBurn"
-msgstr "每小时消耗率"
-
-msgid "monthlyEstimate"
-msgstr "月度预估 (720小时)"
-
-msgid "additionalStorage"
-msgstr "额外存储空间"
-
-msgid "instanceHostname"
-msgstr "实例主机名 (Hostname)"
-
-msgid "authCredentials"
-msgstr "登录认证方式:"
-
-msgid "password"
-msgstr "密码"
-
-msgid "sshKey"
-msgstr "SSH 密钥"
-
-msgid "orderSummary"
-msgstr "订单明细与服务器配置"
-
-msgid "region"
-msgstr "数据中心区域"
-
-msgid "flavor"
-msgstr "硬件配置"
-
-msgid "specs"
-msgstr "规格"
+msgid "stopped"
+msgstr "已关机"
 
 msgid "storage"
 msgstr "磁盘空间"
 
-msgid "os"
-msgstr "操作系统"
+#: public/views/storefront-server.php:306
+msgid "Storage Volume:"
+msgstr ""
 
-msgid "minRequired"
-msgstr "最低起充要求 (24小时)"
+msgid "storageDesc"
+msgstr "无限量 S3 兼容对象存储，具备高吞吐量、多可用区容灾复制和标准 API 兼容能力。"
 
-msgid "instantDeploy"
-msgstr "立即创建并交付"
+msgid "storageTitle"
+msgstr "S3 兼容对象存储"
 
-msgid "insufficientBalance"
-msgstr "余额不足 (需要充值)"
+#: admin/views/admin-settings.php:95
+msgid "Store Currency"
+msgstr "商城结算货币"
 
-msgid "vcpu"
-msgstr "虚拟处理器 (vCPU)"
+msgid "storefrontSubtitle"
+msgstr "云基础设施商城"
 
-msgid "ram"
-msgstr "内存 (RAM)"
+#: admin/views/admin-settings.php:133
+msgid "Support Contact Email"
+msgstr "客户服务与技术支持邮箱"
 
-msgid "baseDiskLabel"
-msgstr "基础:"
+#: admin/views/admin-settings.php:140
+msgid "Support Phone Number"
+msgstr "技术支持服务电话"
 
-msgid "maxDiskLabel"
-msgstr "最大:"
+msgid "suspended"
+msgstr "已暂停"
 
-msgid "provisioningInstance"
-msgstr "正在创建云主机..."
+#: public/views/dashboard-customer.php:91
+msgid "Suspended"
+msgstr ""
 
-msgid "provisionTimeNote"
-msgstr "⚡ 在 ArvanCloud 核心基础设施上 45 秒内即时交付。"
+#: public/views/dashboard-customer.php:210
+msgid "Suspended (0 Bal)"
+msgstr ""
 
-msgid "dashboardDesc"
-msgstr "原子钱包实时监控、服务器电源生命周期控制及资源遥测。"
-
-msgid "suspensionNotice"
-msgstr "暂停通知：钱包余额已耗尽"
+msgid "Suspended (0 Balance)"
+msgstr "欠费暂停 (余额为0)"
 
 msgid "suspensionDesc"
 msgstr "您的钱包余额已为0。为防止产生欠费，所有运行中的云服务器已安全关机。充值后可立即恢复服务。"
 
-msgid "rechargeWalletNow"
-msgstr "立即充值钱包"
+msgid "suspensionNotice"
+msgstr "暂停通知：钱包余额已耗尽"
 
-msgid "lowBalanceAlert"
-msgstr "警告：余额即将用尽"
+msgid "Tabriz"
+msgstr "大不里士"
 
-msgid "lowBalanceDesc"
-msgstr "按照您当前的每小时消耗速率，您的余额将在不到12小时内耗尽。"
+msgid "Tabriz - Northwest"
+msgstr "大不里士 - 西北"
 
-msgid "quickTopUp"
-msgstr "快捷充值"
+msgid "Tabriz (Northwest)"
+msgstr "大不里士 (西北)"
 
-msgid "estimatedRuntime"
-msgstr "预计可持续运行时间"
+#: public/views/storefront-cdn.php:159
+msgid "Target Value / IP"
+msgstr "目标值 / IP"
 
-msgid "activeInstances"
-msgstr "运行中的实例"
+msgid "Tehran"
+msgstr "德黑兰"
 
-msgid "activeCloudVms"
-msgstr "活跃的云虚拟机"
+msgid "Tehran - Forough"
+msgstr "德黑兰 - Forough"
 
-msgid "noServers"
-msgstr "暂无已部署的云服务器。"
+msgid "Tehran - Shahryar"
+msgstr "德黑兰 - Shahryar"
 
-msgid "serverName"
-msgstr "服务器名称"
+msgid "Tehran (Forough)"
+msgstr "德黑兰 (Forough)"
 
-msgid "ipAddress"
-msgstr "公网 IP"
+msgid "Tehran (Shahryar)"
+msgstr "德黑兰 (Shahryar)"
 
-msgid "planSpecs"
-msgstr "套餐配置"
+#: admin/views/admin-settings.php:50
+msgid "Test Connection"
+msgstr "测试 API 连接"
 
-msgid "powerOn"
-msgstr "开机"
+#: admin/class-arvan-admin.php:191
+msgid "Testing connection to ArvanCloud API..."
+msgstr ""
 
-msgid "powerOff"
-msgstr "关机"
+#: scripts/i18n-tools.js:108
+msgid "Text"
+msgstr ""
 
-msgid "reboot"
-msgstr "重启"
-
-msgid "delete"
-msgstr "删除"
-
-msgid "confirmDelete"
-msgstr "您确定要永久删除此服务器吗？磁盘中的所有数据将被清空。"
-
-msgid "transactionHistory"
-msgstr "钱包交易流水与对账审计"
+#: public/views/storefront-server.php:76
+msgid "Tier III Enterprise DC"
+msgstr "Tier III 级企业数据中心"
 
 msgid "timestamp"
 msgstr "交易时间"
 
-msgid "type"
-msgstr "交易类型"
+#: public/views/storefront-cdn.php:95
+msgid "Toggle Managed SSL"
+msgstr ""
 
-msgid "description"
-msgstr "描述明细"
+#: admin/views/admin-settings.php:98
+msgid "Toman (IRT)"
+msgstr ""
 
-msgid "amount"
-msgstr "金额"
+msgid "topUp"
+msgstr "充值"
 
-msgid "balanceSnapshot"
-msgstr "结余余额"
+msgid "total"
+msgstr "总计"
 
-msgid "noTransactions"
-msgstr "暂无交易记录。"
+msgid "Total Active Wallets"
+msgstr "活跃钱包总数"
 
-msgid "customAmount"
-msgstr "自定义金额"
+msgid "Total Cloud Instances"
+msgstr "云服务器实例总数"
 
-msgid "proceedPayment"
-msgstr "前往在线充值"
+msgid "Total Metered Burn"
+msgstr "累计按量计费结算总额"
+
+msgid "Total Outstanding Credit"
+msgstr "客户未消耗总充值余额"
+
+msgid "totalDepositAmount"
+msgstr "充值总额:"
+
+#: public/views/dashboard-customer.php:270
+msgid "Transaction Type"
+msgstr ""
+
+msgid "transactionHistory"
+msgstr "钱包交易流水与对账审计"
+
+#: public/views/storefront-cdn.php:181
+msgid "TTL"
+msgstr ""
+
+msgid "txAdjustment"
+msgstr "调账"
 
 msgid "txDeposit"
 msgstr "充值"
@@ -397,384 +1640,106 @@ msgstr "充值"
 msgid "txMetered"
 msgstr "按量计费"
 
-msgid "txAdjustment"
-msgstr "调账"
+msgid "type"
+msgstr "交易类型"
 
-msgid "cdnTitle"
-msgstr "CDN 域名接入与 Anycast DNS 解析"
+#: public/views/storefront-cdn.php:177
+msgid "Type"
+msgstr ""
 
-msgid "cdnDesc"
-msgstr "全球边缘 CDN 缓存加速、DDoS 攻击防护、Anycast DNS 解析以及免费自动申请 SSL 证书。"
+#: public/class-arvan-public.php:422
+msgid "Unauthorized."
+msgstr ""
 
-msgid "connectDomain"
-msgstr "接入域名至 CDN"
+#: admin/class-arvan-admin.php:471
+msgid "Unknown admin action."
+msgstr ""
 
-msgid "domainInput"
-msgstr "您的域名 (例如 example.com)"
+msgid "unlimited"
+msgstr "无限制"
 
-msgid "activeCdnDomains"
-msgstr "已接入 CDN 的域名列表"
+#: public/views/dashboard-customer.php:156
+msgid "Unlimited Object Storage"
+msgstr ""
 
-msgid "assignedNameservers"
-msgstr "分配的 ArvanCloud Anycast 权威域名服务器:"
+#: admin/views/admin-settings.php:100
+msgid "US Dollar (USD)"
+msgstr ""
 
-msgid "dnsRecords"
-msgstr "DNS 解析记录"
+#: public/views/storefront-cdn.php:179
+msgid "Value"
+msgstr ""
 
-msgid "purgeCache"
-msgstr "清除边缘缓存"
+msgid "vcpu"
+msgstr "虚拟处理器 (vCPU)"
 
-msgid "sslActive"
-msgstr "SSL 安全证书已生效"
-
-msgid "activePops"
-msgstr "已部署在全球 40 多个边缘节点"
-
-msgid "dnsDialogDesc"
-msgstr "添加并管理 DNS 解析记录，享受 Anycast 全球即时生效。"
-
-msgid "dnsRecordNamePlaceholder"
-msgstr "主机记录 (@ 或 子域名)"
-
-msgid "dnsRecordTargetPlaceholder"
-msgstr "记录值 / IP地址"
-
-msgid "addRecord"
-msgstr "添加记录"
-
-msgid "proxied"
-msgstr "代理已开启"
-
-msgid "close"
-msgstr "关闭"
-
-msgid "storageTitle"
-msgstr "S3 兼容对象存储"
-
-msgid "storageDesc"
-msgstr "无限量 S3 兼容对象存储，具备高吞吐量、多可用区容灾复制和标准 API 兼容能力。"
-
-msgid "createBucket"
-msgstr "创建新存储桶"
-
-msgid "bucketName"
-msgstr "存储桶名称 (仅支持小写字母与数字)"
-
-msgid "existingBuckets"
-msgstr "现有存储桶列表"
+#: public/views/storefront-storage.php:105
+msgid "View Setup Snippets"
+msgstr ""
 
 msgid "viewApiKeys"
 msgstr "查看 S3 API 访问凭据"
 
-msgid "endpointUrl"
-msgstr "终端节点 URL (Endpoint)"
-
-msgid "accessKey"
-msgstr "访问密钥 ID (Access Key)"
-
-msgid "secretKey"
-msgstr "安全密钥 (Secret Key)"
-
-msgid "bucketIdentifier"
-msgstr "存储桶名称"
-
-msgid "s3EndpointUrl"
-msgstr "S3 终端节点 URL"
-
-msgid "clusterRegion"
-msgstr "集群区域"
-
-msgid "rateMonthly"
-msgstr "月度资费"
-
-msgid "action"
-msgstr "操作"
-
-msgid "credentials"
-msgstr "访问凭据"
-
-msgid "s3CredsDesc"
-msgstr "使用此凭据通过 AWS CLI、Rclone、S3cmd 或 WordPress 备份插件进行连接。"
-
-msgid "awsCliExample"
-msgstr "AWS CLI 配置示例:"
-
-msgid "quickDepositDesc"
-msgstr "通过在线网关 / 沙盒演示即时充值钱包。"
-
-msgid "selectPresetAmount"
-msgstr "选择预设充值金额:"
-
-msgid "totalDepositAmount"
-msgstr "充值总额:"
-
-msgid "processing"
-msgstr "处理中..."
-
-msgid "ArvanCloud Reseller"
-msgstr "ArvanCloud 分销商管理中心"
-
-msgid "Settings & API"
-msgstr "系统设置与 API"
-
-msgid "Cloud Resources"
-msgstr "云端资源监控"
-
-msgid "Wallets & Ledger"
-msgstr "客户钱包与财务台账"
-
-msgid "1. ArvanCloud API Authentication"
-msgstr "1. ArvanCloud API 认证配置"
-
-msgid "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
-msgstr "输入您的主 ArvanCloud Machine User API 密钥。所有下级客户资源都将在此母账号下开通。"
-
-msgid "ArvanCloud API Key"
-msgstr "ArvanCloud API 密钥"
-
-msgid "Test Connection"
-msgstr "测试 API 连接"
-
-msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
-msgstr "从 ArvanCloud 用户控制台 > 个人资料 > API 密钥 / 机器用户 中获取您的 API 密钥。"
-
-msgid "Sandbox / Demo Mode"
-msgstr "沙盒测试 / 演示模式 (Sandbox)"
-
-msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
-msgstr "启用后，允许在不连接真实生产环境的情况下进行即时测试、模拟开通和演示充值。"
-
-msgid "2. Dynamic Pricing & Reseller Markup Engine"
-msgstr "2. 动态定价与分销商利润加价引擎"
-
-msgid "Configure profit margins automatically calculated on top of wholesale ArvanCloud infrastructure rates."
-msgstr "设置自动计算在 ArvanCloud 批发成本之上的利润百分比与固定加价。"
-
-msgid "Markup Percentage (%)"
-msgstr "加价百分比 (%)"
-
-msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
-msgstr "例如：20% 加价将每小时 450 托曼的批发成本转化为 540 托曼的零售价。"
-
-msgid "Fixed Margin Addition (Toman)"
-msgstr "固定利润加价 (托曼)"
-
-msgid "Optional fixed addition added after percentage markup calculation."
-msgstr "在百分比加价计算之后额外累加的固定金额。"
-
-msgid "Store Currency"
-msgstr "商城结算货币"
-
-msgid "Default Datacenter Region"
-msgstr "默认数据中心区域"
-
-msgid "3. Storefront White-Label Branding"
-msgstr "3. 商城白标自定义品牌"
-
-msgid "Customization parameters injected into the standalone virtual canvas header and footer."
-msgstr "注入到独立虚拟云商城页头与页脚的自定义品牌参数。"
-
-msgid "Reseller Brand / Store Name"
-msgstr "分销商品牌 / 商城名称"
-
-msgid "Support Contact Email"
-msgstr "客户服务与技术支持邮箱"
-
-msgid "Support Phone Number"
-msgstr "技术支持服务电话"
-
+#: admin/views/admin-settings.php:155
 msgid "Virtual Storefront Quick Links (Theme Isolated)"
 msgstr "虚拟云商城快捷入口 (独立主题隔离模式)"
 
-msgid "Save All Reseller Settings"
-msgstr "保存全部代理商设置"
+#: public/views/dashboard-customer.php:261
+msgid "Wallet Atomic Ledger Transactions"
+msgstr ""
 
-msgid "All Provisioned Cloud Resources"
-msgstr "全部已开通的客户云端资源"
-
-msgid "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
-msgstr "对所有客户的云服务器、CDN 域名及 S3 存储桶进行统一全生命周期监管与应急控制。"
-
-msgid "Run Metering Cycle Now"
-msgstr "立即执行按量计费结算"
-
-msgid "Total Cloud Instances"
-msgstr "云服务器实例总数"
-
-msgid "Active / Running"
-msgstr "正常运行中"
-
-msgid "Suspended (0 Balance)"
-msgstr "欠费暂停 (余额为0)"
-
-msgid "Monthly Run Rate (MRR)"
-msgstr "预估月度经常性收入 (MRR)"
-
-msgid "No resources deployed yet."
-msgstr "暂无开通的资源。"
-
-msgid "Customer"
-msgstr "所属客户"
-
-msgid "Resource Name"
-msgstr "资源名称"
-
-msgid "Service"
-msgstr "服务类型"
-
-msgid "Arvan UUID / Identifier"
-msgstr "Arvan UUID / 资源标识符"
-
-msgid "Hourly Rate"
-msgstr "每小时资费"
-
-msgid "Emergency Actions"
-msgstr "管理应急操作"
-
-msgid "Power Off"
-msgstr "强制关机"
-
-msgid "Purge"
-msgstr "彻底销毁"
-
-msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
-msgstr "您确定要从 ArvanCloud 基础设施中永久删除此资源吗？"
-
-msgid "Customer Wallets & Ledger Audit"
-msgstr "客户钱包与原子财务台账审计"
-
-msgid "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
-msgstr "实时原子对账台账监管、余额快照以及管理员手动调账工具。"
-
-msgid "Total Active Wallets"
-msgstr "活跃钱包总数"
-
-msgid "Total Outstanding Credit"
-msgstr "客户未消耗总充值余额"
-
-msgid "Cumulative Deposits"
-msgstr "累计入金总额"
-
-msgid "Total Metered Burn"
-msgstr "累计按量计费结算总额"
-
-msgid "No customer wallets initialized yet."
-msgstr "暂无已初始化的客户钱包。"
+#: includes/class-arvan-wallet.php:161 includes/class-arvan-wallet.php:261
+msgid "Wallet could not be found."
+msgstr ""
 
 msgid "Wallet ID"
 msgstr "钱包 ID"
 
-msgid "Customer Name"
-msgstr "客户姓名"
+#: includes/class-arvan-wallet.php:266
+msgid "Wallet is frozen. Cannot perform debit."
+msgstr ""
 
-msgid "Email"
-msgstr "电子邮箱"
+#: public/class-arvan-public.php:554
+msgid "Wallet successfully credited with %1$s %2$s! RefID: %3$s"
+msgstr ""
 
-msgid "Hourly Burn Rate"
-msgstr "每小时扣费速率"
+#: public/class-arvan-public.php:257
+msgid "Wallet successfully credited!"
+msgstr ""
 
-msgid "Created At"
-msgstr "注册时间"
+msgid "walletBalance"
+msgstr "钱包余额"
 
-msgid "Ledger Actions"
-msgstr "财务操作"
+#: admin/class-arvan-admin.php:258
+msgid "Wallets & Ledger"
+msgstr "客户钱包与财务台账"
 
-msgid "Adjust Balance"
-msgstr "调整余额"
+#: admin/class-arvan-admin.php:259
+msgid "Wallets Ledger"
+msgstr ""
 
-msgid "Manual Ledger Adjustment"
-msgstr "管理员手动调账"
+#: admin/views/admin-settings.php:65
+msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
+msgstr "启用后，允许在不连接真实生产环境的情况下进行即时测试、模拟开通和演示充值。"
 
-msgid "Adjustment Type:"
-msgstr "调账类型:"
+#: public/views/storefront-server.php:333
+msgid "Your Available Balance:"
+msgstr ""
 
-msgid "Credit (+ Deposit Funds)"
-msgstr "入账 (+ 增加余额)"
+#: public/views/dashboard-customer.php:65
+msgid "Your available wallet balance will only support active services for approximately %s hours. Please top up your wallet to prevent automated service interruption."
+msgstr ""
 
-msgid "Debit (- Deduct Funds)"
-msgstr "扣款 (- 扣减余额)"
+#: public/views/storefront-storage.php:73
+msgid "Your Storage Buckets"
+msgstr ""
 
-msgid "Amount (Toman):"
-msgstr "金额 (托曼):"
+msgid "ایران"
+msgstr "伊朗"
 
-msgid "Reason / Audit Note:"
-msgstr "调账原因 / 审计备注:"
+msgid "تبریز"
+msgstr "大不里士"
 
-msgid "Apply Adjustment"
-msgstr "提交并记入台账"
-
-msgid "Cancel"
-msgstr "取消"
-
-msgid "All Cloud Datacenter Regions Operational (99.99% SLA)"
-msgstr "所有云数据中心区域正常运行中 (99.99% SLA 保证)"
-
-msgid "Powered by ArvanCloud Infrastructure Reseller Engine"
-msgstr "由 ArvanCloud 云基础设施转售引擎提供支持"
-
-msgid "Enterprise Multi-Tenant Infrastructure Management & Monetization"
-msgstr "企业级多租户基础设施管理与转售盈利平台"
-
-msgid "connectedSuccessfully"
-msgstr "已成功连接至 ArvanCloud 基础设施。"
-
-msgid "connectionFailed"
-msgstr "连接 ArvanCloud 基础设施失败。"
-
-msgid "activeMockFallback"
-msgstr "已激活 (沙盒模拟)"
-
-msgid "liveInfrastructureOnly"
-msgstr "仅真实生产环境"
-
-msgid "searchResourcesPlaceholder"
-msgstr "按客户、资源名称或 Arvan UUID 搜索..."
-
-msgid "searchWalletsPlaceholder"
-msgstr "按客户姓名、邮箱或用户ID搜索..."
-
-msgid "adjustBalanceDesc"
-msgstr "直接对客户余额进行增加或扣减，系统将记录不可篡改的审计日志。"
-
-msgid "adjustReasonPlaceholder"
-msgstr "例如：工单补偿 / 人工手动充值"
-
-msgid "manualAdjustmentDefaultReason"
-msgstr "管理员手动调账"
-
-msgid "all"
-msgstr "全部"
-
-msgid "active"
-msgstr "活跃"
-
-msgid "serverConfiguratorLink"
-msgstr "🚀 云服务器配置中心"
-
-msgid "customerDashboardLink"
-msgstr "📊 客户控制台"
-
-msgid "cdnManagerLink"
-msgstr "🌐 CDN与DNS管理"
-
-msgid "s3StorageLink"
-msgstr "📦 S3 对象存储"
-
-msgid "Action completed successfully."
-msgstr "操作成功完成。"
-
-msgid "Manual metering cycle completed."
-msgstr "按量计费结算周期已手动执行完毕。"
-
-msgid "Instance purged by administrator."
-msgstr "云主机已被管理员彻底删除。"
-
-msgid "Instance powered off by administrator."
-msgstr "云主机已被管理员关机。"
-
-msgid "Balance adjusted successfully."
-msgstr "钱包余额调整成功。"
-
-msgid "Failed to deploy server."
-msgstr "创建云服务器失败。"
+msgid "تهران"
+msgstr "德黑兰"
 

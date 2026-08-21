@@ -11,7 +11,8 @@
     "watch:frontend": "vite build --watch",
     "test": "node scripts/run-tests.js",
     "lint": "node scripts/lint-php.js",
-    "i18n": "php scripts/generate-i18n.php",
+    "i18n": "node scripts/i18n-tools.js",
+    "i18n:php": "php scripts/generate-i18n.php",
     "package": "node scripts/package-plugin.js",
     "build": "pnpm run build:frontend && pnpm run lint && pnpm run i18n && pnpm run test && pnpm run package"
   },

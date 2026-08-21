@@ -1,32 +1,201 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-20 22:45+0330\n"
-"PO-Revision-Date: 2026-08-20 22:45+0330\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: ru\n"
+"Report-Msgid-Bugs-To: https://arvancloud.ir\n"
+"POT-Creation-Date: 2026-08-21 02:31:44+0000\n"
+"PO-Revision-Date: 2026-08-21 02:31:44+0000\n"
+"Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
+"Language-Team: ArvanCloud Russian Team\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: ArvanCloud i18n Toolchain\n"
 "X-Domain: arv-seller\n"
 
-msgid "Deploy Cloud Server"
-msgstr "Создать облачный сервер"
+#: admin/views/admin-settings.php:38
+msgid "1. ArvanCloud API Authentication"
+msgstr "1. Авторизация ArvanCloud API"
 
-msgid "Available Wallet Balance"
-msgstr "Доступный баланс кошелька"
+#: public/views/storefront-server.php:315
+msgid "1x Public IP (Included)"
+msgstr "1x Публичный IP (включен)"
 
-msgid "ArvanCloud Reseller Settings & Monetization"
-msgstr "Настройки реселлинга ArvanCloud и наценки"
+#: admin/views/admin-settings.php:73
+msgid "2. Dynamic Pricing & Reseller Markup Engine"
+msgstr "2. Модуль динамического ценообразования и наценки"
 
-msgid "Connected successfully to ArvanCloud infrastructure."
-msgstr "Успешное подключение к инфраструктуре ArvanCloud."
+#: admin/views/admin-settings.php:120
+msgid "3. Storefront White-Label Branding"
+msgstr "3. Брендинг и контакты поддержки"
 
-msgid "Loading ArvanCloud Services Canvas..."
-msgstr "Загрузка панели облачных сервисов ArvanCloud..."
+#: public/class-arvan-public.php:338
+msgid "A minimum balance of %1$s %3$s (24 hours run cost) is required to deploy this server. Your balance is %2$s %3$s."
+msgstr "Для развертывания сервера требуется минимальный баланс %1$s %3$s (стоимость 24 часов работы). Ваш баланс: %2$s %3$s."
+
+#: public/views/storefront-cdn.php:27
+msgid "Accelerate your websites globally with edge caching, SSL termination, and Layer 7 DDoS mitigation across 40+ PoPs."
+msgstr "Ускоряйте сайты по всему миру с помощью кэширования на edge-узлах, SSL-терминации и защиты от L7 DDoS на 40+ PoP."
+
+#: public/views/storefront-storage.php:146
+msgid "Access Key ID:"
+msgstr "Access Key ID:"
+
+#: admin/views/admin-settings.php:156
+msgid "Access standalone storefront and customer portal pages:"
+msgstr "Перейти к страницам витрины и клиентского портала:"
+
+msgid "accessKey"
+msgstr "Access Key ID"
+
+#: public/views/dashboard-customer.php:55
+msgid "According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately."
+msgstr ""
+
+msgid "action"
+msgstr "Действие"
+
+#: public/views/storefront-cdn.php:182
+msgid "Action"
+msgstr ""
+
+#: admin/class-arvan-admin.php:193
+msgid "Action completed successfully."
+msgstr "Действие успешно выполнено."
+
+msgid "actions"
+msgstr "Действия"
+
+#: public/views/storefront-cdn.php:49
+msgid "Activate Edge CDN"
+msgstr ""
+
+msgid "active"
+msgstr "Активен"
+
+#: public/views/storefront-storage.php:102
+msgid "Active"
+msgstr ""
+
+msgid "Active / Running"
+msgstr "Активных серверов"
+
+#: public/views/dashboard-customer.php:170
+msgid "Active Cloud Servers & Virtual Machines"
+msgstr "Активные облачные серверы и виртуальные машины"
+
+msgid "activeCdnDomains"
+msgstr "Подключенные домены CDN"
+
+msgid "activeCloudVms"
+msgstr "Активные виртуальные машины"
+
+msgid "activeInstances"
+msgstr "Активные серверы"
+
+msgid "activeMockFallback"
+msgstr "Активен (Демо-режим)"
+
+msgid "activePops"
+msgstr "Активно на 40+ глобальных точках PoP"
+
+#: public/views/storefront-cdn.php:167
+msgid "Add Record"
+msgstr ""
+
+msgid "additionalStorage"
+msgstr "Дополнительный объем"
+
+msgid "addRecord"
+msgstr "Добавить запись"
+
+msgid "Adjust Balance"
+msgstr "Изменить баланс"
+
+#: admin/class-arvan-admin.php:202
+msgid "Adjust Wallet Balance: "
+msgstr "Изменить баланс кошелька: "
+
+msgid "adjustBalanceDesc"
+msgstr "Прямое списание или начисление на баланс клиента с внесением неизменяемой записи в реестр."
+
+msgid "Adjustment Type:"
+msgstr "Тип операции:"
+
+msgid "adjustReasonPlaceholder"
+msgstr "напр. Компенсация техподдержки / Ручное пополнение"
+
+#: includes/class-arvan-wallet.php:351
+msgid "Admin Adjustment: %1$s (by %2$s)"
+msgstr "Корректировка администратора: %1$s (%2$s)"
+
+msgid "Ahvaz"
+msgstr "Ахваз"
+
+msgid "all"
+msgstr "Все"
+
+msgid "All Cloud Datacenter Regions Operational (99.99% SLA)"
+msgstr "Все дата-центры и облачные регионы работают штатно (SLA 99.99%)"
+
+#: public/views/storefront-server.php:106
+msgid "All Plans"
+msgstr ""
+
+msgid "All Provisioned Cloud Resources"
+msgstr "Все созданные облачные ресурсы"
+
+#: admin/class-arvan-admin.php:250
+msgid "All Resources"
+msgstr "Все ресурсы"
+
+#: public/views/storefront-server.php:170
+msgid "Allocated NVMe Storage:"
+msgstr "Выделенное хранилище NVMe:"
+
+msgid "allocatingIp"
+msgstr "Выделение IP..."
+
+msgid "allPlans"
+msgstr "Все тарифы"
+
+msgid "amount"
+msgstr "Сумма"
+
+#: public/views/dashboard-customer.php:272
+msgid "Amount"
+msgstr ""
+
+msgid "Amount (Toman):"
+msgstr "Сумма (Томан):"
+
+#: public/class-arvan-public.php:260
+msgid "An error occurred during request."
+msgstr "Произошла ошибка при выполнении запроса."
+
+#: admin/class-arvan-admin.php:199
+msgid "Apply Adjustment"
+msgstr "Применить корректировку"
+
+#: admin/class-arvan-admin.php:198
+msgid "Applying..."
+msgstr "Применение..."
+
+#: admin/class-arvan-admin.php:195
+msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
+msgstr "Вы уверены, что хотите окончательно удалить этот ресурс из ArvanCloud?"
+
+#: public/class-arvan-public.php:261
+msgid "Are you sure you want to permanently destroy this server?"
+msgstr "Вы уверены, что хотите навсегда удалить этот сервер?"
+
+#: admin/class-arvan-admin.php:230
+msgid "Arvan Reseller"
+msgstr "Реселлинг ArvanCloud"
+
+msgid "Arvan UUID / Identifier"
+msgstr "Arvan UUID"
 
 msgid "arvanCloud"
 msgstr "ArvanCloud"
@@ -34,179 +203,1276 @@ msgstr "ArvanCloud"
 msgid "ArvanCloud"
 msgstr "ArvanCloud"
 
-msgid "Tehran"
-msgstr "Тегеран"
+#: admin/views/admin-settings.php:44
+msgid "ArvanCloud API Key"
+msgstr "Ключ ArvanCloud API"
 
-msgid "تهران"
-msgstr "Тегеран"
+#: includes/class-arvan-api-client.php:100
+msgid "ArvanCloud API key is not configured. Please configure your API key in WP Admin > Arvan Reseller > Settings."
+msgstr "API ключ ArvanCloud не настроен. Настройте его в панели управления WP > Arvan Reseller > Настройки."
 
-msgid "Tabriz"
-msgstr "Тебриз"
+#: admin/class-arvan-admin.php:229
+msgid "ArvanCloud Reseller"
+msgstr "Панель реселлера ArvanCloud"
 
-msgid "تبریز"
-msgstr "Тебриز"
+#: admin/views/admin-settings.php:26
+msgid "ArvanCloud Reseller Settings & Monetization"
+msgstr "Настройки реселлинга ArvanCloud и наценки"
 
-msgid "Iran"
-msgstr "Иран"
+#: public/views/dashboard-customer.php:182
+msgid "Assigned IP"
+msgstr "Назначенный IP"
 
-msgid "ایران"
-msgstr "Иран"
+#: public/views/storefront-cdn.php:72
+msgid "Assigned Nameservers"
+msgstr ""
 
-msgid "Karaj"
-msgstr "Кередж"
+msgid "assignedNameservers"
+msgstr "Назначенные Anycast NS серверы:"
 
-msgid "Isfahan"
-msgstr "Исфахан"
+msgid "authCredentials"
+msgstr "Способ аутентификации:"
 
-msgid "Shiraz"
-msgstr "Шираз"
+#: public/views/storefront-server.php:268
+msgid "Authentication Mode:"
+msgstr "Способ аутентификации:"
 
-msgid "Mashhad"
-msgstr "Мешхед"
-
-msgid "Ahvaz"
-msgstr "Ахваз"
-
-msgid "Tehran - Forough"
-msgstr "Тегеран - Forough"
-
-msgid "Tehran (Forough)"
-msgstr "Тегеран (Forough)"
-
-msgid "Tehran - Shahryar"
-msgstr "Тегеран - Шахрияр"
-
-msgid "Tehran (Shahryar)"
-msgstr "Тегеран (Шахрияр)"
-
-msgid "Tabriz - Northwest"
-msgstr "Тебриз - Северо-Запад"
-
-msgid "Tabriz (Northwest)"
-msgstr "Тебриз (Северо-Запад)"
-
-msgid "Forough"
-msgstr "Forough"
-
-msgid "Shahryar"
-msgstr "Шахрияр"
-
-msgid "Northwest"
-msgstr "Северо-Запад"
-
-msgid "Starter Eco"
-msgstr "Стартовый Эко (Starter Eco)"
-
-msgid "Standard General"
-msgstr "Стандартный Общий (Standard General)"
-
-msgid "Performance Pro"
-msgstr "Производительный Про (Performance Pro)"
-
-msgid "Enterprise Ultra"
-msgstr "Корпоративный Ультра (Enterprise Ultra)"
-
-msgid "Compute Master"
-msgstr "Вычислительный Мастер (Compute Master)"
-
-msgid "Memory Master"
-msgstr "Память Мастер (Memory Master)"
-
-msgid "dashboard"
-msgstr "Панель управления"
-
-msgid "deployServer"
-msgstr "Создать облачный сервер"
-
-msgid "cdnDns"
-msgstr "Управление CDN и DNS"
-
-msgid "objectStorage"
-msgstr "Объектное хранилище (S3)"
-
-msgid "walletBalance"
-msgstr "Баланс кошелька"
+#: public/views/dashboard-customer.php:77
+msgid "Available Wallet Balance"
+msgstr "Доступный баланс кошелька"
 
 msgid "availableBalance"
 msgstr "Доступный баланс"
 
-msgid "topUp"
-msgstr "Пополнить"
+#: public/views/storefront-storage.php:162
+msgid "AWS CLI & Rclone Configuration Example"
+msgstr "Пример конфигурации AWS CLI и Rclone"
 
-msgid "signIn"
-msgstr "Вход / Регистрация"
-
-msgid "logout"
-msgstr "Выйти"
-
-msgid "cancel"
-msgstr "Отмена"
-
-msgid "confirm"
-msgstr "Подтвердить"
-
-msgid "done"
-msgstr "Готово"
-
-msgid "save"
-msgstr "Сохранить настройки"
-
-msgid "copy"
-msgstr "Копировать"
-
-msgid "copied"
-msgstr "Скопировано!"
-
-msgid "generate"
-msgstr "Сгенерировать"
-
-msgid "status"
-msgstr "Статус"
-
-msgid "actions"
-msgstr "Действия"
-
-msgid "running"
-msgstr "Работает"
-
-msgid "stopped"
-msgstr "Остановлен"
-
-msgid "suspended"
-msgstr "Приостановлен"
-
-msgid "selectLanguage"
-msgstr "Выбрать язык"
-
-msgid "cores"
-msgstr "Ядер"
-
-msgid "total"
-msgstr "Всего"
-
-msgid "hours"
-msgstr "Часов"
-
-msgid "unlimited"
-msgstr "Неограниченно"
-
-msgid "copyIp"
-msgstr "Копировать IP"
-
-msgid "allocatingIp"
-msgstr "Выделение IP..."
+msgid "awsCliExample"
+msgstr "Пример конфигурации AWS CLI:"
 
 msgid "backOffice"
 msgstr "Панель управления"
 
-msgid "storefrontSubtitle"
-msgstr "Витрина облачной инфраструктуры"
+#: admin/class-arvan-admin.php:418
+msgid "Balance adjusted successfully."
+msgstr "Баланс успешно обновлен."
+
+#: public/views/dashboard-customer.php:273
+msgid "Balance Snapshot"
+msgstr ""
+
+msgid "balanceSnapshot"
+msgstr "Баланс после операции"
+
+msgid "baseDiskLabel"
+msgstr "Базовый:"
+
+#: public/views/storefront-storage.php:84
+msgid "Bucket Name"
+msgstr ""
+
+#: public/class-arvan-public.php:766
+msgid "Bucket name must contain only lowercase letters, numbers, and hyphens."
+msgstr "Имя бакета должно содержать только строчные буквы, цифры и дефисы."
+
+#: public/views/storefront-storage.php:40
+msgid "Bucket names must be unique, lowercase alphanumeric characters with hyphens only."
+msgstr ""
+
+msgid "bucketIdentifier"
+msgstr "Идентификатор бакета"
+
+msgid "bucketName"
+msgstr "Имя бакета (только строчные буквы и цифры)"
+
+#: public/views/storefront-storage.php:76
+msgid "Buckets"
+msgstr "Бакеты"
+
+#: public/views/dashboard-customer.php:82
+msgid "Burn Rate:"
+msgstr "Расход в час:"
+
+msgid "cancel"
+msgstr "Отмена"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+#: public/class-arvan-public.php:450
+msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
+msgstr "Невозможно запустить сервер: баланс вашего кошелька равен нулю или отрицательный. Пожалуйста, пополните кошелек."
+
+#: public/class-arvan-public.php:635
+msgid "CDN activated for \"%s\". Please set your nameservers."
+msgstr "CDN активирован для «%s». Укажите ваши DNS-серверы."
+
+#: public/class-arvan-public.php:258
+msgid "CDN domain connected successfully."
+msgstr "CDN домен успешно подключен."
+
+msgid "cdnDesc"
+msgstr "Глобальное кэширование (CDN), защита от DDoS-атак, ускорение Anycast DNS и автовыпуск SSL сертификатов."
+
+msgid "cdnDns"
+msgstr "Управление CDN и DNS"
+
+msgid "cdnManagerLink"
+msgstr "🌐 Управление CDN и DNS"
+
+msgid "cdnTitle"
+msgstr "Подключение домена к CDN и Anycast DNS"
+
+#: public/views/storefront-server.php:50
+msgid "Choose Datacenter Region"
+msgstr "Выберите регион дата-центра"
+
+#: public/views/dashboard-customer.php:200
+msgid "Click to copy IP"
+msgstr "Нажмите для копирования IP"
+
+msgid "close"
+msgstr "Закрыть"
+
+#: public/views/storefront-cdn.php:165
+msgid "Cloud Proxy"
+msgstr ""
+
+#: admin/class-arvan-admin.php:249
+msgid "Cloud Resources"
+msgstr "Облачные ресурсы"
+
+#: templates/frontend-canvas.php:26
+msgid "Cloud Services Platform"
+msgstr "Платформа облачных сервисов"
+
+#: public/views/storefront-storage.php:86
+msgid "Cluster Region"
+msgstr ""
+
+msgid "clusterRegion"
+msgstr "Регион кластера"
+
+msgid "compute"
+msgstr "Вычислительные"
+
+msgid "Compute Master"
+msgstr "Вычислительный Мастер (Compute Master)"
+
+#: public/views/storefront-server.php:108
+msgid "Compute Optimized"
+msgstr ""
+
+#: public/views/storefront-server.php:100
+msgid "Compute resources can be dynamically scaled anytime."
+msgstr "Вычислительные ресурсы можно масштабировать в любое время."
+
+#: public/views/storefront-server.php:302
+msgid "Compute Specs:"
+msgstr "Характеристики вычислений:"
+
+#: public/views/dashboard-customer.php:134
+msgid "Compute, NVMe & Dedicated IP"
+msgstr "Процессор, NVMe и выделенный IP"
+
+msgid "configuratorHeroDesc"
+msgstr "Настройка высокопроизводительных виртуальных машин NVMe на базе дата-центров ArvanCloud с мгновенным запуском."
+
+#: public/views/dashboard-customer.php:250
+msgid "Configure high performance NVMe virtual servers ready in under 60 seconds."
+msgstr ""
+
+#: admin/views/admin-settings.php:74
+msgid "Configure profit margins automatically calculated on top of wholesale ArvanCloud infrastructure rates."
+msgstr "Настройте торговую наценку, автоматически добавляемую к оптовым тарифам ArvanCloud."
+
+#: public/views/storefront-server.php:257
+msgid "Configure server hostname and authentication method."
+msgstr ""
+
+#: admin/views/admin-settings.php:27
+msgid "Configure your ArvanCloud master API credentials, pricing markup margins, white-label branding, and sandbox mode."
+msgstr ""
+
+msgid "confirm"
+msgstr "Подтвердить"
+
+msgid "confirmDelete"
+msgstr "Вы уверены, что хотите удалить сервер безвозвратно? Все данные будут стерты."
+
+#: public/views/dashboard-customer.php:144
+msgid "Connect CDN Domain"
+msgstr ""
+
+#: public/views/storefront-cdn.php:38
+msgid "Connect New Domain to Edge CDN"
+msgstr ""
+
+msgid "connectDomain"
+msgstr "Подключить домен к CDN"
+
+#: public/views/storefront-cdn.php:60
+msgid "Connected CDN Domains"
+msgstr ""
+
+#: includes/class-arvan-api-client.php:523
+msgid "Connected successfully to ArvanCloud infrastructure."
+msgstr "Успешное подключение к инфраструктуре ArvanCloud."
+
+msgid "connectedSuccessfully"
+msgstr "Соединение с инфраструктурой ArvanCloud успешно установлено."
+
+#: public/views/storefront-storage.php:89
+msgid "Connection Info"
+msgstr ""
+
+msgid "connectionFailed"
+msgstr "Ошибка подключения к инфраструктуре ArvanCloud."
+
+msgid "copied"
+msgstr "Скопировано!"
+
+msgid "copy"
+msgstr "Копировать"
+
+#: public/views/storefront-storage.php:141 public/views/storefront-storage.php:149 public/views/storefront-storage.php:157
+msgid "Copy"
+msgstr ""
+
+msgid "copyIp"
+msgstr "Копировать IP"
+
+msgid "cores"
+msgstr "Ядер"
+
+#: public/views/storefront-storage.php:39
+msgid "Create New S3 Storage Bucket"
+msgstr ""
+
+#: public/views/storefront-storage.php:50
+msgid "Create S3 Bucket"
+msgstr ""
+
+#: public/views/storefront-storage.php:119
+msgid "Create your first bucket to store and offload media, database backups, and large files."
+msgstr ""
+
+msgid "createBucket"
+msgstr "Создать бакет"
+
+msgid "Created At"
+msgstr "Дата создания"
+
+msgid "credentials"
+msgstr "Реквизиты доступа"
+
+msgid "Credit (+ Deposit Funds)"
+msgstr "Начисление (+ Пополнить)"
+
+#: includes/class-arvan-wallet.php:140
+msgid "Credit amount must be greater than zero."
+msgstr ""
+
+msgid "Cumulative Deposits"
+msgstr "Всего пополнений"
+
+#: public/views/dashboard-customer.php:110
+msgid "Custom Amount in Toman"
+msgstr ""
+
+msgid "customAmount"
+msgstr "Своя сумма"
+
+msgid "Customer"
+msgstr "Клиент"
+
+msgid "Customer Name"
+msgstr "Имя клиента"
+
+#: admin/class-arvan-admin.php:192
+msgid "Customer wallet balance updated successfully."
+msgstr ""
+
+msgid "Customer Wallets & Ledger Audit"
+msgstr "Кошельки клиентов и аудит транзакций"
+
+msgid "customerDashboardLink"
+msgstr "📊 Панель клиента"
+
+#: admin/views/admin-settings.php:121
+msgid "Customization parameters injected into the standalone virtual canvas header and footer."
+msgstr "Параметры кастомизации, отображаемые в шапке и подвале витрины."
+
+msgid "dashboard"
+msgstr "Панель управления"
+
+msgid "dashboardDesc"
+msgstr "Контроль баланса в реальном времени, управление питанием серверов и мониторинг ресурсов."
+
+#: public/views/dashboard-customer.php:183
+msgid "Datacenter"
+msgstr ""
+
+#: public/views/storefront-server.php:298
+msgid "Datacenter:"
+msgstr ""
+
+#: public/views/dashboard-customer.php:269
+msgid "Date & Time"
+msgstr ""
+
+#: public/views/dashboard-customer.php:145
+msgid "DDoS Protection & Anycast DNS"
+msgstr ""
+
+msgid "Debit (- Deduct Funds)"
+msgstr "Списание (- Списать)"
+
+#: includes/class-arvan-wallet.php:240
+msgid "Debit amount must be greater than zero."
+msgstr ""
+
+#: public/views/storefront-server.php:314
+msgid "Dedicated IPv4:"
+msgstr ""
+
+#: admin/views/admin-settings.php:106
+msgid "Default Datacenter Region"
+msgstr "Основной дата-центр"
+
+msgid "delete"
+msgstr "Удалить"
+
+#: public/views/dashboard-customer.php:124
+msgid "Deploy Cloud Resources"
+msgstr ""
+
+msgid "Deploy Cloud Server"
+msgstr "Создать облачный сервер"
+
+#: public/views/storefront-server.php:33
+msgid "Deploy Cloud Server (IaaS)"
+msgstr "Создать облачный сервер (IaaS)"
+
+#: public/views/dashboard-customer.php:252
+msgid "Deploy First Server"
+msgstr ""
+
+msgid "deployServer"
+msgstr "Создать облачный сервер"
+
+msgid "description"
+msgstr "Описание операции"
+
+#: public/views/dashboard-customer.php:271
+msgid "Description / Reference ID"
+msgstr ""
+
+#: public/views/dashboard-customer.php:234
+msgid "Destroy Instance"
+msgstr ""
+
+#: public/views/storefront-cdn.php:76
+msgid "DNS Management"
+msgstr ""
+
+#: public/class-arvan-public.php:688
+msgid "DNS record added."
+msgstr ""
+
+#: public/class-arvan-public.php:707
+msgid "DNS record deleted."
+msgstr ""
+
+#: public/views/storefront-cdn.php:109
+msgid "DNS Zone Editor"
+msgstr "Редактор DNS записей"
+
+#: public/views/storefront-cdn.php:135
+msgid "DNS Zone Records:"
+msgstr "Записи зоны DNS:"
+
+msgid "dnsDialogDesc"
+msgstr "Добавление и управление записями DNS с мгновенным Anycast обновлением."
+
+msgid "dnsRecordNamePlaceholder"
+msgstr "Имя (@ или поддомен)"
+
+msgid "dnsRecords"
+msgstr "DNS записи"
+
+msgid "dnsRecordTargetPlaceholder"
+msgstr "Значение / IP"
+
+#: public/views/storefront-cdn.php:71
+msgid "Domain Name"
+msgstr ""
+
+#: public/class-arvan-public.php:648
+msgid "Domain parameter required."
+msgstr ""
+
+msgid "domainInput"
+msgstr "Доменное имя (напр. example.com)"
+
+#: public/views/storefront-cdn.php:63
+msgid "Domains"
+msgstr ""
+
+msgid "done"
+msgstr "Готово"
+
+#: admin/views/admin-settings.php:82
+msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
+msgstr "напр. Наценка 20% превращает оптовую цену 450 томан/час в 540 томан/час для клиента."
+
+#: public/class-arvan-public.php:725
+msgid "Edge cache purged across all global PoPs."
+msgstr ""
+
+#: public/views/storefront-cdn.php:74
+msgid "Edge Caching"
+msgstr ""
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Emergency Actions"
+msgstr "Действия"
+
+#: public/views/storefront-cdn.php:163
+msgid "Enable ArvanCloud Cloud Proxy & DDoS Protection"
+msgstr ""
+
+#: admin/views/admin-settings.php:63
+msgid "Enable Sandbox / Mock Fallback Mode"
+msgstr ""
+
+msgid "endpointUrl"
+msgstr "Endpoint URL"
+
+#: public/views/storefront-cdn.php:123
+msgid "Enter a domain name above to accelerate your traffic and protect from DDoS attacks."
+msgstr "Введите домен выше для ускорения трафика и защиты от DDoS-атак."
+
+#: admin/views/admin-settings.php:39
+msgid "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
+msgstr "Введите главный API ключ Machine User ArvanCloud. Все ресурсы клиентов будут создаваться на этом аккаунте."
+
+#: public/views/storefront-cdn.php:39
+msgid "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
+msgstr ""
+
+msgid "Enterprise Multi-Tenant Infrastructure Management & Monetization"
+msgstr "Корпоративное управление мультитенантной инфраструктурой и монетизация"
+
+msgid "Enterprise Ultra"
+msgstr "Корпоративный Ультра (Enterprise Ultra)"
+
+#: public/views/storefront-server.php:326
+msgid "Est. Monthly (720 hrs):"
+msgstr ""
+
+#: public/views/dashboard-customer.php:85
+msgid "Est. Runtime:"
+msgstr ""
+
+msgid "estimatedRuntime"
+msgstr "Осталось времени"
+
+msgid "existingBuckets"
+msgstr "Созданные бакеты"
+
+#: public/class-arvan-gateway.php:99
+msgid "Failed to connect to payment gateway."
+msgstr ""
+
+msgid "Failed to deploy server."
+msgstr "Не удалось развернуть сервер."
+
+#: includes/class-arvan-wallet.php:202 includes/class-arvan-wallet.php:321
+msgid "Failed to log wallet transaction."
+msgstr ""
+
+#: includes/class-arvan-wallet.php:180 includes/class-arvan-wallet.php:299
+msgid "Failed to update wallet balance."
+msgstr ""
+
+#: admin/views/admin-settings.php:87
+msgid "Fixed Margin Addition (Toman)"
+msgstr "Фиксированная надбавка (Томан)"
+
+msgid "flavor"
+msgstr "Тариф"
+
+msgid "Forough"
+msgstr "Forough"
+
+msgid "general"
+msgstr "Универсальные"
+
+#: public/views/storefront-server.php:107
+msgid "General Purpose"
+msgstr ""
+
+msgid "generate"
+msgstr "Сгенерировать"
+
+#: public/views/storefront-server.php:284
+msgid "Generate"
+msgstr ""
+
+#: public/views/storefront-storage.php:60
+msgid "Generate Access Key ID and Secret Access Key to connect via AWS SDK, Rclone, or backup plugins."
+msgstr ""
+
+#: public/views/storefront-storage.php:63
+msgid "Generate S3 Access Keys"
+msgstr ""
+
+#: public/views/storefront-server.php:88
+msgid "Geo-Redundant Disaster Recovery"
+msgstr "Геораспределенное аварийное восстановление"
+
+#: public/views/storefront-cdn.php:26
+msgid "Global CDN & Anycast Edge DNS"
+msgstr ""
+
+#: public/views/storefront-server.php:99
+msgid "Hardware Plan & Specifications"
+msgstr "Конфигурация оборудования"
+
+#: public/views/dashboard-customer.php:93
+msgid "Healthy"
+msgstr ""
+
+#: public/views/storefront-server.php:164
+msgid "High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr)."
+msgstr ""
+
+msgid "Hourly Burn Rate"
+msgstr "Расход в час"
+
+#: public/views/storefront-server.php:322
+msgid "Hourly Burn Rate:"
+msgstr ""
+
+#: includes/class-arvan-metering.php:73
+msgid "Hourly metering for %1$s (%2$s)"
+msgstr ""
+
+#: public/views/dashboard-customer.php:184
+msgid "Hourly Rate"
+msgstr "Тариф в час"
+
+msgid "hourlyBurn"
+msgstr "Расход в час"
+
+msgid "hourlyRate"
+msgstr "Тариф в час"
+
+#: public/views/dashboard-customer.php:85
+msgid "hours"
+msgstr "Часов"
+
+#: public/views/dashboard-customer.php:82 public/views/dashboard-customer.php:205 public/views/storefront-server.php:150 public/views/storefront-server.php:323
+msgid "hr"
+msgstr ""
+
+#: includes/class-arvan-api-client.php:154
+msgid "HTTP Request Failed: %s"
+msgstr ""
+
+#: public/views/storefront-server.php:256
+msgid "Instance Access & Naming"
+msgstr ""
+
+#: public/class-arvan-public.php:256
+msgid "Instance permanently deleted."
+msgstr ""
+
+#: admin/class-arvan-admin.php:465
+msgid "Instance powered off by administrator."
+msgstr "Сервер выключен администратором."
+
+#: public/class-arvan-public.php:255
+msgid "Instance powered off."
+msgstr ""
+
+#: public/class-arvan-public.php:254
+msgid "Instance powered on."
+msgstr ""
+
+#: admin/class-arvan-admin.php:469
+msgid "Instance purged by administrator."
+msgstr "Сервер безвозвратно удален администратором."
+
+msgid "instanceHostname"
+msgstr "Имя сервера (Hostname)"
+
+#: public/views/dashboard-customer.php:173
+msgid "Instances"
+msgstr ""
+
+#: public/views/dashboard-customer.php:99
+msgid "Instant Online Wallet Top-Up"
+msgstr ""
+
+#: public/views/storefront-server.php:343
+msgid "Instant Provision Cloud Server"
+msgstr ""
+
+#: public/views/storefront-server.php:34
+msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
+msgstr "Мгновенное развертывание на инфраструктуре ArvanCloud. Высокопроизводительные NVMe SSD, выделенный IPv4 и минимальные задержки."
+
+msgid "instantDeploy"
+msgstr "Запустить сервер"
+
+#: public/views/dashboard-customer.php:125
+msgid "Instantly provision virtual machines, CDN zones, and S3 buckets."
+msgstr ""
+
+#: includes/class-arvan-wallet.php:275
+msgid "Insufficient wallet balance."
+msgstr ""
+
+msgid "insufficientBalance"
+msgstr "Недостаточно средств (требуется пополнение)"
+
+#: public/class-arvan-public.php:485
+msgid "Invalid power action."
+msgstr ""
+
+#: admin/class-arvan-admin.php:405
+msgid "Invalid user ID or amount."
+msgstr ""
+
+msgid "ipAddress"
+msgstr "IP адрес"
+
+msgid "Iran"
+msgstr "Иран"
+
+msgid "Isfahan"
+msgstr "Исфахан"
+
+msgid "Karaj"
+msgstr "Кередж"
+
+msgid "Ledger Actions"
+msgstr "Финансовые действия"
+
+#: public/views/dashboard-customer.php:171
+msgid "Live instance power states, IP addresses, and real-time lifecycle controls."
+msgstr ""
+
+msgid "liveInfrastructureOnly"
+msgstr "Только живая инфраструктура"
+
+#: admin/class-arvan-admin.php:290
+msgid "Loading ArvanCloud Management Portal..."
+msgstr ""
+
+#: templates/frontend-canvas.php:41
+msgid "Loading ArvanCloud Services Canvas..."
+msgstr "Загрузка панели облачных сервисов ArvanCloud..."
+
+#: public/views/storefront-cdn.php:186
+msgid "Loading records..."
+msgstr ""
+
+msgid "logout"
+msgstr "Выйти"
+
+#: public/views/dashboard-customer.php:64
+msgid "Low Balance Warning"
+msgstr ""
+
+#: public/views/storefront-server.php:64
+msgid "Low Latency / IXP Direct"
+msgstr "Низкая задержка / Прямое подключение к IXP"
+
+msgid "lowBalanceAlert"
+msgstr "Внимание: Низкий баланс"
+
+msgid "lowBalanceDesc"
+msgstr "При текущей скорости расхода средств баланс исчерпается менее чем через 12 часов."
+
+#: public/views/storefront-cdn.php:61
+msgid "Manage DNS zones, edge caching, and SSL certificates."
+msgstr ""
+
+#: public/views/dashboard-customer.php:22
+msgid "Manage your virtual servers, CDN domains, S3 object storage buckets, and atomic wallet ledger in one place."
+msgstr ""
+
+#: public/views/storefront-cdn.php:96
+msgid "Managed Let's Encrypt (Active)"
+msgstr "Автоматический Let's Encrypt (Активен)"
+
+msgid "Manual Ledger Adjustment"
+msgstr "Ручная корректировка баланса"
+
+#: admin/class-arvan-admin.php:194
+msgid "Manual metering cycle completed."
+msgstr "Цикл расчета биллинга успешно завершен."
+
+msgid "manualAdjustmentDefaultReason"
+msgstr "Ручная корректировка администратора"
+
+#: admin/views/admin-settings.php:79
+msgid "Markup Percentage (%)"
+msgstr "Процент наценки (%)"
+
+msgid "Mashhad"
+msgstr "Мешхед"
+
+msgid "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
+msgstr "Полный мониторинг и управление жизненным циклом серверов, доменов и бакетов клиентов."
+
+msgid "maxDiskLabel"
+msgstr "Макс:"
+
+msgid "memory"
+msgstr "С повышенной памятью"
+
+msgid "Memory Master"
+msgstr "Память Мастер (Memory Master)"
+
+#: public/views/storefront-server.php:109
+msgid "Memory Optimized"
+msgstr ""
+
+#: admin/class-arvan-admin.php:441
+msgid "Metering cycle finished: Processed %1$d resources, debited %2$s Tomans, suspended %3$d accounts."
+msgstr ""
+
+#: public/views/storefront-server.php:283
+msgid "Minimum 12 characters"
+msgstr ""
+
+#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:532
+msgid "Minimum deposit amount is 1,000 Tomans."
+msgstr ""
+
+msgid "minRequired"
+msgstr "Мин. баланс для старта (24ч)"
+
+msgid "Monthly Run Rate (MRR)"
+msgstr "Ориентировочная выручка (MRR)"
+
+msgid "monthlyEstimate"
+msgstr "Ориентировочно в месяц (720 ч)"
+
+msgid "mostPopular"
+msgstr "Популярный выбор"
+
+#: public/views/storefront-cdn.php:178
+msgid "Name"
+msgstr ""
+
+#: public/views/storefront-cdn.php:155
+msgid "Name / Host"
+msgstr ""
+
+#: admin/class-arvan-admin.php:197
+msgid "Network error while testing connection."
+msgstr ""
+
+#: admin/class-arvan-admin.php:196
+msgid "Network error."
+msgstr ""
+
+#: public/views/dashboard-customer.php:133
+msgid "New Cloud Server"
+msgstr ""
 
 msgid "nextGenCloudIaaS"
 msgstr "Облачная инфраструктура нового поколения (IaaS)"
 
-msgid "configuratorHeroDesc"
-msgstr "Настройка высокопроизводительных виртуальных машин NVMe на базе дата-центров ArvanCloud с мгновенным запуском."
+#: public/views/dashboard-customer.php:249
+msgid "No active cloud servers deployed yet"
+msgstr ""
+
+#: public/views/storefront-cdn.php:122
+msgid "No CDN domains configured yet"
+msgstr "CDN домены еще не настроены"
+
+msgid "No customer wallets initialized yet."
+msgstr "Кошельки клиентов пока не созданы."
+
+msgid "No resources deployed yet."
+msgstr "Ресурсы еще не созданы."
+
+#: public/views/storefront-storage.php:118
+msgid "No storage buckets created yet"
+msgstr ""
+
+#: public/views/dashboard-customer.php:306
+msgid "No transactions recorded in wallet ledger yet."
+msgstr ""
+
+msgid "Northwest"
+msgstr "Северо-Запад"
+
+msgid "noServers"
+msgstr "Серверы еще не созданы."
+
+#: public/views/storefront-server.php:337
+msgid "Notice: Deploying requires a minimum 24-hour run balance."
+msgstr ""
+
+msgid "noTransactions"
+msgstr "Операций пока не зафиксировано."
+
+#: public/views/storefront-server.php:145
+msgid "NVMe Disk"
+msgstr ""
+
+#: public/views/storefront-server.php:163
+msgid "NVMe Fast Storage Volume"
+msgstr ""
+
+#: public/views/storefront-storage.php:74
+msgid "Object storage buckets provisioned on ArvanCloud cluster."
+msgstr ""
+
+msgid "objectStorage"
+msgstr "Объектное хранилище (S3)"
+
+#: admin/views/admin-settings.php:54
+msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
+msgstr "Получите API ключ в панели ArvanCloud > Профиль пользователя > API Keys."
+
+#: public/class-arvan-public.php:538
+msgid "Online Top-up via Sandbox Gateway (Ref: %s)"
+msgstr ""
+
+#: public/views/storefront-server.php:188
+msgid "Operating System Image"
+msgstr ""
+
+#: public/views/storefront-server.php:310
+msgid "Operating System:"
+msgstr ""
+
+#: admin/views/admin-settings.php:90
+msgid "Optional fixed addition added after percentage markup calculation."
+msgstr "Необязательная фиксированная надбавка, начисляемая после процентной наценки."
+
+#: public/views/storefront-server.php:295
+msgid "Order Summary & Cost"
+msgstr ""
+
+msgid "orderSummary"
+msgstr "Сводка заказа и параметры"
+
+msgid "os"
+msgstr "ОС"
+
+msgid "password"
+msgstr "Пароль"
+
+#: public/views/dashboard-customer.php:113
+msgid "Pay with Online Gateway"
+msgstr ""
+
+#: public/class-arvan-gateway.php:139
+msgid "Payment verification failed or was cancelled."
+msgstr ""
+
+msgid "Performance Pro"
+msgstr "Производительный Про (Performance Pro)"
+
+#: admin/class-arvan-admin.php:333 admin/class-arvan-admin.php:354 admin/class-arvan-admin.php:395 admin/class-arvan-admin.php:430
+msgid "Permission denied."
+msgstr ""
+
+msgid "planSpecs"
+msgstr "Конфигурация"
+
+#: public/class-arvan-public.php:598
+msgid "Please enter a valid domain name."
+msgstr ""
+
+#: public/class-arvan-public.php:294
+msgid "Please sign in to deploy a cloud server."
+msgstr ""
+
+#: public/class-arvan-public.php:524
+msgid "Please sign in to top up your wallet."
+msgstr ""
+
+#: public/class-arvan-public.php:591 public/class-arvan-public.php:758 public/class-arvan-public.php:812
+msgid "Please sign in."
+msgstr ""
+
+#: public/views/dashboard-customer.php:186
+msgid "Power Lifecycle"
+msgstr ""
+
+msgid "Power Off"
+msgstr "Выключить"
+
+#: public/views/dashboard-customer.php:220
+msgid "Power Off Instance"
+msgstr ""
+
+#: public/views/dashboard-customer.php:231
+msgid "Power On"
+msgstr ""
+
+#: public/views/dashboard-customer.php:229
+msgid "Power On Instance"
+msgstr ""
+
+msgid "Powered by ArvanCloud Infrastructure Reseller Engine"
+msgstr "Работает на базе платформы реселлера инфраструктуры ArvanCloud"
+
+#: public/views/dashboard-customer.php:212
+msgid "Powered Off"
+msgstr ""
+
+msgid "powerOff"
+msgstr "Выключить"
+
+msgid "powerOn"
+msgstr "Включить"
+
+msgid "proceedPayment"
+msgstr "Перейти к оплате"
+
+msgid "processing"
+msgstr "Обработка..."
+
+#: public/views/storefront-server.php:137
+msgid "Processor"
+msgstr "Процессор"
+
+#: public/views/storefront-cdn.php:105
+msgid "Protected"
+msgstr "Защищено"
+
+msgid "provisioningInstance"
+msgstr "Запуск и настройка сервера..."
+
+msgid "provisionTimeNote"
+msgstr "⚡ Мгновенный запуск менее чем за 45 секунд на инфраструктуре ArvanCloud."
+
+msgid "proxied"
+msgstr "Проксировано"
+
+#: public/views/storefront-cdn.php:180
+msgid "Proxy"
+msgstr ""
+
+msgid "Purge"
+msgstr "Удалить"
+
+#: public/views/storefront-cdn.php:101
+msgid "Purge Edge Cache"
+msgstr "Очистить edge-кэш"
+
+msgid "purgeCache"
+msgstr "Очистить кэш CDN"
+
+msgid "quickDepositDesc"
+msgstr "Мгновенное пополнение кошелька через онлайн-шлюз / демо-режим."
+
+msgid "quickTopUp"
+msgstr "Быстрое пополнение"
+
+msgid "ram"
+msgstr "ОЗУ"
+
+#: public/views/storefront-server.php:141
+msgid "RAM Memory"
+msgstr "Оперативная память"
+
+#: public/views/storefront-storage.php:87
+msgid "Rate (Monthly)"
+msgstr ""
+
+msgid "rateMonthly"
+msgstr "Тариф (ежемесячно)"
+
+msgid "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
+msgstr "Аудит реестра в реальном времени, снимки баланса и ручная корректировка счетов."
+
+msgid "Reason / Audit Note:"
+msgstr "Причина / Примечание:"
+
+msgid "reboot"
+msgstr "Перезагрузить"
+
+#: public/views/dashboard-customer.php:226
+msgid "Reboot"
+msgstr ""
+
+#: public/class-arvan-public.php:253
+msgid "Reboot command dispatched to ArvanCloud."
+msgstr ""
+
+msgid "rechargeWalletNow"
+msgstr "Пополнить баланс сейчас"
+
+#: public/views/storefront-cdn.php:145
+msgid "Record Type"
+msgstr "Тип записи"
+
+msgid "region"
+msgstr "Регион"
+
+#: admin/views/admin-settings.php:126
+msgid "Reseller Brand / Store Name"
+msgstr "Название бренда / магазина"
+
+msgid "Resource Name"
+msgstr "Имя ресурса"
+
+#: public/class-arvan-public.php:442
+msgid "Resource not found or access denied."
+msgstr ""
+
+#: admin/class-arvan-admin.php:456
+msgid "Resource not found."
+msgstr ""
+
+#: admin/views/admin-settings.php:99
+msgid "Rial (IRR)"
+msgstr ""
+
+#: public/views/storefront-server.php:281
+msgid "Root / Admin Password"
+msgstr ""
+
+#: public/views/storefront-server.php:271
+msgid "Root Password"
+msgstr ""
+
+#: admin/class-arvan-admin.php:201
+msgid "Run Metering Cycle Now"
+msgstr "Запустить биллинг-цикл сейчас"
+
+msgid "running"
+msgstr "Работает"
+
+#: public/views/dashboard-customer.php:208
+msgid "Running"
+msgstr ""
+
+#: admin/class-arvan-admin.php:200
+msgid "Running Metering..."
+msgstr ""
+
+#: public/views/dashboard-customer.php:185
+msgid "Runtime Status"
+msgstr ""
+
+#: public/class-arvan-public.php:830
+msgid "S3 Access credentials generated."
+msgstr ""
+
+#: public/views/storefront-storage.php:59
+msgid "S3 API Credentials"
+msgstr ""
+
+#: public/views/storefront-storage.php:85
+msgid "S3 API Endpoint"
+msgstr ""
+
+#: public/class-arvan-public.php:259
+msgid "S3 Bucket created successfully."
+msgstr ""
+
+#: public/views/storefront-storage.php:138
+msgid "S3 Endpoint URL:"
+msgstr ""
+
+#: public/views/storefront-storage.php:131
+msgid "S3 Storage API Credentials & Setup"
+msgstr ""
+
+#: public/views/dashboard-customer.php:155
+msgid "S3 Storage Bucket"
+msgstr ""
+
+#: public/class-arvan-public.php:800
+msgid "S3 Storage Bucket \"%s\" created successfully."
+msgstr ""
+
+#: public/views/storefront-storage.php:27
+msgid "S3-Compatible Object Storage"
+msgstr ""
+
+msgid "s3CredsDesc"
+msgstr "Используйте эти данные для подключения через AWS CLI, Rclone, S3cmd или плагины бэкапа."
+
+msgid "s3EndpointUrl"
+msgstr "URL эндпоинта S3"
+
+msgid "s3StorageLink"
+msgstr "📦 Объектное хранилище S3"
+
+#: admin/views/admin-settings.php:59
+msgid "Sandbox / Demo Mode"
+msgstr "Режим песочницы (Sandbox / Demo)"
+
+msgid "save"
+msgstr "Сохранить настройки"
+
+#: admin/views/admin-settings.php:150
+msgid "Save All Reseller Settings"
+msgstr "Сохранить все настройки"
+
+#: public/views/storefront-storage.php:28
+msgid "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
+msgstr ""
+
+msgid "searchResourcesPlaceholder"
+msgstr "Поиск по клиенту, имени сервера или Arvan UUID..."
+
+msgid "searchWalletsPlaceholder"
+msgstr "Поиск по имени клиента, email или ID пользователя..."
+
+#: public/views/storefront-storage.php:154
+msgid "Secret Access Key:"
+msgstr ""
+
+msgid "secretKey"
+msgstr "Secret Access Key"
+
+#: public/views/storefront-server.php:51
+msgid "Select the geographical location closest to your target audience."
+msgstr ""
+
+msgid "selectLanguage"
+msgstr "Выбрать язык"
+
+msgid "selectPresetAmount"
+msgstr "Выберите фиксированную сумму:"
+
+#: public/class-arvan-public.php:410
+msgid "Server \"%s\" provisioned successfully! IP: %s"
+msgstr ""
+
+#: public/class-arvan-public.php:252
+msgid "Server deployed successfully! IP assigned:"
+msgstr ""
+
+#: public/views/storefront-server.php:263
+msgid "Server Hostname"
+msgstr ""
+
+#: public/views/dashboard-customer.php:181
+msgid "Server Instance"
+msgstr ""
+
+#: public/class-arvan-public.php:481
+msgid "Server permanently destroyed."
+msgstr ""
+
+#: public/class-arvan-public.php:469
+msgid "Server powered off gracefully."
+msgstr ""
+
+#: public/class-arvan-public.php:463
+msgid "Server powered on successfully."
+msgstr ""
+
+#: public/class-arvan-public.php:475
+msgid "Server reboot command executed."
+msgstr ""
+
+msgid "serverConfiguratorLink"
+msgstr "🚀 Конфигуратор серверов"
+
+msgid "serverName"
+msgstr "Имя сервера"
+
+msgid "Service"
+msgstr "Услуга"
+
+#: public/views/dashboard-customer.php:54
+msgid "Services Suspended Due to Zero Wallet Balance"
+msgstr ""
+
+#: admin/class-arvan-admin.php:241
+msgid "Settings"
+msgstr ""
+
+#: admin/class-arvan-admin.php:240
+msgid "Settings & API"
+msgstr "Настройки и API"
+
+#: admin/class-arvan-admin.php:385
+msgid "Settings saved successfully."
+msgstr ""
+
+msgid "Shahryar"
+msgstr "Шахрияр"
+
+msgid "Shiraz"
+msgstr "Шираз"
+
+#: public/views/dashboard-customer.php:21
+msgid "Sign in to Access Your Cloud Portal"
+msgstr ""
+
+#: public/views/dashboard-customer.php:25
+msgid "Sign In to Your Account"
+msgstr ""
+
+msgid "signIn"
+msgstr "Вход / Регистрация"
+
+#: public/views/dashboard-customer.php:224
+msgid "Soft Reboot"
+msgstr ""
+
+msgid "specs"
+msgstr "Характеристики"
+
+#: public/views/storefront-server.php:276
+msgid "SSH Public Key"
+msgstr ""
+
+#: public/views/storefront-server.php:270
+msgid "SSH Public Key (Recommended)"
+msgstr ""
+
+msgid "sshKey"
+msgstr "SSH ключ"
+
+#: public/views/storefront-cdn.php:73
+msgid "SSL / TLS Mode"
+msgstr ""
+
+#: public/class-arvan-public.php:744
+msgid "SSL configuration updated."
+msgstr ""
+
+msgid "sslActive"
+msgstr "SSL сертификат активен"
+
+#: public/views/storefront-server.php:189
+msgid "Standard cloud images optimized for immediate SSH/RDP connection."
+msgstr ""
+
+msgid "Standard General"
+msgstr "Стандартный Общий (Standard General)"
+
+msgid "Starter Eco"
+msgstr "Стартовый Эко (Starter Eco)"
+
+msgid "status"
+msgstr "Статус"
+
+#: public/views/storefront-cdn.php:75 public/views/storefront-storage.php:88
+msgid "Status"
+msgstr ""
 
 msgid "step1Region"
 msgstr "1. Выберите регион дата-центра"
@@ -223,173 +1489,150 @@ msgstr "4. Образ операционной системы"
 msgid "step5Auth"
 msgstr "5. Имя хоста и аутентификация"
 
-msgid "allPlans"
-msgstr "Все тарифы"
+#: public/views/dashboard-customer.php:222
+msgid "Stop"
+msgstr ""
 
-msgid "general"
-msgstr "Универсальные"
-
-msgid "compute"
-msgstr "Вычислительные"
-
-msgid "memory"
-msgstr "С повышенной памятью"
-
-msgid "mostPopular"
-msgstr "Популярный выбор"
-
-msgid "hourlyRate"
-msgstr "Тариф в час"
-
-msgid "hourlyBurn"
-msgstr "Расход в час"
-
-msgid "monthlyEstimate"
-msgstr "Ориентировочно в месяц (720 ч)"
-
-msgid "additionalStorage"
-msgstr "Дополнительный объем"
-
-msgid "instanceHostname"
-msgstr "Имя сервера (Hostname)"
-
-msgid "authCredentials"
-msgstr "Способ аутентификации:"
-
-msgid "password"
-msgstr "Пароль"
-
-msgid "sshKey"
-msgstr "SSH ключ"
-
-msgid "orderSummary"
-msgstr "Сводка заказа и параметры"
-
-msgid "region"
-msgstr "Регион"
-
-msgid "flavor"
-msgstr "Тариф"
-
-msgid "specs"
-msgstr "Характеристики"
+msgid "stopped"
+msgstr "Остановлен"
 
 msgid "storage"
 msgstr "Диск"
 
-msgid "os"
-msgstr "ОС"
+#: public/views/storefront-server.php:306
+msgid "Storage Volume:"
+msgstr ""
 
-msgid "minRequired"
-msgstr "Мин. баланс для старта (24ч)"
+msgid "storageDesc"
+msgstr "Высокоскоростное хранилище S3 с репликацией между дата-центрами и поддержкой стандартных API."
 
-msgid "instantDeploy"
-msgstr "Запустить сервер"
+msgid "storageTitle"
+msgstr "Объектное хранилище S3"
 
-msgid "insufficientBalance"
-msgstr "Недостаточно средств (требуется пополнение)"
+#: admin/views/admin-settings.php:95
+msgid "Store Currency"
+msgstr "Валюта магазина"
 
-msgid "vcpu"
-msgstr "vCPU"
+msgid "storefrontSubtitle"
+msgstr "Витрина облачной инфраструктуры"
 
-msgid "ram"
-msgstr "ОЗУ"
+#: admin/views/admin-settings.php:133
+msgid "Support Contact Email"
+msgstr "Email техподдержки"
 
-msgid "baseDiskLabel"
-msgstr "Базовый:"
+#: admin/views/admin-settings.php:140
+msgid "Support Phone Number"
+msgstr "Телефон поддержки"
 
-msgid "maxDiskLabel"
-msgstr "Макс:"
+msgid "suspended"
+msgstr "Приостановлен"
 
-msgid "provisioningInstance"
-msgstr "Запуск и настройка сервера..."
+#: public/views/dashboard-customer.php:91
+msgid "Suspended"
+msgstr ""
 
-msgid "provisionTimeNote"
-msgstr "⚡ Мгновенный запуск менее чем за 45 секунд на инфраструктуре ArvanCloud."
+#: public/views/dashboard-customer.php:210
+msgid "Suspended (0 Bal)"
+msgstr ""
 
-msgid "dashboardDesc"
-msgstr "Контроль баланса в реальном времени, управление питанием серверов и мониторинг ресурсов."
-
-msgid "suspensionNotice"
-msgstr "Уведомление: Баланс исчерпан"
+msgid "Suspended (0 Balance)"
+msgstr "Приостановлено (нет средств)"
 
 msgid "suspensionDesc"
 msgstr "Ваш баланс равен нулю. Все активные серверы выключены для предотвращения задолженности. Пополните счет для возобновления работы."
 
-msgid "rechargeWalletNow"
-msgstr "Пополнить баланс сейчас"
+msgid "suspensionNotice"
+msgstr "Уведомление: Баланс исчерпан"
 
-msgid "lowBalanceAlert"
-msgstr "Внимание: Низкий баланс"
+msgid "Tabriz"
+msgstr "Тебриз"
 
-msgid "lowBalanceDesc"
-msgstr "При текущей скорости расхода средств баланс исчерпается менее чем через 12 часов."
+msgid "Tabriz - Northwest"
+msgstr "Тебриз - Северо-Запад"
 
-msgid "quickTopUp"
-msgstr "Быстрое пополнение"
+msgid "Tabriz (Northwest)"
+msgstr "Тебриз (Северо-Запад)"
 
-msgid "estimatedRuntime"
-msgstr "Осталось времени"
+#: public/views/storefront-cdn.php:159
+msgid "Target Value / IP"
+msgstr "Целевое значение / IP"
 
-msgid "activeInstances"
-msgstr "Активные серверы"
+msgid "Tehran"
+msgstr "Тегеран"
 
-msgid "activeCloudVms"
-msgstr "Активные виртуальные машины"
+msgid "Tehran - Forough"
+msgstr "Тегеран - Forough"
 
-msgid "noServers"
-msgstr "Серверы еще не созданы."
+msgid "Tehran - Shahryar"
+msgstr "Тегеран - Шахрияр"
 
-msgid "serverName"
-msgstr "Имя сервера"
+msgid "Tehran (Forough)"
+msgstr "Тегеран (Forough)"
 
-msgid "ipAddress"
-msgstr "IP адрес"
+msgid "Tehran (Shahryar)"
+msgstr "Тегеран (Шахрияр)"
 
-msgid "planSpecs"
-msgstr "Конфигурация"
+#: admin/views/admin-settings.php:50
+msgid "Test Connection"
+msgstr "Проверить соединение"
 
-msgid "powerOn"
-msgstr "Включить"
+#: admin/class-arvan-admin.php:191
+msgid "Testing connection to ArvanCloud API..."
+msgstr ""
 
-msgid "powerOff"
-msgstr "Выключить"
+#: scripts/i18n-tools.js:108
+msgid "Text"
+msgstr ""
 
-msgid "reboot"
-msgstr "Перезагрузить"
-
-msgid "delete"
-msgstr "Удалить"
-
-msgid "confirmDelete"
-msgstr "Вы уверены, что хотите удалить сервер безвозвратно? Все данные будут стерты."
-
-msgid "transactionHistory"
-msgstr "Журнал операций и история баланса"
+#: public/views/storefront-server.php:76
+msgid "Tier III Enterprise DC"
+msgstr "Корпоративный ЦОД уровня Tier III"
 
 msgid "timestamp"
 msgstr "Время"
 
-msgid "type"
-msgstr "Тип"
+#: public/views/storefront-cdn.php:95
+msgid "Toggle Managed SSL"
+msgstr ""
 
-msgid "description"
-msgstr "Описание операции"
+#: admin/views/admin-settings.php:98
+msgid "Toman (IRT)"
+msgstr ""
 
-msgid "amount"
-msgstr "Сумма"
+msgid "topUp"
+msgstr "Пополнить"
 
-msgid "balanceSnapshot"
-msgstr "Баланс после операции"
+msgid "total"
+msgstr "Всего"
 
-msgid "noTransactions"
-msgstr "Операций пока не зафиксировано."
+msgid "Total Active Wallets"
+msgstr "Всего активных кошельков"
 
-msgid "customAmount"
-msgstr "Своя сумма"
+msgid "Total Cloud Instances"
+msgstr "Всего серверов"
 
-msgid "proceedPayment"
-msgstr "Перейти к оплате"
+msgid "Total Metered Burn"
+msgstr "Всего списано биллингом"
+
+msgid "Total Outstanding Credit"
+msgstr "Общий баланс клиентов"
+
+msgid "totalDepositAmount"
+msgstr "Итого к пополнению:"
+
+#: public/views/dashboard-customer.php:270
+msgid "Transaction Type"
+msgstr ""
+
+msgid "transactionHistory"
+msgstr "Журнал операций и история баланса"
+
+#: public/views/storefront-cdn.php:181
+msgid "TTL"
+msgstr ""
+
+msgid "txAdjustment"
+msgstr "Корректировка"
 
 msgid "txDeposit"
 msgstr "Пополнение"
@@ -397,384 +1640,106 @@ msgstr "Пополнение"
 msgid "txMetered"
 msgstr "Списание"
 
-msgid "txAdjustment"
-msgstr "Корректировка"
+msgid "type"
+msgstr "Тип"
 
-msgid "cdnTitle"
-msgstr "Подключение домена к CDN и Anycast DNS"
+#: public/views/storefront-cdn.php:177
+msgid "Type"
+msgstr ""
 
-msgid "cdnDesc"
-msgstr "Глобальное кэширование (CDN), защита от DDoS-атак, ускорение Anycast DNS и автовыпуск SSL сертификатов."
+#: public/class-arvan-public.php:422
+msgid "Unauthorized."
+msgstr ""
 
-msgid "connectDomain"
-msgstr "Подключить домен к CDN"
+#: admin/class-arvan-admin.php:471
+msgid "Unknown admin action."
+msgstr ""
 
-msgid "domainInput"
-msgstr "Доменное имя (напр. example.com)"
+msgid "unlimited"
+msgstr "Неограниченно"
 
-msgid "activeCdnDomains"
-msgstr "Подключенные домены CDN"
+#: public/views/dashboard-customer.php:156
+msgid "Unlimited Object Storage"
+msgstr ""
 
-msgid "assignedNameservers"
-msgstr "Назначенные Anycast NS серверы:"
+#: admin/views/admin-settings.php:100
+msgid "US Dollar (USD)"
+msgstr ""
 
-msgid "dnsRecords"
-msgstr "DNS записи"
+#: public/views/storefront-cdn.php:179
+msgid "Value"
+msgstr ""
 
-msgid "purgeCache"
-msgstr "Очистить кэш CDN"
+msgid "vcpu"
+msgstr "vCPU"
 
-msgid "sslActive"
-msgstr "SSL сертификат активен"
-
-msgid "activePops"
-msgstr "Активно на 40+ глобальных точках PoP"
-
-msgid "dnsDialogDesc"
-msgstr "Добавление и управление записями DNS с мгновенным Anycast обновлением."
-
-msgid "dnsRecordNamePlaceholder"
-msgstr "Имя (@ или поддомен)"
-
-msgid "dnsRecordTargetPlaceholder"
-msgstr "Значение / IP"
-
-msgid "addRecord"
-msgstr "Добавить запись"
-
-msgid "proxied"
-msgstr "Проксировано"
-
-msgid "close"
-msgstr "Закрыть"
-
-msgid "storageTitle"
-msgstr "Объектное хранилище S3"
-
-msgid "storageDesc"
-msgstr "Высокоскоростное хранилище S3 с репликацией между дата-центрами и поддержкой стандартных API."
-
-msgid "createBucket"
-msgstr "Создать бакет"
-
-msgid "bucketName"
-msgstr "Имя бакета (только строчные буквы и цифры)"
-
-msgid "existingBuckets"
-msgstr "Созданные бакеты"
+#: public/views/storefront-storage.php:105
+msgid "View Setup Snippets"
+msgstr ""
 
 msgid "viewApiKeys"
 msgstr "Ключи доступа S3 API"
 
-msgid "endpointUrl"
-msgstr "Endpoint URL"
-
-msgid "accessKey"
-msgstr "Access Key ID"
-
-msgid "secretKey"
-msgstr "Secret Access Key"
-
-msgid "bucketIdentifier"
-msgstr "Идентификатор бакета"
-
-msgid "s3EndpointUrl"
-msgstr "URL эндпоинта S3"
-
-msgid "clusterRegion"
-msgstr "Регион кластера"
-
-msgid "rateMonthly"
-msgstr "Тариф (ежемесячно)"
-
-msgid "action"
-msgstr "Действие"
-
-msgid "credentials"
-msgstr "Реквизиты доступа"
-
-msgid "s3CredsDesc"
-msgstr "Используйте эти данные для подключения через AWS CLI, Rclone, S3cmd или плагины бэкапа."
-
-msgid "awsCliExample"
-msgstr "Пример конфигурации AWS CLI:"
-
-msgid "quickDepositDesc"
-msgstr "Мгновенное пополнение кошелька через онлайн-шлюз / демо-режим."
-
-msgid "selectPresetAmount"
-msgstr "Выберите фиксированную сумму:"
-
-msgid "totalDepositAmount"
-msgstr "Итого к пополнению:"
-
-msgid "processing"
-msgstr "Обработка..."
-
-msgid "ArvanCloud Reseller"
-msgstr "Панель реселлера ArvanCloud"
-
-msgid "Settings & API"
-msgstr "Настройки и API"
-
-msgid "Cloud Resources"
-msgstr "Облачные ресурсы"
-
-msgid "Wallets & Ledger"
-msgstr "Кошельки и баланс"
-
-msgid "1. ArvanCloud API Authentication"
-msgstr "1. Авторизация ArvanCloud API"
-
-msgid "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
-msgstr "Введите главный API ключ Machine User ArvanCloud. Все ресурсы клиентов будут создаваться на этом аккаунте."
-
-msgid "ArvanCloud API Key"
-msgstr "Ключ ArvanCloud API"
-
-msgid "Test Connection"
-msgstr "Проверить соединение"
-
-msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
-msgstr "Получите API ключ в панели ArvanCloud > Профиль пользователя > API Keys."
-
-msgid "Sandbox / Demo Mode"
-msgstr "Режим песочницы (Sandbox / Demo)"
-
-msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
-msgstr "Позволяет тестировать создание серверов и платежи без подключения к живой инфраструктуре."
-
-msgid "2. Dynamic Pricing & Reseller Markup Engine"
-msgstr "2. Модуль динамического ценообразования и наценки"
-
-msgid "Configure profit margins automatically calculated on top of wholesale ArvanCloud infrastructure rates."
-msgstr "Настройте торговую наценку, автоматически добавляемую к оптовым тарифам ArvanCloud."
-
-msgid "Markup Percentage (%)"
-msgstr "Процент наценки (%)"
-
-msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
-msgstr "напр. Наценка 20% превращает оптовую цену 450 томан/час в 540 томан/час для клиента."
-
-msgid "Fixed Margin Addition (Toman)"
-msgstr "Фиксированная надбавка (Томан)"
-
-msgid "Optional fixed addition added after percentage markup calculation."
-msgstr "Необязательная фиксированная надбавка, начисляемая после процентной наценки."
-
-msgid "Store Currency"
-msgstr "Валюта магазина"
-
-msgid "Default Datacenter Region"
-msgstr "Основной дата-центр"
-
-msgid "3. Storefront White-Label Branding"
-msgstr "3. Брендинг и контакты поддержки"
-
-msgid "Customization parameters injected into the standalone virtual canvas header and footer."
-msgstr "Параметры кастомизации, отображаемые в шапке и подвале витрины."
-
-msgid "Reseller Brand / Store Name"
-msgstr "Название бренда / магазина"
-
-msgid "Support Contact Email"
-msgstr "Email техподдержки"
-
-msgid "Support Phone Number"
-msgstr "Телефон поддержки"
-
+#: admin/views/admin-settings.php:155
 msgid "Virtual Storefront Quick Links (Theme Isolated)"
 msgstr "Быстрый переход к витрине (изолированно от темы)"
 
-msgid "Save All Reseller Settings"
-msgstr "Сохранить все настройки"
+#: public/views/dashboard-customer.php:261
+msgid "Wallet Atomic Ledger Transactions"
+msgstr ""
 
-msgid "All Provisioned Cloud Resources"
-msgstr "Все созданные облачные ресурсы"
-
-msgid "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
-msgstr "Полный мониторинг и управление жизненным циклом серверов, доменов и бакетов клиентов."
-
-msgid "Run Metering Cycle Now"
-msgstr "Запустить биллинг-цикл сейчас"
-
-msgid "Total Cloud Instances"
-msgstr "Всего серверов"
-
-msgid "Active / Running"
-msgstr "Активных серверов"
-
-msgid "Suspended (0 Balance)"
-msgstr "Приостановлено (нет средств)"
-
-msgid "Monthly Run Rate (MRR)"
-msgstr "Ориентировочная выручка (MRR)"
-
-msgid "No resources deployed yet."
-msgstr "Ресурсы еще не созданы."
-
-msgid "Customer"
-msgstr "Клиент"
-
-msgid "Resource Name"
-msgstr "Имя ресурса"
-
-msgid "Service"
-msgstr "Услуга"
-
-msgid "Arvan UUID / Identifier"
-msgstr "Arvan UUID"
-
-msgid "Hourly Rate"
-msgstr "Тариф в час"
-
-msgid "Emergency Actions"
-msgstr "Действия"
-
-msgid "Power Off"
-msgstr "Выключить"
-
-msgid "Purge"
-msgstr "Удалить"
-
-msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
-msgstr "Вы уверены, что хотите окончательно удалить этот ресурс из ArvanCloud?"
-
-msgid "Customer Wallets & Ledger Audit"
-msgstr "Кошельки клиентов и аудит транзакций"
-
-msgid "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
-msgstr "Аудит реестра в реальном времени, снимки баланса и ручная корректировка счетов."
-
-msgid "Total Active Wallets"
-msgstr "Всего активных кошельков"
-
-msgid "Total Outstanding Credit"
-msgstr "Общий баланс клиентов"
-
-msgid "Cumulative Deposits"
-msgstr "Всего пополнений"
-
-msgid "Total Metered Burn"
-msgstr "Всего списано биллингом"
-
-msgid "No customer wallets initialized yet."
-msgstr "Кошельки клиентов пока не созданы."
+#: includes/class-arvan-wallet.php:161 includes/class-arvan-wallet.php:261
+msgid "Wallet could not be found."
+msgstr ""
 
 msgid "Wallet ID"
 msgstr "ID кошелька"
 
-msgid "Customer Name"
-msgstr "Имя клиента"
+#: includes/class-arvan-wallet.php:266
+msgid "Wallet is frozen. Cannot perform debit."
+msgstr ""
 
-msgid "Email"
-msgstr "Email"
+#: public/class-arvan-public.php:554
+msgid "Wallet successfully credited with %1$s %2$s! RefID: %3$s"
+msgstr ""
 
-msgid "Hourly Burn Rate"
-msgstr "Расход в час"
+#: public/class-arvan-public.php:257
+msgid "Wallet successfully credited!"
+msgstr ""
 
-msgid "Created At"
-msgstr "Дата создания"
+msgid "walletBalance"
+msgstr "Баланс кошелька"
 
-msgid "Ledger Actions"
-msgstr "Финансовые действия"
+#: admin/class-arvan-admin.php:258
+msgid "Wallets & Ledger"
+msgstr "Кошельки и баланс"
 
-msgid "Adjust Balance"
-msgstr "Изменить баланс"
+#: admin/class-arvan-admin.php:259
+msgid "Wallets Ledger"
+msgstr ""
 
-msgid "Manual Ledger Adjustment"
-msgstr "Ручная корректировка баланса"
+#: admin/views/admin-settings.php:65
+msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
+msgstr "Позволяет тестировать создание серверов и платежи без подключения к живой инфраструктуре."
 
-msgid "Adjustment Type:"
-msgstr "Тип операции:"
+#: public/views/storefront-server.php:333
+msgid "Your Available Balance:"
+msgstr ""
 
-msgid "Credit (+ Deposit Funds)"
-msgstr "Начисление (+ Пополнить)"
+#: public/views/dashboard-customer.php:65
+msgid "Your available wallet balance will only support active services for approximately %s hours. Please top up your wallet to prevent automated service interruption."
+msgstr ""
 
-msgid "Debit (- Deduct Funds)"
-msgstr "Списание (- Списать)"
+#: public/views/storefront-storage.php:73
+msgid "Your Storage Buckets"
+msgstr ""
 
-msgid "Amount (Toman):"
-msgstr "Сумма (Томан):"
+msgid "ایران"
+msgstr "Иран"
 
-msgid "Reason / Audit Note:"
-msgstr "Причина / Примечание:"
+msgid "تبریز"
+msgstr "Тебриز"
 
-msgid "Apply Adjustment"
-msgstr "Применить корректировку"
-
-msgid "Cancel"
-msgstr "Отмена"
-
-msgid "All Cloud Datacenter Regions Operational (99.99% SLA)"
-msgstr "Все дата-центры и облачные регионы работают штатно (SLA 99.99%)"
-
-msgid "Powered by ArvanCloud Infrastructure Reseller Engine"
-msgstr "Работает на базе платформы реселлера инфраструктуры ArvanCloud"
-
-msgid "Enterprise Multi-Tenant Infrastructure Management & Monetization"
-msgstr "Корпоративное управление мультитенантной инфраструктурой и монетизация"
-
-msgid "connectedSuccessfully"
-msgstr "Соединение с инфраструктурой ArvanCloud успешно установлено."
-
-msgid "connectionFailed"
-msgstr "Ошибка подключения к инфраструктуре ArvanCloud."
-
-msgid "activeMockFallback"
-msgstr "Активен (Демо-режим)"
-
-msgid "liveInfrastructureOnly"
-msgstr "Только живая инфраструктура"
-
-msgid "searchResourcesPlaceholder"
-msgstr "Поиск по клиенту, имени сервера или Arvan UUID..."
-
-msgid "searchWalletsPlaceholder"
-msgstr "Поиск по имени клиента, email или ID пользователя..."
-
-msgid "adjustBalanceDesc"
-msgstr "Прямое списание или начисление на баланс клиента с внесением неизменяемой записи в реестр."
-
-msgid "adjustReasonPlaceholder"
-msgstr "напр. Компенсация техподдержки / Ручное пополнение"
-
-msgid "manualAdjustmentDefaultReason"
-msgstr "Ручная корректировка администратора"
-
-msgid "all"
-msgstr "Все"
-
-msgid "active"
-msgstr "Активен"
-
-msgid "serverConfiguratorLink"
-msgstr "🚀 Конфигуратор серверов"
-
-msgid "customerDashboardLink"
-msgstr "📊 Панель клиента"
-
-msgid "cdnManagerLink"
-msgstr "🌐 Управление CDN и DNS"
-
-msgid "s3StorageLink"
-msgstr "📦 Объектное хранилище S3"
-
-msgid "Action completed successfully."
-msgstr "Действие успешно выполнено."
-
-msgid "Manual metering cycle completed."
-msgstr "Цикл расчета биллинга успешно завершен."
-
-msgid "Instance purged by administrator."
-msgstr "Сервер безвозвратно удален администратором."
-
-msgid "Instance powered off by administrator."
-msgstr "Сервер выключен администратором."
-
-msgid "Balance adjusted successfully."
-msgstr "Баланс успешно обновлен."
-
-msgid "Failed to deploy server."
-msgstr "Не удалось развернуть сервер."
+msgid "تهران"
+msgstr "Тегеран"
 

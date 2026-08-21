@@ -1,32 +1,201 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-20 22:45+0330\n"
-"PO-Revision-Date: 2026-08-20 22:45+0330\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: en\n"
+"Report-Msgid-Bugs-To: https://arvancloud.ir\n"
+"POT-Creation-Date: 2026-08-21 02:31:43+0000\n"
+"PO-Revision-Date: 2026-08-21 02:31:43+0000\n"
+"Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
+"Language-Team: ArvanCloud English (US) Team\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: ArvanCloud i18n Toolchain\n"
 "X-Domain: arv-seller\n"
 
-msgid "Deploy Cloud Server"
-msgstr "Deploy Cloud Server"
+#: admin/views/admin-settings.php:38
+msgid "1. ArvanCloud API Authentication"
+msgstr "1. ArvanCloud API Authentication"
 
-msgid "Available Wallet Balance"
-msgstr "Available Wallet Balance"
+#: public/views/storefront-server.php:315
+msgid "1x Public IP (Included)"
+msgstr "1x Public IP (Included)"
 
-msgid "ArvanCloud Reseller Settings & Monetization"
-msgstr "ArvanCloud Reseller Settings & Monetization"
+#: admin/views/admin-settings.php:73
+msgid "2. Dynamic Pricing & Reseller Markup Engine"
+msgstr "2. Dynamic Pricing & Reseller Markup Engine"
 
-msgid "Connected successfully to ArvanCloud infrastructure."
-msgstr "Connected successfully to ArvanCloud infrastructure."
+#: admin/views/admin-settings.php:120
+msgid "3. Storefront White-Label Branding"
+msgstr "3. Storefront White-Label Branding"
 
-msgid "Loading ArvanCloud Services Canvas..."
-msgstr "Loading ArvanCloud Services Canvas..."
+#: public/class-arvan-public.php:338
+msgid "A minimum balance of %1$s %3$s (24 hours run cost) is required to deploy this server. Your balance is %2$s %3$s."
+msgstr "A minimum balance of %1$s %3$s (24 hours run cost) is required to deploy this server. Your balance is %2$s %3$s."
+
+#: public/views/storefront-cdn.php:27
+msgid "Accelerate your websites globally with edge caching, SSL termination, and Layer 7 DDoS mitigation across 40+ PoPs."
+msgstr "Accelerate your websites globally with edge caching, SSL termination, and Layer 7 DDoS mitigation across 40+ PoPs."
+
+#: public/views/storefront-storage.php:146
+msgid "Access Key ID:"
+msgstr "Access Key ID:"
+
+#: admin/views/admin-settings.php:156
+msgid "Access standalone storefront and customer portal pages:"
+msgstr "Access standalone storefront and customer portal pages:"
+
+msgid "accessKey"
+msgstr "Access Key ID"
+
+#: public/views/dashboard-customer.php:55
+msgid "According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately."
+msgstr "According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately."
+
+msgid "action"
+msgstr "Action"
+
+#: public/views/storefront-cdn.php:182
+msgid "Action"
+msgstr "Action"
+
+#: admin/class-arvan-admin.php:193
+msgid "Action completed successfully."
+msgstr "Action completed successfully."
+
+msgid "actions"
+msgstr "Actions"
+
+#: public/views/storefront-cdn.php:49
+msgid "Activate Edge CDN"
+msgstr "Activate Edge CDN"
+
+msgid "active"
+msgstr "Active"
+
+#: public/views/storefront-storage.php:102
+msgid "Active"
+msgstr "Active"
+
+msgid "Active / Running"
+msgstr "Active / Running"
+
+#: public/views/dashboard-customer.php:170
+msgid "Active Cloud Servers & Virtual Machines"
+msgstr "Active Cloud Servers & Virtual Machines"
+
+msgid "activeCdnDomains"
+msgstr "Active CDN Edge Domains"
+
+msgid "activeCloudVms"
+msgstr "Active Cloud Virtual Machines"
+
+msgid "activeInstances"
+msgstr "Active Instances"
+
+msgid "activeMockFallback"
+msgstr "Active (Mock Fallback)"
+
+msgid "activePops"
+msgstr "Active on 40+ Global PoPs"
+
+#: public/views/storefront-cdn.php:167
+msgid "Add Record"
+msgstr "Add Record"
+
+msgid "additionalStorage"
+msgstr "Additional Storage"
+
+msgid "addRecord"
+msgstr "Add Record"
+
+msgid "Adjust Balance"
+msgstr "Adjust Balance"
+
+#: admin/class-arvan-admin.php:202
+msgid "Adjust Wallet Balance: "
+msgstr "Adjust Wallet Balance: "
+
+msgid "adjustBalanceDesc"
+msgstr "Directly debit or credit customer balance. An immutable audit record will be logged."
+
+msgid "Adjustment Type:"
+msgstr "Adjustment Type:"
+
+msgid "adjustReasonPlaceholder"
+msgstr "e.g. Compensation credit / Manual topup"
+
+#: includes/class-arvan-wallet.php:351
+msgid "Admin Adjustment: %1$s (by %2$s)"
+msgstr "Admin Adjustment: %1$s (by %2$s)"
+
+msgid "Ahvaz"
+msgstr "Ahvaz"
+
+msgid "all"
+msgstr "All"
+
+msgid "All Cloud Datacenter Regions Operational (99.99% SLA)"
+msgstr "All Cloud Datacenter Regions Operational (99.99% SLA)"
+
+#: public/views/storefront-server.php:106
+msgid "All Plans"
+msgstr "All Plans"
+
+msgid "All Provisioned Cloud Resources"
+msgstr "All Provisioned Cloud Resources"
+
+#: admin/class-arvan-admin.php:250
+msgid "All Resources"
+msgstr "All Resources"
+
+#: public/views/storefront-server.php:170
+msgid "Allocated NVMe Storage:"
+msgstr "Allocated NVMe Storage:"
+
+msgid "allocatingIp"
+msgstr "Allocating IP..."
+
+msgid "allPlans"
+msgstr "All Plans"
+
+msgid "amount"
+msgstr "Amount"
+
+#: public/views/dashboard-customer.php:272
+msgid "Amount"
+msgstr "Amount"
+
+msgid "Amount (Toman):"
+msgstr "Amount (Toman):"
+
+#: public/class-arvan-public.php:260
+msgid "An error occurred during request."
+msgstr "An error occurred during request."
+
+#: admin/class-arvan-admin.php:199
+msgid "Apply Adjustment"
+msgstr "Apply Adjustment"
+
+#: admin/class-arvan-admin.php:198
+msgid "Applying..."
+msgstr "Applying..."
+
+#: admin/class-arvan-admin.php:195
+msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
+msgstr "Are you sure you want to permanently delete this resource from ArvanCloud?"
+
+#: public/class-arvan-public.php:261
+msgid "Are you sure you want to permanently destroy this server?"
+msgstr "Are you sure you want to permanently destroy this server?"
+
+#: admin/class-arvan-admin.php:230
+msgid "Arvan Reseller"
+msgstr "Arvan Reseller"
+
+msgid "Arvan UUID / Identifier"
+msgstr "Arvan UUID / Identifier"
 
 msgid "arvanCloud"
 msgstr "ArvanCloud"
@@ -34,179 +203,1276 @@ msgstr "ArvanCloud"
 msgid "ArvanCloud"
 msgstr "ArvanCloud"
 
-msgid "Tehran"
-msgstr "Tehran"
+#: admin/views/admin-settings.php:44
+msgid "ArvanCloud API Key"
+msgstr "ArvanCloud API Key"
 
-msgid "تهران"
-msgstr "Tehran"
+#: includes/class-arvan-api-client.php:100
+msgid "ArvanCloud API key is not configured. Please configure your API key in WP Admin > Arvan Reseller > Settings."
+msgstr "ArvanCloud API key is not configured. Please configure your API key in WP Admin > Arvan Reseller > Settings."
 
-msgid "Tabriz"
-msgstr "Tabriz"
+#: admin/class-arvan-admin.php:229
+msgid "ArvanCloud Reseller"
+msgstr "ArvanCloud Reseller"
 
-msgid "تبریز"
-msgstr "Tabriz"
+#: admin/views/admin-settings.php:26
+msgid "ArvanCloud Reseller Settings & Monetization"
+msgstr "ArvanCloud Reseller Settings & Monetization"
 
-msgid "Iran"
-msgstr "Iran"
+#: public/views/dashboard-customer.php:182
+msgid "Assigned IP"
+msgstr "Assigned IP"
 
-msgid "ایران"
-msgstr "Iran"
+#: public/views/storefront-cdn.php:72
+msgid "Assigned Nameservers"
+msgstr "Assigned Nameservers"
 
-msgid "Karaj"
-msgstr "Karaj"
+msgid "assignedNameservers"
+msgstr "Assigned ArvanCloud Anycast Nameservers:"
 
-msgid "Isfahan"
-msgstr "Isfahan"
+msgid "authCredentials"
+msgstr "Authentication Credentials:"
 
-msgid "Shiraz"
-msgstr "Shiraz"
+#: public/views/storefront-server.php:268
+msgid "Authentication Mode:"
+msgstr "Authentication Mode:"
 
-msgid "Mashhad"
-msgstr "Mashhad"
-
-msgid "Ahvaz"
-msgstr "Ahvaz"
-
-msgid "Tehran - Forough"
-msgstr "Tehran - Forough"
-
-msgid "Tehran (Forough)"
-msgstr "Tehran (Forough)"
-
-msgid "Tehran - Shahryar"
-msgstr "Tehran - Shahryar"
-
-msgid "Tehran (Shahryar)"
-msgstr "Tehran (Shahryar)"
-
-msgid "Tabriz - Northwest"
-msgstr "Tabriz - Northwest"
-
-msgid "Tabriz (Northwest)"
-msgstr "Tabriz (Northwest)"
-
-msgid "Forough"
-msgstr "Forough"
-
-msgid "Shahryar"
-msgstr "Shahryar"
-
-msgid "Northwest"
-msgstr "Northwest"
-
-msgid "Starter Eco"
-msgstr "Starter Eco"
-
-msgid "Standard General"
-msgstr "Standard General"
-
-msgid "Performance Pro"
-msgstr "Performance Pro"
-
-msgid "Enterprise Ultra"
-msgstr "Enterprise Ultra"
-
-msgid "Compute Master"
-msgstr "Compute Master"
-
-msgid "Memory Master"
-msgstr "Memory Master"
-
-msgid "dashboard"
-msgstr "Dashboard"
-
-msgid "deployServer"
-msgstr "Deploy Cloud Server"
-
-msgid "cdnDns"
-msgstr "CDN & DNS Management"
-
-msgid "objectStorage"
-msgstr "Object Storage (S3)"
-
-msgid "walletBalance"
-msgstr "Wallet Balance"
+#: public/views/dashboard-customer.php:77
+msgid "Available Wallet Balance"
+msgstr "Available Wallet Balance"
 
 msgid "availableBalance"
 msgstr "Available Balance"
 
-msgid "topUp"
-msgstr "Top Up"
+#: public/views/storefront-storage.php:162
+msgid "AWS CLI & Rclone Configuration Example"
+msgstr "AWS CLI & Rclone Configuration Example"
 
-msgid "signIn"
-msgstr "Sign In / Register"
-
-msgid "logout"
-msgstr "Logout"
-
-msgid "cancel"
-msgstr "Cancel"
-
-msgid "confirm"
-msgstr "Confirm"
-
-msgid "done"
-msgstr "Done"
-
-msgid "save"
-msgstr "Save Settings"
-
-msgid "copy"
-msgstr "Copy"
-
-msgid "copied"
-msgstr "Copied!"
-
-msgid "generate"
-msgstr "Generate"
-
-msgid "status"
-msgstr "Status"
-
-msgid "actions"
-msgstr "Actions"
-
-msgid "running"
-msgstr "Running"
-
-msgid "stopped"
-msgstr "Stopped"
-
-msgid "suspended"
-msgstr "Suspended"
-
-msgid "selectLanguage"
-msgstr "Select Language"
-
-msgid "cores"
-msgstr "Core"
-
-msgid "total"
-msgstr "Total"
-
-msgid "hours"
-msgstr "Hours"
-
-msgid "unlimited"
-msgstr "Unlimited"
-
-msgid "copyIp"
-msgstr "Copy IP"
-
-msgid "allocatingIp"
-msgstr "Allocating IP..."
+msgid "awsCliExample"
+msgstr "AWS CLI Configuration Example:"
 
 msgid "backOffice"
 msgstr "Back-Office"
 
-msgid "storefrontSubtitle"
-msgstr "Cloud Infrastructure Storefront"
+#: admin/class-arvan-admin.php:418
+msgid "Balance adjusted successfully."
+msgstr "Balance adjusted successfully."
+
+#: public/views/dashboard-customer.php:273
+msgid "Balance Snapshot"
+msgstr "Balance Snapshot"
+
+msgid "balanceSnapshot"
+msgstr "Balance Snapshot"
+
+msgid "baseDiskLabel"
+msgstr "Base:"
+
+#: public/views/storefront-storage.php:84
+msgid "Bucket Name"
+msgstr "Bucket Name"
+
+#: public/class-arvan-public.php:766
+msgid "Bucket name must contain only lowercase letters, numbers, and hyphens."
+msgstr "Bucket name must contain only lowercase letters, numbers, and hyphens."
+
+#: public/views/storefront-storage.php:40
+msgid "Bucket names must be unique, lowercase alphanumeric characters with hyphens only."
+msgstr "Bucket names must be unique, lowercase alphanumeric characters with hyphens only."
+
+msgid "bucketIdentifier"
+msgstr "Bucket Identifier"
+
+msgid "bucketName"
+msgstr "Bucket Name (lowercase & numbers only)"
+
+#: public/views/storefront-storage.php:76
+msgid "Buckets"
+msgstr "Buckets"
+
+#: public/views/dashboard-customer.php:82
+msgid "Burn Rate:"
+msgstr "Burn Rate:"
+
+msgid "cancel"
+msgstr "Cancel"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+#: public/class-arvan-public.php:450
+msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
+msgstr "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
+
+#: public/class-arvan-public.php:635
+msgid "CDN activated for \"%s\". Please set your nameservers."
+msgstr "CDN activated for \"%s\". Please set your nameservers."
+
+#: public/class-arvan-public.php:258
+msgid "CDN domain connected successfully."
+msgstr "CDN domain connected successfully."
+
+msgid "cdnDesc"
+msgstr "Global edge CDN caching, DDoS protection, Anycast DNS acceleration, and automated SSL certificate provisioning."
+
+msgid "cdnDns"
+msgstr "CDN & DNS Management"
+
+msgid "cdnManagerLink"
+msgstr "🌐 CDN & DNS Manager"
+
+msgid "cdnTitle"
+msgstr "CDN Domain Connection & Anycast DNS"
+
+#: public/views/storefront-server.php:50
+msgid "Choose Datacenter Region"
+msgstr "Choose Datacenter Region"
+
+#: public/views/dashboard-customer.php:200
+msgid "Click to copy IP"
+msgstr "Click to copy IP"
+
+msgid "close"
+msgstr "Close"
+
+#: public/views/storefront-cdn.php:165
+msgid "Cloud Proxy"
+msgstr "Cloud Proxy"
+
+#: admin/class-arvan-admin.php:249
+msgid "Cloud Resources"
+msgstr "Cloud Resources"
+
+#: templates/frontend-canvas.php:26
+msgid "Cloud Services Platform"
+msgstr "Cloud Services Platform"
+
+#: public/views/storefront-storage.php:86
+msgid "Cluster Region"
+msgstr "Cluster Region"
+
+msgid "clusterRegion"
+msgstr "Cluster Region"
+
+msgid "compute"
+msgstr "Compute Optimized"
+
+msgid "Compute Master"
+msgstr "Compute Master"
+
+#: public/views/storefront-server.php:108
+msgid "Compute Optimized"
+msgstr "Compute Optimized"
+
+#: public/views/storefront-server.php:100
+msgid "Compute resources can be dynamically scaled anytime."
+msgstr "Compute resources can be dynamically scaled anytime."
+
+#: public/views/storefront-server.php:302
+msgid "Compute Specs:"
+msgstr "Compute Specs:"
+
+#: public/views/dashboard-customer.php:134
+msgid "Compute, NVMe & Dedicated IP"
+msgstr "Compute, NVMe & Dedicated IP"
+
+msgid "configuratorHeroDesc"
+msgstr "Configure high-performance NVMe cloud virtual machines powered by ArvanCloud data center infrastructure with instant provisioning."
+
+#: public/views/dashboard-customer.php:250
+msgid "Configure high performance NVMe virtual servers ready in under 60 seconds."
+msgstr "Configure high performance NVMe virtual servers ready in under 60 seconds."
+
+#: admin/views/admin-settings.php:74
+msgid "Configure profit margins automatically calculated on top of wholesale ArvanCloud infrastructure rates."
+msgstr "Configure profit margins automatically calculated on top of wholesale ArvanCloud infrastructure rates."
+
+#: public/views/storefront-server.php:257
+msgid "Configure server hostname and authentication method."
+msgstr "Configure server hostname and authentication method."
+
+#: admin/views/admin-settings.php:27
+msgid "Configure your ArvanCloud master API credentials, pricing markup margins, white-label branding, and sandbox mode."
+msgstr "Configure your ArvanCloud master API credentials, pricing markup margins, white-label branding, and sandbox mode."
+
+msgid "confirm"
+msgstr "Confirm"
+
+msgid "confirmDelete"
+msgstr "Are you sure you want to permanently delete this server? All disk data will be erased."
+
+#: public/views/dashboard-customer.php:144
+msgid "Connect CDN Domain"
+msgstr "Connect CDN Domain"
+
+#: public/views/storefront-cdn.php:38
+msgid "Connect New Domain to Edge CDN"
+msgstr "Connect New Domain to Edge CDN"
+
+msgid "connectDomain"
+msgstr "Connect Domain to CDN"
+
+#: public/views/storefront-cdn.php:60
+msgid "Connected CDN Domains"
+msgstr "Connected CDN Domains"
+
+#: includes/class-arvan-api-client.php:523
+msgid "Connected successfully to ArvanCloud infrastructure."
+msgstr "Connected successfully to ArvanCloud infrastructure."
+
+msgid "connectedSuccessfully"
+msgstr "Connected successfully to ArvanCloud infrastructure."
+
+#: public/views/storefront-storage.php:89
+msgid "Connection Info"
+msgstr "Connection Info"
+
+msgid "connectionFailed"
+msgstr "Connection to ArvanCloud infrastructure failed."
+
+msgid "copied"
+msgstr "Copied!"
+
+msgid "copy"
+msgstr "Copy"
+
+#: public/views/storefront-storage.php:141 public/views/storefront-storage.php:149 public/views/storefront-storage.php:157
+msgid "Copy"
+msgstr "Copy"
+
+msgid "copyIp"
+msgstr "Copy IP"
+
+msgid "cores"
+msgstr "Core"
+
+#: public/views/storefront-storage.php:39
+msgid "Create New S3 Storage Bucket"
+msgstr "Create New S3 Storage Bucket"
+
+#: public/views/storefront-storage.php:50
+msgid "Create S3 Bucket"
+msgstr "Create S3 Bucket"
+
+#: public/views/storefront-storage.php:119
+msgid "Create your first bucket to store and offload media, database backups, and large files."
+msgstr "Create your first bucket to store and offload media, database backups, and large files."
+
+msgid "createBucket"
+msgstr "Create New Bucket"
+
+msgid "Created At"
+msgstr "Created At"
+
+msgid "credentials"
+msgstr "Credentials"
+
+msgid "Credit (+ Deposit Funds)"
+msgstr "Credit (+ Deposit Funds)"
+
+#: includes/class-arvan-wallet.php:140
+msgid "Credit amount must be greater than zero."
+msgstr "Credit amount must be greater than zero."
+
+msgid "Cumulative Deposits"
+msgstr "Cumulative Deposits"
+
+#: public/views/dashboard-customer.php:110
+msgid "Custom Amount in Toman"
+msgstr "Custom Amount in Toman"
+
+msgid "customAmount"
+msgstr "Custom Amount"
+
+msgid "Customer"
+msgstr "Customer"
+
+msgid "Customer Name"
+msgstr "Customer Name"
+
+#: admin/class-arvan-admin.php:192
+msgid "Customer wallet balance updated successfully."
+msgstr "Customer wallet balance updated successfully."
+
+msgid "Customer Wallets & Ledger Audit"
+msgstr "Customer Wallets & Ledger Audit"
+
+msgid "customerDashboardLink"
+msgstr "📊 Customer Dashboard"
+
+#: admin/views/admin-settings.php:121
+msgid "Customization parameters injected into the standalone virtual canvas header and footer."
+msgstr "Customization parameters injected into the standalone virtual canvas header and footer."
+
+msgid "dashboard"
+msgstr "Dashboard"
+
+msgid "dashboardDesc"
+msgstr "Real-time atomic wallet oversight, live server runtime controls, and resource telemetry."
+
+#: public/views/dashboard-customer.php:183
+msgid "Datacenter"
+msgstr "Datacenter"
+
+#: public/views/storefront-server.php:298
+msgid "Datacenter:"
+msgstr "Datacenter:"
+
+#: public/views/dashboard-customer.php:269
+msgid "Date & Time"
+msgstr "Date & Time"
+
+#: public/views/dashboard-customer.php:145
+msgid "DDoS Protection & Anycast DNS"
+msgstr "DDoS Protection & Anycast DNS"
+
+msgid "Debit (- Deduct Funds)"
+msgstr "Debit (- Deduct Funds)"
+
+#: includes/class-arvan-wallet.php:240
+msgid "Debit amount must be greater than zero."
+msgstr "Debit amount must be greater than zero."
+
+#: public/views/storefront-server.php:314
+msgid "Dedicated IPv4:"
+msgstr "Dedicated IPv4:"
+
+#: admin/views/admin-settings.php:106
+msgid "Default Datacenter Region"
+msgstr "Default Datacenter Region"
+
+msgid "delete"
+msgstr "Delete"
+
+#: public/views/dashboard-customer.php:124
+msgid "Deploy Cloud Resources"
+msgstr "Deploy Cloud Resources"
+
+msgid "Deploy Cloud Server"
+msgstr "Deploy Cloud Server"
+
+#: public/views/storefront-server.php:33
+msgid "Deploy Cloud Server (IaaS)"
+msgstr "Deploy Cloud Server (IaaS)"
+
+#: public/views/dashboard-customer.php:252
+msgid "Deploy First Server"
+msgstr "Deploy First Server"
+
+msgid "deployServer"
+msgstr "Deploy Cloud Server"
+
+msgid "description"
+msgstr "Transaction Description"
+
+#: public/views/dashboard-customer.php:271
+msgid "Description / Reference ID"
+msgstr "Description / Reference ID"
+
+#: public/views/dashboard-customer.php:234
+msgid "Destroy Instance"
+msgstr "Destroy Instance"
+
+#: public/views/storefront-cdn.php:76
+msgid "DNS Management"
+msgstr "DNS Management"
+
+#: public/class-arvan-public.php:688
+msgid "DNS record added."
+msgstr "DNS record added."
+
+#: public/class-arvan-public.php:707
+msgid "DNS record deleted."
+msgstr "DNS record deleted."
+
+#: public/views/storefront-cdn.php:109
+msgid "DNS Zone Editor"
+msgstr "DNS Zone Editor"
+
+#: public/views/storefront-cdn.php:135
+msgid "DNS Zone Records:"
+msgstr "DNS Zone Records:"
+
+msgid "dnsDialogDesc"
+msgstr "Add and manage DNS zone records with instant Anycast propagation."
+
+msgid "dnsRecordNamePlaceholder"
+msgstr "Name (@ or sub)"
+
+msgid "dnsRecords"
+msgstr "DNS Records"
+
+msgid "dnsRecordTargetPlaceholder"
+msgstr "Target / IP"
+
+#: public/views/storefront-cdn.php:71
+msgid "Domain Name"
+msgstr "Domain Name"
+
+#: public/class-arvan-public.php:648
+msgid "Domain parameter required."
+msgstr "Domain parameter required."
+
+msgid "domainInput"
+msgstr "Domain Name (e.g. example.com)"
+
+#: public/views/storefront-cdn.php:63
+msgid "Domains"
+msgstr "Domains"
+
+msgid "done"
+msgstr "Done"
+
+#: admin/views/admin-settings.php:82
+msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
+msgstr "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
+
+#: public/class-arvan-public.php:725
+msgid "Edge cache purged across all global PoPs."
+msgstr "Edge cache purged across all global PoPs."
+
+#: public/views/storefront-cdn.php:74
+msgid "Edge Caching"
+msgstr "Edge Caching"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Emergency Actions"
+msgstr "Emergency Actions"
+
+#: public/views/storefront-cdn.php:163
+msgid "Enable ArvanCloud Cloud Proxy & DDoS Protection"
+msgstr "Enable ArvanCloud Cloud Proxy & DDoS Protection"
+
+#: admin/views/admin-settings.php:63
+msgid "Enable Sandbox / Mock Fallback Mode"
+msgstr "Enable Sandbox / Mock Fallback Mode"
+
+msgid "endpointUrl"
+msgstr "Endpoint URL"
+
+#: public/views/storefront-cdn.php:123
+msgid "Enter a domain name above to accelerate your traffic and protect from DDoS attacks."
+msgstr "Enter a domain name above to accelerate your traffic and protect from DDoS attacks."
+
+#: admin/views/admin-settings.php:39
+msgid "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
+msgstr "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
+
+#: public/views/storefront-cdn.php:39
+msgid "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
+msgstr "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
+
+msgid "Enterprise Multi-Tenant Infrastructure Management & Monetization"
+msgstr "Enterprise Multi-Tenant Infrastructure Management & Monetization"
+
+msgid "Enterprise Ultra"
+msgstr "Enterprise Ultra"
+
+#: public/views/storefront-server.php:326
+msgid "Est. Monthly (720 hrs):"
+msgstr "Est. Monthly (720 hrs):"
+
+#: public/views/dashboard-customer.php:85
+msgid "Est. Runtime:"
+msgstr "Est. Runtime:"
+
+msgid "estimatedRuntime"
+msgstr "Estimated Runtime"
+
+msgid "existingBuckets"
+msgstr "Existing Storage Buckets"
+
+#: public/class-arvan-gateway.php:99
+msgid "Failed to connect to payment gateway."
+msgstr "Failed to connect to payment gateway."
+
+msgid "Failed to deploy server."
+msgstr "Failed to deploy server."
+
+#: includes/class-arvan-wallet.php:202 includes/class-arvan-wallet.php:321
+msgid "Failed to log wallet transaction."
+msgstr "Failed to log wallet transaction."
+
+#: includes/class-arvan-wallet.php:180 includes/class-arvan-wallet.php:299
+msgid "Failed to update wallet balance."
+msgstr "Failed to update wallet balance."
+
+#: admin/views/admin-settings.php:87
+msgid "Fixed Margin Addition (Toman)"
+msgstr "Fixed Margin Addition (Toman)"
+
+msgid "flavor"
+msgstr "Hardware Flavor"
+
+msgid "Forough"
+msgstr "Forough"
+
+msgid "general"
+msgstr "General Purpose"
+
+#: public/views/storefront-server.php:107
+msgid "General Purpose"
+msgstr "General Purpose"
+
+msgid "generate"
+msgstr "Generate"
+
+#: public/views/storefront-server.php:284
+msgid "Generate"
+msgstr "Generate"
+
+#: public/views/storefront-storage.php:60
+msgid "Generate Access Key ID and Secret Access Key to connect via AWS SDK, Rclone, or backup plugins."
+msgstr "Generate Access Key ID and Secret Access Key to connect via AWS SDK, Rclone, or backup plugins."
+
+#: public/views/storefront-storage.php:63
+msgid "Generate S3 Access Keys"
+msgstr "Generate S3 Access Keys"
+
+#: public/views/storefront-server.php:88
+msgid "Geo-Redundant Disaster Recovery"
+msgstr "Geo-Redundant Disaster Recovery"
+
+#: public/views/storefront-cdn.php:26
+msgid "Global CDN & Anycast Edge DNS"
+msgstr "Global CDN & Anycast Edge DNS"
+
+#: public/views/storefront-server.php:99
+msgid "Hardware Plan & Specifications"
+msgstr "Hardware Plan & Specifications"
+
+#: public/views/dashboard-customer.php:93
+msgid "Healthy"
+msgstr "Healthy"
+
+#: public/views/storefront-server.php:164
+msgid "High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr)."
+msgstr "High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr)."
+
+msgid "Hourly Burn Rate"
+msgstr "Hourly Burn Rate"
+
+#: public/views/storefront-server.php:322
+msgid "Hourly Burn Rate:"
+msgstr "Hourly Burn Rate:"
+
+#: includes/class-arvan-metering.php:73
+msgid "Hourly metering for %1$s (%2$s)"
+msgstr "Hourly metering for %1$s (%2$s)"
+
+#: public/views/dashboard-customer.php:184
+msgid "Hourly Rate"
+msgstr "Hourly Rate"
+
+msgid "hourlyBurn"
+msgstr "Hourly Burn Rate"
+
+msgid "hourlyRate"
+msgstr "Hourly Rate"
+
+#: public/views/dashboard-customer.php:85
+msgid "hours"
+msgstr "Hours"
+
+#: public/views/dashboard-customer.php:82 public/views/dashboard-customer.php:205 public/views/storefront-server.php:150 public/views/storefront-server.php:323
+msgid "hr"
+msgstr "hr"
+
+#: includes/class-arvan-api-client.php:154
+msgid "HTTP Request Failed: %s"
+msgstr "HTTP Request Failed: %s"
+
+#: public/views/storefront-server.php:256
+msgid "Instance Access & Naming"
+msgstr "Instance Access & Naming"
+
+#: public/class-arvan-public.php:256
+msgid "Instance permanently deleted."
+msgstr "Instance permanently deleted."
+
+#: admin/class-arvan-admin.php:465
+msgid "Instance powered off by administrator."
+msgstr "Instance powered off by administrator."
+
+#: public/class-arvan-public.php:255
+msgid "Instance powered off."
+msgstr "Instance powered off."
+
+#: public/class-arvan-public.php:254
+msgid "Instance powered on."
+msgstr "Instance powered on."
+
+#: admin/class-arvan-admin.php:469
+msgid "Instance purged by administrator."
+msgstr "Instance purged by administrator."
+
+msgid "instanceHostname"
+msgstr "Instance Hostname"
+
+#: public/views/dashboard-customer.php:173
+msgid "Instances"
+msgstr "Instances"
+
+#: public/views/dashboard-customer.php:99
+msgid "Instant Online Wallet Top-Up"
+msgstr "Instant Online Wallet Top-Up"
+
+#: public/views/storefront-server.php:343
+msgid "Instant Provision Cloud Server"
+msgstr "Instant Provision Cloud Server"
+
+#: public/views/storefront-server.php:34
+msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
+msgstr "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
+
+msgid "instantDeploy"
+msgstr "Instant Deploy"
+
+#: public/views/dashboard-customer.php:125
+msgid "Instantly provision virtual machines, CDN zones, and S3 buckets."
+msgstr "Instantly provision virtual machines, CDN zones, and S3 buckets."
+
+#: includes/class-arvan-wallet.php:275
+msgid "Insufficient wallet balance."
+msgstr "Insufficient wallet balance."
+
+msgid "insufficientBalance"
+msgstr "Insufficient Balance (Recharge Needed)"
+
+#: public/class-arvan-public.php:485
+msgid "Invalid power action."
+msgstr "Invalid power action."
+
+#: admin/class-arvan-admin.php:405
+msgid "Invalid user ID or amount."
+msgstr "Invalid user ID or amount."
+
+msgid "ipAddress"
+msgstr "Public IP"
+
+msgid "Iran"
+msgstr "Iran"
+
+msgid "Isfahan"
+msgstr "Isfahan"
+
+msgid "Karaj"
+msgstr "Karaj"
+
+msgid "Ledger Actions"
+msgstr "Ledger Actions"
+
+#: public/views/dashboard-customer.php:171
+msgid "Live instance power states, IP addresses, and real-time lifecycle controls."
+msgstr "Live instance power states, IP addresses, and real-time lifecycle controls."
+
+msgid "liveInfrastructureOnly"
+msgstr "Live Infrastructure Only"
+
+#: admin/class-arvan-admin.php:290
+msgid "Loading ArvanCloud Management Portal..."
+msgstr "Loading ArvanCloud Management Portal..."
+
+#: templates/frontend-canvas.php:41
+msgid "Loading ArvanCloud Services Canvas..."
+msgstr "Loading ArvanCloud Services Canvas..."
+
+#: public/views/storefront-cdn.php:186
+msgid "Loading records..."
+msgstr "Loading records..."
+
+msgid "logout"
+msgstr "Logout"
+
+#: public/views/dashboard-customer.php:64
+msgid "Low Balance Warning"
+msgstr "Low Balance Warning"
+
+#: public/views/storefront-server.php:64
+msgid "Low Latency / IXP Direct"
+msgstr "Low Latency / IXP Direct"
+
+msgid "lowBalanceAlert"
+msgstr "Warning: Low Balance"
+
+msgid "lowBalanceDesc"
+msgstr "At your current hourly burn rate, your balance will deplete in less than 12 hours."
+
+#: public/views/storefront-cdn.php:61
+msgid "Manage DNS zones, edge caching, and SSL certificates."
+msgstr "Manage DNS zones, edge caching, and SSL certificates."
+
+#: public/views/dashboard-customer.php:22
+msgid "Manage your virtual servers, CDN domains, S3 object storage buckets, and atomic wallet ledger in one place."
+msgstr "Manage your virtual servers, CDN domains, S3 object storage buckets, and atomic wallet ledger in one place."
+
+#: public/views/storefront-cdn.php:96
+msgid "Managed Let's Encrypt (Active)"
+msgstr "Managed Let's Encrypt (Active)"
+
+msgid "Manual Ledger Adjustment"
+msgstr "Manual Ledger Adjustment"
+
+#: admin/class-arvan-admin.php:194
+msgid "Manual metering cycle completed."
+msgstr "Manual metering cycle completed."
+
+msgid "manualAdjustmentDefaultReason"
+msgstr "Manual administrative adjustment"
+
+#: admin/views/admin-settings.php:79
+msgid "Markup Percentage (%)"
+msgstr "Markup Percentage (%)"
+
+msgid "Mashhad"
+msgstr "Mashhad"
+
+msgid "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
+msgstr "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
+
+msgid "maxDiskLabel"
+msgstr "Max:"
+
+msgid "memory"
+msgstr "Memory Optimized"
+
+msgid "Memory Master"
+msgstr "Memory Master"
+
+#: public/views/storefront-server.php:109
+msgid "Memory Optimized"
+msgstr "Memory Optimized"
+
+#: admin/class-arvan-admin.php:441
+msgid "Metering cycle finished: Processed %1$d resources, debited %2$s Tomans, suspended %3$d accounts."
+msgstr "Metering cycle finished: Processed %1$d resources, debited %2$s Tomans, suspended %3$d accounts."
+
+#: public/views/storefront-server.php:283
+msgid "Minimum 12 characters"
+msgstr "Minimum 12 characters"
+
+#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:532
+msgid "Minimum deposit amount is 1,000 Tomans."
+msgstr "Minimum deposit amount is 1,000 Tomans."
+
+msgid "minRequired"
+msgstr "Min Required (24h)"
+
+msgid "Monthly Run Rate (MRR)"
+msgstr "Monthly Run Rate (MRR)"
+
+msgid "monthlyEstimate"
+msgstr "Estimated Monthly (720 hrs)"
+
+msgid "mostPopular"
+msgstr "Most Popular"
+
+#: public/views/storefront-cdn.php:178
+msgid "Name"
+msgstr "Name"
+
+#: public/views/storefront-cdn.php:155
+msgid "Name / Host"
+msgstr "Name / Host"
+
+#: admin/class-arvan-admin.php:197
+msgid "Network error while testing connection."
+msgstr "Network error while testing connection."
+
+#: admin/class-arvan-admin.php:196
+msgid "Network error."
+msgstr "Network error."
+
+#: public/views/dashboard-customer.php:133
+msgid "New Cloud Server"
+msgstr "New Cloud Server"
 
 msgid "nextGenCloudIaaS"
 msgstr "Next-Gen Cloud Compute (IaaS)"
 
-msgid "configuratorHeroDesc"
-msgstr "Configure high-performance NVMe cloud virtual machines powered by ArvanCloud data center infrastructure with instant provisioning."
+#: public/views/dashboard-customer.php:249
+msgid "No active cloud servers deployed yet"
+msgstr "No active cloud servers deployed yet"
+
+#: public/views/storefront-cdn.php:122
+msgid "No CDN domains configured yet"
+msgstr "No CDN domains configured yet"
+
+msgid "No customer wallets initialized yet."
+msgstr "No customer wallets initialized yet."
+
+msgid "No resources deployed yet."
+msgstr "No resources deployed yet."
+
+#: public/views/storefront-storage.php:118
+msgid "No storage buckets created yet"
+msgstr "No storage buckets created yet"
+
+#: public/views/dashboard-customer.php:306
+msgid "No transactions recorded in wallet ledger yet."
+msgstr "No transactions recorded in wallet ledger yet."
+
+msgid "Northwest"
+msgstr "Northwest"
+
+msgid "noServers"
+msgstr "No cloud servers deployed yet."
+
+#: public/views/storefront-server.php:337
+msgid "Notice: Deploying requires a minimum 24-hour run balance."
+msgstr "Notice: Deploying requires a minimum 24-hour run balance."
+
+msgid "noTransactions"
+msgstr "No transactions recorded yet."
+
+#: public/views/storefront-server.php:145
+msgid "NVMe Disk"
+msgstr "NVMe Disk"
+
+#: public/views/storefront-server.php:163
+msgid "NVMe Fast Storage Volume"
+msgstr "NVMe Fast Storage Volume"
+
+#: public/views/storefront-storage.php:74
+msgid "Object storage buckets provisioned on ArvanCloud cluster."
+msgstr "Object storage buckets provisioned on ArvanCloud cluster."
+
+msgid "objectStorage"
+msgstr "Object Storage (S3)"
+
+#: admin/views/admin-settings.php:54
+msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
+msgstr "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
+
+#: public/class-arvan-public.php:538
+msgid "Online Top-up via Sandbox Gateway (Ref: %s)"
+msgstr "Online Top-up via Sandbox Gateway (Ref: %s)"
+
+#: public/views/storefront-server.php:188
+msgid "Operating System Image"
+msgstr "Operating System Image"
+
+#: public/views/storefront-server.php:310
+msgid "Operating System:"
+msgstr "Operating System:"
+
+#: admin/views/admin-settings.php:90
+msgid "Optional fixed addition added after percentage markup calculation."
+msgstr "Optional fixed addition added after percentage markup calculation."
+
+#: public/views/storefront-server.php:295
+msgid "Order Summary & Cost"
+msgstr "Order Summary & Cost"
+
+msgid "orderSummary"
+msgstr "Order Summary & Specifications"
+
+msgid "os"
+msgstr "Operating System"
+
+msgid "password"
+msgstr "Password"
+
+#: public/views/dashboard-customer.php:113
+msgid "Pay with Online Gateway"
+msgstr "Pay with Online Gateway"
+
+#: public/class-arvan-gateway.php:139
+msgid "Payment verification failed or was cancelled."
+msgstr "Payment verification failed or was cancelled."
+
+msgid "Performance Pro"
+msgstr "Performance Pro"
+
+#: admin/class-arvan-admin.php:333 admin/class-arvan-admin.php:354 admin/class-arvan-admin.php:395 admin/class-arvan-admin.php:430
+msgid "Permission denied."
+msgstr "Permission denied."
+
+msgid "planSpecs"
+msgstr "Plan Specs"
+
+#: public/class-arvan-public.php:598
+msgid "Please enter a valid domain name."
+msgstr "Please enter a valid domain name."
+
+#: public/class-arvan-public.php:294
+msgid "Please sign in to deploy a cloud server."
+msgstr "Please sign in to deploy a cloud server."
+
+#: public/class-arvan-public.php:524
+msgid "Please sign in to top up your wallet."
+msgstr "Please sign in to top up your wallet."
+
+#: public/class-arvan-public.php:591 public/class-arvan-public.php:758 public/class-arvan-public.php:812
+msgid "Please sign in."
+msgstr "Please sign in."
+
+#: public/views/dashboard-customer.php:186
+msgid "Power Lifecycle"
+msgstr "Power Lifecycle"
+
+msgid "Power Off"
+msgstr "Power Off"
+
+#: public/views/dashboard-customer.php:220
+msgid "Power Off Instance"
+msgstr "Power Off Instance"
+
+#: public/views/dashboard-customer.php:231
+msgid "Power On"
+msgstr "Power On"
+
+#: public/views/dashboard-customer.php:229
+msgid "Power On Instance"
+msgstr "Power On Instance"
+
+msgid "Powered by ArvanCloud Infrastructure Reseller Engine"
+msgstr "Powered by ArvanCloud Infrastructure Reseller Engine"
+
+#: public/views/dashboard-customer.php:212
+msgid "Powered Off"
+msgstr "Powered Off"
+
+msgid "powerOff"
+msgstr "Power Off"
+
+msgid "powerOn"
+msgstr "Power On"
+
+msgid "proceedPayment"
+msgstr "Proceed to Payment"
+
+msgid "processing"
+msgstr "Processing..."
+
+#: public/views/storefront-server.php:137
+msgid "Processor"
+msgstr "Processor"
+
+#: public/views/storefront-cdn.php:105
+msgid "Protected"
+msgstr "Protected"
+
+msgid "provisioningInstance"
+msgstr "Provisioning Instance..."
+
+msgid "provisionTimeNote"
+msgstr "⚡ Provisioned in < 45 seconds on ArvanCloud Core Infrastructure."
+
+msgid "proxied"
+msgstr "Proxied"
+
+#: public/views/storefront-cdn.php:180
+msgid "Proxy"
+msgstr "Proxy"
+
+msgid "Purge"
+msgstr "Purge"
+
+#: public/views/storefront-cdn.php:101
+msgid "Purge Edge Cache"
+msgstr "Purge Edge Cache"
+
+msgid "purgeCache"
+msgstr "Purge Edge Cache"
+
+msgid "quickDepositDesc"
+msgstr "Instant wallet recharge via online gateway / sandbox demo."
+
+msgid "quickTopUp"
+msgstr "Quick Top Up"
+
+msgid "ram"
+msgstr "RAM"
+
+#: public/views/storefront-server.php:141
+msgid "RAM Memory"
+msgstr "RAM Memory"
+
+#: public/views/storefront-storage.php:87
+msgid "Rate (Monthly)"
+msgstr "Rate (Monthly)"
+
+msgid "rateMonthly"
+msgstr "Rate (Monthly)"
+
+msgid "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
+msgstr "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
+
+msgid "Reason / Audit Note:"
+msgstr "Reason / Audit Note:"
+
+msgid "reboot"
+msgstr "Reboot"
+
+#: public/views/dashboard-customer.php:226
+msgid "Reboot"
+msgstr "Reboot"
+
+#: public/class-arvan-public.php:253
+msgid "Reboot command dispatched to ArvanCloud."
+msgstr "Reboot command dispatched to ArvanCloud."
+
+msgid "rechargeWalletNow"
+msgstr "Recharge Wallet Now"
+
+#: public/views/storefront-cdn.php:145
+msgid "Record Type"
+msgstr "Record Type"
+
+msgid "region"
+msgstr "Region"
+
+#: admin/views/admin-settings.php:126
+msgid "Reseller Brand / Store Name"
+msgstr "Reseller Brand / Store Name"
+
+msgid "Resource Name"
+msgstr "Resource Name"
+
+#: public/class-arvan-public.php:442
+msgid "Resource not found or access denied."
+msgstr "Resource not found or access denied."
+
+#: admin/class-arvan-admin.php:456
+msgid "Resource not found."
+msgstr "Resource not found."
+
+#: admin/views/admin-settings.php:99
+msgid "Rial (IRR)"
+msgstr "Rial (IRR)"
+
+#: public/views/storefront-server.php:281
+msgid "Root / Admin Password"
+msgstr "Root / Admin Password"
+
+#: public/views/storefront-server.php:271
+msgid "Root Password"
+msgstr "Root Password"
+
+#: admin/class-arvan-admin.php:201
+msgid "Run Metering Cycle Now"
+msgstr "Run Metering Cycle Now"
+
+msgid "running"
+msgstr "Running"
+
+#: public/views/dashboard-customer.php:208
+msgid "Running"
+msgstr "Running"
+
+#: admin/class-arvan-admin.php:200
+msgid "Running Metering..."
+msgstr "Running Metering..."
+
+#: public/views/dashboard-customer.php:185
+msgid "Runtime Status"
+msgstr "Runtime Status"
+
+#: public/class-arvan-public.php:830
+msgid "S3 Access credentials generated."
+msgstr "S3 Access credentials generated."
+
+#: public/views/storefront-storage.php:59
+msgid "S3 API Credentials"
+msgstr "S3 API Credentials"
+
+#: public/views/storefront-storage.php:85
+msgid "S3 API Endpoint"
+msgstr "S3 API Endpoint"
+
+#: public/class-arvan-public.php:259
+msgid "S3 Bucket created successfully."
+msgstr "S3 Bucket created successfully."
+
+#: public/views/storefront-storage.php:138
+msgid "S3 Endpoint URL:"
+msgstr "S3 Endpoint URL:"
+
+#: public/views/storefront-storage.php:131
+msgid "S3 Storage API Credentials & Setup"
+msgstr "S3 Storage API Credentials & Setup"
+
+#: public/views/dashboard-customer.php:155
+msgid "S3 Storage Bucket"
+msgstr "S3 Storage Bucket"
+
+#: public/class-arvan-public.php:800
+msgid "S3 Storage Bucket \"%s\" created successfully."
+msgstr "S3 Storage Bucket \"%s\" created successfully."
+
+#: public/views/storefront-storage.php:27
+msgid "S3-Compatible Object Storage"
+msgstr "S3-Compatible Object Storage"
+
+msgid "s3CredsDesc"
+msgstr "Use these credentials to authenticate with AWS CLI, Rclone, S3cmd, or WordPress backup plugins."
+
+msgid "s3EndpointUrl"
+msgstr "S3 Endpoint URL"
+
+msgid "s3StorageLink"
+msgstr "📦 S3 Object Storage"
+
+#: admin/views/admin-settings.php:59
+msgid "Sandbox / Demo Mode"
+msgstr "Sandbox / Demo Mode"
+
+msgid "save"
+msgstr "Save Settings"
+
+#: admin/views/admin-settings.php:150
+msgid "Save All Reseller Settings"
+msgstr "Save All Reseller Settings"
+
+#: public/views/storefront-storage.php:28
+msgid "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
+msgstr "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
+
+msgid "searchResourcesPlaceholder"
+msgstr "Search by customer, resource name, or Arvan UUID..."
+
+msgid "searchWalletsPlaceholder"
+msgstr "Search by customer name, email, or user ID..."
+
+#: public/views/storefront-storage.php:154
+msgid "Secret Access Key:"
+msgstr "Secret Access Key:"
+
+msgid "secretKey"
+msgstr "Secret Access Key"
+
+#: public/views/storefront-server.php:51
+msgid "Select the geographical location closest to your target audience."
+msgstr "Select the geographical location closest to your target audience."
+
+msgid "selectLanguage"
+msgstr "Select Language"
+
+msgid "selectPresetAmount"
+msgstr "Select Preset Amount:"
+
+#: public/class-arvan-public.php:410
+msgid "Server \"%s\" provisioned successfully! IP: %s"
+msgstr "Server \"%s\" provisioned successfully! IP: %s"
+
+#: public/class-arvan-public.php:252
+msgid "Server deployed successfully! IP assigned:"
+msgstr "Server deployed successfully! IP assigned:"
+
+#: public/views/storefront-server.php:263
+msgid "Server Hostname"
+msgstr "Server Hostname"
+
+#: public/views/dashboard-customer.php:181
+msgid "Server Instance"
+msgstr "Server Instance"
+
+#: public/class-arvan-public.php:481
+msgid "Server permanently destroyed."
+msgstr "Server permanently destroyed."
+
+#: public/class-arvan-public.php:469
+msgid "Server powered off gracefully."
+msgstr "Server powered off gracefully."
+
+#: public/class-arvan-public.php:463
+msgid "Server powered on successfully."
+msgstr "Server powered on successfully."
+
+#: public/class-arvan-public.php:475
+msgid "Server reboot command executed."
+msgstr "Server reboot command executed."
+
+msgid "serverConfiguratorLink"
+msgstr "🚀 Server Configurator"
+
+msgid "serverName"
+msgstr "Server Name"
+
+msgid "Service"
+msgstr "Service"
+
+#: public/views/dashboard-customer.php:54
+msgid "Services Suspended Due to Zero Wallet Balance"
+msgstr "Services Suspended Due to Zero Wallet Balance"
+
+#: admin/class-arvan-admin.php:241
+msgid "Settings"
+msgstr "Settings"
+
+#: admin/class-arvan-admin.php:240
+msgid "Settings & API"
+msgstr "Settings & API"
+
+#: admin/class-arvan-admin.php:385
+msgid "Settings saved successfully."
+msgstr "Settings saved successfully."
+
+msgid "Shahryar"
+msgstr "Shahryar"
+
+msgid "Shiraz"
+msgstr "Shiraz"
+
+#: public/views/dashboard-customer.php:21
+msgid "Sign in to Access Your Cloud Portal"
+msgstr "Sign in to Access Your Cloud Portal"
+
+#: public/views/dashboard-customer.php:25
+msgid "Sign In to Your Account"
+msgstr "Sign In to Your Account"
+
+msgid "signIn"
+msgstr "Sign In / Register"
+
+#: public/views/dashboard-customer.php:224
+msgid "Soft Reboot"
+msgstr "Soft Reboot"
+
+msgid "specs"
+msgstr "Specifications"
+
+#: public/views/storefront-server.php:276
+msgid "SSH Public Key"
+msgstr "SSH Public Key"
+
+#: public/views/storefront-server.php:270
+msgid "SSH Public Key (Recommended)"
+msgstr "SSH Public Key (Recommended)"
+
+msgid "sshKey"
+msgstr "SSH Key"
+
+#: public/views/storefront-cdn.php:73
+msgid "SSL / TLS Mode"
+msgstr "SSL / TLS Mode"
+
+#: public/class-arvan-public.php:744
+msgid "SSL configuration updated."
+msgstr "SSL configuration updated."
+
+msgid "sslActive"
+msgstr "SSL Certificate Active"
+
+#: public/views/storefront-server.php:189
+msgid "Standard cloud images optimized for immediate SSH/RDP connection."
+msgstr "Standard cloud images optimized for immediate SSH/RDP connection."
+
+msgid "Standard General"
+msgstr "Standard General"
+
+msgid "Starter Eco"
+msgstr "Starter Eco"
+
+msgid "status"
+msgstr "Status"
+
+#: public/views/storefront-cdn.php:75 public/views/storefront-storage.php:88
+msgid "Status"
+msgstr "Status"
 
 msgid "step1Region"
 msgstr "1. Select Datacenter Region"
@@ -223,173 +1489,150 @@ msgstr "4. Operating System Image"
 msgid "step5Auth"
 msgstr "5. Hostname & Authentication"
 
-msgid "allPlans"
-msgstr "All Plans"
+#: public/views/dashboard-customer.php:222
+msgid "Stop"
+msgstr "Stop"
 
-msgid "general"
-msgstr "General Purpose"
-
-msgid "compute"
-msgstr "Compute Optimized"
-
-msgid "memory"
-msgstr "Memory Optimized"
-
-msgid "mostPopular"
-msgstr "Most Popular"
-
-msgid "hourlyRate"
-msgstr "Hourly Rate"
-
-msgid "hourlyBurn"
-msgstr "Hourly Burn Rate"
-
-msgid "monthlyEstimate"
-msgstr "Estimated Monthly (720 hrs)"
-
-msgid "additionalStorage"
-msgstr "Additional Storage"
-
-msgid "instanceHostname"
-msgstr "Instance Hostname"
-
-msgid "authCredentials"
-msgstr "Authentication Credentials:"
-
-msgid "password"
-msgstr "Password"
-
-msgid "sshKey"
-msgstr "SSH Key"
-
-msgid "orderSummary"
-msgstr "Order Summary & Specifications"
-
-msgid "region"
-msgstr "Region"
-
-msgid "flavor"
-msgstr "Hardware Flavor"
-
-msgid "specs"
-msgstr "Specifications"
+msgid "stopped"
+msgstr "Stopped"
 
 msgid "storage"
 msgstr "Storage"
 
-msgid "os"
-msgstr "Operating System"
+#: public/views/storefront-server.php:306
+msgid "Storage Volume:"
+msgstr "Storage Volume:"
 
-msgid "minRequired"
-msgstr "Min Required (24h)"
+msgid "storageDesc"
+msgstr "Unlimited S3-compatible cloud object storage with high throughput, multi-region replication, and standard API interoperability."
 
-msgid "instantDeploy"
-msgstr "Instant Deploy"
+msgid "storageTitle"
+msgstr "S3 Object Storage Buckets"
 
-msgid "insufficientBalance"
-msgstr "Insufficient Balance (Recharge Needed)"
+#: admin/views/admin-settings.php:95
+msgid "Store Currency"
+msgstr "Store Currency"
 
-msgid "vcpu"
-msgstr "vCPU"
+msgid "storefrontSubtitle"
+msgstr "Cloud Infrastructure Storefront"
 
-msgid "ram"
-msgstr "RAM"
+#: admin/views/admin-settings.php:133
+msgid "Support Contact Email"
+msgstr "Support Contact Email"
 
-msgid "baseDiskLabel"
-msgstr "Base:"
+#: admin/views/admin-settings.php:140
+msgid "Support Phone Number"
+msgstr "Support Phone Number"
 
-msgid "maxDiskLabel"
-msgstr "Max:"
+msgid "suspended"
+msgstr "Suspended"
 
-msgid "provisioningInstance"
-msgstr "Provisioning Instance..."
+#: public/views/dashboard-customer.php:91
+msgid "Suspended"
+msgstr "Suspended"
 
-msgid "provisionTimeNote"
-msgstr "⚡ Provisioned in < 45 seconds on ArvanCloud Core Infrastructure."
+#: public/views/dashboard-customer.php:210
+msgid "Suspended (0 Bal)"
+msgstr "Suspended (0 Bal)"
 
-msgid "dashboardDesc"
-msgstr "Real-time atomic wallet oversight, live server runtime controls, and resource telemetry."
-
-msgid "suspensionNotice"
-msgstr "Suspension Notice: Depleted Balance"
+msgid "Suspended (0 Balance)"
+msgstr "Suspended (0 Balance)"
 
 msgid "suspensionDesc"
 msgstr "Your wallet balance has depleted to 0. All running cloud server instances have been safely powered down. Top up your balance to immediately recover operation."
 
-msgid "rechargeWalletNow"
-msgstr "Recharge Wallet Now"
+msgid "suspensionNotice"
+msgstr "Suspension Notice: Depleted Balance"
 
-msgid "lowBalanceAlert"
-msgstr "Warning: Low Balance"
+msgid "Tabriz"
+msgstr "Tabriz"
 
-msgid "lowBalanceDesc"
-msgstr "At your current hourly burn rate, your balance will deplete in less than 12 hours."
+msgid "Tabriz - Northwest"
+msgstr "Tabriz - Northwest"
 
-msgid "quickTopUp"
-msgstr "Quick Top Up"
+msgid "Tabriz (Northwest)"
+msgstr "Tabriz (Northwest)"
 
-msgid "estimatedRuntime"
-msgstr "Estimated Runtime"
+#: public/views/storefront-cdn.php:159
+msgid "Target Value / IP"
+msgstr "Target Value / IP"
 
-msgid "activeInstances"
-msgstr "Active Instances"
+msgid "Tehran"
+msgstr "Tehran"
 
-msgid "activeCloudVms"
-msgstr "Active Cloud Virtual Machines"
+msgid "Tehran - Forough"
+msgstr "Tehran - Forough"
 
-msgid "noServers"
-msgstr "No cloud servers deployed yet."
+msgid "Tehran - Shahryar"
+msgstr "Tehran - Shahryar"
 
-msgid "serverName"
-msgstr "Server Name"
+msgid "Tehran (Forough)"
+msgstr "Tehran (Forough)"
 
-msgid "ipAddress"
-msgstr "Public IP"
+msgid "Tehran (Shahryar)"
+msgstr "Tehran (Shahryar)"
 
-msgid "planSpecs"
-msgstr "Plan Specs"
+#: admin/views/admin-settings.php:50
+msgid "Test Connection"
+msgstr "Test Connection"
 
-msgid "powerOn"
-msgstr "Power On"
+#: admin/class-arvan-admin.php:191
+msgid "Testing connection to ArvanCloud API..."
+msgstr "Testing connection to ArvanCloud API..."
 
-msgid "powerOff"
-msgstr "Power Off"
+#: scripts/i18n-tools.js:108
+msgid "Text"
+msgstr "Text"
 
-msgid "reboot"
-msgstr "Reboot"
-
-msgid "delete"
-msgstr "Delete"
-
-msgid "confirmDelete"
-msgstr "Are you sure you want to permanently delete this server? All disk data will be erased."
-
-msgid "transactionHistory"
-msgstr "Wallet Transaction Ledger & Audit Logs"
+#: public/views/storefront-server.php:76
+msgid "Tier III Enterprise DC"
+msgstr "Tier III Enterprise DC"
 
 msgid "timestamp"
 msgstr "Timestamp"
 
-msgid "type"
-msgstr "Type"
+#: public/views/storefront-cdn.php:95
+msgid "Toggle Managed SSL"
+msgstr "Toggle Managed SSL"
 
-msgid "description"
-msgstr "Transaction Description"
+#: admin/views/admin-settings.php:98
+msgid "Toman (IRT)"
+msgstr "Toman (IRT)"
 
-msgid "amount"
-msgstr "Amount"
+msgid "topUp"
+msgstr "Top Up"
 
-msgid "balanceSnapshot"
-msgstr "Balance Snapshot"
+msgid "total"
+msgstr "Total"
 
-msgid "noTransactions"
-msgstr "No transactions recorded yet."
+msgid "Total Active Wallets"
+msgstr "Total Active Wallets"
 
-msgid "customAmount"
-msgstr "Custom Amount"
+msgid "Total Cloud Instances"
+msgstr "Total Cloud Instances"
 
-msgid "proceedPayment"
-msgstr "Proceed to Payment"
+msgid "Total Metered Burn"
+msgstr "Total Metered Burn"
+
+msgid "Total Outstanding Credit"
+msgstr "Total Outstanding Credit"
+
+msgid "totalDepositAmount"
+msgstr "Total Deposit Amount:"
+
+#: public/views/dashboard-customer.php:270
+msgid "Transaction Type"
+msgstr "Transaction Type"
+
+msgid "transactionHistory"
+msgstr "Wallet Transaction Ledger & Audit Logs"
+
+#: public/views/storefront-cdn.php:181
+msgid "TTL"
+msgstr "TTL"
+
+msgid "txAdjustment"
+msgstr "Adjustment"
 
 msgid "txDeposit"
 msgstr "Deposit"
@@ -397,384 +1640,106 @@ msgstr "Deposit"
 msgid "txMetered"
 msgstr "Metered"
 
-msgid "txAdjustment"
-msgstr "Adjustment"
+msgid "type"
+msgstr "Type"
 
-msgid "cdnTitle"
-msgstr "CDN Domain Connection & Anycast DNS"
+#: public/views/storefront-cdn.php:177
+msgid "Type"
+msgstr "Type"
 
-msgid "cdnDesc"
-msgstr "Global edge CDN caching, DDoS protection, Anycast DNS acceleration, and automated SSL certificate provisioning."
+#: public/class-arvan-public.php:422
+msgid "Unauthorized."
+msgstr "Unauthorized."
 
-msgid "connectDomain"
-msgstr "Connect Domain to CDN"
+#: admin/class-arvan-admin.php:471
+msgid "Unknown admin action."
+msgstr "Unknown admin action."
 
-msgid "domainInput"
-msgstr "Domain Name (e.g. example.com)"
+msgid "unlimited"
+msgstr "Unlimited"
 
-msgid "activeCdnDomains"
-msgstr "Active CDN Edge Domains"
+#: public/views/dashboard-customer.php:156
+msgid "Unlimited Object Storage"
+msgstr "Unlimited Object Storage"
 
-msgid "assignedNameservers"
-msgstr "Assigned ArvanCloud Anycast Nameservers:"
+#: admin/views/admin-settings.php:100
+msgid "US Dollar (USD)"
+msgstr "US Dollar (USD)"
 
-msgid "dnsRecords"
-msgstr "DNS Records"
+#: public/views/storefront-cdn.php:179
+msgid "Value"
+msgstr "Value"
 
-msgid "purgeCache"
-msgstr "Purge Edge Cache"
+msgid "vcpu"
+msgstr "vCPU"
 
-msgid "sslActive"
-msgstr "SSL Certificate Active"
-
-msgid "activePops"
-msgstr "Active on 40+ Global PoPs"
-
-msgid "dnsDialogDesc"
-msgstr "Add and manage DNS zone records with instant Anycast propagation."
-
-msgid "dnsRecordNamePlaceholder"
-msgstr "Name (@ or sub)"
-
-msgid "dnsRecordTargetPlaceholder"
-msgstr "Target / IP"
-
-msgid "addRecord"
-msgstr "Add Record"
-
-msgid "proxied"
-msgstr "Proxied"
-
-msgid "close"
-msgstr "Close"
-
-msgid "storageTitle"
-msgstr "S3 Object Storage Buckets"
-
-msgid "storageDesc"
-msgstr "Unlimited S3-compatible cloud object storage with high throughput, multi-region replication, and standard API interoperability."
-
-msgid "createBucket"
-msgstr "Create New Bucket"
-
-msgid "bucketName"
-msgstr "Bucket Name (lowercase & numbers only)"
-
-msgid "existingBuckets"
-msgstr "Existing Storage Buckets"
+#: public/views/storefront-storage.php:105
+msgid "View Setup Snippets"
+msgstr "View Setup Snippets"
 
 msgid "viewApiKeys"
 msgstr "View S3 API Credentials"
 
-msgid "endpointUrl"
-msgstr "Endpoint URL"
-
-msgid "accessKey"
-msgstr "Access Key ID"
-
-msgid "secretKey"
-msgstr "Secret Access Key"
-
-msgid "bucketIdentifier"
-msgstr "Bucket Identifier"
-
-msgid "s3EndpointUrl"
-msgstr "S3 Endpoint URL"
-
-msgid "clusterRegion"
-msgstr "Cluster Region"
-
-msgid "rateMonthly"
-msgstr "Rate (Monthly)"
-
-msgid "action"
-msgstr "Action"
-
-msgid "credentials"
-msgstr "Credentials"
-
-msgid "s3CredsDesc"
-msgstr "Use these credentials to authenticate with AWS CLI, Rclone, S3cmd, or WordPress backup plugins."
-
-msgid "awsCliExample"
-msgstr "AWS CLI Configuration Example:"
-
-msgid "quickDepositDesc"
-msgstr "Instant wallet recharge via online gateway / sandbox demo."
-
-msgid "selectPresetAmount"
-msgstr "Select Preset Amount:"
-
-msgid "totalDepositAmount"
-msgstr "Total Deposit Amount:"
-
-msgid "processing"
-msgstr "Processing..."
-
-msgid "ArvanCloud Reseller"
-msgstr "ArvanCloud Reseller"
-
-msgid "Settings & API"
-msgstr "Settings & API"
-
-msgid "Cloud Resources"
-msgstr "Cloud Resources"
-
-msgid "Wallets & Ledger"
-msgstr "Wallets & Ledger"
-
-msgid "1. ArvanCloud API Authentication"
-msgstr "1. ArvanCloud API Authentication"
-
-msgid "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
-msgstr "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
-
-msgid "ArvanCloud API Key"
-msgstr "ArvanCloud API Key"
-
-msgid "Test Connection"
-msgstr "Test Connection"
-
-msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
-msgstr "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
-
-msgid "Sandbox / Demo Mode"
-msgstr "Sandbox / Demo Mode"
-
-msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
-msgstr "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
-
-msgid "2. Dynamic Pricing & Reseller Markup Engine"
-msgstr "2. Dynamic Pricing & Reseller Markup Engine"
-
-msgid "Configure profit margins automatically calculated on top of wholesale ArvanCloud infrastructure rates."
-msgstr "Configure profit margins automatically calculated on top of wholesale ArvanCloud infrastructure rates."
-
-msgid "Markup Percentage (%)"
-msgstr "Markup Percentage (%)"
-
-msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
-msgstr "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
-
-msgid "Fixed Margin Addition (Toman)"
-msgstr "Fixed Margin Addition (Toman)"
-
-msgid "Optional fixed addition added after percentage markup calculation."
-msgstr "Optional fixed addition added after percentage markup calculation."
-
-msgid "Store Currency"
-msgstr "Store Currency"
-
-msgid "Default Datacenter Region"
-msgstr "Default Datacenter Region"
-
-msgid "3. Storefront White-Label Branding"
-msgstr "3. Storefront White-Label Branding"
-
-msgid "Customization parameters injected into the standalone virtual canvas header and footer."
-msgstr "Customization parameters injected into the standalone virtual canvas header and footer."
-
-msgid "Reseller Brand / Store Name"
-msgstr "Reseller Brand / Store Name"
-
-msgid "Support Contact Email"
-msgstr "Support Contact Email"
-
-msgid "Support Phone Number"
-msgstr "Support Phone Number"
-
+#: admin/views/admin-settings.php:155
 msgid "Virtual Storefront Quick Links (Theme Isolated)"
 msgstr "Virtual Storefront Quick Links (Theme Isolated)"
 
-msgid "Save All Reseller Settings"
-msgstr "Save All Reseller Settings"
+#: public/views/dashboard-customer.php:261
+msgid "Wallet Atomic Ledger Transactions"
+msgstr "Wallet Atomic Ledger Transactions"
 
-msgid "All Provisioned Cloud Resources"
-msgstr "All Provisioned Cloud Resources"
-
-msgid "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
-msgstr "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
-
-msgid "Run Metering Cycle Now"
-msgstr "Run Metering Cycle Now"
-
-msgid "Total Cloud Instances"
-msgstr "Total Cloud Instances"
-
-msgid "Active / Running"
-msgstr "Active / Running"
-
-msgid "Suspended (0 Balance)"
-msgstr "Suspended (0 Balance)"
-
-msgid "Monthly Run Rate (MRR)"
-msgstr "Monthly Run Rate (MRR)"
-
-msgid "No resources deployed yet."
-msgstr "No resources deployed yet."
-
-msgid "Customer"
-msgstr "Customer"
-
-msgid "Resource Name"
-msgstr "Resource Name"
-
-msgid "Service"
-msgstr "Service"
-
-msgid "Arvan UUID / Identifier"
-msgstr "Arvan UUID / Identifier"
-
-msgid "Hourly Rate"
-msgstr "Hourly Rate"
-
-msgid "Emergency Actions"
-msgstr "Emergency Actions"
-
-msgid "Power Off"
-msgstr "Power Off"
-
-msgid "Purge"
-msgstr "Purge"
-
-msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
-msgstr "Are you sure you want to permanently delete this resource from ArvanCloud?"
-
-msgid "Customer Wallets & Ledger Audit"
-msgstr "Customer Wallets & Ledger Audit"
-
-msgid "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
-msgstr "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
-
-msgid "Total Active Wallets"
-msgstr "Total Active Wallets"
-
-msgid "Total Outstanding Credit"
-msgstr "Total Outstanding Credit"
-
-msgid "Cumulative Deposits"
-msgstr "Cumulative Deposits"
-
-msgid "Total Metered Burn"
-msgstr "Total Metered Burn"
-
-msgid "No customer wallets initialized yet."
-msgstr "No customer wallets initialized yet."
+#: includes/class-arvan-wallet.php:161 includes/class-arvan-wallet.php:261
+msgid "Wallet could not be found."
+msgstr "Wallet could not be found."
 
 msgid "Wallet ID"
 msgstr "Wallet ID"
 
-msgid "Customer Name"
-msgstr "Customer Name"
+#: includes/class-arvan-wallet.php:266
+msgid "Wallet is frozen. Cannot perform debit."
+msgstr "Wallet is frozen. Cannot perform debit."
 
-msgid "Email"
-msgstr "Email"
+#: public/class-arvan-public.php:554
+msgid "Wallet successfully credited with %1$s %2$s! RefID: %3$s"
+msgstr "Wallet successfully credited with %1$s %2$s! RefID: %3$s"
 
-msgid "Hourly Burn Rate"
-msgstr "Hourly Burn Rate"
+#: public/class-arvan-public.php:257
+msgid "Wallet successfully credited!"
+msgstr "Wallet successfully credited!"
 
-msgid "Created At"
-msgstr "Created At"
+msgid "walletBalance"
+msgstr "Wallet Balance"
 
-msgid "Ledger Actions"
-msgstr "Ledger Actions"
+#: admin/class-arvan-admin.php:258
+msgid "Wallets & Ledger"
+msgstr "Wallets & Ledger"
 
-msgid "Adjust Balance"
-msgstr "Adjust Balance"
+#: admin/class-arvan-admin.php:259
+msgid "Wallets Ledger"
+msgstr "Wallets Ledger"
 
-msgid "Manual Ledger Adjustment"
-msgstr "Manual Ledger Adjustment"
+#: admin/views/admin-settings.php:65
+msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
+msgstr "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
 
-msgid "Adjustment Type:"
-msgstr "Adjustment Type:"
+#: public/views/storefront-server.php:333
+msgid "Your Available Balance:"
+msgstr "Your Available Balance:"
 
-msgid "Credit (+ Deposit Funds)"
-msgstr "Credit (+ Deposit Funds)"
+#: public/views/dashboard-customer.php:65
+msgid "Your available wallet balance will only support active services for approximately %s hours. Please top up your wallet to prevent automated service interruption."
+msgstr "Your available wallet balance will only support active services for approximately %s hours. Please top up your wallet to prevent automated service interruption."
 
-msgid "Debit (- Deduct Funds)"
-msgstr "Debit (- Deduct Funds)"
+#: public/views/storefront-storage.php:73
+msgid "Your Storage Buckets"
+msgstr "Your Storage Buckets"
 
-msgid "Amount (Toman):"
-msgstr "Amount (Toman):"
+msgid "ایران"
+msgstr "Iran"
 
-msgid "Reason / Audit Note:"
-msgstr "Reason / Audit Note:"
+msgid "تبریز"
+msgstr "Tabriz"
 
-msgid "Apply Adjustment"
-msgstr "Apply Adjustment"
-
-msgid "Cancel"
-msgstr "Cancel"
-
-msgid "All Cloud Datacenter Regions Operational (99.99% SLA)"
-msgstr "All Cloud Datacenter Regions Operational (99.99% SLA)"
-
-msgid "Powered by ArvanCloud Infrastructure Reseller Engine"
-msgstr "Powered by ArvanCloud Infrastructure Reseller Engine"
-
-msgid "Enterprise Multi-Tenant Infrastructure Management & Monetization"
-msgstr "Enterprise Multi-Tenant Infrastructure Management & Monetization"
-
-msgid "connectedSuccessfully"
-msgstr "Connected successfully to ArvanCloud infrastructure."
-
-msgid "connectionFailed"
-msgstr "Connection to ArvanCloud infrastructure failed."
-
-msgid "activeMockFallback"
-msgstr "Active (Mock Fallback)"
-
-msgid "liveInfrastructureOnly"
-msgstr "Live Infrastructure Only"
-
-msgid "searchResourcesPlaceholder"
-msgstr "Search by customer, resource name, or Arvan UUID..."
-
-msgid "searchWalletsPlaceholder"
-msgstr "Search by customer name, email, or user ID..."
-
-msgid "adjustBalanceDesc"
-msgstr "Directly debit or credit customer balance. An immutable audit record will be logged."
-
-msgid "adjustReasonPlaceholder"
-msgstr "e.g. Compensation credit / Manual topup"
-
-msgid "manualAdjustmentDefaultReason"
-msgstr "Manual administrative adjustment"
-
-msgid "all"
-msgstr "All"
-
-msgid "active"
-msgstr "Active"
-
-msgid "serverConfiguratorLink"
-msgstr "🚀 Server Configurator"
-
-msgid "customerDashboardLink"
-msgstr "📊 Customer Dashboard"
-
-msgid "cdnManagerLink"
-msgstr "🌐 CDN & DNS Manager"
-
-msgid "s3StorageLink"
-msgstr "📦 S3 Object Storage"
-
-msgid "Action completed successfully."
-msgstr "Action completed successfully."
-
-msgid "Manual metering cycle completed."
-msgstr "Manual metering cycle completed."
-
-msgid "Instance purged by administrator."
-msgstr "Instance purged by administrator."
-
-msgid "Instance powered off by administrator."
-msgstr "Instance powered off by administrator."
-
-msgid "Balance adjusted successfully."
-msgstr "Balance adjusted successfully."
-
-msgid "Failed to deploy server."
-msgstr "Failed to deploy server."
+msgid "تهران"
+msgstr "Tehran"
 
