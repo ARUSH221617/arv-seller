@@ -1536,6 +1536,15 @@ class Arv_Seller_i18n {
 	}
 
 	/**
+	 * Alias for get_direction()
+	 *
+	 * @return string
+	 */
+	public static function get_active_direction() {
+		return self::get_direction();
+	}
+
+	/**
 	 * Get all supported languages configuration.
 	 *
 	 * @return array

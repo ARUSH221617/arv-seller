@@ -2087,6 +2087,15 @@ ${dictArrayPhp}
 \t}
 
 \t/**
+\t * Alias for get_direction()
+\t *
+\t * @return string
+\t */
+\tpublic static function get_active_direction() {
+\t\treturn self::get_direction();
+\t}
+
+\t/**
 \t * Get all supported languages configuration.
 \t *
 \t * @return array
