@@ -14,22 +14,35 @@ $user_id         = get_current_user_id();
 $user_logged_in  = is_user_logged_in();
 $wallet_balance  = $user_logged_in ? Arvan_Wallet::get_balance( $user_id ) : 0;
 $currency        = get_option( 'arvan_currency', 'IRT' );
-$markup          = (float) get_option( 'arvan_markup_percentage', 15 );
+$markup_pct      = (float) get_option( 'arvan_markup_percentage', 20 );
+$fixed_margin    = (float) get_option( 'arvan_fixed_margin', 0 );
+
+// Flavor matrix definitions with base costs
+$flavors = array(
+	'g1-1-2'  => array( 'name' => 'Starter Eco', 'tier' => 'general', 'vcpu' => 1, 'ram' => 2, 'disk' => 25, 'base_cost' => 250, 'badge' => 'Eco' ),
+	'g1-2-4'  => array( 'name' => 'Standard General', 'tier' => 'general', 'vcpu' => 2, 'ram' => 4, 'disk' => 40, 'base_cost' => 450, 'badge' => 'Most Popular', 'popular' => true ),
+	'g1-4-8'  => array( 'name' => 'Performance Pro', 'tier' => 'general', 'vcpu' => 4, 'ram' => 8, 'disk' => 60, 'base_cost' => 890, 'badge' => 'High Load' ),
+	'g1-8-16' => array( 'name' => 'Enterprise Ultra', 'tier' => 'general', 'vcpu' => 8, 'ram' => 16, 'disk' => 100, 'base_cost' => 1750, 'badge' => 'Max Power' ),
+	'c1-4-4'  => array( 'name' => 'Compute Master', 'tier' => 'compute', 'vcpu' => 4, 'ram' => 4, 'disk' => 40, 'base_cost' => 690, 'badge' => 'Dedicated CPU' ),
+	'm1-2-8'  => array( 'name' => 'Memory Master', 'tier' => 'memory', 'vcpu' => 2, 'ram' => 8, 'disk' => 50, 'base_cost' => 650, 'badge' => 'High Memory' ),
+);
 ?>
 
 <div class="arvan-page-header">
-	<h1 class="arvan-page-title"><?php esc_html_e( 'Deploy Cloud Server', 'arv-seller' ); ?></h1>
-	<p class="arvan-page-description"><?php esc_html_e( 'High performance enterprise cloud virtual machines with NVMe storage, dedicated IPv4, and 10Gbps uplinks.', 'arv-seller' ); ?></p>
+	<div class="arvan-page-header-text">
+		<h1 class="arvan-page-title"><?php esc_html_e( 'Deploy Cloud Server (IaaS)', 'arv-seller' ); ?></h1>
+		<p class="arvan-page-description"><?php esc_html_e( 'Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network.', 'arv-seller' ); ?></p>
+	</div>
 </div>
 
 <form id="arvan-server-configurator" class="arvan-configurator-form" method="post">
 
 	<div class="arvan-config-layout">
 		
-		<!-- Left: Options & Selectors -->
+		<!-- Left / Main: Options & Step Selectors -->
 		<div class="arvan-config-main">
 
-			<!-- 1. Datacenter Region -->
+			<!-- Step 1: Datacenter Region -->
 			<div class="arvan-card arvan-step-card">
 				<div class="arvan-step-header">
 					<span class="arvan-step-num">1</span>
@@ -40,36 +53,45 @@ $markup          = (float) get_option( 'arvan_markup_percentage', 15 );
 				</div>
 
 				<div class="arvan-grid-cards">
-					<label class="arvan-select-box active">
+					<label class="arvan-select-box active" data-region-title="Tehran (Forough)">
 						<input type="radio" name="region" value="ir-thr-c2" checked>
 						<div class="arvan-select-inner">
-							<div class="arvan-flag">🇮🇷</div>
+							<div class="arvan-box-header">
+								<span class="arvan-flag">🇮🇷</span>
+								<span class="arvan-dot arvan-dot-green"></span>
+							</div>
 							<strong>Tehran &mdash; Forough</strong>
 							<span>Low Latency / IXP Direct</span>
 						</div>
 					</label>
 
-					<label class="arvan-select-box">
+					<label class="arvan-select-box" data-region-title="Tehran (Shahryar)">
 						<input type="radio" name="region" value="ir-thr-sh1">
 						<div class="arvan-select-inner">
-							<div class="arvan-flag">🇮🇷</div>
+							<div class="arvan-box-header">
+								<span class="arvan-flag">🇮🇷</span>
+								<span class="arvan-dot arvan-dot-green"></span>
+							</div>
 							<strong>Tehran &mdash; Shahryar</strong>
-							<span>Tier III Datacenter</span>
+							<span>Tier III Enterprise DC</span>
 						</div>
 					</label>
 
-					<label class="arvan-select-box">
+					<label class="arvan-select-box" data-region-title="Tabriz (Northwest)">
 						<input type="radio" name="region" value="ir-tbz-dc1">
 						<div class="arvan-select-inner">
-							<div class="arvan-flag">🇮🇷</div>
+							<div class="arvan-box-header">
+								<span class="arvan-flag">🇮🇷</span>
+								<span class="arvan-dot arvan-dot-green"></span>
+							</div>
 							<strong>Tabriz &mdash; Northwest</strong>
-							<span>Geo-Redundant</span>
+							<span>Geo-Redundant Disaster Recovery</span>
 						</div>
 					</label>
 				</div>
 			</div>
 
-			<!-- 2. Server Flavor / Hardware Specs -->
+			<!-- Step 2: Hardware Flavor / Compute Specs -->
 			<div class="arvan-card arvan-step-card">
 				<div class="arvan-step-header">
 					<span class="arvan-step-num">2</span>
@@ -79,134 +101,146 @@ $markup          = (float) get_option( 'arvan_markup_percentage', 15 );
 					</div>
 				</div>
 
+				<!-- Category Tab Filters -->
+				<div class="arvan-tier-tabs">
+					<button type="button" class="arvan-tab-btn active" data-filter="all"><?php esc_html_e( 'All Plans', 'arv-seller' ); ?></button>
+					<button type="button" class="arvan-tab-btn" data-filter="general"><?php esc_html_e( 'General Purpose', 'arv-seller' ); ?></button>
+					<button type="button" class="arvan-tab-btn" data-filter="compute"><?php esc_html_e( 'Compute Optimized', 'arv-seller' ); ?></button>
+					<button type="button" class="arvan-tab-btn" data-filter="memory"><?php esc_html_e( 'Memory Optimized', 'arv-seller' ); ?></button>
+				</div>
+
 				<div class="arvan-plans-grid">
-					
-					<label class="arvan-plan-card" data-hourly="350" data-monthly="252000" data-flavor="g1-1-2">
-						<input type="radio" name="flavor_id" value="g1-1-2">
-						<div class="arvan-plan-content">
-							<div class="arvan-plan-header">
-								<strong>Starter Eco</strong>
-								<span class="arvan-plan-badge">Entry</span>
+					<?php foreach ( $flavors as $f_id => $f_info ) : 
+						$retail_hourly  = Arvan_API_Client::calculate_price_with_markup( $f_info['base_cost'], $markup_pct, $fixed_margin );
+						$retail_monthly = $retail_hourly * 720;
+						$is_popular     = ! empty( $f_info['popular'] );
+						?>
+						<label class="arvan-plan-card <?php echo $is_popular ? 'active' : ''; ?>" 
+							   data-flavor="<?php echo esc_attr( $f_id ); ?>" 
+							   data-tier="<?php echo esc_attr( $f_info['tier'] ); ?>" 
+							   data-base-cost="<?php echo esc_attr( $f_info['base_cost'] ); ?>" 
+							   data-base-disk="<?php echo esc_attr( $f_info['disk'] ); ?>" 
+							   data-hourly="<?php echo esc_attr( $retail_hourly ); ?>" 
+							   data-monthly="<?php echo esc_attr( $retail_monthly ); ?>" 
+							   data-specs="<?php echo esc_attr( "{$f_info['vcpu']} vCPU / {$f_info['ram']} GB RAM" ); ?>">
+							<input type="radio" name="flavor_id" value="<?php echo esc_attr( $f_id ); ?>" <?php checked( $is_popular ); ?>>
+							<div class="arvan-plan-content">
+								<div class="arvan-plan-header">
+									<strong><?php echo esc_html( $f_info['name'] ); ?></strong>
+									<span class="arvan-plan-badge <?php echo $is_popular ? 'arvan-badge-popular' : ''; ?>">
+										<?php echo esc_html( $f_info['badge'] ); ?>
+									</span>
+								</div>
+								<div class="arvan-plan-specs">
+									<div class="arvan-spec-item">
+										<strong><?php echo esc_html( $f_info['vcpu'] ); ?> vCPU</strong>
+										<span><?php esc_html_e( 'Processor', 'arv-seller' ); ?></span>
+									</div>
+									<div class="arvan-spec-item">
+										<strong><?php echo esc_html( $f_info['ram'] ); ?> GB</strong>
+										<span><?php esc_html_e( 'RAM Memory', 'arv-seller' ); ?></span>
+									</div>
+									<div class="arvan-spec-item">
+										<strong><?php echo esc_html( $f_info['disk'] ); ?> GB</strong>
+										<span><?php esc_html_e( 'NVMe Disk', 'arv-seller' ); ?></span>
+									</div>
+								</div>
+								<div class="arvan-plan-price">
+									<strong><?php echo esc_html( number_format( $retail_hourly ) ); ?></strong>
+									<small><?php echo esc_html( $currency ); ?>/<?php esc_html_e( 'hr', 'arv-seller' ); ?></small>
+								</div>
 							</div>
-							<div class="arvan-plan-specs">
-								<div><strong>1 vCPU</strong> <span>Core</span></div>
-								<div><strong>2 GB</strong> <span>RAM</span></div>
-								<div><strong>25 GB</strong> <span>NVMe</span></div>
-							</div>
-							<div class="arvan-plan-price">
-								<strong>350</strong> <small><?php echo esc_html( $currency ); ?>/hr</small>
-							</div>
-						</div>
-					</label>
-
-					<label class="arvan-plan-card active" data-hourly="680" data-monthly="489600" data-flavor="g1-2-4">
-						<input type="radio" name="flavor_id" value="g1-2-4" checked>
-						<div class="arvan-plan-content">
-							<div class="arvan-plan-header">
-								<strong>Standard General</strong>
-								<span class="arvan-plan-badge arvan-badge-popular"><?php esc_html_e( 'Popular', 'arv-seller' ); ?></span>
-							</div>
-							<div class="arvan-plan-specs">
-								<div><strong>2 vCPU</strong> <span>Cores</span></div>
-								<div><strong>4 GB</strong> <span>RAM</span></div>
-								<div><strong>50 GB</strong> <span>NVMe</span></div>
-							</div>
-							<div class="arvan-plan-price">
-								<strong>680</strong> <small><?php echo esc_html( $currency ); ?>/hr</small>
-							</div>
-						</div>
-					</label>
-
-					<label class="arvan-plan-card" data-hourly="1320" data-monthly="950400" data-flavor="g1-4-8">
-						<input type="radio" name="flavor_id" value="g1-4-8">
-						<div class="arvan-plan-content">
-							<div class="arvan-plan-header">
-								<strong>Performance Pro</strong>
-								<span class="arvan-plan-badge">Fast</span>
-							</div>
-							<div class="arvan-plan-specs">
-								<div><strong>4 vCPU</strong> <span>Cores</span></div>
-								<div><strong>8 GB</strong> <span>RAM</span></div>
-								<div><strong>100 GB</strong> <span>NVMe</span></div>
-							</div>
-							<div class="arvan-plan-price">
-								<strong>1,320</strong> <small><?php echo esc_html( $currency ); ?>/hr</small>
-							</div>
-						</div>
-					</label>
-
-					<label class="arvan-plan-card" data-hourly="2590" data-monthly="1864800" data-flavor="g1-8-16">
-						<input type="radio" name="flavor_id" value="g1-8-16">
-						<div class="arvan-plan-content">
-							<div class="arvan-plan-header">
-								<strong>Enterprise Ultra</strong>
-								<span class="arvan-plan-badge">Max</span>
-							</div>
-							<div class="arvan-plan-specs">
-								<div><strong>8 vCPU</strong> <span>Cores</span></div>
-								<div><strong>16 GB</strong> <span>RAM</span></div>
-								<div><strong>200 GB</strong> <span>NVMe</span></div>
-							</div>
-							<div class="arvan-plan-price">
-								<strong>2,590</strong> <small><?php echo esc_html( $currency ); ?>/hr</small>
-							</div>
-						</div>
-					</label>
-
+						</label>
+					<?php endforeach; ?>
 				</div>
 			</div>
 
-			<!-- 3. Operating System Distribution -->
+			<!-- Step 3: Interactive NVMe Storage Volume Slider -->
 			<div class="arvan-card arvan-step-card">
 				<div class="arvan-step-header">
 					<span class="arvan-step-num">3</span>
 					<div>
-						<h3 class="arvan-step-title"><?php esc_html_e( 'Select Operating System', 'arv-seller' ); ?></h3>
-						<p class="arvan-step-subtitle"><?php esc_html_e( 'Pre-configured cloud distributions ready in under 60 seconds.', 'arv-seller' ); ?></p>
+						<h3 class="arvan-step-title"><?php esc_html_e( 'NVMe Fast Storage Volume', 'arv-seller' ); ?></h3>
+						<p class="arvan-step-subtitle"><?php esc_html_e( 'High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr).', 'arv-seller' ); ?></p>
+					</div>
+				</div>
+
+				<div class="arvan-slider-container">
+					<div class="arvan-slider-readout">
+						<span><?php esc_html_e( 'Allocated NVMe Storage:', 'arv-seller' ); ?></span>
+						<h3 class="arvan-slider-val"><span id="arvan-disk-display">40</span> <small>GB</small></h3>
+					</div>
+					<input type="range" id="arvan_disk_slider" name="disk_size" min="25" max="500" step="5" value="40" class="arvan-range-slider">
+					<div class="arvan-slider-ticks">
+						<span>25 GB</span>
+						<span>100 GB</span>
+						<span>250 GB</span>
+						<span>500 GB</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Step 4: Operating System Distribution -->
+			<div class="arvan-card arvan-step-card">
+				<div class="arvan-step-header">
+					<span class="arvan-step-num">4</span>
+					<div>
+						<h3 class="arvan-step-title"><?php esc_html_e( 'Operating System Image', 'arv-seller' ); ?></h3>
+						<p class="arvan-step-subtitle"><?php esc_html_e( 'Standard cloud images optimized for immediate SSH/RDP connection.', 'arv-seller' ); ?></p>
 					</div>
 				</div>
 
 				<div class="arvan-os-grid">
-					<label class="arvan-os-item active">
+					<label class="arvan-os-item active" data-os-name="Ubuntu 22.04 LTS">
 						<input type="radio" name="image_id" value="ubuntu-22.04" checked>
 						<div class="arvan-os-inner">
-							<span class="arvan-os-logo">🐧</span>
+							<span class="arvan-os-logo">
+								<img src="<?php echo esc_url( ARVAN_RESELLER_PLUGIN_URL . 'public/images/os/ubuntu.svg' ); ?>" alt="Ubuntu" class="arvan-os-img" />
+							</span>
 							<strong>Ubuntu 22.04 LTS</strong>
-							<small>64-bit Server</small>
+							<small>Jammy (Recommended)</small>
 						</div>
 					</label>
 
-					<label class="arvan-os-item">
+					<label class="arvan-os-item" data-os-name="Ubuntu 24.04 LTS">
 						<input type="radio" name="image_id" value="ubuntu-24.04">
 						<div class="arvan-os-inner">
-							<span class="arvan-os-logo">🐧</span>
+							<span class="arvan-os-logo">
+								<img src="<?php echo esc_url( ARVAN_RESELLER_PLUGIN_URL . 'public/images/os/ubuntu.svg' ); ?>" alt="Ubuntu" class="arvan-os-img" />
+							</span>
 							<strong>Ubuntu 24.04 LTS</strong>
 							<small>Noble Numbat</small>
 						</div>
 					</label>
 
-					<label class="arvan-os-item">
+					<label class="arvan-os-item" data-os-name="Debian 12">
 						<input type="radio" name="image_id" value="debian-12">
 						<div class="arvan-os-inner">
-							<span class="arvan-os-logo">🌀</span>
+							<span class="arvan-os-logo">
+								<img src="<?php echo esc_url( ARVAN_RESELLER_PLUGIN_URL . 'public/images/os/debian.svg' ); ?>" alt="Debian" class="arvan-os-img" />
+							</span>
 							<strong>Debian 12</strong>
-							<small>Bookworm</small>
+							<small>Bookworm Stable</small>
 						</div>
 					</label>
 
-					<label class="arvan-os-item">
-						<input type="radio" name="image_id" value="centos-stream-9">
+					<label class="arvan-os-item" data-os-name="AlmaLinux 9">
+						<input type="radio" name="image_id" value="almalinux-9">
 						<div class="arvan-os-inner">
-							<span class="arvan-os-logo">📦</span>
-							<strong>Alma / CentOS 9</strong>
-							<small>Enterprise Linux</small>
+							<span class="arvan-os-logo">
+								<img src="<?php echo esc_url( ARVAN_RESELLER_PLUGIN_URL . 'public/images/os/almalinux.svg' ); ?>" alt="AlmaLinux" class="arvan-os-img" />
+							</span>
+							<strong>AlmaLinux 9</strong>
+							<small>RHEL Compatible</small>
 						</div>
 					</label>
 
-					<label class="arvan-os-item">
-						<input type="radio" name="image_id" value="win-server-2022">
+					<label class="arvan-os-item" data-os-name="Windows Server 2022">
+						<input type="radio" name="image_id" value="windows-server-2022">
 						<div class="arvan-os-inner">
-							<span class="arvan-os-logo">🪟</span>
+							<span class="arvan-os-logo">
+								<img src="<?php echo esc_url( ARVAN_RESELLER_PLUGIN_URL . 'public/images/os/windows.svg' ); ?>" alt="Windows Server" class="arvan-os-img" />
+							</span>
 							<strong>Windows Server 2022</strong>
 							<small>Standard Edition</small>
 						</div>
@@ -214,78 +248,99 @@ $markup          = (float) get_option( 'arvan_markup_percentage', 15 );
 				</div>
 			</div>
 
-			<!-- 4. Hostname & Authentication -->
+			<!-- Step 5: Hostname & Authentication Credentials -->
 			<div class="arvan-card arvan-step-card">
 				<div class="arvan-step-header">
-					<span class="arvan-step-num">4</span>
+					<span class="arvan-step-num">5</span>
 					<div>
-						<h3 class="arvan-step-title"><?php esc_html_e( 'Instance Configuration', 'arv-seller' ); ?></h3>
-						<p class="arvan-step-subtitle"><?php esc_html_e( 'Set your server hostname and SSH access credentials.', 'arv-seller' ); ?></p>
+						<h3 class="arvan-step-title"><?php esc_html_e( 'Instance Access & Naming', 'arv-seller' ); ?></h3>
+						<p class="arvan-step-subtitle"><?php esc_html_e( 'Configure server hostname and authentication method.', 'arv-seller' ); ?></p>
 					</div>
 				</div>
 
 				<div class="arvan-form-grid">
 					<div class="arvan-form-group">
-						<label for="arvan_server_name" class="arvan-label"><?php esc_html_e( 'Server Hostname / Name', 'arv-seller' ); ?></label>
-						<input type="text" id="arvan_server_name" name="name" class="arvan-input" value="cloud-srv-<?php echo esc_attr( wp_rand( 100, 999 ) ); ?>" required>
+						<label for="arvan_server_name" class="arvan-label"><?php esc_html_e( 'Server Hostname', 'arv-seller' ); ?></label>
+						<input type="text" id="arvan_server_name" name="name" class="arvan-input" value="srv-web-<?php echo esc_attr( wp_rand( 100, 999 ) ); ?>" required>
 					</div>
-					<div class="arvan-form-group">
-						<label for="arvan_ssh_key" class="arvan-label"><?php esc_html_e( 'SSH Public Key (Recommended)', 'arv-seller' ); ?></label>
-						<textarea id="arvan_ssh_key" name="ssh_key" class="arvan-input arvan-textarea" rows="2" placeholder="ssh-rsa AAAAB3NzaC1yc2E..."></textarea>
+
+					<div class="arvan-auth-toggle-group">
+						<label class="arvan-label"><?php esc_html_e( 'Authentication Mode:', 'arv-seller' ); ?></label>
+						<div class="arvan-radio-group">
+							<label><input type="radio" name="auth_mode" value="ssh" checked> <?php esc_html_e( 'SSH Public Key (Recommended)', 'arv-seller' ); ?></label>
+							<label><input type="radio" name="auth_mode" value="password"> <?php esc_html_e( 'Root Password', 'arv-seller' ); ?></label>
+						</div>
+					</div>
+
+					<div class="arvan-form-group" id="arvan-ssh-field">
+						<label for="arvan_ssh_key" class="arvan-label"><?php esc_html_e( 'SSH Public Key', 'arv-seller' ); ?></label>
+						<textarea id="arvan_ssh_key" name="ssh_key" class="arvan-input arvan-textarea" rows="2" placeholder="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC... user@example.com"></textarea>
+					</div>
+
+					<div class="arvan-form-group" id="arvan-pwd-field" style="display: none;">
+						<label for="arvan_password" class="arvan-label"><?php esc_html_e( 'Root / Admin Password', 'arv-seller' ); ?></label>
+						<div style="display: flex; gap: 8px;">
+							<input type="text" id="arvan_password" name="password" class="arvan-input" placeholder="<?php esc_attr_e( 'Minimum 12 characters', 'arv-seller' ); ?>">
+							<button type="button" class="arvan-btn-outline" id="arvan-gen-pwd-btn"><?php esc_html_e( 'Generate', 'arv-seller' ); ?></button>
+						</div>
 					</div>
 				</div>
 			</div>
 
 		</div>
 
-		<!-- Right: Sticky Order Summary Box -->
+		<!-- Right: Sticky Live Summary & Pricing Panel -->
 		<div class="arvan-config-sidebar">
 			<div class="arvan-card arvan-summary-card">
-				<h3 class="arvan-summary-title"><?php esc_html_e( 'Summary & Cost', 'arv-seller' ); ?></h3>
+				<h3 class="arvan-summary-title"><?php esc_html_e( 'Order Summary & Cost', 'arv-seller' ); ?></h3>
 				
 				<div class="arvan-summary-row">
-					<span><?php esc_html_e( 'Location', 'arv-seller' ); ?></span>
+					<span><?php esc_html_e( 'Datacenter:', 'arv-seller' ); ?></span>
 					<strong id="summary-region">Tehran (Forough)</strong>
 				</div>
 				<div class="arvan-summary-row">
-					<span><?php esc_html_e( 'Plan', 'arv-seller' ); ?></span>
-					<strong id="summary-plan">2 vCPU / 4GB RAM</strong>
+					<span><?php esc_html_e( 'Compute Specs:', 'arv-seller' ); ?></span>
+					<strong id="summary-plan">2 vCPU / 4 GB RAM</strong>
 				</div>
 				<div class="arvan-summary-row">
-					<span><?php esc_html_e( 'Operating System', 'arv-seller' ); ?></span>
+					<span><?php esc_html_e( 'Storage Volume:', 'arv-seller' ); ?></span>
+					<strong id="summary-disk">40 GB NVMe</strong>
+				</div>
+				<div class="arvan-summary-row">
+					<span><?php esc_html_e( 'Operating System:', 'arv-seller' ); ?></span>
 					<strong id="summary-os">Ubuntu 22.04 LTS</strong>
 				</div>
 				<div class="arvan-summary-row">
-					<span><?php esc_html_e( 'Public IPv4', 'arv-seller' ); ?></span>
-					<strong>1x Dedicated (Included)</strong>
+					<span><?php esc_html_e( 'Dedicated IPv4:', 'arv-seller' ); ?></span>
+					<strong class="arvan-text-green">1x Public IP (Included)</strong>
 				</div>
 
 				<div class="arvan-summary-divider"></div>
 
 				<div class="arvan-price-breakdown">
 					<div class="arvan-price-row">
-						<span><?php esc_html_e( 'Hourly Rate:', 'arv-seller' ); ?></span>
-						<h3 class="arvan-price-val"><span id="summary-hourly">680</span> <small><?php echo esc_html( $currency ); ?>/hr</small></h3>
+						<span><?php esc_html_e( 'Hourly Burn Rate:', 'arv-seller' ); ?></span>
+						<h3 class="arvan-price-val"><span id="summary-hourly">540</span> <small><?php echo esc_html( $currency ); ?>/<?php esc_html_e( 'hr', 'arv-seller' ); ?></small></h3>
 					</div>
 					<div class="arvan-price-sub">
-						<span><?php esc_html_e( 'Est. Monthly:', 'arv-seller' ); ?></span>
-						<strong id="summary-monthly">489,600</strong> <?php echo esc_html( $currency ); ?>
+						<span><?php esc_html_e( 'Est. Monthly (720 hrs):', 'arv-seller' ); ?></span>
+						<strong id="summary-monthly">388,800</strong> <?php echo esc_html( $currency ); ?>
 					</div>
 				</div>
 
 				<div class="arvan-wallet-status-box">
 					<div class="arvan-wallet-status-header">
-						<span><?php esc_html_e( 'Your Balance:', 'arv-seller' ); ?></span>
-						<strong><?php echo esc_html( number_format( $wallet_balance ) ); ?> <?php echo esc_html( $currency ); ?></strong>
+						<span><?php esc_html_e( 'Your Available Balance:', 'arv-seller' ); ?></span>
+						<strong id="summary-wallet-balance"><?php echo esc_html( number_format( $wallet_balance ) ); ?> <?php echo esc_html( $currency ); ?></strong>
 					</div>
-					<?php if ( $wallet_balance <= 0 ) : ?>
-						<p class="arvan-warning-text"><?php esc_html_e( 'Your wallet has 0 balance. Hourly billing requires at least a small deposit.', 'arv-seller' ); ?></p>
-					<?php endif; ?>
+					<div id="arvan-balance-notice" style="<?php echo ( $wallet_balance > 0 ) ? 'display:none;' : ''; ?>">
+						<p class="arvan-warning-text"><?php esc_html_e( 'Notice: Deploying requires a minimum 24-hour run balance.', 'arv-seller' ); ?></p>
+					</div>
 				</div>
 
 				<button type="submit" class="arvan-btn-primary arvan-btn-block arvan-btn-deploy" id="arvan-deploy-btn">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
-					<?php esc_html_e( 'Deploy Cloud Server', 'arv-seller' ); ?>
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+					<span><?php esc_html_e( 'Instant Provision Cloud Server', 'arv-seller' ); ?></span>
 				</button>
 			</div>
 		</div>

@@ -1,4 +1,174 @@
-﻿/**
- * All of the CSS for your admin-specific functionality should be
- * included in this file.
+/**
+ * Arvan Reseller Admin Styles (Bi-Directional RTL/LTR & Multi-Language Support)
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+.arvan-admin-wrap {
+	max-width: 1200px;
+	margin: 20px 20px 0 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* RTL Typography & Spacing */
+.rtl .arvan-admin-wrap {
+	font-family: "Vazirmatn", "Tahoma", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	margin: 20px 0 0 20px;
+}
+
+.arvan-admin-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	background: #fff;
+	padding: 16px 24px;
+	border-radius: 8px;
+	border: 1px solid #ccd0d4;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.arvan-admin-header h1 {
+	margin: 0 0 4px 0;
+	padding: 0;
+	font-size: 20px;
+	font-weight: 700;
+	color: #1d2327;
+}
+
+.arvan-admin-kpi-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
+.arvan-kpi-card {
+	background: #fff;
+	padding: 18px 20px;
+	border-radius: 8px;
+	border: 1px solid #ccd0d4;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.arvan-kpi-title {
+	display: block;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #646970;
+	margin-bottom: 6px;
+}
+.arvan-kpi-val {
+	margin: 0;
+	font-size: 22px;
+	font-weight: 800;
+	color: #1d2327;
+}
+.arvan-kpi-val.text-green { color: #008a00; }
+.arvan-kpi-val.text-amber { color: #d97706; }
+.arvan-kpi-val.text-red { color: #dc2626; }
+
+.arvan-settings-card {
+	background: #fff;
+	padding: 24px;
+	border-radius: 8px;
+	border: 1px solid #ccd0d4;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.arvan-settings-card h2 {
+	margin-top: 0;
+	font-size: 16px;
+	font-weight: 700;
+	border-bottom: 1px solid #f0f0f1;
+	padding-bottom: 10px;
+}
+
+.arvan-links-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 15px;
+	margin-top: 15px;
+}
+.arvan-link-box {
+	background: #f8fafc;
+	padding: 14px;
+	border-radius: 6px;
+	border: 1px solid #e2e8f0;
+}
+.arvan-link-box strong {
+	display: block;
+	margin-bottom: 6px;
+	color: #0f172a;
+}
+.arvan-link-box code {
+	word-break: break-all;
+	font-size: 11px;
+}
+
+.arvan-admin-table th,
+.arvan-admin-table td {
+	vertical-align: middle;
+}
+
+.rtl .arvan-admin-table th,
+.rtl .arvan-admin-table td {
+	text-align: right;
+}
+
+.badge {
+	display: inline-block;
+	padding: 3px 8px;
+	border-radius: 4px;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+.badge-active { background: #dcfce7; color: #166534; }
+.badge-suspended { background: #fef3c7; color: #92400e; }
+.badge-stopped { background: #fee2e2; color: #991b1b; }
+
+/* Modal */
+.arvan-modal-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.6);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100000;
+}
+.arvan-modal-content {
+	background: #fff;
+	border-radius: 8px;
+	padding: 24px;
+	width: 440px;
+	max-width: 90%;
+	box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.rtl .arvan-modal-content {
+	font-family: "Vazirmatn", "Tahoma", sans-serif;
+	text-align: right;
+}
+.arvan-modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #e2e8f0;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}
+.arvan-modal-header h3 { margin: 0; font-size: 16px; font-weight: 700; }
+.arvan-modal-close { cursor: pointer; font-size: 20px; font-weight: bold; color: #94a3b8; }
+.arvan-modal-footer {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+	margin-top: 20px;
+	border-top: 1px solid #e2e8f0;
+	padding-top: 15px;
+}
+.rtl .arvan-modal-footer {
+	justify-content: flex-start;
+}

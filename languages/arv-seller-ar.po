@@ -1,0 +1,966 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-20 22:45+0330\n"
+"PO-Revision-Date: 2026-08-20 22:45+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Domain: arv-seller\n"
+
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+msgid "Cloud Server (IaaS)"
+msgstr "الخادم السحابي (IaaS)"
+
+msgid "Cloud Servers"
+msgstr "الخوادم السحابية"
+
+msgid "CDN & DNS"
+msgstr "شبكة توصيل المحتوى و DNS"
+
+msgid "Object Storage (S3)"
+msgstr "التخزين السحابي (S3)"
+
+msgid "Object Storage"
+msgstr "التخزين السحابي"
+
+msgid "Wallet:"
+msgstr "المحفظة:"
+
+msgid "Top up balance"
+msgstr "شحن الرصيد"
+
+msgid "Sign In / Register"
+msgstr "تسجيل الدخول / التسجيل"
+
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
+msgid "Powered by ArvanCloud"
+msgstr "مدعوم من آروان كلاود"
+
+msgid "All rights reserved."
+msgstr "جميع الحقوق محفوظة."
+
+msgid "Enterprise Cloud Infrastructure Powered by ArvanCloud REST API."
+msgstr "بنية تحتية سحابية للمؤسسات متصلة مباشرة بواجهة ArvanCloud API."
+
+msgid "Main Website"
+msgstr "الموقع الرئيسي"
+
+msgid "Support:"
+msgstr "الدعم الفني:"
+
+msgid "Email:"
+msgstr "البريد الإلكتروني:"
+
+msgid "Cloud Services Platform"
+msgstr "منصة الخدمات السحابية"
+
+msgid "Cloud Services Portal"
+msgstr "بوابة الخدمات السحابية"
+
+msgid "Deploy Cloud Server"
+msgstr "إنشاء خادم سحابي"
+
+msgid "Deploy Cloud Server (IaaS)"
+msgstr "إنشاء خادم سحابي (IaaS)"
+
+msgid "High performance enterprise cloud virtual machines with NVMe storage, dedicated IPv4, and 10Gbps uplinks."
+msgstr "أجهزة افتراضية سحابية عالية الأداء مع وحدات تخزين NVMe وعنوان IPv4 مخصص."
+
+msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
+msgstr "إعداد فوري على بنية آروان كلاود مع أقراص NVMe فائقة السرعة."
+
+msgid "Choose Datacenter Region"
+msgstr "اختر منطقة مركز البيانات"
+
+msgid "Select the geographical location closest to your target audience."
+msgstr "حدد الموقع الأقرب لجمهورك المستهدف."
+
+msgid "Hardware Plan & Specifications"
+msgstr "مواصفات الخادم والأجهزة"
+
+msgid "Compute resources can be dynamically scaled anytime."
+msgstr "يمكن ترقية موارد الحوسبة في أي وقت."
+
+msgid "All Plans"
+msgstr "جميع الخطط"
+
+msgid "General Purpose"
+msgstr "الاستخدام العام"
+
+msgid "Compute Optimized"
+msgstr "حوسبة مكثفة"
+
+msgid "Memory Optimized"
+msgstr "ذاكرة عالية"
+
+msgid "Popular"
+msgstr "الأكثر شعبية"
+
+msgid "Most Popular"
+msgstr "الخيار الأفضل"
+
+msgid "Processor"
+msgstr "المعالج"
+
+msgid "RAM Memory"
+msgstr "الذاكرة العشوائية"
+
+msgid "NVMe Disk"
+msgstr "قرص NVMe"
+
+msgid "hr"
+msgstr "ساعة"
+
+msgid "NVMe Fast Storage Volume"
+msgstr "مساحة تخزين NVMe فائقة السرعة"
+
+msgid "High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr)."
+msgstr "أقراص NVMe للمؤسسات قابلة للزيادة حسب الحاجة."
+
+msgid "Allocated NVMe Storage:"
+msgstr "مساحة قرص NVMe المحددة:"
+
+msgid "Operating System Image"
+msgstr "نظام التشغيل والتوزيعة"
+
+msgid "Standard cloud images optimized for immediate SSH/RDP connection."
+msgstr "صور سحابية جاهزة للاتصال الفوري عبر SSH و RDP."
+
+msgid "Select Operating System"
+msgstr "اختر نظام التشغيل"
+
+msgid "Pre-configured cloud distributions ready in under 60 seconds."
+msgstr "توزيعات سحابية جاهزة خلال أقل من 60 ثانية."
+
+msgid "Instance Access & Naming"
+msgstr "إعدادات الوصول واسم الخادم"
+
+msgid "Configure server hostname and authentication method."
+msgstr "قم بتعيين اسم المضيف وطريقة المصادقة."
+
+msgid "Server Hostname"
+msgstr "اسم مضيف الخادم"
+
+msgid "Authentication Mode:"
+msgstr "طريقة المصادقة:"
+
+msgid "SSH Public Key (Recommended)"
+msgstr "مفتاح SSH العام (موصى به)"
+
+msgid "Root Password"
+msgstr "كلمة مرور الجذر (Root)"
+
+msgid "SSH Public Key"
+msgstr "مفتاح SSH العام"
+
+msgid "Root / Admin Password"
+msgstr "كلمة مرور المدير / الجذر"
+
+msgid "Minimum 12 characters"
+msgstr "12 حرفاً على الأقل"
+
+msgid "Generate"
+msgstr "توليد تلقائي"
+
+msgid "Order Summary & Cost"
+msgstr "ملخص الطلب والتكلفة"
+
+msgid "Summary & Cost"
+msgstr "ملخص الطلب والتكلفة"
+
+msgid "Datacenter:"
+msgstr "مركز البيانات:"
+
+msgid "Location"
+msgstr "الموقع"
+
+msgid "Compute Specs:"
+msgstr "المواصفات الحسابية:"
+
+msgid "Plan"
+msgstr "الخطة المختارة"
+
+msgid "Storage Volume:"
+msgstr "سعة التخزين:"
+
+msgid "Operating System:"
+msgstr "نظام التشغيل:"
+
+msgid "Operating System"
+msgstr "نظام التشغيل"
+
+msgid "Dedicated IPv4:"
+msgstr "عنوان IPv4 مخصص:"
+
+msgid "Public IPv4"
+msgstr "عنوان IPv4 عام"
+
+msgid "1x Public IP (Included)"
+msgstr "1x عنوان IP مخصص (مشمول)"
+
+msgid "1x Dedicated (Included)"
+msgstr "1x عنوان IP مخصص (مشمول)"
+
+msgid "Hourly Burn Rate:"
+msgstr "معدل الاستهلاك بالساعة:"
+
+msgid "Hourly Rate:"
+msgstr "السعر بالساعة:"
+
+msgid "Est. Monthly (720 hrs):"
+msgstr "التقدير الشهري (720 ساعة):"
+
+msgid "Est. Monthly:"
+msgstr "التقدير الشهري:"
+
+msgid "Your Available Balance:"
+msgstr "رصيدك المتاح:"
+
+msgid "Your Balance:"
+msgstr "رصيدك الحالي:"
+
+msgid "Notice: Deploying requires a minimum 24-hour run balance."
+msgstr "تنبيه: يتطلب إنشاء الخادم رصيداً يغطي 24 ساعة تشغيل على الأقل."
+
+msgid "Instant Provision Cloud Server"
+msgstr "إنشاء الخادم السحابي فوراً"
+
+msgid "Sign in to Access Your Cloud Portal"
+msgstr "سجل الدخول للوصول للبوابة السحابية"
+
+msgid "Please sign in to access your cloud portal"
+msgstr "يرجى تسجيل الدخول للوصول إلى لوحة التحكم السحابية"
+
+msgid "Manage your virtual servers, CDN domains, S3 object storage buckets, and atomic wallet ledger in one place."
+msgstr "إدارة الخوادم السحابية ونطاقات CDN وتخزين S3 وسجل المحفظة في مكان واحد."
+
+msgid "Sign In to Your Account"
+msgstr "تسجيل الدخول إلى حسابك"
+
+msgid "Services Suspended Due to Zero Wallet Balance"
+msgstr "تم تعليق الخدمات بسبب نفاد رصيد المحفظة"
+
+msgid "According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately."
+msgstr "وفقاً لشروط إنهاء الخدمة، تم إيقاف تشغيل الخوادم مؤقتاً. يرجى شحن رصيدك لاستعادة الخدمة."
+
+msgid "Low Balance Warning"
+msgstr "تحذير: رصيد المحفظة منخفض"
+
+msgid "Available Wallet Balance"
+msgstr "رصيد المحفظة المتاح"
+
+msgid "Account Balance"
+msgstr "رصيد الحساب"
+
+msgid "Active Account"
+msgstr "حساب نشط"
+
+msgid "Healthy"
+msgstr "نشط وجيد"
+
+msgid "Suspended"
+msgstr "معلق"
+
+msgid "Burn Rate:"
+msgstr "معدل الاستهلاك:"
+
+msgid "Est. Runtime:"
+msgstr "وقت التشغيل المتوقع:"
+
+msgid "hours"
+msgstr "ساعة"
+
+msgid "Instant Online Wallet Top-Up"
+msgstr "شحن فوري للمحفظة عبر الإنترنت"
+
+msgid "Top Up Wallet Balance"
+msgstr "شحن رصيد المحفظة"
+
+msgid "Custom Amount in Toman"
+msgstr "مبلغ مخصص بالتومان"
+
+msgid "Custom Amount"
+msgstr "مبلغ مخصص"
+
+msgid "Pay with Online Gateway"
+msgstr "الدفع عبر بوابة الدفع الإلكتروني"
+
+msgid "Deploy Cloud Resources"
+msgstr "إنشاء موارد سحابية جديدة"
+
+msgid "Deploy New Service"
+msgstr "إنشاء خدمة جديدة"
+
+msgid "Provision high performance cloud resources in seconds."
+msgstr "إنشاء بنية تحتية عالية الأداء في ثوانٍ."
+
+msgid "New Cloud Server"
+msgstr "خادم سحابي جديد"
+
+msgid "High IOPS NVMe with Dedicated IP"
+msgstr "أقراص NVMe وعنوان IP مخصص"
+
+msgid "Compute, NVMe & Dedicated IP"
+msgstr "معالجة وذاكرة و IP مخصص"
+
+msgid "Connect CDN Domain"
+msgstr "ربط نطاق بشبكة CDN"
+
+msgid "Add CDN Domain"
+msgstr "إضافة نطاق CDN"
+
+msgid "DDoS Protection & Anycast DNS"
+msgstr "حماية ضد DDoS و DNS سريع"
+
+msgid "S3 Storage Bucket"
+msgstr "حاوية تخزين S3"
+
+msgid "S3 Object Storage"
+msgstr "تخزين الكائنات S3"
+
+msgid "Unlimited S3 API Compatible Bucket"
+msgstr "تخزين غير محدود متوافق مع S3"
+
+msgid "Unlimited Object Storage"
+msgstr "تخزين سحابي غير محدود للملفات"
+
+msgid "Active Cloud Servers & Virtual Machines"
+msgstr "الخوادم السحابية النشطة"
+
+msgid "Active Cloud Resources"
+msgstr "الموارد السحابية النشطة"
+
+msgid "Live instance power states, IP addresses, and real-time lifecycle controls."
+msgstr "حالة الطاقة وعناوين IP وأزرار التحكم الفوري."
+
+msgid "Instances"
+msgstr "خوادم"
+
+msgid "Resources"
+msgstr "موارد"
+
+msgid "Server Instance"
+msgstr "اسم ومعرف الخادم"
+
+msgid "Name / ID"
+msgstr "الاسم / المعرف"
+
+msgid "Assigned IP"
+msgstr "عنوان IP المخصص"
+
+msgid "Datacenter"
+msgstr "مركز البيانات"
+
+msgid "Region"
+msgstr "المنطقة"
+
+msgid "Hourly Rate"
+msgstr "السعر بالساعة"
+
+msgid "Rate (Hourly)"
+msgstr "التكلفة بالساعة"
+
+msgid "Runtime Status"
+msgstr "حالة التشغيل"
+
+msgid "Status"
+msgstr "الحالة"
+
+msgid "Power Lifecycle"
+msgstr "التحكم بالطاقة"
+
+msgid "Actions"
+msgstr "الإجراءات"
+
+msgid "Running"
+msgstr "قيد التشغيل"
+
+msgid "Suspended (0 Bal)"
+msgstr "معلق (نفاد الرصيد)"
+
+msgid "Suspended / Off"
+msgstr "معلق / متوقف"
+
+msgid "Powered Off"
+msgstr "متوقف"
+
+msgid "Stop"
+msgstr "إيقاف"
+
+msgid "Reboot"
+msgstr "إعادة تشغيل"
+
+msgid "Power On"
+msgstr "تشغيل"
+
+msgid "No active cloud servers deployed yet"
+msgstr "لا توجد خوادم سحابية نشطة حتى الآن"
+
+msgid "No active cloud resources found"
+msgstr "لم يتم العثور على خدمات نشطة"
+
+msgid "Deploy First Server"
+msgstr "إنشاء أول خادم سحابي"
+
+msgid "Deploy First Cloud Server"
+msgstr "إنشاء أول خادم سحابي"
+
+msgid "Wallet Atomic Ledger Transactions"
+msgstr "سجل معاملات المحفظة المالية"
+
+msgid "Recent Ledger Transactions"
+msgstr "أحدث المعاملات المالية"
+
+msgid "Date & Time"
+msgstr "التاريخ والوقت"
+
+msgid "Date"
+msgstr "التاريخ"
+
+msgid "Transaction Type"
+msgstr "نوع المعاملة"
+
+msgid "Type"
+msgstr "النوع"
+
+msgid "Description / Reference ID"
+msgstr "الوصف ورقم المرجع"
+
+msgid "Description / Reference"
+msgstr "الوصف والرقم المرجعي"
+
+msgid "Amount"
+msgstr "المبلغ"
+
+msgid "Balance Snapshot"
+msgstr "الرصيد بعد المعاملة"
+
+msgid "Balance After"
+msgstr "الرصيد بعد العملية"
+
+msgid "No transactions recorded in wallet ledger yet."
+msgstr "لا توجد معاملات مسجلة في المحفظة حتى الآن."
+
+msgid "No transactions recorded yet."
+msgstr "لا توجد معاملات مسجلة حتى الآن."
+
+msgid "Global CDN & Anycast Edge DNS"
+msgstr "شبكة CDN العالمية وخوادم Anycast DNS"
+
+msgid "CDN & Anycast DNS Management"
+msgstr "إدارة شبكة CDN ونظام DNS"
+
+msgid "Accelerate your websites globally with edge caching, SSL termination, and Layer 7 DDoS mitigation across 40+ PoPs."
+msgstr "تسريع المواقع عالمياً والحماية من هجمات الحرمان من الخدمة DDoS."
+
+msgid "Connect New Domain to Edge CDN"
+msgstr "ربط نطاق جديد بشبكة CDN"
+
+msgid "Connect New Domain to Global CDN"
+msgstr "ربط نطاق جديد بشبكة CDN"
+
+msgid "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
+msgstr "أدخل النطاق الرئيسي أو الفرعي لإنشاء خوادم الأسماء تلقائياً."
+
+msgid "Activate Edge CDN"
+msgstr "تفعيل شبكة CDN للنطاق"
+
+msgid "Activate CDN"
+msgstr "تفعيل CDN"
+
+msgid "Connected CDN Domains"
+msgstr "النطاقات المتصلة بـ CDN"
+
+msgid "Active CDN Domains"
+msgstr "النطاقات النشطة بـ CDN"
+
+msgid "Manage DNS zones, edge caching, and SSL certificates."
+msgstr "إدارة سجلات DNS والذاكرة المؤقتة وشهادات SSL."
+
+msgid "Domains"
+msgstr "نطاقات"
+
+msgid "Domain Name"
+msgstr "اسم النطاق"
+
+msgid "Assigned Nameservers"
+msgstr "خوادم الأسماء المخصصة"
+
+msgid "SSL / TLS Mode"
+msgstr "وضع شهادة SSL"
+
+msgid "SSL Status"
+msgstr "حالة SSL"
+
+msgid "Edge Caching"
+msgstr "التخزين المؤقت"
+
+msgid "DNS Management"
+msgstr "إدارة سجلات DNS"
+
+msgid "Managed Let's Encrypt (Active)"
+msgstr "شهادة SSL مدارة تلقائياً (نشطة)"
+
+msgid "Purge Edge Cache"
+msgstr "مسح الذاكرة المؤقتة للـ CDN"
+
+msgid "Protected"
+msgstr "محمي بـ CDN"
+
+msgid "Active"
+msgstr "نشط"
+
+msgid "DNS Zone Editor"
+msgstr "محرر سجلات DNS"
+
+msgid "DNS Records"
+msgstr "سجلات DNS"
+
+msgid "No CDN domains configured yet"
+msgstr "لم يتم ربط أي نطاق بـ CDN حتى الآن"
+
+msgid "No CDN domains added yet. Enter a domain name above to get started."
+msgstr "لم تتم إضافة أي نطاق. أدخل نطاقك أعلاه للبدء."
+
+msgid "DNS Zone Records:"
+msgstr "سجلات DNS للنطاق:"
+
+msgid "Record Type"
+msgstr "نوع السجل"
+
+msgid "Name / Host"
+msgstr "الاسم / المضيف"
+
+msgid "Target Value / IP"
+msgstr "القيمة / عنوان IP"
+
+msgid "Cloud Proxy"
+msgstr "بروكسي الحماية السحابية"
+
+msgid "Add Record"
+msgstr "إضافة سجل"
+
+msgid "Value"
+msgstr "القيمة"
+
+msgid "Proxy"
+msgstr "البروكسي"
+
+msgid "Action"
+msgstr "الإجراء"
+
+msgid "Loading records..."
+msgstr "جاري تحميل السجلات..."
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "S3-Compatible Object Storage"
+msgstr "تخزين الكائنات السحابي المتوافق مع S3"
+
+msgid "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
+msgstr "تخزين سحابي غير محدود متوافق تماماً مع واجهة AWS S3 ونقل مجاني للبيانات الواردة."
+
+msgid "Create New S3 Storage Bucket"
+msgstr "إنشاء حاوية جديدة (S3 Bucket)"
+
+msgid "Create New Storage Bucket"
+msgstr "إنشاء حاوية تخزين"
+
+msgid "Bucket names must be unique, lowercase alphanumeric characters with hyphens only."
+msgstr "يجب أن يكون اسم الحاوية فريداً وبحروف إنجليزية صغيرة وأرقام فقط."
+
+msgid "Create S3 Bucket"
+msgstr "إنشاء الحاوية"
+
+msgid "Create Bucket"
+msgstr "إنشاء الحاوية"
+
+msgid "S3 API Credentials"
+msgstr "مفاتيح الوصول لواجهة S3 API"
+
+msgid "Generate Access Key ID and Secret Access Key to connect via AWS SDK, Rclone, or backup plugins."
+msgstr "توليد مفاتيح Access Key و Secret Key للربط عبر التطبيقات وإضافات ووردبريس."
+
+msgid "Generate S3 Access Keys"
+msgstr "توليد مفاتيح وصول S3"
+
+msgid "Your Storage Buckets"
+msgstr "حاويات التخزين الخاصة بك"
+
+msgid "Object storage buckets provisioned on ArvanCloud cluster."
+msgstr "حاويات التخزين المنشأة على خوادم آروان كلاود."
+
+msgid "Buckets"
+msgstr "حاويات"
+
+msgid "Bucket Name"
+msgstr "اسم الحاوية"
+
+msgid "S3 API Endpoint"
+msgstr "عنوان Endpoint لواجهة S3"
+
+msgid "Endpoint (S3 API)"
+msgstr "عنوان Endpoint"
+
+msgid "Cluster Region"
+msgstr "منطقة الخوادم"
+
+msgid "Rate (Monthly)"
+msgstr "التكلفة الشهرية"
+
+msgid "Connection Info"
+msgstr "معلومات الربط"
+
+msgid "View Setup Snippets"
+msgstr "أمثلة الإعداد والربط"
+
+msgid "Access Keys"
+msgstr "مفاتيح الوصول"
+
+msgid "No storage buckets created yet"
+msgstr "لم يتم إنشاء أي حاوية تخزين حتى الآن"
+
+msgid "No storage buckets created yet. Create your first bucket above."
+msgstr "لا توجد حاويات بعد. أنشئ حاويتك الأولى من النموذج أعلاه."
+
+msgid "S3 Storage API Credentials & Setup"
+msgstr "بيانات اعتماد وإعداد تخزين S3"
+
+msgid "S3 Endpoint URL:"
+msgstr "رابط Endpoint للتخزين:"
+
+msgid "Access Key ID:"
+msgstr "معرف المفتاح (Access Key):"
+
+msgid "Secret Access Key:"
+msgstr "المفتاح السري (Secret Key):"
+
+msgid "Copy"
+msgstr "نسخ"
+
+msgid "AWS CLI & Rclone Configuration Example"
+msgstr "نموذج الإعداد عبر AWS CLI و Rclone"
+
+msgid "Quick Wallet Deposit"
+msgstr "شحن سريع للمحفظة"
+
+msgid "Select an amount or enter custom deposit to instantly top up your wallet:"
+msgstr "حدد المبلغ أو أدخل مبلغاً مخصصاً لشحن محفظتك فوراً:"
+
+msgid "Amount in Toman:"
+msgstr "المبلغ بالتومان:"
+
+msgid "Proceed to Payment"
+msgstr "المتابعة والدفع"
+
+msgid "Permanently Destroy Server?"
+msgstr "هل أنت متأكد من حذف هذا الخادم نهائياً؟"
+
+msgid "Warning: This action is irreversible!"
+msgstr "تحذير: هذا الإجراء لا يمكن التراجع عنه!"
+
+msgid "All data, NVMe storage disks, and attached network IP addresses on ArvanCloud infrastructure will be permanently erased."
+msgstr "سيتم مسح جميع البيانات وأقراص NVMe وعناوين IP المرتبطة نهائياً."
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Confirm Permanent Deletion"
+msgstr "تأكيد الحذف النهائي"
+
+msgid "ArvanCloud Reseller"
+msgstr "وكيل آروان كلاود"
+
+msgid "Arvan Reseller"
+msgstr "متجر آروان"
+
+msgid "Settings & API"
+msgstr "الإعدادات وواجهة API"
+
+msgid "Settings"
+msgstr "الإعدادات"
+
+msgid "Cloud Resources"
+msgstr "الموارد السحابية"
+
+msgid "All Resources"
+msgstr "إدارة الموارد"
+
+msgid "Wallets & Ledger"
+msgstr "المحافظ وسجل المعاملات"
+
+msgid "Wallets Ledger"
+msgstr "سجل المحافظ"
+
+msgid "ArvanCloud Reseller Settings & Monetization"
+msgstr "إعدادات وكالة وأرباح آروان كلاود"
+
+msgid "Configure your ArvanCloud master API credentials, pricing markup margins, white-label branding, and sandbox mode."
+msgstr "تهيئة بيانات اعتماد API الرئيسية وهامش الربح والعلامة التجارية والوضع التجريبي."
+
+msgid "1. ArvanCloud API Authentication"
+msgstr "1. المصادقة عبر واجهة ArvanCloud API"
+
+msgid "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
+msgstr "أدخل مفتاح API لحساب آروان كلاود الرئيسي. سيتم إنشاء جميع موارد العملاء ضمن هذا الحساب."
+
+msgid "ArvanCloud API Key"
+msgstr "مفتاح API الخاص بـ ArvanCloud"
+
+msgid "Test Connection"
+msgstr "اختبار الاتصال"
+
+msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
+msgstr "احصل على مفتاح API من لوحة مستخدم آروان كلاود > الملف الشخصي > مفاتيح API."
+
+msgid "Sandbox / Demo Mode"
+msgstr "الوضع التجريبي (Sandbox)"
+
+msgid "Enable Sandbox / Mock Fallback Mode"
+msgstr "تفعيل الوضع التجريبي التفاعلي (Mock)"
+
+msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
+msgstr "عند تفعيله، يتيح الاختبار الفوري والإنشاء التجريبي وشحن الرصيد دون الاتصال بالبنية الحقيقية."
+
+msgid "2. Dynamic Pricing & Reseller Markup Engine"
+msgstr "2. محرك التسعير الديناميكي وهامش الربح"
+
+msgid "Configure profit margins automatically calculated on top of wholesale ArvanCloud infrastructure rates."
+msgstr "تهيئة هوامش الربح المحتسبة تلقائياً فوق أسعار الجملة للبنية التحتية."
+
+msgid "Markup Percentage (%)"
+msgstr "نسبة هامش الربح (%)"
+
+msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
+msgstr "مثال: 20% ربح يحول سعر 450 تومان/ساعة إلى 540 تومان/ساعة للعميل."
+
+msgid "Fixed Margin Addition (Toman)"
+msgstr "مبلغ الربح الثابت المضاف (تومان)"
+
+msgid "Optional fixed addition added after percentage markup calculation."
+msgstr "مبلغ ثابت اختياري يضاف بعد احتساب النسبة المئوية."
+
+msgid "Store Currency"
+msgstr "عملة المتجر"
+
+msgid "Toman (IRT)"
+msgstr "تومان (IRT)"
+
+msgid "Rial (IRR)"
+msgstr "ريال (IRR)"
+
+msgid "US Dollar (USD)"
+msgstr "دولار أمريكي (USD)"
+
+msgid "Default Datacenter Region"
+msgstr "منطقة مركز البيانات الافتراضية"
+
+msgid "3. Storefront White-Label Branding"
+msgstr "3. العلامة التجارية للمتجر"
+
+msgid "Customization parameters injected into the standalone virtual canvas header and footer."
+msgstr "معلومات العلامة التجارية المعروضة في رأس وتذييل البوابة السحابية المستقلة."
+
+msgid "Reseller Brand / Store Name"
+msgstr "اسم المتجر / العلامة التجارية"
+
+msgid "Support Contact Email"
+msgstr "البريد الإلكتروني للدعم"
+
+msgid "Support Phone Number"
+msgstr "رقم هاتف الدعم"
+
+msgid "Save All Reseller Settings"
+msgstr "حفظ جميع إعدادات الوكالة"
+
+msgid "Virtual Storefront Quick Links (Theme Isolated)"
+msgstr "روابط سريعة للمتجر السحابي (مستقل عن القالب)"
+
+msgid "Access standalone storefront and customer portal pages:"
+msgstr "الوصول المباشر إلى صفحات المتجر ولوحة تحكم العملاء:"
+
+msgid "All Provisioned Cloud Resources"
+msgstr "جميع الموارد السحابية المنشأة"
+
+msgid "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
+msgstr "المراقبة والتحكم الكامل في الخوادم السحابية ونطاقات CDN وتخزين S3 للعملاء."
+
+msgid "Run Metering Cycle Now"
+msgstr "تشغيل دورة المحاسبة فوراً"
+
+msgid "Total Cloud Instances"
+msgstr "إجمالي الخوادم السحابية"
+
+msgid "Active / Running"
+msgstr "نشط وقيد التشغيل"
+
+msgid "Suspended (0 Balance)"
+msgstr "معلق (رصيد صفر)"
+
+msgid "Monthly Run Rate (MRR)"
+msgstr "الإيراد الشهري المتوقع (MRR)"
+
+msgid "Customer"
+msgstr "العميل"
+
+msgid "Resource Name"
+msgstr "اسم المورد"
+
+msgid "Service"
+msgstr "نوع الخدمة"
+
+msgid "Arvan UUID / Identifier"
+msgstr "معرف UUID آروان"
+
+msgid "Last Metered"
+msgstr "آخر تدقيق واحتساب"
+
+msgid "Emergency Actions"
+msgstr "إجراءات الطوارئ"
+
+msgid "Power Off"
+msgstr "إيقاف التشغيل"
+
+msgid "Purge"
+msgstr "حذف نهائي"
+
+msgid "No resources deployed yet."
+msgstr "لم يتم إنشاء أي موارد بعد."
+
+msgid "Customer Wallets & Ledger Audit"
+msgstr "تدقيق محافظ العملاء وسجل المعاملات"
+
+msgid "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
+msgstr "مراقبة فورية للعمليات المالية وأرصدة العملاء مع أدوات التعديل اليدوي."
+
+msgid "Total Active Wallets"
+msgstr "إجمالي المحافظ النشطة"
+
+msgid "Total Outstanding Credit"
+msgstr "إجمالي أرصدة العملاء المتبقية"
+
+msgid "Cumulative Deposits"
+msgstr "إجمالي الإيداعات التراكمية"
+
+msgid "Total Metered Burn"
+msgstr "إجمالي الاستهلاك المحسوب"
+
+msgid "Wallet ID"
+msgstr "معرف المحفظة"
+
+msgid "Customer Name"
+msgstr "اسم العميل"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Available Balance"
+msgstr "الرصيد المتاح"
+
+msgid "Hourly Burn Rate"
+msgstr "معدل الاستهلاك بالساعة"
+
+msgid "Created At"
+msgstr "تاريخ الإنشاء"
+
+msgid "Ledger Actions"
+msgstr "إجراءات السجل"
+
+msgid "Adjust Balance"
+msgstr "تعديل الرصيد"
+
+msgid "No customer wallets initialized yet."
+msgstr "لم يتم تفعيل أي محافظ عملاء بعد."
+
+msgid "Manual Ledger Adjustment"
+msgstr "تعديل رصيد المحفظة يدوياً"
+
+msgid "Adjustment Type:"
+msgstr "نوع العملية:"
+
+msgid "Credit (+ Deposit Funds)"
+msgstr "إيداع (+ زيادة الرصيد)"
+
+msgid "Debit (- Deduct Funds)"
+msgstr "خصم (- إنقاص الرصيد)"
+
+msgid "Amount (Toman):"
+msgstr "المبلغ (تومان):"
+
+msgid "Reason / Audit Note:"
+msgstr "سبب التعديل / ملاحظة التدقيق:"
+
+msgid "Apply Adjustment"
+msgstr "تطبيق التعديل"
+
+msgid "Testing connection to ArvanCloud API..."
+msgstr "جارٍ اختبار الاتصال بواجهة ArvanCloud API..."
+
+msgid "Customer wallet balance updated successfully."
+msgstr "تم تحديث رصيد محفظة العميل بنجاح."
+
+msgid "Action completed successfully."
+msgstr "تم تنفيذ الإجراء بنجاح."
+
+msgid "Manual metering cycle completed."
+msgstr "اكتملت دورة المحاسبة واحتساب الاستهلاك اليدوية."
+
+msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
+msgstr "هل أنت متأكد من رغبتك في حذف هذا المورد نهائياً من آروان كلاود؟"
+
+msgid "Permission denied."
+msgstr "تم رفض الإذن (عدم توفر الصلاحية)."
+
+msgid "Invalid user ID or amount."
+msgstr "معرف المستخدم أو المبلغ غير صالح."
+
+msgid "Balance adjusted successfully."
+msgstr "تم تعديل الرصيد بنجاح."
+
+msgid "Resource not found."
+msgstr "المورد غير موجود."
+
+msgid "Instance powered off by administrator."
+msgstr "تم إيقاف تشغيل الخادم بواسطة المسؤول."
+
+msgid "Instance purged by administrator."
+msgstr "تم حذف الخادم نهائياً بواسطة المسؤول."
+
+msgid "Unknown admin action."
+msgstr "إجراء إداري غير معروف."
+
+msgid "Connected successfully to ArvanCloud infrastructure."
+msgstr "تم الاتصال بالبنية التحتية لـ آروان كلاود بنجاح."
+
+msgid "Network error while testing connection."
+msgstr "خطأ في الشبكة أثناء اختبار الاتصال."
+
+msgid "Network error."
+msgstr "خطأ في الشبكة."
+
+msgid "Applying..."
+msgstr "جارٍ التطبيق..."
+
+msgid "Running Metering..."
+msgstr "جارٍ تشغيل دورة المحاسبة..."
+
+msgid "Adjust Wallet Balance: "
+msgstr "تعديل رصيد المحفظة: "
+
+msgid "Loading ArvanCloud Services Canvas..."
+msgstr "جارٍ تحميل منصة الخدمات السحابية لأروان..."
+
+msgid "Loading ArvanCloud Management Portal..."
+msgstr "جارٍ تحميل بوابة إدارة موزع أروان كلاود..."
+

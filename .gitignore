@@ -24,3 +24,6 @@ Thumbs.db
 .cache/
 node_modules/
 vendor/
+/dist/
+
+

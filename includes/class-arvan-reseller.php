@@ -85,6 +85,7 @@ class Arvan_Reseller {
 	 * Load all core dependencies and instances.
 	 */
 	private function load_dependencies() {
+		require_once plugin_dir_path( __FILE__ ) . 'class-arv-seller-i18n.php';
 		require_once plugin_dir_path( __FILE__ ) . 'class-arvan-loader.php';
 		require_once plugin_dir_path( __FILE__ ) . 'class-arvan-api-client.php';
 		require_once plugin_dir_path( __FILE__ ) . 'class-arvan-wallet.php';
@@ -92,6 +93,9 @@ class Arvan_Reseller {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-arvan-admin.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-arvan-public.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-arvan-gateway.php';
+
+		$i18n = new Arv_Seller_i18n();
+		$i18n->init();
 
 		$this->loader   = new Arvan_Loader();
 		$this->admin    = new Arvan_Admin( $this->get_plugin_name(), $this->get_version() );
@@ -105,6 +109,7 @@ class Arvan_Reseller {
 	private function define_admin_hooks() {
 		$this->loader->add_action( 'admin_menu', $this->admin, 'add_admin_menu' );
 		$this->loader->add_action( 'admin_init', $this->admin, 'register_settings' );
+		$this->loader->add_filter( 'script_loader_tag', $this->admin, 'filter_script_loader_tag', 10, 3 );
 	}
 
 	/**
@@ -115,6 +120,7 @@ class Arvan_Reseller {
 		$this->loader->add_filter( 'query_vars', $this->public, 'register_query_vars' );
 		$this->loader->add_filter( 'template_include', $this->public, 'handle_virtual_routing', 99 );
 		$this->loader->add_action( 'wp_enqueue_scripts', $this->public, 'enqueue_assets' );
+		$this->loader->add_filter( 'script_loader_tag', $this->public, 'filter_script_loader_tag', 10, 3 );
 	}
 
 	/**

@@ -1,31 +1,25 @@
-﻿<?php
-
+<?php
 /**
  * Fired when the plugin is uninstalled.
  *
- * When populating this file, consider the following flow
- * of control:
- *
- * - This method should be static
- * - Check if the $_REQUEST content actually is the plugin name
- * - Run an admin referrer check to make sure it goes through authentication
- * - Verify the output of $_GET makes sense
- * - Repeat with other user roles. Best directly by using the links/query string parameters.
- * - Repeat things for multisite. Once for a single site in the network, once sitewide.
- *
- * This file may be updated more in future version of the Boilerplate; however, this is the
- * general skeleton and outline for how the file should work.
- *
- * For more information, see the following discussion:
- * https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate/pull/123#issuecomment-28541913
- *
- * @link       http://example.com
- * @since      1.0.0
- *
- * @package    Arv_Seller
+ * @package    ArvanCloud_Reseller
  */
 
 // If uninstall not called from WordPress, then exit.
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
+
+// Clear unscheduled cron jobs
+wp_clear_scheduled_hook( 'arvan_hourly_metering_cron' );
+
+// Optionally clean plugin options
+delete_option( 'arvan_api_key' );
+delete_option( 'arvan_markup_percentage' );
+delete_option( 'arvan_fixed_margin' );
+delete_option( 'arvan_currency' );
+delete_option( 'arvan_default_region' );
+delete_option( 'arvan_store_name' );
+delete_option( 'arvan_support_email' );
+delete_option( 'arvan_support_phone' );
+delete_option( 'arvan_sandbox_mode' );

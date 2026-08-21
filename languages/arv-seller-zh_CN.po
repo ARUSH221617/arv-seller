@@ -1,0 +1,966 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-20 22:45+0330\n"
+"PO-Revision-Date: 2026-08-20 22:45+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Domain: arv-seller\n"
+
+msgid "Dashboard"
+msgstr "控制面板"
+
+msgid "Cloud Server (IaaS)"
+msgstr "云服务器 (IaaS)"
+
+msgid "Cloud Servers"
+msgstr "云服务器"
+
+msgid "CDN & DNS"
+msgstr "全球CDN与DNS"
+
+msgid "Object Storage (S3)"
+msgstr "对象存储 (S3)"
+
+msgid "Object Storage"
+msgstr "对象存储"
+
+msgid "Wallet:"
+msgstr "电子钱包:"
+
+msgid "Top up balance"
+msgstr "充值余额"
+
+msgid "Sign In / Register"
+msgstr "登录 / 注册"
+
+msgid "Logout"
+msgstr "退出登录"
+
+msgid "Powered by ArvanCloud"
+msgstr "基于 ArvanCloud 云基础设施"
+
+msgid "All rights reserved."
+msgstr "保留所有权利。"
+
+msgid "Enterprise Cloud Infrastructure Powered by ArvanCloud REST API."
+msgstr "直连 ArvanCloud REST API 的企业级云平台。"
+
+msgid "Main Website"
+msgstr "返回官网"
+
+msgid "Support:"
+msgstr "客服支持:"
+
+msgid "Email:"
+msgstr "电子邮箱:"
+
+msgid "Cloud Services Platform"
+msgstr "企业级云服务平台"
+
+msgid "Cloud Services Portal"
+msgstr "云服务管理门户"
+
+msgid "Deploy Cloud Server"
+msgstr "部署云服务器"
+
+msgid "Deploy Cloud Server (IaaS)"
+msgstr "部署云服务器 (IaaS)"
+
+msgid "High performance enterprise cloud virtual machines with NVMe storage, dedicated IPv4, and 10Gbps uplinks."
+msgstr "配备企业级NVMe固态硬盘、独享IPv4和10Gbps网络的高性能云虚拟机。"
+
+msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
+msgstr "基于 ArvanCloud 基础设施即刻交付，独享IP与极速网络。"
+
+msgid "Choose Datacenter Region"
+msgstr "选择数据中心节点"
+
+msgid "Select the geographical location closest to your target audience."
+msgstr "选择最靠近目标用户群体的机房位置。"
+
+msgid "Hardware Plan & Specifications"
+msgstr "硬件规格与算力配置"
+
+msgid "Compute resources can be dynamically scaled anytime."
+msgstr "计算与内存资源支持随时弹性升降级。"
+
+msgid "All Plans"
+msgstr "全部规格"
+
+msgid "General Purpose"
+msgstr "通用型"
+
+msgid "Compute Optimized"
+msgstr "计算型"
+
+msgid "Memory Optimized"
+msgstr "内存型"
+
+msgid "Popular"
+msgstr "热销推荐"
+
+msgid "Most Popular"
+msgstr "最佳推荐"
+
+msgid "Processor"
+msgstr "处理器核心"
+
+msgid "RAM Memory"
+msgstr "运行内存"
+
+msgid "NVMe Disk"
+msgstr "NVMe 硬盘"
+
+msgid "hr"
+msgstr "小时"
+
+msgid "NVMe Fast Storage Volume"
+msgstr "NVMe 极速数据盘容量"
+
+msgid "High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr)."
+msgstr "企业级超高 IOPS 固态硬盘，支持按需扩展。"
+
+msgid "Allocated NVMe Storage:"
+msgstr "已配置存储容量:"
+
+msgid "Operating System Image"
+msgstr "操作系统与镜像"
+
+msgid "Standard cloud images optimized for immediate SSH/RDP connection."
+msgstr "经官方优化的标准 Linux/Windows 系统镜像。"
+
+msgid "Select Operating System"
+msgstr "选择操作系统镜像"
+
+msgid "Pre-configured cloud distributions ready in under 60 seconds."
+msgstr "预配置云镜像，60秒内快速启动。"
+
+msgid "Instance Access & Naming"
+msgstr "主机名称与访问凭证"
+
+msgid "Configure server hostname and authentication method."
+msgstr "设置主机名称与登录认证凭据。"
+
+msgid "Server Hostname"
+msgstr "主机名称 (Hostname)"
+
+msgid "Authentication Mode:"
+msgstr "认证登录方式:"
+
+msgid "SSH Public Key (Recommended)"
+msgstr "SSH 公钥认证 (推荐)"
+
+msgid "Root Password"
+msgstr "Root 用户密码"
+
+msgid "SSH Public Key"
+msgstr "SSH 公钥"
+
+msgid "Root / Admin Password"
+msgstr "Root / 管理员登录密码"
+
+msgid "Minimum 12 characters"
+msgstr "至少12位强密码"
+
+msgid "Generate"
+msgstr "自动生成"
+
+msgid "Order Summary & Cost"
+msgstr "订单明细与费用预估"
+
+msgid "Summary & Cost"
+msgstr "配置摘要与价格"
+
+msgid "Datacenter:"
+msgstr "数据中心:"
+
+msgid "Location"
+msgstr "位置"
+
+msgid "Compute Specs:"
+msgstr "硬件规格:"
+
+msgid "Plan"
+msgstr "选定配置"
+
+msgid "Storage Volume:"
+msgstr "存储容量:"
+
+msgid "Operating System:"
+msgstr "操作系统:"
+
+msgid "Operating System"
+msgstr "操作系统"
+
+msgid "Dedicated IPv4:"
+msgstr "独享 IPv4:"
+
+msgid "Public IPv4"
+msgstr "公网 IPv4"
+
+msgid "1x Public IP (Included)"
+msgstr "1个独享公网 IP (已包含)"
+
+msgid "1x Dedicated (Included)"
+msgstr "1个独享公网 IP (已包含)"
+
+msgid "Hourly Burn Rate:"
+msgstr "每小时费用:"
+
+msgid "Hourly Rate:"
+msgstr "每小时单价:"
+
+msgid "Est. Monthly (720 hrs):"
+msgstr "月度预估费用 (720小时):"
+
+msgid "Est. Monthly:"
+msgstr "月度预估费用:"
+
+msgid "Your Available Balance:"
+msgstr "您的可用钱包余额:"
+
+msgid "Your Balance:"
+msgstr "当前余额:"
+
+msgid "Notice: Deploying requires a minimum 24-hour run balance."
+msgstr "提示: 创建实例需钱包余额满足至少24小时运行费用。"
+
+msgid "Instant Provision Cloud Server"
+msgstr "立即开通云服务器"
+
+msgid "Sign in to Access Your Cloud Portal"
+msgstr "请登录以访问云管理门户"
+
+msgid "Please sign in to access your cloud portal"
+msgstr "登录后即可管理您的云服务器、CDN域名与存储桶。"
+
+msgid "Manage your virtual servers, CDN domains, S3 object storage buckets, and atomic wallet ledger in one place."
+msgstr "统一管理您的云主机、全球CDN加速、S3对象存储与充值账单。"
+
+msgid "Sign In to Your Account"
+msgstr "立即登录账户"
+
+msgid "Services Suspended Due to Zero Wallet Balance"
+msgstr "因钱包余额不足，服务已被暂时停用"
+
+msgid "According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately."
+msgstr "根据服务终止政策，实例已被关机。充值后即可随时恢复运行。"
+
+msgid "Low Balance Warning"
+msgstr "钱包余额不足预警"
+
+msgid "Available Wallet Balance"
+msgstr "当前可用钱包余额"
+
+msgid "Account Balance"
+msgstr "账户总余额"
+
+msgid "Active Account"
+msgstr "正常运行"
+
+msgid "Healthy"
+msgstr "服务正常"
+
+msgid "Suspended"
+msgstr "已停用"
+
+msgid "Burn Rate:"
+msgstr "每小时消费:"
+
+msgid "Est. Runtime:"
+msgstr "预计可运行时间:"
+
+msgid "hours"
+msgstr "小时"
+
+msgid "Instant Online Wallet Top-Up"
+msgstr "在线即时钱包充值"
+
+msgid "Top Up Wallet Balance"
+msgstr "充值钱包余额"
+
+msgid "Custom Amount in Toman"
+msgstr "自定义充值金额 (Toman)"
+
+msgid "Custom Amount"
+msgstr "自定义金额"
+
+msgid "Pay with Online Gateway"
+msgstr "前往在线网关安全支付"
+
+msgid "Deploy Cloud Resources"
+msgstr "开通新云端资源"
+
+msgid "Deploy New Service"
+msgstr "开通新服务"
+
+msgid "Provision high performance cloud resources in seconds."
+msgstr "秒级交付高性能云端计算与网络资源。"
+
+msgid "New Cloud Server"
+msgstr "新建云服务器"
+
+msgid "High IOPS NVMe with Dedicated IP"
+msgstr "NVMe 高速盘与独享 IP"
+
+msgid "Compute, NVMe & Dedicated IP"
+msgstr "算力、NVMe 与独享公网 IP"
+
+msgid "Connect CDN Domain"
+msgstr "接入 CDN 加速域名"
+
+msgid "Add CDN Domain"
+msgstr "添加 CDN 域名"
+
+msgid "DDoS Protection & Anycast DNS"
+msgstr "DDoS 防护与 Anycast DNS"
+
+msgid "S3 Storage Bucket"
+msgstr "S3 对象存储桶"
+
+msgid "S3 Object Storage"
+msgstr "S3 对象存储"
+
+msgid "Unlimited S3 API Compatible Bucket"
+msgstr "兼容 S3 协议的无限存储空间"
+
+msgid "Unlimited Object Storage"
+msgstr "海量非结构化数据对象存储"
+
+msgid "Active Cloud Servers & Virtual Machines"
+msgstr "运行中的云服务器实例"
+
+msgid "Active Cloud Resources"
+msgstr "已开通的云资源"
+
+msgid "Live instance power states, IP addresses, and real-time lifecycle controls."
+msgstr "实时监控实例电源状态、公网IP与开关机操作。"
+
+msgid "Instances"
+msgstr "台实例"
+
+msgid "Resources"
+msgstr "项资源"
+
+msgid "Server Instance"
+msgstr "实例名称与ID"
+
+msgid "Name / ID"
+msgstr "名称 / ID"
+
+msgid "Assigned IP"
+msgstr "已分配 IP"
+
+msgid "Datacenter"
+msgstr "机房节点"
+
+msgid "Region"
+msgstr "区域"
+
+msgid "Hourly Rate"
+msgstr "小时费率"
+
+msgid "Rate (Hourly)"
+msgstr "小时单价"
+
+msgid "Runtime Status"
+msgstr "运行状态"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Power Lifecycle"
+msgstr "电源管理"
+
+msgid "Actions"
+msgstr "操作"
+
+msgid "Running"
+msgstr "运行中"
+
+msgid "Suspended (0 Bal)"
+msgstr "已暂停 (欠费)"
+
+msgid "Suspended / Off"
+msgstr "欠费停机"
+
+msgid "Powered Off"
+msgstr "已关机"
+
+msgid "Stop"
+msgstr "关机"
+
+msgid "Reboot"
+msgstr "重启"
+
+msgid "Power On"
+msgstr "开机"
+
+msgid "No active cloud servers deployed yet"
+msgstr "当前暂未创建任何云服务器实例"
+
+msgid "No active cloud resources found"
+msgstr "暂无活跃的云资源"
+
+msgid "Deploy First Server"
+msgstr "立即创建第一台云服务器"
+
+msgid "Deploy First Cloud Server"
+msgstr "立即创建第一台云服务器"
+
+msgid "Wallet Atomic Ledger Transactions"
+msgstr "电子钱包明细流水账本"
+
+msgid "Recent Ledger Transactions"
+msgstr "近期交易流水明细"
+
+msgid "Date & Time"
+msgstr "交易时间"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Transaction Type"
+msgstr "交易类型"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Description / Reference ID"
+msgstr "说明 / 交易流水号"
+
+msgid "Description / Reference"
+msgstr "交易说明"
+
+msgid "Amount"
+msgstr "金额"
+
+msgid "Balance Snapshot"
+msgstr "交易后结余"
+
+msgid "Balance After"
+msgstr "账户余额"
+
+msgid "No transactions recorded in wallet ledger yet."
+msgstr "暂无交易流水记录。"
+
+msgid "No transactions recorded yet."
+msgstr "暂无交易记录。"
+
+msgid "Global CDN & Anycast Edge DNS"
+msgstr "全球 CDN 加速与 Anycast DNS 解析"
+
+msgid "CDN & Anycast DNS Management"
+msgstr "CDN 与 Anycast DNS 管理"
+
+msgid "Accelerate your websites globally with edge caching, SSL termination, and Layer 7 DDoS mitigation across 40+ PoPs."
+msgstr "通过40+全球边缘节点实现网站访问加速、智能缓存与DDoS安全防护。"
+
+msgid "Connect New Domain to Edge CDN"
+msgstr "添加新域名接入 CDN 加速"
+
+msgid "Connect New Domain to Global CDN"
+msgstr "添加新域名接入 CDN 加速"
+
+msgid "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
+msgstr "输入您的主域名或子域名即可自动分配解析 Nameserver。"
+
+msgid "Activate Edge CDN"
+msgstr "开通 CDN 加速服务"
+
+msgid "Activate CDN"
+msgstr "开通 CDN"
+
+msgid "Connected CDN Domains"
+msgstr "已接入的 CDN 域名"
+
+msgid "Active CDN Domains"
+msgstr "运行中的 CDN 域名"
+
+msgid "Manage DNS zones, edge caching, and SSL certificates."
+msgstr "管理 DNS 解析记录、刷新全网边缘缓存及配置 SSL。"
+
+msgid "Domains"
+msgstr "个域名"
+
+msgid "Domain Name"
+msgstr "加速域名"
+
+msgid "Assigned Nameservers"
+msgstr "已分配 Nameserver"
+
+msgid "SSL / TLS Mode"
+msgstr "SSL 证书状态"
+
+msgid "SSL Status"
+msgstr "SSL 状态"
+
+msgid "Edge Caching"
+msgstr "边缘缓存"
+
+msgid "DNS Management"
+msgstr "DNS 解析管理"
+
+msgid "Managed Let's Encrypt (Active)"
+msgstr "Let's Encrypt 托管证书 (生效中)"
+
+msgid "Purge Edge Cache"
+msgstr "全网清理缓存"
+
+msgid "Protected"
+msgstr "CDN 加速防护中"
+
+msgid "Active"
+msgstr "生效中"
+
+msgid "DNS Zone Editor"
+msgstr "DNS 记录编辑器"
+
+msgid "DNS Records"
+msgstr "DNS 记录"
+
+msgid "No CDN domains configured yet"
+msgstr "暂无已接入的 CDN 域名"
+
+msgid "No CDN domains added yet. Enter a domain name above to get started."
+msgstr "暂未添加域名，请在上方输入域名开始接入。"
+
+msgid "DNS Zone Records:"
+msgstr "域名 DNS 解析记录:"
+
+msgid "Record Type"
+msgstr "记录类型"
+
+msgid "Name / Host"
+msgstr "主机记录"
+
+msgid "Target Value / IP"
+msgstr "记录值 / 目标 IP"
+
+msgid "Cloud Proxy"
+msgstr "云代理防护"
+
+msgid "Add Record"
+msgstr "添加解析记录"
+
+msgid "Value"
+msgstr "记录值"
+
+msgid "Proxy"
+msgstr "代理状态"
+
+msgid "Action"
+msgstr "操作"
+
+msgid "Loading records..."
+msgstr "正在加载解析记录..."
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "S3-Compatible Object Storage"
+msgstr "兼容 S3 协议的企业级对象存储"
+
+msgid "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
+msgstr "高度可扩展、多机房异地容灾且兼容 AWS S3 标准 API 的云存储。"
+
+msgid "Create New S3 Storage Bucket"
+msgstr "新建 S3 对象存储桶 (Bucket)"
+
+msgid "Create New Storage Bucket"
+msgstr "新建存储桶"
+
+msgid "Bucket names must be unique, lowercase alphanumeric characters with hyphens only."
+msgstr "存储桶名称必须全局唯一，仅限小写英文、数字和连字符。"
+
+msgid "Create S3 Bucket"
+msgstr "创建存储桶"
+
+msgid "Create Bucket"
+msgstr "创建存储桶"
+
+msgid "S3 API Credentials"
+msgstr "S3 API 访问密钥凭据"
+
+msgid "Generate Access Key ID and Secret Access Key to connect via AWS SDK, Rclone, or backup plugins."
+msgstr "生成 Access Key 与 Secret Key 用于 SDK、Rclone 或备份插件连接。"
+
+msgid "Generate S3 Access Keys"
+msgstr "生成 S3 访问密钥"
+
+msgid "Your Storage Buckets"
+msgstr "我的存储桶列表"
+
+msgid "Object storage buckets provisioned on ArvanCloud cluster."
+msgstr "部署在 ArvanCloud 分布式集群上的存储桶。"
+
+msgid "Buckets"
+msgstr "个存储桶"
+
+msgid "Bucket Name"
+msgstr "存储桶名称"
+
+msgid "S3 API Endpoint"
+msgstr "S3 API 接入点 (Endpoint)"
+
+msgid "Endpoint (S3 API)"
+msgstr "Endpoint 接入点"
+
+msgid "Cluster Region"
+msgstr "集群区域"
+
+msgid "Rate (Monthly)"
+msgstr "月度费率"
+
+msgid "Connection Info"
+msgstr "连接指南"
+
+msgid "View Setup Snippets"
+msgstr "查看配置代码"
+
+msgid "Access Keys"
+msgstr "访问密钥"
+
+msgid "No storage buckets created yet"
+msgstr "当前暂未创建任何存储桶"
+
+msgid "No storage buckets created yet. Create your first bucket above."
+msgstr "暂无存储桶，请在上方表单中创建。"
+
+msgid "S3 Storage API Credentials & Setup"
+msgstr "S3 API 密钥与客户端连接指南"
+
+msgid "S3 Endpoint URL:"
+msgstr "S3 Endpoint 访问端点:"
+
+msgid "Access Key ID:"
+msgstr "Access Key 密钥 ID:"
+
+msgid "Secret Access Key:"
+msgstr "Secret Access Key 私钥:"
+
+msgid "Copy"
+msgstr "复制"
+
+msgid "AWS CLI & Rclone Configuration Example"
+msgstr "AWS CLI 与 Rclone 配置代码示例"
+
+msgid "Quick Wallet Deposit"
+msgstr "快速充值钱包"
+
+msgid "Select an amount or enter custom deposit to instantly top up your wallet:"
+msgstr "选择预设金额或输入自定义金额充值:"
+
+msgid "Amount in Toman:"
+msgstr "充值金额 (Toman):"
+
+msgid "Proceed to Payment"
+msgstr "前往支付"
+
+msgid "Permanently Destroy Server?"
+msgstr "确认永久销毁该云服务器？"
+
+msgid "Warning: This action is irreversible!"
+msgstr "警告：此操作不可恢复！"
+
+msgid "All data, NVMe storage disks, and attached network IP addresses on ArvanCloud infrastructure will be permanently erased."
+msgstr "服务器内部数据、NVMe 固态硬盘和公网 IP 地址将被永久清除。"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Confirm Permanent Deletion"
+msgstr "确认彻底销毁"
+
+msgid "ArvanCloud Reseller"
+msgstr "ArvanCloud 分销商系统"
+
+msgid "Arvan Reseller"
+msgstr "Arvan 分销平台"
+
+msgid "Settings & API"
+msgstr "配置与 API 密钥"
+
+msgid "Settings"
+msgstr "分销设置"
+
+msgid "Cloud Resources"
+msgstr "云资源总览"
+
+msgid "All Resources"
+msgstr "全站云资源"
+
+msgid "Wallets & Ledger"
+msgstr "钱包与财务明细"
+
+msgid "Wallets Ledger"
+msgstr "钱包流水账本"
+
+msgid "ArvanCloud Reseller Settings & Monetization"
+msgstr "ArvanCloud 云分销商系统设置与加价引擎"
+
+msgid "Configure your ArvanCloud master API credentials, pricing markup margins, white-label branding, and sandbox mode."
+msgstr "配置主账户 API 密钥、零售加价比例、品牌信息与沙箱演示模式。"
+
+msgid "1. ArvanCloud API Authentication"
+msgstr "1. ArvanCloud API 密钥认证"
+
+msgid "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
+msgstr "请输入 ArvanCloud 机器用户 API 密钥。所有客户创建的云资源均挂载在此主账户下。"
+
+msgid "ArvanCloud API Key"
+msgstr "ArvanCloud API 密钥"
+
+msgid "Test Connection"
+msgstr "测试 API 连接"
+
+msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
+msgstr "请前往 ArvanCloud 控制台 > 用户中心 > API 密钥 生成。"
+
+msgid "Sandbox / Demo Mode"
+msgstr "沙箱 / 演示模式"
+
+msgid "Enable Sandbox / Mock Fallback Mode"
+msgstr "启用沙箱模拟模式 (Mock)"
+
+msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
+msgstr "启用后无需连接真实云机房即可瞬间完成实例开通、充值与功能测试。"
+
+msgid "2. Dynamic Pricing & Reseller Markup Engine"
+msgstr "2. 动态价格与分销加价引擎"
+
+msgid "Configure profit margins automatically calculated on top of wholesale ArvanCloud infrastructure rates."
+msgstr "在 ArvanCloud 官方机房底价基础上自动加收利润。"
+
+msgid "Markup Percentage (%)"
+msgstr "零售加价百分比 (%)"
+
+msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
+msgstr "例: 20% 加价将每小时 450 Toman 底价转换为 540 Toman 零售价。"
+
+msgid "Fixed Margin Addition (Toman)"
+msgstr "固定加价金额 (Toman)"
+
+msgid "Optional fixed addition added after percentage markup calculation."
+msgstr "在百分比加价后额外增加的固定每小时费用。"
+
+msgid "Store Currency"
+msgstr "结算货币"
+
+msgid "Toman (IRT)"
+msgstr "Toman (IRT)"
+
+msgid "Rial (IRR)"
+msgstr "Rial (IRR)"
+
+msgid "US Dollar (USD)"
+msgstr "美元 (USD)"
+
+msgid "Default Datacenter Region"
+msgstr "默认数据中心节点"
+
+msgid "3. Storefront White-Label Branding"
+msgstr "3. 独立门户白标品牌定制"
+
+msgid "Customization parameters injected into the standalone virtual canvas header and footer."
+msgstr "在独立全屏云门户顶部及底部展示的品牌与客服信息。"
+
+msgid "Reseller Brand / Store Name"
+msgstr "分销商品牌 / 店铺名称"
+
+msgid "Support Contact Email"
+msgstr "客服电子邮箱"
+
+msgid "Support Phone Number"
+msgstr "客服联系电话"
+
+msgid "Save All Reseller Settings"
+msgstr "保存分销商全部设置"
+
+msgid "Virtual Storefront Quick Links (Theme Isolated)"
+msgstr "独立云门户快捷入口 (脱离主题限制)"
+
+msgid "Access standalone storefront and customer portal pages:"
+msgstr "快速访问全功能独立前台及客户控制台页面:"
+
+msgid "All Provisioned Cloud Resources"
+msgstr "全站已开通云资源监控"
+
+msgid "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
+msgstr "统一管理所有客户的云虚拟机、CDN 加速域名与 S3 存储桶生命周期。"
+
+msgid "Run Metering Cycle Now"
+msgstr "立即执行计费扣费轮询"
+
+msgid "Total Cloud Instances"
+msgstr "虚拟机总数"
+
+msgid "Active / Running"
+msgstr "运行中实例"
+
+msgid "Suspended (0 Balance)"
+msgstr "欠费已暂停"
+
+msgid "Monthly Run Rate (MRR)"
+msgstr "月度预估总营收 (MRR)"
+
+msgid "Customer"
+msgstr "所属客户"
+
+msgid "Resource Name"
+msgstr "资源名称"
+
+msgid "Service"
+msgstr "服务类型"
+
+msgid "Arvan UUID / Identifier"
+msgstr "Arvan UUID 标识"
+
+msgid "Last Metered"
+msgstr "最近计费时间"
+
+msgid "Emergency Actions"
+msgstr "管理操作"
+
+msgid "Power Off"
+msgstr "强制关机"
+
+msgid "Purge"
+msgstr "彻底销毁"
+
+msgid "No resources deployed yet."
+msgstr "暂无已开通的云资源。"
+
+msgid "Customer Wallets & Ledger Audit"
+msgstr "客户钱包与财务账本审计"
+
+msgid "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
+msgstr "实时查看交易流水、可用余额并支持管理员手动调账。"
+
+msgid "Total Active Wallets"
+msgstr "有效钱包总数"
+
+msgid "Total Outstanding Credit"
+msgstr "客户总在账余额"
+
+msgid "Cumulative Deposits"
+msgstr "历史累计充值总额"
+
+msgid "Total Metered Burn"
+msgstr "历史累计扣费总额"
+
+msgid "Wallet ID"
+msgstr "钱包编号"
+
+msgid "Customer Name"
+msgstr "客户姓名"
+
+msgid "Email"
+msgstr "电子邮箱"
+
+msgid "Available Balance"
+msgstr "可用余额"
+
+msgid "Hourly Burn Rate"
+msgstr "每小时消费"
+
+msgid "Created At"
+msgstr "开通时间"
+
+msgid "Ledger Actions"
+msgstr "操作"
+
+msgid "Adjust Balance"
+msgstr "调整余额"
+
+msgid "No customer wallets initialized yet."
+msgstr "暂无客户钱包记录。"
+
+msgid "Manual Ledger Adjustment"
+msgstr "管理员手动调整钱包余额"
+
+msgid "Adjustment Type:"
+msgstr "操作类型:"
+
+msgid "Credit (+ Deposit Funds)"
+msgstr "入账 / 增加 (+ 充值余额)"
+
+msgid "Debit (- Deduct Funds)"
+msgstr "出账 / 扣除 (- 扣减余额)"
+
+msgid "Amount (Toman):"
+msgstr "调整金额 (Toman):"
+
+msgid "Reason / Audit Note:"
+msgstr "调账原因 / 审计备注:"
+
+msgid "Apply Adjustment"
+msgstr "确认应用调账"
+
+msgid "Testing connection to ArvanCloud API..."
+msgstr "正在测试连接 ArvanCloud API..."
+
+msgid "Customer wallet balance updated successfully."
+msgstr "客户钱包余额已成功更新。"
+
+msgid "Action completed successfully."
+msgstr "操作执行成功。"
+
+msgid "Manual metering cycle completed."
+msgstr "手动计费扣费轮询已完成。"
+
+msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
+msgstr "确定要从 ArvanCloud 云基础设施中永久销毁此资源吗？"
+
+msgid "Permission denied."
+msgstr "权限不足，拒绝访问。"
+
+msgid "Invalid user ID or amount."
+msgstr "用户 ID 或金额无效。"
+
+msgid "Balance adjusted successfully."
+msgstr "余额调整成功。"
+
+msgid "Resource not found."
+msgstr "未找到指定云资源。"
+
+msgid "Instance powered off by administrator."
+msgstr "管理员已强制关闭该实例。"
+
+msgid "Instance purged by administrator."
+msgstr "管理员已彻底销毁该实例。"
+
+msgid "Unknown admin action."
+msgstr "未知的管理操作。"
+
+msgid "Connected successfully to ArvanCloud infrastructure."
+msgstr "已成功连接至 ArvanCloud 云基础设施。"
+
+msgid "Network error while testing connection."
+msgstr "测试连接时发生网络错误。"
+
+msgid "Network error."
+msgstr "网络错误。"
+
+msgid "Applying..."
+msgstr "正在应用..."
+
+msgid "Running Metering..."
+msgstr "正在执行计费轮询..."
+
+msgid "Adjust Wallet Balance: "
+msgstr "调整用户钱包余额: "
+
+msgid "Loading ArvanCloud Services Canvas..."
+msgstr "正在载入 ArvanCloud 云服务平台..."
+
+msgid "Loading ArvanCloud Management Portal..."
+msgstr "正在载入 ArvanCloud 分销管理控制台..."
+

@@ -11,12 +11,12 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Hourly Metering and Auto-Suspension Engine.
+ * Hourly Metering and Legal Service Termination Engine.
  *
  * Executes on wp_cron (arvan_hourly_metering_cron) to iterate through active
  * customer cloud resources in wp_arvan_resources, debit hourly costs from
  * wp_arvan_wallets, and automatically dispatch power-off / suspension API calls
- * when customer wallet balances hit zero.
+ * when customer wallet balances hit zero according to ArvanCloud legal terms.
  *
  * @since      1.0.0
  * @package    ArvanCloud_Reseller
@@ -106,7 +106,7 @@ class Arvan_Metering {
 				array( '%d' )
 			);
 
-			// 3. Auto-suspension check: If balance <= 0, power off / suspend resource
+			// 3. Auto-suspension check: If balance <= 0, power off / suspend resource immediately
 			if ( $new_balance <= 0 ) {
 				$this->suspend_resource( $resource, $api_client );
 				$summary['suspended']++;
@@ -151,7 +151,26 @@ class Arvan_Metering {
 	}
 
 	/**
-	 * Manually run the metering cycle (e.g. for testing or WP-CLI).
+	 * Restore user's suspended resources to 'stopped' state upon positive wallet top-up,
+	 * permitting single-click power-on from the customer dashboard.
+	 *
+	 * @param int $user_id Customer user ID.
+	 */
+	public static function restore_user_suspended_resources( $user_id ) {
+		global $wpdb;
+		$table_resources = $wpdb->prefix . 'arvan_resources';
+
+		$wpdb->query(
+			$wpdb->prepare(
+				"UPDATE {$table_resources} SET status = 'stopped', updated_at = %s WHERE user_id = %d AND status = 'suspended'",
+				current_time( 'mysql' ),
+				absint( $user_id )
+			)
+		);
+	}
+
+	/**
+	 * Manually run the metering cycle (e.g. for testing, WP-CLI, or Admin on-demand).
 	 *
 	 * @return array Summary of the run.
 	 */

@@ -84,11 +84,48 @@ class Arvan_Wallet {
 	}
 
 	/**
+	 * Calculate user's total hourly burn rate across all active cloud assets.
+	 *
+	 * @param int $user_id WordPress user ID.
+	 * @return float Total hourly cost in Toman.
+	 */
+	public static function get_user_burn_rate( $user_id ) {
+		global $wpdb;
+		$table_resources = $wpdb->prefix . 'arvan_resources';
+
+		$rate = $wpdb->get_var(
+			$wpdb->prepare(
+				"SELECT SUM(hourly_cost) FROM {$table_resources} WHERE user_id = %d AND status IN ('active', 'running')",
+				absint( $user_id )
+			)
+		);
+
+		return (float) ( $rate ? $rate : 0.00 );
+	}
+
+	/**
+	 * Estimate remaining operational hours based on current balance and burn rate.
+	 *
+	 * @param int $user_id WordPress user ID.
+	 * @return float Number of hours remaining (or 9999 if burn rate is 0).
+	 */
+	public static function get_remaining_hours( $user_id ) {
+		$balance   = self::get_balance( $user_id );
+		$burn_rate = self::get_user_burn_rate( $user_id );
+
+		if ( $burn_rate <= 0 ) {
+			return 9999.0;
+		}
+
+		return round( $balance / $burn_rate, 1 );
+	}
+
+	/**
 	 * Atomically credit funds to a user's wallet.
 	 *
 	 * @param int         $user_id      WordPress user ID.
 	 * @param float       $amount       Amount to credit (positive number).
-	 * @param string      $type         Transaction type ('topup', 'credit', 'refund', 'bonus').
+	 * @param string      $type         Transaction type ('topup', 'credit', 'refund', 'bonus', 'admin_adjustment').
 	 * @param string|null $reference_id Gateway authority, payment RefID, or order ID.
 	 * @param string|null $description  Human-readable description.
 	 * @return array|WP_Error Array with new_balance and transaction_id, or WP_Error.
@@ -168,6 +205,11 @@ class Arvan_Wallet {
 		$transaction_id = $wpdb->insert_id;
 		$wpdb->query( 'COMMIT' );
 
+		// Auto-recovery trigger: if wallet has positive balance now, notify metering engine
+		if ( $new_balance > 0 ) {
+			Arvan_Metering::restore_user_suspended_resources( $user_id );
+		}
+
 		do_action( 'arvan_wallet_credited', $user_id, $amount, $new_balance, $transaction_id );
 
 		return array(
@@ -182,7 +224,7 @@ class Arvan_Wallet {
 	 *
 	 * @param int         $user_id        WordPress user ID.
 	 * @param float       $amount         Amount to debit (positive number).
-	 * @param string      $type           Transaction type ('hourly_metering', 'provision_fee', 'debit').
+	 * @param string      $type           Transaction type ('metering_charge', 'service_order', 'admin_adjustment', 'debit').
 	 * @param string|null $reference_id   Resource UUID or ID.
 	 * @param string|null $description    Human-readable description.
 	 * @param bool        $allow_negative Whether balance is allowed to go negative before suspension.
@@ -292,6 +334,33 @@ class Arvan_Wallet {
 	}
 
 	/**
+	 * Perform manual administrative adjustment with audit log.
+	 *
+	 * @param int    $user_id         Customer User ID.
+	 * @param string $adjustment_type 'credit' or 'debit'.
+	 * @param float  $amount          Adjustment amount.
+	 * @param string $reason          Reason explanation for audit.
+	 * @param int    $admin_id        Administrator User ID.
+	 * @return array|WP_Error
+	 */
+	public static function admin_adjust_balance( $user_id, $adjustment_type, $amount, $reason, $admin_id ) {
+		$admin_user = get_userdata( $admin_id );
+		$admin_name = $admin_user ? $admin_user->user_login : "Admin #{$admin_id}";
+		$desc       = sprintf(
+			/* translators: 1: Reason, 2: Admin username */
+			__( 'Admin Adjustment: %1$s (by %2$s)', 'arv-seller' ),
+			$reason,
+			$admin_name
+		);
+
+		if ( 'credit' === $adjustment_type ) {
+			return self::credit( $user_id, $amount, 'admin_adjustment', 'ADM-' . time(), $desc );
+		} else {
+			return self::debit( $user_id, $amount, 'admin_adjustment', 'ADM-' . time(), $desc, true );
+		}
+	}
+
+	/**
 	 * Retrieve paginated transaction ledger for a user.
 	 *
 	 * @param int $user_id WordPress user ID.
@@ -310,6 +379,70 @@ class Arvan_Wallet {
 				absint( $limit ),
 				absint( $offset )
 			)
+		);
+	}
+
+	/**
+	 * Retrieve all cloud resources owned by a user.
+	 *
+	 * @param int $user_id WordPress user ID.
+	 * @return array Array of resource row objects.
+	 */
+	public static function get_user_resources( $user_id ) {
+		global $wpdb;
+		$table_resources = $wpdb->prefix . 'arvan_resources';
+
+		return $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT * FROM {$table_resources} WHERE user_id = %d ORDER BY id DESC",
+				absint( $user_id )
+			)
+		);
+	}
+
+	/**
+	 * Retrieve user transaction ledger history.
+	 *
+	 * @param int $user_id WordPress user ID.
+	 * @param int $limit   Items count limit.
+	 * @return array Array of transaction row objects.
+	 */
+	public static function get_user_ledger( $user_id, $limit = 20 ) {
+		return self::get_user_transactions( $user_id, $limit, 0 );
+	}
+
+	/**
+	 * Retrieve master platform KPI summary statistics for WP Admin.
+	 *
+	 * @return array
+	 */
+	public static function get_total_stats() {
+		global $wpdb;
+		$table_wallets      = $wpdb->prefix . 'arvan_wallets';
+		$table_transactions = $wpdb->prefix . 'arvan_transactions';
+		$table_resources    = $wpdb->prefix . 'arvan_resources';
+
+		$total_wallets   = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$table_wallets}" );
+		$total_balance   = (float) $wpdb->get_var( "SELECT SUM(balance) FROM {$table_wallets}" );
+		$total_deposited = (float) $wpdb->get_var( "SELECT SUM(amount) FROM {$table_transactions} WHERE type IN ('topup', 'credit')" );
+		$total_metered   = (float) $wpdb->get_var( "SELECT SUM(amount) FROM {$table_transactions} WHERE type = 'metering_charge'" );
+
+		$total_vms      = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$table_resources} WHERE service_type = 'ecc_instance'" );
+		$total_active   = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$table_resources} WHERE status IN ('active', 'running')" );
+		$total_suspended= (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$table_resources} WHERE status = 'suspended'" );
+		$total_mrr      = (float) $wpdb->get_var( "SELECT SUM(hourly_cost) FROM {$table_resources} WHERE status IN ('active', 'running')" ) * 720;
+
+		return array(
+			'total_wallets'    => $total_wallets,
+			'total_balance'    => $total_balance,
+			'total_deposited'  => $total_deposited,
+			'total_deposits'   => $total_deposited,
+			'total_metered'    => $total_metered,
+			'total_burn'       => $total_metered,
+			'total_vms'        => $total_vms,
+			'total_active'     => $total_active,
+			'total_suspended'  => $total_suspended,
+			'total_mrr'        => $total_mrr,
 		);
 	}
 }

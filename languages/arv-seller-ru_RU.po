@@ -1,0 +1,966 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-20 22:45+0330\n"
+"PO-Revision-Date: 2026-08-20 22:45+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Domain: arv-seller\n"
+
+msgid "Dashboard"
+msgstr "Панель управления"
+
+msgid "Cloud Server (IaaS)"
+msgstr "Облачный сервер (IaaS)"
+
+msgid "Cloud Servers"
+msgstr "Облачные серверы"
+
+msgid "CDN & DNS"
+msgstr "CDN и DNS сервис"
+
+msgid "Object Storage (S3)"
+msgstr "Объектное хранилище (S3)"
+
+msgid "Object Storage"
+msgstr "Объектное хранилище"
+
+msgid "Wallet:"
+msgstr "Баланс:"
+
+msgid "Top up balance"
+msgstr "Пополнить баланс"
+
+msgid "Sign In / Register"
+msgstr "Вход / Регистрация"
+
+msgid "Logout"
+msgstr "Выйти"
+
+msgid "Powered by ArvanCloud"
+msgstr "На базе инфраструктуры ArvanCloud"
+
+msgid "All rights reserved."
+msgstr "Все права защищены."
+
+msgid "Enterprise Cloud Infrastructure Powered by ArvanCloud REST API."
+msgstr "Корпоративная облачная инфраструктура с интеграцией ArvanCloud REST API."
+
+msgid "Main Website"
+msgstr "Главный сайт"
+
+msgid "Support:"
+msgstr "Поддержка:"
+
+msgid "Email:"
+msgstr "Эл. почта:"
+
+msgid "Cloud Services Platform"
+msgstr "Платформа облачных сервисов"
+
+msgid "Cloud Services Portal"
+msgstr "Портал облачных сервисов"
+
+msgid "Deploy Cloud Server"
+msgstr "Создать облачный сервер"
+
+msgid "Deploy Cloud Server (IaaS)"
+msgstr "Создать облачный сервер (IaaS)"
+
+msgid "High performance enterprise cloud virtual machines with NVMe storage, dedicated IPv4, and 10Gbps uplinks."
+msgstr "Высокопроизводительные виртуальные серверы с NVMe дисками и выделенным IPv4."
+
+msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
+msgstr "Мгновенное развертывание в инфраструктуре ArvanCloud, быстрые NVMe SSD и выделенный IP."
+
+msgid "Choose Datacenter Region"
+msgstr "Выберите регион дата-центра"
+
+msgid "Select the geographical location closest to your target audience."
+msgstr "Выберите локацию, ближайшую к вашей аудитории."
+
+msgid "Hardware Plan & Specifications"
+msgstr "Конфигурация оборудования"
+
+msgid "Compute resources can be dynamically scaled anytime."
+msgstr "Вычислительные ресурсы можно масштабировать в любое время."
+
+msgid "All Plans"
+msgstr "Все тарифы"
+
+msgid "General Purpose"
+msgstr "Универсальные"
+
+msgid "Compute Optimized"
+msgstr "Вычислительные"
+
+msgid "Memory Optimized"
+msgstr "С увеличенной памятью"
+
+msgid "Popular"
+msgstr "Популярный"
+
+msgid "Most Popular"
+msgstr "Хит продаж"
+
+msgid "Processor"
+msgstr "Процессор"
+
+msgid "RAM Memory"
+msgstr "ОЗУ Память"
+
+msgid "NVMe Disk"
+msgstr "NVMe Диск"
+
+msgid "hr"
+msgstr "час"
+
+msgid "NVMe Fast Storage Volume"
+msgstr "Быстрый NVMe диск"
+
+msgid "High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr)."
+msgstr "Корпоративный NVMe SSD диск с возможностью расширения."
+
+msgid "Allocated NVMe Storage:"
+msgstr "Выделенный объем NVMe:"
+
+msgid "Operating System Image"
+msgstr "Операционная система"
+
+msgid "Standard cloud images optimized for immediate SSH/RDP connection."
+msgstr "Официальные образы Linux/Windows, готовые к подключению."
+
+msgid "Select Operating System"
+msgstr "Выберите операционную систему"
+
+msgid "Pre-configured cloud distributions ready in under 60 seconds."
+msgstr "Готовые облачные дистрибутивы менее чем за 60 секунд."
+
+msgid "Instance Access & Naming"
+msgstr "Настройки доступа и имя сервера"
+
+msgid "Configure server hostname and authentication method."
+msgstr "Укажите имя хоста и способ аутентификации."
+
+msgid "Server Hostname"
+msgstr "Имя хоста сервера"
+
+msgid "Authentication Mode:"
+msgstr "Метод входа:"
+
+msgid "SSH Public Key (Recommended)"
+msgstr "Публичный SSH ключ (Рекомендуется)"
+
+msgid "Root Password"
+msgstr "Пароль Root пользователя"
+
+msgid "SSH Public Key"
+msgstr "Публичный SSH ключ"
+
+msgid "Root / Admin Password"
+msgstr "Пароль администратора / root"
+
+msgid "Minimum 12 characters"
+msgstr "Минимум 12 символов"
+
+msgid "Generate"
+msgstr "Сгенерировать"
+
+msgid "Order Summary & Cost"
+msgstr "Сводка заказа и стоимость"
+
+msgid "Summary & Cost"
+msgstr "Сводка и стоимость"
+
+msgid "Datacenter:"
+msgstr "Дата-центр:"
+
+msgid "Location"
+msgstr "Локация"
+
+msgid "Compute Specs:"
+msgstr "Характеристики:"
+
+msgid "Plan"
+msgstr "Выбранный тариф"
+
+msgid "Storage Volume:"
+msgstr "Объем диска:"
+
+msgid "Operating System:"
+msgstr "Операционная система:"
+
+msgid "Operating System"
+msgstr "Операционная система"
+
+msgid "Dedicated IPv4:"
+msgstr "Выделенный IPv4:"
+
+msgid "Public IPv4"
+msgstr "Публичный IP"
+
+msgid "1x Public IP (Included)"
+msgstr "1x Выделенный IP (включен)"
+
+msgid "1x Dedicated (Included)"
+msgstr "1x Выделенный IP (включен)"
+
+msgid "Hourly Burn Rate:"
+msgstr "Стоимость в час:"
+
+msgid "Hourly Rate:"
+msgstr "Стоимость в час:"
+
+msgid "Est. Monthly (720 hrs):"
+msgstr "Примерно в месяц (720 ч):"
+
+msgid "Est. Monthly:"
+msgstr "Примерно в месяц:"
+
+msgid "Your Available Balance:"
+msgstr "Ваш доступный баланс:"
+
+msgid "Your Balance:"
+msgstr "Ваш баланс:"
+
+msgid "Notice: Deploying requires a minimum 24-hour run balance."
+msgstr "Внимание: Для создания сервера требуется баланс минимум на 24 часа работы."
+
+msgid "Instant Provision Cloud Server"
+msgstr "Мгновенно запустить сервер"
+
+msgid "Sign in to Access Your Cloud Portal"
+msgstr "Войдите для доступа к панели управления"
+
+msgid "Please sign in to access your cloud portal"
+msgstr "Пожалуйста, войдите в систему для управления облачными ресурсами."
+
+msgid "Manage your virtual servers, CDN domains, S3 object storage buckets, and atomic wallet ledger in one place."
+msgstr "Управляйте серверами, доменами CDN, хранилищем S3 и балансом в единой панели."
+
+msgid "Sign In to Your Account"
+msgstr "Войти в личный кабинет"
+
+msgid "Services Suspended Due to Zero Wallet Balance"
+msgstr "Услуги приостановлены из-за нулевого баланса"
+
+msgid "According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately."
+msgstr "Серверы временно выключены в соответствии с регламентом. Пополните баланс для разблокировки."
+
+msgid "Low Balance Warning"
+msgstr "Предупреждение: Низкий баланс"
+
+msgid "Available Wallet Balance"
+msgstr "Доступный баланс кошелька"
+
+msgid "Account Balance"
+msgstr "Баланс аккаунта"
+
+msgid "Active Account"
+msgstr "Активный аккаунт"
+
+msgid "Healthy"
+msgstr "В работе"
+
+msgid "Suspended"
+msgstr "Приостановлен"
+
+msgid "Burn Rate:"
+msgstr "Расход в час:"
+
+msgid "Est. Runtime:"
+msgstr "Оставшееся время:"
+
+msgid "hours"
+msgstr "ч."
+
+msgid "Instant Online Wallet Top-Up"
+msgstr "Мгновенное пополнение кошелька"
+
+msgid "Top Up Wallet Balance"
+msgstr "Пополнить баланс кошелька"
+
+msgid "Custom Amount in Toman"
+msgstr "Произвольная сумма (Туман)"
+
+msgid "Custom Amount"
+msgstr "Произвольная сумма"
+
+msgid "Pay with Online Gateway"
+msgstr "Оплатить через шлюз онлайн"
+
+msgid "Deploy Cloud Resources"
+msgstr "Создать новые облачные ресурсы"
+
+msgid "Deploy New Service"
+msgstr "Создать новую услугу"
+
+msgid "Provision high performance cloud resources in seconds."
+msgstr "Развертывание производительных облачных ресурсов за секунды."
+
+msgid "New Cloud Server"
+msgstr "Новый облачный сервер"
+
+msgid "High IOPS NVMe with Dedicated IP"
+msgstr "Быстрый NVMe и выделенный IP"
+
+msgid "Compute, NVMe & Dedicated IP"
+msgstr "CPU, NVMe и выделенный IP"
+
+msgid "Connect CDN Domain"
+msgstr "Подключить домен к CDN"
+
+msgid "Add CDN Domain"
+msgstr "Добавить домен в CDN"
+
+msgid "DDoS Protection & Anycast DNS"
+msgstr "Защита от DDoS и Anycast DNS"
+
+msgid "S3 Storage Bucket"
+msgstr "Бакет хранилища S3"
+
+msgid "S3 Object Storage"
+msgstr "Объектное хранилище S3"
+
+msgid "Unlimited S3 API Compatible Bucket"
+msgstr "Неограниченное S3 хранилище"
+
+msgid "Unlimited Object Storage"
+msgstr "Неограниченное объектное хранилище файлов"
+
+msgid "Active Cloud Servers & Virtual Machines"
+msgstr "Активные облачные серверы"
+
+msgid "Active Cloud Resources"
+msgstr "Активные облачные ресурсы"
+
+msgid "Live instance power states, IP addresses, and real-time lifecycle controls."
+msgstr "Мониторинг статуса питания, IP адреса и кнопки управления."
+
+msgid "Instances"
+msgstr "серверов"
+
+msgid "Resources"
+msgstr "ресурсов"
+
+msgid "Server Instance"
+msgstr "Имя и ID сервера"
+
+msgid "Name / ID"
+msgstr "Имя / ID"
+
+msgid "Assigned IP"
+msgstr "Выделенный IP"
+
+msgid "Datacenter"
+msgstr "Дата-центр"
+
+msgid "Region"
+msgstr "Регион"
+
+msgid "Hourly Rate"
+msgstr "Тариф в час"
+
+msgid "Rate (Hourly)"
+msgstr "Тариф в час"
+
+msgid "Runtime Status"
+msgstr "Состояние"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Power Lifecycle"
+msgstr "Питание"
+
+msgid "Actions"
+msgstr "Действия"
+
+msgid "Running"
+msgstr "Работает"
+
+msgid "Suspended (0 Bal)"
+msgstr "Приостановлен (нет средств)"
+
+msgid "Suspended / Off"
+msgstr "Приостановлен / Выключен"
+
+msgid "Powered Off"
+msgstr "Выключен"
+
+msgid "Stop"
+msgstr "Остановить"
+
+msgid "Reboot"
+msgstr "Перезагрузить"
+
+msgid "Power On"
+msgstr "Включить"
+
+msgid "No active cloud servers deployed yet"
+msgstr "У вас пока нет активных облачных серверов"
+
+msgid "No active cloud resources found"
+msgstr "Активных ресурсов не найдено"
+
+msgid "Deploy First Server"
+msgstr "Создать первый сервер"
+
+msgid "Deploy First Cloud Server"
+msgstr "Создать первый сервер"
+
+msgid "Wallet Atomic Ledger Transactions"
+msgstr "История операций по кошельку"
+
+msgid "Recent Ledger Transactions"
+msgstr "Последние транзакции"
+
+msgid "Date & Time"
+msgstr "Дата и время"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Transaction Type"
+msgstr "Тип операции"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Description / Reference ID"
+msgstr "Описание / Номер транзакции"
+
+msgid "Description / Reference"
+msgstr "Описание / Ссылка"
+
+msgid "Amount"
+msgstr "Сумма"
+
+msgid "Balance Snapshot"
+msgstr "Остаток после операции"
+
+msgid "Balance After"
+msgstr "Баланс после"
+
+msgid "No transactions recorded in wallet ledger yet."
+msgstr "Транзакций пока нет."
+
+msgid "No transactions recorded yet."
+msgstr "Транзакций пока нет."
+
+msgid "Global CDN & Anycast Edge DNS"
+msgstr "Глобальный CDN и Anycast DNS"
+
+msgid "CDN & Anycast DNS Management"
+msgstr "Управление CDN и DNS"
+
+msgid "Accelerate your websites globally with edge caching, SSL termination, and Layer 7 DDoS mitigation across 40+ PoPs."
+msgstr "Ускорение сайтов по всему миру, кэширование и защита от DDoS-атак."
+
+msgid "Connect New Domain to Edge CDN"
+msgstr "Подключить новый домен к CDN"
+
+msgid "Connect New Domain to Global CDN"
+msgstr "Подключить новый домен к CDN"
+
+msgid "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
+msgstr "Введите имя домена для автоматического получения NS серверов."
+
+msgid "Activate Edge CDN"
+msgstr "Активировать CDN для домена"
+
+msgid "Activate CDN"
+msgstr "Активировать CDN"
+
+msgid "Connected CDN Domains"
+msgstr "Подключенные домены"
+
+msgid "Active CDN Domains"
+msgstr "Активные домены CDN"
+
+msgid "Manage DNS zones, edge caching, and SSL certificates."
+msgstr "Управление записями DNS, очистка кэша и настройка SSL."
+
+msgid "Domains"
+msgstr "доменов"
+
+msgid "Domain Name"
+msgstr "Имя домена"
+
+msgid "Assigned Nameservers"
+msgstr "Назначенные NS серверы"
+
+msgid "SSL / TLS Mode"
+msgstr "Режим SSL"
+
+msgid "SSL Status"
+msgstr "Статус SSL"
+
+msgid "Edge Caching"
+msgstr "Кэширование на узлах"
+
+msgid "DNS Management"
+msgstr "Управление DNS"
+
+msgid "Managed Let's Encrypt (Active)"
+msgstr "Автоматический SSL (Активен)"
+
+msgid "Purge Edge Cache"
+msgstr "Очистить кэш CDN"
+
+msgid "Protected"
+msgstr "Защищен CDN"
+
+msgid "Active"
+msgstr "Активен"
+
+msgid "DNS Zone Editor"
+msgstr "Редактор записей DNS"
+
+msgid "DNS Records"
+msgstr "Записи DNS"
+
+msgid "No CDN domains configured yet"
+msgstr "Пока нет подключенных доменов"
+
+msgid "No CDN domains added yet. Enter a domain name above to get started."
+msgstr "Домены не добавлены. Введите домен выше, чтобы начать."
+
+msgid "DNS Zone Records:"
+msgstr "Записи DNS зоны:"
+
+msgid "Record Type"
+msgstr "Тип записи"
+
+msgid "Name / Host"
+msgstr "Имя / Хост"
+
+msgid "Target Value / IP"
+msgstr "Значение / Целевой IP"
+
+msgid "Cloud Proxy"
+msgstr "Облачный прокси"
+
+msgid "Add Record"
+msgstr "Добавить запись"
+
+msgid "Value"
+msgstr "Значение"
+
+msgid "Proxy"
+msgstr "Прокси"
+
+msgid "Action"
+msgstr "Действие"
+
+msgid "Loading records..."
+msgstr "Загрузка записей..."
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "S3-Compatible Object Storage"
+msgstr "S3-совместимое объектное хранилище"
+
+msgid "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
+msgstr "Масштабируемое облачное хранилище данных, полностью совместимое с AWS S3 API."
+
+msgid "Create New S3 Storage Bucket"
+msgstr "Создать новый S3 бакет"
+
+msgid "Create New Storage Bucket"
+msgstr "Создать новый бакет"
+
+msgid "Bucket names must be unique, lowercase alphanumeric characters with hyphens only."
+msgstr "Имя бакета должно быть уникальным и содержать строчные латинские буквы, цифры и дефис."
+
+msgid "Create S3 Bucket"
+msgstr "Создать S3 бакет"
+
+msgid "Create Bucket"
+msgstr "Создать бакет"
+
+msgid "S3 API Credentials"
+msgstr "Ключи доступа к S3 API"
+
+msgid "Generate Access Key ID and Secret Access Key to connect via AWS SDK, Rclone, or backup plugins."
+msgstr "Генерация ключей Access Key и Secret Key для подключения через SDK, Rclone и плагины."
+
+msgid "Generate S3 Access Keys"
+msgstr "Сгенерировать ключи S3"
+
+msgid "Your Storage Buckets"
+msgstr "Ваши бакеты хранилища"
+
+msgid "Object storage buckets provisioned on ArvanCloud cluster."
+msgstr "Бакеты хранилища, созданные в кластере ArvanCloud."
+
+msgid "Buckets"
+msgstr "бакетов"
+
+msgid "Bucket Name"
+msgstr "Имя бакета"
+
+msgid "S3 API Endpoint"
+msgstr "Адрес S3 API Endpoint"
+
+msgid "Endpoint (S3 API)"
+msgstr "Адрес Endpoint"
+
+msgid "Cluster Region"
+msgstr "Регион кластера"
+
+msgid "Rate (Monthly)"
+msgstr "Тариф в месяц"
+
+msgid "Connection Info"
+msgstr "Инструкция по подключению"
+
+msgid "View Setup Snippets"
+msgstr "Примеры настройки"
+
+msgid "Access Keys"
+msgstr "Ключи доступа"
+
+msgid "No storage buckets created yet"
+msgstr "Бакеты хранилища еще не созданы"
+
+msgid "No storage buckets created yet. Create your first bucket above."
+msgstr "Бакеты отсутствуют. Создайте свой первый бакет в форме выше."
+
+msgid "S3 Storage API Credentials & Setup"
+msgstr "Учетные данные и настройка S3 API"
+
+msgid "S3 Endpoint URL:"
+msgstr "URL адрес S3 Endpoint:"
+
+msgid "Access Key ID:"
+msgstr "Идентификатор ключа (Access Key):"
+
+msgid "Secret Access Key:"
+msgstr "Секретный ключ (Secret Key):"
+
+msgid "Copy"
+msgstr "Копировать"
+
+msgid "AWS CLI & Rclone Configuration Example"
+msgstr "Пример настройки для AWS CLI и Rclone"
+
+msgid "Quick Wallet Deposit"
+msgstr "Быстрое пополнение баланса"
+
+msgid "Select an amount or enter custom deposit to instantly top up your wallet:"
+msgstr "Выберите или введите сумму для пополнения:"
+
+msgid "Amount in Toman:"
+msgstr "Сумма в туманах:"
+
+msgid "Proceed to Payment"
+msgstr "Перейти к оплате"
+
+msgid "Permanently Destroy Server?"
+msgstr "Удалить этот сервер навсегда?"
+
+msgid "Warning: This action is irreversible!"
+msgstr "Внимание: Это действие необратимо!"
+
+msgid "All data, NVMe storage disks, and attached network IP addresses on ArvanCloud infrastructure will be permanently erased."
+msgstr "Все данные дисков, базы данных и выделенные IP адреса будут безвозвратно удалены."
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Confirm Permanent Deletion"
+msgstr "Подтвердить удаление"
+
+msgid "ArvanCloud Reseller"
+msgstr "Реселлинг ArvanCloud"
+
+msgid "Arvan Reseller"
+msgstr "Магазин ArvanCloud"
+
+msgid "Settings & API"
+msgstr "Настройки и API"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Cloud Resources"
+msgstr "Облачные ресурсы"
+
+msgid "All Resources"
+msgstr "Все ресурсы"
+
+msgid "Wallets & Ledger"
+msgstr "Кошельки и транзакции"
+
+msgid "Wallets Ledger"
+msgstr "Журнал кошельков"
+
+msgid "ArvanCloud Reseller Settings & Monetization"
+msgstr "Настройки реселлинга ArvanCloud и наценки"
+
+msgid "Configure your ArvanCloud master API credentials, pricing markup margins, white-label branding, and sandbox mode."
+msgstr "Настройка мастер-ключа API, торговой наценки, брендинга и демо-режима."
+
+msgid "1. ArvanCloud API Authentication"
+msgstr "1. Аутентификация API ArvanCloud"
+
+msgid "Enter your master ArvanCloud Machine User API Key. All downstream customer resources will be provisioned under this account."
+msgstr "Введите API ключ Machine User. Все ресурсы клиентов будут создаваться в этом аккаунте."
+
+msgid "ArvanCloud API Key"
+msgstr "API Ключ ArvanCloud"
+
+msgid "Test Connection"
+msgstr "Проверить соединение"
+
+msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
+msgstr "Получите ключ в панели ArvanCloud > Профиль пользователя > API Keys."
+
+msgid "Sandbox / Demo Mode"
+msgstr "Песочница / Демо режим"
+
+msgid "Enable Sandbox / Mock Fallback Mode"
+msgstr "Включить режим песочницы (Mock)"
+
+msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
+msgstr "Позволяет тестировать создание серверов и пополнение без реального подключения к облаку."
+
+msgid "2. Dynamic Pricing & Reseller Markup Engine"
+msgstr "2. Динамическое ценообразование и наценка"
+
+msgid "Configure profit margins automatically calculated on top of wholesale ArvanCloud infrastructure rates."
+msgstr "Настройка торговой наценки поверх оптовых цен инфраструктуры ArvanCloud."
+
+msgid "Markup Percentage (%)"
+msgstr "Процент наценки (%)"
+
+msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
+msgstr "Пример: наценка 20% превращает оптовую цену 450 в 540 туманов/час для клиента."
+
+msgid "Fixed Margin Addition (Toman)"
+msgstr "Фиксированная наценка (Туман)"
+
+msgid "Optional fixed addition added after percentage markup calculation."
+msgstr "Дополнительная сумма, добавляемая после процентной наценки."
+
+msgid "Store Currency"
+msgstr "Валюта магазина"
+
+msgid "Toman (IRT)"
+msgstr "Туман (IRT)"
+
+msgid "Rial (IRR)"
+msgstr "Риал (IRR)"
+
+msgid "US Dollar (USD)"
+msgstr "Доллар США (USD)"
+
+msgid "Default Datacenter Region"
+msgstr "Регион дата-центра по умолчанию"
+
+msgid "3. Storefront White-Label Branding"
+msgstr "3. Брендинг и данные витрины"
+
+msgid "Customization parameters injected into the standalone virtual canvas header and footer."
+msgstr "Параметры брендинга, отображаемые в шапке и подвале облачного портала."
+
+msgid "Reseller Brand / Store Name"
+msgstr "Название бренда / магазина"
+
+msgid "Support Contact Email"
+msgstr "Эл. почта техподдержки"
+
+msgid "Support Phone Number"
+msgstr "Телефон техподдержки"
+
+msgid "Save All Reseller Settings"
+msgstr "Сохранить все настройки"
+
+msgid "Virtual Storefront Quick Links (Theme Isolated)"
+msgstr "Прямые ссылки на облачный портал (изолирован от темы)"
+
+msgid "Access standalone storefront and customer portal pages:"
+msgstr "Быстрый доступ к страницам витрины и панели управления:"
+
+msgid "All Provisioned Cloud Resources"
+msgstr "Все созданные облачные ресурсы"
+
+msgid "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
+msgstr "Полный контроль и мониторинг виртуальных машин, доменов CDN и бакетов S3 клиентов."
+
+msgid "Run Metering Cycle Now"
+msgstr "Запустить списание средств сейчас"
+
+msgid "Total Cloud Instances"
+msgstr "Всего облачных серверов"
+
+msgid "Active / Running"
+msgstr "Активные / Работают"
+
+msgid "Suspended (0 Balance)"
+msgstr "Приостановлены (нулевой баланс)"
+
+msgid "Monthly Run Rate (MRR)"
+msgstr "Месячная выручка (MRR)"
+
+msgid "Customer"
+msgstr "Клиент"
+
+msgid "Resource Name"
+msgstr "Имя ресурса"
+
+msgid "Service"
+msgstr "Тип услуги"
+
+msgid "Arvan UUID / Identifier"
+msgstr "Идентификатор Arvan UUID"
+
+msgid "Last Metered"
+msgstr "Последнее списание"
+
+msgid "Emergency Actions"
+msgstr "Экстренные действия"
+
+msgid "Power Off"
+msgstr "Выключить"
+
+msgid "Purge"
+msgstr "Удалить навсегда"
+
+msgid "No resources deployed yet."
+msgstr "Ресурсы еще не созданы."
+
+msgid "Customer Wallets & Ledger Audit"
+msgstr "Кошельки клиентов и аудит балансов"
+
+msgid "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
+msgstr "Мониторинг балансов в реальном времени и инструмент ручной корректировки."
+
+msgid "Total Active Wallets"
+msgstr "Активных кошельков"
+
+msgid "Total Outstanding Credit"
+msgstr "Суммарный баланс клиентов"
+
+msgid "Cumulative Deposits"
+msgstr "Всего пополнений"
+
+msgid "Total Metered Burn"
+msgstr "Всего списано за ресурсы"
+
+msgid "Wallet ID"
+msgstr "ID кошелька"
+
+msgid "Customer Name"
+msgstr "Имя клиента"
+
+msgid "Email"
+msgstr "Эл. почта"
+
+msgid "Available Balance"
+msgstr "Доступный остаток"
+
+msgid "Hourly Burn Rate"
+msgstr "Расход в час"
+
+msgid "Created At"
+msgstr "Дата создания"
+
+msgid "Ledger Actions"
+msgstr "Действия"
+
+msgid "Adjust Balance"
+msgstr "Изменить баланс"
+
+msgid "No customer wallets initialized yet."
+msgstr "Кошельки еще не инициализированы."
+
+msgid "Manual Ledger Adjustment"
+msgstr "Ручная корректировка баланса"
+
+msgid "Adjustment Type:"
+msgstr "Тип операции:"
+
+msgid "Credit (+ Deposit Funds)"
+msgstr "Пополнение (+ Зачислить средства)"
+
+msgid "Debit (- Deduct Funds)"
+msgstr "Списание (- Списать средства)"
+
+msgid "Amount (Toman):"
+msgstr "Сумма (Туман):"
+
+msgid "Reason / Audit Note:"
+msgstr "Причина / Примечание для аудита:"
+
+msgid "Apply Adjustment"
+msgstr "Применить корректировку"
+
+msgid "Testing connection to ArvanCloud API..."
+msgstr "Проверка подключения к API ArvanCloud..."
+
+msgid "Customer wallet balance updated successfully."
+msgstr "Баланс кошелька клиента успешно обновлен."
+
+msgid "Action completed successfully."
+msgstr "Действие успешно выполнено."
+
+msgid "Manual metering cycle completed."
+msgstr "Ручной цикл списания средств завершен."
+
+msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
+msgstr "Вы уверены, что хотите навсегда удалить этот ресурс из ArvanCloud?"
+
+msgid "Permission denied."
+msgstr "Доступ запрещен."
+
+msgid "Invalid user ID or amount."
+msgstr "Неверный ID пользователя или сумма."
+
+msgid "Balance adjusted successfully."
+msgstr "Баланс успешно скорректирован."
+
+msgid "Resource not found."
+msgstr "Ресурс не найден."
+
+msgid "Instance powered off by administrator."
+msgstr "Сервер выключен администратором."
+
+msgid "Instance purged by administrator."
+msgstr "Сервер безвозвратно удален администратором."
+
+msgid "Unknown admin action."
+msgstr "Неизвестное действие администратора."
+
+msgid "Connected successfully to ArvanCloud infrastructure."
+msgstr "Успешное подключение к инфраструктуре ArvanCloud."
+
+msgid "Network error while testing connection."
+msgstr "Сетевая ошибка при проверке соединения."
+
+msgid "Network error."
+msgstr "Сетевая ошибка."
+
+msgid "Applying..."
+msgstr "Применение..."
+
+msgid "Running Metering..."
+msgstr "Выполняется списание..."
+
+msgid "Adjust Wallet Balance: "
+msgstr "Изменить баланс кошелька: "
+
+msgid "Loading ArvanCloud Services Canvas..."
+msgstr "Загрузка панели облачных сервисов ArvanCloud..."
+
+msgid "Loading ArvanCloud Management Portal..."
+msgstr "Загрузка панели управления реселлера ArvanCloud..."
+

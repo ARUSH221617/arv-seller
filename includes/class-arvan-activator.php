@@ -123,7 +123,11 @@ class Arvan_Activator {
 		}
 
 		if ( false === get_option( 'arvan_markup_percentage' ) ) {
-			add_option( 'arvan_markup_percentage', 15 ); // 15% default reseller markup
+			add_option( 'arvan_markup_percentage', 20 ); // 20% default reseller markup
+		}
+
+		if ( false === get_option( 'arvan_fixed_margin' ) ) {
+			add_option( 'arvan_fixed_margin', 0 ); // Fixed margin addition (e.g. 0 IRT)
 		}
 
 		if ( false === get_option( 'arvan_api_key' ) ) {
@@ -132,6 +136,22 @@ class Arvan_Activator {
 
 		if ( false === get_option( 'arvan_default_region' ) ) {
 			add_option( 'arvan_default_region', 'ir-thr-c2' );
+		}
+
+		if ( false === get_option( 'arvan_store_name' ) ) {
+			add_option( 'arvan_store_name', get_bloginfo( 'name' ) . ' Cloud' );
+		}
+
+		if ( false === get_option( 'arvan_support_email' ) ) {
+			add_option( 'arvan_support_email', get_option( 'admin_email' ) );
+		}
+
+		if ( false === get_option( 'arvan_support_phone' ) ) {
+			add_option( 'arvan_support_phone', '021-88888888' );
+		}
+
+		if ( false === get_option( 'arvan_sandbox_mode' ) ) {
+			add_option( 'arvan_sandbox_mode', 1 ); // Default sandbox demo mode enabled
 		}
 	}
 
