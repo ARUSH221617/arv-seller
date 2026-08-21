@@ -28,6 +28,90 @@ msgstr "Connected successfully to ArvanCloud infrastructure."
 msgid "Loading ArvanCloud Services Canvas..."
 msgstr "Loading ArvanCloud Services Canvas..."
 
+msgid "arvanCloud"
+msgstr "ArvanCloud"
+
+msgid "ArvanCloud"
+msgstr "ArvanCloud"
+
+msgid "Tehran"
+msgstr "Tehran"
+
+msgid "تهران"
+msgstr "Tehran"
+
+msgid "Tabriz"
+msgstr "Tabriz"
+
+msgid "تبریز"
+msgstr "Tabriz"
+
+msgid "Iran"
+msgstr "Iran"
+
+msgid "ایران"
+msgstr "Iran"
+
+msgid "Karaj"
+msgstr "Karaj"
+
+msgid "Isfahan"
+msgstr "Isfahan"
+
+msgid "Shiraz"
+msgstr "Shiraz"
+
+msgid "Mashhad"
+msgstr "Mashhad"
+
+msgid "Ahvaz"
+msgstr "Ahvaz"
+
+msgid "Tehran - Forough"
+msgstr "Tehran - Forough"
+
+msgid "Tehran (Forough)"
+msgstr "Tehran (Forough)"
+
+msgid "Tehran - Shahryar"
+msgstr "Tehran - Shahryar"
+
+msgid "Tehran (Shahryar)"
+msgstr "Tehran (Shahryar)"
+
+msgid "Tabriz - Northwest"
+msgstr "Tabriz - Northwest"
+
+msgid "Tabriz (Northwest)"
+msgstr "Tabriz (Northwest)"
+
+msgid "Forough"
+msgstr "Forough"
+
+msgid "Shahryar"
+msgstr "Shahryar"
+
+msgid "Northwest"
+msgstr "Northwest"
+
+msgid "Starter Eco"
+msgstr "Starter Eco"
+
+msgid "Standard General"
+msgstr "Standard General"
+
+msgid "Performance Pro"
+msgstr "Performance Pro"
+
+msgid "Enterprise Ultra"
+msgstr "Enterprise Ultra"
+
+msgid "Compute Master"
+msgstr "Compute Master"
+
+msgid "Memory Master"
+msgstr "Memory Master"
+
 msgid "dashboard"
 msgstr "Dashboard"
 

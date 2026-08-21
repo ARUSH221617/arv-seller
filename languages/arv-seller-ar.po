@@ -28,6 +28,90 @@ msgstr "تم الاتصال بالبنية التحتية لـ آروان كلا
 msgid "Loading ArvanCloud Services Canvas..."
 msgstr "جارٍ تحميل منصة الخدمات السحابية لأروان..."
 
+msgid "arvanCloud"
+msgstr "آروان كلاود"
+
+msgid "ArvanCloud"
+msgstr "آروان كلاود"
+
+msgid "Tehran"
+msgstr "طهران"
+
+msgid "تهران"
+msgstr "طهران"
+
+msgid "Tabriz"
+msgstr "تبريز"
+
+msgid "تبریز"
+msgstr "تبريز"
+
+msgid "Iran"
+msgstr "إيران"
+
+msgid "ایران"
+msgstr "إيران"
+
+msgid "Karaj"
+msgstr "كرج"
+
+msgid "Isfahan"
+msgstr "أصفهان"
+
+msgid "Shiraz"
+msgstr "شيراز"
+
+msgid "Mashhad"
+msgstr "مشهد"
+
+msgid "Ahvaz"
+msgstr "الأهواز"
+
+msgid "Tehran - Forough"
+msgstr "طهران - فروغ"
+
+msgid "Tehran (Forough)"
+msgstr "طهران (فروغ)"
+
+msgid "Tehran - Shahryar"
+msgstr "طهران - شهريار"
+
+msgid "Tehran (Shahryar)"
+msgstr "طهران (شهريار)"
+
+msgid "Tabriz - Northwest"
+msgstr "تبريز - الشمال الغربي"
+
+msgid "Tabriz (Northwest)"
+msgstr "تبريز (الشمال الغربي)"
+
+msgid "Forough"
+msgstr "فروغ"
+
+msgid "Shahryar"
+msgstr "شهريار"
+
+msgid "Northwest"
+msgstr "الشمال الغربي"
+
+msgid "Starter Eco"
+msgstr "الأساسي الاقتصادي (Starter Eco)"
+
+msgid "Standard General"
+msgstr "القياسي العام (Standard General)"
+
+msgid "Performance Pro"
+msgstr "الاحترافي عالي الأداء (Performance Pro)"
+
+msgid "Enterprise Ultra"
+msgstr "المؤسسي الفائق (Enterprise Ultra)"
+
+msgid "Compute Master"
+msgstr "الحسابي المتقدم (Compute Master)"
+
+msgid "Memory Master"
+msgstr "الذاكرة المتقدمة (Memory Master)"
+
 msgid "dashboard"
 msgstr "لوحة التحكم"
 

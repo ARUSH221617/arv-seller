@@ -28,6 +28,90 @@ msgstr "ArvanCloud altyapısına başarıyla bağlanıldı."
 msgid "Loading ArvanCloud Services Canvas..."
 msgstr "ArvanCloud Hizmetleri Paneli Yükleniyor..."
 
+msgid "arvanCloud"
+msgstr "ArvanCloud"
+
+msgid "ArvanCloud"
+msgstr "ArvanCloud"
+
+msgid "Tehran"
+msgstr "Tahran"
+
+msgid "تهران"
+msgstr "Tahran"
+
+msgid "Tabriz"
+msgstr "Tebriz"
+
+msgid "تبریز"
+msgstr "Tebriz"
+
+msgid "Iran"
+msgstr "İran"
+
+msgid "ایران"
+msgstr "İran"
+
+msgid "Karaj"
+msgstr "Kerec"
+
+msgid "Isfahan"
+msgstr "İsfahan"
+
+msgid "Shiraz"
+msgstr "Şiraz"
+
+msgid "Mashhad"
+msgstr "Meşhed"
+
+msgid "Ahvaz"
+msgstr "Ahvaz"
+
+msgid "Tehran - Forough"
+msgstr "Tahran - Forough"
+
+msgid "Tehran (Forough)"
+msgstr "Tahran (Forough)"
+
+msgid "Tehran - Shahryar"
+msgstr "Tahran - Şehriyar"
+
+msgid "Tehran (Shahryar)"
+msgstr "Tahran (Şehriyar)"
+
+msgid "Tabriz - Northwest"
+msgstr "Tebriz - Kuzeybatı"
+
+msgid "Tabriz (Northwest)"
+msgstr "Tebriz (Kuzeybatı)"
+
+msgid "Forough"
+msgstr "Forough"
+
+msgid "Shahryar"
+msgstr "Şehriyar"
+
+msgid "Northwest"
+msgstr "Kuzeybatı"
+
+msgid "Starter Eco"
+msgstr "Başlangıç Eko (Starter Eco)"
+
+msgid "Standard General"
+msgstr "Standart Genel (Standard General)"
+
+msgid "Performance Pro"
+msgstr "Performans Pro (Performance Pro)"
+
+msgid "Enterprise Ultra"
+msgstr "Kurumsal Ultra (Enterprise Ultra)"
+
+msgid "Compute Master"
+msgstr "İşlemci Odaklı (Compute Master)"
+
+msgid "Memory Master"
+msgstr "Bellek Odaklı (Memory Master)"
+
 msgid "dashboard"
 msgstr "Kontrol Paneli"
 

@@ -203,7 +203,7 @@ export const AdminResourcesView: React.FC<AdminResourcesViewProps> = ({
                       <td className="py-4 px-5 font-mono text-[11px] text-slate-600">{res.arvan_resource_id}</td>
                       <td className="py-4 px-5 font-medium text-slate-600">{res.region}</td>
                       <td className="py-4 px-5 font-bold text-arvan-teal">
-                        {formatCurrency(res.hourly_rate, currency, language)} / hr
+                        {formatCurrency(res.hourly_rate, currency, language)} / {t('hr')}
                       </td>
                       <td className="py-4 px-5">
                         {res.status === 'active' && (

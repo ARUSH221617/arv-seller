@@ -177,7 +177,7 @@ export const AdminWalletsView: React.FC<AdminWalletsViewProps> = ({
                         </span>
                       </td>
                       <td className="py-4 px-5 font-mono text-slate-700">
-                        {formatCurrency(wallet.burn_rate, currency, language)} / hr
+                        {formatCurrency(wallet.burn_rate, currency, language)} / {t('hr')}
                       </td>
                       <td className="py-4 px-5 text-slate-500 font-mono text-[11px]">
                         {formatDate(wallet.created_at, language)}

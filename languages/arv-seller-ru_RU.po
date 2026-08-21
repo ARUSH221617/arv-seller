@@ -28,6 +28,90 @@ msgstr "Успешное подключение к инфраструктуре 
 msgid "Loading ArvanCloud Services Canvas..."
 msgstr "Загрузка панели облачных сервисов ArvanCloud..."
 
+msgid "arvanCloud"
+msgstr "ArvanCloud"
+
+msgid "ArvanCloud"
+msgstr "ArvanCloud"
+
+msgid "Tehran"
+msgstr "Тегеран"
+
+msgid "تهران"
+msgstr "Тегеран"
+
+msgid "Tabriz"
+msgstr "Тебриз"
+
+msgid "تبریز"
+msgstr "Тебриز"
+
+msgid "Iran"
+msgstr "Иран"
+
+msgid "ایران"
+msgstr "Иран"
+
+msgid "Karaj"
+msgstr "Кередж"
+
+msgid "Isfahan"
+msgstr "Исфахан"
+
+msgid "Shiraz"
+msgstr "Шираз"
+
+msgid "Mashhad"
+msgstr "Мешхед"
+
+msgid "Ahvaz"
+msgstr "Ахваз"
+
+msgid "Tehran - Forough"
+msgstr "Тегеран - Forough"
+
+msgid "Tehran (Forough)"
+msgstr "Тегеран (Forough)"
+
+msgid "Tehran - Shahryar"
+msgstr "Тегеран - Шахрияр"
+
+msgid "Tehran (Shahryar)"
+msgstr "Тегеран (Шахрияр)"
+
+msgid "Tabriz - Northwest"
+msgstr "Тебриз - Северо-Запад"
+
+msgid "Tabriz (Northwest)"
+msgstr "Тебриз (Северо-Запад)"
+
+msgid "Forough"
+msgstr "Forough"
+
+msgid "Shahryar"
+msgstr "Шахрияр"
+
+msgid "Northwest"
+msgstr "Северо-Запад"
+
+msgid "Starter Eco"
+msgstr "Стартовый Эко (Starter Eco)"
+
+msgid "Standard General"
+msgstr "Стандартный Общий (Standard General)"
+
+msgid "Performance Pro"
+msgstr "Производительный Про (Performance Pro)"
+
+msgid "Enterprise Ultra"
+msgstr "Корпоративный Ультра (Enterprise Ultra)"
+
+msgid "Compute Master"
+msgstr "Вычислительный Мастер (Compute Master)"
+
+msgid "Memory Master"
+msgstr "Память Мастер (Memory Master)"
+
 msgid "dashboard"
 msgstr "Панель управления"
 

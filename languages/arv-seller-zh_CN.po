@@ -28,6 +28,90 @@ msgstr "已成功连接至 ArvanCloud 云基础设施。"
 msgid "Loading ArvanCloud Services Canvas..."
 msgstr "正在载入 ArvanCloud 云服务平台..."
 
+msgid "arvanCloud"
+msgstr "ArvanCloud"
+
+msgid "ArvanCloud"
+msgstr "ArvanCloud"
+
+msgid "Tehran"
+msgstr "德黑兰"
+
+msgid "تهران"
+msgstr "德黑兰"
+
+msgid "Tabriz"
+msgstr "大不里士"
+
+msgid "تبریز"
+msgstr "大不里士"
+
+msgid "Iran"
+msgstr "伊朗"
+
+msgid "ایران"
+msgstr "伊朗"
+
+msgid "Karaj"
+msgstr "卡拉季"
+
+msgid "Isfahan"
+msgstr "伊斯法罕"
+
+msgid "Shiraz"
+msgstr "设拉子"
+
+msgid "Mashhad"
+msgstr "马什哈德"
+
+msgid "Ahvaz"
+msgstr "阿瓦士"
+
+msgid "Tehran - Forough"
+msgstr "德黑兰 - Forough"
+
+msgid "Tehran (Forough)"
+msgstr "德黑兰 (Forough)"
+
+msgid "Tehran - Shahryar"
+msgstr "德黑兰 - Shahryar"
+
+msgid "Tehran (Shahryar)"
+msgstr "德黑兰 (Shahryar)"
+
+msgid "Tabriz - Northwest"
+msgstr "大不里士 - 西北"
+
+msgid "Tabriz (Northwest)"
+msgstr "大不里士 (西北)"
+
+msgid "Forough"
+msgstr "Forough"
+
+msgid "Shahryar"
+msgstr "Shahryar"
+
+msgid "Northwest"
+msgstr "西北"
+
+msgid "Starter Eco"
+msgstr "入门经济型 (Starter Eco)"
+
+msgid "Standard General"
+msgstr "通用标准型 (Standard General)"
+
+msgid "Performance Pro"
+msgstr "高性能专业型 (Performance Pro)"
+
+msgid "Enterprise Ultra"
+msgstr "企业旗舰型 (Enterprise Ultra)"
+
+msgid "Compute Master"
+msgstr "计算增强型 (Compute Master)"
+
+msgid "Memory Master"
+msgstr "内存增强型 (Memory Master)"
+
 msgid "dashboard"
 msgstr "控制台"
 

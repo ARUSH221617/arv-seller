@@ -188,8 +188,8 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                           <span className="text-[11px] font-mono text-slate-500">{region.latency || '15ms'}</span>
                         </div>
                       </div>
-                      <div className="font-bold text-sm text-slate-900 mb-0.5">{region.name}</div>
-                      <div className="text-xs text-slate-500">{region.city}, {region.country}</div>
+                      <div className="font-bold text-sm text-slate-900 mb-0.5">{t(region.name) || region.name}</div>
+                      <div className="text-xs text-slate-500">{t(region.city) || region.city}، {t(region.country) || region.country}</div>
                       {isSelected && (
                         <div className="absolute top-3 end-3 flex h-5 w-5 items-center justify-center rounded-full bg-arvan-teal text-white font-bold shadow-sm">
                           <Check className="h-3.5 w-3.5" />
@@ -241,7 +241,7 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                     >
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
-                          <span className="font-mono text-sm font-extrabold text-slate-900">{flavor.name}</span>
+                          <span className="text-sm font-extrabold text-slate-900">{t(flavor.name) || flavor.name}</span>
                           {isPopular && (
                             <Badge variant="destructive" className="text-[10px] py-0 px-2 bg-arvan-pink text-white">
                               {t('mostPopular')}
@@ -252,7 +252,7 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                           <span className="text-sm font-extrabold text-arvan-teal">
                             {formatCurrency(cost, currency, language)}
                           </span>
-                          <span className="text-[10px] text-slate-500 block">/ hr</span>
+                          <span className="text-[10px] text-slate-500 block">/ {t('hr')}</span>
                         </div>
                       </div>
 
@@ -295,7 +295,7 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                 <div className="text-end">
                   <span className="text-xs text-slate-500 block">{t('additionalStorage')}:</span>
                   <span className="text-xs font-bold text-slate-800">
-                    +{formatCurrency(extraDiskHourlyCost, currency, language)} / hr
+                    +{formatCurrency(extraDiskHourlyCost, currency, language)} / {t('hr')}
                   </span>
                 </div>
               </div>
@@ -476,11 +476,11 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
               <div className="space-y-2.5 rounded-2xl bg-slate-50 p-4 border border-slate-100">
                 <div className="flex justify-between">
                   <span className="text-slate-500">{t('region')}:</span>
-                  <span className="font-bold text-slate-900">{selectedRegion.name}</span>
+                  <span className="font-bold text-slate-900">{t(selectedRegion.name) || selectedRegion.name}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-500">{t('flavor')}:</span>
-                  <span className="font-mono font-bold text-slate-900">{selectedFlavor.name}</span>
+                  <span className="font-bold text-slate-900">{t(selectedFlavor.name) || selectedFlavor.name}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-500">{t('specs')}:</span>
@@ -504,7 +504,7 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                 <div className="flex items-baseline justify-between">
                   <span className="text-slate-500">{t('hourlyBurn')}:</span>
                   <span className="text-lg font-extrabold text-arvan-teal">
-                    {formatCurrency(totalHourlyPrice, currency, language)} / hr
+                    {formatCurrency(totalHourlyPrice, currency, language)} / {t('hr')}
                   </span>
                 </div>
                 <div className="flex items-baseline justify-between text-[11px] text-slate-500">

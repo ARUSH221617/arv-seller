@@ -38,10 +38,7 @@ export const TopAppBar: React.FC<TopAppBarProps> = ({
           <div>
             <div className="flex items-center gap-2">
               <span className="text-base font-extrabold tracking-tight text-slate-900">
-                ArvanCloud
-              </span>
-              <span className="rounded-md bg-arvan-teal/10 px-1.5 py-0.5 text-[10px] font-bold text-arvan-teal-dark">
-                Reseller
+                {t('arvanCloud')}
               </span>
             </div>
             <p className="text-[11px] font-medium text-slate-500">

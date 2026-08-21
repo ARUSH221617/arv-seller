@@ -153,7 +153,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
             </div>
             <div className="text-2xl font-black text-slate-900">
               {formatCurrency(burnRate, currency, language)}
-              <span className="text-xs text-slate-500 font-normal ms-1">/ hr</span>
+              <span className="text-xs text-slate-500 font-normal ms-1">/ {t('hr')}</span>
             </div>
           </CardContent>
         </Card>
@@ -262,7 +262,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
                         {srv.flavor_id} &bull; {srv.disk_size} GB NVMe
                       </td>
                       <td className="py-4 px-5 font-bold text-arvan-teal">
-                        {formatCurrency(srv.hourly_rate, currency, language)} / hr
+                        {formatCurrency(srv.hourly_rate, currency, language)} / {t('hr')}
                       </td>
                       <td className="py-4 px-5">
                         {srv.status === 'active' && (

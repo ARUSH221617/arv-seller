@@ -28,6 +28,90 @@ msgstr ""
 msgid "Loading ArvanCloud Services Canvas..."
 msgstr ""
 
+msgid "arvanCloud"
+msgstr ""
+
+msgid "ArvanCloud"
+msgstr ""
+
+msgid "Tehran"
+msgstr ""
+
+msgid "تهران"
+msgstr ""
+
+msgid "Tabriz"
+msgstr ""
+
+msgid "تبریز"
+msgstr ""
+
+msgid "Iran"
+msgstr ""
+
+msgid "ایران"
+msgstr ""
+
+msgid "Karaj"
+msgstr ""
+
+msgid "Isfahan"
+msgstr ""
+
+msgid "Shiraz"
+msgstr ""
+
+msgid "Mashhad"
+msgstr ""
+
+msgid "Ahvaz"
+msgstr ""
+
+msgid "Tehran - Forough"
+msgstr ""
+
+msgid "Tehran (Forough)"
+msgstr ""
+
+msgid "Tehran - Shahryar"
+msgstr ""
+
+msgid "Tehran (Shahryar)"
+msgstr ""
+
+msgid "Tabriz - Northwest"
+msgstr ""
+
+msgid "Tabriz (Northwest)"
+msgstr ""
+
+msgid "Forough"
+msgstr ""
+
+msgid "Shahryar"
+msgstr ""
+
+msgid "Northwest"
+msgstr ""
+
+msgid "Starter Eco"
+msgstr ""
+
+msgid "Standard General"
+msgstr ""
+
+msgid "Performance Pro"
+msgstr ""
+
+msgid "Enterprise Ultra"
+msgstr ""
+
+msgid "Compute Master"
+msgstr ""
+
+msgid "Memory Master"
+msgstr ""
+
 msgid "dashboard"
 msgstr ""
 
