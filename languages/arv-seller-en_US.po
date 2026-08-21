@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
 "Report-Msgid-Bugs-To: https://arvancloud.ir\n"
-"POT-Creation-Date: 2026-08-21 02:31:43+0000\n"
-"PO-Revision-Date: 2026-08-21 02:31:43+0000\n"
+"POT-Creation-Date: 2026-08-21 02:38:13+0000\n"
+"PO-Revision-Date: 2026-08-21 02:38:13+0000\n"
 "Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
 "Language-Team: ArvanCloud English (US) Team\n"
 "Language: en_US\n"
@@ -304,6 +304,10 @@ msgstr "Cancel"
 msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
 msgstr "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
 
+#: admin/views/admin-settings.php:168
+msgid "CDN & Edge DNS Manager"
+msgstr "CDN & Edge DNS Manager"
+
 #: public/class-arvan-public.php:635
 msgid "CDN activated for \"%s\". Please set your nameservers."
 msgstr "CDN activated for \"%s\". Please set your nameservers."
@@ -319,7 +323,7 @@ msgid "cdnDns"
 msgstr "CDN & DNS Management"
 
 msgid "cdnManagerLink"
-msgstr "🌐 CDN & DNS Manager"
+msgstr "CDN & DNS Manager"
 
 msgid "cdnTitle"
 msgstr "CDN Domain Connection & Anycast DNS"
@@ -342,6 +346,10 @@ msgstr "Cloud Proxy"
 #: admin/class-arvan-admin.php:249
 msgid "Cloud Resources"
 msgstr "Cloud Resources"
+
+#: admin/views/admin-settings.php:160
+msgid "Cloud Server Configurator"
+msgstr "Cloud Server Configurator"
 
 #: templates/frontend-canvas.php:26
 msgid "Cloud Services Platform"
@@ -490,6 +498,10 @@ msgstr "Customer"
 msgid "Customer Name"
 msgstr "Customer Name"
 
+#: admin/views/admin-settings.php:164
+msgid "Customer Portal & Dashboard"
+msgstr "Customer Portal & Dashboard"
+
 #: admin/class-arvan-admin.php:192
 msgid "Customer wallet balance updated successfully."
 msgstr "Customer wallet balance updated successfully."
@@ -498,7 +510,7 @@ msgid "Customer Wallets & Ledger Audit"
 msgstr "Customer Wallets & Ledger Audit"
 
 msgid "customerDashboardLink"
-msgstr "📊 Customer Dashboard"
+msgstr "Customer Dashboard"
 
 #: admin/views/admin-settings.php:121
 msgid "Customization parameters injected into the standalone virtual canvas header and footer."
@@ -1291,6 +1303,10 @@ msgstr "S3 Bucket created successfully."
 msgid "S3 Endpoint URL:"
 msgstr "S3 Endpoint URL:"
 
+#: admin/views/admin-settings.php:172
+msgid "S3 Object Storage"
+msgstr "S3 Object Storage"
+
 #: public/views/storefront-storage.php:131
 msgid "S3 Storage API Credentials & Setup"
 msgstr "S3 Storage API Credentials & Setup"
@@ -1314,7 +1330,7 @@ msgid "s3EndpointUrl"
 msgstr "S3 Endpoint URL"
 
 msgid "s3StorageLink"
-msgstr "📦 S3 Object Storage"
+msgstr "S3 Object Storage"
 
 #: admin/views/admin-settings.php:59
 msgid "Sandbox / Demo Mode"
@@ -1387,7 +1403,7 @@ msgid "Server reboot command executed."
 msgstr "Server reboot command executed."
 
 msgid "serverConfiguratorLink"
-msgstr "🚀 Server Configurator"
+msgstr "Server Configurator"
 
 msgid "serverName"
 msgstr "Server Name"

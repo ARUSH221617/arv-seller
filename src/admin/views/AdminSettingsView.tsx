@@ -5,12 +5,16 @@ import {
   Zap,
   DollarSign,
   Globe2,
+  Globe,
   Store,
   ExternalLink,
   Save,
   Sparkles,
   CheckCircle2,
   AlertCircle,
+  Server,
+  LayoutDashboard,
+  Database,
 } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
@@ -222,9 +226,9 @@ export const AdminSettingsView: React.FC<AdminSettingsViewProps> = ({
               onChange={(e) => setFormData({ ...formData, defaultRegion: e.target.value })}
               className="flex h-11 w-full rounded-2xl border border-slate-200 bg-white px-4 text-xs font-bold text-slate-800 focus:outline-none focus:border-arvan-teal shadow-sm"
             >
-              <option value="ir-thr-c2">🇮🇷 Tehran - Forough (ir-thr-c2)</option>
-              <option value="ir-thr-sh1">🇮🇷 Tehran - Shahryar (ir-thr-sh1)</option>
-              <option value="ir-tbz-dc1">🇮🇷 Tabriz - Northwest (ir-tbz-dc1)</option>
+              <option value="ir-thr-c2">Tehran - Forough (ir-thr-c2)</option>
+              <option value="ir-thr-sh1">Tehran - Shahryar (ir-thr-sh1)</option>
+              <option value="ir-tbz-dc1">Tabriz - Northwest (ir-tbz-dc1)</option>
             </select>
           </div>
         </CardContent>
@@ -290,40 +294,52 @@ export const AdminSettingsView: React.FC<AdminSettingsViewProps> = ({
             href="/cloud-services/server/"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm"
+            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm group"
           >
-            <span className="font-bold">{t('serverConfiguratorLink')}</span>
-            <ExternalLink className="h-4 w-4 text-arvan-teal" />
+            <div className="flex items-center gap-2.5">
+              <Server className="h-4 w-4 text-arvan-teal shrink-0 group-hover:scale-110 transition-transform" />
+              <span className="font-bold">{t('Cloud Server Configurator')}</span>
+            </div>
+            <ExternalLink className="h-3.5 w-3.5 text-slate-400 group-hover:text-arvan-teal transition-colors" />
           </a>
 
           <a
             href="/cloud-services/dashboard/"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm"
+            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm group"
           >
-            <span className="font-bold">{t('customerDashboardLink')}</span>
-            <ExternalLink className="h-4 w-4 text-arvan-teal" />
+            <div className="flex items-center gap-2.5">
+              <LayoutDashboard className="h-4 w-4 text-arvan-teal shrink-0 group-hover:scale-110 transition-transform" />
+              <span className="font-bold">{t('Customer Portal & Dashboard')}</span>
+            </div>
+            <ExternalLink className="h-3.5 w-3.5 text-slate-400 group-hover:text-arvan-teal transition-colors" />
           </a>
 
           <a
             href="/cloud-services/cdn/"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm"
+            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm group"
           >
-            <span className="font-bold">{t('cdnManagerLink')}</span>
-            <ExternalLink className="h-4 w-4 text-arvan-teal" />
+            <div className="flex items-center gap-2.5">
+              <Globe className="h-4 w-4 text-arvan-teal shrink-0 group-hover:scale-110 transition-transform" />
+              <span className="font-bold">{t('CDN & Edge DNS Manager')}</span>
+            </div>
+            <ExternalLink className="h-3.5 w-3.5 text-slate-400 group-hover:text-arvan-teal transition-colors" />
           </a>
 
           <a
             href="/cloud-services/storage/"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm"
+            className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-xs text-slate-800 hover:bg-white hover:border-arvan-teal/40 transition-all shadow-sm group"
           >
-            <span className="font-bold">{t('s3StorageLink')}</span>
-            <ExternalLink className="h-4 w-4 text-arvan-teal" />
+            <div className="flex items-center gap-2.5">
+              <Database className="h-4 w-4 text-arvan-teal shrink-0 group-hover:scale-110 transition-transform" />
+              <span className="font-bold">{t('S3 Object Storage')}</span>
+            </div>
+            <ExternalLink className="h-3.5 w-3.5 text-slate-400 group-hover:text-arvan-teal transition-colors" />
           </a>
         </CardContent>
       </Card>

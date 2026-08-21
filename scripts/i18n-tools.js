@@ -260,7 +260,14 @@ const SUPPLEMENTAL_TRANSLATIONS = {
     tr: 'Trafiğinizi hızlandırmak ve DDoS saldırılarından korumak için yukarıya bir alan adı girin.',
     zh: '在上方输入域名以加速流量并防御 DDoS 攻击。',
     ru: 'Введите домен выше для ускорения трафика и защиты от DDoS-атак.'
-  }
+  },
+  'serverConfiguratorLink': { fa: 'سفارش سرور ابری', en: 'Server Configurator', ar: 'تهيئة الخادم السحابي', tr: 'Sunucu Yapılandırıcısı', zh: '云服务器配置中心', ru: 'Конфигуратор серверов' },
+  'customerDashboardLink': { fa: 'داشبورد مشتری', en: 'Customer Dashboard', ar: 'لوحة تحكم العميل', tr: 'Müşteri Paneli', zh: '客户控制台', ru: 'Панель клиента' },
+  'cdnManagerLink': { fa: 'مدیریت CDN و DNS', en: 'CDN & DNS Manager', ar: 'إدارة CDN و DNS', tr: 'CDN ve DNS Yöneticisi', zh: 'CDN 与 DNS 管理器', ru: 'Управление CDN и DNS' },
+  's3StorageLink': { fa: 'ذخیره‌سازی S3', en: 'S3 Object Storage', ar: 'تخزين الكائنات S3', tr: 'S3 Nesne Depolama', zh: 'S3 对象存储', ru: 'Объектное хранилище S3' },
+  'Cloud Server Configurator': { fa: 'سفارش سرور ابری', en: 'Cloud Server Configurator', ar: 'تهيئة الخادم السحابي', tr: 'Bulut Sunucu Yapılandırıcısı', zh: '云服务器配置中心', ru: 'Конфигуратор облачных серверов' },
+  'Customer Portal & Dashboard': { fa: 'پرتال و داشبورد مشتریان', en: 'Customer Portal & Dashboard', ar: 'بوابة ولوحة تحكم العملاء', tr: 'Müşteri Portalı ve Paneli', zh: '客户门户与控制台', ru: 'Клиентский портал и панель' },
+  'CDN & Edge DNS Manager': { fa: 'مدیریت CDN و DNS لبه', en: 'CDN & Edge DNS Manager', ar: 'إدارة CDN و Anycast DNS', tr: 'CDN ve Uç DNS Yöneticisi', zh: 'CDN 与边缘 DNS 管理器', ru: 'Управление CDN و Anycast DNS' },
 };
 
 /**
@@ -289,10 +296,10 @@ export function loadExistingDictionaries() {
     }
   }
 
-  // 2. Merge translations from supplemental dictionary
+  // 2. Merge translations from supplemental dictionary (takes precedence over old cached strings)
   for (const [key, transMap] of Object.entries(SUPPLEMENTAL_TRANSLATIONS)) {
     for (const [lang, val] of Object.entries(transMap)) {
-      if (dicts[lang] && (!dicts[lang][key] || dicts[lang][key] === '')) {
+      if (dicts[lang]) {
         dicts[lang][key] = val;
       }
     }
@@ -309,6 +316,16 @@ export function loadExistingDictionaries() {
         if (val && (!dicts[langShort][key] || dicts[langShort][key] === '')) {
           dicts[langShort][key] = val;
         }
+      }
+    }
+  }
+
+  // 4. Sanitize quick link entries to remove any remaining emojis
+  const linkKeys = ['serverConfiguratorLink', 'customerDashboardLink', 'cdnManagerLink', 's3StorageLink'];
+  for (const lang of Object.keys(dicts)) {
+    for (const lk of linkKeys) {
+      if (dicts[lang][lk]) {
+        dicts[lang][lk] = dicts[lang][lk].replace(/^[🚀📊🌐📦⚡🔒☁️🔑🇮🇷\s]+/u, '');
       }
     }
   }

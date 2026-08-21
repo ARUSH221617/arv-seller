@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
 "Report-Msgid-Bugs-To: https://arvancloud.ir\n"
-"POT-Creation-Date: 2026-08-21 02:31:43+0000\n"
-"PO-Revision-Date: 2026-08-21 02:31:43+0000\n"
+"POT-Creation-Date: 2026-08-21 02:38:13+0000\n"
+"PO-Revision-Date: 2026-08-21 02:38:13+0000\n"
 "Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
 "Language-Team: ArvanCloud Chinese Simplified Team\n"
 "Language: zh_CN\n"
@@ -304,6 +304,10 @@ msgstr "取消"
 msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
 msgstr "无法开启服务器：您的钱包余额为零或负数。请先充值钱包。"
 
+#: admin/views/admin-settings.php:168
+msgid "CDN & Edge DNS Manager"
+msgstr "CDN 与边缘 DNS 管理器"
+
 #: public/class-arvan-public.php:635
 msgid "CDN activated for \"%s\". Please set your nameservers."
 msgstr "已为 \"%s\" 启用 CDN。请配置您的名称服务器。"
@@ -319,7 +323,7 @@ msgid "cdnDns"
 msgstr "CDN 与 DNS 管理"
 
 msgid "cdnManagerLink"
-msgstr "🌐 CDN与DNS管理"
+msgstr "CDN 与 DNS 管理器"
 
 msgid "cdnTitle"
 msgstr "CDN 域名接入与 Anycast DNS 解析"
@@ -342,6 +346,10 @@ msgstr ""
 #: admin/class-arvan-admin.php:249
 msgid "Cloud Resources"
 msgstr "云端资源监控"
+
+#: admin/views/admin-settings.php:160
+msgid "Cloud Server Configurator"
+msgstr "云服务器配置中心"
 
 #: templates/frontend-canvas.php:26
 msgid "Cloud Services Platform"
@@ -490,6 +498,10 @@ msgstr "所属客户"
 msgid "Customer Name"
 msgstr "客户姓名"
 
+#: admin/views/admin-settings.php:164
+msgid "Customer Portal & Dashboard"
+msgstr "客户门户与控制台"
+
 #: admin/class-arvan-admin.php:192
 msgid "Customer wallet balance updated successfully."
 msgstr ""
@@ -498,7 +510,7 @@ msgid "Customer Wallets & Ledger Audit"
 msgstr "客户钱包与原子财务台账审计"
 
 msgid "customerDashboardLink"
-msgstr "📊 客户控制台"
+msgstr "客户控制台"
 
 #: admin/views/admin-settings.php:121
 msgid "Customization parameters injected into the standalone virtual canvas header and footer."
@@ -1291,6 +1303,10 @@ msgstr ""
 msgid "S3 Endpoint URL:"
 msgstr ""
 
+#: admin/views/admin-settings.php:172
+msgid "S3 Object Storage"
+msgstr ""
+
 #: public/views/storefront-storage.php:131
 msgid "S3 Storage API Credentials & Setup"
 msgstr ""
@@ -1314,7 +1330,7 @@ msgid "s3EndpointUrl"
 msgstr "S3 终端节点 URL"
 
 msgid "s3StorageLink"
-msgstr "📦 S3 对象存储"
+msgstr "S3 对象存储"
 
 #: admin/views/admin-settings.php:59
 msgid "Sandbox / Demo Mode"
@@ -1387,7 +1403,7 @@ msgid "Server reboot command executed."
 msgstr ""
 
 msgid "serverConfiguratorLink"
-msgstr "🚀 云服务器配置中心"
+msgstr "云服务器配置中心"
 
 msgid "serverName"
 msgstr "服务器名称"

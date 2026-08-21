@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
 "Report-Msgid-Bugs-To: https://arvancloud.ir\n"
-"POT-Creation-Date: 2026-08-21 02:31:43+0000\n"
-"PO-Revision-Date: 2026-08-21 02:31:43+0000\n"
+"POT-Creation-Date: 2026-08-21 02:38:13+0000\n"
+"PO-Revision-Date: 2026-08-21 02:38:13+0000\n"
 "Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
 "Language-Team: ArvanCloud Internationalization Team\n"
 "Language: en\n"
@@ -304,6 +304,10 @@ msgstr ""
 msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
 msgstr ""
 
+#: admin/views/admin-settings.php:168
+msgid "CDN & Edge DNS Manager"
+msgstr ""
+
 #: public/class-arvan-public.php:635
 msgid "CDN activated for \"%s\". Please set your nameservers."
 msgstr ""
@@ -341,6 +345,10 @@ msgstr ""
 
 #: admin/class-arvan-admin.php:249
 msgid "Cloud Resources"
+msgstr ""
+
+#: admin/views/admin-settings.php:160
+msgid "Cloud Server Configurator"
 msgstr ""
 
 #: templates/frontend-canvas.php:26
@@ -488,6 +496,10 @@ msgid "Customer"
 msgstr ""
 
 msgid "Customer Name"
+msgstr ""
+
+#: admin/views/admin-settings.php:164
+msgid "Customer Portal & Dashboard"
 msgstr ""
 
 #: admin/class-arvan-admin.php:192
@@ -1289,6 +1301,10 @@ msgstr ""
 
 #: public/views/storefront-storage.php:138
 msgid "S3 Endpoint URL:"
+msgstr ""
+
+#: admin/views/admin-settings.php:172
+msgid "S3 Object Storage"
 msgstr ""
 
 #: public/views/storefront-storage.php:131

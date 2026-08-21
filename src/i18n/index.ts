@@ -264,10 +264,10 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "manualAdjustmentDefaultReason": "تعدیل دستی توسط مدیر سامانه",
     "all": "همه",
     "active": "فعال",
-    "serverConfiguratorLink": "🚀 سفارش سرور ابری",
-    "customerDashboardLink": "📊 داشبورد مشتری",
-    "cdnManagerLink": "🌐 مدیریت CDN و DNS",
-    "s3StorageLink": "📦 ذخیره‌سازی S3",
+    "serverConfiguratorLink": "سفارش سرور ابری",
+    "customerDashboardLink": "داشبورد مشتری",
+    "cdnManagerLink": "مدیریت CDN و DNS",
+    "s3StorageLink": "ذخیره‌سازی S3",
     "Action completed successfully.": "عملیات با موفقیت انجام شد.",
     "Manual metering cycle completed.": "چرخه محاسبه مصرف ساعتی با موفقیت انجام شد.",
     "Instance purged by administrator.": "سرور توسط مدیر سامانه به طور کامل حذف شد.",
@@ -320,7 +320,10 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "Protected": "محافظت‌شده",
     "Purge Edge Cache": "پاکسازی کش لبه",
     "No CDN domains configured yet": "هنوز هیچ دامنه‌ای در CDN ثبت نشده است",
-    "Enter a domain name above to accelerate your traffic and protect from DDoS attacks.": "نام دامنه خود را در بالا وارد نمایید تا ترافیک شتاب‌دهی شده و در برابر حملات DDoS محافظت گردد."
+    "Enter a domain name above to accelerate your traffic and protect from DDoS attacks.": "نام دامنه خود را در بالا وارد نمایید تا ترافیک شتاب‌دهی شده و در برابر حملات DDoS محافظت گردد.",
+    "Cloud Server Configurator": "سفارش سرور ابری",
+    "Customer Portal & Dashboard": "پرتال و داشبورد مشتریان",
+    "CDN & Edge DNS Manager": "مدیریت CDN و DNS لبه"
   },
   "en": {
     "Deploy Cloud Server": "Deploy Cloud Server",
@@ -568,10 +571,10 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "manualAdjustmentDefaultReason": "Manual administrative adjustment",
     "all": "All",
     "active": "Active",
-    "serverConfiguratorLink": "🚀 Server Configurator",
-    "customerDashboardLink": "📊 Customer Dashboard",
-    "cdnManagerLink": "🌐 CDN & DNS Manager",
-    "s3StorageLink": "📦 S3 Object Storage",
+    "serverConfiguratorLink": "Server Configurator",
+    "customerDashboardLink": "Customer Dashboard",
+    "cdnManagerLink": "CDN & DNS Manager",
+    "s3StorageLink": "S3 Object Storage",
     "Action completed successfully.": "Action completed successfully.",
     "Manual metering cycle completed.": "Manual metering cycle completed.",
     "Instance purged by administrator.": "Instance purged by administrator.",
@@ -808,7 +811,11 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "Wallets Ledger": "Wallets Ledger",
     "Your Available Balance:": "Your Available Balance:",
     "Your available wallet balance will only support active services for approximately %s hours. Please top up your wallet to prevent automated service interruption.": "Your available wallet balance will only support active services for approximately %s hours. Please top up your wallet to prevent automated service interruption.",
-    "Your Storage Buckets": "Your Storage Buckets"
+    "Your Storage Buckets": "Your Storage Buckets",
+    "Cloud Server Configurator": "Cloud Server Configurator",
+    "Customer Portal & Dashboard": "Customer Portal & Dashboard",
+    "CDN & Edge DNS Manager": "CDN & Edge DNS Manager",
+    "S3 Object Storage": "S3 Object Storage"
   },
   "ar": {
     "Deploy Cloud Server": "إنشاء خادم سحابي",
@@ -1056,10 +1063,10 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "manualAdjustmentDefaultReason": "تعديل إداري يدوي",
     "all": "الكل",
     "active": "نشط",
-    "serverConfiguratorLink": "🚀 تهيئة الخادم السحابي",
-    "customerDashboardLink": "📊 لوحة تحكم العميل",
-    "cdnManagerLink": "🌐 إدارة CDN و DNS",
-    "s3StorageLink": "📦 تخزين الكائنات S3",
+    "serverConfiguratorLink": "تهيئة الخادم السحابي",
+    "customerDashboardLink": "لوحة تحكم العميل",
+    "cdnManagerLink": "إدارة CDN و DNS",
+    "s3StorageLink": "تخزين الكائنات S3",
     "Action completed successfully.": "تم تنفيذ العملية بنجاح.",
     "Manual metering cycle completed.": "تم اكتمال دورة احتساب الاستهلاك بنجاح.",
     "Instance purged by administrator.": "تم حذف الخادم نهائياً بواسطة المسؤول.",
@@ -1112,7 +1119,10 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "Protected": "محمي",
     "Purge Edge Cache": "مسح التخزين المؤقت",
     "No CDN domains configured yet": "لم يتم تكوين أي نطاقات CDN بعد",
-    "Enter a domain name above to accelerate your traffic and protect from DDoS attacks.": "أدخل اسم النطاق أعلاه لتسريع حركة المرور وحمايتها من هجمات DDoS."
+    "Enter a domain name above to accelerate your traffic and protect from DDoS attacks.": "أدخل اسم النطاق أعلاه لتسريع حركة المرور وحمايتها من هجمات DDoS.",
+    "Cloud Server Configurator": "تهيئة الخادم السحابي",
+    "Customer Portal & Dashboard": "بوابة ولوحة تحكم العملاء",
+    "CDN & Edge DNS Manager": "إدارة CDN و Anycast DNS"
   },
   "tr": {
     "Deploy Cloud Server": "Bulut Sunucu Başlat",
@@ -1360,10 +1370,10 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "manualAdjustmentDefaultReason": "Manuel yönetici düzeltmesi",
     "all": "Tümü",
     "active": "Aktif",
-    "serverConfiguratorLink": "🚀 Sunucu Yapılandırıcısı",
-    "customerDashboardLink": "📊 Müşteri Paneli",
-    "cdnManagerLink": "🌐 CDN ve DNS Yöneticisi",
-    "s3StorageLink": "📦 S3 Nesne Depolama",
+    "serverConfiguratorLink": "Sunucu Yapılandırıcısı",
+    "customerDashboardLink": "Müşteri Paneli",
+    "cdnManagerLink": "CDN ve DNS Yöneticisi",
+    "s3StorageLink": "S3 Nesne Depolama",
     "Action completed successfully.": "İşlem başarıyla tamamlandı.",
     "Manual metering cycle completed.": "Manuel faturalandırma döngüsü tamamlandı.",
     "Instance purged by administrator.": "Sunucu yönetici tarafından tamamen silindi.",
@@ -1416,7 +1426,10 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "Protected": "Korumalı",
     "Purge Edge Cache": "Uç Önbelleği Temizle",
     "No CDN domains configured yet": "Henüz yapılandırılmış CDN alanı yok",
-    "Enter a domain name above to accelerate your traffic and protect from DDoS attacks.": "Trafiğinizi hızlandırmak ve DDoS saldırılarından korumak için yukarıya bir alan adı girin."
+    "Enter a domain name above to accelerate your traffic and protect from DDoS attacks.": "Trafiğinizi hızlandırmak ve DDoS saldırılarından korumak için yukarıya bir alan adı girin.",
+    "Cloud Server Configurator": "Bulut Sunucu Yapılandırıcısı",
+    "Customer Portal & Dashboard": "Müşteri Portalı ve Paneli",
+    "CDN & Edge DNS Manager": "CDN ve Uç DNS Yöneticisi"
   },
   "zh": {
     "Deploy Cloud Server": "部署云服务器",
@@ -1664,10 +1677,10 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "manualAdjustmentDefaultReason": "管理员手动调账",
     "all": "全部",
     "active": "活跃",
-    "serverConfiguratorLink": "🚀 云服务器配置中心",
-    "customerDashboardLink": "📊 客户控制台",
-    "cdnManagerLink": "🌐 CDN与DNS管理",
-    "s3StorageLink": "📦 S3 对象存储",
+    "serverConfiguratorLink": "云服务器配置中心",
+    "customerDashboardLink": "客户控制台",
+    "cdnManagerLink": "CDN 与 DNS 管理器",
+    "s3StorageLink": "S3 对象存储",
     "Action completed successfully.": "操作成功完成。",
     "Manual metering cycle completed.": "按量计费结算周期已手动执行完毕。",
     "Instance purged by administrator.": "云主机已被管理员彻底删除。",
@@ -1720,7 +1733,10 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "Protected": "已受保护",
     "Purge Edge Cache": "清理边缘缓存",
     "No CDN domains configured yet": "尚未配置任何 CDN 域名",
-    "Enter a domain name above to accelerate your traffic and protect from DDoS attacks.": "在上方输入域名以加速流量并防御 DDoS 攻击。"
+    "Enter a domain name above to accelerate your traffic and protect from DDoS attacks.": "在上方输入域名以加速流量并防御 DDoS 攻击。",
+    "Cloud Server Configurator": "云服务器配置中心",
+    "Customer Portal & Dashboard": "客户门户与控制台",
+    "CDN & Edge DNS Manager": "CDN 与边缘 DNS 管理器"
   },
   "ru": {
     "Deploy Cloud Server": "Создать облачный сервер",
@@ -1968,10 +1984,10 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "manualAdjustmentDefaultReason": "Ручная корректировка администратора",
     "all": "Все",
     "active": "Активен",
-    "serverConfiguratorLink": "🚀 Конфигуратор серверов",
-    "customerDashboardLink": "📊 Панель клиента",
-    "cdnManagerLink": "🌐 Управление CDN и DNS",
-    "s3StorageLink": "📦 Объектное хранилище S3",
+    "serverConfiguratorLink": "Конфигуратор серверов",
+    "customerDashboardLink": "Панель клиента",
+    "cdnManagerLink": "Управление CDN и DNS",
+    "s3StorageLink": "Объектное хранилище S3",
     "Action completed successfully.": "Действие успешно выполнено.",
     "Manual metering cycle completed.": "Цикл расчета биллинга успешно завершен.",
     "Instance purged by administrator.": "Сервер безвозвратно удален администратором.",
@@ -2024,7 +2040,10 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "Protected": "Защищено",
     "Purge Edge Cache": "Очистить edge-кэш",
     "No CDN domains configured yet": "CDN домены еще не настроены",
-    "Enter a domain name above to accelerate your traffic and protect from DDoS attacks.": "Введите домен выше для ускорения трафика и защиты от DDoS-атак."
+    "Enter a domain name above to accelerate your traffic and protect from DDoS attacks.": "Введите домен выше для ускорения трафика и защиты от DDoS-атак.",
+    "Cloud Server Configurator": "Конфигуратор облачных серверов",
+    "Customer Portal & Dashboard": "Клиентский портал и панель",
+    "CDN & Edge DNS Manager": "Управление CDN و Anycast DNS"
   }
 };
 

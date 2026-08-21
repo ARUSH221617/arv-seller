@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
 "Report-Msgid-Bugs-To: https://arvancloud.ir\n"
-"POT-Creation-Date: 2026-08-21 02:31:43+0000\n"
-"PO-Revision-Date: 2026-08-21 02:31:43+0000\n"
+"POT-Creation-Date: 2026-08-21 02:38:13+0000\n"
+"PO-Revision-Date: 2026-08-21 02:38:13+0000\n"
 "Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
 "Language-Team: ArvanCloud Arabic Team\n"
 "Language: ar\n"
@@ -304,6 +304,10 @@ msgstr "إلغاء"
 msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
 msgstr "لا يمكن تشغيل الخادم: رصيد محفظتك صفر أو سالب. يرجى شحن المحفظة أولاً."
 
+#: admin/views/admin-settings.php:168
+msgid "CDN & Edge DNS Manager"
+msgstr "إدارة CDN و Anycast DNS"
+
 #: public/class-arvan-public.php:635
 msgid "CDN activated for \"%s\". Please set your nameservers."
 msgstr "تم تفعيل CDN لـ \"%s\". يرجى ضبط خوادم الأسماء الخاصة بك."
@@ -319,7 +323,7 @@ msgid "cdnDns"
 msgstr "شبكة توصيل المحتوى و DNS"
 
 msgid "cdnManagerLink"
-msgstr "🌐 إدارة CDN و DNS"
+msgstr "إدارة CDN و DNS"
 
 msgid "cdnTitle"
 msgstr "ربط النطاق بشبكة CDN و Anycast DNS"
@@ -342,6 +346,10 @@ msgstr ""
 #: admin/class-arvan-admin.php:249
 msgid "Cloud Resources"
 msgstr "الموارد السحابية"
+
+#: admin/views/admin-settings.php:160
+msgid "Cloud Server Configurator"
+msgstr "تهيئة الخادم السحابي"
 
 #: templates/frontend-canvas.php:26
 msgid "Cloud Services Platform"
@@ -490,6 +498,10 @@ msgstr "العميل"
 msgid "Customer Name"
 msgstr "اسم العميل"
 
+#: admin/views/admin-settings.php:164
+msgid "Customer Portal & Dashboard"
+msgstr "بوابة ولوحة تحكم العملاء"
+
 #: admin/class-arvan-admin.php:192
 msgid "Customer wallet balance updated successfully."
 msgstr ""
@@ -498,7 +510,7 @@ msgid "Customer Wallets & Ledger Audit"
 msgstr "محافظ العملاء وتدقيق دفتر الأستاذ"
 
 msgid "customerDashboardLink"
-msgstr "📊 لوحة تحكم العميل"
+msgstr "لوحة تحكم العميل"
 
 #: admin/views/admin-settings.php:121
 msgid "Customization parameters injected into the standalone virtual canvas header and footer."
@@ -1291,6 +1303,10 @@ msgstr ""
 msgid "S3 Endpoint URL:"
 msgstr ""
 
+#: admin/views/admin-settings.php:172
+msgid "S3 Object Storage"
+msgstr ""
+
 #: public/views/storefront-storage.php:131
 msgid "S3 Storage API Credentials & Setup"
 msgstr ""
@@ -1314,7 +1330,7 @@ msgid "s3EndpointUrl"
 msgstr "عنوان نقطة نهاية S3"
 
 msgid "s3StorageLink"
-msgstr "📦 تخزين الكائنات S3"
+msgstr "تخزين الكائنات S3"
 
 #: admin/views/admin-settings.php:59
 msgid "Sandbox / Demo Mode"
@@ -1387,7 +1403,7 @@ msgid "Server reboot command executed."
 msgstr ""
 
 msgid "serverConfiguratorLink"
-msgstr "🚀 تهيئة الخادم السحابي"
+msgstr "تهيئة الخادم السحابي"
 
 msgid "serverName"
 msgstr "اسم الخادم"
