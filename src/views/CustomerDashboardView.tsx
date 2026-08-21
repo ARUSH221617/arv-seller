@@ -24,7 +24,7 @@ import {
   WalletTransaction,
   SupportedLanguage,
 } from '../types';
-import { formatCurrency, formatDate, cn } from '../lib/utils';
+import { formatCurrency, formatDate, formatNumber, cn } from '../lib/utils';
 
 interface CustomerDashboardViewProps {
   balance: number;
@@ -35,6 +35,9 @@ interface CustomerDashboardViewProps {
   currency: string;
   language: SupportedLanguage;
   t: (key: string) => string;
+  customTitle?: string;
+  customDescription?: string;
+  walletTitle?: string;
   onOpenDeposit: () => void;
   onServerPower: (serverId: number, action: 'power_on' | 'power_off' | 'reboot' | 'delete') => Promise<void>;
   onNavigateDeploy: () => void;
@@ -49,6 +52,9 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
   currency,
   language,
   t,
+  customTitle,
+  customDescription,
+  walletTitle,
   onOpenDeposit,
   onServerPower,
   onNavigateDeploy,
@@ -70,19 +76,19 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
-            {t('dashboard')}
+            {customTitle || t('dashboard')}
           </h1>
           <p className="text-sm text-slate-500 mt-1">
-            {t('dashboardDesc')}
+            {customDescription || t('dashboardDesc')}
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <Button onClick={onOpenDeposit} className="gap-2 font-bold">
+          <Button onClick={onOpenDeposit} className="gap-2 font-bold shadow-sm">
             <Plus className="h-4 w-4" />
             <span>{t('topUp')}</span>
           </Button>
-          <Button variant="outline" onClick={onNavigateDeploy} className="gap-2">
-            <Server className="h-4 w-4 text-arvan-teal" />
+          <Button variant="outline" onClick={onNavigateDeploy} className="gap-2 font-bold">
+            <Server className="h-4 w-4 text-[var(--arvan-primary,#008b8b)]" />
             <span>{t('deployServer')}</span>
           </Button>
         </div>
@@ -97,7 +103,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
             <p className="text-xs text-rose-800 leading-relaxed mb-3">
               {t('suspensionDesc')}
             </p>
-            <Button size="sm" variant="destructive" onClick={onOpenDeposit} className="gap-1.5 text-xs">
+            <Button size="sm" variant="destructive" onClick={onOpenDeposit} className="gap-1.5 text-xs font-bold">
               <Plus className="h-3.5 w-3.5" />
               <span>{t('rechargeWalletNow')}</span>
             </Button>
@@ -113,7 +119,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
             <p className="text-xs text-amber-800 leading-relaxed mb-2">
               {t('lowBalanceDesc')}
             </p>
-            <Button size="sm" variant="outline" onClick={onOpenDeposit} className="gap-1.5 text-xs border-amber-300 bg-white text-amber-900 hover:bg-amber-100">
+            <Button size="sm" variant="outline" onClick={onOpenDeposit} className="gap-1.5 text-xs border-amber-300 bg-white text-amber-900 hover:bg-amber-100 font-bold">
               <Plus className="h-3.5 w-3.5 text-arvan-amber" />
               <span>{t('quickTopUp')}</span>
             </Button>
@@ -128,9 +134,9 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
           <CardContent className="p-5">
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                {t('availableBalance')}
+                {walletTitle || t('availableBalance')}
               </span>
-              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-arvan-teal/10 text-arvan-teal">
+              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--arvan-primary-light,#e6f7f7)] text-[var(--arvan-primary,#008b8b)]">
                 <Wallet className="h-4 w-4" />
               </div>
             </div>
@@ -170,7 +176,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
               </div>
             </div>
             <div className="text-2xl font-black text-slate-900">
-              {burnRate > 0 ? `${remainingHours.toFixed(0)} ${t('hours')}` : `∞ ${t('unlimited')}`}
+              {burnRate > 0 ? `${formatNumber(remainingHours.toFixed(0), language)} ${t('hours')}` : `∞ ${t('unlimited')}`}
             </div>
           </CardContent>
         </Card>
@@ -187,9 +193,9 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
               </div>
             </div>
             <div className="text-2xl font-black text-slate-900">
-              {servers.filter((s) => s.status === 'active').length}
+              {formatNumber(servers.filter((s) => s.status === 'active').length, language)}
               <span className="text-xs text-slate-500 font-normal ms-1.5">
-                / {servers.length} {t('total')}
+                / {formatNumber(servers.length, language)} {t('total')}
               </span>
             </div>
           </CardContent>
@@ -200,11 +206,11 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
       <Card elevation={1}>
         <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <CardTitle>
-            <Server className="h-5 w-5 text-arvan-teal" />
+            <Server className="h-5 w-5 text-[var(--arvan-primary,#008b8b)]" />
             <span>{t('activeCloudVms')}</span>
           </CardTitle>
-          <Button size="sm" variant="outline" onClick={onNavigateDeploy} className="gap-1.5 text-xs">
-            <Plus className="h-3.5 w-3.5 text-arvan-teal" />
+          <Button size="sm" variant="outline" onClick={onNavigateDeploy} className="gap-1.5 text-xs font-bold">
+            <Plus className="h-3.5 w-3.5 text-[var(--arvan-primary,#008b8b)]" />
             <span>{t('deployServer')}</span>
           </Button>
         </CardHeader>
@@ -213,7 +219,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
             <div className="p-12 text-center text-slate-500 space-y-3">
               <Server className="h-12 w-12 mx-auto text-slate-300" />
               <p className="text-sm font-semibold">{t('noServers')}</p>
-              <Button size="sm" onClick={onNavigateDeploy} className="gap-2">
+              <Button size="sm" onClick={onNavigateDeploy} className="gap-2 font-bold shadow-sm">
                 <Plus className="h-4 w-4" />
                 <span>{t('deployServer')}</span>
               </Button>
@@ -259,9 +265,9 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
                         )}
                       </td>
                       <td className="py-4 px-5 font-medium text-slate-600">
-                        {srv.flavor_id} &bull; {srv.disk_size} GB NVMe
+                        {srv.flavor_id} &bull; {formatNumber(srv.disk_size, language)} GB NVMe
                       </td>
-                      <td className="py-4 px-5 font-bold text-arvan-teal">
+                      <td className="py-4 px-5 font-bold text-[var(--arvan-primary,#008b8b)]">
                         {formatCurrency(srv.hourly_rate, currency, language)} / {t('hr')}
                       </td>
                       <td className="py-4 px-5">
@@ -291,7 +297,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
                               size="sm"
                               variant="outline"
                               onClick={() => onServerPower(srv.id, 'power_on')}
-                              className="h-8 px-2.5 text-xs gap-1 border-arvan-teal/40 text-arvan-teal"
+                              className="h-8 px-2.5 text-xs gap-1 border-[var(--arvan-primary,#008b8b)]/50 text-[var(--arvan-primary,#008b8b)] hover:bg-[var(--arvan-primary-light,#e6f7f7)]"
                             >
                               <Power className="h-3.5 w-3.5" />
                               <span>{t('powerOn')}</span>
@@ -379,13 +385,13 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
                             <span>{t('txDeposit')}</span>
                           </Badge>
                         )}
-                        {tx.type === 'metered_charge' && (
+                        {(tx.type === 'hourly_charge' || (tx.type as string) === 'metered_charge') && (
                           <Badge variant="secondary" className="gap-1 font-mono">
                             <Flame className="h-3 w-3 text-arvan-pink" />
                             <span>{t('txMetered')}</span>
                           </Badge>
                         )}
-                        {tx.type === 'adjustment' && (
+                        {(tx.type === 'admin_adjustment' || (tx.type as string) === 'adjustment') && (
                           <Badge variant="outline">{t('txAdjustment')}</Badge>
                         )}
                       </td>

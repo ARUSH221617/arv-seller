@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
 "Report-Msgid-Bugs-To: https://arvancloud.ir\n"
-"POT-Creation-Date: 2026-08-21 03:13:22+0000\n"
-"PO-Revision-Date: 2026-08-21 03:13:22+0000\n"
+"POT-Creation-Date: 2026-08-21 10:40:06+0000\n"
+"PO-Revision-Date: 2026-08-21 10:40:06+0000\n"
 "Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
 "Language-Team: ArvanCloud Russian Team\n"
 "Language: ru_RU\n"
@@ -14,23 +14,47 @@ msgstr ""
 "X-Generator: ArvanCloud i18n Toolchain\n"
 "X-Domain: arv-seller\n"
 
+msgid "1-Click Master Theme Packs"
+msgstr "Пакеты мастер-тем в 1 клик"
+
+msgid "1-Click Master Themes"
+msgstr "Мастер-темы в 1 клик"
+
 #: admin/views/admin-settings.php:38
 msgid "1. ArvanCloud API Authentication"
 msgstr "1. Авторизация ArvanCloud API"
+
+msgid "12 Instances"
+msgstr "12 инстансов"
 
 #: public/views/storefront-server.php:315
 msgid "1x Public IP (Included)"
 msgstr "1x Публичный IP (включен)"
 
+msgid "2 vCPU • 4 GB RAM • 40 GB NVMe"
+msgstr "2 vCPU • 4 ГБ ОЗУ • 40 ГБ NVMe"
+
 #: admin/views/admin-settings.php:73
 msgid "2. Dynamic Pricing & Reseller Markup Engine"
 msgstr "2. Модуль динамического ценообразования и наценки"
+
+msgid "250,000 Toman"
+msgstr "250 000 туманов"
+
+msgid "3,450,000 T"
+msgstr "3 450 000 Т"
 
 #: admin/views/admin-settings.php:120
 msgid "3. Storefront White-Label Branding"
 msgstr "3. Брендинг и контакты поддержки"
 
-#: public/class-arvan-public.php:483
+msgid "540 Toman/hr"
+msgstr "540 туманов/час"
+
+msgid "92.5 hours runtime remaining"
+msgstr "Осталось 92.5 часа работы"
+
+#: public/class-arvan-public.php:514
 msgid "A minimum balance of %1$s %3$s (24 hours run cost) is required to deploy this server. Your balance is %2$s %3$s."
 msgstr "Для развертывания сервера требуется минимальный баланс %1$s %3$s (стоимость 24 часов работы). Ваш баланс: %2$s %3$s."
 
@@ -49,7 +73,7 @@ msgstr "Access Key ID"
 
 #: public/views/dashboard-customer.php:55
 msgid "According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately."
-msgstr ""
+msgstr "В соответствии с условиями обслуживания ArvanCloud, активные виртуальные серверы были выключены, а управление заблокировано в режиме «только чтение». Пожалуйста, пополните кошелек для немедленного восстановления доступа."
 
 msgid "action"
 msgstr "Действие"
@@ -57,7 +81,7 @@ msgstr "Действие"
 msgid "Action"
 msgstr ""
 
-#: admin/class-arvan-admin.php:215
+#: admin/class-arvan-admin.php:244
 msgid "Action completed successfully."
 msgstr "Действие успешно выполнено."
 
@@ -71,7 +95,7 @@ msgid "active"
 msgstr "Активен"
 
 msgid "Active"
-msgstr ""
+msgstr "Активно"
 
 msgid "Active / Running"
 msgstr "Активных серверов"
@@ -107,7 +131,7 @@ msgstr "Добавить запись"
 msgid "Adjust Balance"
 msgstr "Изменить баланс"
 
-#: admin/class-arvan-admin.php:224
+#: admin/class-arvan-admin.php:253
 msgid "Adjust Wallet Balance: "
 msgstr "Изменить баланс кошелька: "
 
@@ -124,6 +148,12 @@ msgstr "напр. Компенсация техподдержки / Ручное
 msgid "Admin Adjustment: %1$s (by %2$s)"
 msgstr "Корректировка администратора: %1$s (%2$s)"
 
+msgid "Admin Hub"
+msgstr "Админ-панель"
+
+msgid "Agency White-Label"
+msgstr "White-Label для агентств"
+
 msgid "Ahvaz"
 msgstr "Ахваз"
 
@@ -133,6 +163,9 @@ msgstr "Все"
 msgid "All Cloud Datacenter Regions Operational (99.99% SLA)"
 msgstr "Все дата-центры и облачные регионы работают штатно (SLA 99.99%)"
 
+msgid "All customizations apply universally across Admin and Customer Storefront views."
+msgstr "Все настройки универсально применяются как в панели администратора, так и на витрине клиента."
+
 #: public/views/storefront-server.php:106
 msgid "All Plans"
 msgstr ""
@@ -140,7 +173,7 @@ msgstr ""
 msgid "All Provisioned Cloud Resources"
 msgstr "Все созданные облачные ресурсы"
 
-#: admin/class-arvan-admin.php:281
+#: admin/class-arvan-admin.php:310
 msgid "All Resources"
 msgstr "Все ресурсы"
 
@@ -164,29 +197,39 @@ msgstr ""
 msgid "Amount (Toman):"
 msgstr "Сумма (Томан):"
 
-#: public/class-arvan-public.php:265 public/class-arvan-public.php:405
+#: public/class-arvan-public.php:296 public/class-arvan-public.php:436
 msgid "An error occurred during request."
 msgstr "Произошла ошибка при выполнении запроса."
 
-#: admin/class-arvan-admin.php:221
+#: includes/class-arvan-blocks.php:144 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:196 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:314
+msgid "App Canvas Background"
+msgstr "Фон основного холста"
+
+#: admin/class-arvan-admin.php:250
 msgid "Apply Adjustment"
 msgstr "Применить корректировку"
 
-#: admin/class-arvan-admin.php:220
+msgid "applying"
+msgstr "Сохранение и применение..."
+
+#: admin/class-arvan-admin.php:249
 msgid "Applying..."
 msgstr "Применение..."
 
-#: admin/class-arvan-admin.php:217
+#: admin/class-arvan-admin.php:246
 msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
 msgstr "Вы уверены, что хотите окончательно удалить этот ресурс из ArvanCloud?"
 
-#: public/class-arvan-public.php:266 public/class-arvan-public.php:406
+#: public/class-arvan-public.php:297 public/class-arvan-public.php:437
 msgid "Are you sure you want to permanently destroy this server?"
 msgstr "Вы уверены, что хотите навсегда удалить этот сервер?"
 
-#: admin/class-arvan-admin.php:252
+#: admin/class-arvan-admin.php:281
 msgid "Arvan Reseller"
 msgstr "Реселлинг ArvanCloud"
+
+msgid "Arvan Sorkhab Teal"
+msgstr "Arvan Бирюзовый"
 
 msgid "Arvan UUID / Identifier"
 msgstr "Arvan UUID"
@@ -205,11 +248,11 @@ msgstr "Ключ ArvanCloud API"
 msgid "ArvanCloud API key is not configured. Please configure your API key in WP Admin > Arvan Reseller > Settings."
 msgstr "API ключ ArvanCloud не настроен. Настройте его в панели управления WP > Arvan Reseller > Настройки."
 
-#: includes/class-arvan-blocks.php:119
+#: includes/class-arvan-blocks.php:137 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:36 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:289 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:451
 msgid "ArvanCloud Customer Dashboard"
 msgstr "Панель управления клиента ArvanCloud"
 
-#: admin/class-arvan-admin.php:251
+#: admin/class-arvan-admin.php:280
 msgid "ArvanCloud Reseller"
 msgstr "Панель реселлера ArvanCloud"
 
@@ -217,11 +260,11 @@ msgstr "Панель реселлера ArvanCloud"
 msgid "ArvanCloud Reseller Settings & Monetization"
 msgstr "Настройки реселлинга ArvanCloud и наценки"
 
-#: includes/class-arvan-blocks.php:117
+#: includes/class-arvan-blocks.php:135 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:36 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:599
 msgid "ArvanCloud Server Configurator"
 msgstr "Конфигуратор облачного сервера ArvanCloud"
 
-#: includes/class-arvan-blocks.php:76
+#: includes/class-arvan-blocks.php:76 includes/elementor/class-arvan-elementor.php:65
 msgid "ArvanCloud Services"
 msgstr "Сервисы ArvanCloud"
 
@@ -258,7 +301,7 @@ msgstr "Пример конфигурации AWS CLI:"
 msgid "backOffice"
 msgstr "Панель управления"
 
-#: admin/class-arvan-admin.php:491
+#: admin/class-arvan-admin.php:737
 msgid "Balance adjusted successfully."
 msgstr "Баланс успешно обновлен."
 
@@ -266,21 +309,69 @@ msgstr "Баланс успешно обновлен."
 msgid "Balance Snapshot"
 msgstr ""
 
+msgid "Balanced curves for contemporary SaaS aesthetics."
+msgstr "Сбалансированные скругления в стиле современных SaaS сервисов."
+
 msgid "balanceSnapshot"
 msgstr "Баланс после операции"
+
+msgid "Base Body Font Size"
+msgstr "Базовый размер шрифта"
+
+#: includes/class-arvan-blocks.php:152 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:252 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:370
+msgid "Base Font Size (px)"
+msgstr ""
 
 msgid "baseDiskLabel"
 msgstr "Базовый:"
 
-#: includes/class-arvan-blocks.php:123
+msgid "Border & Line Divider Color"
+msgstr "Цвет границ и разделителей"
+
+#: includes/class-arvan-blocks.php:146 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:214 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:332
+msgid "Border Color"
+msgstr ""
+
+#: includes/class-arvan-blocks.php:147
+msgid "Border Radius (px)"
+msgstr ""
+
+msgid "Boutique infrastructure, high-tier servers, and client portal language."
+msgstr "Премиальная инфраструктура, серверы высшего класса и язык клиентского портала."
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:98 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:216
+msgid "Boxed (1024px)"
+msgstr ""
+
+msgid "Boxed (1120px)"
+msgstr "В рамке (1120px)"
+
+#: includes/class-arvan-blocks.php:141
 msgid "Brand Accent Color"
 msgstr "Акцентный цвет бренда"
 
 msgid "Brand Color Palette"
 msgstr "Фирменная цветовая палитра"
 
+msgid "Brand Color Palette & Surfaces"
+msgstr "Палитра бренда и поверхности"
+
+msgid "Brand Colored Glow"
+msgstr "Фирменное цветное свечение"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:161 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:279
+msgid "Brand Colors & Surfaces"
+msgstr "Цвета бренда и поверхности"
+
 msgid "Brand Identity & Logo Assets"
 msgstr "Фирменный стиль и логотипы"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:150 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:268
+msgid "Brand Neon Glow"
+msgstr ""
+
+msgid "Brand Tagline"
+msgstr "Слоган бренда"
 
 msgid "Brand Tagline / Subtitle"
 msgstr "Слоган / подзаголовок"
@@ -313,9 +404,23 @@ msgstr "Отмена"
 msgid "Cancel"
 msgstr "Отмена"
 
-#: public/class-arvan-public.php:595
+#: public/class-arvan-public.php:626
 msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
 msgstr "Невозможно запустить сервер: баланс вашего кошелька равен нулю или отрицательный. Пожалуйста, пополните кошелек."
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:187 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:305
+msgid "Card & Surface Background"
+msgstr ""
+
+msgid "Card Elevation"
+msgstr "Стиль тени и возвышения карточек"
+
+#: includes/class-arvan-blocks.php:148 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:143 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:261
+msgid "Card Elevation & Shadows"
+msgstr ""
+
+msgid "Card Surface Background"
+msgstr "Фон карточек и поверхностей"
 
 msgid "CDN & Edge DNS Manager"
 msgstr "Управление CDN و Anycast DNS"
@@ -352,7 +457,7 @@ msgstr "Закрыть"
 msgid "Cloud Proxy"
 msgstr ""
 
-#: admin/class-arvan-admin.php:280
+#: admin/class-arvan-admin.php:309
 msgid "Cloud Resources"
 msgstr "Облачные ресурсы"
 
@@ -367,6 +472,10 @@ msgstr "Шорткод конфигуратора серверов (Elementor / 
 msgid "Cloud Services Platform"
 msgstr "Платформа облачных сервисов"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:307
+msgid "Cloud Wallet & Credit Balance"
+msgstr ""
+
 msgid "Cluster Region"
 msgstr ""
 
@@ -376,11 +485,31 @@ msgstr "Регион кластера"
 msgid "Color Presets"
 msgstr "Готовые цветовые схемы"
 
+msgid "Colors & Palettes"
+msgstr "Цвета и палитры"
+
+msgid "Compact"
+msgstr "Компактный"
+
+msgid "Compact (Tighter)"
+msgstr "Компактный (плотный)"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:113 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:231
+msgid "Compact / Tight Padding"
+msgstr ""
+
+msgid "Compact Density"
+msgstr "Компактная плотность (10px)"
+
 msgid "compute"
 msgstr "Вычислительные"
 
 msgid "Compute Master"
 msgstr "Вычислительный Мастер (Compute Master)"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:104
+msgid "Compute Master (4 vCPU / 4 GB)"
+msgstr ""
 
 #: public/views/storefront-server.php:108
 msgid "Compute Optimized"
@@ -397,6 +526,15 @@ msgstr "Характеристики вычислений:"
 #: public/views/dashboard-customer.php:134
 msgid "Compute, NVMe & Dedicated IP"
 msgstr "Процессор, NVMe и выделенный IP"
+
+msgid "Configurator"
+msgstr "Конфигуратор"
+
+msgid "Configurator Hero Title"
+msgstr "Главный заголовок конфигуратора"
+
+msgid "Configurator Shortcode (Elementor / Classic Editor)"
+msgstr "Шорткод конфигуратора (Elementor / классический редактор)"
 
 msgid "configuratorHeroDesc"
 msgstr "Настройка высокопроизводительных виртуальных машин NVMe на базе дата-центров ArvanCloud с мгновенным запуском."
@@ -449,6 +587,14 @@ msgstr ""
 msgid "connectionFailed"
 msgstr "Ошибка подключения к инфраструктуре ArvanCloud."
 
+#: includes/class-arvan-blocks.php:150 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:94 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:212
+msgid "Container Max Width"
+msgstr "Максимальная ширина контейнера"
+
+#: includes/class-arvan-blocks.php:153 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:264 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:382
+msgid "Convert Digits to Persian (۰-۹)"
+msgstr ""
+
 msgid "copied"
 msgstr "Скопировано!"
 
@@ -467,8 +613,21 @@ msgstr "Копировать шорткод"
 msgid "copyIp"
 msgstr "Копировать IP"
 
+msgid "Copywriting & Terminology Presets"
+msgstr "Пресеты терминологии и стилистики"
+
+msgid "Copywriting Presets & Core Storefront Texts"
+msgstr "Пресеты формулировок и основные тексты витрины"
+
 msgid "cores"
 msgstr "Ядер"
+
+msgid "Corner Border Radius"
+msgstr "Радиус скругления углов"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:123 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:241
+msgid "Corner Border Radius (px)"
+msgstr ""
 
 msgid "Create New S3 Storage Bucket"
 msgstr ""
@@ -495,12 +654,32 @@ msgstr "Начисление (+ Пополнить)"
 msgid "Credit amount must be greater than zero."
 msgstr ""
 
+msgid "Crimson Ember Studio"
+msgstr "Багровый уголь"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:423
+msgid "CTA Button Text"
+msgstr ""
+
 msgid "Cumulative Deposits"
 msgstr "Всего пополнений"
+
+msgid "Curated Color Presets"
+msgstr "Подобранные цветовые пре赛ты"
+
+msgid "Current Value"
+msgstr "Текущее значение"
 
 #: public/views/dashboard-customer.php:110
 msgid "Custom Amount in Toman"
 msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:314 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:432
+msgid "Custom CSS Overrides"
+msgstr "Пользовательские CSS стили"
+
+msgid "Custom CSS Studio"
+msgstr "Студия пользовательского CSS"
 
 msgid "Custom CSS Style Overrides"
 msgstr "Пользовательские CSS стили"
@@ -508,22 +687,39 @@ msgstr "Пользовательские CSS стили"
 msgid "Custom CSS will be injected into both the isolated standalone canvas and all embedded Gutenberg blocks/shortcodes."
 msgstr "Пользовательский CSS будет автоматически внедрен как в полноэкранную витрину, так и во все блоки Gutenberg и шорткоды."
 
+msgid "Custom External Web Font Configuration"
+msgstr "Настройка внешнего веб-шрифта"
+
 msgid "Custom Favicon URL"
 msgstr "URL пользовательского Favicon"
 
 msgid "Custom Footer Notice / Copyright Text"
 msgstr "Текст в подвале / авторские права"
 
+msgid "Custom Footer Notice / SLA Guarantee Text"
+msgstr "Текст подвала / гарантия SLA"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:405
+msgid "Custom Header Title"
+msgstr ""
+
 msgid "Custom Store Logo URL"
 msgstr "URL пользовательского логотипа"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:414
+msgid "Custom Subtitle / Tagline"
+msgstr ""
 
 msgid "customAmount"
 msgstr "Своя сумма"
 
+msgid "customAmountPlaceholder"
+msgstr "напр. 250 000"
+
 msgid "Customer"
 msgstr "Клиент"
 
-#: includes/class-arvan-blocks.php:120
+#: includes/class-arvan-blocks.php:138 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:452
 msgid "Customer cloud server management and wallet billing dashboard."
 msgstr "Панель управления облачными серверами клиента и биллинг кошелька."
 
@@ -537,7 +733,7 @@ msgstr "Имя клиента"
 msgid "Customer Portal & Dashboard"
 msgstr "Клиентский портал и панель"
 
-#: admin/class-arvan-admin.php:214
+#: admin/class-arvan-admin.php:243
 msgid "Customer wallet balance updated successfully."
 msgstr ""
 
@@ -547,11 +743,11 @@ msgstr "Кошельки клиентов и аудит транзакций"
 msgid "customerDashboardLink"
 msgstr "Панель клиента"
 
-#: admin/class-arvan-admin.php:272
+#: admin/class-arvan-admin.php:301
 msgid "Customization"
 msgstr "Кастомизация"
 
-#: admin/class-arvan-admin.php:271
+#: admin/class-arvan-admin.php:300
 msgid "Customization & Branding"
 msgstr "Кастомизация и брендинг"
 
@@ -559,8 +755,32 @@ msgstr "Кастомизация и брендинг"
 msgid "Customization parameters injected into the standalone virtual canvas header and footer."
 msgstr "Параметры кастомизации, отображаемые в шапке и подвале витрины."
 
+msgid "Customize any specific button, label, or tooltip across the customer canvas and admin portal."
+msgstr "Настройте любую отдельную кнопку, надпись или подсказку на витрине и в админ-панели."
+
 msgid "dashboard"
 msgstr "Панель управления"
+
+msgid "Dashboard"
+msgstr "Панель"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:296
+msgid "Dashboard Description"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:287
+msgid "Dashboard Header Title"
+msgstr ""
+
+msgid "Dashboard Settings"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:74
+msgid "Dashboard Settings & Layout"
+msgstr "Настройки панели и макет"
+
+msgid "Dashboard Title"
+msgstr "Заголовок панели управления"
 
 msgid "dashboardDesc"
 msgstr "Контроль баланса в реальном времени, управление питанием серверов и мониторинг ресурсов."
@@ -592,9 +812,27 @@ msgstr ""
 msgid "Dedicated IPv4:"
 msgstr ""
 
-#: admin/views/admin-settings.php:106 includes/class-arvan-blocks.php:122
+msgid "Deep cobalt sapphire palette with sleek high-tech curves & corporate precision."
+msgstr "Глубокая палитра цвета кобальтового сапфира со строгими корпоративными линиями."
+
+msgid "Default"
+msgstr "По умолчанию"
+
+#: admin/views/admin-settings.php:106 includes/class-arvan-blocks.php:140 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:82
 msgid "Default Datacenter Region"
 msgstr "Регион дата-центра по умолчанию"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:96
+msgid "Default Hardware Flavor"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:113
+msgid "Default OS Distribution"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:74
+msgid "Default Pre-Selections"
+msgstr ""
 
 msgid "delete"
 msgstr "Удалить"
@@ -606,12 +844,19 @@ msgstr ""
 msgid "Deploy Cloud Server"
 msgstr "Создать облачный сервер"
 
-#: public/views/storefront-server.php:33
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:407 public/views/storefront-server.php:33
 msgid "Deploy Cloud Server (IaaS)"
 msgstr "Создать облачный сервер (IaaS)"
 
+msgid "Deploy CTA Button Label"
+msgstr "Текст кнопки создания сервера"
+
 #: public/views/dashboard-customer.php:252
 msgid "Deploy First Server"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:425 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:600
+msgid "Deploy Server"
 msgstr ""
 
 msgid "deployServer"
@@ -624,9 +869,15 @@ msgstr "Описание операции"
 msgid "Description / Reference ID"
 msgstr ""
 
+msgid "Desktop"
+msgstr "Десктопный вид"
+
 #: public/views/dashboard-customer.php:234
 msgid "Destroy Instance"
 msgstr ""
+
+msgid "DevOps Platform"
+msgstr "Платформа DevOps"
 
 msgid "DNS Management"
 msgstr ""
@@ -670,6 +921,9 @@ msgstr ""
 msgid "done"
 msgstr "Готово"
 
+msgid "Drag & drop \"ArvanCloud Server Configurator\" and \"ArvanCloud Customer Dashboard\" from the Elementor widget panel under \"ArvanCloud Services\" category with live preview."
+msgstr "Перетаскивайте виджеты конфигуратора и панели клиента из категории ArvanCloud в Elementor с живым предпросмотром."
+
 #: admin/views/admin-settings.php:82
 msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
 msgstr "напр. Наценка 20% превращает оптовую цену 450 томан/час в 540 томан/час для клиента."
@@ -680,8 +934,18 @@ msgstr ""
 msgid "Edge Caching"
 msgstr ""
 
+msgid "Elementor Page Builder Widgets"
+msgstr "Виджеты конструктора Elementor"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:149 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:267
+msgid "Elevated (Modern 3D Shadow)"
+msgstr ""
+
 msgid "Email"
 msgstr "Email"
+
+msgid "Emerald Forest DevOps"
+msgstr "Изумрудный DevOps"
 
 msgid "Emergency Actions"
 msgstr "Действия"
@@ -696,6 +960,12 @@ msgstr ""
 msgid "endpointUrl"
 msgstr "Endpoint URL"
 
+msgid "Energetic crimson red accent with warm surfaces & dynamic conversion focus."
+msgstr "Энергичный багрово-красный акцент с теплыми поверхностями и фокусом на конверсию."
+
+msgid "Enhanced comfortable reading with 16px base body font."
+msgstr "Повышенный комфорт чтения с базовым шрифтом 16px."
+
 msgid "Enter a domain name above to accelerate your traffic and protect from DDoS attacks."
 msgstr "Введите домен выше для ускорения трафика и защиты от DDoS-атак."
 
@@ -706,11 +976,18 @@ msgstr "Введите главный API ключ Machine User ArvanCloud. Вс
 msgid "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
 msgstr ""
 
+msgid "Enterprise B2B"
+msgstr "Корпоративный B2B"
+
 msgid "Enterprise Multi-Tenant Infrastructure Management & Monetization"
 msgstr "Корпоративное управление мультитенантной инфраструктурой и монетизация"
 
 msgid "Enterprise Ultra"
 msgstr "Корпоративный Ультра (Enterprise Ultra)"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:103
+msgid "Enterprise Ultra (8 vCPU / 16 GB)"
+msgstr ""
 
 #: public/views/storefront-server.php:326
 msgid "Est. Monthly (720 hrs):"
@@ -725,6 +1002,9 @@ msgstr "Осталось времени"
 
 msgid "existingBuckets"
 msgstr "Созданные бакеты"
+
+msgid "Extra Large"
+msgstr "Очень большой"
 
 #: public/class-arvan-gateway.php:99
 msgid "Failed to connect to payment gateway."
@@ -745,11 +1025,41 @@ msgstr ""
 msgid "Fixed Margin Addition (Toman)"
 msgstr "Фиксированная надбавка (Томан)"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:147 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:265
+msgid "Flat (No Shadow)"
+msgstr ""
+
+msgid "Flat / No Shadow"
+msgstr "Плоский / без тени"
+
 msgid "flavor"
 msgstr "Тариф"
 
+msgid "Fluid Full-Width"
+msgstr "Плавный на всю ширину (14px)"
+
+msgid "Font Family Name"
+msgstr "Название семейства шрифтов"
+
+#: includes/class-arvan-blocks.php:151 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:234 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:352
+msgid "Font Family Stack"
+msgstr ""
+
+msgid "Font Size & Density Presets"
+msgstr "Пресеты размеров шрифта и плотности"
+
 msgid "Forough"
 msgstr "Forough"
+
+msgid "Full Width (100%)"
+msgstr "На всю ширину (100%)"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:101 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:219
+msgid "Full Width Fluid (100%)"
+msgstr ""
+
+msgid "Fully customize brand colors, typography, font sizes, layouts, and texts with 1-click presets and granular manual editing."
+msgstr "Полная настройка цветов бренда, типографики, размеров шрифтов, макетов и текстов с помощью пресетов в один клик и ручного редактирования."
 
 msgid "general"
 msgstr "Универсальные"
@@ -757,6 +1067,9 @@ msgstr "Универсальные"
 #: public/views/storefront-server.php:107
 msgid "General Purpose"
 msgstr ""
+
+msgid "General purpose hosting, cloud servers, and everyday terminology."
+msgstr "Универсальный хостинг, облачные серверы и понятная терминология."
 
 msgid "generate"
 msgstr "Сгенерировать"
@@ -778,6 +1091,15 @@ msgstr "Геораспределенное аварийное восстанов
 msgid "Global CDN & Anycast Edge DNS"
 msgstr ""
 
+msgid "Granular UI Translation & String Overrides"
+msgstr "Таблица точечной замены строк и переводов UI"
+
+msgid "Gutenberg & Shortcodes"
+msgstr "Gutenberg и шорткоды"
+
+msgid "Gutenberg Block, Elementor Widget & Shortcodes"
+msgstr "Блоки Gutenberg, виджеты Elementor и шорткоды"
+
 msgid "Gutenberg Ready"
 msgstr "Поддержка Gutenberg"
 
@@ -785,13 +1107,29 @@ msgstr "Поддержка Gutenberg"
 msgid "Hardware Plan & Specifications"
 msgstr "Конфигурация оборудования"
 
+msgid "Heading Scale Multiplier"
+msgstr "Множитель масштаба заголовков"
+
 #: public/views/dashboard-customer.php:93
 msgid "Healthy"
 msgstr ""
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:85 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:155 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:167 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:179 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:191 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:203
+msgid "Hide"
+msgstr ""
+
+msgid "High 3D Elevation"
+msgstr "Выраженная 3D тень"
+
 #: public/views/storefront-server.php:164
 msgid "High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr)."
 msgstr ""
+
+msgid "High-contrast cyberpunk purple & dark luxury surfaces for modern cloud dashboards."
+msgstr "Высококонтрастный киберпанк-фиолетовый с темными премиальными поверхностями."
+
+msgid "High-impact large typography with 18px base font."
+msgstr "Крупная выразительная типографика с базовым шрифтом 18px."
 
 msgid "Hourly Burn Rate"
 msgstr "Расход в час"
@@ -826,27 +1164,34 @@ msgstr ""
 msgid "HTTP Request Failed: %s"
 msgstr ""
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:129
+msgid "Initial Extra NVMe Disk (GB)"
+msgstr ""
+
+msgid "Insert \"arvan/server-configurator\" or \"arvan/customer-dashboard\" anywhere in the WordPress Block Editor with full sidebar controls for colors, radius, fonts, Persian digits, and layouts."
+msgstr "Вставляйте блоки в редакторе Gutenberg с полным набором настроек цветов, скруглений, шрифтов и макета в боковой панели."
+
 #: public/views/storefront-server.php:256
 msgid "Instance Access & Naming"
 msgstr ""
 
-#: public/class-arvan-public.php:263 public/class-arvan-public.php:403
+#: public/class-arvan-public.php:294 public/class-arvan-public.php:434
 msgid "Instance permanently deleted."
 msgstr ""
 
-#: admin/class-arvan-admin.php:538
+#: admin/class-arvan-admin.php:784
 msgid "Instance powered off by administrator."
 msgstr "Сервер выключен администратором."
 
-#: public/class-arvan-public.php:262 public/class-arvan-public.php:402
+#: public/class-arvan-public.php:293 public/class-arvan-public.php:433
 msgid "Instance powered off."
 msgstr ""
 
-#: public/class-arvan-public.php:261 public/class-arvan-public.php:401
+#: public/class-arvan-public.php:292 public/class-arvan-public.php:432
 msgid "Instance powered on."
 msgstr ""
 
-#: admin/class-arvan-admin.php:542
+#: admin/class-arvan-admin.php:788
 msgid "Instance purged by administrator."
 msgstr "Сервер безвозвратно удален администратором."
 
@@ -869,7 +1214,11 @@ msgstr ""
 msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
 msgstr "Мгновенное развертывание на инфраструктуре ArvanCloud. Высокопроизводительные NVMe SSD, выделенный IPv4 и минимальные задержки."
 
-#: includes/class-arvan-blocks.php:126
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:416
+msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD."
+msgstr ""
+
+#: includes/class-arvan-blocks.php:156 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:610
 msgid "Instant VM Provisioning • NVMe Storage • Pay-As-You-Go"
 msgstr "Мгновенное развертывание ВМ • Хранилище NVMe • Оплата по факту"
 
@@ -887,15 +1236,15 @@ msgstr ""
 msgid "insufficientBalance"
 msgstr "Недостаточно средств (требуется пополнение)"
 
-#: includes/class-arvan-blocks.php:118
+#: includes/class-arvan-blocks.php:136
 msgid "Interactive Cloud Server sizing, pricing calculator, and deployment widget."
 msgstr "Интерактивный конфигуратор облачных серверов, калькулятор цен и виджет развертывания."
 
-#: public/class-arvan-public.php:630
+#: public/class-arvan-public.php:661
 msgid "Invalid power action."
 msgstr ""
 
-#: admin/class-arvan-admin.php:478
+#: admin/class-arvan-admin.php:724
 msgid "Invalid user ID or amount."
 msgstr ""
 
@@ -911,10 +1260,32 @@ msgstr "Исфахан"
 msgid "Karaj"
 msgstr "Кередж"
 
+msgid "KVM virtual machines, root access, sub-millisecond network, and dev terms."
+msgstr "Виртуальные машины KVM, root-доступ, сверхбыстрая сеть и технические термины."
+
+msgid "Layout & Radii Architecture"
+msgstr "Архитектура макета и скруглений"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:144
+msgid "Layout & Section Visibility"
+msgstr ""
+
+msgid "Layout & Shape Presets"
+msgstr "Пресеты макета и формы"
+
+msgid "Layout Architecture, Border Radius & Spacing"
+msgstr "Архитектура макета, радиус скругления и отступы"
+
+msgid "Layout, Radius & Elevation"
+msgstr "Макет, радиус и тени"
+
+msgid "Layout, Radius & Shapes"
+msgstr "Макет, скругления и формы"
+
 msgid "Ledger Actions"
 msgstr "Финансовые действия"
 
-#: includes/class-arvan-blocks.php:125
+#: includes/class-arvan-blocks.php:155
 msgid "Live ArvanCloud Server Configurator will render here on the frontend."
 msgstr "Живой конфигуратор серверов ArvanCloud будет отображаться здесь на сайте."
 
@@ -922,21 +1293,36 @@ msgstr "Живой конфигуратор серверов ArvanCloud буде
 msgid "Live instance power states, IP addresses, and real-time lifecycle controls."
 msgstr ""
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:618
+msgid "Live interactive ArvanCloud Server Configurator will render here on the frontend."
+msgstr ""
+
+msgid "Live real-time preview updating instantly across all sliders & controls."
+msgstr "Живой предпросмотр в реальном времени, мгновенно обновляющийся при любых изменениях."
+
 msgid "Live Theme Preview"
 msgstr "Живой предпросмотр темы"
 
 msgid "liveInfrastructureOnly"
 msgstr "Только живая инфраструктура"
 
-#: admin/class-arvan-admin.php:330
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:440
+msgid "Loading ArvanCloud Customer Dashboard..."
+msgstr ""
+
+#: admin/class-arvan-admin.php:454
 msgid "Loading ArvanCloud Management Portal..."
 msgstr ""
 
-#: templates/frontend-canvas.php:39
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:586
+msgid "Loading ArvanCloud Server Configurator..."
+msgstr ""
+
+#: templates/frontend-canvas.php:114
 msgid "Loading ArvanCloud Services Canvas..."
 msgstr "Загрузка панели облачных сервисов ArvanCloud..."
 
-#: includes/class-arvan-blocks.php:254
+#: includes/class-arvan-blocks.php:596
 msgid "Loading Cloud Services..."
 msgstr "Загрузка облачных сервисов..."
 
@@ -948,7 +1334,7 @@ msgstr "Выйти"
 
 #: public/views/dashboard-customer.php:64
 msgid "Low Balance Warning"
-msgstr ""
+msgstr "Предупреждение о низком балансе"
 
 #: public/views/storefront-server.php:64
 msgid "Low Latency / IXP Direct"
@@ -960,6 +1346,13 @@ msgstr "Внимание: Низкий баланс"
 msgid "lowBalanceDesc"
 msgstr "При текущей скорости расхода средств баланс исчерпается менее чем через 12 часов."
 
+msgid "Main Brand & Action Texts"
+msgstr "Основные тексты бренда и действий"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:298
+msgid "Manage active cloud instances and billing."
+msgstr ""
+
 msgid "Manage DNS zones, edge caching, and SSL certificates."
 msgstr ""
 
@@ -970,12 +1363,21 @@ msgstr ""
 msgid "Managed Let's Encrypt (Active)"
 msgstr "Автоматический Let's Encrypt (Активен)"
 
+msgid "Manual Color Customization"
+msgstr "Ручная настройка цветов"
+
 msgid "Manual Ledger Adjustment"
 msgstr "Ручная корректировка баланса"
 
-#: admin/class-arvan-admin.php:216
+#: admin/class-arvan-admin.php:245
 msgid "Manual metering cycle completed."
 msgstr "Цикл расчета биллинга успешно завершен."
+
+msgid "Manual Shape & Elevation Adjustments"
+msgstr "Ручная настройка формы и теней"
+
+msgid "Manual Typography Scale Sliders"
+msgstr "Ползунки ручного масштабирования шрифтов"
 
 msgid "manualAdjustmentDefaultReason"
 msgstr "Ручная корректировка администратора"
@@ -990,8 +1392,14 @@ msgstr "Мешхед"
 msgid "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
 msgstr "Полный мониторинг и управление жизненным циклом серверов, доменов и бакетов клиентов."
 
+msgid "Master themes instantly configure harmonious brand colors, Persian/Latin fonts, scale sizes, border radius, and copywriting terminology in one click."
+msgstr "Мастер-темы в один клик гармонично настраивают фирменные цвета, персидские/латинские шрифты, масштабирование, радиус скругления и терминологию."
+
 msgid "maxDiskLabel"
 msgstr "Макс:"
+
+msgid "Maximum horizontal real estate for expansive setups."
+msgstr "Максимальное использование ширины экрана для просторных макетов."
 
 msgid "memory"
 msgstr "С повышенной памятью"
@@ -999,24 +1407,46 @@ msgstr "С повышенной памятью"
 msgid "Memory Master"
 msgstr "Память Мастер (Memory Master)"
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:105
+msgid "Memory Master (2 vCPU / 8 GB)"
+msgstr ""
+
 #: public/views/storefront-server.php:109
 msgid "Memory Optimized"
 msgstr ""
 
-#: admin/class-arvan-admin.php:514
+#: admin/class-arvan-admin.php:760
 msgid "Metering cycle finished: Processed %1$d resources, debited %2$s Tomans, suspended %3$d accounts."
 msgstr ""
+
+msgid "Microcopy & String Overrides"
+msgstr "Таблица переопределения микротекстов"
+
+msgid "Midnight Dark Obsidian"
+msgstr "Полуночный обсидиан"
 
 #: public/views/storefront-server.php:283
 msgid "Minimum 12 characters"
 msgstr ""
 
-#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:677
+#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:708
 msgid "Minimum deposit amount is 1,000 Tomans."
 msgstr ""
 
 msgid "minRequired"
 msgstr "Мин. баланс для старта (24ч)"
+
+msgid "Mission-critical compute, high SLA, enterprise telemetry, and SLAs."
+msgstr "Критически важные вычисления, высокий уровень SLA и корпоративная надежность."
+
+msgid "Mobile"
+msgstr "Мобильный вид"
+
+msgid "Modern developer-centric green palette with high-density layout & rapid VM terminology."
+msgstr "Современная зеленая палитра для разработчиков с компактным макетом и терминами облачных ВМ."
+
+msgid "Modern Rounded"
+msgstr "Современный скругленный (16px)"
 
 msgid "Monthly Run Rate (MRR)"
 msgstr "Ориентировочная выручка (MRR)"
@@ -1027,20 +1457,29 @@ msgstr "Ориентировочно в месяц (720 ч)"
 msgid "mostPopular"
 msgstr "Популярный выбор"
 
+msgid "MRR Revenue"
+msgstr "Ежемесячный доход (MRR)"
+
 msgid "Name"
 msgstr ""
 
 msgid "Name / Host"
 msgstr ""
 
+msgid "Native Gutenberg Block: \"arvan/server-configurator\""
+msgstr "Нативный блок Gutenberg: «arvan/server-configurator»"
+
 msgid "Native Gutenberg Block: \"ArvanCloud Server Configurator\""
 msgstr "Нативный блок Gutenberg: «Конфигуратор серверов ArvanCloud»"
 
-#: admin/class-arvan-admin.php:219
+msgid "Native Gutenberg Blocks"
+msgstr "Нативные блоки Gutenberg"
+
+#: admin/class-arvan-admin.php:248
 msgid "Network error while testing connection."
 msgstr ""
 
-#: admin/class-arvan-admin.php:218
+#: admin/class-arvan-admin.php:247
 msgid "Network error."
 msgstr ""
 
@@ -1050,6 +1489,10 @@ msgstr ""
 
 msgid "nextGenCloudIaaS"
 msgstr "Облачная инфраструктура нового поколения (IaaS)"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:267 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:385
+msgid "No"
+msgstr ""
 
 #: public/views/dashboard-customer.php:249
 msgid "No active cloud servers deployed yet"
@@ -1069,6 +1512,13 @@ msgstr ""
 
 #: public/views/dashboard-customer.php:306
 msgid "No transactions recorded in wallet ledger yet."
+msgstr ""
+
+msgid "Nordic Slate Monochrome"
+msgstr "Скандинавский серый"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:114 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:232
+msgid "Normal / Standard Balanced"
 msgstr ""
 
 msgid "Northwest"
@@ -1102,9 +1552,15 @@ msgstr "Объектное хранилище (S3)"
 msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
 msgstr "Получите API ключ в панели ArvanCloud > Профиль пользователя > API Keys."
 
-#: public/class-arvan-public.php:683
+msgid "Official ArvanCloud signature teal aesthetic with balanced curves & Persian typography."
+msgstr "Официальный бирюзовый стиль ArvanCloud со сбалансированными скруглениями и персидской типографикой."
+
+#: public/class-arvan-public.php:714
 msgid "Online Top-up via Sandbox Gateway (Ref: %s)"
 msgstr ""
+
+msgid "Open any WordPress Page or Post in the Block Editor, click (+) Add Block, search for \"ArvanCloud\", and insert the Server Configurator with visual sidebar inspector settings."
+msgstr "Откройте любую страницу WordPress в редакторе блоков, нажмите (+) Добавить блок, найдите «ArvanCloud» и вставьте конфигуратор с настройками в боковой панели."
 
 #: public/views/storefront-server.php:188
 msgid "Operating System Image"
@@ -1113,6 +1569,12 @@ msgstr ""
 #: public/views/storefront-server.php:310
 msgid "Operating System:"
 msgstr ""
+
+msgid "Optimal readability with 14px base body font."
+msgstr "Оптимальная читаемость с базовым шрифтом 14px."
+
+msgid "Optimized for data-dense admin portals and high information velocity."
+msgstr "Оптимизирован для насыщенных данными панелей управления."
 
 #: admin/views/admin-settings.php:90
 msgid "Optional fixed addition added after percentage markup calculation."
@@ -1128,6 +1590,9 @@ msgstr "Сводка заказа и параметры"
 msgid "os"
 msgstr "ОС"
 
+msgid "Override text for this language"
+msgstr "Переопределить текст для этого языка"
+
 msgid "password"
 msgstr "Пароль"
 
@@ -1142,7 +1607,11 @@ msgstr ""
 msgid "Performance Pro"
 msgstr "Производительный Про (Performance Pro)"
 
-#: admin/class-arvan-admin.php:373 admin/class-arvan-admin.php:394 admin/class-arvan-admin.php:468 admin/class-arvan-admin.php:503
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:102
+msgid "Performance Pro (4 vCPU / 8 GB)"
+msgstr ""
+
+#: admin/class-arvan-admin.php:497 admin/class-arvan-admin.php:518 admin/class-arvan-admin.php:714 admin/class-arvan-admin.php:749
 msgid "Permission denied."
 msgstr ""
 
@@ -1155,11 +1624,11 @@ msgstr "Конфигурация"
 msgid "Please enter a valid domain name."
 msgstr ""
 
-#: public/class-arvan-public.php:439
+#: public/class-arvan-public.php:470
 msgid "Please sign in to deploy a cloud server."
 msgstr ""
 
-#: public/class-arvan-public.php:669
+#: public/class-arvan-public.php:700
 msgid "Please sign in to top up your wallet."
 msgstr ""
 
@@ -1198,8 +1667,16 @@ msgstr "Выключить"
 msgid "powerOn"
 msgstr "Включить"
 
+msgid "Primary Brand Accent Color"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:169 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:287
 msgid "Primary Brand Color"
 msgstr "Основной цвет бренда"
+
+#: includes/class-arvan-blocks.php:145 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:205 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:323
+msgid "Primary Text Color"
+msgstr "Основной цвет текста"
 
 msgid "proceedPayment"
 msgstr "Перейти к оплате"
@@ -1236,7 +1713,7 @@ msgid "purgeCache"
 msgstr "Очистить кэш CDN"
 
 msgid "quickDepositDesc"
-msgstr "Мгновенное пополнение кошелька через онлайн-шлюз / демо-режим."
+msgstr "Выберите или введите сумму для пополнения кошелька."
 
 msgid "quickTopUp"
 msgstr "Быстрое пополнение"
@@ -1254,6 +1731,12 @@ msgstr ""
 msgid "rateMonthly"
 msgstr "Тариф (ежемесячно)"
 
+msgid "Razor-sharp minimal dark slate palette with flat elevation & high precision."
+msgstr "Минималистичная монохромная серая палитра с плоским стилем и максимальной четкостью."
+
+msgid "Ready Presets"
+msgstr "готовых пресетов"
+
 msgid "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
 msgstr "Аудит реестра в реальном времени, снимки баланса и ручная корректировка счетов."
 
@@ -1267,7 +1750,7 @@ msgstr "Перезагрузить"
 msgid "Reboot"
 msgstr ""
 
-#: public/class-arvan-public.php:260 public/class-arvan-public.php:400
+#: public/class-arvan-public.php:291 public/class-arvan-public.php:431
 msgid "Reboot command dispatched to ArvanCloud."
 msgstr ""
 
@@ -1284,14 +1767,17 @@ msgstr "Регион"
 msgid "Reseller Brand / Store Name"
 msgstr "Название бренда / магазина"
 
+msgid "Reset Defaults"
+msgstr "Сбросить настройки"
+
 msgid "Resource Name"
 msgstr "Имя ресурса"
 
-#: public/class-arvan-public.php:587
+#: public/class-arvan-public.php:618
 msgid "Resource not found or access denied."
 msgstr ""
 
-#: admin/class-arvan-admin.php:529
+#: admin/class-arvan-admin.php:775
 msgid "Resource not found."
 msgstr ""
 
@@ -1307,7 +1793,10 @@ msgstr ""
 msgid "Root Password"
 msgstr ""
 
-#: admin/class-arvan-admin.php:223
+msgid "Royal Sapphire Blue"
+msgstr "Королевский сапфир"
+
+#: admin/class-arvan-admin.php:252
 msgid "Run Metering Cycle Now"
 msgstr "Запустить биллинг-цикл сейчас"
 
@@ -1318,7 +1807,7 @@ msgstr "Работает"
 msgid "Running"
 msgstr ""
 
-#: admin/class-arvan-admin.php:222
+#: admin/class-arvan-admin.php:251
 msgid "Running Metering..."
 msgstr ""
 
@@ -1373,6 +1862,9 @@ msgstr "Режим песочницы (Sandbox / Demo)"
 msgid "save"
 msgstr "Сохранить настройки"
 
+msgid "Save All Customizations"
+msgstr "Сохранить все настройки"
+
 #: admin/views/admin-settings.php:150
 msgid "Save All Reseller Settings"
 msgstr "Сохранить все настройки"
@@ -1383,12 +1875,19 @@ msgstr "Сохранить настройки"
 msgid "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
 msgstr ""
 
+msgid "Search translation keys or texts..."
+msgstr "Поиск по ключам или текстам..."
+
+msgid "Search translation keys..."
+msgstr "Поиск по ключам перевода..."
+
 msgid "searchResourcesPlaceholder"
 msgstr "Поиск по клиенту, имени сервера или Arvan UUID..."
 
 msgid "searchWalletsPlaceholder"
 msgstr "Поиск по имени клиента, email или ID пользователя..."
 
+#: includes/class-arvan-blocks.php:142 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:178 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:296
 msgid "Secondary / Dark Accent"
 msgstr "Вторичный / темный акцент"
 
@@ -1398,6 +1897,9 @@ msgstr ""
 msgid "secretKey"
 msgstr "Secret Access Key"
 
+msgid "Select Font Family Stack"
+msgstr "Выберите семейство шрифтов"
+
 #: public/views/storefront-server.php:51
 msgid "Select the geographical location closest to your target audience."
 msgstr ""
@@ -1406,17 +1908,17 @@ msgid "selectLanguage"
 msgstr "Выбрать язык"
 
 msgid "selectPresetAmount"
-msgstr "Выберите фиксированную сумму:"
+msgstr "Выберите фиксированную сумму"
 
-#: public/class-arvan-public.php:555
+#: public/class-arvan-public.php:586
 msgid "Server \"%s\" provisioned successfully! IP: %s"
 msgstr ""
 
-#: includes/class-arvan-blocks.php:121
+#: includes/class-arvan-blocks.php:139
 msgid "Server Configurator Settings"
 msgstr "Настройки конфигуратора серверов"
 
-#: public/class-arvan-public.php:259 public/class-arvan-public.php:399
+#: public/class-arvan-public.php:290 public/class-arvan-public.php:430
 msgid "Server deployed successfully! IP assigned:"
 msgstr ""
 
@@ -1428,19 +1930,19 @@ msgstr ""
 msgid "Server Instance"
 msgstr ""
 
-#: public/class-arvan-public.php:626
+#: public/class-arvan-public.php:657
 msgid "Server permanently destroyed."
 msgstr ""
 
-#: public/class-arvan-public.php:614
+#: public/class-arvan-public.php:645
 msgid "Server powered off gracefully."
 msgstr ""
 
-#: public/class-arvan-public.php:608
+#: public/class-arvan-public.php:639
 msgid "Server powered on successfully."
 msgstr ""
 
-#: public/class-arvan-public.php:620
+#: public/class-arvan-public.php:651
 msgid "Server reboot command executed."
 msgstr ""
 
@@ -1455,29 +1957,56 @@ msgstr "Услуга"
 
 #: public/views/dashboard-customer.php:54
 msgid "Services Suspended Due to Zero Wallet Balance"
-msgstr ""
+msgstr "Услуги приостановлены из-за нулевого баланса кошелька"
 
-#: admin/class-arvan-admin.php:263
+#: admin/class-arvan-admin.php:292
 msgid "Settings"
 msgstr ""
 
-#: admin/class-arvan-admin.php:262
+#: admin/class-arvan-admin.php:291
 msgid "Settings & API"
 msgstr "Настройки и API"
 
-#: admin/class-arvan-admin.php:458
+#: admin/class-arvan-admin.php:704
 msgid "Settings saved successfully."
 msgstr ""
 
 msgid "Shahryar"
 msgstr "Шахрияр"
 
+msgid "Sharp Minimal"
+msgstr "Четкий минимал (4px)"
+
 msgid "Shiraz"
 msgstr "Шираз"
 
-#: includes/class-arvan-blocks.php:124
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:84 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:154 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:166 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:178 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:190 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:202
+msgid "Show"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:152
+msgid "Show Header Banner"
+msgstr ""
+
+#: includes/class-arvan-blocks.php:154 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:200
 msgid "Show Hourly & Monthly Rates"
 msgstr "Показывать почасовые и месячные тарифы"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:188
+msgid "Show OS Selector"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:164
+msgid "Show Region Selector"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:176
+msgid "Show Storage Slider"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:82
+msgid "Show Wallet Balance Card"
+msgstr ""
 
 #: public/views/dashboard-customer.php:21
 msgid "Sign in to Access Your Cloud Portal"
@@ -1490,9 +2019,26 @@ msgstr ""
 msgid "signIn"
 msgstr "Вход / Регистрация"
 
+msgid "Soft and playful with high-radius pill surfaces."
+msgstr "Мягкие формы с выраженными скруглениями поверхностей."
+
 #: public/views/dashboard-customer.php:224
 msgid "Soft Reboot"
 msgstr ""
+
+#: includes/class-arvan-blocks.php:149 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:109 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:227
+msgid "Spacing Density"
+msgstr "Плотность отступов"
+
+msgid "Spacious"
+msgstr "Просторный"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:115 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:233
+msgid "Spacious / Relaxed Air"
+msgstr ""
+
+msgid "Spacious / Roomy"
+msgstr "Просторный / свободный"
 
 msgid "specs"
 msgstr "Характеристики"
@@ -1517,6 +2063,22 @@ msgstr ""
 msgid "sslActive"
 msgstr "SSL сертификат активен"
 
+msgid "Standard"
+msgstr "Стандартный"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:99 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:217
+msgid "Standard (1200px)"
+msgstr ""
+
+msgid "Standard (1280px)"
+msgstr "Стандартный (1280px)"
+
+msgid "Standard / Balanced"
+msgstr "Стандартный / сбалансированный"
+
+msgid "Standard Cloud (balanced)"
+msgstr "Стандартное облако"
+
 #: public/views/storefront-server.php:189
 msgid "Standard cloud images optimized for immediate SSH/RDP connection."
 msgstr ""
@@ -1524,8 +2086,19 @@ msgstr ""
 msgid "Standard General"
 msgstr "Стандартный Общий (Standard General)"
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:101
+msgid "Standard General (2 vCPU / 4 GB - Popular)"
+msgstr ""
+
+msgid "Standard General (g1-2-4)"
+msgstr "Стандартный общий (g1-2-4)"
+
 msgid "Starter Eco"
 msgstr "Стартовый Эко (Starter Eco)"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:100
+msgid "Starter Eco (1 vCPU / 2 GB)"
+msgstr ""
 
 msgid "status"
 msgstr "Статус"
@@ -1581,6 +2154,13 @@ msgstr "Брендинг витрины и визуальная настройк
 msgid "storefrontSubtitle"
 msgstr "Витрина облачной инфраструктуры"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:148 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:266
+msgid "Subtle (Clean Soft Shadow)"
+msgstr ""
+
+msgid "Subtle M3 Elevation"
+msgstr "Мягкая тень Material 3"
+
 #: admin/views/admin-settings.php:133
 msgid "Support Contact Email"
 msgstr "Email техподдержки"
@@ -1588,6 +2168,10 @@ msgstr "Email техподдержки"
 #: admin/views/admin-settings.php:140
 msgid "Support Phone Number"
 msgstr "Телефон поддержки"
+
+#: includes/class-arvan-blocks.php:143
+msgid "Surface / Card Background"
+msgstr ""
 
 msgid "suspended"
 msgstr "Приостановлен"
@@ -1609,11 +2193,19 @@ msgstr "Ваш баланс равен нулю. Все активные сер�
 msgid "suspensionNotice"
 msgstr "Уведомление: Баланс исчерпан"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:244 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:362
+msgid "System Default UI"
+msgstr ""
+
 msgid "Tabriz"
 msgstr "Тебриз"
 
 msgid "Tabriz - Northwest"
 msgstr "Тебриз - Северо-Запад"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:88
+msgid "Tabriz - Northwest (ir-tbz-dc1)"
+msgstr ""
 
 msgid "Tabriz (Northwest)"
 msgstr "Тебриз (Северо-Запад)"
@@ -1621,14 +2213,25 @@ msgstr "Тебриз (Северо-Запад)"
 msgid "Target Value / IP"
 msgstr "Целевое значение / IP"
 
+msgid "Technical, engineering-focused look with crisp 4px edges."
+msgstr "Техничный инженерный стиль с четкими гранями 4px."
+
 msgid "Tehran"
 msgstr "Тегеран"
 
 msgid "Tehran - Forough"
 msgstr "Тегеран - Forough"
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:86
+msgid "Tehran - Forough (ir-thr-c2)"
+msgstr ""
+
 msgid "Tehran - Shahryar"
 msgstr "Тегеран - Шахрияр"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:87
+msgid "Tehran - Shahryar (ir-thr-sh1)"
+msgstr ""
 
 msgid "Tehran (Forough)"
 msgstr "Тегеран (Forough)"
@@ -1640,7 +2243,7 @@ msgstr "Тегеран (Шахрияр)"
 msgid "Test Connection"
 msgstr "Проверить соединение"
 
-#: admin/class-arvan-admin.php:213
+#: admin/class-arvan-admin.php:242
 msgid "Testing connection to ArvanCloud API..."
 msgstr ""
 
@@ -1648,9 +2251,26 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
+msgid "Text & Branding Overrides"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:397
+msgid "Text & Copywriting Overrides"
+msgstr "Переопределение текстов"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:279
+msgid "Text Overrides"
+msgstr ""
+
+msgid "Texts & Copywriting"
+msgstr "Тексты и формулировки"
+
 #: public/views/storefront-server.php:76
 msgid "Tier III Enterprise DC"
 msgstr "Корпоративный ЦОД уровня Tier III"
+
+msgid "Tight line heights & 13px base body font."
+msgstr "Компактный межстрочный интервал и базовый шрифт 13px."
 
 msgid "timestamp"
 msgstr "Время"
@@ -1668,6 +2288,9 @@ msgstr "Пополнить"
 msgid "total"
 msgstr "Всего"
 
+msgid "Total Active VMs"
+msgstr "Всего активных ВМ"
+
 msgid "Total Active Wallets"
 msgstr "Всего активных кошельков"
 
@@ -1681,7 +2304,7 @@ msgid "Total Outstanding Credit"
 msgstr "Общий баланс клиентов"
 
 msgid "totalDepositAmount"
-msgstr "Итого к пополнению:"
+msgstr "Итоговая сумма пополнения"
 
 #: public/views/dashboard-customer.php:270
 msgid "Transaction Type"
@@ -1711,11 +2334,24 @@ msgstr ""
 msgid "Typography & Font Family Stack"
 msgstr "Типографика и шрифты"
 
-#: public/class-arvan-public.php:567
+msgid "Typography & Font Sizes"
+msgstr "Типографика и размеры шрифтов"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:226 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:344
+msgid "Typography & Persian Digits"
+msgstr "Типографика и персидские цифры"
+
+msgid "Typography, Web Fonts & Size Hierarchy"
+msgstr "Типографика, веб-шрифты и иерархия размеров"
+
+msgid "Ultra Curved (Pill)"
+msgstr "Ультра-скругленный (26px)"
+
+#: public/class-arvan-public.php:598
 msgid "Unauthorized."
 msgstr ""
 
-#: admin/class-arvan-admin.php:544
+#: admin/class-arvan-admin.php:790
 msgid "Unknown admin action."
 msgstr ""
 
@@ -1746,6 +2382,12 @@ msgstr "Ключи доступа S3 API"
 msgid "Virtual Storefront Quick Links (Theme Isolated)"
 msgstr "Быстрый переход к витрине (изолированно от темы)"
 
+msgid "Visual Customization & Theming Studio"
+msgstr "Студия визуальной настройки и тем"
+
+msgid "Wallet & Credit Label"
+msgstr "Заголовок кошелька и баланса"
+
 #: public/views/dashboard-customer.php:261
 msgid "Wallet Atomic Ledger Transactions"
 msgstr ""
@@ -1761,31 +2403,55 @@ msgstr "ID кошелька"
 msgid "Wallet is frozen. Cannot perform debit."
 msgstr ""
 
-#: public/class-arvan-public.php:699
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:305
+msgid "Wallet Section Title"
+msgstr ""
+
+#: public/class-arvan-public.php:730
 msgid "Wallet successfully credited with %1$s %2$s! RefID: %3$s"
 msgstr ""
 
-#: public/class-arvan-public.php:264 public/class-arvan-public.php:404
+#: public/class-arvan-public.php:295 public/class-arvan-public.php:435
 msgid "Wallet successfully credited!"
 msgstr ""
 
 msgid "walletBalance"
 msgstr "Баланс кошелька"
 
-#: admin/class-arvan-admin.php:289
+#: admin/class-arvan-admin.php:318
 msgid "Wallets & Ledger"
 msgstr "Кошельки и баланс"
 
-#: admin/class-arvan-admin.php:290
+#: admin/class-arvan-admin.php:319
 msgid "Wallets Ledger"
 msgstr ""
+
+msgid "Warm golden honey & amber tones with generous curvature and friendly aesthetics."
+msgstr "Теплые янтарно-медовые тона с мягкими скруглениями и дружелюбной эстетикой."
+
+msgid "Warm Sunset Amber"
+msgstr "Теплый янтарный закат"
+
+msgid "Web Font CSS URL (Google Fonts / CDN)"
+msgstr "URL CSS файла веб-шрифта (Google Fonts / CDN)"
 
 #: admin/views/admin-settings.php:65
 msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
 msgstr "Позволяет тестировать создание серверов и платежи без подключения к живой инфраструктуре."
 
+msgid "Wide (1480px)"
+msgstr "Широкий (1480px)"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:100 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:218
+msgid "Wide Screen (1400px)"
+msgstr ""
+
 msgid "WordPress Gutenberg Block & Shortcodes Integration"
 msgstr "Интеграция с блоками Gutenberg и шорткодами"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:266 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:384
+msgid "Yes"
+msgstr ""
 
 #: public/views/storefront-server.php:333
 msgid "Your Available Balance:"
@@ -1793,7 +2459,7 @@ msgstr ""
 
 #: public/views/dashboard-customer.php:65
 msgid "Your available wallet balance will only support active services for approximately %s hours. Please top up your wallet to prevent automated service interruption."
-msgstr ""
+msgstr "Вашего доступного баланса хватит для работы активных сервисов примерно на %s ч. Пожалуйста, пополните кошелек во избежание автоматической приостановки услуг."
 
 msgid "Your Storage Buckets"
 msgstr ""
@@ -1806,4 +2472,20 @@ msgstr "Тебриز"
 
 msgid "تهران"
 msgstr "Тегеран"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:239 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:357
+msgid "ساحل (Sahel)"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:241 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:359
+msgid "شبنم (Shabnam)"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:240 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:358
+msgid "صمیم (Samim)"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:238 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:356
+msgid "وزیرمتن (Vazirmatn - Standard)"
+msgstr ""
 

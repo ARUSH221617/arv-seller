@@ -186,14 +186,43 @@ class Arvan_Admin {
 					'storeTagline'       => get_option( 'arvan_store_tagline', 'High Performance Cloud Computing & NVMe Storage' ),
 					'logoUrl'            => get_option( 'arvan_store_logo_url', '' ),
 					'faviconUrl'         => get_option( 'arvan_store_favicon_url', '' ),
+					'masterTheme'        => get_option( 'arvan_master_theme', 'arvan-sorkhab' ),
 					'brandPrimaryColor'  => get_option( 'arvan_brand_primary_color', '#008b8b' ),
 					'brandSecondaryColor'=> get_option( 'arvan_brand_secondary_color', '#0b3a42' ),
+					'colorSurface'       => get_option( 'arvan_color_surface', '#ffffff' ),
+					'colorBackground'    => get_option( 'arvan_color_bg', '#f8fafc' ),
+					'colorText'          => get_option( 'arvan_color_text', '#0f172a' ),
+					'colorTextMuted'     => get_option( 'arvan_color_text_muted', '#64748b' ),
+					'colorBorder'        => get_option( 'arvan_color_border', '#e2e8f0' ),
+					'colorSuccess'       => get_option( 'arvan_color_success', '#10b981' ),
+					'colorWarning'       => get_option( 'arvan_color_warning', '#f59e0b' ),
+					'colorError'         => get_option( 'arvan_color_error', '#ef4444' ),
 					'fontFamily'         => get_option( 'arvan_font_family', 'vazirmatn' ),
+					'customFontName'     => get_option( 'arvan_custom_font_name', '' ),
+					'customFontUrl'      => get_option( 'arvan_custom_font_url', '' ),
+					'persianDigits'      => (bool) get_option( 'arvan_persian_digits', 1 ),
+					'fontSizeScale'      => get_option( 'arvan_font_size_scale', 'normal' ),
+					'baseFontSize'       => (int) get_option( 'arvan_base_font_size', 14 ),
+					'headingScale'       => (float) get_option( 'arvan_heading_scale', 1.25 ),
+					'layoutPreset'       => get_option( 'arvan_layout_preset', 'rounded' ),
+					'borderRadius'       => (int) get_option( 'arvan_border_radius', 16 ),
+					'cardElevation'      => get_option( 'arvan_card_elevation', 'subtle' ),
+					'spacingDensity'     => get_option( 'arvan_spacing_density', 'normal' ),
+					'containerWidth'     => get_option( 'arvan_container_width', 'standard' ),
+					'headerStyle'        => get_option( 'arvan_header_style', 'glassmorphic' ),
+					'textPreset'         => get_option( 'arvan_text_preset', 'standard' ),
+					'heroTitle'          => get_option( 'arvan_hero_title', '' ),
+					'heroDescription'    => get_option( 'arvan_hero_desc', '' ),
+					'deployButtonText'   => get_option( 'arvan_deploy_btn_text', '' ),
+					'dashboardTitle'     => get_option( 'arvan_dashboard_title', '' ),
+					'dashboardDescription' => get_option( 'arvan_dashboard_desc', '' ),
+					'walletTitle'        => get_option( 'arvan_wallet_title', '' ),
 					'customCss'          => get_option( 'arvan_custom_css', '' ),
 					'showHourlyToggle'   => (bool) get_option( 'arvan_show_hourly_toggle', 1 ),
 					'customFooterText'   => get_option( 'arvan_custom_footer_text', '' ),
 					'supportEmail'       => get_option( 'arvan_support_email', get_option( 'admin_email' ) ),
 					'supportPhone'       => get_option( 'arvan_support_phone', '021-88888888' ),
+					'customTextOverrides'=> json_decode( get_option( 'arvan_custom_text_overrides', '{}' ), true ),
 				),
 				'stats'      => array(
 					'total_vms'           => isset( $stats['total_vms'] ) ? (int) $stats['total_vms'] : 0,
@@ -307,27 +336,122 @@ class Arvan_Admin {
 		register_setting( 'arvan_settings_group', 'arvan_store_tagline' );
 		register_setting( 'arvan_settings_group', 'arvan_store_logo_url' );
 		register_setting( 'arvan_settings_group', 'arvan_store_favicon_url' );
+		register_setting( 'arvan_settings_group', 'arvan_master_theme' );
 		register_setting( 'arvan_settings_group', 'arvan_brand_primary_color' );
 		register_setting( 'arvan_settings_group', 'arvan_brand_secondary_color' );
+		register_setting( 'arvan_settings_group', 'arvan_color_surface' );
+		register_setting( 'arvan_settings_group', 'arvan_color_bg' );
+		register_setting( 'arvan_settings_group', 'arvan_color_text' );
+		register_setting( 'arvan_settings_group', 'arvan_color_text_muted' );
+		register_setting( 'arvan_settings_group', 'arvan_color_border' );
+		register_setting( 'arvan_settings_group', 'arvan_color_success' );
+		register_setting( 'arvan_settings_group', 'arvan_color_warning' );
+		register_setting( 'arvan_settings_group', 'arvan_color_error' );
 		register_setting( 'arvan_settings_group', 'arvan_font_family' );
+		register_setting( 'arvan_settings_group', 'arvan_custom_font_name' );
+		register_setting( 'arvan_settings_group', 'arvan_custom_font_url' );
+		register_setting( 'arvan_settings_group', 'arvan_persian_digits' );
+		register_setting( 'arvan_settings_group', 'arvan_font_size_scale' );
+		register_setting( 'arvan_settings_group', 'arvan_base_font_size' );
+		register_setting( 'arvan_settings_group', 'arvan_heading_scale' );
+		register_setting( 'arvan_settings_group', 'arvan_layout_preset' );
+		register_setting( 'arvan_settings_group', 'arvan_border_radius' );
+		register_setting( 'arvan_settings_group', 'arvan_card_elevation' );
+		register_setting( 'arvan_settings_group', 'arvan_spacing_density' );
+		register_setting( 'arvan_settings_group', 'arvan_container_width' );
+		register_setting( 'arvan_settings_group', 'arvan_header_style' );
+		register_setting( 'arvan_settings_group', 'arvan_text_preset' );
+		register_setting( 'arvan_settings_group', 'arvan_hero_title' );
+		register_setting( 'arvan_settings_group', 'arvan_hero_desc' );
+		register_setting( 'arvan_settings_group', 'arvan_deploy_btn_text' );
+		register_setting( 'arvan_settings_group', 'arvan_dashboard_title' );
+		register_setting( 'arvan_settings_group', 'arvan_dashboard_desc' );
+		register_setting( 'arvan_settings_group', 'arvan_wallet_title' );
 		register_setting( 'arvan_settings_group', 'arvan_custom_css' );
 		register_setting( 'arvan_settings_group', 'arvan_show_hourly_toggle' );
 		register_setting( 'arvan_settings_group', 'arvan_custom_footer_text' );
 		register_setting( 'arvan_settings_group', 'arvan_support_email' );
 		register_setting( 'arvan_settings_group', 'arvan_support_phone' );
 		register_setting( 'arvan_settings_group', 'arvan_sandbox_mode' );
+		register_setting( 'arvan_settings_group', 'arvan_custom_text_overrides' );
+		register_setting( 'arvan_settings_group', 'arvan_customization_config' );
 	}
 
 	/**
 	 * Render React SPA Admin Hub.
 	 */
 	public function render_admin_app() {
+		$primary_color   = get_option( 'arvan_brand_primary_color', '#008b8b' );
+		$secondary_color = get_option( 'arvan_brand_secondary_color', '#0b3a42' );
+		$color_surface   = get_option( 'arvan_color_surface', '#ffffff' );
+		$color_bg        = get_option( 'arvan_color_bg', '#f8fafc' );
+		$color_text      = get_option( 'arvan_color_text', '#0f172a' );
+		$color_muted     = get_option( 'arvan_color_text_muted', '#64748b' );
+		$color_border    = get_option( 'arvan_color_border', '#e2e8f0' );
+		$border_radius   = (int) get_option( 'arvan_border_radius', 16 );
+		$base_font_size  = (int) get_option( 'arvan_base_font_size', 14 );
+		$container_width = get_option( 'arvan_container_width', 'standard' );
+		$spacing_density = get_option( 'arvan_spacing_density', 'normal' );
+		$card_elevation  = get_option( 'arvan_card_elevation', 'subtle' );
+
+		$container_max = '1280px';
+		if ( 'boxed' === $container_width ) {
+			$container_max = '1120px';
+		} elseif ( 'wide' === $container_width ) {
+			$container_max = '1480px';
+		} elseif ( 'fluid' === $container_width ) {
+			$container_max = '100%';
+		}
+
+		$spacing_scale = '1';
+		if ( 'compact' === $spacing_density ) {
+			$spacing_scale = '0.85';
+		} elseif ( 'spacious' === $spacing_density ) {
+			$spacing_scale = '1.18';
+		}
+
+		$shadow1 = '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)';
+		$shadow2 = '0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.07)';
+		$shadow3 = '0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.08)';
+		if ( 'none' === $card_elevation ) {
+			$shadow1 = 'none';
+			$shadow2 = 'none';
+			$shadow3 = 'none';
+		} elseif ( 'elevated' === $card_elevation ) {
+			$shadow1 = '0 2px 5px rgba(0,0,0,0.08)';
+			$shadow2 = '0 8px 16px rgba(0,0,0,0.1)';
+			$shadow3 = '0 20px 25px -5px rgba(0,0,0,0.12)';
+		}
 		?>
+		<style id="arvan-theme-vars">
+			:root, #arvan-admin-root {
+				--arvan-primary: <?php echo esc_attr( $primary_color ); ?>;
+				--arvan-teal: <?php echo esc_attr( $primary_color ); ?>;
+				--arvan-secondary: <?php echo esc_attr( $secondary_color ); ?>;
+				--arvan-teal-dark: <?php echo esc_attr( $secondary_color ); ?>;
+				--arvan-surface: <?php echo esc_attr( $color_surface ); ?>;
+				--arvan-bg: <?php echo esc_attr( $color_bg ); ?>;
+				--arvan-text: <?php echo esc_attr( $color_text ); ?>;
+				--arvan-text-muted: <?php echo esc_attr( $color_muted ); ?>;
+				--arvan-border: <?php echo esc_attr( $color_border ); ?>;
+				--arvan-radius: <?php echo esc_attr( $border_radius ); ?>px;
+				--radius: <?php echo esc_attr( $border_radius ); ?>px;
+				--arvan-font-size-base: <?php echo esc_attr( $base_font_size ); ?>px;
+				--arvan-container-max: <?php echo esc_attr( $container_max ); ?>;
+				--arvan-spacing-scale: <?php echo esc_attr( $spacing_scale ); ?>;
+				--arvan-shadow-1: <?php echo esc_attr( $shadow1 ); ?>;
+				--arvan-shadow-2: <?php echo esc_attr( $shadow2 ); ?>;
+				--arvan-shadow-3: <?php echo esc_attr( $shadow3 ); ?>;
+			}
+			#arvan-admin-root .container, .arvan-container {
+				max-width: var(--arvan-container-max) !important;
+			}
+		</style>
 		<div class="wrap arvan-admin-react-wrap" style="margin: 20px 20px 0 0;">
 			<div id="arvan-admin-root">
 				<div style="background: #ffffff; color: #0f172a; padding: 40px; border-radius: 24px; text-align: center; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-					<div style="display: inline-block; width: 36px; height: 36px; border-radius: 50%; border: 3px solid #008b8b; border-top-color: transparent; animation: spin 1s linear infinite;"></div>
-					<h3 style="color: #008b8b; margin-top: 16px; font-weight: 700;"><?php esc_html_e( 'Loading ArvanCloud Management Portal...', 'arv-seller' ); ?></h3>
+					<div style="display: inline-block; width: 36px; height: 36px; border-radius: 50%; border: 3px solid var(--arvan-primary); border-top-color: transparent; animation: spin 1s linear infinite;"></div>
+					<h3 style="color: var(--arvan-primary); margin-top: 16px; font-weight: 700;"><?php esc_html_e( 'Loading ArvanCloud Management Portal...', 'arv-seller' ); ?></h3>
 				</div>
 			</div>
 		</div>
@@ -424,6 +548,9 @@ class Arvan_Admin {
 		if ( isset( $_POST['arvan_store_favicon_url'] ) ) {
 			update_option( 'arvan_store_favicon_url', esc_url_raw( wp_unslash( $_POST['arvan_store_favicon_url'] ) ) );
 		}
+		if ( isset( $_POST['arvan_master_theme'] ) ) {
+			update_option( 'arvan_master_theme', sanitize_key( wp_unslash( $_POST['arvan_master_theme'] ) ) );
+		}
 		if ( isset( $_POST['arvan_brand_primary_color'] ) ) {
 			$col = sanitize_hex_color( wp_unslash( $_POST['arvan_brand_primary_color'] ) );
 			if ( $col ) {
@@ -436,8 +563,113 @@ class Arvan_Admin {
 				update_option( 'arvan_brand_secondary_color', $col2 );
 			}
 		}
+		if ( isset( $_POST['arvan_color_surface'] ) ) {
+			$cs = sanitize_hex_color( wp_unslash( $_POST['arvan_color_surface'] ) );
+			if ( $cs ) {
+				update_option( 'arvan_color_surface', $cs );
+			}
+		}
+		if ( isset( $_POST['arvan_color_bg'] ) ) {
+			$cbg = sanitize_hex_color( wp_unslash( $_POST['arvan_color_bg'] ) );
+			if ( $cbg ) {
+				update_option( 'arvan_color_bg', $cbg );
+			}
+		}
+		if ( isset( $_POST['arvan_color_text'] ) ) {
+			$ct = sanitize_hex_color( wp_unslash( $_POST['arvan_color_text'] ) );
+			if ( $ct ) {
+				update_option( 'arvan_color_text', $ct );
+			}
+		}
+		if ( isset( $_POST['arvan_color_text_muted'] ) ) {
+			$ctm = sanitize_hex_color( wp_unslash( $_POST['arvan_color_text_muted'] ) );
+			if ( $ctm ) {
+				update_option( 'arvan_color_text_muted', $ctm );
+			}
+		}
+		if ( isset( $_POST['arvan_color_border'] ) ) {
+			$cb = sanitize_hex_color( wp_unslash( $_POST['arvan_color_border'] ) );
+			if ( $cb ) {
+				update_option( 'arvan_color_border', $cb );
+			}
+		}
+		if ( isset( $_POST['arvan_color_success'] ) ) {
+			$csuc = sanitize_hex_color( wp_unslash( $_POST['arvan_color_success'] ) );
+			if ( $csuc ) {
+				update_option( 'arvan_color_success', $csuc );
+			}
+		}
+		if ( isset( $_POST['arvan_color_warning'] ) ) {
+			$cwarn = sanitize_hex_color( wp_unslash( $_POST['arvan_color_warning'] ) );
+			if ( $cwarn ) {
+				update_option( 'arvan_color_warning', $cwarn );
+			}
+		}
+		if ( isset( $_POST['arvan_color_error'] ) ) {
+			$cerr = sanitize_hex_color( wp_unslash( $_POST['arvan_color_error'] ) );
+			if ( $cerr ) {
+				update_option( 'arvan_color_error', $cerr );
+			}
+		}
 		if ( isset( $_POST['arvan_font_family'] ) ) {
 			update_option( 'arvan_font_family', sanitize_key( wp_unslash( $_POST['arvan_font_family'] ) ) );
+		}
+		if ( isset( $_POST['arvan_custom_font_name'] ) ) {
+			update_option( 'arvan_custom_font_name', sanitize_text_field( wp_unslash( $_POST['arvan_custom_font_name'] ) ) );
+		}
+		if ( isset( $_POST['arvan_custom_font_url'] ) ) {
+			update_option( 'arvan_custom_font_url', esc_url_raw( wp_unslash( $_POST['arvan_custom_font_url'] ) ) );
+		}
+		if ( isset( $_POST['arvan_persian_digits'] ) ) {
+			update_option( 'arvan_persian_digits', '1' === $_POST['arvan_persian_digits'] ? 1 : 0 );
+		}
+		if ( isset( $_POST['arvan_font_size_scale'] ) ) {
+			update_option( 'arvan_font_size_scale', sanitize_key( wp_unslash( $_POST['arvan_font_size_scale'] ) ) );
+		}
+		if ( isset( $_POST['arvan_base_font_size'] ) ) {
+			update_option( 'arvan_base_font_size', absint( $_POST['arvan_base_font_size'] ) );
+		}
+		if ( isset( $_POST['arvan_heading_scale'] ) ) {
+			update_option( 'arvan_heading_scale', (float) $_POST['arvan_heading_scale'] );
+		}
+		if ( isset( $_POST['arvan_layout_preset'] ) ) {
+			update_option( 'arvan_layout_preset', sanitize_key( wp_unslash( $_POST['arvan_layout_preset'] ) ) );
+		}
+		if ( isset( $_POST['arvan_border_radius'] ) ) {
+			update_option( 'arvan_border_radius', absint( $_POST['arvan_border_radius'] ) );
+		}
+		if ( isset( $_POST['arvan_card_elevation'] ) ) {
+			update_option( 'arvan_card_elevation', sanitize_key( wp_unslash( $_POST['arvan_card_elevation'] ) ) );
+		}
+		if ( isset( $_POST['arvan_spacing_density'] ) ) {
+			update_option( 'arvan_spacing_density', sanitize_key( wp_unslash( $_POST['arvan_spacing_density'] ) ) );
+		}
+		if ( isset( $_POST['arvan_container_width'] ) ) {
+			update_option( 'arvan_container_width', sanitize_key( wp_unslash( $_POST['arvan_container_width'] ) ) );
+		}
+		if ( isset( $_POST['arvan_header_style'] ) ) {
+			update_option( 'arvan_header_style', sanitize_key( wp_unslash( $_POST['arvan_header_style'] ) ) );
+		}
+		if ( isset( $_POST['arvan_text_preset'] ) ) {
+			update_option( 'arvan_text_preset', sanitize_key( wp_unslash( $_POST['arvan_text_preset'] ) ) );
+		}
+		if ( isset( $_POST['arvan_hero_title'] ) ) {
+			update_option( 'arvan_hero_title', sanitize_text_field( wp_unslash( $_POST['arvan_hero_title'] ) ) );
+		}
+		if ( isset( $_POST['arvan_hero_desc'] ) ) {
+			update_option( 'arvan_hero_desc', sanitize_text_field( wp_unslash( $_POST['arvan_hero_desc'] ) ) );
+		}
+		if ( isset( $_POST['arvan_deploy_btn_text'] ) ) {
+			update_option( 'arvan_deploy_btn_text', sanitize_text_field( wp_unslash( $_POST['arvan_deploy_btn_text'] ) ) );
+		}
+		if ( isset( $_POST['arvan_dashboard_title'] ) ) {
+			update_option( 'arvan_dashboard_title', sanitize_text_field( wp_unslash( $_POST['arvan_dashboard_title'] ) ) );
+		}
+		if ( isset( $_POST['arvan_dashboard_desc'] ) ) {
+			update_option( 'arvan_dashboard_desc', sanitize_text_field( wp_unslash( $_POST['arvan_dashboard_desc'] ) ) );
+		}
+		if ( isset( $_POST['arvan_wallet_title'] ) ) {
+			update_option( 'arvan_wallet_title', sanitize_text_field( wp_unslash( $_POST['arvan_wallet_title'] ) ) );
 		}
 		if ( isset( $_POST['arvan_custom_css'] ) ) {
 			update_option( 'arvan_custom_css', wp_strip_all_tags( wp_unslash( $_POST['arvan_custom_css'] ) ) );
@@ -453,6 +685,20 @@ class Arvan_Admin {
 		}
 		if ( isset( $_POST['arvan_support_phone'] ) ) {
 			update_option( 'arvan_support_phone', sanitize_text_field( wp_unslash( $_POST['arvan_support_phone'] ) ) );
+		}
+		if ( isset( $_POST['arvan_custom_text_overrides'] ) ) {
+			$raw_overrides = wp_unslash( $_POST['arvan_custom_text_overrides'] );
+			$decoded = json_decode( $raw_overrides, true );
+			if ( is_array( $decoded ) ) {
+				$sanitized = array();
+				foreach ( $decoded as $k => $v ) {
+					$sanitized[ sanitize_text_field( $k ) ] = sanitize_text_field( $v );
+				}
+				update_option( 'arvan_custom_text_overrides', wp_json_encode( $sanitized ) );
+			}
+		}
+		if ( isset( $_POST['arvan_customization_config'] ) ) {
+			update_option( 'arvan_customization_config', wp_unslash( $_POST['arvan_customization_config'] ) );
 		}
 
 		wp_send_json_success( array( 'message' => __( 'Settings saved successfully.', 'arv-seller' ) ) );

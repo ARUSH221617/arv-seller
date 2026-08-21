@@ -1,4 +1,4 @@
-import { useState, useCallback, useTransition } from 'react';
+import { useState, useCallback, useTransition, useEffect } from 'react';
 import {
   AdminSettingsData,
   AdminKpiStats,
@@ -9,6 +9,7 @@ import {
 import { SupportedLanguage, Direction } from '../types';
 import { getTranslation, LANGUAGES } from '../i18n';
 import { ToastMessage } from '../hooks/useArvan';
+import { applyThemeToDom } from '../lib/theme';
 
 export function useAdminData() {
   const [, startTransition] = useTransition();
@@ -90,9 +91,16 @@ export function useAdminData() {
     document.documentElement.lang = langCode;
   }, []);
 
+  // Apply brand & theme settings to the admin DOM
+  useEffect(() => {
+    if (settings) {
+      applyThemeToDom(settings);
+    }
+  }, [settings]);
+
   const t = useCallback((key: string) => {
-    return getTranslation(key, language);
-  }, [language]);
+    return getTranslation(key, language, settings?.customTextOverrides);
+  }, [language, settings?.customTextOverrides]);
 
   // AJAX Caller
   const callAjax = useCallback(async (action: string, data: Record<string, unknown> = {}) => {
@@ -100,7 +108,11 @@ export function useAdminData() {
     formData.append('action', action);
     formData.append('nonce', rawData.nonce);
     Object.entries(data).forEach(([k, v]) => {
-      formData.append(k, String(v));
+      if (typeof v === 'object' && v !== null) {
+        formData.append(k, JSON.stringify(v));
+      } else {
+        formData.append(k, String(v));
+      }
     });
 
     try {
@@ -142,17 +154,48 @@ export function useAdminData() {
       arvan_store_tagline: newSettings.storeTagline || '',
       arvan_store_logo_url: newSettings.logoUrl || '',
       arvan_store_favicon_url: newSettings.faviconUrl || '',
+      arvan_master_theme: newSettings.masterTheme || 'arvan-sorkhab',
       arvan_brand_primary_color: newSettings.brandPrimaryColor || '#008b8b',
       arvan_brand_secondary_color: newSettings.brandSecondaryColor || '#0b3a42',
+      arvan_color_surface: newSettings.colorSurface || '#ffffff',
+      arvan_color_bg: newSettings.colorBackground || '#f8fafc',
+      arvan_color_text: newSettings.colorText || '#0f172a',
+      arvan_color_text_muted: newSettings.colorTextMuted || '#64748b',
+      arvan_color_border: newSettings.colorBorder || '#e2e8f0',
+      arvan_color_success: newSettings.colorSuccess || '#10b981',
+      arvan_color_warning: newSettings.colorWarning || '#f59e0b',
+      arvan_color_error: newSettings.colorError || '#ef4444',
       arvan_font_family: newSettings.fontFamily || 'vazirmatn',
+      arvan_custom_font_name: newSettings.customFontName || '',
+      arvan_custom_font_url: newSettings.customFontUrl || '',
+      arvan_persian_digits: newSettings.persianDigits ? '1' : '0',
+      arvan_font_size_scale: newSettings.fontSizeScale || 'normal',
+      arvan_base_font_size: newSettings.baseFontSize || 14,
+      arvan_heading_scale: newSettings.headingScale || 1.25,
+      arvan_layout_preset: newSettings.layoutPreset || 'rounded',
+      arvan_border_radius: newSettings.borderRadius !== undefined ? newSettings.borderRadius : 16,
+      arvan_card_elevation: newSettings.cardElevation || 'subtle',
+      arvan_spacing_density: newSettings.spacingDensity || 'normal',
+      arvan_container_width: newSettings.containerWidth || 'standard',
+      arvan_header_style: newSettings.headerStyle || 'glassmorphic',
+      arvan_text_preset: newSettings.textPreset || 'standard',
+      arvan_hero_title: newSettings.heroTitle || '',
+      arvan_hero_desc: newSettings.heroDescription || '',
+      arvan_deploy_btn_text: newSettings.deployButtonText || '',
+      arvan_dashboard_title: newSettings.dashboardTitle || '',
+      arvan_dashboard_desc: newSettings.dashboardDescription || '',
+      arvan_wallet_title: newSettings.walletTitle || '',
       arvan_custom_css: newSettings.customCss || '',
       arvan_show_hourly_toggle: newSettings.showHourlyToggle ? '1' : '0',
       arvan_custom_footer_text: newSettings.customFooterText || '',
       arvan_support_email: newSettings.supportEmail,
       arvan_support_phone: newSettings.supportPhone,
+      arvan_custom_text_overrides: JSON.stringify(newSettings.customTextOverrides || {}),
+      arvan_customization_config: JSON.stringify(newSettings),
     });
 
     setSettings((prev) => ({ ...prev, ...newSettings }));
+    applyThemeToDom(newSettings);
     addToast('success', t('Action completed successfully.'));
     return res.success;
   };

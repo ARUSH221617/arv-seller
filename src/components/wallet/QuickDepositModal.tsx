@@ -51,10 +51,13 @@ export const QuickDepositModal: React.FC<QuickDepositModalProps> = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[440px]">
+      <DialogContent
+        className={cn('sm:max-w-[440px]', `lang-${language}`)}
+        dir={language === 'fa' || language === 'ar' ? 'rtl' : 'ltr'}
+      >
         <DialogHeader>
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-arvan-teal/10 text-arvan-teal shadow-sm">
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--arvan-primary-light,#e6f7f7)] text-[var(--arvan-primary,#008b8b)] shadow-sm">
               <Wallet className="h-5 w-5" />
             </div>
             <div>
@@ -86,7 +89,7 @@ export const QuickDepositModal: React.FC<QuickDepositModalProps> = ({
                     className={cn(
                       'flex items-center justify-center rounded-2xl border p-3 text-xs font-bold transition-all',
                       isSelected
-                        ? 'border-arvan-teal bg-arvan-teal/10 text-arvan-teal shadow-sm'
+                        ? 'border-[var(--arvan-primary,#008b8b)] bg-[var(--arvan-primary-light,#e6f7f7)] text-[var(--arvan-primary,#008b8b)] shadow-sm ring-1 ring-[var(--arvan-primary,#008b8b)]'
                         : 'border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100'
                     )}
                   >
@@ -107,7 +110,7 @@ export const QuickDepositModal: React.FC<QuickDepositModalProps> = ({
                 type="number"
                 min="1000"
                 step="1000"
-                placeholder="e.g. 250000"
+                placeholder={t('customAmountPlaceholder')}
                 value={customAmount}
                 onChange={(e) => setCustomAmount(e.target.value)}
                 className="pe-16"
@@ -121,7 +124,7 @@ export const QuickDepositModal: React.FC<QuickDepositModalProps> = ({
           {/* Summary Box */}
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3.5 flex items-center justify-between">
             <div className="text-xs text-slate-500">{t('totalDepositAmount')}</div>
-            <div className="text-base font-extrabold text-arvan-teal">
+            <div className="text-base font-extrabold text-[var(--arvan-primary,#008b8b)]">
               {formatCurrency(activeAmount, currency, language)}
             </div>
           </div>

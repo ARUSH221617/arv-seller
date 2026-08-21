@@ -339,7 +339,952 @@ const SUPPLEMENTAL_TRANSLATIONS = {
     ru: 'Мгновенное развертывание ВМ • Хранилище NVMe • Оплата по факту'
   },
   'Loading Cloud Services...': { fa: 'در حال بارگذاری خدمات ابری...', ar: 'جاري تحميل الخدمات السحابية...', tr: 'Bulut Hizmetleri Yükleniyor...', zh: '正在加载云服务...', ru: 'Загрузка облачных сервисов...' },
+  'Visual Customization & Theming Studio': {
+    fa: 'استودیوی شخصی‌سازی و تم‌بندی بصری',
+    ar: 'استوديو التخصيص البصري وتصميم القوالب',
+    tr: 'Görsel Özelleştirme ve Tema Stüdyosu',
+    zh: '可视化外观定制与主题工作室',
+    ru: 'Студия визуальной кастомизации и тем'
+  },
+  'Fully customize brand colors, typography, font sizes, layouts, and texts with 1-click presets and granular manual editing.': {
+    fa: 'شخصی‌سازی کامل رنگ‌های برند، تایپوگرافی، اندازه فونت‌ها، چیدمان و متون با پریست‌های ۱-کلیکه و ویرایشگر دستی پیشرفته.',
+    ar: 'تخصيص كامل لألوان العلامة التجارية والخطوط وأحجامها والتخطيطات والنصوص مع قوالب جاهزة بنقرة واحدة وتعديل يدوي دقيق.',
+    tr: '1 tıklamalı hazır ayarlar ve ayrıntılı manuel düzenleme ile marka renklerini, tipografiyi, yazı tipi boyutlarını, düzenleri ve metinleri tamamen özelleştirin.',
+    zh: '通过一键预设和精细的手动编辑，全面自定义品牌色彩、排版、字号、布局及文本内容。',
+    ru: 'Полная настройка цветов бренда, типографики, размеров шрифтов, макетов и текстов с помощью пресетов в 1 клик и ручного редактирования.'
+  },
+  'Reset Defaults': {
+    fa: 'بازنشانی به پیش‌فرض',
+    ar: 'استعادة الافتراضيات',
+    tr: 'Varsayılanlara Sıfırla',
+    zh: '恢复默认设置',
+    ru: 'Сбросить по умолчанию'
+  },
+  'Save All Customizations': {
+    fa: 'ذخیره تمام تنظیمات شخصی‌سازی',
+    ar: 'حفظ جميع التخصيصات',
+    tr: 'Tüm Özelleştirmeleri Kaydet',
+    zh: '保存所有自定义设置',
+    ru: 'Сохранить все настройки'
+  },
+  '1-Click Master Themes': {
+    fa: 'تم‌های جامع ۱-کلیکه',
+    ar: 'قوالب شاملة بنقرة واحدة',
+    tr: '1-Tıklamalı Ana Temalar',
+    zh: '一键大师主题',
+    ru: 'Мастер-темы в 1 клик'
+  },
+  'Colors & Palettes': {
+    fa: 'رنگ‌ها و پالت‌ها',
+    ar: 'الألوان واللوحات',
+    tr: 'Renkler ve Paletler',
+    zh: '色彩与调色板',
+    ru: 'Цвета и палитры'
+  },
+  'Typography & Font Sizes': {
+    fa: 'تایپوگرافی و اندازه فونت‌ها',
+    ar: 'الخطوط وأحجام النصوص',
+    tr: 'Tipografi ve Yazı Boyutları',
+    zh: '排版与字号大小',
+    ru: 'Типографика и размеры шрифтов'
+  },
+  'Layout, Radius & Shapes': {
+    fa: 'چیدمان، گوشه‌ها و فرم‌ها',
+    ar: 'التخطيط والزوايا والأشكال',
+    tr: 'Düzen, Köşeler ve Şekiller',
+    zh: '布局、圆角与形态',
+    ru: 'Макет, скругления и формы'
+  },
+  'Texts & Copywriting': {
+    fa: 'متون و عنوان‌های سیستم',
+    ar: 'النصوص وصياغة المحتوى',
+    tr: 'Metinler ve Metin Yazarlığı',
+    zh: '文案与界面文本',
+    ru: 'Тексты и формулировки'
+  },
+  'Custom CSS Overrides': {
+    fa: 'کدهای CSS سفارشی',
+    ar: 'تجاوزات CSS المخصصة',
+    tr: 'Özel CSS Geçersiz Kılmaları',
+    zh: '自定义 CSS 覆盖',
+    ru: 'Пользовательские CSS стили'
+  },
+  'Gutenberg & Shortcodes': {
+    fa: 'بلوک گوتنبرگ و کدکوتاه',
+    ar: 'غوتنبرغ والأكواد القصيرة',
+    tr: 'Gutenberg ve Kısa Kodlar',
+    zh: 'Gutenberg 区块与短代码',
+    ru: 'Gutenberg и шорткоды'
+  },
+  'High-impact large typography with 18px base font.': {
+    fa: 'تایپوگرافی بزرگ و برجسته با فونت پایه ۱۸ پیکسلی.',
+    ar: 'خطوط كبيرة ذات تأثير بصري عالي بحجم أساسي 18 بكسل.',
+    tr: '18px temel yazı tipiyle yüksek etkili büyük tipografi.',
+    zh: '视觉冲击力强烈的 18px 大号字体排版。',
+    ru: 'Крупная выразительная типографика с базовым шрифтом 18px.'
+  },
+  'According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately.': {
+    fa: 'طبق قوانین و شرایط پایان سرویس ابر آروان، به دلیل اتمام موجودی، سرورهای ابری فعال خاموش شده و دسترسی مدیریتی آنها در حالت فقط‌خواندنی (Read-Only) قرار گرفته است. لطفاً برای بازیابی دسترسی و روشن‌کردن سرورها، کیف پول خود را شارژ نمایید.',
+    ar: 'وفقاً لشروط الإنهاء القانونية لـ ArvanCloud، تم إيقاف تشغيل الخوادم الافتراضية النشطة وقفل أدوات التحكم في وضع القراءة فقط. يرجى شحن محفظتك لاستعادة الوصول فوراً.',
+    tr: 'ArvanCloud yasal fesih koşulları uyarınca, aktif sanal sunucular kapatılmış ve kontroller Salt Okunur moduna kilitlenmiştir. Erişimi hemen geri yüklemek için lütfen cüzdanınıza bakiye yükleyin.',
+    zh: '根据 ArvanCloud 法律终止条款，由于余额不足，活跃的虚拟机实例已被关机，操作权限已锁定为只读模式。请立即充值钱包以恢复使用。',
+    ru: 'В соответствии с условиями обслуживания ArvanCloud, активные виртуальные серверы были выключены, а управление заблокировано в режиме «только чтение». Пожалуйста, пополните кошелек для немедленного восстановления доступа.'
+  },
+  'Services Suspended Due to Zero Wallet Balance': {
+    fa: 'سرویس‌ها به دلیل اتمام موجودی کیف پول معلق شدند',
+    ar: 'تم تعليق الخدمات بسبب نفاد رصيد المحفظة',
+    tr: 'Sıfır Cüzdan Bakiyesi Nedeniyle Hizmetler Askıya Alındı',
+    zh: '因钱包余额不足服务已被暂停',
+    ru: 'Услуги приостановлены из-за нулевого баланса кошелька'
+  },
+  'Low Balance Warning': {
+    fa: 'هشدار کمبود موجودی کیف پول',
+    ar: 'تحذير انخفاض الرصيد',
+    tr: 'Düşük Bakiye Uyarısı',
+    zh: '低余额预警',
+    ru: 'Предупреждение о низком балансе'
+  },
+  'Your available wallet balance will only support active services for approximately %s hours. Please top up your wallet to prevent automated service interruption.': {
+    fa: 'موجودی کیف پول شما تنها برای حدود %s ساعت دیگر پاسخگوی سرویس‌های فعال خواهد بود. لطفاً برای جلوگیری از قطع خودکار سرویس‌ها، کیف پول خود را شارژ کنید.',
+    ar: 'رصيد محفظتك المتاح سيدعم الخدمات النشطة لمدة %s ساعات تقريباً. يرجى شحن محفظتك لمنع انقطاع الخدمة تلقائياً.',
+    tr: 'Mevcut cüzdan bakiyeniz, aktif servisleri yalnızca yaklaşık %s saat destekleyecektir. Otomatik hizmet kesintisini önlemek için lütfen cüzdanınıza bakiye yükleyin.',
+    zh: '您当前的可用钱包余额预计仅能维持活跃服务运行约 %s 小时。请及时充值以避免服务被自动中断。',
+    ru: 'Вашего доступного баланса хватит для работы активных сервисов примерно на %s ч. Пожалуйста, пополните кошелек во избежание автоматической приостановки услуг.'
+  },
+  '1-Click Master Theme Packs': {
+    fa: 'پک‌های تم جامع ۱-کلیکه',
+    ar: 'حزم القوالب الشاملة بنقرة واحدة',
+    tr: '1-Tıklamalı Ana Tema Paketleri',
+    zh: '一键大师主题套件',
+    ru: 'Пакеты мастер-тем в 1 клик'
+  },
+  'Ready Presets': {
+    fa: 'پریست آماده',
+    ar: 'قوالب جاهزة',
+    tr: 'Hazır Şablon',
+    zh: '个预设模板',
+    ru: 'готовых пресетов'
+  },
+  'Master themes instantly configure harmonious brand colors, Persian/Latin fonts, scale sizes, border radius, and copywriting terminology in one click.': {
+    fa: 'تم‌های جامع فوراً رنگ‌های متناسب، فونت‌های فارسی و لاتین، مقیاس اندازه، انحنای گوشه‌ها و لحن نگارش را با یک کلیک ست می‌کنند.',
+    ar: 'تضبط القوالب الشاملة فوراً الألوان المتناسقة والخطوط الفارسية/اللاتينية وأحجام المقاييس وانحناءات الحواف والمصطلحات بنقرة واحدة.',
+    tr: 'Ana temalar, tek bir tıklamayla uyumlu marka renklerini, Farsça/Latince yazı tiplerini, ölçek boyutlarını, kenarlık yarıçapını ve metin terminolojisini anında yapılandırır.',
+    zh: '大师主题可在一次点击中即刻配置协调的品牌色彩、波斯语/拉丁语字体、比例尺寸、边框圆角以及文案术语。',
+    ru: 'Мастер-темы в один клик гармонично настраивают фирменные цвета, персидские/латинские шрифты, масштабирование, радиус скругления и терминологию.'
+  },
+  'Active': {
+    fa: 'فعال',
+    ar: 'نشط',
+    tr: 'Aktif',
+    zh: '已启用',
+    ru: 'Активно'
+  },
+  'Save All Customizations': {
+    fa: 'ذخیره تمام تنظیمات سفارشی‌سازی',
+    ar: 'حفظ جميع التخصيصات',
+    tr: 'Tüm Özelleştirmeleri Kaydet',
+    zh: '保存所有自定义设置',
+    ru: 'Сохранить все настройки'
+  },
+  'applying': {
+    fa: 'در حال ذخیره و اعمال...',
+    ar: 'جارٍ الحفظ والتطبيق...',
+    tr: 'Kaydediliyor ve Uygulanıyor...',
+    zh: '正在保存并应用...',
+    ru: 'Сохранение и применение...'
+  },
+  'Reset Defaults': {
+    fa: 'بازنشانی به پیش‌فرض',
+    ar: 'إعادة ضبط للافتراضي',
+    tr: 'Varsayılanlara Sıfırla',
+    zh: '重置为默认值',
+    ru: 'Сбросить настройки'
+  },
+  'Visual Customization & Theming Studio': {
+    fa: 'استودیو طراحی بصری و شخصی‌سازی ظاهر',
+    ar: 'استوديو التخصيص والتصميم البصري',
+    tr: 'Görsel Özelleştirme ve Tema Stüdyosu',
+    zh: '可视化定制与主题工作室',
+    ru: 'Студия визуальной настройки и тем'
+  },
+  'Fully customize brand colors, typography, font sizes, layouts, and texts with 1-click presets and granular manual editing.': {
+    fa: 'شخصی‌سازی کامل رنگ‌های برند، تایپوگرافی، اندازه فونت، چیدمان و متون با پریست‌های ۱-کلیکه و ویرایش دستی دقیق.',
+    ar: 'تخصيص كامل لألوان العلامة والطباعة وأحجام الخطوط والتخطيطات والنصوص مع إعدادات بنقرة واحدة وتعديل يدوي دقيق.',
+    tr: '1-tıklamalı hazır şablonlar ve ayrıntılı manuel düzenleme ile marka renklerini, tipografiyi, yazı tipi boyutlarını, düzenleri ve metinleri tamamen özelleştirin.',
+    zh: '通过一键预设和精细的手动编辑，全面自定义品牌颜色、排版、字号、布局和文本。',
+    ru: 'Полная настройка цветов бренда, типографики, размеров шрифтов, макетов и текстов с помощью пресетов в один клик и ручного редактирования.'
+  },
+  'All customizations apply universally across Admin and Customer Storefront views.': {
+    fa: 'تمامی تنظیمات سفارشی‌سازی به صورت سراسری بر روی پنل مدیریت و فروشگاه مشتریان اعمال می‌شوند.',
+    ar: 'تُطبق جميع التخصيصات عالمياً عبر واجهات الإدارة والمتجر للعملاء.',
+    tr: 'Tüm özelleştirmeler hem Yönetici hem de Müşteri Vitrin görünümlerinde evrensel olarak uygulanır.',
+    zh: '所有自定义设置将通用应用于管理后台与客户前台界面。',
+    ru: 'Все настройки применяются глобально в панели администратора и на витрине клиента.'
+  },
+  'Live real-time preview updating instantly across all sliders & controls.': {
+    fa: 'پیش‌نمایش زنده و لحظه‌ای با تغییر اسلایدرها و گزینه‌های ظاهری به‌روزرسانی می‌شود.',
+    ar: 'يتم تحديث المعاينة المباشرة فوراً عبر جميع أشرطة التمرير وعناصر التحكم.',
+    tr: 'Canlı önizleme tüm kaydırıcılar ve kontroller boyunca anında güncellenir.',
+    zh: '实时预览会在调整滑块和控件时即刻更新。',
+    ru: 'Интерактивный предварительный просмотр обновляется мгновенно при изменении любых параметров.'
+  },
+  '1-Click Master Themes': {
+    fa: 'تم‌های جامع ۱-کلیکه',
+    ar: 'القوالب الشاملة بنقرة واحدة',
+    tr: '1-Tıklamalı Ana Temalar',
+    zh: '一键大师主题',
+    ru: 'Мастер-темы в 1 клик'
+  },
+  'Colors & Palettes': {
+    fa: 'رنگ‌ها و پالت‌ها',
+    ar: 'الألوان واللوحات',
+    tr: 'Renkler ve Paletler',
+    zh: '色彩与调色板',
+    ru: 'Цвета и палитры'
+  },
+  'Typography & Persian Digits': {
+    fa: 'تایپوگرافی و ارقام فارسی',
+    ar: 'الطباعة والأرقام الفارسية',
+    tr: 'Tipografi ve Farsça Rakamlar',
+    zh: '排版与波斯数字',
+    ru: 'Типографика и персидские цифры'
+  },
+  'Layout & Radii Architecture': {
+    fa: 'معماری چیدمان، انحنا و فواصل',
+    ar: 'هندسة التخطيط وانحناء الحواف',
+    tr: 'Düzen ve Kenarlık Mimarisi',
+    zh: '布局与圆角架构',
+    ru: 'Архитектура макета и скруглений'
+  },
+  'Microcopy & String Overrides': {
+    fa: 'جدول بازنویسی ریز متون و ترجمه‌ها',
+    ar: 'جدول تجاوز النصوص الدقيقة والترجمات',
+    tr: 'Mikro Metinler ve Çeviri Geçersiz Kılmaları',
+    zh: '微文案与翻译重写表',
+    ru: 'Таблица переопределения микротекстов'
+  },
+  'Custom CSS Studio': {
+    fa: 'استودیو CSS اختصاصی',
+    ar: 'استوديو CSS المخصص',
+    tr: 'Özel CSS Stüdyosu',
+    zh: '自定义 CSS 工作室',
+    ru: 'Студия пользовательского CSS'
+  },
+  'Gutenberg Block, Elementor Widget & Shortcodes': {
+    fa: 'بلوک‌های گوتنبرگ، ویجت‌های المنتور و شورت‌کدها',
+    ar: 'مكونات غوتنبرغ وودجات إلمنتور والأكواد القصيرة',
+    tr: 'Gutenberg Blokları, Elementor Widgetları ve Kısa Kodlar',
+    zh: 'Gutenberg 区块、Elementor 小部件与短代码',
+    ru: 'Блоки Gutenberg, виджеты Elementor и шорткоды'
+  },
+  'Native Gutenberg Blocks': {
+    fa: 'بلوک‌های بومی گوتنبرگ',
+    ar: 'مكونات غوتنبرغ الأصلية',
+    tr: 'Yerel Gutenberg Blokları',
+    zh: '原生 Gutenberg 区块',
+    ru: 'Нативные блоки Gutenberg'
+  },
+  'Elementor Page Builder Widgets': {
+    fa: 'ویجت‌های صفحه‌ساز المنتور',
+    ar: 'عناصر منشئ صفحات إلمنتور',
+    tr: 'Elementor Sayfa Oluşturucu Widgetları',
+    zh: 'Elementor 页面构建器小部件',
+    ru: 'Виджеты конструктора Elementor'
+  },
+  'Insert "arvan/server-configurator" or "arvan/customer-dashboard" anywhere in the WordPress Block Editor with full sidebar controls for colors, radius, fonts, Persian digits, and layouts.': {
+    fa: 'بلوک‌های «arvan/server-configurator» یا «arvan/customer-dashboard» را در ویرایشگر گوتنبرگ با کنترل‌های کامل سایدبار برای رنگ‌ها، انحنا، فونت، ارقام فارسی و چیدمان درج کنید.',
+    ar: 'أدرج "arvan/server-configurator" أو "arvan/customer-dashboard" في أي مكان بمحرر غوتنبرغ مع عناصر تحكم كاملة بالألوان والخطوط والأرقام الفارسية والتخطيطات.',
+    tr: 'Renkler, yarıçap, yazı tipleri, Farsça rakamlar ve düzenler için tam kenar çubuğu kontrolleriyle Gutenberg Düzenleyicisine ekleyin.',
+    zh: '在 WordPress 区块编辑器中任意插入服务器配置器或客户仪表盘，并在侧边栏全面自定义颜色、圆角、字体、波斯数字与布局。',
+    ru: 'Вставляйте блоки в редакторе Gutenberg с полным набором настроек цветов, скруглений, шрифтов и макета в боковой панели.'
+  },
+  'Drag & drop "ArvanCloud Server Configurator" and "ArvanCloud Customer Dashboard" from the Elementor widget panel under "ArvanCloud Services" category with live preview.': {
+    fa: 'ویجت‌های «کانفیگوراتور سرور ابر آروان» و «داشبورد مشتریان آروان» را از پنل ویجت‌های المنتور در دسته‌بندی «خدمات ابر آروان» با پیش‌نمایش زنده بکشید و رها کنید.',
+    ar: 'اسحب وأفلت أدوات خادم ولوحة تحكم ArvanCloud من لوحة إلمنتور تحت فئة "خدمات ArvanCloud" مع معاينة مباشرة.',
+    tr: 'Canlı önizleme ile Elementor widget panelindeki "ArvanCloud Services" kategorisinden sürükleyip bırakın.',
+    zh: '从 Elementor 小部件面板的“ArvanCloud Services”分类中拖放服务器配置器和客户仪表盘，支持实时预览。',
+    ru: 'Перетаскивайте виджеты конфигуратора и панели клиента из категории ArvanCloud в Elementor с живым предпросмотром.'
+  },
+  'Dashboard Settings & Layout': {
+    fa: 'تنظیمات داشبورد و معماری چیدمان',
+    ar: 'إعدادات لوحة التحكم والتخطيط',
+    tr: 'Panel Ayarları ve Düzen',
+    zh: '仪表盘设置与布局',
+    ru: 'Настройки панели и макет'
+  },
+  'Layout, Radius & Elevation': {
+    fa: 'چیدمان، انحنای گوشه و سایه‌ها',
+    ar: 'التخطيط وانحناء الحواف والظلال',
+    tr: 'Düzen, Yarıçap ve Gölgeler',
+    zh: '布局、圆角与阴影层级',
+    ru: 'Макет, радиус и тени'
+  },
+  'Brand Colors & Surfaces': {
+    fa: 'رنگ‌های برند و پس‌زمینه سطوح',
+    ar: 'ألوان العلامة والأسطح',
+    tr: 'Marka Renkleri ve Yüzeyler',
+    zh: '品牌色彩与界面层',
+    ru: 'Цвета бренда и поверхности'
+  },
+  'Text & Copywriting Overrides': {
+    fa: 'بازنویسی متون و عناوین',
+    ar: 'تجاوز النصوص والعناوين',
+    tr: 'Metin ve Başlık Geçersiz Kılmaları',
+    zh: '文本与文案重写',
+    ru: 'Переопределение текстов'
+  },
+  'Brand Color Palette & Surfaces': {
+    fa: 'پالت رنگ برند و سطوح',
+    ar: 'لوحة ألوان العلامة والأسطح',
+    tr: 'Marka Renk Paleti ve Yüzeyler',
+    zh: '品牌调色板与界面层',
+    ru: 'Палитра бренда и поверхности'
+  },
+  'Curated Color Presets': {
+    fa: 'پالت‌های رنگی منتخب',
+    ar: 'أنماط ألوان مختارة',
+    tr: 'Seçilmiş Renk Şablonları',
+    zh: '精选配色预设',
+    ru: 'Подобранные цветовые пре赛ты'
+  },
+  'Manual Color Customization': {
+    fa: 'شخصی‌سازی دستی رنگ‌ها',
+    ar: 'تخصيص الألوان يدوياً',
+    tr: 'Manuel Renk Özelleştirme',
+    zh: '手动颜色定制',
+    ru: 'Ручная настройка цветов'
+  },
+  'Card Surface Background': {
+    fa: 'پس‌زمینه سطوح و کارت‌ها',
+    ar: 'خلفية أسطح البطاقات',
+    tr: 'Kart Yüzey Arka Planı',
+    zh: '卡片与面板背景色',
+    ru: 'Фон карточек и поверхностей'
+  },
+  'App Canvas Background': {
+    fa: 'پس‌زمینه کل بوم برنامه',
+    ar: 'خلفية مساحة التطبيق',
+    tr: 'Uygulama Tuval Arka Planı',
+    zh: '应用主画布背景色',
+    ru: 'Фон основного холста'
+  },
+  'Primary Text Color': {
+    fa: 'رنگ متن اصلی',
+    ar: 'لون النص الأساسي',
+    tr: 'Birincil Metin Rengi',
+    zh: '主文本颜色',
+    ru: 'Основной цвет текста'
+  },
+  'Border & Line Divider Color': {
+    fa: 'رنگ خطوط حاشیه و جداکننده‌ها',
+    ar: 'لون الحدود والفواصل',
+    tr: 'Kenarlık ve Ayırıcı Çizgi Rengi',
+    zh: '边框与分割线颜色',
+    ru: 'Цвет границ и разделителей'
+  },
+  'Typography, Web Fonts & Size Hierarchy': {
+    fa: 'تایپوگرافی، وب‌فونت‌ها و مقیاس اندازه',
+    ar: 'الخطوط وخطوط الويب والتسلسل الهرمي للحجم',
+    tr: 'Tipografi, Web Yazı Tipleri ve Boyut Hiyerarşisi',
+    zh: '排版、网络字体与字号层级',
+    ru: 'Типографика, веб-шрифты и иерархия размеров'
+  },
+  'Select Font Family Stack': {
+    fa: 'انتخاب فونت اصلی',
+    ar: 'اختر مجموعة الخطوط',
+    tr: 'Yazı Tipi Ailesini Seçin',
+    zh: '选择字体系列',
+    ru: 'Выберите семейство шрифтов'
+  },
+  'Custom External Web Font Configuration': {
+    fa: 'پیکربندی وب‌فونت سفارشی خارجی',
+    ar: 'تكوين خط ويب خارجي مخصص',
+    tr: 'Özel Harici Web Yazı Tipi Yapılandırması',
+    zh: '自定义外部 Web 字体配置',
+    ru: 'Настройка внешнего веб-шрифта'
+  },
+  'Font Family Name': {
+    fa: 'نام خانواده فونت',
+    ar: 'اسم عائلة الخط',
+    tr: 'Yazı Tipi Ailesi Adı',
+    zh: '字体家族名称',
+    ru: 'Название семейства шрифтов'
+  },
+  'Web Font CSS URL (Google Fonts / CDN)': {
+    fa: 'آدرس اینترنتی فایل CSS فونت (Google Fonts / CDN)',
+    ar: 'رابط CSS لخط الويب (Google Fonts / CDN)',
+    tr: 'Web Yazı Tipi CSS URL (Google Fonts / CDN)',
+    zh: 'Web 字体 CSS 链接 (Google Fonts / CDN)',
+    ru: 'URL CSS файла веб-шрифта (Google Fonts / CDN)'
+  },
+  'Font Size & Density Presets': {
+    fa: 'پریست‌های اندازه فونت و تراکم',
+    ar: 'أنماط أحجام الخطوط والكثافة',
+    tr: 'Yazı Tipi Boyutu ve Yoğunluk Şablonları',
+    zh: '字号大小与密度预设',
+    ru: 'Пресеты размеров шрифта и плотности'
+  },
+  'Manual Typography Scale Sliders': {
+    fa: 'اسلایدرهای دستی مقیاس تایپوگرافی',
+    ar: 'أشرطة تمرير مقياس الخط اليدوي',
+    tr: 'Manuel Tipografi Ölçeği Kaydırıcıları',
+    zh: '手动字体缩放滑块',
+    ru: 'Ползунки ручного масштабирования шрифтов'
+  },
+  'Base Body Font Size': {
+    fa: 'اندازه فونت پایه متن',
+    ar: 'حجم الخط الأساسي للنص',
+    tr: 'Temel Gövde Yazı Tipi Boyutu',
+    zh: '正文基准字号大小',
+    ru: 'Базовый размер шрифта'
+  },
+  'Heading Scale Multiplier': {
+    fa: 'ضریب مقیاس عناوین و تیترها',
+    ar: 'معامل مقياس العناوين',
+    tr: 'Başlık Ölçeği Çarpanı',
+    zh: '标题缩放倍率',
+    ru: 'Множитель масштаба заголовков'
+  },
+  'Layout Architecture, Border Radius & Spacing': {
+    fa: 'معماری چیدمان، انحنای گوشه و فواصل',
+    ar: 'بنية التخطيط وانحناء الحواف والمسافات',
+    tr: 'Düzen Mimarisi, Kenarlık Yarıçapı ve Boşluklar',
+    zh: '布局架构、边框圆角与间距',
+    ru: 'Архитектура макета, радиус скругления и отступы'
+  },
+  'Layout & Shape Presets': {
+    fa: 'پریست‌های چیدمان و فرم',
+    ar: 'أنماط التخطيط والأشكال',
+    tr: 'Düzen ve Şekil Şablonları',
+    zh: '布局与形态预设',
+    ru: 'Пресеты макета и формы'
+  },
+  'Manual Shape & Elevation Adjustments': {
+    fa: 'تنظیمات دستی فرم و سایه',
+    ar: 'تعديلات الشكل والارتفاع اليدوية',
+    tr: 'Manuel Şekil ve Yükseklik Ayarları',
+    zh: '手动形态与投影调节',
+    ru: 'Ручная настройка формы и теней'
+  },
+  'Corner Border Radius': {
+    fa: 'میزان انحنای گوشه‌ها (Border Radius)',
+    ar: 'نصف قطر انحناء الزوايا',
+    tr: 'Köşe Kenarlık Yarıçapı',
+    zh: '边框圆角半径',
+    ru: 'Радиус скругления углов'
+  },
+  'Card Elevation': {
+    fa: 'سبک سایه و برجستگی کارت‌ها',
+    ar: 'ارتفاع وبروز البطاقات',
+    tr: 'Kart Yüksekliği / Gölgesi',
+    zh: '卡片层级与阴影风格',
+    ru: 'Стиль тени и возвышения карточек'
+  },
+  'Flat / No Shadow': {
+    fa: 'تخت / بدون سایه',
+    ar: 'مسطح / بدون ظل',
+    tr: 'Düz / Gölgesiz',
+    zh: '扁平 / 无阴影',
+    ru: 'Плоский / без тени'
+  },
+  'Subtle M3 Elevation': {
+    fa: 'سایه ملایم متریال ۳',
+    ar: 'ارتفاع خفيف بنمط M3',
+    tr: 'Hafif M3 Yüksekliği',
+    zh: '轻微 M3 层级阴影',
+    ru: 'Мягкая тень Material 3'
+  },
+  'High 3D Elevation': {
+    fa: 'برجستگی سه‌بعدی قوی',
+    ar: 'ارتفاع ثلاثي الأبعاد بارز',
+    tr: 'Yüksek 3D Yüksekliği',
+    zh: '立体高投影效果',
+    ru: 'Выраженная 3D тень'
+  },
+  'Brand Colored Glow': {
+    fa: 'درخشش با رنگ برند',
+    ar: 'توهج بلون العلامة التجارية',
+    tr: 'Marka Renginde Parlama',
+    zh: '品牌色发光光晕',
+    ru: 'Фирменное цветное свечение'
+  },
+  'Spacing Density': {
+    fa: 'تراکم فواصل و فاصله‌گذاری',
+    ar: 'كثافة المسافات والتباعد',
+    tr: 'Aralık Yoğunluğu',
+    zh: '间距紧凑度与密度',
+    ru: 'Плотность отступов'
+  },
+  'Compact (Tighter)': {
+    fa: 'فشرده (فاصله کمتر)',
+    ar: 'مضغوط (مسافات أقل)',
+    tr: 'Kompakt (Daha Sıkı)',
+    zh: '紧凑 (较小间距)',
+    ru: 'Компактный (плотный)'
+  },
+  'Standard / Balanced': {
+    fa: 'استاندارد / متعادل',
+    ar: 'قياسي / متوازن',
+    tr: 'Standart / Dengeli',
+    zh: '标准 / 均衡',
+    ru: 'Стандартный / сбалансированный'
+  },
+  'Spacious / Roomy': {
+    fa: 'باز و جادار',
+    ar: 'فسيح / مساحات واسعة',
+    tr: 'Geniş / Ferah',
+    zh: '宽松 / 大间距',
+    ru: 'Просторный / свободный'
+  },
+  'Container Max Width': {
+    fa: 'حداکثر عرض کانتینر',
+    ar: 'أقصى عرض للحاوية',
+    tr: 'Kapsayıcı Maksimum Genişliği',
+    zh: '容器最大宽度',
+    ru: 'Максимальная ширина контейнера'
+  },
+  'Boxed (1120px)': {
+    fa: 'باکسی (۱۱۲۰ پیکسل)',
+    ar: 'صندوقي (1120 بكسل)',
+    tr: 'Kutulu (1120px)',
+    zh: '盒装 (1120px)',
+    ru: 'В рамке (1120px)'
+  },
+  'Standard (1280px)': {
+    fa: 'استاندارد (۱۲۸۰ پیکسل)',
+    ar: 'قياسي (1280 بكسل)',
+    tr: 'Standart (1280px)',
+    zh: '标准 (1280px)',
+    ru: 'Стандартный (1280px)'
+  },
+  'Wide (1480px)': {
+    fa: 'عریض (۱۴۸۰ پیکسل)',
+    ar: 'عريض (1480 بكسل)',
+    tr: 'Geniş (1480px)',
+    zh: '加宽 (1480px)',
+    ru: 'Широкий (1480px)'
+  },
+  'Full Width (100%)': {
+    fa: 'تمام‌صفحه (۱۰۰٪)',
+    ar: 'عرض كامل (100%)',
+    tr: 'Tam Genişlik (%100)',
+    zh: '全宽 (100%)',
+    ru: 'На всю ширину (100%)'
+  },
+  'Copywriting Presets & Core Storefront Texts': {
+    fa: 'پریست‌های ادبیات و متون اصلی فروشگاه',
+    ar: 'أنماط صياغة النصوص ونصوص المتجر الأساسية',
+    tr: 'Metin Yazarlığı Şablonları ve Temel Mağaza Metinleri',
+    zh: '文案预设与核心商城文本',
+    ru: 'Пресеты формулировок и основные тексты витрины'
+  },
+  'Copywriting & Terminology Presets': {
+    fa: 'پریست‌های ادبیات و اصطلاحات',
+    ar: 'أنماط الصياغة والمصطلحات',
+    tr: 'Metin Yazarlığı ve Terminoloji Şablonları',
+    zh: '文案风格与术语预设',
+    ru: 'Пресеты терминологии и стилистики'
+  },
+  'Main Brand & Action Texts': {
+    fa: 'متون اصلی برند و دکمه‌های اقدام',
+    ar: 'نصوص العلامة التجارية وإجراءات المستخدم',
+    tr: 'Ana Marka ve Eylem Metinleri',
+    zh: '主要品牌与操作文本',
+    ru: 'Основные тексты бренда и действий'
+  },
+  'Brand Tagline': {
+    fa: 'شعار تبلیغاتی برند',
+    ar: 'شعار العلامة التجارية',
+    tr: 'Marka Sloganı',
+    zh: '品牌标语口号',
+    ru: 'Слоган бренда'
+  },
+  'Configurator Hero Title': {
+    fa: 'تیتر اصلی صفحه سفارش سرور',
+    ar: 'العنوان الرئيسي لصفحة تهيئة الخادم',
+    tr: 'Yapılandırıcı Başlık Metni',
+    zh: '配置器主标题',
+    ru: 'Главный заголовок конфигуратора'
+  },
+  'Deploy CTA Button Label': {
+    fa: 'متن دکمه ثبت سفارش سرور',
+    ar: 'نص زر إنشاء الخادم',
+    tr: 'Sunucu Başlat Butonu Metni',
+    zh: '部署操作按钮文字',
+    ru: 'Текст кнопки создания сервера'
+  },
+  'Dashboard Title': {
+    fa: 'عنوان داشبورد مشتری',
+    ar: 'عنوان لوحة التحكم',
+    tr: 'Panel Başlığı',
+    zh: '控制台主标题',
+    ru: 'Заголовок панели управления'
+  },
+  'Wallet & Credit Label': {
+    fa: 'عنوان کیف پول و اعتبار',
+    ar: 'عنوان المحفظة والرصيد',
+    tr: 'Cüzdan ve Kredi Başlığı',
+    zh: '钱包与余额标签',
+    ru: 'Заголовок кошелька и баланса'
+  },
+  'Custom Footer Notice / SLA Guarantee Text': {
+    fa: 'متن کپی‌رایت / ضمانت آپ‌تایم و SLA فوتر',
+    ar: 'إشعار التذييل / ضمان مستوى الخدمة SLA',
+    tr: 'Özel Altbilgi / SLA Garanti Metni',
+    zh: '自定义页脚声明 / SLA 保障文本',
+    ru: 'Текст подвала / гарантия SLA'
+  },
+  'High-impact large typography with 18px base font.': {
+    fa: 'تایپوگرافی بزرگ و برجسته با فونت پایه ۱۸ پیکسلی.',
+    ar: 'خطوط كبيرة ذات تأثير بصري عالي بحجم أساسي 18 بكسل.',
+    tr: '18px temel yazı tipiyle yüksek etkili büyük tipografi.',
+    zh: '视觉冲击力强烈的 18px 大号字体排版。',
+    ru: 'Крупная выразительная типографика с базовым шрифтом 18px.'
+  },
+  'Live real-time preview updating instantly across all sliders & controls.': {
+    fa: 'پیش‌نمایش زنده بلادرنگ همزمان با تغییر اسلایدرها و گزینه‌ها.',
+    ar: 'معاينة حية ومباشرة تتحدث فوراً مع تحريك أشرطة التمرير والخيارات.',
+    tr: 'Tüm kaydırıcılar ve kontrollerde anında güncellenen canlı gerçek zamanlı önizleme.',
+    zh: '所有滑块与控件修改后即刻同步的实时动态预览。',
+    ru: 'Живой предпросмотр в реальном времени, мгновенно обновляющийся при любых изменениях.'
+  },
+  'All customizations apply universally across Admin and Customer Storefront views.': {
+    fa: 'تمامی تنظیمات به صورت یکپارچه بر روی پنل ادمین و پرتال مشتریان اعمال می‌شود.',
+    ar: 'تطبق جميع التخصيصات بشكل شامل عبر لوحة الإدارة وواجهة متجر العملاء.',
+    tr: 'Tüm özelleştirmeler hem Yönetici hem de Müşteri Vitrin görünümlerinde evrensel olarak uygulanır.',
+    zh: '所有自定义配置将全局应用至管理员后台与客户商城界面。',
+    ru: 'Все настройки универсально применяются как в панели администратора, так и на витрине клиента.'
+  },
+  'Standard General (g1-2-4)': {
+    fa: 'استاندارد عمومی (g1-2-4)',
+    ar: 'قياسي عام (g1-2-4)',
+    tr: 'Standart Genel (g1-2-4)',
+    zh: '标准通用型 (g1-2-4)',
+    ru: 'Стандартный общий (g1-2-4)'
+  },
+  '2 vCPU • 4 GB RAM • 40 GB NVMe': {
+    fa: '۲ پردازنده • ۴ گیگابایت رم • ۴۰ گیگابایت NVMe',
+    ar: '2 معالج • 4 جيجابايت رام • 40 جيجابايت NVMe',
+    tr: '2 vCPU • 4 GB RAM • 40 GB NVMe',
+    zh: '2 核 vCPU • 4 GB 内存 • 40 GB NVMe',
+    ru: '2 vCPU • 4 ГБ ОЗУ • 40 ГБ NVMe'
+  },
+  '540 Toman/hr': {
+    fa: '۵۴۰ تومان/ساعت',
+    ar: '540 تومان/ساعة',
+    tr: '540 Tümen/saat',
+    zh: '540 图曼/小时',
+    ru: '540 туманов/час'
+  },
+  '92.5 hours runtime remaining': {
+    fa: '۹۲.۵ ساعت زمان کارکرد باقی‌مانده اعتبار',
+    ar: '92.5 ساعة تشغيل متبقية من الرصيد',
+    tr: '92.5 saat kalan çalışma süresi',
+    zh: '剩余运行时间：92.5 小时',
+    ru: 'Осталось 92.5 часа работы'
+  },
+  '250,000 Toman': {
+    fa: '۲۵۰,۰۰۰ تومان',
+    ar: '250,000 تومان',
+    tr: '250.000 Tümen',
+    zh: '250,000 图曼',
+    ru: '250 000 туманов'
+  },
+  'Total Active VMs': {
+    fa: 'کل سرورهای فعال',
+    ar: 'إجمالي الخوادم النشطة',
+    tr: 'Toplam Aktif Sunucu',
+    zh: '活跃虚拟机总数',
+    ru: 'Всего активных ВМ'
+  },
+  '12 Instances': {
+    fa: '۱۲ ماشین ابری',
+    ar: '12 خادم سحابي',
+    tr: '12 Sanal Sunucu',
+    zh: '12 台云实例',
+    ru: '12 инстансов'
+  },
+  'MRR Revenue': {
+    fa: 'درآمد ماهانه (MRR)',
+    ar: 'الإيراد الشهري المتكرر (MRR)',
+    tr: 'Aylık Düzenli Gelir (MRR)',
+    zh: '月度经常性收入 (MRR)',
+    ru: 'Ежемесячный доход (MRR)'
+  },
+  '3,450,000 T': {
+    fa: '۳,۴۵۰,۰۰۰ تومان',
+    ar: '3,450,000 تومان',
+    tr: '3.450.000 T',
+    zh: '3,450,000 图曼',
+    ru: '3 450 000 Т'
+  },
+  'Default': {
+    fa: 'پیش‌فرض',
+    ar: 'الافتراضي',
+    tr: 'Varsayılan',
+    zh: '默认',
+    ru: 'По умолчанию'
+  },
+  'Desktop': {
+    fa: 'نمای دسکتاپ',
+    ar: 'عرض سطح المكتب',
+    tr: 'Masaüstü Görünümü',
+    zh: '桌面端视图',
+    ru: 'Десктопный вид'
+  },
+  'Mobile': {
+    fa: 'نمای موبایل',
+    ar: 'عرض الهاتف',
+    tr: 'Mobil Görünüm',
+    zh: '移动端视图',
+    ru: 'Мобильный вид'
+  },
+  'Search translation keys or texts...': {
+    fa: 'جستجو در کلیدها یا متون فارسی...',
+    ar: 'البحث في مفاتيح أو نصوص الترجمة...',
+    tr: 'Çeviri anahtarlarında veya metinlerde ara...',
+    zh: '搜索翻译键名或文本内容...',
+    ru: 'Поиск по ключам или текстам...'
+  },
+  'Override text for this language': {
+    fa: 'متن سفارشی جایگزین برای این زبان',
+    ar: 'تجاوز النص لهذه اللغة',
+    tr: 'Bu dil için metin geçersiz kılma',
+    zh: '替换当前语言的文本',
+    ru: 'Переопределить текст для этого языка'
+  },
+  'Current Value': {
+    fa: 'مقدار فعلی',
+    ar: 'القيمة الحالية',
+    tr: 'Mevcut Değer',
+    zh: '当前取值',
+    ru: 'Текущее значение'
+  },
+  'Granular UI Translation & String Overrides': {
+    fa: 'جدول بازنویسی ریز متون و ترجمه‌های رابط کاربری',
+    ar: 'تجاوزات النصوص وترجمات واجهة المستخدم الدقيقة',
+    tr: 'Ayrıntılı Kullanıcı Arayüzü Çeviri ve Metin Geçersiz Kılmaları',
+    zh: '精细化 UI 翻译与文本字符串替换表',
+    ru: 'Таблица точечной замены строк и переводов UI'
+  },
+  'Search translation keys...': {
+    fa: 'جستجو در کلیدهای ترجمه...',
+    ar: 'البحث في مفاتيح الترجمة...',
+    tr: 'Çeviri anahtarlarında ara...',
+    zh: '搜索翻译键名...',
+    ru: 'Поиск по ключам перевода...'
+  },
+  'Customize any specific button, label, or tooltip across the customer canvas and admin portal.': {
+    fa: 'شخصی‌سازی هر دکمه، برچسب یا راهنمای خاص در بوم مشتری و پرتال مدیریت.',
+    ar: 'تخصيص أي زر أو تسمية أو تلميح محدد في واجهة العميل ولوحة الإدارة.',
+    tr: 'Müşteri tuvalindeki ve yönetici portalındaki herhangi bir düğmeyi, etiketi veya ipucunu özelleştirin.',
+    zh: '自定义客户商城画布与管理后台中的任意特定按钮、标签或工具提示。',
+    ru: 'Настройте любую отдельную кнопку, надпись или подсказку на витрине и в админ-панели.'
+  },
+  'Native Gutenberg Block: "arvan/server-configurator"': {
+    fa: 'بلوک اختصاصی گوتنبرگ: "arvan/server-configurator"',
+    ar: 'مكون غوتنبرغ الأصلي: "arvan/server-configurator"',
+    tr: 'Yerel Gutenberg Bloğu: "arvan/server-configurator"',
+    zh: '原生 Gutenberg 区块："arvan/server-configurator"',
+    ru: 'Нативный блок Gutenberg: «arvan/server-configurator»'
+  },
+  'Open any WordPress Page or Post in the Block Editor, click (+) Add Block, search for "ArvanCloud", and insert the Server Configurator with visual sidebar inspector settings.': {
+    fa: 'در ویرایشگر گوتنبرگ وردپرس روی (+) افزودن بلوک کلیک کرده، "ابر آروان" را جستجو نمایید و بلوک را با پنل تنظیمات سایدبار اضافه کنید.',
+    ar: 'افتح أي صفحة أو مقال في محرر المكونات، انقر على (+) إضافة مكون، وابحث عن "ArvanCloud" لإدراج أداة تكوين الخوادم مع إعدادات الشريط الجانبي.',
+    tr: 'Blok Düzenleyicide herhangi bir WordPress Sayfasını veya Yazısını açın, (+) Blok Ekle\'ye tıklayın, "ArvanCloud" araması yapın ve görsel kenar çubuğu ayarlarıyla Sunucu Yapılandırıcısını ekleyin.',
+    zh: '在区块编辑器中打开任意 WordPress 页面或文章，点击 (+) 添加区块，搜索 "ArvanCloud"，即可插入带有可视化侧边栏检查器设置的服务器配置器。',
+    ru: 'Откройте любую страницу WordPress в редакторе блоков, нажмите (+) Добавить блок, найдите «ArvanCloud» и вставьте конфигуратор с настройками в боковой панели.'
+  },
+  'Configurator Shortcode (Elementor / Classic Editor)': {
+    fa: 'کدکوتاه سفارش‌دهنده سرور (المنتور / ویرایشگر کلاسیک)',
+    ar: 'كود قصير لأداة تكوين الخوادم (Elementor / المحرر التقليدي)',
+    tr: 'Yapılandırıcı Kısa Kodu (Elementor / Klasik Düzenleyici)',
+    zh: '服务器配置器短代码（Elementor / 经典编辑器）',
+    ru: 'Шорткод конфигуратора (Elementor / классический редактор)'
+  },
+  'Configurator': {
+    fa: 'سفارش سرور',
+    ar: 'تهيئة الخادم',
+    tr: 'Yapılandırıcı',
+    zh: '配置器',
+    ru: 'Конфигуратор'
+  },
+  'Dashboard': {
+    fa: 'داشبورد',
+    ar: 'لوحة التحكم',
+    tr: 'Panel',
+    zh: '控制台',
+    ru: 'Панель'
+  },
+  'Admin Hub': {
+    fa: 'پنل مدیریت',
+    ar: 'مركز الإدارة',
+    tr: 'Yönetim Merkezi',
+    zh: '管理中枢',
+    ru: 'Админ-панель'
+  },
+  'Arvan Sorkhab Teal': { fa: 'آروان سرخ‌آب (فیروزه‌ای)', ar: 'آروان سرخ آب (فيروزي)', tr: 'Arvan Sorkhab Camgöbeği', zh: 'Arvan 经典青绿', ru: 'Arvan Бирюзовый' },
+  'Royal Sapphire Blue': { fa: 'یاقوت کبود سلطنتی (آبی)', ar: 'الياقوت الأزرق الملكي', tr: 'Kraliyet Safir Mavisi', zh: '皇家蓝宝石', ru: 'Королевский сапфир' },
+  'Emerald Forest DevOps': { fa: 'زمردین دوآپس (سبز)', ar: 'زمرد ديف أوبس (أخضر)', tr: 'Zümrüt Yeşili DevOps', zh: '翡翠绿 DevOps', ru: 'Изумрудный DevOps' },
+  'Midnight Dark Obsidian': { fa: 'ابسیدین تیره شب (بنفش)', ar: 'حجر السج الداكن (أرجواني)', tr: 'Gece Obsidyeni (Mor)', zh: '暗夜黑曜石 (紫)', ru: 'Полуночный обсидиан' },
+  'Crimson Ember Studio': { fa: 'استودیو شراره زرشکی (قرمز)', ar: 'جمر قرمزي (أحمر)', tr: 'Kızıl Köz Stüdyosu', zh: '深红余烬工作室', ru: 'Багровый уголь' },
+  'Nordic Slate Monochrome': { fa: 'طوسی نوردیک مینیمال', ar: 'رمادي أردوازي نورديك', tr: 'Nordik Arduvaz Monokrom', zh: '北欧板岩单色', ru: 'Скандинавский серый' },
+  'Warm Sunset Amber': { fa: 'غروب گرم کهربایی (عسلی)', ar: 'كهرمان الغروب الدافئ', tr: 'Sıcak Gün Batımı Kehribarı', zh: '温暖日落琥珀', ru: 'Теплый янтарный закат' },
+  'Official ArvanCloud signature teal aesthetic with balanced curves & Persian typography.': {
+    fa: 'تم رسمی و اصیل ابر آروان با رنگ فیروزه‌ای، انحناهای چشم‌نواز و فونت استاندارد وزیرمتن.',
+    ar: 'جمالية فيروزية رسمية لآروان كلاود مع منحنيات متوازنة وخط فارسي أنيق.',
+    tr: 'Dengeli kavisler ve Farsça tipografi ile resmi ArvanCloud imzalı camgöbeği estetiği.',
+    zh: '官方 ArvanCloud 标志性青绿色美学，具有平衡的弧线与波斯语排版。',
+    ru: 'Официальный бирюзовый стиль ArvanCloud со сбалансированными скруглениями и персидской типографикой.'
+  },
+  'Deep cobalt sapphire palette with sleek high-tech curves & corporate precision.': {
+    fa: 'پالت آبی کبالت لوکس سازمانی با انحناهای مدرن و ساختار دقیق شرکتی.',
+    ar: 'لوحة زرقاء داكنة مع منحنيات تقنية متطورة ودقة مؤسسية.',
+    tr: 'Şık yüksek teknoloji kavisleri ve kurumsal hassasiyet ile derin kobalt safir paleti.',
+    zh: '深钴蓝蓝宝石配色，搭配流畅的高科技弧度与企业级严谨结构。',
+    ru: 'Глубокая палитра цвета кобальтового сапфира со строгими корпоративными линиями.'
+  },
+  'Modern developer-centric green palette with high-density layout & rapid VM terminology.': {
+    fa: 'پالت سبز توسعه‌دهندگان با چیدمان با تراکم بالا و اصطلاحات تخصصی ماشین ابری.',
+    ar: 'لوحة خضراء مخصصة للمطورين مع تخطيط عالي الكثافة ومصطلحات الحوسبة السريعة.',
+    tr: 'Yüksek yoğunluklu düzen ve hızlı sanal makine terminolojisi ile geliştirici odaklı yeşil palet.',
+    zh: '以开发者为中心的现代绿色调色板，具有高密度布局和快速虚拟机术语。',
+    ru: 'Современная зеленая палитра для разработчиков с компактным макетом и терминами облачных ВМ.'
+  },
+  'High-contrast cyberpunk purple & dark luxury surfaces for modern cloud dashboards.': {
+    fa: 'کنتراست بنفش سایبرپانک با سطوح لوکس تیره مناسب کنسول‌های مدرن ابری.',
+    ar: 'تباين عالٍ مع أسطح بنفسجية داكنة فخمة للوحات التحكم السحابية الحديثة.',
+    tr: 'Modern bulut panelleri için yüksek kontrastlı siberpunk mor ve koyu lüks yüzeyler.',
+    zh: '高对比度赛博朋克紫色与奢华深色界面，专为现代化云控制台打造。',
+    ru: 'Высококонтрастный киберпанк-фиолетовый с темными премиальными поверхностями.'
+  },
+  'Energetic crimson red accent with warm surfaces & dynamic conversion focus.': {
+    fa: 'رنگ قرمز زرشکی پویا با سطوح گرم و تمرکز بالا بر افزایش فروش و تبدیل کاربر.',
+    ar: 'لون أحمر قرمزي مفعم بالحيوية مع أسطح دافئة وتركيز على تحويل المبيعات.',
+    tr: 'Sıcak yüzeyler ve dinamik dönüşüm odağı ile enerjik kızıl kırmızı vurgu.',
+    zh: '充满活力的深红强调色，搭配温暖质感的界面与转化率聚焦设计。',
+    ru: 'Энергичный багрово-красный акцент с теплыми поверхностями и фокусом на конверсию.'
+  },
+  'Razor-sharp minimal dark slate palette with flat elevation & high precision.': {
+    fa: 'طراحی مینی‌مال تخت با رنگ طوسی نوردیک، گوشه‌های تیز و نهایت دقت مهندسی.',
+    ar: 'لوحة رمادية بسيطة بحدة شفرة مع ارتفاع مسطح ودقة عالية.',
+    tr: 'Düz yükseklik ve yüksek hassasiyet ile jilet gibi keskin minimal koyu arduvaz paleti.',
+    zh: '利落极简的深灰板岩调色板，采用扁平无阴影层级与高精度排版。',
+    ru: 'Минималистичная монохромная серая палитра с плоским стилем и максимальной четкостью.'
+  },
+  'Warm golden honey & amber tones with generous curvature and friendly aesthetics.': {
+    fa: 'تناژ گرم عسلی و کهربایی با انحناهای نرم و جذابیت بصری دوستانه و صمیمی.',
+    ar: 'تدرجات عسلية وكهرمانية دافئة مع انحناءات سخية ولمسات ودية.',
+    tr: 'Cömert kavisler ve samimi estetik ile sıcak altın bal ve kehribar tonları.',
+    zh: '温暖的金色蜂蜜与琥珀色调，搭配大圆角与亲切友好的视觉体验。',
+    ru: 'Теплые янтарно-медовые тона с мягкими скруглениями и дружелюбной эстетикой.'
+  },
+  'Standard Cloud (balanced)': { fa: 'ابر استاندارد (متعادل)', ar: 'سحابة قياسية (متوازنة)', tr: 'Standart Bulut (Dengeli)', zh: '标准云服务 (均衡)', ru: 'Стандартное облако' },
+  'Agency White-Label': { fa: 'آژانسی و نمایندگی وایت‌لیبل', ar: 'وكالة العلامة البيضاء', tr: 'Ajans Beyaz Etiket', zh: '代理商白标定制', ru: 'White-Label для агентств' },
+  'DevOps Platform': { fa: 'پلتفرم دوآپس و توسعه‌دهندگان', ar: 'منصة ديف أوبس للمطورين', tr: 'DevOps Platformu', zh: 'DevOps 开发者平台', ru: 'Платформа DevOps' },
+  'Enterprise B2B': { fa: 'سازمانی و شرکتی B2B', ar: 'مؤسسي B2B', tr: 'Kurumsal B2B', zh: '企业级 B2B', ru: 'Корпоративный B2B' },
+  'General purpose hosting, cloud servers, and everyday terminology.': {
+    fa: 'اصطلاحات استاندارد هاستینگ، سرورهای ابری و ادبیات عمومی مشتریان.',
+    ar: 'استضافة عامة، خوادم سحابية، ومصطلحات يومية واضحة.',
+    tr: 'Genel amaçlı barındırma, bulut sunucuları ve günlük terminoloji.',
+    zh: '通用型托管、云服务器及日常通俗化术语。',
+    ru: 'Универсальный хостинг, облачные серверы и понятная терминология.'
+  },
+  'Boutique infrastructure, high-tier servers, and client portal language.': {
+    fa: 'ادبیات حرفه‌ای متناسب با شرکت‌های طراحی سایت، نمایندگی‌ها و پرتال اختصاصی مشتریان.',
+    ar: 'بنية تحتية ممتازة، خوادم عالية المستوى، ولغة بوابة العملاء الراقية.',
+    tr: 'Özel altyapı, üst düzey sunucular ve müşteri portalı dili.',
+    zh: '精品云基础设施、高阶服务器与客户门户专属用语。',
+    ru: 'Премиальная инфраструктура, серверы высшего класса и язык клиентского портала.'
+  },
+  'KVM virtual machines, root access, sub-millisecond network, and dev terms.': {
+    fa: 'ماشین‌های مجازی KVM، دسترسی روت کامل، پورت پرسرعت و ادبیات فنی مهندسان زیرساخت.',
+    ar: 'أجهزة افتراضية KVM، وصول كامل للجذر Root، شبكة سريعة ومصطلحات المطورين.',
+    tr: 'KVM sanal makineleri, root erişimi, milisaniyenin altında ağ ve geliştirici terimleri.',
+    zh: 'KVM 虚拟机、Root 完全控制权、极低延迟网络及开发工程师专用术语。',
+    ru: 'Виртуальные машины KVM, root-доступ, сверхбыстрая сеть и технические термины.'
+  },
+  'Mission-critical compute, high SLA, enterprise telemetry, and SLAs.': {
+    fa: 'پردازش مأموریت‌های حیاتی، ضمانت SLA سازمانی، پایش بلادرنگ و امنیت بالا.',
+    ar: 'حوسبة للمهام الحرجة، ضمان SLA عالٍ، ومراقبة عن بعد للمؤسسات.',
+    tr: 'Görev açısından kritik bilgi işlem, yüksek SLA, kurumsal telemetri ve SLA garantisi.',
+    zh: '关键业务计算节点、高可用 SLA 保障、企业级遥测与合规架构。',
+    ru: 'Критически важные вычисления, высокий уровень SLA и корпоративная надежность.'
+  },
+  'Modern Rounded': { fa: 'مدرن با انحنای استاندارد (۱۶px)', ar: 'دائري حديث (16 بكسل)', tr: 'Modern Yuvarlak (16px)', zh: '现代圆角 (16px)', ru: 'Современный скругленный (16px)' },
+  'Sharp Minimal': { fa: 'تیز و مینیمال (۴px)', ar: 'بسيط حاد (4 بكسل)', tr: 'Keskin Minimal (4px)', zh: '利落极简 (4px)', ru: 'Четкий минимал (4px)' },
+  'Ultra Curved (Pill)': { fa: 'فوق انحنا / کپسولی (۲۶px)', ar: 'منحنٍ للغاية (26 بكسل)', tr: 'Ultra Kavisli (26px)', zh: '超大圆角 / 胶囊形 (26px)', ru: 'Ультра-скругленный (26px)' },
+  'Compact Density': { fa: 'تراکم بالا (۱۰px)', ar: 'كثافة مدمجة (10 بكسل)', tr: 'Kompakt Yoğunluk (10px)', zh: '紧凑高密 (10px)', ru: 'Компактная плотность (10px)' },
+  'Fluid Full-Width': { fa: 'شناور تمام‌صفحه (۱۴px)', ar: 'مرن كامل العرض (14 بكسل)', tr: 'Akıcı Tam Genişlik (14px)', zh: '流体全宽 (14px)', ru: 'Плавный на всю ширину (14px)' },
+  'Balanced curves for contemporary SaaS aesthetics.': {
+    fa: 'انحناهای متعادل و چشم‌نواز مطابق با استانداردهای مدرن روز دنیا.',
+    ar: 'منحنيات متوازنة لتصميم برمجيات SaaS المعاصرة.',
+    tr: 'Çağdaş SaaS estetiği için dengeli kavisler.',
+    zh: '适合现代 SaaS 产品的均衡优雅圆角美学。',
+    ru: 'Сбалансированные скругления в стиле современных SaaS сервисов.'
+  },
+  'Technical, engineering-focused look with crisp 4px edges.': {
+    fa: 'ظاهر فنی و دقیق مهندسی با گوشه‌های ۴ پیکسلی شارپ.',
+    ar: 'مظهر تقني يركز على الهندسة مع حواف واضحة بدقة 4 بكسل.',
+    tr: 'Net 4 piksellik kenarlarla teknik, mühendislik odaklı görünüm.',
+    zh: '带有清晰 4px 边缘的技术与工程风范外观。',
+    ru: 'Техничный инженерный стиль с четкими гранями 4px.'
+  },
+  'Soft and playful with high-radius pill surfaces.': {
+    fa: 'فرم نرم، دلنشین و ارگونومیک با انحنای بالا.',
+    ar: 'ناعم وجذاب مع أسطح كبسولية ذات نصف قطر كبير.',
+    tr: 'Yüksek yarıçaplı hap yüzeyleriyle yumuşak ve şık.',
+    zh: '柔和且富有亲和力的高半径胶囊形界面。',
+    ru: 'Мягкие формы с выраженными скруглениями поверхностей.'
+  },
+  'Optimized for data-dense admin portals and high information velocity.': {
+    fa: 'بهینه‌شده برای داشبوردهای پر از اطلاعات و سرعت بالای مشاهده داده‌ها.',
+    ar: 'محسن لبوابات الإدارة الكثيفة بالبيانات وسرعة تدفق المعلومات.',
+    tr: 'Veri açısından yoğun yönetim panelleri ve yüksek bilgi akışı için optimize edilmiştir.',
+    zh: '专为高密度数据控制台与快速信息览阅优化。',
+    ru: 'Оптимизирован для насыщенных данными панелей управления.'
+  },
+  'Maximum horizontal real estate for expansive setups.': {
+    fa: 'حداکثر بهره‌وری از عرض صفحه نمایش برای فضاهای وسیع.',
+    ar: 'أقصى استفادة من المساحة الأفقية للإعدادات الواسعة.',
+    tr: 'Kapsamlı kurulumlar için maksimum yatay alan.',
+    zh: '充分利用屏幕水平空间，适合宽屏与全尺寸展示。',
+    ru: 'Максимальное использование ширины экрана для просторных макетов.'
+  },
+  'Compact': { fa: 'فشرده', ar: 'مدمج', tr: 'Kompakt', zh: '紧凑', ru: 'Компактный' },
+  'Standard': { fa: 'استاندارد', ar: 'قياسي', tr: 'Standart', zh: '标准', ru: 'Стандартный' },
+  'Spacious': { fa: 'جادار', ar: 'فسيح', tr: 'Geniş', zh: '宽松', ru: 'Просторный' },
+  'Extra Large': { fa: 'خیلی بزرگ', ar: 'كبير جداً', tr: 'Ekstra Büyük', zh: '特大号', ru: 'Очень большой' },
+  'Tight line heights & 13px base body font.': {
+    fa: 'فاصله خطوط متراکم و فونت پایه ۱۳ پیکسلی.',
+    ar: 'ارتفاع أسطر متقارب وحجم خط أساسي 13 بكسل.',
+    tr: 'Sıkı satır yükseklikleri ve 13px temel gövde yazı tipi.',
+    zh: '紧凑行高与 13px 正文基准字号。',
+    ru: 'Компактный межстрочный интервал и базовый шрифт 13px.'
+  },
+  'Optimal readability with 14px base body font.': {
+    fa: 'خوانایی بهینه و استاندارد با فونت پایه ۱۴ پیکسلی.',
+    ar: 'قراءة مثالية مع حجم خط أساسي 14 بكسل.',
+    tr: '14px temel gövde yazı tipiyle optimum okunabilirlik.',
+    zh: '最具可读性的 14px 正文基准字号。',
+    ru: 'Оптимальная читаемость с базовым шрифтом 14px.'
+  },
+  'Enhanced comfortable reading with 16px base body font.': {
+    fa: 'مطالعه راحت و رسا با فونت پایه ۱۶ پیکسلی.',
+    ar: 'قراءة مريحة معززة بحجم خط أساسي 16 بكسل.',
+    tr: '16px temel gövde yazı tipiyle gelişmiş rahat okuma.',
+    zh: '舒适大气的 16px 正文基准字号。',
+    ru: 'Повышенный комфорт чтения с базовым шрифтом 16px.'
+  },
+  'High-impact large typography with 18px base font.': {
+    fa: 'تایپوگرافی بزرگ و برجسته با فونت پایه ۱۸ پیکسلی.',
+    ar: 'خطوط كبيرة ذات تأثير بصري عالي بحجم أساسي 18 بكسل.',
+    tr: '18px temel yazı tipiyle yüksek etkili büyük tipografi.',
+    zh: '视觉冲击力强烈的 18px 大号字体排版。',
+    ru: 'Крупная выразительная типографика с базовым шрифтом 18px.'
+  }
 };
+
 
 /**
  * Load existing translation dictionaries from src/i18n/index.ts, PO files, and supplementals.
@@ -659,6 +1604,12 @@ export interface LanguageMeta {
   dir: 'rtl' | 'ltr';
 }
 
+export interface CustomizableKey {
+  key: string;
+  defaultFa: string;
+  defaultEn: string;
+}
+
 export const LANGUAGES: LanguageMeta[] = [
   { code: 'fa', name: 'Persian', nativeName: 'فارسی', flag: '🇮🇷', dir: 'rtl' },
   { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸', dir: 'ltr' },
@@ -670,14 +1621,53 @@ export const LANGUAGES: LanguageMeta[] = [
 
 export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = ${JSON.stringify(dicts, null, 2)};
 
-export function getTranslation(key: string, lang: SupportedLanguage = 'fa'): string {
-  if (DICTIONARIES[lang] && DICTIONARIES[lang][key]) {
+export function getTranslation(
+  key: string,
+  lang: SupportedLanguage = 'fa',
+  customOverrides?: Record<string, string>
+): string {
+  // 1. Custom administrator overrides take highest precedence
+  if (customOverrides && customOverrides[key] && customOverrides[key].trim() !== '') {
+    return customOverrides[key];
+  }
+
+  // 2. Active target language dictionary
+  if (DICTIONARIES[lang] && DICTIONARIES[lang][key] && DICTIONARIES[lang][key] !== '') {
     return DICTIONARIES[lang][key];
   }
-  if (DICTIONARIES['en'] && DICTIONARIES['en'][key]) {
+
+  // 3. Persian fallback for RTL contexts
+  if (DICTIONARIES['fa'] && DICTIONARIES['fa'][key] && DICTIONARIES['fa'][key] !== '') {
+    return DICTIONARIES['fa'][key];
+  }
+
+  // 4. English fallback
+  if (DICTIONARIES['en'] && DICTIONARIES['en'][key] && DICTIONARIES['en'][key] !== '') {
     return DICTIONARIES['en'][key];
   }
+
   return key;
+}
+
+export interface CustomizableKey {
+  key: string;
+  defaultFa: string;
+  defaultEn: string;
+  defaultCurrent: string;
+}
+
+export function getCustomizableKeys(activeLang: SupportedLanguage = 'fa'): CustomizableKey[] {
+  const faDict = DICTIONARIES.fa || {};
+  const enDict = DICTIONARIES.en || {};
+  const currentDict = DICTIONARIES[activeLang] || faDict;
+  const allKeys = Array.from(new Set([...Object.keys(faDict), ...Object.keys(enDict), ...Object.keys(currentDict)])).sort();
+
+  return allKeys.map((key) => ({
+    key,
+    defaultFa: faDict[key] || key,
+    defaultEn: enDict[key] || key,
+    defaultCurrent: currentDict[key] || faDict[key] || enDict[key] || key,
+  }));
 }
 `;
   fs.writeFileSync(tsPath, tsContent, 'utf8');

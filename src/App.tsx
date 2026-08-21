@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useArvan } from './hooks/useArvan';
 import { TopAppBar } from './components/navigation/TopAppBar';
 import { QuickDepositModal } from './components/wallet/QuickDepositModal';
 import { ToastContainer } from './components/ui/toast';
 import { ServerConfiguratorView } from './views/ServerConfiguratorView';
 import { CustomerDashboardView } from './views/CustomerDashboardView';
-import { ActiveTab } from './types';
+import { ActiveTab, EmbedConfig } from './types';
 import { cn } from './lib/utils';
 
 export const App: React.FC = () => {
@@ -20,6 +20,18 @@ export const App: React.FC = () => {
     currency,
     isLogged,
     loginUrl,
+    storeName,
+    storeTagline,
+    heroTitle,
+    heroDescription,
+    deployButtonText,
+    dashboardTitle,
+    dashboardDescription,
+    walletTitle,
+    logoUrl,
+    headerStyle,
+    showHourlyToggle,
+    customFooterText,
     regions,
     flavors,
     images,
@@ -34,8 +46,53 @@ export const App: React.FC = () => {
     topupWallet,
   } = useArvan();
 
-  // Route Resolver based on window.location.pathname
+  // Read embedded dataset from mount node (#arvan-cloud-app)
+  const embedConfig = useMemo<EmbedConfig>(() => {
+    if (typeof document === 'undefined') return {};
+    const rootEl = document.getElementById('arvan-cloud-app');
+    if (!rootEl) return {};
+
+    const ds = rootEl.dataset;
+    return {
+      isEmbedded: ds.embedded === 'true',
+      initialView: (ds.view === 'dashboard' ? 'dashboard' : 'server') as ActiveTab,
+      initialRegion: ds.region || undefined,
+      initialFlavor: ds.flavor || undefined,
+      initialImage: ds.image || undefined,
+      initialDisk: ds.disk ? parseInt(ds.disk, 10) : undefined,
+      accentColor: ds.accentColor || undefined,
+      secondaryColor: ds.secondaryColor || undefined,
+      colorSurface: ds.colorSurface || undefined,
+      colorBackground: ds.colorBg || undefined,
+      colorText: ds.colorText || undefined,
+      colorBorder: ds.colorBorder || undefined,
+      borderRadius: ds.borderRadius ? parseInt(ds.borderRadius, 10) : undefined,
+      cardElevation: ds.cardElevation || undefined,
+      spacingDensity: ds.spacingDensity || undefined,
+      containerWidth: ds.containerWidth || undefined,
+      fontFamily: ds.fontFamily || undefined,
+      baseFontSize: ds.baseFontSize ? parseInt(ds.baseFontSize, 10) : undefined,
+      persianDigits: ds.persianDigits !== undefined ? ds.persianDigits === '1' : undefined,
+      ctaText: ds.ctaText || undefined,
+      customTitle: ds.customTitle || undefined,
+      customTagline: ds.customTagline || undefined,
+      dashboardTitle: ds.dashboardTitle || undefined,
+      dashboardDescription: ds.dashboardDesc || undefined,
+      walletTitle: ds.walletTitle || undefined,
+      showHeader: ds.showHeader !== undefined ? ds.showHeader === '1' : true,
+      showRegion: ds.showRegion !== undefined ? ds.showRegion === '1' : true,
+      showStorage: ds.showStorage !== undefined ? ds.showStorage === '1' : true,
+      showOs: ds.showOs !== undefined ? ds.showOs === '1' : true,
+      showHourly: ds.showHourly !== undefined ? ds.showHourly === '1' : true,
+      customCss: ds.customCss || undefined,
+    };
+  }, []);
+
+  // Route Resolver based on window.location.pathname or embedConfig
   const resolveInitialTab = (): ActiveTab => {
+    if (embedConfig.isEmbedded && embedConfig.initialView) {
+      return embedConfig.initialView;
+    }
     if (typeof window !== 'undefined') {
       const path = window.location.pathname;
       if (path.includes('/cloud-services/dashboard')) return 'dashboard';
@@ -48,33 +105,47 @@ export const App: React.FC = () => {
 
   const handleSelectTab = (tab: ActiveTab) => {
     setActiveTab(tab);
-    if (typeof window !== 'undefined' && window.history?.pushState) {
+    if (!embedConfig.isEmbedded && typeof window !== 'undefined' && window.history?.pushState) {
       window.history.pushState(null, '', `/cloud-services/${tab}/`);
     }
   };
 
   useEffect(() => {
+    if (embedConfig.isEmbedded) return;
     const handlePopState = () => {
       setActiveTab(resolveInitialTab());
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
+  }, [embedConfig.isEmbedded]);
 
   return (
-    <div className={cn('min-h-screen bg-slate-50 text-slate-900 flex flex-col', `lang-${language}`)} dir={direction}>
-      {/* 1. M3 Top App Bar */}
-      <TopAppBar
-        activeTab={activeTab}
-        onSelectTab={handleSelectTab}
-        language={language}
-        balance={balance}
-        currency={currency}
-        isLogged={isLogged}
-        loginUrl={loginUrl}
-        onOpenDeposit={() => setIsDepositOpen(true)}
-        t={t}
-      />
+    <div
+      className={cn('min-h-screen flex flex-col transition-colors', `lang-${language}`)}
+      style={{
+        backgroundColor: 'var(--arvan-bg, #f8fafc)',
+        color: 'var(--arvan-text, #0f172a)',
+      }}
+      dir={direction}
+    >
+      {/* 1. M3 Top App Bar – hidden when embedded (widget has its own context) */}
+      {!embedConfig.isEmbedded && (
+        <TopAppBar
+          activeTab={activeTab}
+          onSelectTab={handleSelectTab}
+          language={language}
+          balance={balance}
+          currency={currency}
+          isLogged={isLogged}
+          loginUrl={loginUrl}
+          onOpenDeposit={() => setIsDepositOpen(true)}
+          t={t}
+          storeName={storeName || undefined}
+          storeTagline={storeTagline || undefined}
+          logoUrl={logoUrl || undefined}
+          headerStyle={headerStyle}
+        />
+      )}
 
       {/* 2. Main Content View */}
       <main className="flex-1">
@@ -89,6 +160,19 @@ export const App: React.FC = () => {
             t={t}
             onDeploy={deployServer}
             onOpenDeposit={() => setIsDepositOpen(true)}
+            // Admin-panel brand overrides (embed attrs take precedence)
+            customTitle={embedConfig.customTitle || heroTitle || (storeName ? storeName : undefined)}
+            customTagline={embedConfig.customTagline || heroDescription || (storeTagline ? storeTagline : undefined)}
+            ctaButtonText={embedConfig.ctaText || deployButtonText || undefined}
+            initialRegionId={embedConfig.initialRegion}
+            initialFlavorId={embedConfig.initialFlavor}
+            initialImageId={embedConfig.initialImage}
+            initialDiskSize={embedConfig.initialDisk}
+            showHeader={embedConfig.showHeader}
+            showRegionSelector={embedConfig.showRegion}
+            showStorageSlider={embedConfig.showStorage}
+            showOsSelector={embedConfig.showOs}
+            showHourlyPrice={embedConfig.showHourly !== undefined ? embedConfig.showHourly : showHourlyToggle}
           />
         )}
 
@@ -102,6 +186,9 @@ export const App: React.FC = () => {
             currency={currency}
             language={language}
             t={t}
+            customTitle={embedConfig.dashboardTitle || dashboardTitle || undefined}
+            customDescription={embedConfig.dashboardDescription || dashboardDescription || undefined}
+            walletTitle={embedConfig.walletTitle || walletTitle || undefined}
             onOpenDeposit={() => setIsDepositOpen(true)}
             onServerPower={handleServerPower}
             onNavigateDeploy={() => handleSelectTab('server')}
@@ -109,18 +196,20 @@ export const App: React.FC = () => {
         )}
       </main>
 
-      {/* 3. Footer */}
-      <footer className="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500">
-        <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 font-medium">
-            <span className="arvan-dot arvan-dot-green" />
-            <span className="text-slate-700">{t('All Cloud Datacenter Regions Operational (99.99% SLA)')}</span>
+      {/* 3. Footer – hidden when embedded */}
+      {!embedConfig.isEmbedded && (
+        <footer className="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500">
+          <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2 font-medium">
+              <span className="arvan-dot arvan-dot-green" />
+              <span className="text-slate-700">{t('All Cloud Datacenter Regions Operational (99.99% SLA)')}</span>
+            </div>
+            <div>
+              {customFooterText || t('Powered by ArvanCloud Infrastructure Reseller Engine')}
+            </div>
           </div>
-          <div>
-            {t('Powered by ArvanCloud Infrastructure Reseller Engine')}
-          </div>
-        </div>
-      </footer>
+        </footer>
+      )}
 
       {/* 4. Quick Deposit Modal */}
       <QuickDepositModal

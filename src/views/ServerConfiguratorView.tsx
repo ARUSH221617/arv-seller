@@ -26,7 +26,7 @@ import {
   OsImage,
   SupportedLanguage,
 } from '../types';
-import { formatCurrency, cn } from '../lib/utils';
+import { formatCurrency, formatNumber, toPersianDigits, cn } from '../lib/utils';
 import { OsLogo } from '../components/ui/OsLogo';
 
 interface ServerConfiguratorViewProps {
@@ -37,6 +37,18 @@ interface ServerConfiguratorViewProps {
   currency: string;
   language: SupportedLanguage;
   t: (key: string) => string;
+  initialRegionId?: string;
+  initialFlavorId?: string;
+  initialImageId?: string;
+  initialDiskSize?: number;
+  ctaButtonText?: string;
+  customTitle?: string;
+  customTagline?: string;
+  showHeader?: boolean;
+  showRegionSelector?: boolean;
+  showStorageSlider?: boolean;
+  showOsSelector?: boolean;
+  showHourlyPrice?: boolean;
   onDeploy: (payload: {
     name: string;
     region_id: string;
@@ -45,7 +57,7 @@ interface ServerConfiguratorViewProps {
     disk_size: number;
     ssh_key?: string;
     password?: string;
-  }) => Promise<void>;
+  }) => Promise<unknown>;
   onOpenDeposit: () => void;
 }
 
@@ -57,15 +69,33 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
   currency,
   language,
   t,
+  initialRegionId,
+  initialFlavorId,
+  initialImageId,
+  initialDiskSize,
+  ctaButtonText,
+  customTitle,
+  customTagline,
+  showHeader = true,
+  showRegionSelector = true,
+  showStorageSlider = true,
+  showOsSelector = true,
+  showHourlyPrice = true,
   onDeploy,
   onOpenDeposit,
 }) => {
-  // Configurator selections
-  const [selectedRegionId, setSelectedRegionId] = useState<string>(regions[0]?.id || 'ir-thr-c2');
-  const [selectedFlavorId, setSelectedFlavorId] = useState<string>(flavors[1]?.id || 'g1-2-4');
-  const [selectedImageId, setSelectedImageId] = useState<string>(images[0]?.id || 'ubuntu-22.04');
+  // Configurator selections with initial customization props
+  const [selectedRegionId, setSelectedRegionId] = useState<string>(
+    initialRegionId || regions[0]?.id || 'ir-thr-c2'
+  );
+  const [selectedFlavorId, setSelectedFlavorId] = useState<string>(
+    initialFlavorId || flavors[1]?.id || 'g1-2-4'
+  );
+  const [selectedImageId, setSelectedImageId] = useState<string>(
+    initialImageId || images[0]?.id || 'ubuntu-22.04'
+  );
   const [flavorCategory, setFlavorCategory] = useState<string>('all');
-  const [diskSize, setDiskSize] = useState<number>(40);
+  const [diskSize, setDiskSize] = useState<number>(initialDiskSize || 40);
   const [hostname, setHostname] = useState<string>('srv-cloud-instance');
   const [authMethod, setAuthMethod] = useState<'ssh' | 'password'>('password');
   const [sshKey, setSshKey] = useState<string>('');
@@ -103,12 +133,12 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
   });
 
   const handleGeneratePassword = () => {
-    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789!@#$%^&*';
-    let pwd = '';
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789!@#$%&*';
+    let res = '';
     for (let i = 0; i < 16; i++) {
-      pwd += chars.charAt(Math.floor(Math.random() * chars.length));
+      res += chars.charAt(Math.floor(Math.random() * chars.length));
     }
-    setPassword(pwd);
+    setPassword(res);
   };
 
   const handleCopyPassword = () => {
@@ -140,73 +170,79 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
 
   return (
     <div className="container py-8">
-      {/* Hero Header */}
-      <div className="mb-8">
-        <div className="flex items-center gap-2 text-arvan-teal text-xs font-bold uppercase tracking-wider mb-2">
-          <Zap className="h-4 w-4" />
-          <span>{t('nextGenCloudIaaS')}</span>
+      {/* Hero Header (Conditional) */}
+      {showHeader && (
+        <div className="mb-8">
+          <div className="flex items-center gap-2 text-[var(--arvan-primary,#008b8b)] text-xs font-bold uppercase tracking-wider mb-2">
+            <Zap className="h-4 w-4" />
+            <span>{t('nextGenCloudIaaS')}</span>
+          </div>
+          <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            {customTitle || t('deployServer')}
+          </h1>
+          <p className="mt-2 text-sm text-slate-600 max-w-2xl">
+            {customTagline || t('configuratorHeroDesc')}
+          </p>
         </div>
-        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-          {t('deployServer')}
-        </h1>
-        <p className="mt-2 text-sm text-slate-600 max-w-2xl">
-          {t('configuratorHeroDesc')}
-        </p>
-      </div>
+      )}
 
       {/* 2-Column Split Workspace */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 items-start">
         {/* Left Column: Configurator Steps (8 Cols) */}
         <div className="space-y-8 lg:col-span-8">
-          {/* Step 1: Datacenter Region */}
-          <Card elevation={1}>
-            <CardHeader>
-              <CardTitle>
-                <Globe2 className="h-5 w-5 text-arvan-teal" />
-                <span>{t('step1Region')}</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-                {regions.map((region) => {
-                  const isSelected = selectedRegionId === region.id;
-                  return (
-                    <div
-                      key={region.id}
-                      onClick={() => setSelectedRegionId(region.id)}
-                      className={cn(
-                        'relative cursor-pointer rounded-2xl border p-4 transition-all duration-200 hover:border-arvan-teal/50 hover:bg-slate-50',
-                        isSelected
-                          ? 'border-arvan-teal bg-arvan-teal/5 shadow-sm ring-1 ring-arvan-teal'
-                          : 'border-slate-200 bg-white'
-                      )}
-                    >
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-2xl">{region.flag}</span>
-                        <div className="flex items-center gap-1.5">
-                          <span className="arvan-dot arvan-dot-green" />
-                          <span className="text-[11px] font-mono text-slate-500">{region.latency || '15ms'}</span>
+          {/* Step 1: Datacenter Region (Conditional) */}
+          {showRegionSelector && (
+            <Card elevation={1}>
+              <CardHeader>
+                <CardTitle>
+                  <Globe2 className="h-5 w-5 text-[var(--arvan-primary,#008b8b)]" />
+                  <span>{t('step1Region')}</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                  {regions.map((region) => {
+                    const isSelected = selectedRegionId === region.id;
+                    return (
+                      <div
+                        key={region.id}
+                        onClick={() => setSelectedRegionId(region.id)}
+                        className={cn(
+                          'relative cursor-pointer rounded-2xl border p-4 transition-all duration-200 hover:border-[var(--arvan-primary,#008b8b)]/50 hover:bg-slate-50',
+                          isSelected
+                            ? 'border-[var(--arvan-primary,#008b8b)] bg-[var(--arvan-primary,#008b8b)]/5 shadow-sm ring-1 ring-[var(--arvan-primary,#008b8b)]'
+                            : 'border-slate-200 bg-white'
+                        )}
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-2xl">{region.flag}</span>
+                          {/* Latency indicator OR selected checkmark — never overlaps */}
+                          {isSelected ? (
+                            <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--arvan-primary,#008b8b)] text-white shadow-sm">
+                              <Check className="h-3.5 w-3.5" />
+                            </div>
+                          ) : (
+                            <div className="flex items-center gap-1.5">
+                              <span className="arvan-dot arvan-dot-green" />
+                              <span className="text-[11px] font-medium text-slate-500">{toPersianDigits(region.latency || '15ms', language)}</span>
+                            </div>
+                          )}
                         </div>
+                        <div className="font-bold text-sm text-slate-900 mb-0.5">{t(region.name) || region.name}</div>
+                        <div className="text-xs text-slate-500">{t(region.city) || region.city}، {t(region.country) || region.country}</div>
                       </div>
-                      <div className="font-bold text-sm text-slate-900 mb-0.5">{t(region.name) || region.name}</div>
-                      <div className="text-xs text-slate-500">{t(region.city) || region.city}، {t(region.country) || region.country}</div>
-                      {isSelected && (
-                        <div className="absolute top-3 end-3 flex h-5 w-5 items-center justify-center rounded-full bg-arvan-teal text-white font-bold shadow-sm">
-                          <Check className="h-3.5 w-3.5" />
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </CardContent>
-          </Card>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+          )}
 
           {/* Step 2: Hardware Flavor */}
           <Card elevation={1}>
             <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <CardTitle>
-                <Cpu className="h-5 w-5 text-arvan-teal" />
+                <Cpu className="h-5 w-5 text-[var(--arvan-primary,#008b8b)]" />
                 <span>{t('step2Flavor')}</span>
               </CardTitle>
               {/* Category Segment Filter */}
@@ -233,9 +269,9 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                       key={flavor.id}
                       onClick={() => setSelectedFlavorId(flavor.id)}
                       className={cn(
-                        'relative cursor-pointer rounded-2xl border p-4 transition-all duration-200 hover:border-arvan-teal/50 hover:bg-slate-50',
+                        'relative cursor-pointer rounded-2xl border p-4 transition-all duration-200 hover:border-[var(--arvan-primary,#008b8b)]/50 hover:bg-slate-50',
                         isSelected
-                          ? 'border-arvan-teal bg-arvan-teal/5 shadow-sm ring-1 ring-arvan-teal'
+                          ? 'border-[var(--arvan-primary,#008b8b)] bg-[var(--arvan-primary,#008b8b)]/5 shadow-sm ring-1 ring-[var(--arvan-primary,#008b8b)]'
                           : 'border-slate-200 bg-white'
                       )}
                     >
@@ -249,7 +285,7 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                           )}
                         </div>
                         <div className="text-end">
-                          <span className="text-sm font-extrabold text-arvan-teal">
+                          <span className="text-sm font-extrabold text-[var(--arvan-primary,#008b8b)]">
                             {formatCurrency(cost, currency, language)}
                           </span>
                           <span className="text-[10px] text-slate-500 block">/ {t('hr')}</span>
@@ -260,15 +296,15 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                       <div className="grid grid-cols-3 gap-2 border-t border-slate-100 pt-3 text-center">
                         <div className="rounded-xl bg-slate-50 p-2">
                           <span className="text-[10px] text-slate-500 block mb-0.5">{t('vcpu')}</span>
-                          <span className="text-xs font-extrabold text-slate-800">{vcpus} {t('cores')}</span>
+                          <span className="text-xs font-extrabold text-slate-800">{formatNumber(vcpus, language)} {t('cores')}</span>
                         </div>
                         <div className="rounded-xl bg-slate-50 p-2">
                           <span className="text-[10px] text-slate-500 block mb-0.5">{t('ram')}</span>
-                          <span className="text-xs font-extrabold text-slate-800">{ramGb} GB</span>
+                          <span className="text-xs font-extrabold text-slate-800">{formatNumber(ramGb, language)} GB</span>
                         </div>
                         <div className="rounded-xl bg-slate-50 p-2">
                           <span className="text-[10px] text-slate-500 block mb-0.5">{t('storage')}</span>
-                          <span className="text-xs font-extrabold text-slate-800">{diskGb} GB NVMe</span>
+                          <span className="text-xs font-extrabold text-slate-800">{formatNumber(diskGb, language)} GB NVMe</span>
                         </div>
                       </div>
                     </div>
@@ -278,93 +314,97 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
             </CardContent>
           </Card>
 
-          {/* Step 3: NVMe Disk Slider */}
-          <Card elevation={1}>
-            <CardHeader>
-              <CardTitle>
-                <HardDrive className="h-5 w-5 text-arvan-teal" />
-                <span>{t('step3Disk')}</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <span className="text-2xl font-black text-slate-900">{diskSize}</span>
-                  <span className="text-sm font-bold text-arvan-teal ms-1.5">GB NVMe SSD</span>
+          {/* Step 3: NVMe Disk Slider (Conditional) */}
+          {showStorageSlider && (
+            <Card elevation={1}>
+              <CardHeader>
+                <CardTitle>
+                  <HardDrive className="h-5 w-5 text-[var(--arvan-primary,#008b8b)]" />
+                  <span>{t('step3Disk')}</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-2xl font-black text-slate-900">{formatNumber(diskSize, language)}</span>
+                    <span className="text-sm font-bold text-arvan-teal ms-1.5">GB NVMe SSD</span>
+                  </div>
+                  <div className="text-end">
+                    <span className="text-xs text-slate-500 block">{t('additionalStorage')}:</span>
+                    <span className="text-xs font-bold text-slate-800">
+                      +{formatCurrency(extraDiskHourlyCost, currency, language)} / {t('hr')}
+                    </span>
+                  </div>
                 </div>
-                <div className="text-end">
-                  <span className="text-xs text-slate-500 block">{t('additionalStorage')}:</span>
-                  <span className="text-xs font-bold text-slate-800">
-                    +{formatCurrency(extraDiskHourlyCost, currency, language)} / {t('hr')}
-                  </span>
+
+                {/* Slider */}
+                <Slider
+                  value={[diskSize]}
+                  min={baseDisk}
+                  max={500}
+                  step={5}
+                  onValueChange={(val) => setDiskSize(val[0])}
+                />
+
+                <div className="flex justify-between text-[11px] text-slate-400">
+                  <span>{t('baseDiskLabel')} {formatNumber(baseDisk, language)} GB</span>
+                  <span>{formatNumber(100, language)} GB</span>
+                  <span>{formatNumber(250, language)} GB</span>
+                  <span>{t('maxDiskLabel')} {formatNumber(500, language)} GB</span>
                 </div>
-              </div>
+              </CardContent>
+            </Card>
+          )}
 
-              {/* Slider */}
-              <Slider
-                value={[diskSize]}
-                min={baseDisk}
-                max={500}
-                step={5}
-                onValueChange={(val) => setDiskSize(val[0])}
-              />
-
-              <div className="flex justify-between text-[11px] font-mono text-slate-400">
-                <span>{t('baseDiskLabel')} {baseDisk} GB</span>
-                <span>100 GB</span>
-                <span>250 GB</span>
-                <span>{t('maxDiskLabel')} 500 GB</span>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Step 4: Operating System */}
-          <Card elevation={1}>
-            <CardHeader>
-              <CardTitle>
-                <Layers className="h-5 w-5 text-arvan-teal" />
-                <span>{t('step4Image')}</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {images.map((img) => {
-                  const isSelected = selectedImageId === img.id;
-                  return (
-                    <div
-                      key={img.id}
-                      onClick={() => setSelectedImageId(img.id)}
-                      className={cn(
-                        'group cursor-pointer rounded-2xl border p-3.5 text-center transition-all duration-200 hover:border-arvan-teal/50 hover:bg-slate-50',
-                        isSelected
-                          ? 'border-arvan-teal bg-arvan-teal/5 shadow-sm ring-1 ring-arvan-teal'
-                          : 'border-slate-200 bg-white'
-                      )}
-                    >
+          {/* Step 4: Operating System (Conditional) */}
+          {showOsSelector && (
+            <Card elevation={1}>
+              <CardHeader>
+                <CardTitle>
+                  <Layers className="h-5 w-5 text-[var(--arvan-primary,#008b8b)]" />
+                  <span>{t('step4Image')}</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {images.map((img) => {
+                    const isSelected = selectedImageId === img.id;
+                    return (
                       <div
+                        key={img.id}
+                        onClick={() => setSelectedImageId(img.id)}
                         className={cn(
-                          'mx-auto mb-2 flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-200 shadow-sm',
+                          'group cursor-pointer rounded-2xl border p-3.5 text-center transition-all duration-200 hover:border-[var(--arvan-primary,#008b8b)]/50 hover:bg-slate-50',
                           isSelected
-                            ? 'bg-white ring-1 ring-arvan-teal/40 shadow-arvan-teal/10 scale-105'
-                            : 'bg-slate-100/80 group-hover:bg-white group-hover:scale-105'
+                            ? 'border-[var(--arvan-primary,#008b8b)] bg-[var(--arvan-primary,#008b8b)]/5 shadow-sm ring-1 ring-[var(--arvan-primary,#008b8b)]'
+                            : 'border-slate-200 bg-white'
                         )}
                       >
-                        <OsLogo distro={img.distro} name={img.name} className="h-6 w-6" />
+                        <div
+                          className={cn(
+                            'mx-auto mb-2 flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-200 shadow-sm',
+                            isSelected
+                              ? 'bg-white ring-1 ring-[var(--arvan-primary,#008b8b)]/40 shadow-sm scale-105'
+                              : 'bg-slate-100/80 group-hover:bg-white group-hover:scale-105'
+                          )}
+                        >
+                          <OsLogo distro={img.distro} name={img.name} className="h-6 w-6" />
+                        </div>
+                        <div className="font-bold text-xs text-slate-900 mb-0.5">{img.name}</div>
+                        <div className="text-[11px] text-slate-500 font-mono">{img.version}</div>
                       </div>
-                      <div className="font-bold text-xs text-slate-900 mb-0.5">{img.name}</div>
-                      <div className="text-[11px] text-slate-500 font-mono">{img.version}</div>
-                    </div>
-                  );
-                })}
-              </div>
-            </CardContent>
-          </Card>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+          )}
 
           {/* Step 5: Authentication & Hostname */}
           <Card elevation={1}>
             <CardHeader>
               <CardTitle>
-                <Key className="h-5 w-5 text-arvan-teal" />
+                <Key className="h-5 w-5 text-[var(--arvan-primary,#008b8b)]" />
                 <span>{t('step5Auth')}</span>
               </CardTitle>
             </CardHeader>
@@ -395,7 +435,7 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                     className={cn(
                       'flex items-center justify-center gap-2 rounded-2xl border p-3 text-xs font-bold transition-all',
                       authMethod === 'password'
-                        ? 'border-arvan-teal bg-arvan-teal/10 text-arvan-teal shadow-sm'
+                        ? 'border-[var(--arvan-primary,#008b8b)] bg-[var(--arvan-primary,#008b8b)]/10 text-[var(--arvan-primary,#008b8b)] shadow-sm'
                         : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50'
                     )}
                   >
@@ -409,7 +449,7 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                     className={cn(
                       'flex items-center justify-center gap-2 rounded-2xl border p-3 text-xs font-bold transition-all',
                       authMethod === 'ssh'
-                        ? 'border-arvan-teal bg-arvan-teal/10 text-arvan-teal shadow-sm'
+                        ? 'border-[var(--arvan-primary,#008b8b)] bg-[var(--arvan-primary,#008b8b)]/10 text-[var(--arvan-primary,#008b8b)] shadow-sm'
                         : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50'
                     )}
                   >
@@ -467,7 +507,7 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
           <Card elevation={2} className="border-slate-200 shadow-md">
             <CardHeader>
               <CardTitle>
-                <ShieldCheck className="h-5 w-5 text-arvan-teal" />
+                <ShieldCheck className="h-5 w-5 text-[var(--arvan-primary,#008b8b)]" />
                 <span>{t('orderSummary')}</span>
               </CardTitle>
             </CardHeader>
@@ -484,11 +524,11 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-500">{t('specs')}:</span>
-                  <span className="font-bold text-slate-900">{getFlavorVcpus(selectedFlavor)} vCPU / {getFlavorRamGb(selectedFlavor)} GB RAM</span>
+                  <span className="font-bold text-slate-900">{formatNumber(getFlavorVcpus(selectedFlavor), language)} vCPU / {formatNumber(getFlavorRamGb(selectedFlavor), language)} GB RAM</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-500">{t('storage')}:</span>
-                  <span className="font-bold text-slate-900">{diskSize} GB NVMe SSD</span>
+                  <span className="font-bold text-slate-900">{formatNumber(diskSize, language)} GB NVMe SSD</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-500">{t('os')}:</span>
@@ -499,21 +539,23 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                 </div>
               </div>
 
-              {/* Pricing Breakdown */}
-              <div className="space-y-2 border-t border-slate-100 pt-3">
-                <div className="flex items-baseline justify-between">
-                  <span className="text-slate-500">{t('hourlyBurn')}:</span>
-                  <span className="text-lg font-extrabold text-arvan-teal">
-                    {formatCurrency(totalHourlyPrice, currency, language)} / {t('hr')}
-                  </span>
+              {/* Pricing Breakdown (Conditional Rate Display) */}
+              {showHourlyPrice && (
+                <div className="space-y-2 border-t border-slate-100 pt-3">
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-slate-500">{t('hourlyBurn')}:</span>
+                    <span className="text-lg font-extrabold text-[var(--arvan-primary,#008b8b)]">
+                      {formatCurrency(totalHourlyPrice, currency, language)} / {t('hr')}
+                    </span>
+                  </div>
+                  <div className="flex items-baseline justify-between text-[11px] text-slate-500">
+                    <span>{t('monthlyEstimate')}:</span>
+                    <span className="font-mono font-bold text-slate-700">
+                      ~{formatCurrency(totalMonthlyPrice, currency, language)}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-baseline justify-between text-[11px] text-slate-500">
-                  <span>{t('monthlyEstimate')}:</span>
-                  <span className="font-mono font-bold text-slate-700">
-                    ~{formatCurrency(totalMonthlyPrice, currency, language)}
-                  </span>
-                </div>
-              </div>
+              )}
 
               {/* Wallet Status Box */}
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3.5 space-y-1.5">
@@ -524,7 +566,7 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-[11px] text-slate-500">
-                  <span>{t('minRequired')} (24h):</span>
+                  <span>{t('minRequired')}:</span>
                   <span className="font-mono text-slate-700">{formatCurrency(minRequiredBalance, currency, language)}</span>
                 </div>
               </div>
@@ -543,7 +585,7 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                   </>
                 ) : hasSufficientBalance ? (
                   <>
-                    <span>{t('instantDeploy')}</span>
+                    <span>{ctaButtonText || t('instantDeploy')}</span>
                     <ArrowRight className="h-4 w-4" />
                   </>
                 ) : (

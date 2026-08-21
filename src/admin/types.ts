@@ -1,6 +1,6 @@
-import { SupportedLanguage, Direction } from '../types';
+import { SupportedLanguage, Direction, CustomizationSettings } from '../types';
 
-export interface AdminSettingsData {
+export interface AdminSettingsData extends CustomizationSettings {
   apiKey: string;
   sandboxMode: boolean;
   markupPct: number;
@@ -8,15 +8,6 @@ export interface AdminSettingsData {
   currency: 'IRT' | 'IRR' | 'USD';
   defaultRegion: string;
   storeName: string;
-  storeTagline?: string;
-  logoUrl?: string;
-  faviconUrl?: string;
-  brandPrimaryColor?: string;
-  brandSecondaryColor?: string;
-  fontFamily?: string;
-  customCss?: string;
-  showHourlyToggle?: boolean;
-  customFooterText?: string;
   supportEmail: string;
   supportPhone: string;
 }

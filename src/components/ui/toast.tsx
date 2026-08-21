@@ -27,23 +27,23 @@ export const ToastContainer: React.FC<ToastContainerProps> = ({
         <div
           key={toast.id}
           className={cn(
-            'pointer-events-auto flex items-start gap-3 rounded-2xl p-4 shadow-2xl backdrop-blur-lg border transition-all duration-300 animate-in slide-in-from-bottom-5',
-            toast.type === 'success' && 'bg-m3-surface-3/95 border-arvan-emerald/40 text-slate-100',
-            toast.type === 'error' && 'bg-m3-surface-3/95 border-arvan-rose/40 text-slate-100',
-            toast.type === 'warning' && 'bg-m3-surface-3/95 border-arvan-amber/40 text-slate-100',
-            toast.type === 'info' && 'bg-m3-surface-3/95 border-arvan-teal/40 text-slate-100'
+            'pointer-events-auto flex items-start gap-3 rounded-2xl bg-white p-4 shadow-lg border border-slate-200 border-s-4 transition-all duration-300 animate-in slide-in-from-bottom-5',
+            toast.type === 'success' && 'border-s-emerald-500',
+            toast.type === 'error'   && 'border-s-rose-500',
+            toast.type === 'warning' && 'border-s-amber-400',
+            toast.type === 'info'    && 'border-s-sky-500'
           )}
         >
-          {toast.type === 'success' && <CheckCircle2 className="h-5 w-5 text-arvan-emerald shrink-0 mt-0.5" />}
-          {toast.type === 'error' && <AlertCircle className="h-5 w-5 text-arvan-rose shrink-0 mt-0.5" />}
-          {toast.type === 'warning' && <AlertTriangle className="h-5 w-5 text-arvan-amber shrink-0 mt-0.5" />}
-          {toast.type === 'info' && <Info className="h-5 w-5 text-arvan-teal shrink-0 mt-0.5" />}
+          {toast.type === 'success' && <CheckCircle2 className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />}
+          {toast.type === 'error'   && <AlertCircle  className="h-5 w-5 text-rose-500   shrink-0 mt-0.5" />}
+          {toast.type === 'warning' && <AlertTriangle className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" />}
+          {toast.type === 'info'    && <Info          className="h-5 w-5 text-sky-500    shrink-0 mt-0.5" />}
 
-          <div className="flex-1 text-xs font-medium leading-relaxed">{toast.message}</div>
+          <div className="flex-1 text-xs font-medium leading-relaxed text-slate-800">{toast.message}</div>
 
           <button
             onClick={() => onRemove(toast.id)}
-            className="text-slate-400 hover:text-white transition-colors"
+            className="text-slate-400 hover:text-slate-700 transition-colors shrink-0"
           >
             <X className="h-4 w-4" />
           </button>

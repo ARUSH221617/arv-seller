@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
 "Report-Msgid-Bugs-To: https://arvancloud.ir\n"
-"POT-Creation-Date: 2026-08-21 03:13:22+0000\n"
-"PO-Revision-Date: 2026-08-21 03:13:22+0000\n"
+"POT-Creation-Date: 2026-08-21 10:40:06+0000\n"
+"PO-Revision-Date: 2026-08-21 10:40:06+0000\n"
 "Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
 "Language-Team: ArvanCloud Chinese Simplified Team\n"
 "Language: zh_CN\n"
@@ -14,23 +14,47 @@ msgstr ""
 "X-Generator: ArvanCloud i18n Toolchain\n"
 "X-Domain: arv-seller\n"
 
+msgid "1-Click Master Theme Packs"
+msgstr "一键大师主题套件"
+
+msgid "1-Click Master Themes"
+msgstr "一键大师主题"
+
 #: admin/views/admin-settings.php:38
 msgid "1. ArvanCloud API Authentication"
 msgstr "1. ArvanCloud API 认证配置"
+
+msgid "12 Instances"
+msgstr "12 台云实例"
 
 #: public/views/storefront-server.php:315
 msgid "1x Public IP (Included)"
 msgstr "1个公网IP（包含）"
 
+msgid "2 vCPU • 4 GB RAM • 40 GB NVMe"
+msgstr "2 核 vCPU • 4 GB 内存 • 40 GB NVMe"
+
 #: admin/views/admin-settings.php:73
 msgid "2. Dynamic Pricing & Reseller Markup Engine"
 msgstr "2. 动态定价与分销商利润加价引擎"
+
+msgid "250,000 Toman"
+msgstr "250,000 图曼"
+
+msgid "3,450,000 T"
+msgstr "3,450,000 图曼"
 
 #: admin/views/admin-settings.php:120
 msgid "3. Storefront White-Label Branding"
 msgstr "3. 商城白标自定义品牌"
 
-#: public/class-arvan-public.php:483
+msgid "540 Toman/hr"
+msgstr "540 图曼/小时"
+
+msgid "92.5 hours runtime remaining"
+msgstr "剩余运行时间：92.5 小时"
+
+#: public/class-arvan-public.php:514
 msgid "A minimum balance of %1$s %3$s (24 hours run cost) is required to deploy this server. Your balance is %2$s %3$s."
 msgstr "部署此服务器需要至少 %1$s %3$s 的余额（24小时运行成本）。您当前的余额为 %2$s %3$s。"
 
@@ -49,7 +73,7 @@ msgstr "访问密钥 ID (Access Key)"
 
 #: public/views/dashboard-customer.php:55
 msgid "According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately."
-msgstr ""
+msgstr "根据 ArvanCloud 法律终止条款，由于余额不足，活跃的虚拟机实例已被关机，操作权限已锁定为只读模式。请立即充值钱包以恢复使用。"
 
 msgid "action"
 msgstr "操作"
@@ -57,7 +81,7 @@ msgstr "操作"
 msgid "Action"
 msgstr ""
 
-#: admin/class-arvan-admin.php:215
+#: admin/class-arvan-admin.php:244
 msgid "Action completed successfully."
 msgstr "操作成功完成。"
 
@@ -71,7 +95,7 @@ msgid "active"
 msgstr "活跃"
 
 msgid "Active"
-msgstr ""
+msgstr "已启用"
 
 msgid "Active / Running"
 msgstr "正常运行中"
@@ -107,7 +131,7 @@ msgstr "添加记录"
 msgid "Adjust Balance"
 msgstr "调整余额"
 
-#: admin/class-arvan-admin.php:224
+#: admin/class-arvan-admin.php:253
 msgid "Adjust Wallet Balance: "
 msgstr "调整钱包余额："
 
@@ -124,6 +148,12 @@ msgstr "例如：工单补偿 / 人工手动充值"
 msgid "Admin Adjustment: %1$s (by %2$s)"
 msgstr "管理员调整：%1$s（操作者：%2$s）"
 
+msgid "Admin Hub"
+msgstr "管理中枢"
+
+msgid "Agency White-Label"
+msgstr "代理商白标定制"
+
 msgid "Ahvaz"
 msgstr "阿瓦士"
 
@@ -133,6 +163,9 @@ msgstr "全部"
 msgid "All Cloud Datacenter Regions Operational (99.99% SLA)"
 msgstr "所有云数据中心区域正常运行中 (99.99% SLA 保证)"
 
+msgid "All customizations apply universally across Admin and Customer Storefront views."
+msgstr "所有自定义配置将全局应用至管理员后台与客户商城界面。"
+
 #: public/views/storefront-server.php:106
 msgid "All Plans"
 msgstr ""
@@ -140,7 +173,7 @@ msgstr ""
 msgid "All Provisioned Cloud Resources"
 msgstr "全部已开通的客户云端资源"
 
-#: admin/class-arvan-admin.php:281
+#: admin/class-arvan-admin.php:310
 msgid "All Resources"
 msgstr "所有资源"
 
@@ -164,29 +197,39 @@ msgstr ""
 msgid "Amount (Toman):"
 msgstr "金额 (托曼):"
 
-#: public/class-arvan-public.php:265 public/class-arvan-public.php:405
+#: public/class-arvan-public.php:296 public/class-arvan-public.php:436
 msgid "An error occurred during request."
 msgstr "请求过程中发生错误。"
 
-#: admin/class-arvan-admin.php:221
+#: includes/class-arvan-blocks.php:144 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:196 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:314
+msgid "App Canvas Background"
+msgstr "应用主画布背景色"
+
+#: admin/class-arvan-admin.php:250
 msgid "Apply Adjustment"
 msgstr "提交并记入台账"
 
-#: admin/class-arvan-admin.php:220
+msgid "applying"
+msgstr "正在保存并应用..."
+
+#: admin/class-arvan-admin.php:249
 msgid "Applying..."
 msgstr "正在应用..."
 
-#: admin/class-arvan-admin.php:217
+#: admin/class-arvan-admin.php:246
 msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
 msgstr "您确定要从 ArvanCloud 基础设施中永久删除此资源吗？"
 
-#: public/class-arvan-public.php:266 public/class-arvan-public.php:406
+#: public/class-arvan-public.php:297 public/class-arvan-public.php:437
 msgid "Are you sure you want to permanently destroy this server?"
 msgstr "您确定要永久销毁此服务器吗？"
 
-#: admin/class-arvan-admin.php:252
+#: admin/class-arvan-admin.php:281
 msgid "Arvan Reseller"
 msgstr "ArvanCloud 分销系统"
+
+msgid "Arvan Sorkhab Teal"
+msgstr "Arvan 经典青绿"
 
 msgid "Arvan UUID / Identifier"
 msgstr "Arvan UUID / 资源标识符"
@@ -205,11 +248,11 @@ msgstr "ArvanCloud API 密钥"
 msgid "ArvanCloud API key is not configured. Please configure your API key in WP Admin > Arvan Reseller > Settings."
 msgstr "未配置 ArvanCloud API 密钥。请在 WP 后台 > Arvan Reseller > 设置 中进行配置。"
 
-#: includes/class-arvan-blocks.php:119
+#: includes/class-arvan-blocks.php:137 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:36 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:289 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:451
 msgid "ArvanCloud Customer Dashboard"
 msgstr "ArvanCloud 客户仪表盘"
 
-#: admin/class-arvan-admin.php:251
+#: admin/class-arvan-admin.php:280
 msgid "ArvanCloud Reseller"
 msgstr "ArvanCloud 分销商管理中心"
 
@@ -217,11 +260,11 @@ msgstr "ArvanCloud 分销商管理中心"
 msgid "ArvanCloud Reseller Settings & Monetization"
 msgstr "ArvanCloud 云分销商系统设置与加价引擎"
 
-#: includes/class-arvan-blocks.php:117
+#: includes/class-arvan-blocks.php:135 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:36 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:599
 msgid "ArvanCloud Server Configurator"
 msgstr "ArvanCloud 云服务器配置器"
 
-#: includes/class-arvan-blocks.php:76
+#: includes/class-arvan-blocks.php:76 includes/elementor/class-arvan-elementor.php:65
 msgid "ArvanCloud Services"
 msgstr "ArvanCloud 云服务"
 
@@ -258,7 +301,7 @@ msgstr "AWS CLI 配置示例:"
 msgid "backOffice"
 msgstr "管理后台"
 
-#: admin/class-arvan-admin.php:491
+#: admin/class-arvan-admin.php:737
 msgid "Balance adjusted successfully."
 msgstr "钱包余额调整成功。"
 
@@ -266,21 +309,69 @@ msgstr "钱包余额调整成功。"
 msgid "Balance Snapshot"
 msgstr ""
 
+msgid "Balanced curves for contemporary SaaS aesthetics."
+msgstr "适合现代 SaaS 产品的均衡优雅圆角美学。"
+
 msgid "balanceSnapshot"
 msgstr "结余余额"
+
+msgid "Base Body Font Size"
+msgstr "正文基准字号大小"
+
+#: includes/class-arvan-blocks.php:152 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:252 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:370
+msgid "Base Font Size (px)"
+msgstr ""
 
 msgid "baseDiskLabel"
 msgstr "基础:"
 
-#: includes/class-arvan-blocks.php:123
+msgid "Border & Line Divider Color"
+msgstr "边框与分割线颜色"
+
+#: includes/class-arvan-blocks.php:146 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:214 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:332
+msgid "Border Color"
+msgstr ""
+
+#: includes/class-arvan-blocks.php:147
+msgid "Border Radius (px)"
+msgstr ""
+
+msgid "Boutique infrastructure, high-tier servers, and client portal language."
+msgstr "精品云基础设施、高阶服务器与客户门户专属用语。"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:98 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:216
+msgid "Boxed (1024px)"
+msgstr ""
+
+msgid "Boxed (1120px)"
+msgstr "盒装 (1120px)"
+
+#: includes/class-arvan-blocks.php:141
 msgid "Brand Accent Color"
 msgstr "品牌强调色"
 
 msgid "Brand Color Palette"
 msgstr "品牌色彩调色板"
 
+msgid "Brand Color Palette & Surfaces"
+msgstr "品牌调色板与界面层"
+
+msgid "Brand Colored Glow"
+msgstr "品牌色发光光晕"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:161 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:279
+msgid "Brand Colors & Surfaces"
+msgstr "品牌色彩与界面层"
+
 msgid "Brand Identity & Logo Assets"
 msgstr "品牌标识与 Logo 资产"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:150 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:268
+msgid "Brand Neon Glow"
+msgstr ""
+
+msgid "Brand Tagline"
+msgstr "品牌标语口号"
 
 msgid "Brand Tagline / Subtitle"
 msgstr "品牌标语 / 副标题"
@@ -313,9 +404,23 @@ msgstr "取消"
 msgid "Cancel"
 msgstr "取消"
 
-#: public/class-arvan-public.php:595
+#: public/class-arvan-public.php:626
 msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
 msgstr "无法开启服务器：您的钱包余额为零或负数。请先充值钱包。"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:187 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:305
+msgid "Card & Surface Background"
+msgstr ""
+
+msgid "Card Elevation"
+msgstr "卡片层级与阴影风格"
+
+#: includes/class-arvan-blocks.php:148 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:143 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:261
+msgid "Card Elevation & Shadows"
+msgstr ""
+
+msgid "Card Surface Background"
+msgstr "卡片与面板背景色"
 
 msgid "CDN & Edge DNS Manager"
 msgstr "CDN 与边缘 DNS 管理器"
@@ -352,7 +457,7 @@ msgstr "关闭"
 msgid "Cloud Proxy"
 msgstr ""
 
-#: admin/class-arvan-admin.php:280
+#: admin/class-arvan-admin.php:309
 msgid "Cloud Resources"
 msgstr "云端资源监控"
 
@@ -367,6 +472,10 @@ msgstr "云服务器配置器短代码（支持 Elementor / Divi / 经典编辑�
 msgid "Cloud Services Platform"
 msgstr "云服务平台"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:307
+msgid "Cloud Wallet & Credit Balance"
+msgstr ""
+
 msgid "Cluster Region"
 msgstr ""
 
@@ -376,11 +485,31 @@ msgstr "集群区域"
 msgid "Color Presets"
 msgstr "预设配色方案"
 
+msgid "Colors & Palettes"
+msgstr "色彩与调色板"
+
+msgid "Compact"
+msgstr "紧凑"
+
+msgid "Compact (Tighter)"
+msgstr "紧凑 (较小间距)"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:113 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:231
+msgid "Compact / Tight Padding"
+msgstr ""
+
+msgid "Compact Density"
+msgstr "紧凑高密 (10px)"
+
 msgid "compute"
 msgstr "计算密集型"
 
 msgid "Compute Master"
 msgstr "计算增强型 (Compute Master)"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:104
+msgid "Compute Master (4 vCPU / 4 GB)"
+msgstr ""
 
 #: public/views/storefront-server.php:108
 msgid "Compute Optimized"
@@ -397,6 +526,15 @@ msgstr "计算规格："
 #: public/views/dashboard-customer.php:134
 msgid "Compute, NVMe & Dedicated IP"
 msgstr "计算资源、NVMe 及独立 IP"
+
+msgid "Configurator"
+msgstr "配置器"
+
+msgid "Configurator Hero Title"
+msgstr "配置器主标题"
+
+msgid "Configurator Shortcode (Elementor / Classic Editor)"
+msgstr "服务器配置器短代码（Elementor / 经典编辑器）"
 
 msgid "configuratorHeroDesc"
 msgstr "配置基于 ArvanCloud 数据中心基础设施的高性能 NVMe 云服务器，即买即用。"
@@ -449,6 +587,14 @@ msgstr ""
 msgid "connectionFailed"
 msgstr "连接 ArvanCloud 基础设施失败。"
 
+#: includes/class-arvan-blocks.php:150 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:94 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:212
+msgid "Container Max Width"
+msgstr "容器最大宽度"
+
+#: includes/class-arvan-blocks.php:153 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:264 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:382
+msgid "Convert Digits to Persian (۰-۹)"
+msgstr ""
+
 msgid "copied"
 msgstr "已复制！"
 
@@ -467,8 +613,21 @@ msgstr "复制短代码"
 msgid "copyIp"
 msgstr "复制 IP"
 
+msgid "Copywriting & Terminology Presets"
+msgstr "文案风格与术语预设"
+
+msgid "Copywriting Presets & Core Storefront Texts"
+msgstr "文案预设与核心商城文本"
+
 msgid "cores"
 msgstr "核"
+
+msgid "Corner Border Radius"
+msgstr "边框圆角半径"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:123 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:241
+msgid "Corner Border Radius (px)"
+msgstr ""
 
 msgid "Create New S3 Storage Bucket"
 msgstr ""
@@ -495,12 +654,32 @@ msgstr "入账 (+ 增加余额)"
 msgid "Credit amount must be greater than zero."
 msgstr ""
 
+msgid "Crimson Ember Studio"
+msgstr "深红余烬工作室"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:423
+msgid "CTA Button Text"
+msgstr ""
+
 msgid "Cumulative Deposits"
 msgstr "累计入金总额"
+
+msgid "Curated Color Presets"
+msgstr "精选配色预设"
+
+msgid "Current Value"
+msgstr "当前取值"
 
 #: public/views/dashboard-customer.php:110
 msgid "Custom Amount in Toman"
 msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:314 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:432
+msgid "Custom CSS Overrides"
+msgstr "自定义 CSS 覆盖"
+
+msgid "Custom CSS Studio"
+msgstr "自定义 CSS 工作室"
 
 msgid "Custom CSS Style Overrides"
 msgstr "自定义 CSS 样式覆盖"
@@ -508,22 +687,39 @@ msgstr "自定义 CSS 样式覆盖"
 msgid "Custom CSS will be injected into both the isolated standalone canvas and all embedded Gutenberg blocks/shortcodes."
 msgstr "自定义 CSS 将自动注入到独立全屏页面以及所有嵌入的 Gutenberg 区块和短代码中。"
 
+msgid "Custom External Web Font Configuration"
+msgstr "自定义外部 Web 字体配置"
+
 msgid "Custom Favicon URL"
 msgstr "自定义 Favicon 链接"
 
 msgid "Custom Footer Notice / Copyright Text"
 msgstr "自定义页脚声明 / 版权文本"
 
+msgid "Custom Footer Notice / SLA Guarantee Text"
+msgstr "自定义页脚声明 / SLA 保障文本"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:405
+msgid "Custom Header Title"
+msgstr ""
+
 msgid "Custom Store Logo URL"
 msgstr "自定义 Logo 链接"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:414
+msgid "Custom Subtitle / Tagline"
+msgstr ""
 
 msgid "customAmount"
 msgstr "自定义金额"
 
+msgid "customAmountPlaceholder"
+msgstr "例如：250,000"
+
 msgid "Customer"
 msgstr "所属客户"
 
-#: includes/class-arvan-blocks.php:120
+#: includes/class-arvan-blocks.php:138 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:452
 msgid "Customer cloud server management and wallet billing dashboard."
 msgstr "客户云服务器运维管理与钱包账单仪表盘。"
 
@@ -537,7 +733,7 @@ msgstr "客户姓名"
 msgid "Customer Portal & Dashboard"
 msgstr "客户门户与控制台"
 
-#: admin/class-arvan-admin.php:214
+#: admin/class-arvan-admin.php:243
 msgid "Customer wallet balance updated successfully."
 msgstr ""
 
@@ -547,11 +743,11 @@ msgstr "客户钱包与原子财务台账审计"
 msgid "customerDashboardLink"
 msgstr "客户控制台"
 
-#: admin/class-arvan-admin.php:272
+#: admin/class-arvan-admin.php:301
 msgid "Customization"
 msgstr "自定义"
 
-#: admin/class-arvan-admin.php:271
+#: admin/class-arvan-admin.php:300
 msgid "Customization & Branding"
 msgstr "自定义与品牌外观"
 
@@ -559,8 +755,32 @@ msgstr "自定义与品牌外观"
 msgid "Customization parameters injected into the standalone virtual canvas header and footer."
 msgstr "注入到独立虚拟云商城页头与页脚的自定义品牌参数。"
 
+msgid "Customize any specific button, label, or tooltip across the customer canvas and admin portal."
+msgstr "自定义客户商城画布与管理后台中的任意特定按钮、标签或工具提示。"
+
 msgid "dashboard"
 msgstr "控制台"
+
+msgid "Dashboard"
+msgstr "控制台"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:296
+msgid "Dashboard Description"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:287
+msgid "Dashboard Header Title"
+msgstr ""
+
+msgid "Dashboard Settings"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:74
+msgid "Dashboard Settings & Layout"
+msgstr "仪表盘设置与布局"
+
+msgid "Dashboard Title"
+msgstr "控制台主标题"
 
 msgid "dashboardDesc"
 msgstr "原子钱包实时监控、服务器电源生命周期控制及资源遥测。"
@@ -592,9 +812,27 @@ msgstr ""
 msgid "Dedicated IPv4:"
 msgstr ""
 
-#: admin/views/admin-settings.php:106 includes/class-arvan-blocks.php:122
+msgid "Deep cobalt sapphire palette with sleek high-tech curves & corporate precision."
+msgstr "深钴蓝蓝宝石配色，搭配流畅的高科技弧度与企业级严谨结构。"
+
+msgid "Default"
+msgstr "默认"
+
+#: admin/views/admin-settings.php:106 includes/class-arvan-blocks.php:140 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:82
 msgid "Default Datacenter Region"
 msgstr "默认数据中心区域"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:96
+msgid "Default Hardware Flavor"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:113
+msgid "Default OS Distribution"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:74
+msgid "Default Pre-Selections"
+msgstr ""
 
 msgid "delete"
 msgstr "删除"
@@ -606,12 +844,19 @@ msgstr ""
 msgid "Deploy Cloud Server"
 msgstr "部署云服务器"
 
-#: public/views/storefront-server.php:33
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:407 public/views/storefront-server.php:33
 msgid "Deploy Cloud Server (IaaS)"
 msgstr "部署云服务器 (IaaS)"
 
+msgid "Deploy CTA Button Label"
+msgstr "部署操作按钮文字"
+
 #: public/views/dashboard-customer.php:252
 msgid "Deploy First Server"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:425 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:600
+msgid "Deploy Server"
 msgstr ""
 
 msgid "deployServer"
@@ -624,9 +869,15 @@ msgstr "描述明细"
 msgid "Description / Reference ID"
 msgstr ""
 
+msgid "Desktop"
+msgstr "桌面端视图"
+
 #: public/views/dashboard-customer.php:234
 msgid "Destroy Instance"
 msgstr ""
+
+msgid "DevOps Platform"
+msgstr "DevOps 开发者平台"
 
 msgid "DNS Management"
 msgstr ""
@@ -670,6 +921,9 @@ msgstr ""
 msgid "done"
 msgstr "完成"
 
+msgid "Drag & drop \"ArvanCloud Server Configurator\" and \"ArvanCloud Customer Dashboard\" from the Elementor widget panel under \"ArvanCloud Services\" category with live preview."
+msgstr "从 Elementor 小部件面板的“ArvanCloud Services”分类中拖放服务器配置器和客户仪表盘，支持实时预览。"
+
 #: admin/views/admin-settings.php:82
 msgid "e.g. 20% markup turns wholesale 450 IRT/hr into 540 IRT/hr customer retail price."
 msgstr "例如：20% 加价将每小时 450 托曼的批发成本转化为 540 托曼的零售价。"
@@ -680,8 +934,18 @@ msgstr ""
 msgid "Edge Caching"
 msgstr ""
 
+msgid "Elementor Page Builder Widgets"
+msgstr "Elementor 页面构建器小部件"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:149 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:267
+msgid "Elevated (Modern 3D Shadow)"
+msgstr ""
+
 msgid "Email"
 msgstr "电子邮箱"
+
+msgid "Emerald Forest DevOps"
+msgstr "翡翠绿 DevOps"
 
 msgid "Emergency Actions"
 msgstr "管理应急操作"
@@ -696,6 +960,12 @@ msgstr ""
 msgid "endpointUrl"
 msgstr "终端节点 URL (Endpoint)"
 
+msgid "Energetic crimson red accent with warm surfaces & dynamic conversion focus."
+msgstr "充满活力的深红强调色，搭配温暖质感的界面与转化率聚焦设计。"
+
+msgid "Enhanced comfortable reading with 16px base body font."
+msgstr "舒适大气的 16px 正文基准字号。"
+
 msgid "Enter a domain name above to accelerate your traffic and protect from DDoS attacks."
 msgstr "在上方输入域名以加速流量并防御 DDoS 攻击。"
 
@@ -706,11 +976,18 @@ msgstr "输入您的主 ArvanCloud Machine User API 密钥。所有下级客户�
 msgid "Enter your root domain or subdomain to automatically generate edge nameservers and security profiles."
 msgstr ""
 
+msgid "Enterprise B2B"
+msgstr "企业级 B2B"
+
 msgid "Enterprise Multi-Tenant Infrastructure Management & Monetization"
 msgstr "企业级多租户基础设施管理与转售盈利平台"
 
 msgid "Enterprise Ultra"
 msgstr "企业旗舰型 (Enterprise Ultra)"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:103
+msgid "Enterprise Ultra (8 vCPU / 16 GB)"
+msgstr ""
 
 #: public/views/storefront-server.php:326
 msgid "Est. Monthly (720 hrs):"
@@ -725,6 +1002,9 @@ msgstr "预计可持续运行时间"
 
 msgid "existingBuckets"
 msgstr "现有存储桶列表"
+
+msgid "Extra Large"
+msgstr "特大号"
 
 #: public/class-arvan-gateway.php:99
 msgid "Failed to connect to payment gateway."
@@ -745,11 +1025,41 @@ msgstr ""
 msgid "Fixed Margin Addition (Toman)"
 msgstr "固定利润加价 (托曼)"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:147 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:265
+msgid "Flat (No Shadow)"
+msgstr ""
+
+msgid "Flat / No Shadow"
+msgstr "扁平 / 无阴影"
+
 msgid "flavor"
 msgstr "硬件配置"
 
+msgid "Fluid Full-Width"
+msgstr "流体全宽 (14px)"
+
+msgid "Font Family Name"
+msgstr "字体家族名称"
+
+#: includes/class-arvan-blocks.php:151 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:234 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:352
+msgid "Font Family Stack"
+msgstr ""
+
+msgid "Font Size & Density Presets"
+msgstr "字号大小与密度预设"
+
 msgid "Forough"
 msgstr "Forough"
+
+msgid "Full Width (100%)"
+msgstr "全宽 (100%)"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:101 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:219
+msgid "Full Width Fluid (100%)"
+msgstr ""
+
+msgid "Fully customize brand colors, typography, font sizes, layouts, and texts with 1-click presets and granular manual editing."
+msgstr "通过一键预设和精细的手动编辑，全面自定义品牌颜色、排版、字号、布局和文本。"
 
 msgid "general"
 msgstr "通用标准型"
@@ -757,6 +1067,9 @@ msgstr "通用标准型"
 #: public/views/storefront-server.php:107
 msgid "General Purpose"
 msgstr ""
+
+msgid "General purpose hosting, cloud servers, and everyday terminology."
+msgstr "通用型托管、云服务器及日常通俗化术语。"
 
 msgid "generate"
 msgstr "生成"
@@ -778,6 +1091,15 @@ msgstr "异地容灾与高可用"
 msgid "Global CDN & Anycast Edge DNS"
 msgstr ""
 
+msgid "Granular UI Translation & String Overrides"
+msgstr "精细化 UI 翻译与文本字符串替换表"
+
+msgid "Gutenberg & Shortcodes"
+msgstr "Gutenberg 区块与短代码"
+
+msgid "Gutenberg Block, Elementor Widget & Shortcodes"
+msgstr "Gutenberg 区块、Elementor 小部件与短代码"
+
 msgid "Gutenberg Ready"
 msgstr "完美适配 Gutenberg"
 
@@ -785,13 +1107,29 @@ msgstr "完美适配 Gutenberg"
 msgid "Hardware Plan & Specifications"
 msgstr "硬件配置与规格"
 
+msgid "Heading Scale Multiplier"
+msgstr "标题缩放倍率"
+
 #: public/views/dashboard-customer.php:93
 msgid "Healthy"
 msgstr ""
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:85 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:155 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:167 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:179 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:191 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:203
+msgid "Hide"
+msgstr ""
+
+msgid "High 3D Elevation"
+msgstr "立体高投影效果"
+
 #: public/views/storefront-server.php:164
 msgid "High IOPS NVMe Enterprise SSD. Expandable on-demand (+4 Toman/GB/hr)."
 msgstr ""
+
+msgid "High-contrast cyberpunk purple & dark luxury surfaces for modern cloud dashboards."
+msgstr "高对比度赛博朋克紫色与奢华深色界面，专为现代化云控制台打造。"
+
+msgid "High-impact large typography with 18px base font."
+msgstr "视觉冲击力强烈的 18px 大号字体排版。"
 
 msgid "Hourly Burn Rate"
 msgstr "每小时扣费速率"
@@ -826,27 +1164,34 @@ msgstr ""
 msgid "HTTP Request Failed: %s"
 msgstr ""
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:129
+msgid "Initial Extra NVMe Disk (GB)"
+msgstr ""
+
+msgid "Insert \"arvan/server-configurator\" or \"arvan/customer-dashboard\" anywhere in the WordPress Block Editor with full sidebar controls for colors, radius, fonts, Persian digits, and layouts."
+msgstr "在 WordPress 区块编辑器中任意插入服务器配置器或客户仪表盘，并在侧边栏全面自定义颜色、圆角、字体、波斯数字与布局。"
+
 #: public/views/storefront-server.php:256
 msgid "Instance Access & Naming"
 msgstr ""
 
-#: public/class-arvan-public.php:263 public/class-arvan-public.php:403
+#: public/class-arvan-public.php:294 public/class-arvan-public.php:434
 msgid "Instance permanently deleted."
 msgstr ""
 
-#: admin/class-arvan-admin.php:538
+#: admin/class-arvan-admin.php:784
 msgid "Instance powered off by administrator."
 msgstr "云主机已被管理员关机。"
 
-#: public/class-arvan-public.php:262 public/class-arvan-public.php:402
+#: public/class-arvan-public.php:293 public/class-arvan-public.php:433
 msgid "Instance powered off."
 msgstr ""
 
-#: public/class-arvan-public.php:261 public/class-arvan-public.php:401
+#: public/class-arvan-public.php:292 public/class-arvan-public.php:432
 msgid "Instance powered on."
 msgstr ""
 
-#: admin/class-arvan-admin.php:542
+#: admin/class-arvan-admin.php:788
 msgid "Instance purged by administrator."
 msgstr "云主机已被管理员彻底删除。"
 
@@ -869,7 +1214,11 @@ msgstr ""
 msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD, dedicated IPv4, sub-millisecond local network."
 msgstr "在 ArvanCloud 基础设施上即时开通。高 IOPS NVMe SSD、独立 IPv4 和亚毫秒级本地网络。"
 
-#: includes/class-arvan-blocks.php:126
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:416
+msgid "Instant provisioning on ArvanCloud infrastructure. High IOPS NVMe SSD."
+msgstr ""
+
+#: includes/class-arvan-blocks.php:156 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:610
 msgid "Instant VM Provisioning • NVMe Storage • Pay-As-You-Go"
 msgstr "秒级虚拟机交付 • 高性能 NVMe 存储 • 按量计费"
 
@@ -887,15 +1236,15 @@ msgstr ""
 msgid "insufficientBalance"
 msgstr "余额不足 (需要充值)"
 
-#: includes/class-arvan-blocks.php:118
+#: includes/class-arvan-blocks.php:136
 msgid "Interactive Cloud Server sizing, pricing calculator, and deployment widget."
 msgstr "交互式云服务器配置选择、实时价格计算器和即时部署小组件。"
 
-#: public/class-arvan-public.php:630
+#: public/class-arvan-public.php:661
 msgid "Invalid power action."
 msgstr ""
 
-#: admin/class-arvan-admin.php:478
+#: admin/class-arvan-admin.php:724
 msgid "Invalid user ID or amount."
 msgstr ""
 
@@ -911,10 +1260,32 @@ msgstr "伊斯法罕"
 msgid "Karaj"
 msgstr "卡拉季"
 
+msgid "KVM virtual machines, root access, sub-millisecond network, and dev terms."
+msgstr "KVM 虚拟机、Root 完全控制权、极低延迟网络及开发工程师专用术语。"
+
+msgid "Layout & Radii Architecture"
+msgstr "布局与圆角架构"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:144
+msgid "Layout & Section Visibility"
+msgstr ""
+
+msgid "Layout & Shape Presets"
+msgstr "布局与形态预设"
+
+msgid "Layout Architecture, Border Radius & Spacing"
+msgstr "布局架构、边框圆角与间距"
+
+msgid "Layout, Radius & Elevation"
+msgstr "布局、圆角与阴影层级"
+
+msgid "Layout, Radius & Shapes"
+msgstr "布局、圆角与形态"
+
 msgid "Ledger Actions"
 msgstr "财务操作"
 
-#: includes/class-arvan-blocks.php:125
+#: includes/class-arvan-blocks.php:155
 msgid "Live ArvanCloud Server Configurator will render here on the frontend."
 msgstr "实时 ArvanCloud 云服务器配置器将在前端此处渲染呈现。"
 
@@ -922,21 +1293,36 @@ msgstr "实时 ArvanCloud 云服务器配置器将在前端此处渲染呈现。
 msgid "Live instance power states, IP addresses, and real-time lifecycle controls."
 msgstr ""
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:618
+msgid "Live interactive ArvanCloud Server Configurator will render here on the frontend."
+msgstr ""
+
+msgid "Live real-time preview updating instantly across all sliders & controls."
+msgstr "所有滑块与控件修改后即刻同步的实时动态预览。"
+
 msgid "Live Theme Preview"
 msgstr "实时主题预览"
 
 msgid "liveInfrastructureOnly"
 msgstr "仅真实生产环境"
 
-#: admin/class-arvan-admin.php:330
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:440
+msgid "Loading ArvanCloud Customer Dashboard..."
+msgstr ""
+
+#: admin/class-arvan-admin.php:454
 msgid "Loading ArvanCloud Management Portal..."
 msgstr ""
 
-#: templates/frontend-canvas.php:39
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:586
+msgid "Loading ArvanCloud Server Configurator..."
+msgstr ""
+
+#: templates/frontend-canvas.php:114
 msgid "Loading ArvanCloud Services Canvas..."
 msgstr "正在载入 ArvanCloud 云服务平台..."
 
-#: includes/class-arvan-blocks.php:254
+#: includes/class-arvan-blocks.php:596
 msgid "Loading Cloud Services..."
 msgstr "正在加载云服务..."
 
@@ -948,7 +1334,7 @@ msgstr "退出登录"
 
 #: public/views/dashboard-customer.php:64
 msgid "Low Balance Warning"
-msgstr ""
+msgstr "低余额预警"
 
 #: public/views/storefront-server.php:64
 msgid "Low Latency / IXP Direct"
@@ -960,6 +1346,13 @@ msgstr "警告：余额即将用尽"
 msgid "lowBalanceDesc"
 msgstr "按照您当前的每小时消耗速率，您的余额将在不到12小时内耗尽。"
 
+msgid "Main Brand & Action Texts"
+msgstr "主要品牌与操作文本"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:298
+msgid "Manage active cloud instances and billing."
+msgstr ""
+
 msgid "Manage DNS zones, edge caching, and SSL certificates."
 msgstr ""
 
@@ -970,12 +1363,21 @@ msgstr ""
 msgid "Managed Let's Encrypt (Active)"
 msgstr "托管 Let's Encrypt 证书（有效）"
 
+msgid "Manual Color Customization"
+msgstr "手动颜色定制"
+
 msgid "Manual Ledger Adjustment"
 msgstr "管理员手动调账"
 
-#: admin/class-arvan-admin.php:216
+#: admin/class-arvan-admin.php:245
 msgid "Manual metering cycle completed."
 msgstr "按量计费结算周期已手动执行完毕。"
+
+msgid "Manual Shape & Elevation Adjustments"
+msgstr "手动形态与投影调节"
+
+msgid "Manual Typography Scale Sliders"
+msgstr "手动字体缩放滑块"
 
 msgid "manualAdjustmentDefaultReason"
 msgstr "管理员手动调账"
@@ -990,8 +1392,14 @@ msgstr "马什哈德"
 msgid "Master oversight and lifecycle controls across all customer cloud instances, domains, and buckets."
 msgstr "对所有客户的云服务器、CDN 域名及 S3 存储桶进行统一全生命周期监管与应急控制。"
 
+msgid "Master themes instantly configure harmonious brand colors, Persian/Latin fonts, scale sizes, border radius, and copywriting terminology in one click."
+msgstr "大师主题可在一次点击中即刻配置协调的品牌色彩、波斯语/拉丁语字体、比例尺寸、边框圆角以及文案术语。"
+
 msgid "maxDiskLabel"
 msgstr "最大:"
+
+msgid "Maximum horizontal real estate for expansive setups."
+msgstr "充分利用屏幕水平空间，适合宽屏与全尺寸展示。"
 
 msgid "memory"
 msgstr "高内存型"
@@ -999,24 +1407,46 @@ msgstr "高内存型"
 msgid "Memory Master"
 msgstr "内存增强型 (Memory Master)"
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:105
+msgid "Memory Master (2 vCPU / 8 GB)"
+msgstr ""
+
 #: public/views/storefront-server.php:109
 msgid "Memory Optimized"
 msgstr ""
 
-#: admin/class-arvan-admin.php:514
+#: admin/class-arvan-admin.php:760
 msgid "Metering cycle finished: Processed %1$d resources, debited %2$s Tomans, suspended %3$d accounts."
 msgstr ""
+
+msgid "Microcopy & String Overrides"
+msgstr "微文案与翻译重写表"
+
+msgid "Midnight Dark Obsidian"
+msgstr "暗夜黑曜石 (紫)"
 
 #: public/views/storefront-server.php:283
 msgid "Minimum 12 characters"
 msgstr ""
 
-#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:677
+#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:708
 msgid "Minimum deposit amount is 1,000 Tomans."
 msgstr ""
 
 msgid "minRequired"
 msgstr "最低起充要求 (24小时)"
+
+msgid "Mission-critical compute, high SLA, enterprise telemetry, and SLAs."
+msgstr "关键业务计算节点、高可用 SLA 保障、企业级遥测与合规架构。"
+
+msgid "Mobile"
+msgstr "移动端视图"
+
+msgid "Modern developer-centric green palette with high-density layout & rapid VM terminology."
+msgstr "以开发者为中心的现代绿色调色板，具有高密度布局和快速虚拟机术语。"
+
+msgid "Modern Rounded"
+msgstr "现代圆角 (16px)"
 
 msgid "Monthly Run Rate (MRR)"
 msgstr "预估月度经常性收入 (MRR)"
@@ -1027,20 +1457,29 @@ msgstr "月度预估 (720小时)"
 msgid "mostPopular"
 msgstr "最受欢迎"
 
+msgid "MRR Revenue"
+msgstr "月度经常性收入 (MRR)"
+
 msgid "Name"
 msgstr ""
 
 msgid "Name / Host"
 msgstr ""
 
+msgid "Native Gutenberg Block: \"arvan/server-configurator\""
+msgstr "原生 Gutenberg 区块：\"arvan/server-configurator\""
+
 msgid "Native Gutenberg Block: \"ArvanCloud Server Configurator\""
 msgstr "原生 Gutenberg 区块：\"ArvanCloud 云服务器配置器\""
 
-#: admin/class-arvan-admin.php:219
+msgid "Native Gutenberg Blocks"
+msgstr "原生 Gutenberg 区块"
+
+#: admin/class-arvan-admin.php:248
 msgid "Network error while testing connection."
 msgstr ""
 
-#: admin/class-arvan-admin.php:218
+#: admin/class-arvan-admin.php:247
 msgid "Network error."
 msgstr ""
 
@@ -1050,6 +1489,10 @@ msgstr ""
 
 msgid "nextGenCloudIaaS"
 msgstr "下一代云基础设施 (IaaS)"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:267 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:385
+msgid "No"
+msgstr ""
 
 #: public/views/dashboard-customer.php:249
 msgid "No active cloud servers deployed yet"
@@ -1069,6 +1512,13 @@ msgstr ""
 
 #: public/views/dashboard-customer.php:306
 msgid "No transactions recorded in wallet ledger yet."
+msgstr ""
+
+msgid "Nordic Slate Monochrome"
+msgstr "北欧板岩单色"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:114 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:232
+msgid "Normal / Standard Balanced"
 msgstr ""
 
 msgid "Northwest"
@@ -1102,9 +1552,15 @@ msgstr "对象存储 (S3)"
 msgid "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys / Machine Users."
 msgstr "从 ArvanCloud 用户控制台 > 个人资料 > API 密钥 / 机器用户 中获取您的 API 密钥。"
 
-#: public/class-arvan-public.php:683
+msgid "Official ArvanCloud signature teal aesthetic with balanced curves & Persian typography."
+msgstr "官方 ArvanCloud 标志性青绿色美学，具有平衡的弧线与波斯语排版。"
+
+#: public/class-arvan-public.php:714
 msgid "Online Top-up via Sandbox Gateway (Ref: %s)"
 msgstr ""
+
+msgid "Open any WordPress Page or Post in the Block Editor, click (+) Add Block, search for \"ArvanCloud\", and insert the Server Configurator with visual sidebar inspector settings."
+msgstr "在区块编辑器中打开任意 WordPress 页面或文章，点击 (+) 添加区块，搜索 \"ArvanCloud\"，即可插入带有可视化侧边栏检查器设置的服务器配置器。"
 
 #: public/views/storefront-server.php:188
 msgid "Operating System Image"
@@ -1113,6 +1569,12 @@ msgstr ""
 #: public/views/storefront-server.php:310
 msgid "Operating System:"
 msgstr ""
+
+msgid "Optimal readability with 14px base body font."
+msgstr "最具可读性的 14px 正文基准字号。"
+
+msgid "Optimized for data-dense admin portals and high information velocity."
+msgstr "专为高密度数据控制台与快速信息览阅优化。"
 
 #: admin/views/admin-settings.php:90
 msgid "Optional fixed addition added after percentage markup calculation."
@@ -1128,6 +1590,9 @@ msgstr "订单明细与服务器配置"
 msgid "os"
 msgstr "操作系统"
 
+msgid "Override text for this language"
+msgstr "替换当前语言的文本"
+
 msgid "password"
 msgstr "密码"
 
@@ -1142,7 +1607,11 @@ msgstr ""
 msgid "Performance Pro"
 msgstr "高性能专业型 (Performance Pro)"
 
-#: admin/class-arvan-admin.php:373 admin/class-arvan-admin.php:394 admin/class-arvan-admin.php:468 admin/class-arvan-admin.php:503
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:102
+msgid "Performance Pro (4 vCPU / 8 GB)"
+msgstr ""
+
+#: admin/class-arvan-admin.php:497 admin/class-arvan-admin.php:518 admin/class-arvan-admin.php:714 admin/class-arvan-admin.php:749
 msgid "Permission denied."
 msgstr ""
 
@@ -1155,11 +1624,11 @@ msgstr "套餐配置"
 msgid "Please enter a valid domain name."
 msgstr ""
 
-#: public/class-arvan-public.php:439
+#: public/class-arvan-public.php:470
 msgid "Please sign in to deploy a cloud server."
 msgstr ""
 
-#: public/class-arvan-public.php:669
+#: public/class-arvan-public.php:700
 msgid "Please sign in to top up your wallet."
 msgstr ""
 
@@ -1198,8 +1667,16 @@ msgstr "关机"
 msgid "powerOn"
 msgstr "开机"
 
+msgid "Primary Brand Accent Color"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:169 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:287
 msgid "Primary Brand Color"
 msgstr "品牌主色调"
+
+#: includes/class-arvan-blocks.php:145 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:205 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:323
+msgid "Primary Text Color"
+msgstr "主文本颜色"
 
 msgid "proceedPayment"
 msgstr "前往在线充值"
@@ -1236,7 +1713,7 @@ msgid "purgeCache"
 msgstr "清除边缘缓存"
 
 msgid "quickDepositDesc"
-msgstr "通过在线网关 / 沙盒演示即时充值钱包。"
+msgstr "选择或输入要充值到钱包的金额。"
 
 msgid "quickTopUp"
 msgstr "快捷充值"
@@ -1254,6 +1731,12 @@ msgstr ""
 msgid "rateMonthly"
 msgstr "月度资费"
 
+msgid "Razor-sharp minimal dark slate palette with flat elevation & high precision."
+msgstr "利落极简的深灰板岩调色板，采用扁平无阴影层级与高精度排版。"
+
+msgid "Ready Presets"
+msgstr "个预设模板"
+
 msgid "Real-time atomic ledger oversight, balance snapshots, and manual balance adjustment tools."
 msgstr "实时原子对账台账监管、余额快照以及管理员手动调账工具。"
 
@@ -1267,7 +1750,7 @@ msgstr "重启"
 msgid "Reboot"
 msgstr ""
 
-#: public/class-arvan-public.php:260 public/class-arvan-public.php:400
+#: public/class-arvan-public.php:291 public/class-arvan-public.php:431
 msgid "Reboot command dispatched to ArvanCloud."
 msgstr ""
 
@@ -1284,14 +1767,17 @@ msgstr "数据中心区域"
 msgid "Reseller Brand / Store Name"
 msgstr "分销商品牌 / 商城名称"
 
+msgid "Reset Defaults"
+msgstr "重置为默认值"
+
 msgid "Resource Name"
 msgstr "资源名称"
 
-#: public/class-arvan-public.php:587
+#: public/class-arvan-public.php:618
 msgid "Resource not found or access denied."
 msgstr ""
 
-#: admin/class-arvan-admin.php:529
+#: admin/class-arvan-admin.php:775
 msgid "Resource not found."
 msgstr ""
 
@@ -1307,7 +1793,10 @@ msgstr ""
 msgid "Root Password"
 msgstr ""
 
-#: admin/class-arvan-admin.php:223
+msgid "Royal Sapphire Blue"
+msgstr "皇家蓝宝石"
+
+#: admin/class-arvan-admin.php:252
 msgid "Run Metering Cycle Now"
 msgstr "立即执行按量计费结算"
 
@@ -1318,7 +1807,7 @@ msgstr "运行中"
 msgid "Running"
 msgstr ""
 
-#: admin/class-arvan-admin.php:222
+#: admin/class-arvan-admin.php:251
 msgid "Running Metering..."
 msgstr ""
 
@@ -1373,6 +1862,9 @@ msgstr "沙盒测试 / 演示模式 (Sandbox)"
 msgid "save"
 msgstr "保存设置"
 
+msgid "Save All Customizations"
+msgstr "保存所有自定义设置"
+
 #: admin/views/admin-settings.php:150
 msgid "Save All Reseller Settings"
 msgstr "保存全部代理商设置"
@@ -1383,12 +1875,19 @@ msgstr "保存自定义配置"
 msgid "Scalable cloud object storage with standard AWS S3 API compatibility, high availability, multi-datacenter durability, and 0-cost inbound transfer."
 msgstr ""
 
+msgid "Search translation keys or texts..."
+msgstr "搜索翻译键名或文本内容..."
+
+msgid "Search translation keys..."
+msgstr "搜索翻译键名..."
+
 msgid "searchResourcesPlaceholder"
 msgstr "按客户、资源名称或 Arvan UUID 搜索..."
 
 msgid "searchWalletsPlaceholder"
 msgstr "按客户姓名、邮箱或用户ID搜索..."
 
+#: includes/class-arvan-blocks.php:142 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:178 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:296
 msgid "Secondary / Dark Accent"
 msgstr "辅助色 / 深色强调"
 
@@ -1398,6 +1897,9 @@ msgstr ""
 msgid "secretKey"
 msgstr "安全密钥 (Secret Key)"
 
+msgid "Select Font Family Stack"
+msgstr "选择字体系列"
+
 #: public/views/storefront-server.php:51
 msgid "Select the geographical location closest to your target audience."
 msgstr ""
@@ -1406,17 +1908,17 @@ msgid "selectLanguage"
 msgstr "选择语言"
 
 msgid "selectPresetAmount"
-msgstr "选择预设充值金额:"
+msgstr "选择预设金额"
 
-#: public/class-arvan-public.php:555
+#: public/class-arvan-public.php:586
 msgid "Server \"%s\" provisioned successfully! IP: %s"
 msgstr ""
 
-#: includes/class-arvan-blocks.php:121
+#: includes/class-arvan-blocks.php:139
 msgid "Server Configurator Settings"
 msgstr "服务器配置器设置"
 
-#: public/class-arvan-public.php:259 public/class-arvan-public.php:399
+#: public/class-arvan-public.php:290 public/class-arvan-public.php:430
 msgid "Server deployed successfully! IP assigned:"
 msgstr ""
 
@@ -1428,19 +1930,19 @@ msgstr ""
 msgid "Server Instance"
 msgstr ""
 
-#: public/class-arvan-public.php:626
+#: public/class-arvan-public.php:657
 msgid "Server permanently destroyed."
 msgstr ""
 
-#: public/class-arvan-public.php:614
+#: public/class-arvan-public.php:645
 msgid "Server powered off gracefully."
 msgstr ""
 
-#: public/class-arvan-public.php:608
+#: public/class-arvan-public.php:639
 msgid "Server powered on successfully."
 msgstr ""
 
-#: public/class-arvan-public.php:620
+#: public/class-arvan-public.php:651
 msgid "Server reboot command executed."
 msgstr ""
 
@@ -1455,29 +1957,56 @@ msgstr "服务类型"
 
 #: public/views/dashboard-customer.php:54
 msgid "Services Suspended Due to Zero Wallet Balance"
-msgstr ""
+msgstr "因钱包余额不足服务已被暂停"
 
-#: admin/class-arvan-admin.php:263
+#: admin/class-arvan-admin.php:292
 msgid "Settings"
 msgstr ""
 
-#: admin/class-arvan-admin.php:262
+#: admin/class-arvan-admin.php:291
 msgid "Settings & API"
 msgstr "系统设置与 API"
 
-#: admin/class-arvan-admin.php:458
+#: admin/class-arvan-admin.php:704
 msgid "Settings saved successfully."
 msgstr ""
 
 msgid "Shahryar"
 msgstr "Shahryar"
 
+msgid "Sharp Minimal"
+msgstr "利落极简 (4px)"
+
 msgid "Shiraz"
 msgstr "设拉子"
 
-#: includes/class-arvan-blocks.php:124
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:84 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:154 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:166 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:178 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:190 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:202
+msgid "Show"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:152
+msgid "Show Header Banner"
+msgstr ""
+
+#: includes/class-arvan-blocks.php:154 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:200
 msgid "Show Hourly & Monthly Rates"
 msgstr "显示小时与月度费率"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:188
+msgid "Show OS Selector"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:164
+msgid "Show Region Selector"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:176
+msgid "Show Storage Slider"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:82
+msgid "Show Wallet Balance Card"
+msgstr ""
 
 #: public/views/dashboard-customer.php:21
 msgid "Sign in to Access Your Cloud Portal"
@@ -1490,9 +2019,26 @@ msgstr ""
 msgid "signIn"
 msgstr "登录 / 注册"
 
+msgid "Soft and playful with high-radius pill surfaces."
+msgstr "柔和且富有亲和力的高半径胶囊形界面。"
+
 #: public/views/dashboard-customer.php:224
 msgid "Soft Reboot"
 msgstr ""
+
+#: includes/class-arvan-blocks.php:149 includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:109 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:227
+msgid "Spacing Density"
+msgstr "间距紧凑度与密度"
+
+msgid "Spacious"
+msgstr "宽松"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:115 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:233
+msgid "Spacious / Relaxed Air"
+msgstr ""
+
+msgid "Spacious / Roomy"
+msgstr "宽松 / 大间距"
 
 msgid "specs"
 msgstr "规格"
@@ -1517,6 +2063,22 @@ msgstr ""
 msgid "sslActive"
 msgstr "SSL 安全证书已生效"
 
+msgid "Standard"
+msgstr "标准"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:99 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:217
+msgid "Standard (1200px)"
+msgstr ""
+
+msgid "Standard (1280px)"
+msgstr "标准 (1280px)"
+
+msgid "Standard / Balanced"
+msgstr "标准 / 均衡"
+
+msgid "Standard Cloud (balanced)"
+msgstr "标准云服务 (均衡)"
+
 #: public/views/storefront-server.php:189
 msgid "Standard cloud images optimized for immediate SSH/RDP connection."
 msgstr ""
@@ -1524,8 +2086,19 @@ msgstr ""
 msgid "Standard General"
 msgstr "通用标准型 (Standard General)"
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:101
+msgid "Standard General (2 vCPU / 4 GB - Popular)"
+msgstr ""
+
+msgid "Standard General (g1-2-4)"
+msgstr "标准通用型 (g1-2-4)"
+
 msgid "Starter Eco"
 msgstr "入门经济型 (Starter Eco)"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:100
+msgid "Starter Eco (1 vCPU / 2 GB)"
+msgstr ""
 
 msgid "status"
 msgstr "状态"
@@ -1581,6 +2154,13 @@ msgstr "商城品牌与视觉自定义"
 msgid "storefrontSubtitle"
 msgstr "云基础设施商城"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:148 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:266
+msgid "Subtle (Clean Soft Shadow)"
+msgstr ""
+
+msgid "Subtle M3 Elevation"
+msgstr "轻微 M3 层级阴影"
+
 #: admin/views/admin-settings.php:133
 msgid "Support Contact Email"
 msgstr "客户服务与技术支持邮箱"
@@ -1588,6 +2168,10 @@ msgstr "客户服务与技术支持邮箱"
 #: admin/views/admin-settings.php:140
 msgid "Support Phone Number"
 msgstr "技术支持服务电话"
+
+#: includes/class-arvan-blocks.php:143
+msgid "Surface / Card Background"
+msgstr ""
 
 msgid "suspended"
 msgstr "已暂停"
@@ -1609,11 +2193,19 @@ msgstr "您的钱包余额已为0。为防止产生欠费，所有运行中的�
 msgid "suspensionNotice"
 msgstr "暂停通知：钱包余额已耗尽"
 
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:244 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:362
+msgid "System Default UI"
+msgstr ""
+
 msgid "Tabriz"
 msgstr "大不里士"
 
 msgid "Tabriz - Northwest"
 msgstr "大不里士 - 西北"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:88
+msgid "Tabriz - Northwest (ir-tbz-dc1)"
+msgstr ""
 
 msgid "Tabriz (Northwest)"
 msgstr "大不里士 (西北)"
@@ -1621,14 +2213,25 @@ msgstr "大不里士 (西北)"
 msgid "Target Value / IP"
 msgstr "目标值 / IP"
 
+msgid "Technical, engineering-focused look with crisp 4px edges."
+msgstr "带有清晰 4px 边缘的技术与工程风范外观。"
+
 msgid "Tehran"
 msgstr "德黑兰"
 
 msgid "Tehran - Forough"
 msgstr "德黑兰 - Forough"
 
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:86
+msgid "Tehran - Forough (ir-thr-c2)"
+msgstr ""
+
 msgid "Tehran - Shahryar"
 msgstr "德黑兰 - Shahryar"
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:87
+msgid "Tehran - Shahryar (ir-thr-sh1)"
+msgstr ""
 
 msgid "Tehran (Forough)"
 msgstr "德黑兰 (Forough)"
@@ -1640,7 +2243,7 @@ msgstr "德黑兰 (Shahryar)"
 msgid "Test Connection"
 msgstr "测试 API 连接"
 
-#: admin/class-arvan-admin.php:213
+#: admin/class-arvan-admin.php:242
 msgid "Testing connection to ArvanCloud API..."
 msgstr ""
 
@@ -1648,9 +2251,26 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
+msgid "Text & Branding Overrides"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-server-configurator.php:397
+msgid "Text & Copywriting Overrides"
+msgstr "文本与文案重写"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:279
+msgid "Text Overrides"
+msgstr ""
+
+msgid "Texts & Copywriting"
+msgstr "文案与界面文本"
+
 #: public/views/storefront-server.php:76
 msgid "Tier III Enterprise DC"
 msgstr "Tier III 级企业数据中心"
+
+msgid "Tight line heights & 13px base body font."
+msgstr "紧凑行高与 13px 正文基准字号。"
 
 msgid "timestamp"
 msgstr "交易时间"
@@ -1668,6 +2288,9 @@ msgstr "充值"
 msgid "total"
 msgstr "总计"
 
+msgid "Total Active VMs"
+msgstr "活跃虚拟机总数"
+
 msgid "Total Active Wallets"
 msgstr "活跃钱包总数"
 
@@ -1681,7 +2304,7 @@ msgid "Total Outstanding Credit"
 msgstr "客户未消耗总充值余额"
 
 msgid "totalDepositAmount"
-msgstr "充值总额:"
+msgstr "总充值金额"
 
 #: public/views/dashboard-customer.php:270
 msgid "Transaction Type"
@@ -1711,11 +2334,24 @@ msgstr ""
 msgid "Typography & Font Family Stack"
 msgstr "排版与字体系列"
 
-#: public/class-arvan-public.php:567
+msgid "Typography & Font Sizes"
+msgstr "排版与字号大小"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:226 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:344
+msgid "Typography & Persian Digits"
+msgstr "排版与波斯数字"
+
+msgid "Typography, Web Fonts & Size Hierarchy"
+msgstr "排版、网络字体与字号层级"
+
+msgid "Ultra Curved (Pill)"
+msgstr "超大圆角 / 胶囊形 (26px)"
+
+#: public/class-arvan-public.php:598
 msgid "Unauthorized."
 msgstr ""
 
-#: admin/class-arvan-admin.php:544
+#: admin/class-arvan-admin.php:790
 msgid "Unknown admin action."
 msgstr ""
 
@@ -1746,6 +2382,12 @@ msgstr "查看 S3 API 访问凭据"
 msgid "Virtual Storefront Quick Links (Theme Isolated)"
 msgstr "虚拟云商城快捷入口 (独立主题隔离模式)"
 
+msgid "Visual Customization & Theming Studio"
+msgstr "可视化定制与主题工作室"
+
+msgid "Wallet & Credit Label"
+msgstr "钱包与余额标签"
+
 #: public/views/dashboard-customer.php:261
 msgid "Wallet Atomic Ledger Transactions"
 msgstr ""
@@ -1761,31 +2403,55 @@ msgstr "钱包 ID"
 msgid "Wallet is frozen. Cannot perform debit."
 msgstr ""
 
-#: public/class-arvan-public.php:699
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:305
+msgid "Wallet Section Title"
+msgstr ""
+
+#: public/class-arvan-public.php:730
 msgid "Wallet successfully credited with %1$s %2$s! RefID: %3$s"
 msgstr ""
 
-#: public/class-arvan-public.php:264 public/class-arvan-public.php:404
+#: public/class-arvan-public.php:295 public/class-arvan-public.php:435
 msgid "Wallet successfully credited!"
 msgstr ""
 
 msgid "walletBalance"
 msgstr "钱包余额"
 
-#: admin/class-arvan-admin.php:289
+#: admin/class-arvan-admin.php:318
 msgid "Wallets & Ledger"
 msgstr "客户钱包与财务台账"
 
-#: admin/class-arvan-admin.php:290
+#: admin/class-arvan-admin.php:319
 msgid "Wallets Ledger"
 msgstr ""
+
+msgid "Warm golden honey & amber tones with generous curvature and friendly aesthetics."
+msgstr "温暖的金色蜂蜜与琥珀色调，搭配大圆角与亲切友好的视觉体验。"
+
+msgid "Warm Sunset Amber"
+msgstr "温暖日落琥珀"
+
+msgid "Web Font CSS URL (Google Fonts / CDN)"
+msgstr "Web 字体 CSS 链接 (Google Fonts / CDN)"
 
 #: admin/views/admin-settings.php:65
 msgid "When enabled, allows instantaneous testing, mock provisioning, and demo top-ups without connecting to live ArvanCloud infrastructure."
 msgstr "启用后，允许在不连接真实生产环境的情况下进行即时测试、模拟开通和演示充值。"
 
+msgid "Wide (1480px)"
+msgstr "加宽 (1480px)"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:100 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:218
+msgid "Wide Screen (1400px)"
+msgstr ""
+
 msgid "WordPress Gutenberg Block & Shortcodes Integration"
 msgstr "WordPress Gutenberg 区块与短代码集成"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:266 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:384
+msgid "Yes"
+msgstr ""
 
 #: public/views/storefront-server.php:333
 msgid "Your Available Balance:"
@@ -1793,7 +2459,7 @@ msgstr ""
 
 #: public/views/dashboard-customer.php:65
 msgid "Your available wallet balance will only support active services for approximately %s hours. Please top up your wallet to prevent automated service interruption."
-msgstr ""
+msgstr "您当前的可用钱包余额预计仅能维持活跃服务运行约 %s 小时。请及时充值以避免服务被自动中断。"
 
 msgid "Your Storage Buckets"
 msgstr ""
@@ -1806,4 +2472,20 @@ msgstr "大不里士"
 
 msgid "تهران"
 msgstr "德黑兰"
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:239 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:357
+msgid "ساحل (Sahel)"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:241 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:359
+msgid "شبنم (Shabnam)"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:240 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:358
+msgid "صمیم (Samim)"
+msgstr ""
+
+#: includes/elementor/widgets/class-arvan-elementor-customer-dashboard.php:238 includes/elementor/widgets/class-arvan-elementor-server-configurator.php:356
+msgid "وزیرمتن (Vazirmatn - Standard)"
+msgstr ""
 

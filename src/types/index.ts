@@ -59,7 +59,101 @@ export interface WalletTransaction {
   created_at: string;
 }
 
-export interface ArvanWindowData {
+export interface EmbedConfig {
+  isEmbedded?: boolean;
+  initialView?: ActiveTab;
+  initialRegion?: string;
+  initialFlavor?: string;
+  initialImage?: string;
+  initialDisk?: number;
+  accentColor?: string;
+  secondaryColor?: string;
+  colorSurface?: string;
+  colorBackground?: string;
+  colorText?: string;
+  colorBorder?: string;
+  borderRadius?: number;
+  cardElevation?: string;
+  spacingDensity?: string;
+  containerWidth?: string;
+  fontFamily?: string;
+  baseFontSize?: number;
+  persianDigits?: boolean;
+  ctaText?: string;
+  customTitle?: string;
+  customTagline?: string;
+  dashboardTitle?: string;
+  dashboardDescription?: string;
+  walletTitle?: string;
+  showHeader?: boolean;
+  showRegion?: boolean;
+  showStorage?: boolean;
+  showOs?: boolean;
+  showHourly?: boolean;
+  customCss?: string;
+}
+
+export interface CustomizationSettings {
+  // Master Preset
+  masterTheme?: string;
+
+  // Colors
+  brandPrimaryColor?: string;
+  brandSecondaryColor?: string;
+  colorSurface?: string;
+  colorBackground?: string;
+  colorText?: string;
+  colorTextMuted?: string;
+  colorBorder?: string;
+  colorSuccess?: string;
+  colorWarning?: string;
+  colorError?: string;
+  themeMode?: 'light' | 'dark' | 'auto';
+
+  // Typography & Fonts
+  fontFamily?: string;
+  customFontName?: string;
+  customFontUrl?: string;
+  persianDigits?: boolean;
+  fontTracking?: 'tight' | 'normal' | 'wide';
+
+  // Font Sizes & Scale
+  fontSizeScale?: 'compact' | 'normal' | 'spacious' | 'extra_large' | 'custom';
+  baseFontSize?: number;
+  headingScale?: number;
+  lineHeightScale?: 'tight' | 'normal' | 'relaxed';
+
+  // Layout & Shapes
+  layoutPreset?: 'rounded' | 'sharp' | 'curved' | 'compact' | 'fluid' | 'custom';
+  borderRadius?: number;
+  cardElevation?: 'none' | 'subtle' | 'elevated' | 'glow';
+  spacingDensity?: 'compact' | 'normal' | 'spacious';
+  containerWidth?: 'boxed' | 'standard' | 'wide' | 'fluid';
+  headerStyle?: 'glassmorphic' | 'solid' | 'minimal';
+
+  // Texts & Content
+  textPreset?: 'standard' | 'agency' | 'devops' | 'enterprise' | 'custom';
+  storeName?: string;
+  storeTagline?: string;
+  heroTitle?: string;
+  heroDescription?: string;
+  deployButtonText?: string;
+  dashboardTitle?: string;
+  dashboardDescription?: string;
+  walletTitle?: string;
+  customFooterText?: string;
+  customTextOverrides?: Record<string, string>;
+
+  // Branding & Assets
+  logoUrl?: string;
+  faviconUrl?: string;
+  supportEmail?: string;
+  supportPhone?: string;
+  showHourlyToggle?: boolean;
+  customCss?: string;
+}
+
+export interface ArvanWindowData extends CustomizationSettings {
   ajaxUrl: string;
   nonce: string;
   currency: 'IRT' | 'IRR' | 'USD';
@@ -73,9 +167,8 @@ export interface ArvanWindowData {
   activeLang: SupportedLanguage;
   direction: Direction;
   loginUrl: string;
-  storeName?: string;
-  supportEmail?: string;
-  supportPhone?: string;
+  primaryColor?: string;
+  secondaryColor?: string;
   i18n?: Record<string, string>;
   initialData?: {
     regions?: DatacenterRegion[];
@@ -91,3 +184,4 @@ declare global {
     arvanData: ArvanWindowData;
   }
 }
+

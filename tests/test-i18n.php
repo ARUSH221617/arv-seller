@@ -177,6 +177,15 @@ assert_test( $i18n->filter_translations( $load_str, $load_str, 'arv-seller' ) ==
 set_test_wp_locale( 'ru_RU' );
 assert_test( $i18n->filter_translations( $load_str, $load_str, 'arv-seller' ) === 'Загрузка панели облачных сервисов ArvanCloud...', "Russian: '{$load_str}'" );
 
+// 9. Legal Termination & Warning Terms Translations
+$term_str = 'According to ArvanCloud legal termination terms, active virtual instances have been powered off and controls locked to Read-Only mode. Please top up your wallet to restore access immediately.';
+set_test_wp_locale( 'fa_IR' );
+assert_test( ! empty( $i18n->filter_translations( $term_str, $term_str, 'arv-seller' ) ) && $i18n->filter_translations( $term_str, $term_str, 'arv-seller' ) !== $term_str, "Persian Legal Termination: translated" );
+
+set_test_wp_locale( 'ar_SA' );
+assert_test( ! empty( $i18n->filter_translations( $term_str, $term_str, 'arv-seller' ) ) && $i18n->filter_translations( $term_str, $term_str, 'arv-seller' ) !== $term_str, "Arabic Legal Termination: translated" );
+
+
 echo "\n=========================================================\n";
 echo "SUMMARY: {$passed} Passed, {$failed} Failed\n";
 echo "=========================================================\n";

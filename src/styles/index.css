@@ -40,54 +40,126 @@
 #arvan-cloud-app,
 #arvan-admin-root {
   min-height: 100vh;
-  background-color: #f8fafc;
-  color: #0f172a;
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  background-color: var(--arvan-bg, #f8fafc);
+  color: var(--arvan-text, #0f172a);
   -webkit-font-smoothing: antialiased;
 }
 
-/* Bi-Directional Font Routing */
-.lang-fa, .lang-ar, [dir="rtl"] {
+/* Dynamic Font Routing & Typography Customization */
+html,
+body,
+#arvan-cloud-app,
+#arvan-admin-root,
+#arvan-cloud-app *,
+#arvan-admin-root *,
+[role="dialog"],
+[role="dialog"] *,
+[data-radix-portal],
+[data-radix-portal] * {
+  font-family: var(--arvan-font-family, 'Vazirmatn', 'Plus Jakarta Sans', -apple-system, sans-serif) !important;
+}
+
+/* Specific Font Classes */
+html.font-vazirmatn, html.font-vazirmatn *,
+body.font-vazirmatn, body.font-vazirmatn * {
   font-family: 'Vazirmatn', 'Tahoma', -apple-system, sans-serif !important;
 }
 
-.lang-en, .lang-tr, [dir="ltr"] {
-  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+html.font-shabnam, html.font-shabnam *,
+body.font-shabnam, body.font-shabnam * {
+  font-family: 'Shabnam', 'Vazirmatn', 'Tahoma', sans-serif !important;
 }
 
-.lang-zh {
-  font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif !important;
+html.font-yekan, html.font-yekan *,
+body.font-yekan, body.font-yekan * {
+  font-family: 'Yekan Bakh', 'Yekan', 'Vazirmatn', sans-serif !important;
 }
 
-.lang-ru {
-  font-family: 'Plus Jakarta Sans', 'Roboto', sans-serif !important;
+html.font-sahel, html.font-sahel *,
+body.font-sahel, body.font-sahel * {
+  font-family: 'Sahel', 'Vazirmatn', 'Tahoma', sans-serif !important;
 }
 
-/* Custom Light Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+html.font-plus-jakarta, html.font-plus-jakarta *,
+body.font-plus-jakarta, body.font-plus-jakarta * {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif !important;
 }
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
+
+html.font-inter, html.font-inter *,
+body.font-inter, body.font-inter * {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
 }
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 9999px;
+
+html.font-roboto, html.font-roboto *,
+body.font-roboto, body.font-roboto * {
+  font-family: 'Roboto', 'Plus Jakarta Sans', sans-serif !important;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #008b8b;
+
+html.font-system, html.font-system *,
+body.font-system, body.font-system * {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Persian Numeral Feature Settings */
+.persian-digits,
+html.lang-fa,
+html.lang-fa *,
+.lang-fa,
+.lang-fa * {
+  font-feature-settings: "ss01" 1, "locl" 1;
+}
+
+/* Dynamic Root Size and Scale */
+#arvan-cloud-app,
+#arvan-admin-root {
+  font-size: var(--arvan-font-size-base, 14px);
+}
+
+.container,
+.arvan-container {
+  max-width: var(--arvan-container-max, 1280px) !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* Material Design 3 Elevation Shadows for Light Theme */
-.m3-elevation-1 {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+.m3-elevation-1,
+#arvan-cloud-app .m3-elevation-1,
+#arvan-admin-root .m3-elevation-1 {
+  box-shadow: var(--arvan-shadow-1, 0 1px 3px 0 rgba(0, 0, 0, 0.06)) !important;
 }
-.m3-elevation-2 {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.07);
+.m3-elevation-2,
+#arvan-cloud-app .m3-elevation-2,
+#arvan-admin-root .m3-elevation-2 {
+  box-shadow: var(--arvan-shadow-2, 0 4px 6px -1px rgba(0, 0, 0, 0.07)) !important;
 }
-.m3-elevation-3 {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+.m3-elevation-3,
+#arvan-cloud-app .m3-elevation-3,
+#arvan-admin-root .m3-elevation-3 {
+  box-shadow: var(--arvan-shadow-3, 0 10px 15px -3px rgba(0, 0, 0, 0.08)) !important;
+}
+
+/* Dynamic Border Radius Cascade */
+#arvan-cloud-app .rounded-3xl,
+#arvan-admin-root .rounded-3xl {
+  border-radius: calc(var(--arvan-radius, 16px) * 1.65) !important;
+}
+#arvan-cloud-app .rounded-2xl,
+#arvan-admin-root .rounded-2xl {
+  border-radius: calc(var(--arvan-radius, 16px) * 1.35) !important;
+}
+#arvan-cloud-app .rounded-xl,
+#arvan-admin-root .rounded-xl {
+  border-radius: calc(var(--arvan-radius, 16px) * 1.0) !important;
+}
+#arvan-cloud-app .rounded-lg,
+#arvan-admin-root .rounded-lg {
+  border-radius: calc(var(--arvan-radius, 16px) * 0.7) !important;
+}
+#arvan-cloud-app .rounded-md,
+#arvan-admin-root .rounded-md {
+  border-radius: calc(var(--arvan-radius, 16px) * 0.5) !important;
 }
 
 /* Pulsing Status Dot */

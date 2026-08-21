@@ -40,9 +40,24 @@ export const AdminApp: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'settings' | 'customization' | 'resources' | 'wallets'>(resolveInitialTab);
 
   return (
-    <div className={cn('min-h-screen bg-slate-50 text-slate-900 p-4 sm:p-8 rounded-3xl', `lang-${language}`)} dir={direction}>
+    <div
+      className={cn('min-h-screen p-4 sm:p-8 transition-colors', `lang-${language}`)}
+      style={{
+        backgroundColor: 'var(--arvan-bg, #f8fafc)',
+        color: 'var(--arvan-text, #0f172a)',
+        borderRadius: 'var(--arvan-radius, 24px)',
+      }}
+      dir={direction}
+    >
       {/* 1. Admin Header Shell */}
-      <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-200 pb-6 mb-8 bg-white p-6 rounded-3xl shadow-sm">
+      <header
+        className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border pb-6 mb-8 p-6 shadow-sm transition-all"
+        style={{
+          backgroundColor: 'var(--arvan-surface, #ffffff)',
+          borderColor: 'var(--arvan-border, #e2e8f0)',
+          borderRadius: 'var(--arvan-radius, 24px)',
+        }}
+      >
         <div className="flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-tr from-arvan-teal to-arvan-teal-light shadow-sm">
             <Server className="h-6 w-6 text-white" />

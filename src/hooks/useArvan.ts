@@ -9,6 +9,7 @@ import {
   WalletTransaction,
 } from '../types';
 import { getTranslation, LANGUAGES } from '../i18n';
+import { applyThemeToDom } from '../lib/theme';
 
 export interface ToastMessage {
   id: string;
@@ -43,6 +44,17 @@ export function useArvan() {
   const [remainingHours, setRemainingHours] = useState<number>(rawData.remainingHours || 0);
   const [isDepositOpen, setIsDepositOpen] = useState(false);
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
+
+  // ── Apply complete theme settings from window.arvanData ───────────────────
+  useEffect(() => {
+    applyThemeToDom(rawData);
+  }, []);
+
+  // Translation helper with admin string overrides support
+  const t = useCallback((key: string) => {
+    return getTranslation(key, language, rawData.customTextOverrides);
+  }, [language]);
+
 
   // Catalog State
   const [regions] = useState<DatacenterRegion[]>(rawData.initialData?.regions || [
@@ -109,12 +121,9 @@ export function useArvan() {
   useEffect(() => {
     document.documentElement.dir = direction;
     document.documentElement.lang = language;
+    document.documentElement.classList.remove('lang-fa', 'lang-en', 'lang-ar', 'lang-tr', 'lang-zh', 'lang-ru', 'is-rtl', 'is-ltr');
+    document.documentElement.classList.add(`lang-${language}`, `is-${direction}`);
   }, [direction, language]);
-
-  // Translation helper
-  const t = useCallback((key: string) => {
-    return getTranslation(key, language);
-  }, [language]);
 
   // Generic WordPress AJAX caller
   const callAjax = useCallback(async (action: string, data: Record<string, unknown> = {}) => {
@@ -233,6 +242,21 @@ export function useArvan() {
     userId: rawData.userId,
     isLogged: rawData.isLogged,
     loginUrl: rawData.loginUrl,
+    // Brand / customization (read from window.arvanData → admin settings)
+    storeName: rawData.storeName || '',
+    storeTagline: rawData.storeTagline || '',
+    heroTitle: rawData.heroTitle || '',
+    heroDescription: rawData.heroDescription || '',
+    deployButtonText: rawData.deployButtonText || '',
+    dashboardTitle: rawData.dashboardTitle || '',
+    dashboardDescription: rawData.dashboardDescription || '',
+    walletTitle: rawData.walletTitle || '',
+    logoUrl: rawData.logoUrl || '',
+    primaryColor: rawData.brandPrimaryColor || rawData.primaryColor || '#008b8b',
+    showHourlyToggle: rawData.showHourlyToggle !== false,
+    customFooterText: rawData.customFooterText || '',
+    containerWidth: rawData.containerWidth || 'standard',
+    headerStyle: rawData.headerStyle || 'glassmorphic',
     regions,
     flavors,
     images,
