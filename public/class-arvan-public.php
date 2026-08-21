@@ -134,7 +134,6 @@ class Arvan_Public {
 	}
 
 	/**
-	/**
 	 * Enqueue styles and scripts for the frontend canvas.
 	 */
 	public function enqueue_assets() {
@@ -143,6 +142,17 @@ class Arvan_Public {
 		// Only enqueue on /cloud-services/ routes
 		if ( empty( $arvan_page ) ) {
 			return;
+		}
+
+		$fonts_css = plugin_dir_path( __FILE__ ) . 'fonts/fonts.css';
+		if ( file_exists( $fonts_css ) ) {
+			wp_enqueue_style(
+				'arvan-local-fonts',
+				wp_make_link_relative( plugin_dir_url( __FILE__ ) . 'fonts/fonts.css' ),
+				array(),
+				$this->version,
+				'all'
+			);
 		}
 
 		$dist_css = plugin_dir_path( __FILE__ ) . 'dist/canvas-app.css';

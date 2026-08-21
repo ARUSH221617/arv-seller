@@ -10,6 +10,8 @@
  * - Russian (ru_RU - LTR)
  */
 
+@import url('../fonts/fonts.css');
+
 :root {
 	--arvan-primary: #00baba;
 	--arvan-primary-hover: #009e9e;

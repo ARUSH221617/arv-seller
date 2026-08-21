@@ -24,9 +24,7 @@ $store_name      = get_option( 'arvan_store_name', get_bloginfo( 'name' ) . ' Cl
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title><?php echo esc_html( $store_name ); ?> &mdash; <?php esc_html_e( 'Cloud Services Platform', 'arv-seller' ); ?></title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo esc_url( plugin_dir_url( dirname( __FILE__ ) ) . 'public/fonts/fonts.css' ); ?>">
 	<?php wp_head(); ?>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased selection:bg-[#008b8b]/20 selection:text-[#006d6d]">

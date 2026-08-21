@@ -65,6 +65,17 @@ class Arvan_Admin {
 			return;
 		}
 
+		$fonts_css = plugin_dir_path( dirname( __FILE__ ) ) . 'public/fonts/fonts.css';
+		if ( file_exists( $fonts_css ) ) {
+			wp_enqueue_style(
+				'arvan-local-fonts',
+				wp_make_link_relative( plugin_dir_url( dirname( __FILE__ ) ) . 'public/fonts/fonts.css' ),
+				array(),
+				$this->version,
+				'all'
+			);
+		}
+
 		$dist_css = plugin_dir_path( dirname( __FILE__ ) ) . 'public/dist/canvas-app.css';
 		$dist_js  = plugin_dir_path( dirname( __FILE__ ) ) . 'public/dist/admin-app.js';
 
