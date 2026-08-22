@@ -1288,7 +1288,8 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "Stopped": "Stopped",
     "Subtitle / Tagline": "Subtitle / Tagline",
     "Subtle": "Subtle",
-    "Wide (1400px)": "Wide (1400px)"
+    "Wide (1400px)": "Wide (1400px)",
+    "Instance powered on by administrator.": "Instance powered on by administrator."
   },
   "ar": {
     "1x Public IP (Included)": "عنوان IP عام واحد (مشمول)",
