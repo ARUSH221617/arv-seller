@@ -201,7 +201,7 @@ export function useAdminData() {
   };
 
   // 3. Emergency resource action
-  const handleResourceAction = async (resourceId: number, actionType: 'power_off' | 'force_delete' | 'trigger_metering') => {
+  const handleResourceAction = async (resourceId: number, actionType: 'power_off' | 'power_on' | 'force_delete' | 'trigger_metering') => {
     if (actionType === 'trigger_metering') {
       const res = await callAjax('arvan_admin_resource_action', {
         resource_action: 'trigger_metering',
@@ -215,14 +215,36 @@ export function useAdminData() {
       resource_action: actionType,
     });
 
-    if (actionType === 'force_delete') {
-      setResources((prev) => prev.filter((r) => r.id !== resourceId));
-      addToast('info', t('Instance purged by administrator.'));
-    } else if (actionType === 'power_off') {
-      setResources((prev) =>
-        prev.map((r) => (r.id === resourceId ? { ...r, status: 'stopped' } : r))
-      );
-      addToast('warning', t('Instance powered off by administrator.'));
+    if (res && res.success) {
+      if (actionType === 'force_delete') {
+        setResources((prev) => prev.filter((r) => r.id !== resourceId));
+        setStats((prev) => ({
+          ...prev,
+          total_vms: Math.max(0, prev.total_vms - 1),
+          total_active: Math.max(0, prev.total_active - 1),
+        }));
+        addToast('info', res.data?.message || t('Instance purged by administrator.'));
+      } else if (actionType === 'power_off') {
+        setResources((prev) =>
+          prev.map((r) => (r.id === resourceId ? { ...r, status: 'stopped' } : r))
+        );
+        setStats((prev) => ({
+          ...prev,
+          total_active: Math.max(0, prev.total_active - 1),
+        }));
+        addToast('warning', res.data?.message || t('Instance powered off by administrator.'));
+      } else if (actionType === 'power_on') {
+        setResources((prev) =>
+          prev.map((r) => (r.id === resourceId ? { ...r, status: 'active' } : r))
+        );
+        setStats((prev) => ({
+          ...prev,
+          total_active: prev.total_active + 1,
+        }));
+        addToast('success', res.data?.message || t('Instance powered on by administrator.'));
+      }
+    } else {
+      addToast('error', res.data?.message || t('Action failed.'));
     }
   };
 

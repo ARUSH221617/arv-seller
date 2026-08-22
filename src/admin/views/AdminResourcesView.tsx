@@ -23,7 +23,7 @@ interface AdminResourcesViewProps {
   currency: string;
   language: SupportedLanguage;
   t: (key: string) => string;
-  onAction: (resourceId: number, actionType: 'power_off' | 'force_delete' | 'trigger_metering') => Promise<void>;
+  onAction: (resourceId: number, actionType: 'power_off' | 'power_on' | 'force_delete' | 'trigger_metering') => Promise<void>;
 }
 
 export const AdminResourcesView: React.FC<AdminResourcesViewProps> = ({
@@ -37,6 +37,7 @@ export const AdminResourcesView: React.FC<AdminResourcesViewProps> = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'active' | 'suspended' | 'stopped'>('all');
   const [isMetering, setIsMetering] = useState(false);
+  const [actionLoadingId, setActionLoadingId] = useState<number | null>(null);
 
   const filtered = resources.filter((res) => {
     if (statusFilter !== 'all' && res.status !== statusFilter) return false;
@@ -57,6 +58,15 @@ export const AdminResourcesView: React.FC<AdminResourcesViewProps> = ({
       await onAction(0, 'trigger_metering');
     } finally {
       setIsMetering(false);
+    }
+  };
+
+  const handleSingleAction = async (resId: number, action: 'power_off' | 'power_on' | 'force_delete') => {
+    setActionLoadingId(resId);
+    try {
+      await onAction(resId, action);
+    } finally {
+      setActionLoadingId(null);
     }
   };
 
@@ -227,24 +237,43 @@ export const AdminResourcesView: React.FC<AdminResourcesViewProps> = ({
                       </td>
                       <td className="py-4 px-5 text-end">
                         <div className="flex items-center justify-end gap-1.5">
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            onClick={() => onAction(res.id, 'power_off')}
-                            className="h-7 px-2 text-xs gap-1"
-                          >
-                            <Power className="h-3 w-3 text-arvan-amber" />
-                            <span>{t('Power Off')}</span>
-                          </Button>
+                          {res.status === 'active' && (
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => handleSingleAction(res.id, 'power_off')}
+                              disabled={actionLoadingId === res.id}
+                              className="h-7 px-2 text-xs gap-1 border-amber-300 text-amber-700 hover:bg-amber-50"
+                              title={t('powerOff') || t('Power Off')}
+                            >
+                              <Power className={`h-3 w-3 text-amber-600 ${actionLoadingId === res.id ? 'animate-spin' : ''}`} />
+                              <span>{t('powerOff') || t('Power Off')}</span>
+                            </Button>
+                          )}
+                          {(res.status === 'stopped' || res.status === 'suspended') && (
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => handleSingleAction(res.id, 'power_on')}
+                              disabled={actionLoadingId === res.id}
+                              className="h-7 px-2 text-xs gap-1 border-emerald-300 text-emerald-700 hover:bg-emerald-50"
+                              title={t('powerOn') || t('Power On')}
+                            >
+                              <Power className={`h-3 w-3 text-emerald-600 ${actionLoadingId === res.id ? 'animate-spin' : ''}`} />
+                              <span>{t('powerOn') || t('Power On')}</span>
+                            </Button>
+                          )}
                           <Button
                             size="sm"
                             variant="destructive"
+                            disabled={actionLoadingId === res.id}
                             onClick={() => {
                               if (confirm(t('Are you sure you want to permanently delete this resource from ArvanCloud?'))) {
-                                onAction(res.id, 'force_delete');
+                                handleSingleAction(res.id, 'force_delete');
                               }
                             }}
                             className="h-7 px-2 text-xs gap-1"
+                            title={t('Purge')}
                           >
                             <Trash2 className="h-3 w-3" />
                             <span>{t('Purge')}</span>

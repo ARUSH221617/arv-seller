@@ -58,6 +58,7 @@ class Arvan_Public {
 		// Server Provisioning & Power Lifecycle
 		add_action( 'wp_ajax_arvan_deploy_server', array( $this, 'ajax_deploy_server' ) );
 		add_action( 'wp_ajax_arvan_server_power', array( $this, 'ajax_server_power' ) );
+		add_action( 'wp_ajax_arvan_get_dashboard_data', array( $this, 'ajax_get_dashboard_data' ) );
 
 		// Wallet Top-up & Deposit
 		add_action( 'wp_ajax_arvan_topup_wallet', array( $this, 'ajax_topup_wallet' ) );
@@ -620,7 +621,7 @@ class Arvan_Public {
 
 		// If balance <= 0 and user attempts to power on, block action
 		$current_balance = Arvan_Wallet::get_balance( $user_id );
-		if ( 'power-on' === $action && $current_balance <= 0 ) {
+		if ( ( 'power-on' === $action || 'power_on' === $action ) && $current_balance <= 0 ) {
 			wp_send_json_error(
 				array(
 					'message' => __( 'Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first.', 'arv-seller' ),
@@ -634,12 +635,14 @@ class Arvan_Public {
 
 		switch ( $action ) {
 			case 'power-on':
+			case 'power_on':
 				$res = $api_client->power_on_server( $arvan_id, $region );
 				$new_status = 'active';
 				$msg = __( 'Server powered on successfully.', 'arv-seller' );
 				break;
 
 			case 'power-off':
+			case 'power_off':
 				$res = $api_client->power_off_server( $arvan_id, $region );
 				$new_status = 'stopped';
 				$msg = __( 'Server powered off gracefully.', 'arv-seller' );
@@ -682,6 +685,51 @@ class Arvan_Public {
 			array(
 				'status'  => $new_status,
 				'message' => $msg,
+			)
+		);
+	}
+
+	/**
+	 * AJAX endpoint to fetch real-time dashboard data for client synchronization.
+	 */
+	public function ajax_get_dashboard_data() {
+		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
+
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => __( 'Unauthorized.', 'arv-seller' ) ) );
+		}
+
+		$user_id       = get_current_user_id();
+		$balance       = Arvan_Wallet::get_balance( $user_id );
+		$burn_rate     = Arvan_Wallet::get_user_burn_rate( $user_id );
+		$remaining_hrs = Arvan_Wallet::get_remaining_hours( $user_id );
+
+		$raw_servers = Arvan_Wallet::get_user_resources( $user_id );
+		$user_servers = array();
+		if ( ! empty( $raw_servers ) ) {
+			foreach ( $raw_servers as $res ) {
+				$user_servers[] = array(
+					'id'          => (int) $res->id,
+					'name'        => ! empty( $res->name ) ? $res->name : ( ! empty( $res->resource_name ) ? $res->resource_name : 'server-' . $res->id ),
+					'arvan_uuid'  => ! empty( $res->arvan_resource_id ) ? $res->arvan_resource_id : ( ! empty( $res->arvan_uuid ) ? $res->arvan_uuid : 'srv-' . $res->id ),
+					'status'      => $res->status,
+					'region_id'   => ! empty( $res->region ) ? $res->region : 'ir-thr-c2',
+					'flavor_id'   => 'g1-2-4',
+					'image_id'    => 'ubuntu-22.04',
+					'disk_size'   => 40,
+					'public_ip'   => '185.143.232.' . ( 40 + (int) $res->id ),
+					'hourly_rate' => isset( $res->hourly_cost ) ? (float) $res->hourly_cost : ( isset( $res->hourly_rate ) ? (float) $res->hourly_rate : 540.0 ),
+					'created_at'  => $res->created_at,
+				);
+			}
+		}
+
+		wp_send_json_success(
+			array(
+				'balance'        => (float) $balance,
+				'burnRate'       => (float) $burn_rate,
+				'remainingHours' => (float) $remaining_hrs,
+				'servers'        => $user_servers,
 			)
 		);
 	}

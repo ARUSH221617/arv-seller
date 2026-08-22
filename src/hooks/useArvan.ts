@@ -39,9 +39,9 @@ export function useArvan() {
 
   const [language, setLangState] = useState<SupportedLanguage>(rawData.activeLang || 'fa');
   const [direction, setDirection] = useState<Direction>(rawData.direction || 'rtl');
-  const [balance, setBalance] = useState<number>(rawData.balance || 0);
-  const [burnRate, setBurnRate] = useState<number>(rawData.burnRate || 0);
-  const [remainingHours, setRemainingHours] = useState<number>(rawData.remainingHours || 0);
+  const [balance, setBalance] = useState<number>(Number(rawData.balance) || 0);
+  const [burnRate, setBurnRate] = useState<number>(Number(rawData.burnRate) || 0);
+  const [remainingHours, setRemainingHours] = useState<number>(Number(rawData.remainingHours) || 0);
   const [isDepositOpen, setIsDepositOpen] = useState(false);
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
 
@@ -191,25 +191,54 @@ export function useArvan() {
   };
 
   const handleServerPower = async (serverId: number, actionType: 'power_on' | 'power_off' | 'reboot' | 'delete') => {
-    if (actionType === 'delete') {
-      setServers((prev) => prev.filter((s) => s.id !== serverId));
-      addToast('info', t('delete') + ': ' + t('stopped'));
-      return;
+    const powerAction = actionType.replace('_', '-'); // e.g. power-on, power-off, reboot, delete
+    const res = await callAjax('arvan_server_power', {
+      resource_id: serverId,
+      power_action: powerAction,
+    });
+
+    if (res && res.success) {
+      if (actionType === 'delete') {
+        setServers((prev) => prev.filter((s) => s.id !== serverId));
+        addToast('info', res.data?.message || (t('delete') + ': ' + t('stopped')));
+      } else {
+        setServers((prev) =>
+          prev.map((s) => {
+            if (s.id === serverId) {
+              if (actionType === 'power_off') return { ...s, status: 'stopped' };
+              if (actionType === 'power_on') return { ...s, status: 'active' };
+              if (actionType === 'reboot') return { ...s, status: 'active' };
+            }
+            return s;
+          })
+        );
+        addToast('success', res.data?.message || t('Action completed successfully.'));
+      }
+    } else {
+      addToast('error', res.data?.message || t('Action failed.'));
     }
-
-    setServers((prev) =>
-      prev.map((s) => {
-        if (s.id === serverId) {
-          if (actionType === 'power_off') return { ...s, status: 'stopped' };
-          if (actionType === 'power_on') return { ...s, status: 'active' };
-          if (actionType === 'reboot') return { ...s, status: 'active' };
-        }
-        return s;
-      })
-    );
-
-    addToast('success', t('Action completed successfully.'));
   };
+
+  // Real-time synchronization for customer dashboard
+  const refreshDashboardData = useCallback(async () => {
+    if (!rawData.isLogged) return;
+    const res = await callAjax('arvan_get_dashboard_data');
+    if (res && res.success && res.data) {
+      if (typeof res.data.balance === 'number') setBalance(res.data.balance);
+      if (typeof res.data.burnRate === 'number') setBurnRate(res.data.burnRate);
+      if (typeof res.data.remainingHours === 'number') setRemainingHours(res.data.remainingHours);
+      if (Array.isArray(res.data.servers)) setServers(res.data.servers);
+    }
+  }, [callAjax, rawData.isLogged]);
+
+  // Periodic polling every 10 seconds to sync server lifecycle state changes
+  useEffect(() => {
+    if (!rawData.isLogged) return;
+    const interval = setInterval(() => {
+      refreshDashboardData();
+    }, 10000);
+    return () => clearInterval(interval);
+  }, [refreshDashboardData, rawData.isLogged]);
 
   const topupWallet = async (amount: number) => {
     await callAjax('arvan_topup_wallet', { amount });

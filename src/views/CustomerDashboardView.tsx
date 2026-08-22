@@ -60,6 +60,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
   onNavigateDeploy,
 }) => {
   const [copiedIp, setCopiedIp] = useState<string | null>(null);
+  const [loadingActionId, setLoadingActionId] = useState<number | null>(null);
 
   const isLowBalance = remainingHours > 0 && remainingHours < 12;
   const isSuspended = balance <= 0 && servers.length > 0;
@@ -68,6 +69,15 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
     navigator.clipboard.writeText(ip);
     setCopiedIp(ip);
     setTimeout(() => setCopiedIp(null), 2000);
+  };
+
+  const handlePowerAction = async (serverId: number, action: 'power_on' | 'power_off' | 'reboot' | 'delete') => {
+    setLoadingActionId(serverId);
+    try {
+      await onServerPower(serverId, action);
+    } finally {
+      setLoadingActionId(null);
+    }
   };
 
   return (
@@ -176,7 +186,9 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
               </div>
             </div>
             <div className="text-2xl font-black text-slate-900">
-              {burnRate > 0 ? `${formatNumber(remainingHours.toFixed(0), language)} ${t('hours')}` : `∞ ${t('unlimited')}`}
+              {burnRate > 0
+                ? `${formatNumber(Math.round(Number(remainingHours) || 0), language)} ${t('hours')}`
+                : `∞ ${t('unlimited')}`}
             </div>
           </CardContent>
         </Card>
@@ -296,20 +308,22 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
                             <Button
                               size="sm"
                               variant="outline"
-                              onClick={() => onServerPower(srv.id, 'power_on')}
+                              disabled={loadingActionId === srv.id}
+                              onClick={() => handlePowerAction(srv.id, 'power_on')}
                               className="h-8 px-2.5 text-xs gap-1 border-[var(--arvan-primary,#008b8b)]/50 text-[var(--arvan-primary,#008b8b)] hover:bg-[var(--arvan-primary-light,#e6f7f7)]"
                             >
-                              <Power className="h-3.5 w-3.5" />
+                              <Power className={`h-3.5 w-3.5 ${loadingActionId === srv.id ? 'animate-spin' : ''}`} />
                               <span>{t('powerOn')}</span>
                             </Button>
                           ) : (
                             <Button
                               size="sm"
                               variant="outline"
-                              onClick={() => onServerPower(srv.id, 'power_off')}
-                              className="h-8 px-2.5 text-xs gap-1"
+                              disabled={loadingActionId === srv.id}
+                              onClick={() => handlePowerAction(srv.id, 'power_off')}
+                              className="h-8 px-2.5 text-xs gap-1 border-amber-300 text-amber-700 hover:bg-amber-50"
                             >
-                              <Power className="h-3.5 w-3.5 text-slate-500" />
+                              <Power className={`h-3.5 w-3.5 text-amber-600 ${loadingActionId === srv.id ? 'animate-spin' : ''}`} />
                               <span>{t('powerOff')}</span>
                             </Button>
                           )}
@@ -317,19 +331,21 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
                           <Button
                             size="sm"
                             variant="secondary"
-                            onClick={() => onServerPower(srv.id, 'reboot')}
+                            disabled={loadingActionId === srv.id || srv.status === 'stopped' || srv.status === 'suspended'}
+                            onClick={() => handlePowerAction(srv.id, 'reboot')}
                             className="h-8 px-2.5 text-xs gap-1"
                           >
-                            <RotateCw className="h-3.5 w-3.5 text-blue-600" />
+                            <RotateCw className={`h-3.5 w-3.5 text-blue-600 ${loadingActionId === srv.id ? 'animate-spin' : ''}`} />
                             <span>{t('reboot')}</span>
                           </Button>
 
                           <Button
                             size="sm"
                             variant="ghost"
+                            disabled={loadingActionId === srv.id}
                             onClick={() => {
                               if (confirm(t('confirmDelete'))) {
-                                onServerPower(srv.id, 'delete');
+                                handlePowerAction(srv.id, 'delete');
                               }
                             }}
                             className="h-8 px-2.5 text-xs text-slate-400 hover:text-arvan-rose hover:bg-rose-50"

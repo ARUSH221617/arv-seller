@@ -129,13 +129,15 @@ class Arvan_Admin {
 					'id'                => (int) $res->id,
 					'user_id'           => (int) $res->user_id,
 					'userName'          => ! empty( $res->display_name ) ? $res->display_name : 'Customer #' . $res->user_id,
-					'service_type'      => $res->service_type,
-					'name'              => $res->resource_name,
-					'arvan_resource_id' => $res->arvan_uuid,
-					'region'            => 'ir-thr-c2',
-					'status'            => $res->status,
-					'hourly_rate'       => (float) $res->hourly_rate,
-					'created_at'        => $res->created_at,
+					'userEmail'         => ! empty( $res->user_email ) ? $res->user_email : '-',
+					'service_type'      => ! empty( $res->service_type ) ? $res->service_type : 'ecc',
+					'name'              => ! empty( $res->name ) ? $res->name : ( ! empty( $res->resource_name ) ? $res->resource_name : 'Resource #' . $res->id ),
+					'arvan_resource_id' => ! empty( $res->arvan_resource_id ) ? $res->arvan_resource_id : ( ! empty( $res->arvan_uuid ) ? $res->arvan_uuid : '-' ),
+					'region'            => ! empty( $res->region ) ? $res->region : 'ir-thr-c2',
+					'status'            => ! empty( $res->status ) ? $res->status : 'active',
+					'hourly_rate'       => isset( $res->hourly_cost ) ? (float) $res->hourly_cost : ( isset( $res->hourly_rate ) ? (float) $res->hourly_rate : 0.0 ),
+					'last_metered'      => ! empty( $res->last_metered_at ) ? $res->last_metered_at : '-',
+					'created_at'        => ! empty( $res->created_at ) ? $res->created_at : '',
 				);
 			}
 		}
@@ -782,6 +784,10 @@ class Arvan_Admin {
 			$api_client->power_off_server( $res->arvan_resource_id, $region );
 			$wpdb->update( $table_resources, array( 'status' => 'stopped' ), array( 'id' => $res->id ), array( '%s' ), array( '%d' ) );
 			wp_send_json_success( array( 'status' => 'stopped', 'message' => __( 'Instance powered off by administrator.', 'arv-seller' ) ) );
+		} elseif ( 'power_on' === $action ) {
+			$api_client->power_on_server( $res->arvan_resource_id, $region );
+			$wpdb->update( $table_resources, array( 'status' => 'active' ), array( 'id' => $res->id ), array( '%s' ), array( '%d' ) );
+			wp_send_json_success( array( 'status' => 'active', 'message' => __( 'Instance powered on by administrator.', 'arv-seller' ) ) );
 		} elseif ( 'force_delete' === $action ) {
 			$api_client->delete_server( $res->arvan_resource_id, $region );
 			$wpdb->delete( $table_resources, array( 'id' => $res->id ), array( '%d' ) );
