@@ -1,21 +1,22 @@
-# ArvanCloud REST API Complete Technical Reference
+# ArvanCloud IaaS / Cloud Server REST API Technical Reference
 
 ## 1. Overview & Authentication
 
-ArvanCloud provides RESTful APIs for programmatic provisioning and management of its cloud infrastructure services. All endpoints communicate over HTTPS using standard HTTP verbs, JSON payloads, and standard HTTP response status codes.
+ArvanCloud provides RESTful APIs for programmatic provisioning and lifecycle management of its Cloud Server (IaaS / ECC) infrastructure. All endpoints communicate over HTTPS using standard HTTP verbs, JSON payloads, and standard HTTP response status codes.
 
-* **Base API Gateway URL:** `https://napi.arvancloud.ir`
-* **Alternative / Redoc Documentation Portal:** `https://www.arvancloud.ir/fa/dev/api`
-* **API Versioning:** Versioned per service domain (e.g., `/ecc/v1`, `/cdn/4.0`, `/storage/v1`, `/paas/1.25`, `/vod/2.0`).
+* **IaaS v3 Regional API Gateway:** `https://ecc.{region}.arvanapis.ir/v3` (e.g. `https://ecc.ir-thr-ba1.arvanapis.ir/v3`)
+* **Legacy Fallback Gateway:** `https://napi.arvancloud.ir`
+* **Official OpenAPI Specification:** [iaas-3.0.0.yaml](file:///c:/Users/reza2/Local%20Sites/seller/app/public/wp-content/plugins/arv-seller/docs/iaas-3.0.0.yaml)
+* **API Version:** IaaS v3.0.1 (OpenAPI 3.0.0)
 
 ### 1.1 Authentication & Request Headers
 Authentication is performed via API Keys (Machine User Tokens) generated in the ArvanCloud User Panel under **User Profile > API Keys / Machine Users**.
 
-All incoming requests must include the `Authorization` header with the `Apikey` prefix:
+All incoming requests must include the `Authorization` header with the `Apikey` prefix or Bearer token:
 
 ```http
-GET /ecc/v1/regions HTTP/1.1
-Host: napi.arvancloud.ir
+GET /availability-zones HTTP/1.1
+Host: ecc.ir-thr-ba1.arvanapis.ir
 Authorization: Apikey YOUR_ARVAN_API_KEY
 Content-Type: application/json
 Accept: application/json
@@ -38,44 +39,49 @@ Accept: application/json
 
 ---
 
-## 2. Cloud Server / IaaS (ECC) API Reference
+## 2. Cloud Server / IaaS API Reference
 
-**Base Path:** `/ecc/v1`
-
-### 2.1 Get Available Regions
-Returns the list of active datacenter regions and their operational status.
+### 2.1 Get Availability Zones
+Returns the list of active datacenter availability zones and their operational status.
 
 ```http
-GET /ecc/v1/regions
+GET /availability-zones
 ```
 
 **Response (`200 OK`):**
 ```json
 {
+  "message": "Availability zones retrieved successfully",
   "data": [
     {
-      "id": "ir-thr-c2",
-      "name": "Tehran - Forough",
+      "code": "ir-thr-ba1",
+      "name": "Bamdad (Tehran)",
       "city": "Tehran",
       "country": "Iran",
-      "flag": "🇮🇷",
-      "status": "active"
+      "region": "ir-central1",
+      "zone": "ir-thr-ba1",
+      "state": "UP",
+      "isVolumeBacked": true
     },
     {
-      "id": "ir-thr-sh1",
-      "name": "Tehran - Shahryar",
+      "code": "ir-thr-sh1",
+      "name": "Shahryar (Tehran)",
       "city": "Tehran",
       "country": "Iran",
-      "flag": "🇮🇷",
-      "status": "active"
+      "region": "ir-central1",
+      "zone": "ir-thr-sh1",
+      "state": "UP",
+      "isVolumeBacked": true
     },
     {
-      "id": "ir-tbz-dc1",
-      "name": "Tabriz - Northwest",
+      "code": "ir-tbz-sh1",
+      "name": "Shahriar (Tabriz)",
       "city": "Tabriz",
       "country": "Iran",
-      "flag": "🇮🇷",
-      "status": "active"
+      "region": "ir-northwest1",
+      "zone": "ir-tbz-sh1",
+      "state": "UP",
+      "isVolumeBacked": true
     }
   ]
 }
@@ -83,49 +89,77 @@ GET /ecc/v1/regions
 
 ---
 
-### 2.2 Get Server Hardware Sizes / Flavors
-Retrieves the list of virtual instance flavors (CPU, RAM, Disk, Price) for a specified datacenter region.
+### 2.2 Get Server Hardware Flavors / Plans
+Retrieves the list of virtual instance flavors (CPU, RAM, Disk, Price) for the target availability zone.
 
 ```http
-GET /ecc/v1/regions/{region}/sizes
+GET /flavors
 ```
-
-**Parameters:**
-* `region` (path, string): Datacenter identifier (e.g., `ir-thr-c2`).
 
 **Response (`200 OK`):**
 ```json
 {
+  "message": "Flavors retrieved successfully",
   "data": [
+    {
+      "id": "g2-1-2-0",
+      "name": "Starter Eco G2",
+      "cpuCores": 1,
+      "memoryMegaBytes": 2048,
+      "diskGigaBytes": 25,
+      "pricePerHour": 250,
+      "pricePerMonth": 180000,
+      "generation": "G2",
+      "type": "STANDARD",
+      "availabilityZone": "ir-thr-ba1"
+    },
     {
       "id": "g1-2-4",
       "name": "General 2C-4G",
-      "vcpus": 2,
-      "ram": 4096,
-      "disk": 25,
-      "hourly_price": 450,
-      "monthly_price": 324000,
-      "category": "general"
+      "cpuCores": 2,
+      "memoryMegaBytes": 4096,
+      "diskGigaBytes": 40,
+      "pricePerHour": 450,
+      "pricePerMonth": 324000,
+      "generation": "G2",
+      "type": "STANDARD",
+      "availabilityZone": "ir-thr-ba1"
     },
     {
       "id": "g1-4-8",
       "name": "General 4C-8G",
-      "vcpus": 4,
-      "ram": 8192,
-      "disk": 50,
-      "hourly_price": 890,
-      "monthly_price": 640800,
-      "category": "general"
+      "cpuCores": 4,
+      "memoryMegaBytes": 8192,
+      "diskGigaBytes": 60,
+      "pricePerHour": 890,
+      "pricePerMonth": 640800,
+      "generation": "G2",
+      "type": "STANDARD",
+      "availabilityZone": "ir-thr-ba1"
     },
     {
-      "id": "c1-8-16",
-      "name": "Compute 8C-16G",
-      "vcpus": 8,
-      "ram": 16384,
-      "disk": 100,
-      "hourly_price": 1750,
-      "monthly_price": 1260000,
-      "category": "compute_optimized"
+      "id": "c1-4-4",
+      "name": "Compute 4C-4G",
+      "cpuCores": 4,
+      "memoryMegaBytes": 4096,
+      "diskGigaBytes": 40,
+      "pricePerHour": 690,
+      "pricePerMonth": 496800,
+      "generation": "C1",
+      "type": "COMPUTE",
+      "availabilityZone": "ir-thr-ba1"
+    },
+    {
+      "id": "m1-2-8",
+      "name": "Memory 2C-8G",
+      "cpuCores": 2,
+      "memoryMegaBytes": 8192,
+      "diskGigaBytes": 50,
+      "pricePerHour": 650,
+      "pricePerMonth": 468000,
+      "generation": "M1",
+      "type": "MEMORY",
+      "availabilityZone": "ir-thr-ba1"
     }
   ]
 }
@@ -133,133 +167,257 @@ GET /ecc/v1/regions/{region}/sizes
 
 ---
 
-### 2.3 Get Operating System Images
-Returns standard and marketplace OS templates available for server provisioning.
+### 2.3 Calculate Flavor Price with Extra Volume
+Calculates server pricing dynamically when adding extra NVMe volume storage.
 
 ```http
-GET /ecc/v1/regions/{region}/images
-```
-
-**Response (`200 OK`):**
-```json
-{
-  "data": [
-    {
-      "id": "ubuntu-22.04",
-      "name": "Ubuntu 22.04 LTS (Jammy Jellyfish)",
-      "os_family": "ubuntu",
-      "version": "22.04",
-      "min_disk": 20
-    },
-    {
-      "id": "ubuntu-24.04",
-      "name": "Ubuntu 24.04 LTS (Noble Numbat)",
-      "os_family": "ubuntu",
-      "version": "24.04",
-      "min_disk": 20
-    },
-    {
-      "id": "debian-12",
-      "name": "Debian 12 (Bookworm)",
-      "os_family": "debian",
-      "version": "12",
-      "min_disk": 20
-    },
-    {
-      "id": "almalinux-9",
-      "name": "AlmaLinux 9",
-      "os_family": "almalinux",
-      "version": "9",
-      "min_disk": 20
-    },
-    {
-      "id": "windows-server-2022",
-      "name": "Windows Server 2022 Standard",
-      "os_family": "windows",
-      "version": "2022",
-      "min_disk": 40
-    }
-  ]
-}
-```
-
----
-
-### 2.4 Create Cloud Server Instance
-Provisions a new virtual machine instance within the specified datacenter region.
-
-```http
-POST /ecc/v1/regions/{region}/servers
+POST /flavors/{id}/calculate
 ```
 
 **Request Body:**
 ```json
 {
-  "name": "web-production-01",
-  "size_id": "g1-2-4",
-  "image_id": "ubuntu-22.04",
-  "disk_size": 40,
-  "ssh_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC... user@example.com",
-  "password": "SecurePassword123!",
-  "security_groups": ["default"],
-  "enable_ipv6": false
+  "volumeSize": 50
 }
 ```
 
-**Response (`201 Created`):**
+**Response (`200 OK`):**
 ```json
 {
+  "message": "Price calculated successfully",
   "data": {
-    "id": "srv-9a8b7c6d-5e4f-3a2b-1c0d-e9f8a7b6c5d4",
-    "name": "web-production-01",
-    "status": "building",
-    "region": "ir-thr-c2",
-    "ip_address": "185.143.232.45",
-    "size": {
-      "id": "g1-2-4",
-      "vcpus": 2,
-      "ram": 4096,
-      "disk": 40
-    },
-    "created_at": "2026-08-20T12:00:00Z"
+    "pricePerHour": 650,
+    "pricePerMonth": 468000,
+    "volumeSize": 50
   }
 }
 ```
 
 ---
 
-### 2.5 Server Lifecycle & Power Controls
+### 2.4 Get Operating System Images
+Returns standard and custom OS templates available for server provisioning.
+
+```http
+GET /images
+```
+
+**Response (`200 OK`):**
+```json
+{
+  "message": "Images retrieved successfully",
+  "data": [
+    {
+      "id": "ubuntu-22.04",
+      "name": "Ubuntu 22.04 LTS (Jammy Jellyfish)",
+      "osType": "LINUX",
+      "osVersion": "22.04",
+      "minDiskGigaBytes": 20,
+      "minRamMegaBytes": 1024,
+      "status": "ACTIVE",
+      "type": "PUBLIC",
+      "availabilityZone": "ir-thr-ba1"
+    },
+    {
+      "id": "ubuntu-24.04",
+      "name": "Ubuntu 24.04 LTS (Noble Numbat)",
+      "osType": "LINUX",
+      "osVersion": "24.04",
+      "minDiskGigaBytes": 20,
+      "minRamMegaBytes": 1024,
+      "status": "ACTIVE",
+      "type": "PUBLIC",
+      "availabilityZone": "ir-thr-ba1"
+    },
+    {
+      "id": "debian-12",
+      "name": "Debian 12 (Bookworm)",
+      "osType": "LINUX",
+      "osVersion": "12",
+      "minDiskGigaBytes": 20,
+      "minRamMegaBytes": 1024,
+      "status": "ACTIVE",
+      "type": "PUBLIC",
+      "availabilityZone": "ir-thr-ba1"
+    },
+    {
+      "id": "almalinux-9",
+      "name": "AlmaLinux 9 Enterprise",
+      "osType": "LINUX",
+      "osVersion": "9",
+      "minDiskGigaBytes": 20,
+      "minRamMegaBytes": 1024,
+      "status": "ACTIVE",
+      "type": "PUBLIC",
+      "availabilityZone": "ir-thr-ba1"
+    },
+    {
+      "id": "windows-server-2022",
+      "name": "Windows Server 2022 Standard",
+      "osType": "WINDOWS",
+      "osVersion": "2022",
+      "minDiskGigaBytes": 40,
+      "minRamMegaBytes": 2048,
+      "status": "ACTIVE",
+      "type": "PUBLIC",
+      "availabilityZone": "ir-thr-ba1"
+    }
+  ]
+}
+```
+
+---
+
+### 2.5 Create Cloud Server Instance
+Provisions a new virtual machine instance adhering to the OpenAPI `CreateServer` schema.
+
+```http
+POST /servers
+```
+
+**Request Body:**
+```json
+{
+  "availabilityZone": "ir-thr-ba1",
+  "flavorId": "g1-2-4",
+  "imageId": "ubuntu-22.04",
+  "name": "web-production-01",
+  "rootVolumeSizeGigaBytes": 40,
+  "enableIpv4": true,
+  "enableIpv6": false,
+  "sshKeyName": "admin-ssh-key",
+  "firewallNames": ["default-web-firewall"]
+}
+```
+
+**Response (`201 Created`):**
+```json
+{
+  "message": "Server created successfully",
+  "data": {
+    "id": "srv-9a8b7c6d-5e4f-3a2b-1c0d-e9f8a7b6c5d4",
+    "name": "web-production-01",
+    "state": "ACTIVE",
+    "taskState": null,
+    "availabilityZone": "ir-thr-ba1",
+    "flavor": {
+      "id": "g1-2-4",
+      "name": "General 2C-4G",
+      "cpuCores": 2,
+      "ramMegaBytes": 4096,
+      "rootDiskGigaBytes": 40
+    },
+    "image": {
+      "id": "ubuntu-22.04",
+      "name": "Ubuntu 22.04 LTS",
+      "os": "Linux",
+      "version": "22.04"
+    },
+    "ipAddresses": [
+      {
+        "ipAddress": "185.143.232.45",
+        "isPublic": true,
+        "version": "4",
+        "networkName": "public"
+      }
+    ],
+    "createDate": "2026-08-22T08:00:00Z"
+  }
+}
+```
+
+---
+
+### 2.6 Server Lifecycle & Power Controls
 
 #### Power On Server
 ```http
-POST /ecc/v1/regions/{region}/servers/{server_id}/power-on
+POST /servers/{id}/power-on
 ```
 
 #### Power Off Server (Suspend / Stop)
 Used by the plugin when customer wallet credits reach zero.
 ```http
-POST /ecc/v1/regions/{region}/servers/{server_id}/power-off
+POST /servers/{id}/power-off
 ```
 
 #### Reboot Server
 ```http
-POST /ecc/v1/regions/{region}/servers/{server_id}/reboot
+POST /servers/{id}/reboot
+```
+
+#### Rename Server
+```http
+POST /servers/{id}/rename
+```
+
+#### Reset Root Password
+```http
+POST /servers/{id}/reset-root-password
+```
+
+#### Resize Hardware Flavor
+```http
+POST /servers/{id}/resize
+```
+
+#### Rescue & Unrescue Mode
+```http
+POST /servers/{id}/rescue
+POST /servers/{id}/unrescue
 ```
 
 #### Delete / Purge Server
 Permanently destroys the virtual server and detaches associated storage.
 ```http
-DELETE /ecc/v1/regions/{region}/servers/{server_id}
+DELETE /servers/{id}
+```
+
+---
+
+### 2.7 Storage Volumes, Firewalls & Private Networks
+
+#### List Volumes
+```http
+GET /volumes
+```
+
+#### Create Volume
+```http
+POST /volumes
+```
+```json
+{
+  "availabilityZone": "ir-thr-ba1",
+  "name": "attached-data-volume",
+  "sizeGigaBytes": 100
+}
+```
+
+#### Attach & Detach Volume
+```http
+POST /volumes/{volumeId}/attach
+POST /volumes/{volumeId}/detach
+```
+
+#### Firewalls & Security Groups
+```http
+GET /firewalls
+```
+
+#### Private VPC Networks
+```http
+GET /networks
 ```
 
 ---
 
 ## 3. WordPress Plugin Integration Architecture
 
-The `arv-seller` plugin encapsulates this Cloud Server (ECC) API specification inside [class-arvan-api-client.php](file:///c:/Users/reza2/Local%20Sites/seller/app/public/wp-content/plugins/arv-seller/includes/class-arvan-api-client.php):
+The `arv-seller` plugin encapsulates this Cloud Server (IaaS) API specification inside [class-arvan-api-client.php](file:///c:/Users/reza2/Local%20Sites/seller/app/public/wp-content/plugins/arv-seller/includes/class-arvan-api-client.php):
 
-1. **Central Dispatcher:** Uses WordPress native `wp_remote_request()` with timeout safeguards and SSL verification.
-2. **Transient Caching:** Automatically caches read-only lookups (`GET /ecc/v1/regions`, `GET /ecc/v1/regions/{region}/sizes`, `GET /ecc/v1/regions/{region}/images`) with configurable TTL (default: 3600 seconds) to ensure sub-100ms response times for frontend configurators.
+1. **Central Regional Dispatcher:** Uses WordPress native `wp_remote_request()` with dynamic regional endpoint routing (`https://ecc.{region}.arvanapis.ir/v3`).
+2. **Transient Caching:** Automatically caches read-only lookups (`GET /availability-zones`, `GET /flavors`, `GET /images`) with configurable TTL (default: 3600 seconds) to ensure sub-100ms response times for frontend configurators.
 3. **Error Normalization:** Converts raw API error responses and HTTP status codes into standard `WP_Error` objects for graceful UI handling.
-4. **Lifecycle Control:** Dispatches instant power commands (`power-on`, `power-off`, `reboot`, `delete`) and synchronizes status with the local `wp_arvan_resources` database.
-
+4. **Lifecycle Control:** Dispatches instant power commands (`power-on`, `power-off`, `reboot`, `delete`, `rescue`, `resize`) and synchronizes status with the local `wp_arvan_resources` database.
+5. **Sandbox Mock Simulation Engine:** Complete OpenAPI v3 schema-compliant mock engine enabling full offline testing and live fallback.

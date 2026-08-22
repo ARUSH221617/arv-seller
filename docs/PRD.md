@@ -157,10 +157,9 @@ The plugin normalizes all ArvanCloud API responses into WordPress `WP_Error` obj
 
 ### 5.3 Transient Caching Architecture
 To guarantee frontend response times $< 100\text{ ms}$ and protect against ArvanCloud API rate limiting, the API client automatically caches read-only lookups in WordPress transients:
-* Datacenter Regions (`/ecc/v1/regions`): **3,600 seconds (1 hour)**
-* Hardware Flavors / Sizes (`/ecc/v1/regions/{region}/sizes`): **3,600 seconds (1 hour)**
-* OS Images (`/ecc/v1/regions/{region}/images`): **3,600 seconds (1 hour)**
-* CDN Domains list (`/cdn/4.0/domains`): **300 seconds (5 minutes)**
+* Datacenter Regions (`/ecc/v1/regions` or `/availability-zones`): **3,600 seconds (1 hour)**
+* Hardware Flavors / Sizes (`/ecc/v1/regions/{region}/sizes` or `/flavors`): **3,600 seconds (1 hour)**
+* OS Images (`/ecc/v1/regions/{region}/images` or `/images`): **3,600 seconds (1 hour)**
 
 ---
 
@@ -274,10 +273,6 @@ The plugin registers custom rewrite rules under `/cloud-services/` with an isola
 | **g1-8-16 (General)** | 8 vCPU | 16 GB | 100 GB | **1,750 IRT** | **1,260,000 IRT** |
 | **c1-4-4 (Compute)** | 4 vCPU | 4 GB | 40 GB | **690 IRT** | **496,800 IRT** |
 | **m1-2-8 (Memory)** | 2 vCPU | 8 GB | 50 GB | **650 IRT** | **468,000 IRT** |
-
-#### CDN & Storage Rates
-* **CDN Packages:** Basic Free (`0 IRT`), Pro (`150,000 IRT/mo`), Enterprise (`650,000 IRT/mo`).
-* **Object Storage:** `200 IRT / GB / Month` (~`0.27 IRT / GB / Hour`), Inbound Free, Outbound `180 IRT / GB`, PUT/POST `10 IRT / 1,000 reqs`, GET/HEAD `2 IRT / 1,000 reqs`.
 
 #### 6.5.2 Reseller Markup Formulas
 $$\text{Customer Retail Price} = \text{Base Wholesale Cost} \times \left( 1 + \frac{\text{Markup Percentage}}{100} \right) + \text{Fixed Margin}$$
