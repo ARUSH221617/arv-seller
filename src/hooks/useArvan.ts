@@ -58,10 +58,10 @@ export function useArvan() {
 
   // Catalog State
   const [regions] = useState<DatacenterRegion[]>(rawData.initialData?.regions || [
-    { id: 'ir-thr-ba1', code: 'ir-thr-ba1', zone: 'ir-thr-ba1', region: 'ir-central1', name: 'Bamdad (Tehran)', city: 'Tehran', country: 'Iran', flag: '🇮🇷', status: 'active', state: 'UP', isVolumeBacked: true, latency: '12ms' },
-    { id: 'ir-thr-sh1', code: 'ir-thr-sh1', zone: 'ir-thr-sh1', region: 'ir-central1', name: 'Shahryar (Tehran)', city: 'Tehran', country: 'Iran', flag: '🇮🇷', status: 'active', state: 'UP', isVolumeBacked: true, latency: '15ms' },
-    { id: 'ir-tbz-sh1', code: 'ir-tbz-sh1', zone: 'ir-tbz-sh1', region: 'ir-northwest1', name: 'Shahriar (Tabriz)', city: 'Tabriz', country: 'Iran', flag: '🇮🇷', status: 'active', state: 'UP', isVolumeBacked: true, latency: '18ms' },
-    { id: 'ir-central1-a', code: 'ir-central1-a', zone: 'ir-central1-a', region: 'ir-central1', name: 'Forough (Central)', city: 'Tehran', country: 'Iran', flag: '🇮🇷', status: 'active', state: 'UP', isVolumeBacked: true, latency: '14ms' },
+    { id: 'ir-thr-ba1', code: 'ir-thr-ba1', zone: 'ir-thr-ba1', region: 'ir-central1', name: 'Bamdad (Tehran)', city: 'Tehran', country: 'Iran', flag: '🇮🇷', status: 'active', state: 'UP', isVolumeBacked: true },
+    { id: 'ir-thr-sh1', code: 'ir-thr-sh1', zone: 'ir-thr-sh1', region: 'ir-central1', name: 'Shahryar (Tehran)', city: 'Tehran', country: 'Iran', flag: '🇮🇷', status: 'active', state: 'UP', isVolumeBacked: true },
+    { id: 'ir-tbz-sh1', code: 'ir-tbz-sh1', zone: 'ir-tbz-sh1', region: 'ir-northwest1', name: 'Shahriar (Tabriz)', city: 'Tabriz', country: 'Iran', flag: '🇮🇷', status: 'active', state: 'UP', isVolumeBacked: true },
+    { id: 'ir-central1-a', code: 'ir-central1-a', zone: 'ir-central1-a', region: 'ir-central1', name: 'Forough (Central)', city: 'Tehran', country: 'Iran', flag: '🇮🇷', status: 'active', state: 'UP', isVolumeBacked: true },
   ]);
 
   const [flavors] = useState<HardwareFlavor[]>(rawData.initialData?.flavors || [

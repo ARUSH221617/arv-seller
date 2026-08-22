@@ -216,16 +216,13 @@ export const ServerConfiguratorView: React.FC<ServerConfiguratorViewProps> = ({
                       >
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-2xl">{region.flag}</span>
-                          {/* Latency indicator OR selected checkmark — never overlaps */}
+                          {/* Selected checkmark or operational status indicator */}
                           {isSelected ? (
                             <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--arvan-primary,#008b8b)] text-white shadow-sm">
                               <Check className="h-3.5 w-3.5" />
                             </div>
                           ) : (
-                            <div className="flex items-center gap-1.5">
-                              <span className="arvan-dot arvan-dot-green" />
-                              <span className="text-[11px] font-medium text-slate-500">{toPersianDigits(region.latency || '15ms', language)}</span>
-                            </div>
+                            <span className="arvan-dot arvan-dot-green" />
                           )}
                         </div>
                         <div className="font-bold text-sm text-slate-900 mb-0.5">{t(region.name) || region.name}</div>
