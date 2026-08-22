@@ -58,31 +58,33 @@ export function useArvan() {
 
   // Catalog State
   const [regions] = useState<DatacenterRegion[]>(rawData.initialData?.regions || [
-    { id: 'ir-thr-c2', name: 'Tehran - Forough', city: 'Tehran', country: 'Iran', flag: '🇮🇷', status: 'active', latency: '12ms' },
-    { id: 'ir-thr-sh1', name: 'Tehran - Shahryar', city: 'Tehran', country: 'Iran', flag: '🇮🇷', status: 'active', latency: '15ms' },
-    { id: 'ir-tbz-dc1', name: 'Tabriz - Northwest', city: 'Tabriz', country: 'Iran', flag: '🇮🇷', status: 'active', latency: '18ms' },
+    { id: 'ir-thr-ba1', code: 'ir-thr-ba1', zone: 'ir-thr-ba1', region: 'ir-central1', name: 'Bamdad (Tehran)', city: 'Tehran', country: 'Iran', flag: '🇮🇷', status: 'active', state: 'UP', isVolumeBacked: true, latency: '12ms' },
+    { id: 'ir-thr-sh1', code: 'ir-thr-sh1', zone: 'ir-thr-sh1', region: 'ir-central1', name: 'Shahryar (Tehran)', city: 'Tehran', country: 'Iran', flag: '🇮🇷', status: 'active', state: 'UP', isVolumeBacked: true, latency: '15ms' },
+    { id: 'ir-tbz-sh1', code: 'ir-tbz-sh1', zone: 'ir-tbz-sh1', region: 'ir-northwest1', name: 'Shahriar (Tabriz)', city: 'Tabriz', country: 'Iran', flag: '🇮🇷', status: 'active', state: 'UP', isVolumeBacked: true, latency: '18ms' },
+    { id: 'ir-central1-a', code: 'ir-central1-a', zone: 'ir-central1-a', region: 'ir-central1', name: 'Forough (Central)', city: 'Tehran', country: 'Iran', flag: '🇮🇷', status: 'active', state: 'UP', isVolumeBacked: true, latency: '14ms' },
   ]);
 
   const [flavors] = useState<HardwareFlavor[]>(rawData.initialData?.flavors || [
-    { id: 'g1-1-2', name: 'Starter Eco', category: 'general', vcpus: 1, ram_mb: 2048, disk_gb: 25, hourly_cost: 300 },
-    { id: 'g1-2-4', name: 'Standard General', category: 'general', vcpus: 2, ram_mb: 4096, disk_gb: 40, hourly_cost: 540, is_popular: true },
-    { id: 'g1-4-8', name: 'Performance Pro', category: 'general', vcpus: 4, ram_mb: 8192, disk_gb: 60, hourly_cost: 1068 },
-    { id: 'g1-8-16', name: 'Enterprise Ultra', category: 'general', vcpus: 8, ram_mb: 16384, disk_gb: 100, hourly_cost: 2100 },
-    { id: 'c1-4-4', name: 'Compute Master', category: 'compute', vcpus: 4, ram_mb: 4096, disk_gb: 40, hourly_cost: 828 },
-    { id: 'm1-2-8', name: 'Memory Master', category: 'memory', vcpus: 2, ram_mb: 8192, disk_gb: 50, hourly_cost: 780 },
+    { id: 'g2-1-2-0', name: 'Starter Eco G2', category: 'general', vcpus: 1, ram_mb: 2048, disk_gb: 25, hourly_cost: 300, cpuCores: 1, memoryMegaBytes: 2048, diskGigaBytes: 25, pricePerHour: 250, pricePerMonth: 180000, generation: 'G2', type: 'STANDARD' },
+    { id: 'g1-1-2', name: 'General 1C-2G', category: 'general', vcpus: 1, ram_mb: 2048, disk_gb: 25, hourly_cost: 300, cpuCores: 1, memoryMegaBytes: 2048, diskGigaBytes: 25, pricePerHour: 250, pricePerMonth: 180000, generation: 'G1', type: 'STANDARD' },
+    { id: 'g1-2-4', name: 'Standard General', category: 'general', vcpus: 2, ram_mb: 4096, disk_gb: 40, hourly_cost: 540, is_popular: true, cpuCores: 2, memoryMegaBytes: 4096, diskGigaBytes: 40, pricePerHour: 450, pricePerMonth: 324000, generation: 'G2', type: 'STANDARD' },
+    { id: 'g1-4-8', name: 'Performance Pro', category: 'general', vcpus: 4, ram_mb: 8192, disk_gb: 60, hourly_cost: 1068, cpuCores: 4, memoryMegaBytes: 8192, diskGigaBytes: 60, pricePerHour: 890, pricePerMonth: 640800, generation: 'G2', type: 'STANDARD' },
+    { id: 'g1-8-16', name: 'Enterprise Ultra', category: 'general', vcpus: 8, ram_mb: 16384, disk_gb: 100, hourly_cost: 2100, cpuCores: 8, memoryMegaBytes: 16384, diskGigaBytes: 100, pricePerHour: 1750, pricePerMonth: 1260000, generation: 'G2', type: 'STANDARD' },
+    { id: 'c1-4-4', name: 'Compute Master', category: 'compute', vcpus: 4, ram_mb: 4096, disk_gb: 40, hourly_cost: 828, cpuCores: 4, memoryMegaBytes: 4096, diskGigaBytes: 40, pricePerHour: 690, pricePerMonth: 496800, generation: 'C1', type: 'COMPUTE' },
+    { id: 'm1-2-8', name: 'Memory Master', category: 'memory', vcpus: 2, ram_mb: 8192, disk_gb: 50, hourly_cost: 780, cpuCores: 2, memoryMegaBytes: 8192, diskGigaBytes: 50, pricePerHour: 650, pricePerMonth: 468000, generation: 'M1', type: 'MEMORY' },
   ]);
 
   const [images] = useState<OsImage[]>(rawData.initialData?.images || [
-    { id: 'ubuntu-22.04', name: 'Ubuntu 22.04 LTS', distro: 'ubuntu', version: 'Jammy Jellyfish', arch: 'x86_64' },
-    { id: 'ubuntu-24.04', name: 'Ubuntu 24.04 LTS', distro: 'ubuntu', version: 'Noble Numbat', arch: 'x86_64' },
-    { id: 'debian-12', name: 'Debian 12 Bookworm', distro: 'debian', version: '12.5', arch: 'x86_64' },
-    { id: 'almalinux-9', name: 'AlmaLinux 9 Enterprise', distro: 'almalinux', version: '9.3', arch: 'x86_64' },
-    { id: 'windows-2022', name: 'Windows Server 2022', distro: 'windows', version: 'Standard RDP', arch: 'x86_64' },
+    { id: 'ubuntu-22.04', name: 'Ubuntu 22.04 LTS', distro: 'ubuntu', version: 'Jammy Jellyfish', arch: 'x86_64', osType: 'LINUX', osVersion: '22.04', minDiskGigaBytes: 20, minRamMegaBytes: 1024, status: 'ACTIVE', type: 'PUBLIC' },
+    { id: 'ubuntu-24.04', name: 'Ubuntu 24.04 LTS', distro: 'ubuntu', version: 'Noble Numbat', arch: 'x86_64', osType: 'LINUX', osVersion: '24.04', minDiskGigaBytes: 20, minRamMegaBytes: 1024, status: 'ACTIVE', type: 'PUBLIC' },
+    { id: 'debian-12', name: 'Debian 12 Bookworm', distro: 'debian', version: '12.5', arch: 'x86_64', osType: 'LINUX', osVersion: '12', minDiskGigaBytes: 20, minRamMegaBytes: 1024, status: 'ACTIVE', type: 'PUBLIC' },
+    { id: 'almalinux-9', name: 'AlmaLinux 9 Enterprise', distro: 'almalinux', version: '9.3', arch: 'x86_64', osType: 'LINUX', osVersion: '9', minDiskGigaBytes: 20, minRamMegaBytes: 1024, status: 'ACTIVE', type: 'PUBLIC' },
+    { id: 'windows-server-2022', name: 'Windows Server 2022', distro: 'windows', version: 'Standard RDP', arch: 'x86_64', osType: 'WINDOWS', osVersion: '2022', minDiskGigaBytes: 40, minRamMegaBytes: 2048, status: 'ACTIVE', type: 'PUBLIC' },
   ]);
 
   const [servers, setServers] = useState<CloudServerInstance[]>(rawData.initialData?.servers || [
-    { id: 1, name: 'production-web-01', arvan_uuid: 'srv-98f12a-thr', status: 'active', region_id: 'ir-thr-c2', flavor_id: 'g1-2-4', image_id: 'ubuntu-22.04', disk_size: 40, public_ip: '185.143.232.44', hourly_rate: 540, created_at: '2026-08-20 14:30:00' },
-    { id: 2, name: 'db-redis-cache', arvan_uuid: 'srv-33b89c-tbz', status: 'active', region_id: 'ir-tbz-dc1', flavor_id: 'g1-2-4', image_id: 'ubuntu-22.04', disk_size: 40, public_ip: '185.143.235.19', hourly_rate: 540, created_at: '2026-08-20 16:15:00' },
+    { id: 1, name: 'production-web-01', arvan_uuid: 'srv-98f12a-thr', status: 'active', state: 'ACTIVE', region_id: 'ir-thr-ba1', availabilityZone: 'ir-thr-ba1', flavor_id: 'g1-2-4', image_id: 'ubuntu-22.04', disk_size: 40, public_ip: '185.143.232.44', hourly_rate: 540, created_at: '2026-08-20 14:30:00' },
+    { id: 2, name: 'db-redis-cache', arvan_uuid: 'srv-33b89c-tbz', status: 'active', state: 'ACTIVE', region_id: 'ir-tbz-sh1', availabilityZone: 'ir-tbz-sh1', flavor_id: 'g1-2-4', image_id: 'ubuntu-22.04', disk_size: 40, public_ip: '185.143.235.19', hourly_rate: 540, created_at: '2026-08-20 16:15:00' },
   ]);
 
   const [transactions, setTransactions] = useState<WalletTransaction[]>(rawData.initialData?.transactions || [
@@ -131,7 +133,11 @@ export function useArvan() {
     formData.append('action', action);
     formData.append('nonce', rawData.nonce);
     Object.entries(data).forEach(([k, v]) => {
-      formData.append(k, String(v));
+      if (typeof v === 'object' && v !== null) {
+        formData.append(k, JSON.stringify(v));
+      } else {
+        formData.append(k, String(v ?? ''));
+      }
     });
 
     try {
@@ -155,25 +161,33 @@ export function useArvan() {
 
     const res = await callAjax('arvan_deploy_server', {
       name: payload.name,
+      availabilityZone: payload.region_id,
       region: payload.region_id,
+      flavorId: payload.flavor_id,
       flavor_id: payload.flavor_id,
+      imageId: payload.image_id,
       image_id: payload.image_id,
+      rootVolumeSizeGigaBytes: payload.disk_size,
       disk_size: payload.disk_size,
+      sshKeyName: payload.ssh_key,
       ssh_key: payload.ssh_key,
       password: payload.password,
     });
 
-    if (res.success || res.data?.instance_uuid) {
+    if (res.success || res.data?.instance_uuid || res.data?.resource_id) {
+      const assignedIp = res.data?.ip_address || res.data?.public_ip || `185.143.${Math.floor(Math.random() * 200) + 10}.${Math.floor(Math.random() * 200) + 10}`;
       const newServer: CloudServerInstance = {
-        id: Date.now(),
+        id: res.data?.resource_id || Date.now(),
         name: payload.name,
-        arvan_uuid: res.data?.instance_uuid || `srv-${Math.random().toString(36).substring(2, 8)}`,
+        arvan_uuid: res.data?.arvan_id || res.data?.instance_uuid || `srv-${Math.random().toString(36).substring(2, 8)}`,
         status: 'active',
+        state: 'ACTIVE',
         region_id: payload.region_id,
+        availabilityZone: payload.region_id,
         flavor_id: payload.flavor_id,
         image_id: payload.image_id,
         disk_size: payload.disk_size,
-        public_ip: res.data?.public_ip || `185.143.${Math.floor(Math.random() * 200) + 10}.${Math.floor(Math.random() * 200) + 10}`,
+        public_ip: assignedIp,
         hourly_rate: cost,
         created_at: new Date().toISOString().replace('T', ' ').substring(0, 19),
       };

@@ -26,7 +26,7 @@ export function useAdminData() {
           markupPct: 20,
           fixedMargin: 0,
           currency: 'IRT',
-          defaultRegion: 'ir-thr-c2',
+          defaultRegion: 'ir-thr-ba1',
           storeName: 'ArvanCloud Reseller Store',
           supportEmail: 'support@cloud.local',
           supportPhone: '021-88888888',
@@ -42,9 +42,9 @@ export function useAdminData() {
           total_burn: 1430000,
         },
         resources: [
-          { id: 1, user_id: 1, userName: 'admin', name: 'srv-production-web', service_type: 'ecc_server', arvan_resource_id: 'srv-98f12a', region: 'ir-thr-c2', hourly_rate: 540, status: 'active', last_metered: '2026-08-20 15:00:00' },
+          { id: 1, user_id: 1, userName: 'admin', name: 'srv-production-web', service_type: 'ecc_server', arvan_resource_id: 'srv-98f12a', region: 'ir-thr-ba1', hourly_rate: 540, status: 'active', last_metered: '2026-08-20 15:00:00' },
           { id: 2, user_id: 2, userName: 'client_corp', name: 'db-redis-cluster', service_type: 'ecc_server', arvan_resource_id: 'srv-33b89c', region: 'ir-thr-sh1', hourly_rate: 1068, status: 'active', last_metered: '2026-08-20 15:00:00' },
-          { id: 3, user_id: 3, userName: 'dev_user', name: 'staging-api-01', service_type: 'ecc_server', arvan_resource_id: 'srv-77ac4d', region: 'ir-tbz-dc1', hourly_rate: 540, status: 'suspended', last_metered: '2026-08-20 14:00:00' },
+          { id: 3, user_id: 3, userName: 'dev_user', name: 'staging-api-01', service_type: 'ecc_server', arvan_resource_id: 'srv-77ac4d', region: 'ir-tbz-sh1', hourly_rate: 540, status: 'suspended', last_metered: '2026-08-20 14:00:00' },
         ],
         wallets: [
           { user_id: 1, userName: 'admin', userEmail: 'admin@seller.local', balance: 98920, burn_rate: 540, created_at: '2026-08-20 14:00:00' },

@@ -1,6 +1,6 @@
 <?php
 /**
- * Standalone Test Suite for ArvanCloud Reseller Plugin (Pricing & API Mock).
+ * Standalone Test Suite for ArvanCloud Reseller Plugin (Pricing & OpenAPI v3 IaaS Mock Engine).
  */
 
 if ( ! defined( 'WPINC' ) ) {
@@ -14,7 +14,7 @@ $mock_options = array(
 	'arvan_markup_percentage' => 20,
 	'arvan_fixed_margin'      => 0,
 	'arvan_currency'          => 'IRT',
-	'arvan_default_region'    => 'ir-thr-c2',
+	'arvan_default_region'    => 'ir-thr-ba1',
 	'arvan_sandbox_mode'      => 1,
 	'arvan_api_key'           => '',
 );
@@ -139,39 +139,93 @@ assert_test( 540.0 === $p1, "Base 450 IRT + 20% Markup = 540 IRT" );
 $p2 = Arvan_API_Client::calculate_price_with_markup( 1000, 15, 50 );
 assert_test( 1200.0 === $p2, "Base 1000 IRT + 15% Markup + 50 Fixed = 1200 IRT" );
 
-// 2. Arvan_API_Client Sandbox Mock Tests
-echo "\n--- 2. Arvan_API_Client Sandbox & REST Handlers ---\n";
+// 2. Arvan_API_Client OpenAPI v3 IaaS Endpoints & Sandbox Mock Tests
+echo "\n--- 2. Arvan_API_Client OpenAPI v3 IaaS & Mock Engine ---\n";
 $client = new Arvan_API_Client();
 
 $conn = $client->test_connection();
 assert_test( $conn['success'] === true, "test_connection() returns success in sandbox" );
 
+// Availability Zones (OpenAPI: GET /availability-zones)
+$zones = $client->get_availability_zones();
+assert_test( is_array( $zones ) && ! empty( $zones['data'] ) && count( $zones['data'] ) >= 3, "get_availability_zones() returns at least 3 availability zones" );
+assert_test( isset( $zones['data'][0]['code'] ) && isset( $zones['data'][0]['isVolumeBacked'] ), "get_availability_zones() contains OpenAPI standard fields (code, isVolumeBacked)" );
+
+// Backward-compatible get_regions()
 $regions = $client->get_regions();
-assert_test( is_array( $regions ) && ! empty( $regions['data'] ) && count( $regions['data'] ) >= 3, "get_regions() returns at least 3 datacenter regions" );
+assert_test( is_array( $regions ) && ! empty( $regions['data'] ), "get_regions() backward compatibility alias works" );
 
-$flavors = $client->get_flavors( 'ir-thr-c2' );
-assert_test( is_array( $flavors ) && ! empty( $flavors['data'] ) && count( $flavors['data'] ) >= 6, "get_flavors() returns standard flavors (g1-1-2, g1-2-4, etc.)" );
+// Flavors (OpenAPI: GET /flavors)
+$flavors = $client->get_flavors( 'ir-thr-ba1' );
+assert_test( is_array( $flavors ) && ! empty( $flavors['data'] ) && count( $flavors['data'] ) >= 6, "get_flavors() returns standard flavors" );
+assert_test( isset( $flavors['data'][0]['cpuCores'] ) && isset( $flavors['data'][0]['memoryMegaBytes'] ) && isset( $flavors['data'][0]['pricePerHour'] ), "get_flavors() returns OpenAPI fields (cpuCores, memoryMegaBytes, pricePerHour)" );
 
-$images = $client->get_images( 'ir-thr-c2' );
-assert_test( is_array( $images ) && ! empty( $images['data'] ) && count( $images['data'] ) >= 5, "get_images() returns standard OS templates (Ubuntu, Debian, Windows)" );
+// Single Flavor (OpenAPI: GET /flavors/{id})
+$single_flavor = $client->get_flavor( 'g2-2-2-0', 'ir-thr-ba1' );
+assert_test( is_array( $single_flavor ) && isset( $single_flavor['data']['id'] ), "get_flavor() returns single flavor details" );
 
+// Calculate Flavor Price (OpenAPI: POST /flavors/{id}/calculate)
+$calc_price = $client->calculate_flavor_price( 'g2-2-2-0', 100, 'ir-thr-ba1' );
+assert_test( is_array( $calc_price ) && isset( $calc_price['data']['pricePerHour'] ), "calculate_flavor_price() calculates price with extra volume size" );
+
+// OS Images (OpenAPI: GET /images)
+$images = $client->get_images( 'ir-thr-ba1' );
+assert_test( is_array( $images ) && ! empty( $images['data'] ) && count( $images['data'] ) >= 5, "get_images() returns standard OS templates" );
+assert_test( isset( $images['data'][0]['osType'] ) && isset( $images['data'][0]['minDiskGigaBytes'] ), "get_images() contains OpenAPI fields (osType, minDiskGigaBytes)" );
+
+// Create Server (OpenAPI: POST /servers)
 $srv = $client->create_server( array(
-	'region'    => 'ir-thr-c2',
-	'name'      => 'prod-web-01',
-	'size_id'   => 'g1-2-4',
-	'image_id'  => 'ubuntu-22.04',
-	'disk_size' => 50,
+	'availabilityZone'        => 'ir-thr-ba1',
+	'name'                    => 'prod-web-01',
+	'flavorId'                => 'g1-2-4',
+	'imageId'                 => 'ubuntu-22.04',
+	'rootVolumeSizeGigaBytes' => 50,
+	'enableIpv4'              => true,
 ) );
-assert_test( is_array( $srv ) && ! empty( $srv['data']['id'] ) && ! empty( $srv['data']['ip_address'] ), "create_server() returns instance UUID and public IP address" );
+assert_test( is_array( $srv ) && ! empty( $srv['data']['id'] ) && isset( $srv['data']['state'] ), "create_server() returns instance UUID and state: ACTIVE" );
+assert_test( ! empty( $srv['data']['ipAddresses'][0]['ipAddress'] ) || ! empty( $srv['data']['ip_address'] ), "create_server() returns IP address in response" );
 
-$p_on = $client->power_on_server( 'srv-123' );
+// Server Detail & List (OpenAPI: GET /servers/{id} and GET /servers)
+$srv_detail = $client->get_server( 'srv-123', 'ir-thr-ba1' );
+assert_test( is_array( $srv_detail ) && isset( $srv_detail['data']['id'] ), "get_server() returns server detail object" );
+
+$srv_list = $client->get_servers( 'ir-thr-ba1' );
+assert_test( is_array( $srv_list ), "get_servers() returns server list" );
+
+// Server Power & Lifecycle Operations
+$p_on = $client->power_on_server( 'srv-123', 'ir-thr-ba1' );
 assert_test( isset( $p_on['success'] ) && $p_on['success'] === true, "power_on_server() succeeds" );
-$p_off = $client->power_off_server( 'srv-123' );
+
+$p_off = $client->power_off_server( 'srv-123', 'ir-thr-ba1' );
 assert_test( isset( $p_off['success'] ) && $p_off['success'] === true, "power_off_server() succeeds" );
-$p_reb = $client->reboot_server( 'srv-123' );
+
+$p_reb = $client->reboot_server( 'srv-123', 'ir-thr-ba1' );
 assert_test( isset( $p_reb['success'] ) && $p_reb['success'] === true, "reboot_server() succeeds" );
-$p_del = $client->delete_server( 'srv-123' );
+
+$p_ren = $client->rename_server( 'srv-123', 'new-web-01', 'ir-thr-ba1' );
+assert_test( isset( $p_ren['success'] ) && $p_ren['success'] === true, "rename_server() succeeds" );
+
+$p_pwd = $client->reset_root_password( 'srv-123', 'SecretPass123!', 'ir-thr-ba1' );
+assert_test( isset( $p_pwd['success'] ) && $p_pwd['success'] === true, "reset_root_password() succeeds" );
+
+$p_res = $client->rescue_server( 'srv-123', 'ir-thr-ba1' );
+assert_test( isset( $p_res['success'] ) && $p_res['success'] === true, "rescue_server() succeeds" );
+
+$p_unres = $client->unrescue_server( 'srv-123', 'ir-thr-ba1' );
+assert_test( isset( $p_unres['success'] ) && $p_unres['success'] === true, "unrescue_server() succeeds" );
+
+$p_del = $client->delete_server( 'srv-123', 'ir-thr-ba1' );
 assert_test( isset( $p_del['success'] ) && $p_del['success'] === true, "delete_server() succeeds" );
+
+// Volumes, Firewalls, & Networks
+$vols = $client->get_volumes( 'ir-thr-ba1' );
+assert_test( is_array( $vols ) && isset( $vols['data'] ), "get_volumes() returns volume list" );
+
+$fws = $client->get_firewalls( 'ir-thr-ba1' );
+assert_test( is_array( $fws ) && isset( $fws['data'] ), "get_firewalls() returns firewalls list" );
+
+$nets = $client->get_networks( 'ir-thr-ba1' );
+assert_test( is_array( $nets ) && isset( $nets['data'] ), "get_networks() returns networks list" );
 
 echo "\n=========================================================\n";
 echo "SUMMARY: {$passed} Passed, {$failed} Failed\n";

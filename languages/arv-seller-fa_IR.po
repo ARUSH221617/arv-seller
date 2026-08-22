@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
 "Report-Msgid-Bugs-To: https://arvancloud.ir\n"
-"POT-Creation-Date: 2026-08-21 11:41:25+0000\n"
-"PO-Revision-Date: 2026-08-21 11:41:25+0000\n"
+"POT-Creation-Date: 2026-08-22 05:53:03+0000\n"
+"PO-Revision-Date: 2026-08-22 05:53:03+0000\n"
 "Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
 "Language-Team: ArvanCloud Persian (Farsi) Team\n"
 "Language: fa_IR\n"
@@ -90,7 +90,7 @@ msgstr "۵۴۰ تومان/ساعت"
 msgid "92.5 hours runtime remaining"
 msgstr "۹۲.۵ ساعت زمان کارکرد باقی‌مانده اعتبار"
 
-#: public/class-arvan-public.php:514
+#: public/class-arvan-public.php:516
 msgid "A minimum balance of %1$s %3$s (24 hours run cost) is required to deploy this server. Your balance is %2$s %3$s."
 msgstr "حداقل موجودی %1$s %3$s (هزینه کارکرد ۲۴ ساعت) برای ساخت این سرور لازم است. موجودی شما %2$s %3$s می‌باشد."
 
@@ -117,7 +117,7 @@ msgstr "عملیات"
 msgid "Action"
 msgstr ""
 
-#: admin/class-arvan-admin.php:244
+#: admin/class-arvan-admin.php:246
 msgid "Action completed successfully."
 msgstr "عملیات با موفقیت انجام شد."
 
@@ -175,7 +175,7 @@ msgstr "افزودن رکورد"
 msgid "Adjust Balance"
 msgstr "تغییر موجودی"
 
-#: admin/class-arvan-admin.php:253
+#: admin/class-arvan-admin.php:255
 msgid "Adjust Wallet Balance: "
 msgstr "تغییر موجودی کیف پول: "
 
@@ -217,7 +217,7 @@ msgstr ""
 msgid "All Provisioned Cloud Resources"
 msgstr "کلیه منابع ابری ایجاد شده مشتریان"
 
-#: admin/class-arvan-admin.php:310
+#: admin/class-arvan-admin.php:312
 msgid "All Resources"
 msgstr "همه منابع"
 
@@ -241,7 +241,7 @@ msgstr ""
 msgid "Amount (Toman):"
 msgstr "مبلغ تعدیل (تومان):"
 
-#: public/class-arvan-public.php:296 public/class-arvan-public.php:436
+#: public/class-arvan-public.php:297 public/class-arvan-public.php:437
 msgid "An error occurred during request."
 msgstr "خطایی در هنگام ارسال درخواست رخ داد."
 
@@ -249,26 +249,26 @@ msgstr "خطایی در هنگام ارسال درخواست رخ داد."
 msgid "App Canvas Background"
 msgstr "پس‌زمینه کل بوم برنامه"
 
-#: admin/class-arvan-admin.php:250
+#: admin/class-arvan-admin.php:252
 msgid "Apply Adjustment"
 msgstr "ثبت تراکنش در دفترکل"
 
 msgid "applying"
 msgstr "در حال ذخیره و اعمال..."
 
-#: admin/class-arvan-admin.php:249
+#: admin/class-arvan-admin.php:251
 msgid "Applying..."
 msgstr "در حال اعمال..."
 
-#: admin/class-arvan-admin.php:246
+#: admin/class-arvan-admin.php:248
 msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
 msgstr "آیا از حذف دائمی این منبع از زیرساخت ابر آروان اطمینان دارید؟"
 
-#: public/class-arvan-public.php:297 public/class-arvan-public.php:437
+#: public/class-arvan-public.php:298 public/class-arvan-public.php:438
 msgid "Are you sure you want to permanently destroy this server?"
 msgstr "آیا از حذف دائمی این سرور اطمینان دارید؟"
 
-#: admin/class-arvan-admin.php:281
+#: admin/class-arvan-admin.php:283
 msgid "Arvan Reseller"
 msgstr "نمایندگی ابر آروان"
 
@@ -288,7 +288,7 @@ msgstr "آروان کلاد"
 msgid "ArvanCloud API Key"
 msgstr "کلید ارتباطی API ابر آروان"
 
-#: includes/class-arvan-api-client.php:100
+#: includes/class-arvan-api-client.php:158
 msgid "ArvanCloud API key is not configured. Please configure your API key in WP Admin > Arvan Reseller > Settings."
 msgstr "کلید API ابر آروان تنظیم نشده است. لطفاً کلید API خود را در پیشخوان وردپرس > نمایندگی آروان > تنظیمات پیکربندی نمایید."
 
@@ -296,7 +296,7 @@ msgstr "کلید API ابر آروان تنظیم نشده است. لطفاً ک
 msgid "ArvanCloud Customer Dashboard"
 msgstr "داشبورد مشتریان ابر آروان"
 
-#: admin/class-arvan-admin.php:280
+#: admin/class-arvan-admin.php:282
 msgid "ArvanCloud Reseller"
 msgstr "مدیریت نمایندگی ابر آروان"
 
@@ -345,7 +345,7 @@ msgstr "نمونه پیکربندی AWS CLI:"
 msgid "backOffice"
 msgstr "پنل مدیریت"
 
-#: admin/class-arvan-admin.php:737
+#: admin/class-arvan-admin.php:739
 msgid "Balance adjusted successfully."
 msgstr "موجودی کیف پول با موفقیت تغییر یافت."
 
@@ -454,7 +454,7 @@ msgstr "انصراف"
 msgid "Cancel"
 msgstr "انصراف"
 
-#: public/class-arvan-public.php:626
+#: public/class-arvan-public.php:652
 msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
 msgstr "امکان روشن کردن سرور وجود ندارد: موجودی کیف پول شما صفر یا منفی است. لطفاً ابتدا کیف پول خود را شارژ نمایید."
 
@@ -511,7 +511,7 @@ msgstr "بستن"
 msgid "Cloud Proxy"
 msgstr ""
 
-#: admin/class-arvan-admin.php:309
+#: admin/class-arvan-admin.php:311
 msgid "Cloud Resources"
 msgstr "منابع ابری و سرورها"
 
@@ -631,7 +631,7 @@ msgstr "اتصال دامنه به CDN"
 msgid "Connected CDN Domains"
 msgstr ""
 
-#: includes/class-arvan-api-client.php:523
+#: includes/class-arvan-api-client.php:900
 msgid "Connected successfully to ArvanCloud infrastructure."
 msgstr "اتصال به زیرساخت ابر آروان با موفقیت برقرار شد."
 
@@ -798,7 +798,7 @@ msgstr "نام کاربر"
 msgid "Customer Portal & Dashboard"
 msgstr "پرتال و داشبورد مشتریان"
 
-#: admin/class-arvan-admin.php:243
+#: admin/class-arvan-admin.php:245
 msgid "Customer wallet balance updated successfully."
 msgstr ""
 
@@ -808,11 +808,11 @@ msgstr "دفترکل و حسابرسی کیف پول مشتریان"
 msgid "customerDashboardLink"
 msgstr "داشبورد مشتری"
 
-#: admin/class-arvan-admin.php:301
+#: admin/class-arvan-admin.php:303
 msgid "Customization"
 msgstr "سفارشی‌سازی"
 
-#: admin/class-arvan-admin.php:300
+#: admin/class-arvan-admin.php:302
 msgid "Customization & Branding"
 msgstr "سفارشی‌سازی و ظاهر"
 
@@ -1255,7 +1255,7 @@ msgstr "ساعت"
 msgid "hr"
 msgstr "ساعت"
 
-#: includes/class-arvan-api-client.php:154
+#: includes/class-arvan-api-client.php:221
 msgid "HTTP Request Failed: %s"
 msgstr ""
 
@@ -1269,23 +1269,27 @@ msgstr "بلوک‌های «arvan/server-configurator» یا «arvan/customer-da
 msgid "Instance Access & Naming"
 msgstr ""
 
-#: public/class-arvan-public.php:294 public/class-arvan-public.php:434
+#: public/class-arvan-public.php:295 public/class-arvan-public.php:435
 msgid "Instance permanently deleted."
 msgstr ""
 
-#: admin/class-arvan-admin.php:784
+#: admin/class-arvan-admin.php:786
 msgid "Instance powered off by administrator."
 msgstr "سرور توسط مدیر سامانه خاموش شد."
 
-#: public/class-arvan-public.php:293 public/class-arvan-public.php:433
+#: public/class-arvan-public.php:294 public/class-arvan-public.php:434
 msgid "Instance powered off."
 msgstr ""
 
-#: public/class-arvan-public.php:292 public/class-arvan-public.php:432
+#: admin/class-arvan-admin.php:790
+msgid "Instance powered on by administrator."
+msgstr ""
+
+#: public/class-arvan-public.php:293 public/class-arvan-public.php:433
 msgid "Instance powered on."
 msgstr ""
 
-#: admin/class-arvan-admin.php:788
+#: admin/class-arvan-admin.php:794
 msgid "Instance purged by administrator."
 msgstr "سرور توسط مدیر سامانه به طور کامل حذف شد."
 
@@ -1334,11 +1338,11 @@ msgstr "موجودی ناکافی (نیاز به شارژ)"
 msgid "Interactive Cloud Server sizing, pricing calculator, and deployment widget."
 msgstr "ویجت تعاملی انتخاب منابع سرور ابری، محاسبه‌گر زنده قیمت و ساخت آنی ماشین مجازی."
 
-#: public/class-arvan-public.php:661
+#: public/class-arvan-public.php:689
 msgid "Invalid power action."
 msgstr ""
 
-#: admin/class-arvan-admin.php:724
+#: admin/class-arvan-admin.php:726
 msgid "Invalid user ID or amount."
 msgstr ""
 
@@ -1421,7 +1425,7 @@ msgstr ""
 msgid "Loading ArvanCloud Customer Dashboard…"
 msgstr ""
 
-#: admin/class-arvan-admin.php:454
+#: admin/class-arvan-admin.php:456
 msgid "Loading ArvanCloud Management Portal..."
 msgstr ""
 
@@ -1483,7 +1487,7 @@ msgstr "شخصی‌سازی دستی رنگ‌ها"
 msgid "Manual Ledger Adjustment"
 msgstr "تعدیل دستی موجودی کیف پول"
 
-#: admin/class-arvan-admin.php:245
+#: admin/class-arvan-admin.php:247
 msgid "Manual metering cycle completed."
 msgstr "چرخه محاسبه مصرف ساعتی با موفقیت انجام شد."
 
@@ -1532,7 +1536,7 @@ msgstr ""
 msgid "Memory Optimized"
 msgstr ""
 
-#: admin/class-arvan-admin.php:760
+#: admin/class-arvan-admin.php:762
 msgid "Metering cycle finished: Processed %1$d resources, debited %2$s Tomans, suspended %3$d accounts."
 msgstr ""
 
@@ -1546,7 +1550,7 @@ msgstr "ابسیدین تیره شب (بنفش)"
 msgid "Minimum 12 characters"
 msgstr ""
 
-#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:708
+#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:781
 msgid "Minimum deposit amount is 1,000 Tomans."
 msgstr ""
 
@@ -1592,11 +1596,11 @@ msgstr "بلوک بومی گوتنبرگ: «کانفیگوراتور سرور ا
 msgid "Native Gutenberg Blocks"
 msgstr "بلوک‌های بومی گوتنبرگ"
 
-#: admin/class-arvan-admin.php:248
+#: admin/class-arvan-admin.php:250
 msgid "Network error while testing connection."
 msgstr ""
 
-#: admin/class-arvan-admin.php:247
+#: admin/class-arvan-admin.php:249
 msgid "Network error."
 msgstr ""
 
@@ -1675,7 +1679,7 @@ msgstr "کلید API را از پنل کاربری ابر آروان > پروف�
 msgid "Official ArvanCloud signature teal aesthetic with balanced curves & Persian typography."
 msgstr "تم رسمی و اصیل ابر آروان با رنگ فیروزه‌ای، انحناهای چشم‌نواز و فونت استاندارد وزیرمتن."
 
-#: public/class-arvan-public.php:714
+#: public/class-arvan-public.php:787
 msgid "Online Top-up via Sandbox Gateway (Ref: %s)"
 msgstr ""
 
@@ -1738,7 +1742,7 @@ msgstr "حرفه‌ای پرسرعت (Performance Pro)"
 msgid "Performance Pro (4 vCPU / 8 GB)"
 msgstr ""
 
-#: admin/class-arvan-admin.php:497 admin/class-arvan-admin.php:518 admin/class-arvan-admin.php:714 admin/class-arvan-admin.php:749
+#: admin/class-arvan-admin.php:499 admin/class-arvan-admin.php:520 admin/class-arvan-admin.php:716 admin/class-arvan-admin.php:751
 msgid "Permission denied."
 msgstr ""
 
@@ -1755,11 +1759,11 @@ msgstr "پلن و مشخصات"
 msgid "Please enter a valid domain name."
 msgstr ""
 
-#: public/class-arvan-public.php:470
+#: public/class-arvan-public.php:471
 msgid "Please sign in to deploy a cloud server."
 msgstr ""
 
-#: public/class-arvan-public.php:700
+#: public/class-arvan-public.php:773
 msgid "Please sign in to top up your wallet."
 msgstr ""
 
@@ -1885,7 +1889,7 @@ msgstr "راه‌اندازی مجدد"
 msgid "Reboot"
 msgstr ""
 
-#: public/class-arvan-public.php:291 public/class-arvan-public.php:431
+#: public/class-arvan-public.php:292 public/class-arvan-public.php:432
 msgid "Reboot command dispatched to ArvanCloud."
 msgstr ""
 
@@ -1912,11 +1916,11 @@ msgstr "بازنشانی به پیش‌فرض"
 msgid "Resource Name"
 msgstr "نام منبع"
 
-#: public/class-arvan-public.php:618
+#: public/class-arvan-public.php:644
 msgid "Resource not found or access denied."
 msgstr ""
 
-#: admin/class-arvan-admin.php:775
+#: admin/class-arvan-admin.php:777
 msgid "Resource not found."
 msgstr ""
 
@@ -1935,7 +1939,7 @@ msgstr ""
 msgid "Royal Sapphire Blue"
 msgstr "یاقوت کبود سلطنتی (آبی)"
 
-#: admin/class-arvan-admin.php:252
+#: admin/class-arvan-admin.php:254
 msgid "Run Metering Cycle Now"
 msgstr "اجرای فوری چرخه محاسبه مصرف (Metering)"
 
@@ -1946,7 +1950,7 @@ msgstr "در حال اجرا"
 msgid "Running"
 msgstr ""
 
-#: admin/class-arvan-admin.php:251
+#: admin/class-arvan-admin.php:253
 msgid "Running Metering..."
 msgstr ""
 
@@ -2049,7 +2053,7 @@ msgstr "انتخاب زبان"
 msgid "selectPresetAmount"
 msgstr "انتخاب مبالغ پیشنهادی"
 
-#: public/class-arvan-public.php:586
+#: public/class-arvan-public.php:612
 msgid "Server \"%s\" provisioned successfully! IP: %s"
 msgstr ""
 
@@ -2057,7 +2061,7 @@ msgstr ""
 msgid "Server Configurator Settings"
 msgstr "تنظیمات کانفیگوراتور سرور"
 
-#: public/class-arvan-public.php:290 public/class-arvan-public.php:430
+#: public/class-arvan-public.php:291 public/class-arvan-public.php:431
 msgid "Server deployed successfully! IP assigned:"
 msgstr ""
 
@@ -2069,19 +2073,19 @@ msgstr ""
 msgid "Server Instance"
 msgstr ""
 
-#: public/class-arvan-public.php:657
+#: public/class-arvan-public.php:685
 msgid "Server permanently destroyed."
 msgstr ""
 
-#: public/class-arvan-public.php:645
+#: public/class-arvan-public.php:673
 msgid "Server powered off gracefully."
 msgstr ""
 
-#: public/class-arvan-public.php:639
+#: public/class-arvan-public.php:666
 msgid "Server powered on successfully."
 msgstr ""
 
-#: public/class-arvan-public.php:651
+#: public/class-arvan-public.php:679
 msgid "Server reboot command executed."
 msgstr ""
 
@@ -2098,15 +2102,15 @@ msgstr "نوع سرویس"
 msgid "Services Suspended Due to Zero Wallet Balance"
 msgstr "سرویس‌ها به دلیل اتمام موجودی کیف پول معلق شدند"
 
-#: admin/class-arvan-admin.php:292
+#: admin/class-arvan-admin.php:294
 msgid "Settings"
 msgstr ""
 
-#: admin/class-arvan-admin.php:291
+#: admin/class-arvan-admin.php:293
 msgid "Settings & API"
 msgstr "تنظیمات و ارتباط API"
 
-#: admin/class-arvan-admin.php:704
+#: admin/class-arvan-admin.php:706
 msgid "Settings saved successfully."
 msgstr ""
 
@@ -2396,7 +2400,7 @@ msgstr "تهران (شهریار)"
 msgid "Test Connection"
 msgstr "تست اتصال به API"
 
-#: admin/class-arvan-admin.php:242
+#: admin/class-arvan-admin.php:244
 msgid "Testing connection to ArvanCloud API..."
 msgstr ""
 
@@ -2497,11 +2501,11 @@ msgstr "تایپوگرافی، وب‌فونت‌ها و مقیاس اندازه
 msgid "Ultra Curved (Pill)"
 msgstr "فوق انحنا / کپسولی (۲۶px)"
 
-#: public/class-arvan-public.php:598
+#: public/class-arvan-public.php:624 public/class-arvan-public.php:724
 msgid "Unauthorized."
 msgstr ""
 
-#: admin/class-arvan-admin.php:790
+#: admin/class-arvan-admin.php:796
 msgid "Unknown admin action."
 msgstr ""
 
@@ -2557,22 +2561,22 @@ msgstr ""
 msgid "Wallet Section Title"
 msgstr ""
 
-#: public/class-arvan-public.php:730
+#: public/class-arvan-public.php:803
 msgid "Wallet successfully credited with %1$s %2$s! RefID: %3$s"
 msgstr ""
 
-#: public/class-arvan-public.php:295 public/class-arvan-public.php:435
+#: public/class-arvan-public.php:296 public/class-arvan-public.php:436
 msgid "Wallet successfully credited!"
 msgstr ""
 
 msgid "walletBalance"
 msgstr "موجودی کیف پول"
 
-#: admin/class-arvan-admin.php:318
+#: admin/class-arvan-admin.php:320
 msgid "Wallets & Ledger"
 msgstr "کیف پول و دفترکل مالی"
 
-#: admin/class-arvan-admin.php:319
+#: admin/class-arvan-admin.php:321
 msgid "Wallets Ledger"
 msgstr ""
 

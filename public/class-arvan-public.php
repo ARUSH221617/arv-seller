@@ -472,22 +472,23 @@ class Arvan_Public {
 		}
 
 		$user_id = get_current_user_id();
-		$name    = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : 'cloud-srv-' . wp_rand( 100, 999 );
-		$region  = isset( $_POST['region'] ) ? sanitize_text_field( wp_unslash( $_POST['region'] ) ) : 'ir-thr-c2';
-		$flavor  = isset( $_POST['flavor_id'] ) ? sanitize_text_field( wp_unslash( $_POST['flavor_id'] ) ) : 'g1-2-4';
-		$image   = isset( $_POST['image_id'] ) ? sanitize_text_field( wp_unslash( $_POST['image_id'] ) ) : 'ubuntu-22.04';
-		$disk    = isset( $_POST['disk_size'] ) ? absint( $_POST['disk_size'] ) : 40;
-		$ssh_key = isset( $_POST['ssh_key'] ) ? sanitize_textarea_field( wp_unslash( $_POST['ssh_key'] ) ) : '';
+		$name    = ! empty( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : 'cloud-srv-' . wp_rand( 100, 999 );
+		$region  = ! empty( $_POST['availabilityZone'] ) ? sanitize_text_field( wp_unslash( $_POST['availabilityZone'] ) ) : ( ! empty( $_POST['region'] ) ? sanitize_text_field( wp_unslash( $_POST['region'] ) ) : ( ! empty( $_POST['region_id'] ) ? sanitize_text_field( wp_unslash( $_POST['region_id'] ) ) : 'ir-thr-ba1' ) );
+		$flavor  = ! empty( $_POST['flavorId'] ) ? sanitize_text_field( wp_unslash( $_POST['flavorId'] ) ) : ( ! empty( $_POST['flavor_id'] ) ? sanitize_text_field( wp_unslash( $_POST['flavor_id'] ) ) : ( ! empty( $_POST['size_id'] ) ? sanitize_text_field( wp_unslash( $_POST['size_id'] ) ) : 'g1-2-4' ) );
+		$image   = ! empty( $_POST['imageId'] ) ? sanitize_text_field( wp_unslash( $_POST['imageId'] ) ) : ( ! empty( $_POST['image_id'] ) ? sanitize_text_field( wp_unslash( $_POST['image_id'] ) ) : 'ubuntu-22.04' );
+		$disk    = isset( $_POST['rootVolumeSizeGigaBytes'] ) ? absint( $_POST['rootVolumeSizeGigaBytes'] ) : ( isset( $_POST['disk_size'] ) ? absint( $_POST['disk_size'] ) : 40 );
+		$ssh_key = ! empty( $_POST['sshKeyName'] ) ? sanitize_text_field( wp_unslash( $_POST['sshKeyName'] ) ) : ( ! empty( $_POST['ssh_key'] ) ? sanitize_textarea_field( wp_unslash( $_POST['ssh_key'] ) ) : '' );
 		$pwd     = isset( $_POST['password'] ) ? sanitize_text_field( wp_unslash( $_POST['password'] ) ) : '';
 
 		// Standard base rates per flavor
 		$flavor_rates = array(
-			'g1-1-2'  => array( 'cost' => 250, 'base_disk' => 25, 'name' => '1 vCPU / 2GB RAM' ),
-			'g1-2-4'  => array( 'cost' => 450, 'base_disk' => 40, 'name' => '2 vCPU / 4GB RAM' ),
-			'g1-4-8'  => array( 'cost' => 890, 'base_disk' => 60, 'name' => '4 vCPU / 8GB RAM' ),
-			'g1-8-16' => array( 'cost' => 1750, 'base_disk' => 100, 'name' => '8 vCPU / 16GB RAM' ),
-			'c1-4-4'  => array( 'cost' => 690, 'base_disk' => 40, 'name' => '4 vCPU / 4GB RAM' ),
-			'm1-2-8'  => array( 'cost' => 650, 'base_disk' => 50, 'name' => '2 vCPU / 8GB RAM' ),
+			'g2-1-2-0' => array( 'cost' => 250, 'base_disk' => 25, 'name' => '1 vCPU / 2GB RAM' ),
+			'g1-1-2'   => array( 'cost' => 250, 'base_disk' => 25, 'name' => '1 vCPU / 2GB RAM' ),
+			'g1-2-4'   => array( 'cost' => 450, 'base_disk' => 40, 'name' => '2 vCPU / 4GB RAM' ),
+			'g1-4-8'   => array( 'cost' => 890, 'base_disk' => 60, 'name' => '4 vCPU / 8GB RAM' ),
+			'g1-8-16'  => array( 'cost' => 1750, 'base_disk' => 100, 'name' => '8 vCPU / 16GB RAM' ),
+			'c1-4-4'   => array( 'cost' => 690, 'base_disk' => 40, 'name' => '4 vCPU / 4GB RAM' ),
+			'm1-2-8'   => array( 'cost' => 650, 'base_disk' => 50, 'name' => '2 vCPU / 8GB RAM' ),
 		);
 
 		$base_info   = isset( $flavor_rates[ $flavor ] ) ? $flavor_rates[ $flavor ] : $flavor_rates['g1-2-4'];
@@ -525,13 +526,18 @@ class Arvan_Public {
 		$api_client = new Arvan_API_Client();
 		$api_res    = $api_client->create_server(
 			array(
-				'region'    => $region,
-				'name'      => $name,
-				'size_id'   => $flavor,
-				'image_id'  => $image,
-				'disk_size' => $disk,
-				'ssh_key'   => $ssh_key,
-				'password'  => $pwd,
+				'availabilityZone'        => $region,
+				'region'                  => $region,
+				'name'                    => $name,
+				'flavorId'                => $flavor,
+				'size_id'                 => $flavor,
+				'imageId'                 => $image,
+				'image_id'                => $image,
+				'rootVolumeSizeGigaBytes' => $disk,
+				'disk_size'               => $disk,
+				'sshKeyName'              => $ssh_key,
+				'ssh_key'                 => $ssh_key,
+				'password'                => $pwd,
 			)
 		);
 
@@ -541,7 +547,23 @@ class Arvan_Public {
 
 		$server_data = isset( $api_res['data'] ) ? $api_res['data'] : $api_res;
 		$arvan_id    = isset( $server_data['id'] ) ? $server_data['id'] : 'srv-' . wp_generate_uuid4();
-		$ip_address  = isset( $server_data['ip_address'] ) ? $server_data['ip_address'] : '185.143.' . wp_rand( 200, 240 ) . '.' . wp_rand( 10, 250 );
+
+		// Extract public IP address from v3 ipAddresses array or legacy fields
+		$ip_address = '185.143.' . wp_rand( 200, 240 ) . '.' . wp_rand( 10, 250 );
+		if ( ! empty( $server_data['ipAddresses'] ) && is_array( $server_data['ipAddresses'] ) ) {
+			foreach ( $server_data['ipAddresses'] as $ip_item ) {
+				if ( ! empty( $ip_item['ipAddress'] ) ) {
+					$ip_address = $ip_item['ipAddress'];
+					if ( ! empty( $ip_item['isPublic'] ) ) {
+						break;
+					}
+				}
+			}
+		} elseif ( ! empty( $server_data['ip_address'] ) ) {
+			$ip_address = $server_data['ip_address'];
+		} elseif ( ! empty( $server_data['public_ip'] ) ) {
+			$ip_address = $server_data['public_ip'];
+		}
 
 		// Register in local database
 		global $wpdb;
@@ -549,11 +571,14 @@ class Arvan_Public {
 
 		$plan_specs = wp_json_encode(
 			array(
-				'flavor'     => $flavor,
-				'flavor_name'=> $base_info['name'],
-				'image'      => $image,
-				'disk_size'  => $disk,
-				'ip_address' => $ip_address,
+				'flavor'           => $flavor,
+				'flavor_id'        => $flavor,
+				'flavor_name'      => $base_info['name'],
+				'image'            => $image,
+				'image_id'         => $image,
+				'disk_size'        => $disk,
+				'availabilityZone' => $region,
+				'ip_address'       => $ip_address,
 			)
 		);
 

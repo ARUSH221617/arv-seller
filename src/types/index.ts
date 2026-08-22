@@ -14,33 +14,56 @@ export interface DatacenterRegion {
   flag: string;
   status: 'active' | 'maintenance';
   latency?: string;
+  // OpenAPI v3 Standard DataCenter properties
+  code?: string;
+  region?: string;
+  zone?: string;
+  state?: 'UP' | 'PROHIBITED' | 'READ_ONLY' | 'DOWN';
+  isVolumeBacked?: boolean;
 }
 
 export interface HardwareFlavor {
   id: string;
   name: string;
-  category: 'general' | 'compute' | 'memory';
+  category: 'general' | 'compute' | 'memory' | string;
   vcpus: number;
   ram_mb: number;
   disk_gb: number;
   hourly_cost: number;
   is_popular?: boolean;
+  // OpenAPI v3 Standard Flavor Plan properties
+  cpuCores?: number;
+  memoryMegaBytes?: number;
+  diskGigaBytes?: number;
+  pricePerHour?: number;
+  pricePerMonth?: number;
+  generation?: string;
+  type?: string;
+  availabilityZone?: string;
 }
 
 export interface OsImage {
   id: string;
   name: string;
-  distro: 'ubuntu' | 'debian' | 'almalinux' | 'windows';
+  distro: 'ubuntu' | 'debian' | 'almalinux' | 'windows' | string;
   version: string;
   arch: string;
   icon?: string;
+  // OpenAPI v3 Public API Image properties
+  osType?: 'LINUX' | 'WINDOWS' | string;
+  osVersion?: string;
+  minDiskGigaBytes?: number;
+  minRamMegaBytes?: number;
+  status?: 'ACTIVE' | 'QUEUED' | 'UPLOADING' | string;
+  type?: 'PERSONAL' | 'PUBLIC' | string;
+  availabilityZone?: string;
 }
 
 export interface CloudServerInstance {
   id: number;
   name: string;
   arvan_uuid: string;
-  status: 'active' | 'suspended' | 'stopped' | 'building';
+  status: 'active' | 'suspended' | 'stopped' | 'building' | string;
   region_id: string;
   flavor_id: string;
   image_id: string;
@@ -48,6 +71,17 @@ export interface CloudServerInstance {
   public_ip: string;
   hourly_rate: number;
   created_at: string;
+  // OpenAPI v3 Server Detail properties
+  state?: 'ACTIVE' | 'SHUTOFF' | 'SHELVED_OFFLOADED' | 'DELETING' | string;
+  taskState?: 'VOLUME_CREATING' | 'CREATING' | 'BUILD' | string;
+  availabilityZone?: string;
+  ipAddresses?: Array<{
+    ipAddress: string;
+    isPublic: boolean;
+    version?: string;
+    networkName?: string;
+    macAddress?: string;
+  }>;
 }
 
 export interface WalletTransaction {
