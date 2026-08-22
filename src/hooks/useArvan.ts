@@ -287,7 +287,7 @@ export function useArvan() {
     const res = await callAjax('arvan_create_volume', { name, sizeGigaBytes, availabilityZone: region });
     if (res && res.success) {
       addToast('success', res.data?.message || t('Storage volume created.'));
-      fetchIaasResources(region);
+      await fetchIaasResources(region);
       return true;
     }
     addToast('error', res?.data?.message || t('Action failed.'));
@@ -298,7 +298,7 @@ export function useArvan() {
     const res = await callAjax('arvan_delete_volume', { volumeId, availabilityZone: region });
     if (res && res.success) {
       addToast('success', res.data?.message || t('Volume deleted.'));
-      fetchIaasResources(region);
+      await fetchIaasResources(region);
       return true;
     }
     addToast('error', res?.data?.message || t('Action failed.'));
@@ -309,7 +309,18 @@ export function useArvan() {
     const res = await callAjax('arvan_attach_volume', { volumeId, serverId, availabilityZone: region });
     if (res && res.success) {
       addToast('success', res.data?.message || t('Volume attached.'));
-      fetchIaasResources(region);
+      await fetchIaasResources(region);
+      return true;
+    }
+    addToast('error', res?.data?.message || t('Action failed.'));
+    return false;
+  };
+
+  const detachVolume = async (volumeId: string, region = 'ir-thr-ba1') => {
+    const res = await callAjax('arvan_detach_volume', { volumeId, availabilityZone: region });
+    if (res && res.success) {
+      addToast('success', res.data?.message || t('Volume detached from server.'));
+      await fetchIaasResources(region);
       return true;
     }
     addToast('error', res?.data?.message || t('Action failed.'));
@@ -320,7 +331,18 @@ export function useArvan() {
     const res = await callAjax('arvan_create_network', { name, cidr, availabilityZone: region });
     if (res && res.success) {
       addToast('success', res.data?.message || t('Private network created.'));
-      fetchIaasResources(region);
+      await fetchIaasResources(region);
+      return true;
+    }
+    addToast('error', res?.data?.message || t('Action failed.'));
+    return false;
+  };
+
+  const deleteNetwork = async (networkId: string, region = 'ir-thr-ba1') => {
+    const res = await callAjax('arvan_delete_network', { networkId, availabilityZone: region });
+    if (res && res.success) {
+      addToast('success', res.data?.message || t('Private network deleted.'));
+      await fetchIaasResources(region);
       return true;
     }
     addToast('error', res?.data?.message || t('Action failed.'));
@@ -331,7 +353,29 @@ export function useArvan() {
     const res = await callAjax('arvan_create_firewall', { name, availabilityZone: region });
     if (res && res.success) {
       addToast('success', res.data?.message || t('Firewall created.'));
-      fetchIaasResources(region);
+      await fetchIaasResources(region);
+      return true;
+    }
+    addToast('error', res?.data?.message || t('Action failed.'));
+    return false;
+  };
+
+  const deleteFirewall = async (firewallId: string, region = 'ir-thr-ba1') => {
+    const res = await callAjax('arvan_delete_firewall', { firewallId, availabilityZone: region });
+    if (res && res.success) {
+      addToast('success', res.data?.message || t('Firewall deleted successfully.'));
+      await fetchIaasResources(region);
+      return true;
+    }
+    addToast('error', res?.data?.message || t('Action failed.'));
+    return false;
+  };
+
+  const addFirewallRule = async (firewallId: string, protocol: string, portMin: number, portMax: number, region = 'ir-thr-ba1') => {
+    const res = await callAjax('arvan_add_firewall_rule', { firewallId, protocol, portMin, portMax, availabilityZone: region });
+    if (res && res.success) {
+      addToast('success', res.data?.message || t('Firewall rule added.'));
+      await fetchIaasResources(region);
       return true;
     }
     addToast('error', res?.data?.message || t('Action failed.'));
@@ -383,6 +427,10 @@ export function useArvan() {
     deleteVolume,
     attachVolume,
     createNetwork,
+    deleteNetwork,
     createFirewall,
+    deleteFirewall,
+    addFirewallRule,
+    detachVolume,
   };
 }

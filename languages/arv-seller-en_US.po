@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
 "Report-Msgid-Bugs-To: https://arvancloud.ir\n"
-"POT-Creation-Date: 2026-08-22 11:18:21+0000\n"
-"PO-Revision-Date: 2026-08-22 11:18:21+0000\n"
+"POT-Creation-Date: 2026-08-22 11:24:32+0000\n"
+"PO-Revision-Date: 2026-08-22 11:24:32+0000\n"
 "Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
 "Language-Team: ArvanCloud English (US) Team\n"
 "Language: en_US\n"
@@ -90,7 +90,7 @@ msgstr "540 Toman/hr"
 msgid "92.5 hours runtime remaining"
 msgstr "92.5 hours runtime remaining"
 
-#: public/class-arvan-public.php:547
+#: public/class-arvan-public.php:550
 msgid "A minimum balance of %1$s %3$s (24 hours run cost) is required to deploy this server. Your balance is %2$s %3$s."
 msgstr "A minimum balance of %1$s %3$s (24 hours run cost) is required to deploy this server. Your balance is %2$s %3$s."
 
@@ -163,8 +163,14 @@ msgstr "Active (Mock Fallback)"
 msgid "activePops"
 msgstr "Active on 40+ Global PoPs"
 
+msgid "Add Firewall Rule"
+msgstr "Add Firewall Rule"
+
 msgid "Add Record"
 msgstr "Add Record"
+
+msgid "Add Rule"
+msgstr "Add Rule"
 
 msgid "additionalStorage"
 msgstr "Additional Storage"
@@ -241,7 +247,7 @@ msgstr "Amount"
 msgid "Amount (Toman):"
 msgstr "Amount (Toman):"
 
-#: public/class-arvan-public.php:335 public/class-arvan-public.php:463
+#: public/class-arvan-public.php:338 public/class-arvan-public.php:466
 msgid "An error occurred during request."
 msgstr "An error occurred during request."
 
@@ -268,7 +274,7 @@ msgstr "Applying..."
 msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
 msgstr "Are you sure you want to permanently delete this resource from ArvanCloud?"
 
-#: public/class-arvan-public.php:336 public/class-arvan-public.php:464
+#: public/class-arvan-public.php:339 public/class-arvan-public.php:467
 msgid "Are you sure you want to permanently destroy this server?"
 msgstr "Are you sure you want to permanently destroy this server?"
 
@@ -304,7 +310,7 @@ msgstr "ArvanCloud API key is not configured. Please configure your API key in W
 msgid "ArvanCloud Customer Dashboard"
 msgstr "ArvanCloud Customer Dashboard"
 
-#: public/class-arvan-public.php:581
+#: public/class-arvan-public.php:584
 msgid "ArvanCloud did not return a server identifier. Provisioning state is unknown; contact support before retrying."
 msgstr "ArvanCloud did not return a server identifier. Provisioning state is unknown; contact support before retrying."
 
@@ -333,6 +339,9 @@ msgstr "Assigned Nameservers"
 
 msgid "assignedNameservers"
 msgstr "Assigned ArvanCloud Anycast Nameservers:"
+
+msgid "Attach"
+msgstr "Attach"
 
 msgid "authCredentials"
 msgstr "Authentication Credentials:"
@@ -466,7 +475,7 @@ msgstr "Cancel"
 msgid "Cancel"
 msgstr "Cancel"
 
-#: public/class-arvan-public.php:691
+#: public/class-arvan-public.php:694
 msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
 msgstr "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
 
@@ -784,6 +793,14 @@ msgstr "Custom Footer Notice / SLA Guarantee Text"
 msgid "Custom Header Title"
 msgstr "Custom Header Title"
 
+#: public/class-arvan-public.php:1098
+msgid "Custom image creation requested."
+msgstr "Custom image creation requested."
+
+#: public/class-arvan-public.php:1121
+msgid "Custom image deleted."
+msgstr "Custom image deleted."
+
 msgid "Custom Store Logo URL"
 msgstr "Custom Store Logo URL"
 
@@ -960,6 +977,9 @@ msgstr "Desktop"
 msgid "Destroy Instance"
 msgstr "Destroy Instance"
 
+msgid "Detach"
+msgstr "Detach"
+
 msgid "DevOps Platform"
 msgstr "DevOps Platform"
 
@@ -1123,14 +1143,18 @@ msgstr "Failed to log wallet transaction."
 msgid "Failed to update wallet balance."
 msgstr "Failed to update wallet balance."
 
-#: public/class-arvan-public.php:1003
+#: public/class-arvan-public.php:1006
 msgid "Firewall created."
 msgstr "Firewall created."
+
+#: public/class-arvan-public.php:1067
+msgid "Firewall deleted successfully."
+msgstr "Firewall deleted successfully."
 
 msgid "Firewall Name"
 msgstr "Firewall Name"
 
-#: public/class-arvan-public.php:1041
+#: public/class-arvan-public.php:1044
 msgid "Firewall rule added."
 msgstr "Firewall rule added."
 
@@ -1302,21 +1326,21 @@ msgstr "Insert \"arvan/server-configurator\" or \"arvan/customer-dashboard\" any
 msgid "Instance Access & Naming"
 msgstr "Instance Access & Naming"
 
-#: public/class-arvan-public.php:333 public/class-arvan-public.php:461
+#: public/class-arvan-public.php:336 public/class-arvan-public.php:464
 msgid "Instance permanently deleted."
 msgstr "Instance permanently deleted."
 
 msgid "Instance powered off by administrator."
 msgstr "Instance powered off by administrator."
 
-#: public/class-arvan-public.php:332 public/class-arvan-public.php:460
+#: public/class-arvan-public.php:335 public/class-arvan-public.php:463
 msgid "Instance powered off."
 msgstr "Instance powered off."
 
 msgid "Instance powered on by administrator."
 msgstr "Instance powered on by administrator."
 
-#: public/class-arvan-public.php:331 public/class-arvan-public.php:459
+#: public/class-arvan-public.php:334 public/class-arvan-public.php:462
 msgid "Instance powered on."
 msgstr "Instance powered on."
 
@@ -1368,11 +1392,11 @@ msgstr "Insufficient Balance (Recharge Needed)"
 msgid "Interactive Cloud Server sizing, pricing calculator, and deployment widget."
 msgstr "Interactive Cloud Server sizing, pricing calculator, and deployment widget."
 
-#: public/class-arvan-public.php:731
+#: public/class-arvan-public.php:734
 msgid "Invalid power action."
 msgstr "Invalid power action."
 
-#: public/class-arvan-public.php:522
+#: public/class-arvan-public.php:525
 msgid "Invalid server configuration."
 msgstr "Invalid server configuration."
 
@@ -1584,7 +1608,7 @@ msgstr "Midnight Dark Obsidian"
 msgid "Minimum 12 characters"
 msgstr "Minimum 12 characters"
 
-#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:1062
+#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:1142
 msgid "Minimum deposit amount is 1,000 Tomans."
 msgstr "Minimum deposit amount is 1,000 Tomans."
 
@@ -1669,6 +1693,9 @@ msgstr "No storage buckets created yet"
 msgid "No transactions recorded in wallet ledger yet."
 msgstr "No transactions recorded in wallet ledger yet."
 
+msgid "No volumes found."
+msgstr "No volumes found."
+
 msgid "Nordic Slate Monochrome"
 msgstr "Nordic Slate Monochrome"
 
@@ -1713,7 +1740,7 @@ msgstr "Obtain your API Key from ArvanCloud User Panel > User Profile > API Keys
 msgid "Official ArvanCloud signature teal aesthetic with balanced curves & Persian typography."
 msgstr "Official ArvanCloud signature teal aesthetic with balanced curves & Persian typography."
 
-#: public/class-arvan-public.php:1068
+#: public/class-arvan-public.php:1148
 msgid "Online Top-up via Sandbox Gateway (Ref: %s)"
 msgstr "Online Top-up via Sandbox Gateway (Ref: %s)"
 
@@ -1805,11 +1832,11 @@ msgstr "Plan Specs"
 msgid "Please enter a valid domain name."
 msgstr "Please enter a valid domain name."
 
-#: public/class-arvan-public.php:497
+#: public/class-arvan-public.php:500
 msgid "Please sign in to deploy a cloud server."
 msgstr "Please sign in to deploy a cloud server."
 
-#: public/class-arvan-public.php:1055
+#: public/class-arvan-public.php:1135
 msgid "Please sign in to top up your wallet."
 msgstr "Please sign in to top up your wallet."
 
@@ -1863,11 +1890,11 @@ msgstr "Primary Text"
 msgid "Primary Text Color"
 msgstr "Primary Text Color"
 
-#: public/class-arvan-public.php:951
+#: public/class-arvan-public.php:954
 msgid "Private network created."
 msgstr "Private network created."
 
-#: public/class-arvan-public.php:974
+#: public/class-arvan-public.php:977
 msgid "Private network deleted."
 msgstr "Private network deleted."
 
@@ -1946,7 +1973,7 @@ msgstr "Reboot"
 msgid "Reboot"
 msgstr "Reboot"
 
-#: public/class-arvan-public.php:330 public/class-arvan-public.php:458
+#: public/class-arvan-public.php:333 public/class-arvan-public.php:461
 msgid "Reboot command dispatched to ArvanCloud."
 msgstr "Reboot command dispatched to ArvanCloud."
 
@@ -1973,7 +2000,7 @@ msgstr "Reset Defaults"
 msgid "Resource Name"
 msgstr "Resource Name"
 
-#: public/class-arvan-public.php:683
+#: public/class-arvan-public.php:686
 msgid "Resource not found or access denied."
 msgstr "Resource not found or access denied."
 
@@ -2107,7 +2134,10 @@ msgstr "Select Font Family Stack"
 msgid "Select the geographical location closest to your target audience."
 msgstr "Select the geographical location closest to your target audience."
 
-#: public/class-arvan-public.php:519
+msgid "Select VM"
+msgstr "Select VM"
+
+#: public/class-arvan-public.php:522
 msgid "Selected server flavor is not available."
 msgstr "Selected server flavor is not available."
 
@@ -2124,7 +2154,7 @@ msgstr "Server \"%s\" provisioned successfully! IP: %s"
 msgid "Server Configurator Settings"
 msgstr "Server Configurator Settings"
 
-#: public/class-arvan-public.php:329 public/class-arvan-public.php:457
+#: public/class-arvan-public.php:332 public/class-arvan-public.php:460
 msgid "Server deployed successfully! IP assigned:"
 msgstr "Server deployed successfully! IP assigned:"
 
@@ -2139,11 +2169,11 @@ msgstr "Server Instance"
 msgid "Server permanently destroyed."
 msgstr "Server permanently destroyed."
 
-#: public/class-arvan-public.php:712
+#: public/class-arvan-public.php:715
 msgid "Server power-off request accepted."
 msgstr "Server power-off request accepted."
 
-#: public/class-arvan-public.php:705
+#: public/class-arvan-public.php:708
 msgid "Server power-on request accepted."
 msgstr "Server power-on request accepted."
 
@@ -2153,22 +2183,22 @@ msgstr "Server powered off gracefully."
 msgid "Server powered on successfully."
 msgstr "Server powered on successfully."
 
-#: public/class-arvan-public.php:651
+#: public/class-arvan-public.php:654
 msgid "Server provisioning accepted. Network details will appear when ready."
 msgstr "Server provisioning accepted. Network details will appear when ready."
 
 msgid "Server reboot command executed."
 msgstr "Server reboot command executed."
 
-#: public/class-arvan-public.php:718
+#: public/class-arvan-public.php:721
 msgid "Server reboot request accepted."
 msgstr "Server reboot request accepted."
 
-#: public/class-arvan-public.php:727
+#: public/class-arvan-public.php:730
 msgid "Server termination request accepted."
 msgstr "Server termination request accepted."
 
-#: public/class-arvan-public.php:637
+#: public/class-arvan-public.php:640
 msgid "Server was created but could not be recorded locally. Cleanup was requested; contact support."
 msgstr "Server was created but could not be recorded locally. Cleanup was requested; contact support."
 
@@ -2370,7 +2400,7 @@ msgstr "Stopped"
 msgid "storage"
 msgstr "Storage"
 
-#: public/class-arvan-public.php:850
+#: public/class-arvan-public.php:853
 msgid "Storage volume created successfully."
 msgstr "Storage volume created successfully."
 
@@ -2601,7 +2631,7 @@ msgstr "Typography, Web Fonts & Size Hierarchy"
 msgid "Ultra Curved (Pill)"
 msgstr "Ultra Curved (Pill)"
 
-#: public/class-arvan-public.php:663 public/class-arvan-public.php:766 public/class-arvan-public.php:803 public/class-arvan-public.php:829 public/class-arvan-public.php:860 public/class-arvan-public.php:884 public/class-arvan-public.php:907 public/class-arvan-public.php:930 public/class-arvan-public.php:961 public/class-arvan-public.php:984 public/class-arvan-public.php:1013
+#: public/class-arvan-public.php:666 public/class-arvan-public.php:769 public/class-arvan-public.php:806 public/class-arvan-public.php:832 public/class-arvan-public.php:863 public/class-arvan-public.php:887 public/class-arvan-public.php:910 public/class-arvan-public.php:933 public/class-arvan-public.php:964 public/class-arvan-public.php:987 public/class-arvan-public.php:1016 public/class-arvan-public.php:1054 public/class-arvan-public.php:1077 public/class-arvan-public.php:1108
 msgid "Unauthorized."
 msgstr "Unauthorized."
 
@@ -2643,21 +2673,21 @@ msgstr "Virtual Storefront Quick Links (Theme Isolated)"
 msgid "Visual Customization & Theming Studio"
 msgstr "Visual Customization & Theming Studio"
 
-#: public/class-arvan-public.php:874
+#: public/class-arvan-public.php:877
 msgid "Volume attached to server."
 msgstr "Volume attached to server."
 
 msgid "Volume attached."
 msgstr "Volume attached."
 
-#: public/class-arvan-public.php:920
+#: public/class-arvan-public.php:923
 msgid "Volume deleted successfully."
 msgstr "Volume deleted successfully."
 
 msgid "Volume deleted."
 msgstr "Volume deleted."
 
-#: public/class-arvan-public.php:897
+#: public/class-arvan-public.php:900
 msgid "Volume detached from server."
 msgstr "Volume detached from server."
 
@@ -2689,11 +2719,11 @@ msgstr "Wallet is frozen. Cannot perform debit."
 msgid "Wallet Section Title"
 msgstr "Wallet Section Title"
 
-#: public/class-arvan-public.php:1084
+#: public/class-arvan-public.php:1164
 msgid "Wallet successfully credited with %1$s %2$s! RefID: %3$s"
 msgstr "Wallet successfully credited with %1$s %2$s! RefID: %3$s"
 
-#: public/class-arvan-public.php:334 public/class-arvan-public.php:462
+#: public/class-arvan-public.php:337 public/class-arvan-public.php:465
 msgid "Wallet successfully credited!"
 msgstr "Wallet successfully credited!"
 

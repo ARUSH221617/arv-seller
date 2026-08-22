@@ -48,8 +48,13 @@ export const App: React.FC = () => {
     fetchIaasResources,
     createVolume,
     deleteVolume,
+    attachVolume,
+    detachVolume,
     createNetwork,
+    deleteNetwork,
     createFirewall,
+    deleteFirewall,
+    addFirewallRule,
   } = useArvan();
 
   // Read embedded dataset from mount node (#arvan-cloud-app)
@@ -199,8 +204,13 @@ export const App: React.FC = () => {
             onFetchIaas={fetchIaasResources}
             onCreateVolume={createVolume}
             onDeleteVolume={deleteVolume}
+            onAttachVolume={attachVolume}
+            onDetachVolume={detachVolume}
             onCreateNetwork={createNetwork}
+            onDeleteNetwork={deleteNetwork}
             onCreateFirewall={createFirewall}
+            onDeleteFirewall={deleteFirewall}
+            onAddFirewallRule={addFirewallRule}
             onOpenDeposit={() => setIsDepositOpen(true)}
             onServerPower={handleServerPower}
             onNavigateDeploy={() => handleSelectTab('server')}

@@ -1790,7 +1790,25 @@ class Arvan_API_Client {
 
 		// 8. Volumes (OpenAPI: Response-array_Volume / Single / Batch)
 		if ( false !== strpos( $endpoint, 'volumes' ) ) {
+			$mock_volumes = get_option( 'arvan_mock_volumes', array(
+				array(
+					'id'               => 'vol-101',
+					'name'             => 'attached-ssd',
+					'sizeGigaBytes'    => 100,
+					'status'           => 'in-use',
+					'availabilityZone' => 'ir-thr-ba1',
+				),
+			) );
+			if ( ! is_array( $mock_volumes ) ) {
+				$mock_volumes = array();
+			}
+
 			if ( false !== strpos( $endpoint, 'batch-delete' ) ) {
+				$del_ids = isset( $body['volumeIds'] ) ? (array) $body['volumeIds'] : array();
+				$mock_volumes = array_values( array_filter( $mock_volumes, function( $v ) use ( $del_ids ) {
+					return ! in_array( $v['id'], $del_ids, true );
+				} ) );
+				update_option( 'arvan_mock_volumes', $mock_volumes, false );
 				return array( 'success' => true, 'message' => 'Volumes batch deleted.' );
 			}
 			if ( false !== strpos( $endpoint, 'attach' ) ) {
@@ -1800,22 +1818,31 @@ class Arvan_API_Client {
 				return array( 'success' => true, 'message' => 'Volume detached from server.' );
 			}
 			if ( 'POST' === $method ) {
+				$new_vol = array(
+					'id'               => 'vol-' . wp_generate_uuid4(),
+					'name'             => isset( $body['name'] ) ? $body['name'] : 'data-volume',
+					'sizeGigaBytes'    => isset( $body['sizeGigaBytes'] ) ? absint( $body['sizeGigaBytes'] ) : 50,
+					'status'           => 'available',
+					'availabilityZone' => isset( $body['availabilityZone'] ) ? $body['availabilityZone'] : 'ir-thr-ba1',
+				);
+				$mock_volumes[] = $new_vol;
+				update_option( 'arvan_mock_volumes', $mock_volumes, false );
 				return array(
 					'message' => 'Volume created successfully',
-					'data'    => array(
-						'id'               => 'vol-' . wp_generate_uuid4(),
-						'name'             => isset( $body['name'] ) ? $body['name'] : 'data-volume',
-						'sizeGigaBytes'    => isset( $body['sizeGigaBytes'] ) ? absint( $body['sizeGigaBytes'] ) : 50,
-						'status'           => 'available',
-						'availabilityZone' => 'ir-thr-ba1',
-					),
+					'data'    => $new_vol,
 				);
 			}
 			if ( preg_match( '#volumes/([a-zA-Z0-9_\-]+)#', $endpoint, $m ) ) {
+				$vid = $m[1];
+				foreach ( $mock_volumes as $v ) {
+					if ( $v['id'] === $vid ) {
+						return array( 'message' => 'Volume details retrieved', 'data' => $v );
+					}
+				}
 				return array(
 					'message' => 'Volume details retrieved',
 					'data'    => array(
-						'id'               => $m[1],
+						'id'               => $vid,
 						'name'             => 'attached-ssd',
 						'sizeGigaBytes'    => 100,
 						'status'           => 'in-use',
@@ -1825,20 +1852,24 @@ class Arvan_API_Client {
 			}
 			return array(
 				'message' => 'Volumes retrieved',
-				'data'    => array(
-					array(
-						'id'               => 'vol-101',
-						'name'             => 'attached-ssd',
-						'sizeGigaBytes'    => 100,
-						'status'           => 'in-use',
-						'availabilityZone' => 'ir-thr-ba1',
-					),
-				),
+				'data'    => $mock_volumes,
 			);
 		}
 
 		// 9. Firewalls (OpenAPI: Response-array_response_PublicAPIListData & Rules)
 		if ( false !== strpos( $endpoint, 'firewalls' ) ) {
+			$mock_fws = get_option( 'arvan_mock_firewalls', array(
+				array(
+					'id'               => 'fw-101',
+					'name'             => 'default-web-firewall',
+					'availabilityZone' => 'ir-thr-ba1',
+					'rulesCount'       => 3,
+				),
+			) );
+			if ( ! is_array( $mock_fws ) ) {
+				$mock_fws = array();
+			}
+
 			if ( false !== strpos( $endpoint, 'rules/batch-delete' ) ) {
 				return array( 'success' => true, 'message' => 'Firewall rules deleted.' );
 			}
@@ -1853,16 +1884,25 @@ class Arvan_API_Client {
 				);
 			}
 			if ( false !== strpos( $endpoint, 'batch-delete' ) ) {
+				$del_fws = isset( $body['firewallIds'] ) ? (array) $body['firewallIds'] : array();
+				$mock_fws = array_values( array_filter( $mock_fws, function( $f ) use ( $del_fws ) {
+					return ! in_array( $f['id'], $del_fws, true );
+				} ) );
+				update_option( 'arvan_mock_firewalls', $mock_fws, false );
 				return array( 'success' => true, 'message' => 'Firewalls batch deleted.' );
 			}
 			if ( 'POST' === $method ) {
+				$new_fw = array(
+					'id'               => 'fw-' . wp_rand( 100, 999 ),
+					'name'             => isset( $body['name'] ) ? $body['name'] : 'custom-firewall',
+					'availabilityZone' => isset( $body['availabilityZone'] ) ? $body['availabilityZone'] : 'ir-thr-ba1',
+					'rulesCount'       => 0,
+				);
+				$mock_fws[] = $new_fw;
+				update_option( 'arvan_mock_firewalls', $mock_fws, false );
 				return array(
 					'message' => 'Firewall created successfully',
-					'data'    => array(
-						'id'               => 'fw-' . wp_rand( 100, 999 ),
-						'name'             => isset( $body['name'] ) ? $body['name'] : 'custom-firewall',
-						'availabilityZone' => 'ir-thr-ba1',
-					),
+					'data'    => $new_fw,
 				);
 			}
 			if ( preg_match( '#firewalls/([a-zA-Z0-9_\-]+)#', $endpoint, $m ) ) {
@@ -1879,14 +1919,7 @@ class Arvan_API_Client {
 			}
 			return array(
 				'message' => 'Firewalls retrieved',
-				'data'    => array(
-					array(
-						'id'               => 'fw-101',
-						'name'             => 'default-web-firewall',
-						'availabilityZone' => 'ir-thr-ba1',
-						'rulesCount'       => 3,
-					),
-				),
+				'data'    => $mock_fws,
 			);
 		}
 
@@ -1912,6 +1945,18 @@ class Arvan_API_Client {
 
 		// 11. Networks (OpenAPI: Response-array_standardnetwork_NetworkResponse)
 		if ( false !== strpos( $endpoint, 'networks' ) ) {
+			$mock_nets = get_option( 'arvan_mock_networks', array(
+				array(
+					'id'               => 'net-101',
+					'name'             => 'default-private-net',
+					'cidr'             => '192.168.1.0/24',
+					'availabilityZone' => 'ir-thr-ba1',
+				),
+			) );
+			if ( ! is_array( $mock_nets ) ) {
+				$mock_nets = array();
+			}
+
 			if ( false !== strpos( $endpoint, 'attach' ) ) {
 				return array( 'success' => true, 'message' => 'Network attached to server.' );
 			}
@@ -1919,17 +1964,27 @@ class Arvan_API_Client {
 				return array( 'success' => true, 'message' => 'Network detached from server.' );
 			}
 			if ( 'DELETE' === $method ) {
+				if ( preg_match( '#networks/([a-zA-Z0-9_\-]+)#', $endpoint, $m ) ) {
+					$nid = $m[1];
+					$mock_nets = array_values( array_filter( $mock_nets, function( $n ) use ( $nid ) {
+						return $n['id'] !== $nid;
+					} ) );
+					update_option( 'arvan_mock_networks', $mock_nets, false );
+				}
 				return array( 'success' => true, 'message' => 'Network deleted.' );
 			}
 			if ( 'POST' === $method ) {
+				$new_net = array(
+					'id'               => 'net-' . wp_rand( 100, 999 ),
+					'name'             => isset( $body['name'] ) ? $body['name'] : 'custom-vpc',
+					'cidr'             => isset( $body['cidr'] ) ? $body['cidr'] : '192.168.10.0/24',
+					'availabilityZone' => isset( $body['availabilityZone'] ) ? $body['availabilityZone'] : 'ir-thr-ba1',
+				);
+				$mock_nets[] = $new_net;
+				update_option( 'arvan_mock_networks', $mock_nets, false );
 				return array(
 					'message' => 'Network created successfully',
-					'data'    => array(
-						'id'               => 'net-' . wp_rand( 100, 999 ),
-						'name'             => isset( $body['name'] ) ? $body['name'] : 'custom-vpc',
-						'cidr'             => isset( $body['cidr'] ) ? $body['cidr'] : '192.168.10.0/24',
-						'availabilityZone' => 'ir-thr-ba1',
-					),
+					'data'    => $new_net,
 				);
 			}
 			if ( preg_match( '#networks/([a-zA-Z0-9_\-]+)#', $endpoint, $m ) ) {
@@ -1945,14 +2000,7 @@ class Arvan_API_Client {
 			}
 			return array(
 				'message' => 'Networks retrieved',
-				'data'    => array(
-					array(
-						'id'               => 'net-101',
-						'name'             => 'default-private-net',
-						'cidr'             => '192.168.1.0/24',
-						'availabilityZone' => 'ir-thr-ba1',
-					),
-				),
+				'data'    => $mock_nets,
 			);
 		}
 

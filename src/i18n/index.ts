@@ -530,7 +530,13 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "Firewall Name": "نام فایروال",
     "Firewall created.": "فایروال با موفقیت ایجاد شد.",
     "Firewall rule added.": "قانون امنیتی فایروال افزوده شد.",
-    "rules": "قانون"
+    "rules": "قانون",
+    "No volumes found.": "فضای ذخیره‌سازی یافت نشد.",
+    "Select VM": "انتخاب سرور ابری",
+    "Attach": "اتصال دیسک",
+    "Detach": "جداسازی",
+    "Add Firewall Rule": "افزودن قانون به فایروال",
+    "Add Rule": "ثبت قانون"
   },
   "en": {
     "serverConfiguratorLink": "Server Configurator",
@@ -1346,7 +1352,16 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "Volume attached.": "Volume attached.",
     "Volume deleted.": "Volume deleted.",
     "Volume Name": "Volume Name",
-    "VPC Name": "VPC Name"
+    "VPC Name": "VPC Name",
+    "Add Firewall Rule": "Add Firewall Rule",
+    "Add Rule": "Add Rule",
+    "Attach": "Attach",
+    "Custom image creation requested.": "Custom image creation requested.",
+    "Custom image deleted.": "Custom image deleted.",
+    "Detach": "Detach",
+    "Firewall deleted successfully.": "Firewall deleted successfully.",
+    "No volumes found.": "No volumes found.",
+    "Select VM": "Select VM"
   },
   "ar": {
     "1x Public IP (Included)": "عنوان IP عام واحد (مشمول)",
@@ -1853,7 +1868,13 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "Firewall Name": "اسم جدار الحماية",
     "Firewall created.": "تم إنشاء جدار الحماية بنجاح.",
     "Firewall rule added.": "تمت إضافة قاعدة جدار الحماية.",
-    "rules": "قواعد"
+    "rules": "قواعد",
+    "No volumes found.": "لم يتم العثور على وحدات تخزين.",
+    "Select VM": "اختر خادم افتراضي",
+    "Attach": "توصيل",
+    "Detach": "فصل",
+    "Add Firewall Rule": "إضافة قاعدة جدار حماية",
+    "Add Rule": "إضافة قاعدة"
   },
   "tr": {
     "1x Public IP (Included)": "1x Genel IP (Dahil)",
@@ -2360,7 +2381,13 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "Firewall Name": "Güvenlik Duvarı Adı",
     "Firewall created.": "Güvenlik duvarı oluşturuldu.",
     "Firewall rule added.": "Güvenlik duvarı kuralı eklendi.",
-    "rules": "kural"
+    "rules": "kural",
+    "No volumes found.": "Depolama alanı bulunamadı.",
+    "Select VM": "Sanal Sunucu Seçin",
+    "Attach": "Bağla",
+    "Detach": "Ayrıl",
+    "Add Firewall Rule": "Güvenlik Duvarı Kuralı Ekle",
+    "Add Rule": "Kural Ekle"
   },
   "zh": {
     "1x Public IP (Included)": "1个公网IP（包含）",
@@ -2867,7 +2894,13 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "Firewall Name": "防火墙名称",
     "Firewall created.": "防火墙创建成功。",
     "Firewall rule added.": "防火墙规则添加成功。",
-    "rules": "条规则"
+    "rules": "条规则",
+    "No volumes found.": "未找到存储卷。",
+    "Select VM": "选择云服务器",
+    "Attach": "挂载",
+    "Detach": "卸载",
+    "Add Firewall Rule": "添加防火墙规则",
+    "Add Rule": "添加规则"
   },
   "ru": {
     "1x Public IP (Included)": "1x Публичный IP (включен)",
@@ -3374,7 +3407,13 @@ export const DICTIONARIES: Record<SupportedLanguage, Record<string, string>> = {
     "Firewall Name": "Имя брандмауэра",
     "Firewall created.": "Брандмауэр создан.",
     "Firewall rule added.": "Правило брандмауэра добавлено.",
-    "rules": "правил"
+    "rules": "правил",
+    "No volumes found.": "Диски не найдены.",
+    "Select VM": "Выберите ВМ",
+    "Attach": "Подключить",
+    "Detach": "Отключить",
+    "Add Firewall Rule": "Добавить правило брандмауэра",
+    "Add Rule": "Добавить правило"
   }
 };
 

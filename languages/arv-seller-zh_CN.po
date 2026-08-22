@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArvanCloud Reseller 1.0.0\n"
 "Report-Msgid-Bugs-To: https://arvancloud.ir\n"
-"POT-Creation-Date: 2026-08-22 11:18:21+0000\n"
-"PO-Revision-Date: 2026-08-22 11:18:21+0000\n"
+"POT-Creation-Date: 2026-08-22 11:24:32+0000\n"
+"PO-Revision-Date: 2026-08-22 11:24:32+0000\n"
 "Last-Translator: ArvanCloud Dev Team <support@arvancloud.ir>\n"
 "Language-Team: ArvanCloud Chinese Simplified Team\n"
 "Language: zh_CN\n"
@@ -90,7 +90,7 @@ msgstr "540 图曼/小时"
 msgid "92.5 hours runtime remaining"
 msgstr "剩余运行时间：92.5 小时"
 
-#: public/class-arvan-public.php:547
+#: public/class-arvan-public.php:550
 msgid "A minimum balance of %1$s %3$s (24 hours run cost) is required to deploy this server. Your balance is %2$s %3$s."
 msgstr "部署此服务器需要至少 %1$s %3$s 的余额（24小时运行成本）。您当前的余额为 %2$s %3$s。"
 
@@ -163,8 +163,14 @@ msgstr "已激活 (沙盒模拟)"
 msgid "activePops"
 msgstr "已部署在全球 40 多个边缘节点"
 
+msgid "Add Firewall Rule"
+msgstr "添加防火墙规则"
+
 msgid "Add Record"
 msgstr ""
+
+msgid "Add Rule"
+msgstr "添加规则"
 
 msgid "additionalStorage"
 msgstr "额外存储空间"
@@ -241,7 +247,7 @@ msgstr ""
 msgid "Amount (Toman):"
 msgstr "金额 (托曼):"
 
-#: public/class-arvan-public.php:335 public/class-arvan-public.php:463
+#: public/class-arvan-public.php:338 public/class-arvan-public.php:466
 msgid "An error occurred during request."
 msgstr "请求过程中发生错误。"
 
@@ -268,7 +274,7 @@ msgstr "正在应用..."
 msgid "Are you sure you want to permanently delete this resource from ArvanCloud?"
 msgstr "您确定要从 ArvanCloud 基础设施中永久删除此资源吗？"
 
-#: public/class-arvan-public.php:336 public/class-arvan-public.php:464
+#: public/class-arvan-public.php:339 public/class-arvan-public.php:467
 msgid "Are you sure you want to permanently destroy this server?"
 msgstr "您确定要永久销毁此服务器吗？"
 
@@ -304,7 +310,7 @@ msgstr "未配置 ArvanCloud API 密钥。请在 WP 后台 > Arvan Reseller > �
 msgid "ArvanCloud Customer Dashboard"
 msgstr "ArvanCloud 客户仪表盘"
 
-#: public/class-arvan-public.php:581
+#: public/class-arvan-public.php:584
 msgid "ArvanCloud did not return a server identifier. Provisioning state is unknown; contact support before retrying."
 msgstr ""
 
@@ -333,6 +339,9 @@ msgstr ""
 
 msgid "assignedNameservers"
 msgstr "分配的 ArvanCloud Anycast 权威域名服务器:"
+
+msgid "Attach"
+msgstr "挂载"
 
 msgid "authCredentials"
 msgstr "登录认证方式:"
@@ -466,7 +475,7 @@ msgstr "取消"
 msgid "Cancel"
 msgstr "取消"
 
-#: public/class-arvan-public.php:691
+#: public/class-arvan-public.php:694
 msgid "Cannot power on server: Your wallet balance is zero or negative. Please top up your wallet first."
 msgstr "无法开启服务器：您的钱包余额为零或负数。请先充值钱包。"
 
@@ -784,6 +793,14 @@ msgstr "自定义页脚声明 / SLA 保障文本"
 msgid "Custom Header Title"
 msgstr ""
 
+#: public/class-arvan-public.php:1098
+msgid "Custom image creation requested."
+msgstr ""
+
+#: public/class-arvan-public.php:1121
+msgid "Custom image deleted."
+msgstr ""
+
 msgid "Custom Store Logo URL"
 msgstr "自定义 Logo 链接"
 
@@ -960,6 +977,9 @@ msgstr "桌面端视图"
 msgid "Destroy Instance"
 msgstr ""
 
+msgid "Detach"
+msgstr "卸载"
+
 msgid "DevOps Platform"
 msgstr "DevOps 开发者平台"
 
@@ -1123,14 +1143,18 @@ msgstr ""
 msgid "Failed to update wallet balance."
 msgstr ""
 
-#: public/class-arvan-public.php:1003
+#: public/class-arvan-public.php:1006
 msgid "Firewall created."
 msgstr "防火墙创建成功。"
+
+#: public/class-arvan-public.php:1067
+msgid "Firewall deleted successfully."
+msgstr ""
 
 msgid "Firewall Name"
 msgstr "防火墙名称"
 
-#: public/class-arvan-public.php:1041
+#: public/class-arvan-public.php:1044
 msgid "Firewall rule added."
 msgstr "防火墙规则添加成功。"
 
@@ -1302,21 +1326,21 @@ msgstr "在 WordPress 区块编辑器中任意插入服务器配置器或客户�
 msgid "Instance Access & Naming"
 msgstr ""
 
-#: public/class-arvan-public.php:333 public/class-arvan-public.php:461
+#: public/class-arvan-public.php:336 public/class-arvan-public.php:464
 msgid "Instance permanently deleted."
 msgstr ""
 
 msgid "Instance powered off by administrator."
 msgstr "云主机已被管理员关机。"
 
-#: public/class-arvan-public.php:332 public/class-arvan-public.php:460
+#: public/class-arvan-public.php:335 public/class-arvan-public.php:463
 msgid "Instance powered off."
 msgstr ""
 
 msgid "Instance powered on by administrator."
 msgstr ""
 
-#: public/class-arvan-public.php:331 public/class-arvan-public.php:459
+#: public/class-arvan-public.php:334 public/class-arvan-public.php:462
 msgid "Instance powered on."
 msgstr ""
 
@@ -1368,11 +1392,11 @@ msgstr "余额不足 (需要充值)"
 msgid "Interactive Cloud Server sizing, pricing calculator, and deployment widget."
 msgstr "交互式云服务器配置选择、实时价格计算器和即时部署小组件。"
 
-#: public/class-arvan-public.php:731
+#: public/class-arvan-public.php:734
 msgid "Invalid power action."
 msgstr ""
 
-#: public/class-arvan-public.php:522
+#: public/class-arvan-public.php:525
 msgid "Invalid server configuration."
 msgstr ""
 
@@ -1584,7 +1608,7 @@ msgstr "暗夜黑曜石 (紫)"
 msgid "Minimum 12 characters"
 msgstr ""
 
-#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:1062
+#: public/class-arvan-gateway.php:59 public/class-arvan-public.php:1142
 msgid "Minimum deposit amount is 1,000 Tomans."
 msgstr ""
 
@@ -1669,6 +1693,9 @@ msgstr ""
 msgid "No transactions recorded in wallet ledger yet."
 msgstr ""
 
+msgid "No volumes found."
+msgstr "未找到存储卷。"
+
 msgid "Nordic Slate Monochrome"
 msgstr "北欧板岩单色"
 
@@ -1713,7 +1740,7 @@ msgstr "从 ArvanCloud 用户控制台 > 个人资料 > API 密钥 / 机器用�
 msgid "Official ArvanCloud signature teal aesthetic with balanced curves & Persian typography."
 msgstr "官方 ArvanCloud 标志性青绿色美学，具有平衡的弧线与波斯语排版。"
 
-#: public/class-arvan-public.php:1068
+#: public/class-arvan-public.php:1148
 msgid "Online Top-up via Sandbox Gateway (Ref: %s)"
 msgstr ""
 
@@ -1805,11 +1832,11 @@ msgstr "套餐配置"
 msgid "Please enter a valid domain name."
 msgstr ""
 
-#: public/class-arvan-public.php:497
+#: public/class-arvan-public.php:500
 msgid "Please sign in to deploy a cloud server."
 msgstr ""
 
-#: public/class-arvan-public.php:1055
+#: public/class-arvan-public.php:1135
 msgid "Please sign in to top up your wallet."
 msgstr ""
 
@@ -1863,11 +1890,11 @@ msgstr ""
 msgid "Primary Text Color"
 msgstr "主文本颜色"
 
-#: public/class-arvan-public.php:951
+#: public/class-arvan-public.php:954
 msgid "Private network created."
 msgstr "私有网络创建成功。"
 
-#: public/class-arvan-public.php:974
+#: public/class-arvan-public.php:977
 msgid "Private network deleted."
 msgstr "私有网络已删除。"
 
@@ -1946,7 +1973,7 @@ msgstr "重启"
 msgid "Reboot"
 msgstr ""
 
-#: public/class-arvan-public.php:330 public/class-arvan-public.php:458
+#: public/class-arvan-public.php:333 public/class-arvan-public.php:461
 msgid "Reboot command dispatched to ArvanCloud."
 msgstr ""
 
@@ -1973,7 +2000,7 @@ msgstr "重置为默认值"
 msgid "Resource Name"
 msgstr "资源名称"
 
-#: public/class-arvan-public.php:683
+#: public/class-arvan-public.php:686
 msgid "Resource not found or access denied."
 msgstr ""
 
@@ -2107,7 +2134,10 @@ msgstr "选择字体系列"
 msgid "Select the geographical location closest to your target audience."
 msgstr ""
 
-#: public/class-arvan-public.php:519
+msgid "Select VM"
+msgstr "选择云服务器"
+
+#: public/class-arvan-public.php:522
 msgid "Selected server flavor is not available."
 msgstr ""
 
@@ -2124,7 +2154,7 @@ msgstr ""
 msgid "Server Configurator Settings"
 msgstr "服务器配置器设置"
 
-#: public/class-arvan-public.php:329 public/class-arvan-public.php:457
+#: public/class-arvan-public.php:332 public/class-arvan-public.php:460
 msgid "Server deployed successfully! IP assigned:"
 msgstr ""
 
@@ -2139,11 +2169,11 @@ msgstr ""
 msgid "Server permanently destroyed."
 msgstr ""
 
-#: public/class-arvan-public.php:712
+#: public/class-arvan-public.php:715
 msgid "Server power-off request accepted."
 msgstr ""
 
-#: public/class-arvan-public.php:705
+#: public/class-arvan-public.php:708
 msgid "Server power-on request accepted."
 msgstr ""
 
@@ -2153,22 +2183,22 @@ msgstr ""
 msgid "Server powered on successfully."
 msgstr ""
 
-#: public/class-arvan-public.php:651
+#: public/class-arvan-public.php:654
 msgid "Server provisioning accepted. Network details will appear when ready."
 msgstr ""
 
 msgid "Server reboot command executed."
 msgstr ""
 
-#: public/class-arvan-public.php:718
+#: public/class-arvan-public.php:721
 msgid "Server reboot request accepted."
 msgstr ""
 
-#: public/class-arvan-public.php:727
+#: public/class-arvan-public.php:730
 msgid "Server termination request accepted."
 msgstr ""
 
-#: public/class-arvan-public.php:637
+#: public/class-arvan-public.php:640
 msgid "Server was created but could not be recorded locally. Cleanup was requested; contact support."
 msgstr ""
 
@@ -2370,7 +2400,7 @@ msgstr ""
 msgid "storage"
 msgstr "磁盘空间"
 
-#: public/class-arvan-public.php:850
+#: public/class-arvan-public.php:853
 msgid "Storage volume created successfully."
 msgstr "存储卷创建成功。"
 
@@ -2601,7 +2631,7 @@ msgstr "排版、网络字体与字号层级"
 msgid "Ultra Curved (Pill)"
 msgstr "超大圆角 / 胶囊形 (26px)"
 
-#: public/class-arvan-public.php:663 public/class-arvan-public.php:766 public/class-arvan-public.php:803 public/class-arvan-public.php:829 public/class-arvan-public.php:860 public/class-arvan-public.php:884 public/class-arvan-public.php:907 public/class-arvan-public.php:930 public/class-arvan-public.php:961 public/class-arvan-public.php:984 public/class-arvan-public.php:1013
+#: public/class-arvan-public.php:666 public/class-arvan-public.php:769 public/class-arvan-public.php:806 public/class-arvan-public.php:832 public/class-arvan-public.php:863 public/class-arvan-public.php:887 public/class-arvan-public.php:910 public/class-arvan-public.php:933 public/class-arvan-public.php:964 public/class-arvan-public.php:987 public/class-arvan-public.php:1016 public/class-arvan-public.php:1054 public/class-arvan-public.php:1077 public/class-arvan-public.php:1108
 msgid "Unauthorized."
 msgstr ""
 
@@ -2643,21 +2673,21 @@ msgstr "虚拟云商城快捷入口 (独立主题隔离模式)"
 msgid "Visual Customization & Theming Studio"
 msgstr "可视化定制与主题工作室"
 
-#: public/class-arvan-public.php:874
+#: public/class-arvan-public.php:877
 msgid "Volume attached to server."
 msgstr "存储卷已挂载至服务器。"
 
 msgid "Volume attached."
 msgstr "存储卷已挂载至服务器。"
 
-#: public/class-arvan-public.php:920
+#: public/class-arvan-public.php:923
 msgid "Volume deleted successfully."
 msgstr "存储卷已删除。"
 
 msgid "Volume deleted."
 msgstr "存储卷已删除。"
 
-#: public/class-arvan-public.php:897
+#: public/class-arvan-public.php:900
 msgid "Volume detached from server."
 msgstr "存储卷已从服务器卸载。"
 
@@ -2689,11 +2719,11 @@ msgstr ""
 msgid "Wallet Section Title"
 msgstr ""
 
-#: public/class-arvan-public.php:1084
+#: public/class-arvan-public.php:1164
 msgid "Wallet successfully credited with %1$s %2$s! RefID: %3$s"
 msgstr ""
 
-#: public/class-arvan-public.php:334 public/class-arvan-public.php:462
+#: public/class-arvan-public.php:337 public/class-arvan-public.php:465
 msgid "Wallet successfully credited!"
 msgstr ""
 

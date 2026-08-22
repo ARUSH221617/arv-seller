@@ -69,7 +69,10 @@ class Arvan_Public {
 		add_action( 'wp_ajax_arvan_create_network', array( $this, 'ajax_create_network' ) );
 		add_action( 'wp_ajax_arvan_delete_network', array( $this, 'ajax_delete_network' ) );
 		add_action( 'wp_ajax_arvan_create_firewall', array( $this, 'ajax_create_firewall' ) );
+		add_action( 'wp_ajax_arvan_delete_firewall', array( $this, 'ajax_delete_firewall' ) );
 		add_action( 'wp_ajax_arvan_add_firewall_rule', array( $this, 'ajax_add_firewall_rule' ) );
+		add_action( 'wp_ajax_arvan_create_custom_image', array( $this, 'ajax_create_custom_image' ) );
+		add_action( 'wp_ajax_arvan_delete_custom_image', array( $this, 'ajax_delete_custom_image' ) );
 
 		// Wallet Top-up & Deposit
 		add_action( 'wp_ajax_arvan_topup_wallet', array( $this, 'ajax_topup_wallet' ) );
@@ -1039,6 +1042,83 @@ class Arvan_Public {
 		}
 
 		wp_send_json_success( array( 'message' => __( 'Firewall rule added.', 'arv-seller' ) ) );
+	}
+
+	/**
+	 * AJAX delete firewall.
+	 */
+	public function ajax_delete_firewall() {
+		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
+
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => __( 'Unauthorized.', 'arv-seller' ) ) );
+		}
+
+		$fw_id  = isset( $_POST['firewallId'] ) ? sanitize_text_field( wp_unslash( $_POST['firewallId'] ) ) : '';
+		$region = isset( $_POST['availabilityZone'] ) ? sanitize_text_field( wp_unslash( $_POST['availabilityZone'] ) ) : 'ir-thr-ba1';
+
+		$client = new Arvan_API_Client();
+		$res    = $client->delete_firewalls( array( $fw_id ), $region );
+
+		if ( is_wp_error( $res ) ) {
+			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
+		}
+
+		wp_send_json_success( array( 'message' => __( 'Firewall deleted successfully.', 'arv-seller' ) ) );
+	}
+
+	/**
+	 * AJAX create custom image from URL.
+	 */
+	public function ajax_create_custom_image() {
+		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
+
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => __( 'Unauthorized.', 'arv-seller' ) ) );
+		}
+
+		$name   = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : 'image-' . wp_rand( 100, 999 );
+		$url    = isset( $_POST['url'] ) ? esc_url_raw( wp_unslash( $_POST['url'] ) ) : '';
+		$region = isset( $_POST['availabilityZone'] ) ? sanitize_text_field( wp_unslash( $_POST['availabilityZone'] ) ) : 'ir-thr-ba1';
+
+		$client = new Arvan_API_Client();
+		$res    = $client->create_image(
+			array(
+				'name'             => $name,
+				'url'              => $url,
+				'availabilityZone' => $region,
+			),
+			$region
+		);
+
+		if ( is_wp_error( $res ) ) {
+			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
+		}
+
+		wp_send_json_success( array( 'image' => $res['data'], 'message' => __( 'Custom image creation requested.', 'arv-seller' ) ) );
+	}
+
+	/**
+	 * AJAX delete custom image.
+	 */
+	public function ajax_delete_custom_image() {
+		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
+
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => __( 'Unauthorized.', 'arv-seller' ) ) );
+		}
+
+		$img_id = isset( $_POST['imageId'] ) ? sanitize_text_field( wp_unslash( $_POST['imageId'] ) ) : '';
+		$region = isset( $_POST['availabilityZone'] ) ? sanitize_text_field( wp_unslash( $_POST['availabilityZone'] ) ) : 'ir-thr-ba1';
+
+		$client = new Arvan_API_Client();
+		$res    = $client->delete_images( array( $img_id ), $region );
+
+		if ( is_wp_error( $res ) ) {
+			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
+		}
+
+		wp_send_json_success( array( 'message' => __( 'Custom image deleted.', 'arv-seller' ) ) );
 	}
 
 	/* =========================================================================

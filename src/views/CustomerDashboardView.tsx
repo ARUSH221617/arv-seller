@@ -49,8 +49,13 @@ interface CustomerDashboardViewProps {
   onFetchIaas?: () => void;
   onCreateVolume?: (name: string, size: number) => Promise<boolean>;
   onDeleteVolume?: (volumeId: string) => Promise<boolean>;
+  onAttachVolume?: (volumeId: string, serverId: string) => Promise<boolean>;
+  onDetachVolume?: (volumeId: string) => Promise<boolean>;
   onCreateNetwork?: (name: string, cidr: string) => Promise<boolean>;
+  onDeleteNetwork?: (networkId: string) => Promise<boolean>;
   onCreateFirewall?: (name: string) => Promise<boolean>;
+  onDeleteFirewall?: (firewallId: string) => Promise<boolean>;
+  onAddFirewallRule?: (firewallId: string, protocol: string, portMin: number, portMax: number) => Promise<boolean>;
   onOpenDeposit: () => void;
   onServerPower: (serverId: number, action: 'power_on' | 'power_off' | 'reboot' | 'delete') => Promise<void>;
   onNavigateDeploy: () => void;
@@ -72,8 +77,13 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
   onFetchIaas,
   onCreateVolume,
   onDeleteVolume,
+  onAttachVolume,
+  onDetachVolume,
   onCreateNetwork,
+  onDeleteNetwork,
   onCreateFirewall,
+  onDeleteFirewall,
+  onAddFirewallRule,
   onOpenDeposit,
   onServerPower,
   onNavigateDeploy,
@@ -82,9 +92,13 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
   const [loadingActionId, setLoadingActionId] = useState<number | null>(null);
   const [volName, setVolName] = useState('');
   const [volSize, setVolSize] = useState(50);
+  const [selectedServerForVol, setSelectedServerForVol] = useState<string>('');
   const [netName, setNetName] = useState('');
   const [netCidr, setNetCidr] = useState('192.168.10.0/24');
   const [fwName, setFwName] = useState('');
+  const [selectedFwId, setSelectedFwId] = useState<string>('');
+  const [ruleProto, setRuleProto] = useState<'TCP' | 'UDP' | 'ICMP'>('TCP');
+  const [rulePort, setRulePort] = useState(80);
 
   React.useEffect(() => {
     if (onFetchIaas) {
@@ -408,7 +422,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
               placeholder={t('Volume Name')}
               value={volName}
               onChange={(e) => setVolName(e.target.value)}
-              className="flex h-9 rounded-xl border border-slate-200 bg-white px-3 text-xs"
+              className="flex h-9 rounded-xl border border-slate-200 bg-white px-3 text-xs flex-1"
             />
             <input
               type="number"
@@ -417,7 +431,7 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
               placeholder={t('Size (GB)')}
               value={volSize}
               onChange={(e) => setVolSize(Number(e.target.value))}
-              className="flex h-9 w-24 rounded-xl border border-slate-200 bg-white px-3 text-xs"
+              className="flex h-9 w-28 rounded-xl border border-slate-200 bg-white px-3 text-xs"
             />
             <Button
               size="sm"
@@ -435,24 +449,66 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
           </div>
 
           <div className="divide-y divide-slate-100 text-xs">
-            {(iaasResources?.volumes || []).map((vol) => (
-              <div key={vol.id} className="py-2.5 flex items-center justify-between">
-                <div>
-                  <span className="font-bold text-slate-900">{vol.name}</span>
-                  <span className="text-slate-400 ms-2">({vol.sizeGigaBytes} GB &bull; {vol.status})</span>
+            {(iaasResources?.volumes || []).length === 0 ? (
+              <p className="text-slate-400 py-3">{t('No volumes found.')}</p>
+            ) : (
+              (iaasResources?.volumes || []).map((vol) => (
+                <div key={vol.id} className="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div>
+                    <span className="font-bold text-slate-900">{vol.name}</span>
+                    <span className="text-slate-500 ms-2 font-mono">({vol.sizeGigaBytes} GB &bull; {vol.status})</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {onAttachVolume && servers.length > 0 && (
+                      <div className="flex items-center gap-1.5">
+                        <select
+                          className="h-7 text-[11px] rounded-lg border border-slate-200 bg-white px-2"
+                          onChange={(e) => setSelectedServerForVol(e.target.value)}
+                          defaultValue=""
+                        >
+                          <option value="" disabled>{t('Select VM')}</option>
+                          {servers.map((s) => (
+                            <option key={s.id} value={s.arvan_uuid}>{s.name}</option>
+                          ))}
+                        </select>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => {
+                            if (selectedServerForVol) {
+                              onAttachVolume(vol.id, selectedServerForVol);
+                            }
+                          }}
+                          className="h-7 px-2 text-[11px]"
+                        >
+                          {t('Attach')}
+                        </Button>
+                      </div>
+                    )}
+                    {onDetachVolume && (
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        onClick={() => onDetachVolume(vol.id)}
+                        className="h-7 px-2 text-[11px]"
+                      >
+                        {t('Detach')}
+                      </Button>
+                    )}
+                    {onDeleteVolume && (
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => onDeleteVolume(vol.id)}
+                        className="text-arvan-rose hover:bg-rose-50 h-7 px-2"
+                      >
+                        <Trash2 className="h-3.5 w-3.5" />
+                      </Button>
+                    )}
+                  </div>
                 </div>
-                {onDeleteVolume && (
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    onClick={() => onDeleteVolume(vol.id)}
-                    className="text-arvan-rose hover:bg-rose-50 h-7 px-2"
-                  >
-                    <Trash2 className="h-3.5 w-3.5" />
-                  </Button>
-                )}
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </CardContent>
       </Card>
@@ -498,9 +554,21 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
             </div>
             <div className="divide-y divide-slate-100 text-xs">
               {(iaasResources?.networks || []).map((net) => (
-                <div key={net.id} className="py-2 flex items-center justify-between">
-                  <span className="font-bold text-slate-800">{net.name}</span>
-                  <span className="font-mono text-slate-500">{net.cidr}</span>
+                <div key={net.id} className="py-2.5 flex items-center justify-between">
+                  <div>
+                    <span className="font-bold text-slate-800">{net.name}</span>
+                    <span className="font-mono text-slate-500 ms-2">{net.cidr}</span>
+                  </div>
+                  {onDeleteNetwork && (
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => onDeleteNetwork(net.id)}
+                      className="text-arvan-rose hover:bg-rose-50 h-7 px-2"
+                    >
+                      <Trash2 className="h-3.5 w-3.5" />
+                    </Button>
+                  )}
                 </div>
               ))}
             </div>
@@ -537,11 +605,72 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
                 <Plus className="h-3.5 w-3.5" />
               </Button>
             </div>
+
+            {/* Add Rule Form */}
+            {onAddFirewallRule && (iaasResources?.firewalls || []).length > 0 && (
+              <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+                <p className="text-[11px] font-bold text-slate-700">{t('Add Firewall Rule')}:</p>
+                <div className="flex flex-wrap gap-2 items-center text-xs">
+                  <select
+                    className="h-8 rounded-lg border border-slate-200 bg-white px-2 text-xs"
+                    value={selectedFwId || (iaasResources?.firewalls[0]?.id || '')}
+                    onChange={(e) => setSelectedFwId(e.target.value)}
+                  >
+                    {(iaasResources?.firewalls || []).map((fw) => (
+                      <option key={fw.id} value={fw.id}>{fw.name}</option>
+                    ))}
+                  </select>
+                  <select
+                    className="h-8 rounded-lg border border-slate-200 bg-white px-2 text-xs"
+                    value={ruleProto}
+                    onChange={(e) => setRuleProto(e.target.value as any)}
+                  >
+                    <option value="TCP">TCP</option>
+                    <option value="UDP">UDP</option>
+                    <option value="ICMP">ICMP</option>
+                  </select>
+                  <input
+                    type="number"
+                    min="1"
+                    max="65535"
+                    value={rulePort}
+                    onChange={(e) => setRulePort(Number(e.target.value))}
+                    className="h-8 w-20 rounded-lg border border-slate-200 bg-white px-2 text-xs"
+                  />
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => {
+                      const targetFw = selectedFwId || (iaasResources?.firewalls[0]?.id || '');
+                      if (targetFw) {
+                        onAddFirewallRule(targetFw, ruleProto, rulePort, rulePort);
+                      }
+                    }}
+                    className="h-8 text-xs font-bold"
+                  >
+                    {t('Add Rule')}
+                  </Button>
+                </div>
+              </div>
+            )}
+
             <div className="divide-y divide-slate-100 text-xs">
               {(iaasResources?.firewalls || []).map((fw) => (
-                <div key={fw.id} className="py-2 flex items-center justify-between">
-                  <span className="font-bold text-slate-800">{fw.name}</span>
-                  <Badge variant="outline">{fw.rulesCount || 0} {t('rules')}</Badge>
+                <div key={fw.id} className="py-2.5 flex items-center justify-between">
+                  <div>
+                    <span className="font-bold text-slate-800">{fw.name}</span>
+                    <Badge variant="outline" className="ms-2">{fw.rulesCount || 0} {t('rules')}</Badge>
+                  </div>
+                  {onDeleteFirewall && (
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => onDeleteFirewall(fw.id)}
+                      className="text-arvan-rose hover:bg-rose-50 h-7 px-2"
+                    >
+                      <Trash2 className="h-3.5 w-3.5" />
+                    </Button>
+                  )}
                 </div>
               ))}
             </div>
