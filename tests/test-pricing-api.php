@@ -87,6 +87,10 @@ function esc_html__( $text, $domain = 'default' ) {
 	return $text;
 }
 
+function esc_url_raw( $url ) {
+	return filter_var( $url, FILTER_SANITIZE_URL );
+}
+
 class WP_Error {
 	protected $code;
 	protected $message;
@@ -217,15 +221,89 @@ assert_test( isset( $p_unres['success'] ) && $p_unres['success'] === true, "unre
 $p_del = $client->delete_server( 'srv-123', 'ir-thr-ba1' );
 assert_test( isset( $p_del['success'] ) && $p_del['success'] === true, "delete_server() succeeds" );
 
-// Volumes, Firewalls, & Networks
-$vols = $client->get_volumes( 'ir-thr-ba1' );
-assert_test( is_array( $vols ) && isset( $vols['data'] ), "get_volumes() returns volume list" );
+$p_inq = $client->inquiry_server( 'srv-123', 'ir-thr-ba1' );
+assert_test( is_array( $p_inq ) && isset( $p_inq['data']['id'] ), "inquiry_server() succeeds" );
 
-$fws = $client->get_firewalls( 'ir-thr-ba1' );
-assert_test( is_array( $fws ) && isset( $fws['data'] ), "get_firewalls() returns firewalls list" );
+$p_disc = $client->discard_server_task( 'srv-123', 'ir-thr-ba1' );
+assert_test( isset( $p_disc['success'] ) && $p_disc['success'] === true, "discard_server_task() succeeds" );
 
-$nets = $client->get_networks( 'ir-thr-ba1' );
-assert_test( is_array( $nets ) && isset( $nets['data'] ), "get_networks() returns networks list" );
+$p_batch_srv = $client->batch_delete_servers( array( 'srv-123', 'srv-456' ), 'ir-thr-ba1' );
+assert_test( isset( $p_batch_srv['success'] ) && $p_batch_srv['success'] === true, "batch_delete_servers() succeeds" );
+
+// 3. Volumes & Full Lifecycle
+echo "\n--- 3. Volumes, Firewalls, Security Groups & Networks ---\n";
+$vol_create = $client->create_volume( array( 'name' => 'disk-01', 'sizeGigaBytes' => 50 ), 'ir-thr-ba1' );
+assert_test( is_array( $vol_create ) && isset( $vol_create['data']['id'] ), "create_volume() creates block volume" );
+
+$vol_detail = $client->get_volume( 'vol-101', 'ir-thr-ba1' );
+assert_test( is_array( $vol_detail ) && isset( $vol_detail['data']['id'] ), "get_volume() returns single volume detail" );
+
+$vol_attach = $client->attach_volume( 'vol-101', 'srv-123', 'ir-thr-ba1', '/dev/vdb' );
+assert_test( isset( $vol_attach['success'] ) && $vol_attach['success'] === true, "attach_volume() succeeds" );
+
+$vol_detach = $client->detach_volume( 'vol-101', 'ir-thr-ba1' );
+assert_test( isset( $vol_detach['success'] ) && $vol_detach['success'] === true, "detach_volume() succeeds" );
+
+$vol_delete = $client->delete_volume( array( 'vol-101', 'vol-102' ), 'ir-thr-ba1' );
+assert_test( isset( $vol_delete['success'] ) && $vol_delete['success'] === true, "delete_volume() batch deletion succeeds" );
+
+// 4. Images
+$img_detail = $client->get_image( 'ubuntu-22.04', 'ir-thr-ba1' );
+assert_test( is_array( $img_detail ), "get_image() succeeds" );
+
+$img_create = $client->create_image( array( 'name' => 'custom-os', 'url' => 'https://example.com/os.qcow2' ), 'ir-thr-ba1' );
+assert_test( is_array( $img_create ), "create_image() from url succeeds" );
+
+$img_delete = $client->delete_images( array( 'img-1', 'img-2' ), 'ir-thr-ba1' );
+assert_test( is_array( $img_delete ), "delete_images() batch delete succeeds" );
+
+// 5. Firewalls & Rules
+$fw_list = $client->get_firewalls( 'ir-thr-ba1' );
+assert_test( is_array( $fw_list ) && isset( $fw_list['data'] ), "get_firewalls() returns firewalls list" );
+
+$fw_create = $client->create_firewall( array( 'name' => 'web-fw' ), 'ir-thr-ba1' );
+assert_test( is_array( $fw_create ) && isset( $fw_create['data']['id'] ), "create_firewall() succeeds" );
+
+$fw_detail = $client->get_firewall( 'fw-101', 'ir-thr-ba1' );
+assert_test( is_array( $fw_detail ) && isset( $fw_detail['data']['id'] ), "get_firewall() returns firewall detail" );
+
+$rule_add = $client->add_firewall_rule( 'fw-101', array( 'direction' => 'INGRESS', 'protocol' => 'TCP', 'remoteIp' => '0.0.0.0/0', 'portMin' => 80, 'portMax' => 80 ), 'ir-thr-ba1' );
+assert_test( is_array( $rule_add ) && isset( $rule_add['data']['id'] ), "add_firewall_rule() adds port 80 rule" );
+
+$rule_del = $client->delete_firewall_rules( 'fw-101', array( 'rule-101', 'rule-102' ), 'ir-thr-ba1' );
+assert_test( isset( $rule_del['success'] ) && $rule_del['success'] === true, "delete_firewall_rules() succeeds" );
+
+$fw_del = $client->delete_firewalls( array( 'fw-101' ), 'ir-thr-ba1' );
+assert_test( isset( $fw_del['success'] ) && $fw_del['success'] === true, "delete_firewalls() batch delete succeeds" );
+
+// 6. Security Groups
+$sg_list = $client->get_security_groups( 'ir-thr-ba1' );
+assert_test( is_array( $sg_list ) && isset( $sg_list['data'] ), "get_security_groups() succeeds" );
+
+$sg_att = $client->attach_security_group( 'sg-101', 'srv-123', 'ir-thr-ba1' );
+assert_test( isset( $sg_att['success'] ) && $sg_att['success'] === true, "attach_security_group() succeeds" );
+
+$sg_det = $client->detach_security_group( 'sg-101', 'srv-123', 'ir-thr-ba1' );
+assert_test( isset( $sg_det['success'] ) && $sg_det['success'] === true, "detach_security_group() succeeds" );
+
+// 7. Private Networks (VPC)
+$net_list = $client->get_networks( 'ir-thr-ba1' );
+assert_test( is_array( $net_list ) && isset( $net_list['data'] ), "get_networks() returns networks list" );
+
+$net_create = $client->create_network( array( 'name' => 'app-vpc', 'cidr' => '10.0.0.0/16' ), 'ir-thr-ba1' );
+assert_test( is_array( $net_create ) && isset( $net_create['data']['id'] ), "create_network() creates private VPC" );
+
+$net_detail = $client->get_network( 'net-101', 'ir-thr-ba1' );
+assert_test( is_array( $net_detail ) && isset( $net_detail['data']['id'] ), "get_network() returns network details" );
+
+$net_attach = $client->attach_network( 'net-101', 'srv-123', 'ir-thr-ba1' );
+assert_test( isset( $net_attach['success'] ) && $net_attach['success'] === true, "attach_network() attaches VPC to VM" );
+
+$net_detach = $client->detach_network( 'net-101', 'srv-123', 'ir-thr-ba1' );
+assert_test( isset( $net_detach['success'] ) && $net_detach['success'] === true, "detach_network() detaches VPC from VM" );
+
+$net_del = $client->delete_network( 'net-101', 'ir-thr-ba1' );
+assert_test( isset( $net_del['success'] ) && $net_del['success'] === true, "delete_network() deletes VPC" );
 
 echo "\n=========================================================\n";
 echo "SUMMARY: {$passed} Passed, {$failed} Failed\n";

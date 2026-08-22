@@ -60,6 +60,17 @@ class Arvan_Public {
 		add_action( 'wp_ajax_arvan_server_power', array( $this, 'ajax_server_power' ) );
 		add_action( 'wp_ajax_arvan_get_dashboard_data', array( $this, 'ajax_get_dashboard_data' ) );
 
+		// IaaS Infrastructure AJAX Endpoints (Volumes, Networks, Firewalls, Images)
+		add_action( 'wp_ajax_arvan_get_iaas_resources', array( $this, 'ajax_get_iaas_resources' ) );
+		add_action( 'wp_ajax_arvan_create_volume', array( $this, 'ajax_create_volume' ) );
+		add_action( 'wp_ajax_arvan_attach_volume', array( $this, 'ajax_attach_volume' ) );
+		add_action( 'wp_ajax_arvan_detach_volume', array( $this, 'ajax_detach_volume' ) );
+		add_action( 'wp_ajax_arvan_delete_volume', array( $this, 'ajax_delete_volume' ) );
+		add_action( 'wp_ajax_arvan_create_network', array( $this, 'ajax_create_network' ) );
+		add_action( 'wp_ajax_arvan_delete_network', array( $this, 'ajax_delete_network' ) );
+		add_action( 'wp_ajax_arvan_create_firewall', array( $this, 'ajax_create_firewall' ) );
+		add_action( 'wp_ajax_arvan_add_firewall_rule', array( $this, 'ajax_add_firewall_rule' ) );
+
 		// Wallet Top-up & Deposit
 		add_action( 'wp_ajax_arvan_topup_wallet', array( $this, 'ajax_topup_wallet' ) );
 	}
@@ -98,19 +109,13 @@ class Arvan_Public {
 		$arvan_page = get_query_var( 'arvan_page' );
 
 		if ( ! empty( $arvan_page ) ) {
+			$this->maybe_handle_payment_callback();
 			global $wp_query;
 
 			// Force HTTP 200 OK and prevent 404 handler
 			$wp_query->is_404  = false;
 			$wp_query->is_page = true;
 			status_header( 200 );
-
-			// Allow CORS for development proxies and embedded canvases
-			if ( ! headers_sent() ) {
-				header( 'Access-Control-Allow-Origin: *' );
-				header( 'Access-Control-Allow-Methods: GET, POST, OPTIONS' );
-				header( 'Access-Control-Allow-Headers: *' );
-			}
 
 			$canvas_template = plugin_dir_path( dirname( __FILE__ ) ) . 'templates/frontend-canvas.php';
 
@@ -120,6 +125,51 @@ class Arvan_Public {
 		}
 
 		return $template;
+	}
+
+	/**
+	 * Process gateway return using persisted authority and amount.
+	 */
+	private function maybe_handle_payment_callback() {
+		if ( ! isset( $_GET['arvan_payment'] ) || 'verify' !== sanitize_key( wp_unslash( $_GET['arvan_payment'] ) ) ) {
+			return;
+		}
+
+		$status = isset( $_GET['Status'] ) ? sanitize_key( wp_unslash( $_GET['Status'] ) ) : '';
+		$authority = isset( $_GET['Authority'] ) ? sanitize_text_field( wp_unslash( $_GET['Authority'] ) ) : '';
+		if ( 'ok' !== strtolower( $status ) || '' === $authority ) {
+			wp_safe_redirect( add_query_arg( 'payment', 'cancelled', home_url( '/cloud-services/dashboard/' ) ) );
+			exit;
+		}
+
+		$result = ( new Arvan_Gateway() )->complete_payment( $authority );
+		$state = is_wp_error( $result ) ? 'failed' : 'success';
+		wp_safe_redirect( add_query_arg( 'payment', $state, home_url( '/cloud-services/dashboard/' ) ) );
+		exit;
+	}
+
+	/**
+	 * Convert a resource row to the public dashboard contract.
+	 *
+	 * @param object $resource Resource database row.
+	 * @return array
+	 */
+	private function format_resource( $resource ) {
+		$specs = json_decode( (string) $resource->plan_specs, true );
+		$specs = is_array( $specs ) ? $specs : array();
+		return array(
+			'id'          => (int) $resource->id,
+			'name'        => (string) $resource->name,
+			'arvan_uuid'  => (string) $resource->arvan_resource_id,
+			'status'      => (string) $resource->status,
+			'region_id'   => (string) $resource->region,
+			'flavor_id'   => isset( $specs['flavor_id'] ) ? (string) $specs['flavor_id'] : '',
+			'image_id'    => isset( $specs['image_id'] ) ? (string) $specs['image_id'] : '',
+			'disk_size'   => isset( $specs['disk_size'] ) ? (int) $specs['disk_size'] : 0,
+			'public_ip'   => isset( $specs['ip_address'] ) ? (string) $specs['ip_address'] : '',
+			'hourly_rate' => (float) $resource->hourly_cost,
+			'created_at'  => (string) $resource->created_at,
+		);
 	}
 
 	/**
@@ -195,19 +245,7 @@ class Arvan_Public {
 		if ( $user_logged_in ) {
 			$raw_servers = Arvan_Wallet::get_user_resources( $user_id );
 			foreach ( $raw_servers as $res ) {
-				$user_servers[] = array(
-					'id'          => (int) $res->id,
-					'name'        => ! empty( $res->name ) ? $res->name : ( ! empty( $res->resource_name ) ? $res->resource_name : 'server-' . $res->id ),
-					'arvan_uuid'  => ! empty( $res->arvan_resource_id ) ? $res->arvan_resource_id : ( ! empty( $res->arvan_uuid ) ? $res->arvan_uuid : 'srv-' . $res->id ),
-					'status'      => $res->status,
-					'region_id'   => ! empty( $res->region ) ? $res->region : 'ir-thr-c2',
-					'flavor_id'   => 'g1-2-4',
-					'image_id'    => 'ubuntu-22.04',
-					'disk_size'   => 40,
-					'public_ip'   => '185.143.232.' . ( 40 + (int) $res->id ),
-					'hourly_rate' => isset( $res->hourly_cost ) ? (float) $res->hourly_cost : ( isset( $res->hourly_rate ) ? (float) $res->hourly_rate : 540.0 ),
-					'created_at'  => $res->created_at,
-				);
+				$user_servers[] = $this->format_resource( $res );
 			}
 
 			$raw_txs = Arvan_Wallet::get_user_ledger( $user_id, 20 );
@@ -366,19 +404,7 @@ class Arvan_Public {
 		if ( $user_logged_in ) {
 			$raw_servers = Arvan_Wallet::get_user_resources( $user_id );
 			foreach ( $raw_servers as $res ) {
-				$user_servers[] = array(
-					'id'          => (int) $res->id,
-					'name'        => ! empty( $res->name ) ? $res->name : 'server-' . $res->id,
-					'arvan_uuid'  => ! empty( $res->arvan_resource_id ) ? $res->arvan_resource_id : 'srv-' . $res->id,
-					'status'      => $res->status,
-					'region_id'   => ! empty( $res->region ) ? $res->region : 'ir-thr-c2',
-					'flavor_id'   => 'g1-2-4',
-					'image_id'    => 'ubuntu-22.04',
-					'disk_size'   => 40,
-					'public_ip'   => '185.143.232.' . ( 40 + (int) $res->id ),
-					'hourly_rate' => isset( $res->hourly_cost ) ? (float) $res->hourly_cost : 540.0,
-					'created_at'  => $res->created_at,
-				);
+				$user_servers[] = $this->format_resource( $res );
 			}
 
 			$raw_txs = Arvan_Wallet::get_user_ledger( $user_id, 20 );
@@ -478,7 +504,6 @@ class Arvan_Public {
 		$image   = ! empty( $_POST['imageId'] ) ? sanitize_text_field( wp_unslash( $_POST['imageId'] ) ) : ( ! empty( $_POST['image_id'] ) ? sanitize_text_field( wp_unslash( $_POST['image_id'] ) ) : 'ubuntu-22.04' );
 		$disk    = isset( $_POST['rootVolumeSizeGigaBytes'] ) ? absint( $_POST['rootVolumeSizeGigaBytes'] ) : ( isset( $_POST['disk_size'] ) ? absint( $_POST['disk_size'] ) : 40 );
 		$ssh_key = ! empty( $_POST['sshKeyName'] ) ? sanitize_text_field( wp_unslash( $_POST['sshKeyName'] ) ) : ( ! empty( $_POST['ssh_key'] ) ? sanitize_textarea_field( wp_unslash( $_POST['ssh_key'] ) ) : '' );
-		$pwd     = isset( $_POST['password'] ) ? sanitize_text_field( wp_unslash( $_POST['password'] ) ) : '';
 
 		// Standard base rates per flavor
 		$flavor_rates = array(
@@ -490,8 +515,14 @@ class Arvan_Public {
 			'c1-4-4'   => array( 'cost' => 690, 'base_disk' => 40, 'name' => '4 vCPU / 4GB RAM' ),
 			'm1-2-8'   => array( 'cost' => 650, 'base_disk' => 50, 'name' => '2 vCPU / 8GB RAM' ),
 		);
+		if ( ! isset( $flavor_rates[ $flavor ] ) ) {
+			wp_send_json_error( array( 'message' => __( 'Selected server flavor is not available.', 'arv-seller' ) ) );
+		}
+		if ( ! preg_match( '/^[a-z0-9][a-z0-9-]{1,62}$/', $name ) || ! preg_match( '/^[a-z0-9-]+$/', $region ) || ! preg_match( '/^[a-zA-Z0-9._-]+$/', $image ) ) {
+			wp_send_json_error( array( 'message' => __( 'Invalid server configuration.', 'arv-seller' ) ) );
+		}
 
-		$base_info   = isset( $flavor_rates[ $flavor ] ) ? $flavor_rates[ $flavor ] : $flavor_rates['g1-2-4'];
+		$base_info   = $flavor_rates[ $flavor ];
 		$base_cost   = $base_info['cost'];
 		$base_disk   = $base_info['base_disk'];
 		$extra_disk  = max( 0, $disk - $base_disk );
@@ -537,7 +568,6 @@ class Arvan_Public {
 				'disk_size'               => $disk,
 				'sshKeyName'              => $ssh_key,
 				'ssh_key'                 => $ssh_key,
-				'password'                => $pwd,
 			)
 		);
 
@@ -546,10 +576,13 @@ class Arvan_Public {
 		}
 
 		$server_data = isset( $api_res['data'] ) ? $api_res['data'] : $api_res;
-		$arvan_id    = isset( $server_data['id'] ) ? $server_data['id'] : 'srv-' . wp_generate_uuid4();
+		$arvan_id    = isset( $server_data['id'] ) ? sanitize_text_field( $server_data['id'] ) : '';
+		if ( '' === $arvan_id ) {
+			wp_send_json_error( array( 'message' => __( 'ArvanCloud did not return a server identifier. Provisioning state is unknown; contact support before retrying.', 'arv-seller' ) ) );
+		}
 
 		// Extract public IP address from v3 ipAddresses array or legacy fields
-		$ip_address = '185.143.' . wp_rand( 200, 240 ) . '.' . wp_rand( 10, 250 );
+		$ip_address = '';
 		if ( ! empty( $server_data['ipAddresses'] ) && is_array( $server_data['ipAddresses'] ) ) {
 			foreach ( $server_data['ipAddresses'] as $ip_item ) {
 				if ( ! empty( $ip_item['ipAddress'] ) ) {
@@ -582,7 +615,8 @@ class Arvan_Public {
 			)
 		);
 
-		$wpdb->insert(
+		$resource_status = ! empty( $server_data['taskState'] ) ? 'building' : strtolower( isset( $server_data['state'] ) ? $server_data['state'] : 'building' );
+		$inserted = $wpdb->insert(
 			$table_resources,
 			array(
 				'user_id'           => $user_id,
@@ -592,12 +626,16 @@ class Arvan_Public {
 				'region'            => $region,
 				'plan_specs'        => $plan_specs,
 				'hourly_cost'       => $retail_hourly,
-				'status'            => 'active',
+				'status'            => $resource_status,
 				'last_metered_at'   => current_time( 'mysql' ),
 				'created_at'        => current_time( 'mysql' ),
 			),
 			array( '%d', '%s', '%s', '%s', '%s', '%s', '%f', '%s', '%s', '%s' )
 		);
+		if ( false === $inserted ) {
+			$api_client->delete_server( $arvan_id, $region );
+			wp_send_json_error( array( 'message' => __( 'Server was created but could not be recorded locally. Cleanup was requested; contact support.', 'arv-seller' ) ) );
+		}
 
 		$resource_id = $wpdb->insert_id;
 
@@ -608,8 +646,9 @@ class Arvan_Public {
 				'name'        => $name,
 				'ip_address'  => $ip_address,
 				'hourly_cost' => $retail_hourly,
+				'status'      => $resource_status,
 				'redirect'    => home_url( '/cloud-services/dashboard/' ),
-				'message'     => sprintf( __( 'Server "%s" provisioned successfully! IP: %s', 'arv-seller' ), $name, $ip_address ),
+				'message'     => __( 'Server provisioning accepted. Network details will appear when ready.', 'arv-seller' ),
 			)
 		);
 	}
@@ -662,27 +701,30 @@ class Arvan_Public {
 			case 'power-on':
 			case 'power_on':
 				$res = $api_client->power_on_server( $arvan_id, $region );
-				$new_status = 'active';
-				$msg = __( 'Server powered on successfully.', 'arv-seller' );
+				$new_status = 'powering_on';
+				$msg = __( 'Server power-on request accepted.', 'arv-seller' );
 				break;
 
 			case 'power-off':
 			case 'power_off':
 				$res = $api_client->power_off_server( $arvan_id, $region );
-				$new_status = 'stopped';
-				$msg = __( 'Server powered off gracefully.', 'arv-seller' );
+				$new_status = 'powering_off';
+				$msg = __( 'Server power-off request accepted.', 'arv-seller' );
 				break;
 
 			case 'reboot':
 				$res = $api_client->reboot_server( $arvan_id, $region );
-				$new_status = 'active';
-				$msg = __( 'Server reboot command executed.', 'arv-seller' );
+				$new_status = 'rebooting';
+				$msg = __( 'Server reboot request accepted.', 'arv-seller' );
 				break;
 
 			case 'delete':
 				$res = $api_client->delete_server( $arvan_id, $region );
-				$wpdb->delete( $table_resources, array( 'id' => $resource->id ), array( '%d' ) );
-				wp_send_json_success( array( 'deleted' => true, 'message' => __( 'Server permanently destroyed.', 'arv-seller' ) ) );
+				if ( is_wp_error( $res ) ) {
+					wp_send_json_error( array( 'message' => $res->get_error_message() ) );
+				}
+				$wpdb->update( $table_resources, array( 'status' => 'deleting', 'updated_at' => current_time( 'mysql' ) ), array( 'id' => $resource->id ), array( '%s', '%s' ), array( '%d' ) );
+				wp_send_json_success( array( 'deleted' => false, 'status' => 'deleting', 'message' => __( 'Server termination request accepted.', 'arv-seller' ) ) );
 				return;
 
 			default:
@@ -733,19 +775,7 @@ class Arvan_Public {
 		$user_servers = array();
 		if ( ! empty( $raw_servers ) ) {
 			foreach ( $raw_servers as $res ) {
-				$user_servers[] = array(
-					'id'          => (int) $res->id,
-					'name'        => ! empty( $res->name ) ? $res->name : ( ! empty( $res->resource_name ) ? $res->resource_name : 'server-' . $res->id ),
-					'arvan_uuid'  => ! empty( $res->arvan_resource_id ) ? $res->arvan_resource_id : ( ! empty( $res->arvan_uuid ) ? $res->arvan_uuid : 'srv-' . $res->id ),
-					'status'      => $res->status,
-					'region_id'   => ! empty( $res->region ) ? $res->region : 'ir-thr-c2',
-					'flavor_id'   => 'g1-2-4',
-					'image_id'    => 'ubuntu-22.04',
-					'disk_size'   => 40,
-					'public_ip'   => '185.143.232.' . ( 40 + (int) $res->id ),
-					'hourly_rate' => isset( $res->hourly_cost ) ? (float) $res->hourly_cost : ( isset( $res->hourly_rate ) ? (float) $res->hourly_rate : 540.0 ),
-					'created_at'  => $res->created_at,
-				);
+				$user_servers[] = $this->format_resource( $res );
 			}
 		}
 
@@ -757,6 +787,258 @@ class Arvan_Public {
 				'servers'        => $user_servers,
 			)
 		);
+	}
+
+	/* =========================================================================
+	   IaaS Resource Management AJAX Handlers (Volumes, Networks, Firewalls)
+	   ========================================================================= */
+
+	/**
+	 * AJAX fetch full IaaS inventory (Volumes, Networks, Firewalls).
+	 */
+	public function ajax_get_iaas_resources() {
+		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
+
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => __( 'Unauthorized.', 'arv-seller' ) ) );
+		}
+
+		$region = isset( $_POST['region'] ) ? sanitize_text_field( wp_unslash( $_POST['region'] ) ) : 'ir-thr-ba1';
+		$client = new Arvan_API_Client();
+
+		$volumes   = $client->get_volumes( $region );
+		$networks  = $client->get_networks( $region );
+		$firewalls = $client->get_firewalls( $region );
+
+		wp_send_json_success(
+			array(
+				'volumes'   => is_wp_error( $volumes ) ? array() : ( isset( $volumes['data'] ) ? $volumes['data'] : array() ),
+				'networks'  => is_wp_error( $networks ) ? array() : ( isset( $networks['data'] ) ? $networks['data'] : array() ),
+				'firewalls' => is_wp_error( $firewalls ) ? array() : ( isset( $firewalls['data'] ) ? $firewalls['data'] : array() ),
+			)
+		);
+	}
+
+	/**
+	 * AJAX create volume.
+	 */
+	public function ajax_create_volume() {
+		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
+
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => __( 'Unauthorized.', 'arv-seller' ) ) );
+		}
+
+		$name   = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : 'vol-' . wp_rand( 100, 999 );
+		$size   = isset( $_POST['sizeGigaBytes'] ) ? absint( $_POST['sizeGigaBytes'] ) : 50;
+		$region = isset( $_POST['availabilityZone'] ) ? sanitize_text_field( wp_unslash( $_POST['availabilityZone'] ) ) : 'ir-thr-ba1';
+
+		$client = new Arvan_API_Client();
+		$res    = $client->create_volume(
+			array(
+				'name'             => $name,
+				'sizeGigaBytes'    => $size,
+				'availabilityZone' => $region,
+			),
+			$region
+		);
+
+		if ( is_wp_error( $res ) ) {
+			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
+		}
+
+		wp_send_json_success( array( 'volume' => $res['data'], 'message' => __( 'Storage volume created successfully.', 'arv-seller' ) ) );
+	}
+
+	/**
+	 * AJAX attach volume to server.
+	 */
+	public function ajax_attach_volume() {
+		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
+
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => __( 'Unauthorized.', 'arv-seller' ) ) );
+		}
+
+		$vol_id = isset( $_POST['volumeId'] ) ? sanitize_text_field( wp_unslash( $_POST['volumeId'] ) ) : '';
+		$srv_id = isset( $_POST['serverId'] ) ? sanitize_text_field( wp_unslash( $_POST['serverId'] ) ) : '';
+		$region = isset( $_POST['availabilityZone'] ) ? sanitize_text_field( wp_unslash( $_POST['availabilityZone'] ) ) : 'ir-thr-ba1';
+
+		$client = new Arvan_API_Client();
+		$res    = $client->attach_volume( $vol_id, $srv_id, $region );
+
+		if ( is_wp_error( $res ) ) {
+			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
+		}
+
+		wp_send_json_success( array( 'message' => __( 'Volume attached to server.', 'arv-seller' ) ) );
+	}
+
+	/**
+	 * AJAX detach volume from server.
+	 */
+	public function ajax_detach_volume() {
+		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
+
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => __( 'Unauthorized.', 'arv-seller' ) ) );
+		}
+
+		$vol_id = isset( $_POST['volumeId'] ) ? sanitize_text_field( wp_unslash( $_POST['volumeId'] ) ) : '';
+		$region = isset( $_POST['availabilityZone'] ) ? sanitize_text_field( wp_unslash( $_POST['availabilityZone'] ) ) : 'ir-thr-ba1';
+
+		$client = new Arvan_API_Client();
+		$res    = $client->detach_volume( $vol_id, $region );
+
+		if ( is_wp_error( $res ) ) {
+			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
+		}
+
+		wp_send_json_success( array( 'message' => __( 'Volume detached from server.', 'arv-seller' ) ) );
+	}
+
+	/**
+	 * AJAX delete volume.
+	 */
+	public function ajax_delete_volume() {
+		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
+
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => __( 'Unauthorized.', 'arv-seller' ) ) );
+		}
+
+		$vol_id = isset( $_POST['volumeId'] ) ? sanitize_text_field( wp_unslash( $_POST['volumeId'] ) ) : '';
+		$region = isset( $_POST['availabilityZone'] ) ? sanitize_text_field( wp_unslash( $_POST['availabilityZone'] ) ) : 'ir-thr-ba1';
+
+		$client = new Arvan_API_Client();
+		$res    = $client->delete_volume( $vol_id, $region );
+
+		if ( is_wp_error( $res ) ) {
+			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
+		}
+
+		wp_send_json_success( array( 'message' => __( 'Volume deleted successfully.', 'arv-seller' ) ) );
+	}
+
+	/**
+	 * AJAX create private network.
+	 */
+	public function ajax_create_network() {
+		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
+
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => __( 'Unauthorized.', 'arv-seller' ) ) );
+		}
+
+		$name   = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : 'vpc-' . wp_rand( 100, 999 );
+		$cidr   = isset( $_POST['cidr'] ) ? sanitize_text_field( wp_unslash( $_POST['cidr'] ) ) : '192.168.1.0/24';
+		$region = isset( $_POST['availabilityZone'] ) ? sanitize_text_field( wp_unslash( $_POST['availabilityZone'] ) ) : 'ir-thr-ba1';
+
+		$client = new Arvan_API_Client();
+		$res    = $client->create_network(
+			array(
+				'name'             => $name,
+				'cidr'             => $cidr,
+				'availabilityZone' => $region,
+			),
+			$region
+		);
+
+		if ( is_wp_error( $res ) ) {
+			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
+		}
+
+		wp_send_json_success( array( 'network' => $res['data'], 'message' => __( 'Private network created.', 'arv-seller' ) ) );
+	}
+
+	/**
+	 * AJAX delete private network.
+	 */
+	public function ajax_delete_network() {
+		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
+
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => __( 'Unauthorized.', 'arv-seller' ) ) );
+		}
+
+		$net_id = isset( $_POST['networkId'] ) ? sanitize_text_field( wp_unslash( $_POST['networkId'] ) ) : '';
+		$region = isset( $_POST['availabilityZone'] ) ? sanitize_text_field( wp_unslash( $_POST['availabilityZone'] ) ) : 'ir-thr-ba1';
+
+		$client = new Arvan_API_Client();
+		$res    = $client->delete_network( $net_id, $region );
+
+		if ( is_wp_error( $res ) ) {
+			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
+		}
+
+		wp_send_json_success( array( 'message' => __( 'Private network deleted.', 'arv-seller' ) ) );
+	}
+
+	/**
+	 * AJAX create firewall.
+	 */
+	public function ajax_create_firewall() {
+		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
+
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => __( 'Unauthorized.', 'arv-seller' ) ) );
+		}
+
+		$name   = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : 'fw-' . wp_rand( 100, 999 );
+		$region = isset( $_POST['availabilityZone'] ) ? sanitize_text_field( wp_unslash( $_POST['availabilityZone'] ) ) : 'ir-thr-ba1';
+
+		$client = new Arvan_API_Client();
+		$res    = $client->create_firewall(
+			array(
+				'name'             => $name,
+				'availabilityZone' => $region,
+			),
+			$region
+		);
+
+		if ( is_wp_error( $res ) ) {
+			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
+		}
+
+		wp_send_json_success( array( 'firewall' => $res['data'], 'message' => __( 'Firewall created.', 'arv-seller' ) ) );
+	}
+
+	/**
+	 * AJAX add firewall rule.
+	 */
+	public function ajax_add_firewall_rule() {
+		check_ajax_referer( 'arvan_frontend_nonce', 'nonce' );
+
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( array( 'message' => __( 'Unauthorized.', 'arv-seller' ) ) );
+		}
+
+		$fw_id    = isset( $_POST['firewallId'] ) ? sanitize_text_field( wp_unslash( $_POST['firewallId'] ) ) : '';
+		$protocol = isset( $_POST['protocol'] ) ? sanitize_text_field( wp_unslash( $_POST['protocol'] ) ) : 'TCP';
+		$port_min = isset( $_POST['portMin'] ) ? absint( $_POST['portMin'] ) : 80;
+		$port_max = isset( $_POST['portMax'] ) ? absint( $_POST['portMax'] ) : 80;
+		$region   = isset( $_POST['availabilityZone'] ) ? sanitize_text_field( wp_unslash( $_POST['availabilityZone'] ) ) : 'ir-thr-ba1';
+
+		$client = new Arvan_API_Client();
+		$res    = $client->add_firewall_rule(
+			$fw_id,
+			array(
+				'direction'        => 'INGRESS',
+				'etherType'        => 'IPV4',
+				'protocol'         => $protocol,
+				'remoteIp'         => '0.0.0.0/0',
+				'portMin'          => $port_min,
+				'portMax'          => $port_max,
+				'availabilityZone' => $region,
+			),
+			$region
+		);
+
+		if ( is_wp_error( $res ) ) {
+			wp_send_json_error( array( 'message' => $res->get_error_message() ) );
+		}
+
+		wp_send_json_success( array( 'message' => __( 'Firewall rule added.', 'arv-seller' ) ) );
 	}
 
 	/* =========================================================================
@@ -775,14 +1057,13 @@ class Arvan_Public {
 
 		$user_id = get_current_user_id();
 		$amount  = isset( $_POST['amount'] ) ? (float) $_POST['amount'] : 50000;
-		$gateway = isset( $_POST['gateway'] ) ? sanitize_key( $_POST['gateway'] ) : 'sandbox';
 
 		if ( $amount < 1000 ) {
 			wp_send_json_error( array( 'message' => __( 'Minimum deposit amount is 1,000 Tomans.', 'arv-seller' ) ) );
 		}
 
 		// In Sandbox / Demo Mode or Mock Gateway
-		if ( 'sandbox' === $gateway || get_option( 'arvan_sandbox_mode', 1 ) ) {
+		if ( (bool) get_option( 'arvan_sandbox_mode', 1 ) ) {
 			$ref_id = 'TRX-' . strtoupper( substr( md5( wp_rand() . time() ), 0, 10 ) );
 			$desc   = sprintf( __( 'Online Top-up via Sandbox Gateway (Ref: %s)', 'arv-seller' ), $ref_id );
 
@@ -811,7 +1092,7 @@ class Arvan_Public {
 
 		// Live Zarinpal IPG Gateway
 		$gw           = new Arvan_Gateway();
-		$callback_url = home_url( '/cloud-services/dashboard/?action=verify_payment' );
+		$callback_url = add_query_arg( 'arvan_payment', 'verify', home_url( '/cloud-services/dashboard/' ) );
 		$payment_res  = $gw->request_payment( $user_id, $amount, $callback_url );
 
 		if ( is_wp_error( $payment_res ) ) {

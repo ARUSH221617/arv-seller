@@ -44,6 +44,12 @@ export const App: React.FC = () => {
     deployServer,
     handleServerPower,
     topupWallet,
+    iaasResources,
+    fetchIaasResources,
+    createVolume,
+    deleteVolume,
+    createNetwork,
+    createFirewall,
   } = useArvan();
 
   // Read embedded dataset from mount node (#arvan-cloud-app)
@@ -189,6 +195,12 @@ export const App: React.FC = () => {
             customTitle={embedConfig.dashboardTitle || dashboardTitle || undefined}
             customDescription={embedConfig.dashboardDescription || dashboardDescription || undefined}
             walletTitle={embedConfig.walletTitle || walletTitle || undefined}
+            iaasResources={iaasResources}
+            onFetchIaas={fetchIaasResources}
+            onCreateVolume={createVolume}
+            onDeleteVolume={deleteVolume}
+            onCreateNetwork={createNetwork}
+            onCreateFirewall={createFirewall}
             onOpenDeposit={() => setIsDepositOpen(true)}
             onServerPower={handleServerPower}
             onNavigateDeploy={() => handleSelectTab('server')}

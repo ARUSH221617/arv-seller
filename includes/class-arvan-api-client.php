@@ -77,13 +77,13 @@ class Arvan_API_Client {
 	 *
 	 * @param string|null $api_key Optional custom API key. If null, loads from wp_options.
 	 */
-	public function __construct( $api_key = null ) {
+	public function __construct( $api_key = null, $sandbox_mode = null ) {
 		if ( null !== $api_key ) {
 			$this->api_key = trim( $api_key );
 		} else {
 			$this->api_key = trim( (string) get_option( 'arvan_api_key', '' ) );
 		}
-		$this->sandbox_mode   = (bool) get_option( 'arvan_sandbox_mode', 1 );
+		$this->sandbox_mode   = null === $sandbox_mode ? (bool) get_option( 'arvan_sandbox_mode', 1 ) : (bool) $sandbox_mode;
 		$this->default_region = (string) get_option( 'arvan_default_region', 'ir-thr-ba1' );
 	}
 
@@ -421,14 +421,6 @@ class Arvan_API_Client {
 			$payload['firewallNames'] = array_map( 'sanitize_text_field', $params['firewallNames'] );
 		}
 
-		// Also pass legacy fields for backward compatibility with v1 endpoints
-		$payload['size_id']   = $flavor_id;
-		$payload['image_id']  = $image_id;
-		$payload['disk_size'] = $disk_size;
-		if ( ! empty( $params['password'] ) ) {
-			$payload['password'] = $params['password'];
-		}
-
 		return $this->request( 'servers', 'POST', $payload, array(), 0, $zone );
 	}
 
@@ -462,7 +454,7 @@ class Arvan_API_Client {
 	 * @return array|WP_Error
 	 */
 	public function power_on_server( $server_id, $region = 'ir-thr-ba1' ) {
-		return $this->request( "servers/{$server_id}/power-on", 'POST', array(), array(), 0, $region );
+		return $this->request( 'servers/' . rawurlencode( $server_id ) . '/power-on', 'POST', array( 'availabilityZone' => $region ), array(), 0, $region );
 	}
 
 	/**
@@ -473,7 +465,7 @@ class Arvan_API_Client {
 	 * @return array|WP_Error
 	 */
 	public function power_off_server( $server_id, $region = 'ir-thr-ba1' ) {
-		return $this->request( "servers/{$server_id}/power-off", 'POST', array(), array(), 0, $region );
+		return $this->request( 'servers/' . rawurlencode( $server_id ) . '/power-off', 'POST', array( 'availabilityZone' => $region ), array(), 0, $region );
 	}
 
 	/**
@@ -484,7 +476,7 @@ class Arvan_API_Client {
 	 * @return array|WP_Error
 	 */
 	public function reboot_server( $server_id, $region = 'ir-thr-ba1' ) {
-		return $this->request( "servers/{$server_id}/reboot", 'POST', array(), array(), 0, $region );
+		return $this->request( 'servers/' . rawurlencode( $server_id ) . '/reboot', 'POST', array( 'availabilityZone' => $region ), array(), 0, $region );
 	}
 
 	/**
@@ -499,7 +491,7 @@ class Arvan_API_Client {
 		return $this->request(
 			"servers/{$server_id}/rename",
 			'POST',
-			array( 'name' => sanitize_text_field( $new_name ) ),
+			array( 'availabilityZone' => $region, 'name' => sanitize_text_field( $new_name ) ),
 			array(),
 			0,
 			$region
@@ -514,11 +506,11 @@ class Arvan_API_Client {
 	 * @param string $region    Availability zone / Region.
 	 * @return array|WP_Error
 	 */
-	public function reset_root_password( $server_id, $password, $region = 'ir-thr-ba1' ) {
+	public function reset_root_password( $server_id, $password = '', $region = 'ir-thr-ba1' ) {
 		return $this->request(
 			"servers/{$server_id}/reset-root-password",
 			'POST',
-			array( 'password' => $password ),
+			array( 'availabilityZone' => $region ),
 			array(),
 			0,
 			$region
@@ -537,7 +529,7 @@ class Arvan_API_Client {
 		return $this->request(
 			"servers/{$server_id}/resize",
 			'POST',
-			array( 'flavorId' => sanitize_text_field( $flavor_id ) ),
+			array( 'availabilityZone' => $region, 'flavorId' => sanitize_text_field( $flavor_id ) ),
 			array(),
 			0,
 			$region
@@ -556,7 +548,7 @@ class Arvan_API_Client {
 		return $this->request(
 			"servers/{$server_id}/resize-root-disk",
 			'POST',
-			array( 'diskSizeGigaBytes' => absint( $disk_size ) ),
+			array( 'availabilityZone' => $region, 'newSizeGigaBytes' => absint( $disk_size ) ),
 			array(),
 			0,
 			$region
@@ -571,7 +563,7 @@ class Arvan_API_Client {
 	 * @return array|WP_Error
 	 */
 	public function rescue_server( $server_id, $region = 'ir-thr-ba1' ) {
-		return $this->request( "servers/{$server_id}/rescue", 'POST', array(), array(), 0, $region );
+		return $this->request( 'servers/' . rawurlencode( $server_id ) . '/rescue', 'POST', array( 'availabilityZone' => $region ), array(), 0, $region );
 	}
 
 	/**
@@ -582,7 +574,50 @@ class Arvan_API_Client {
 	 * @return array|WP_Error
 	 */
 	public function unrescue_server( $server_id, $region = 'ir-thr-ba1' ) {
-		return $this->request( "servers/{$server_id}/unrescue", 'POST', array(), array(), 0, $region );
+		return $this->request( 'servers/' . rawurlencode( $server_id ) . '/unrescue', 'POST', array( 'availabilityZone' => $region ), array(), 0, $region );
+	}
+
+	/**
+	 * Inquiry a server's asynchronous task status (OpenAPI: GET /servers/inquiry/{id}).
+	 *
+	 * @param string $server_id Server UUID.
+	 * @param string $region    Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function inquiry_server( $server_id, $region = 'ir-thr-ba1' ) {
+		return $this->request( 'servers/inquiry/' . rawurlencode( $server_id ), 'GET', array(), array(), 0, $region );
+	}
+
+	/**
+	 * Discard the running task on a server (OpenAPI: POST /servers/{id}/discard).
+	 *
+	 * @param string $server_id Server UUID.
+	 * @param string $region    Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function discard_server_task( $server_id, $region = 'ir-thr-ba1' ) {
+		return $this->request( 'servers/' . rawurlencode( $server_id ) . '/discard', 'POST', array( 'availabilityZone' => $region ), array(), 0, $region );
+	}
+
+	/**
+	 * Batch delete multiple servers by IDs (OpenAPI: POST /servers/batch-delete).
+	 *
+	 * @param array  $server_ids Array of server UUIDs.
+	 * @param string $region     Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function batch_delete_servers( $server_ids, $region = 'ir-thr-ba1' ) {
+		return $this->request(
+			'servers/batch-delete',
+			'POST',
+			array(
+				'availabilityZone' => $region,
+				'serverIds'        => array_values( array_map( 'sanitize_text_field', (array) $server_ids ) ),
+			),
+			array(),
+			0,
+			$region
+		);
 	}
 
 	/**
@@ -593,27 +628,39 @@ class Arvan_API_Client {
 	 * @return array|WP_Error
 	 */
 	public function delete_server( $server_id, $region = 'ir-thr-ba1' ) {
-		return $this->request( "servers/{$server_id}", 'DELETE', array(), array(), 0, $region );
+		return $this->request( 'servers/' . rawurlencode( $server_id ) . '/terminate', 'POST', array( 'availabilityZone' => $region ), array(), 0, $region );
 	}
 
 	/* =========================================================================
-	   Volumes, Firewalls, & Networks (IaaS Core Features)
+	   Volumes, Firewalls, Security Groups & Networks (Full IaaS v3 Operations)
 	   ========================================================================= */
+
+	/**
+	 * Get details of a single block storage volume (OpenAPI: GET /volumes/{volumeId}).
+	 *
+	 * @param string $volume_id Volume UUID.
+	 * @param string $region    Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function get_volume( $volume_id, $region = 'ir-thr-ba1' ) {
+		return $this->request( 'volumes/' . rawurlencode( $volume_id ), 'GET', array(), array(), 0, $region );
+	}
 
 	/**
 	 * List all block storage volumes (OpenAPI: GET /volumes).
 	 *
 	 * @param string $region Availability zone / Region.
+	 * @param array  $query  Optional pagination params.
 	 * @return array|WP_Error
 	 */
-	public function get_volumes( $region = 'ir-thr-ba1' ) {
-		return $this->request( 'volumes', 'GET', array(), array(), 0, $region );
+	public function get_volumes( $region = 'ir-thr-ba1', $query = array() ) {
+		return $this->request( 'volumes', 'GET', $query, array(), 0, $region );
 	}
 
 	/**
 	 * Create a new storage volume (OpenAPI: POST /volumes).
 	 *
-	 * @param array  $params Volume parameters (name, sizeGigaBytes, availabilityZone, description).
+	 * @param array  $params Volume parameters (name, sizeGigaBytes, availabilityZone, description, serverId, type).
 	 * @param string $region Availability zone / Region.
 	 * @return array|WP_Error
 	 */
@@ -626,25 +673,36 @@ class Arvan_API_Client {
 		if ( ! empty( $params['description'] ) ) {
 			$payload['description'] = sanitize_text_field( $params['description'] );
 		}
+		if ( ! empty( $params['serverId'] ) ) {
+			$payload['serverId'] = sanitize_text_field( $params['serverId'] );
+		}
+		if ( ! empty( $params['type'] ) ) {
+			$payload['type'] = sanitize_text_field( $params['type'] );
+		}
 		return $this->request( 'volumes', 'POST', $payload, array(), 0, $region );
 	}
 
 	/**
 	 * Attach volume to server (OpenAPI: POST /volumes/{volumeId}/attach).
 	 *
-	 * @param string $volume_id Volume UUID.
-	 * @param string $server_id Server UUID.
-	 * @param string $region    Availability zone / Region.
+	 * @param string      $volume_id   Volume UUID.
+	 * @param string      $server_id   Server UUID.
+	 * @param string      $region      Availability zone / Region.
+	 * @param string|null $mount_point Optional mount point (e.g. /dev/vdb).
 	 * @return array|WP_Error
 	 */
-	public function attach_volume( $volume_id, $server_id, $region = 'ir-thr-ba1' ) {
+	public function attach_volume( $volume_id, $server_id, $region = 'ir-thr-ba1', $mount_point = null ) {
+		$payload = array(
+			'serverId'         => $server_id,
+			'availabilityZone' => $region,
+		);
+		if ( ! empty( $mount_point ) ) {
+			$payload['mountPoint'] = sanitize_text_field( $mount_point );
+		}
 		return $this->request(
-			"volumes/{$volume_id}/attach",
+			'volumes/' . rawurlencode( $volume_id ) . '/attach',
 			'POST',
-			array(
-				'serverId'         => $server_id,
-				'availabilityZone' => $region,
-			),
+			$payload,
 			array(),
 			0,
 			$region
@@ -660,7 +718,7 @@ class Arvan_API_Client {
 	 */
 	public function detach_volume( $volume_id, $region = 'ir-thr-ba1' ) {
 		return $this->request(
-			"volumes/{$volume_id}/detach",
+			'volumes/' . rawurlencode( $volume_id ) . '/detach',
 			'POST',
 			array( 'availabilityZone' => $region ),
 			array(),
@@ -670,34 +728,355 @@ class Arvan_API_Client {
 	}
 
 	/**
-	 * Delete a volume (OpenAPI: DELETE /volumes/{volumeId}).
+	 * Delete one or multiple volumes in bulk (OpenAPI: POST /volumes/batch-delete).
 	 *
-	 * @param string $volume_id Volume UUID.
+	 * @param string|array $volume_ids Volume UUID or array of UUIDs.
+	 * @param string       $region     Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function delete_volume( $volume_ids, $region = 'ir-thr-ba1' ) {
+		$ids = is_array( $volume_ids ) ? $volume_ids : array( $volume_ids );
+		return $this->request(
+			'volumes/batch-delete',
+			'POST',
+			array(
+				'availabilityZone' => $region,
+				'volumeIds'        => array_values( array_map( 'sanitize_text_field', $ids ) ),
+			),
+			array(),
+			0,
+			$region
+		);
+	}
+
+	/**
+	 * Get details of a single image (OpenAPI: GET /images/{id}).
+	 *
+	 * @param string $image_id Image UUID.
+	 * @param string $region   Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function get_image( $image_id, $region = 'ir-thr-ba1' ) {
+		return $this->request( 'images/' . rawurlencode( $image_id ), 'GET', array(), array(), 0, $region );
+	}
+
+	/**
+	 * Create an image from URL (OpenAPI: POST /images).
+	 *
+	 * @param array  $params Image params (name, url, availabilityZone, enableUefi).
+	 * @param string $region Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function create_image( $params, $region = 'ir-thr-ba1' ) {
+		$payload = array(
+			'availabilityZone' => ! empty( $params['availabilityZone'] ) ? $params['availabilityZone'] : $region,
+			'name'             => sanitize_text_field( $params['name'] ),
+			'url'              => esc_url_raw( $params['url'] ),
+		);
+		if ( isset( $params['enableUefi'] ) ) {
+			$payload['enableUefi'] = (bool) $params['enableUefi'];
+		}
+		return $this->request( 'images', 'POST', $payload, array(), 0, $region );
+	}
+
+	/**
+	 * Batch delete images (OpenAPI: POST /images/batch-delete).
+	 *
+	 * @param array  $image_ids Array of Image UUIDs.
 	 * @param string $region    Availability zone / Region.
 	 * @return array|WP_Error
 	 */
-	public function delete_volume( $volume_id, $region = 'ir-thr-ba1' ) {
-		return $this->request( "volumes/{$volume_id}", 'DELETE', array(), array(), 0, $region );
+	public function delete_images( $image_ids, $region = 'ir-thr-ba1' ) {
+		$ids = is_array( $image_ids ) ? $image_ids : array( $image_ids );
+		return $this->request(
+			'images/batch-delete',
+			'POST',
+			array(
+				'availabilityZone' => $region,
+				'imageIds'         => array_values( array_map( 'sanitize_text_field', $ids ) ),
+			),
+			array(),
+			0,
+			$region
+		);
 	}
 
 	/**
 	 * List firewalls (OpenAPI: GET /firewalls).
 	 *
 	 * @param string $region Availability zone / Region.
+	 * @param array  $query  Optional pagination query.
 	 * @return array|WP_Error
 	 */
-	public function get_firewalls( $region = 'ir-thr-ba1' ) {
-		return $this->request( 'firewalls', 'GET', array(), array(), 0, $region );
+	public function get_firewalls( $region = 'ir-thr-ba1', $query = array() ) {
+		return $this->request( 'firewalls', 'GET', $query, array(), 0, $region );
+	}
+
+	/**
+	 * Create a new firewall (OpenAPI: POST /firewalls).
+	 *
+	 * @param array  $params Parameters (name, availabilityZone, createDefaultRules).
+	 * @param string $region Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function create_firewall( $params, $region = 'ir-thr-ba1' ) {
+		$payload = array(
+			'availabilityZone'   => ! empty( $params['availabilityZone'] ) ? $params['availabilityZone'] : $region,
+			'name'               => sanitize_text_field( $params['name'] ),
+			'createDefaultRules' => isset( $params['createDefaultRules'] ) ? (bool) $params['createDefaultRules'] : true,
+		);
+		return $this->request( 'firewalls', 'POST', $payload, array(), 0, $region );
+	}
+
+	/**
+	 * Get details of a single firewall (OpenAPI: GET /firewalls/{firewallId}).
+	 *
+	 * @param string $firewall_id Firewall UUID.
+	 * @param string $region      Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function get_firewall( $firewall_id, $region = 'ir-thr-ba1' ) {
+		return $this->request( 'firewalls/' . rawurlencode( $firewall_id ), 'GET', array(), array(), 0, $region );
+	}
+
+	/**
+	 * Add a rule to an existing firewall (OpenAPI: POST /firewalls/{firewallId}/rules).
+	 *
+	 * @param string $firewall_id Firewall UUID.
+	 * @param array  $rule_params Rule parameters (direction, etherType, protocol, remoteIp, portMin, portMax).
+	 * @param string $region      Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function add_firewall_rule( $firewall_id, $rule_params, $region = 'ir-thr-ba1' ) {
+		$payload = array(
+			'availabilityZone' => ! empty( $rule_params['availabilityZone'] ) ? $rule_params['availabilityZone'] : $region,
+			'direction'        => sanitize_text_field( $rule_params['direction'] ),
+			'etherType'        => ! empty( $rule_params['etherType'] ) ? sanitize_text_field( $rule_params['etherType'] ) : 'IPV4',
+			'protocol'         => sanitize_text_field( $rule_params['protocol'] ),
+			'remoteIp'         => sanitize_text_field( $rule_params['remoteIp'] ),
+		);
+		if ( isset( $rule_params['portMin'] ) ) {
+			$payload['portMin'] = absint( $rule_params['portMin'] );
+		}
+		if ( isset( $rule_params['portMax'] ) ) {
+			$payload['portMax'] = absint( $rule_params['portMax'] );
+		}
+		return $this->request( 'firewalls/' . rawurlencode( $firewall_id ) . '/rules', 'POST', $payload, array(), 0, $region );
+	}
+
+	/**
+	 * Delete firewall rules in batch (OpenAPI: POST /firewalls/{firewallId}/rules/batch-delete).
+	 *
+	 * @param string $firewall_id Firewall UUID.
+	 * @param array  $rule_ids    Array of rule UUIDs.
+	 * @param string $region      Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function delete_firewall_rules( $firewall_id, $rule_ids, $region = 'ir-thr-ba1' ) {
+		$ids = is_array( $rule_ids ) ? $rule_ids : array( $rule_ids );
+		return $this->request(
+			'firewalls/' . rawurlencode( $firewall_id ) . '/rules/batch-delete',
+			'POST',
+			array(
+				'availabilityZone' => $region,
+				'ruleIds'          => array_values( array_map( 'sanitize_text_field', $ids ) ),
+			),
+			array(),
+			0,
+			$region
+		);
+	}
+
+	/**
+	 * Delete firewalls in batch (OpenAPI: POST /firewalls/batch-delete).
+	 *
+	 * @param array  $firewall_ids Array of firewall UUIDs.
+	 * @param string $region       Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function delete_firewalls( $firewall_ids, $region = 'ir-thr-ba1' ) {
+		$ids = is_array( $firewall_ids ) ? $firewall_ids : array( $firewall_ids );
+		return $this->request(
+			'firewalls/batch-delete',
+			'POST',
+			array(
+				'availabilityZone' => $region,
+				'firewallIds'      => array_values( array_map( 'sanitize_text_field', $ids ) ),
+			),
+			array(),
+			0,
+			$region
+		);
+	}
+
+	/**
+	 * List all security groups (OpenAPI: GET /security-groups).
+	 *
+	 * @param string $region Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function get_security_groups( $region = 'ir-thr-ba1' ) {
+		return $this->request( 'security-groups', 'GET', array(), array(), 0, $region );
+	}
+
+	/**
+	 * Attach a security group to a server (OpenAPI: POST /security-groups/{id}/attach).
+	 *
+	 * @param string $security_group_id Security group UUID.
+	 * @param string $server_id         Server UUID.
+	 * @param string $region            Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function attach_security_group( $security_group_id, $server_id, $region = 'ir-thr-ba1' ) {
+		return $this->request(
+			'security-groups/' . rawurlencode( $security_group_id ) . '/attach',
+			'POST',
+			array( 'serverId' => sanitize_text_field( $server_id ) ),
+			array(),
+			0,
+			$region
+		);
+	}
+
+	/**
+	 * Detach a security group from a server (OpenAPI: POST /security-groups/{id}/detach).
+	 *
+	 * @param string $security_group_id Security group UUID.
+	 * @param string $server_id         Server UUID.
+	 * @param string $region            Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function detach_security_group( $security_group_id, $server_id, $region = 'ir-thr-ba1' ) {
+		return $this->request(
+			'security-groups/' . rawurlencode( $security_group_id ) . '/detach',
+			'POST',
+			array( 'serverId' => sanitize_text_field( $server_id ) ),
+			array(),
+			0,
+			$region
+		);
 	}
 
 	/**
 	 * List private networks (OpenAPI: GET /networks).
 	 *
 	 * @param string $region Availability zone / Region.
+	 * @param array  $query  Optional query params.
 	 * @return array|WP_Error
 	 */
-	public function get_networks( $region = 'ir-thr-ba1' ) {
-		return $this->request( 'networks', 'GET', array(), array(), 0, $region );
+	public function get_networks( $region = 'ir-thr-ba1', $query = array() ) {
+		return $this->request( 'networks', 'GET', $query, array(), 0, $region );
+	}
+
+	/**
+	 * Create a new private network (OpenAPI: POST /networks).
+	 *
+	 * @param array  $params Network parameters (name, cidr, availabilityZone, description, dhcpEnabled, dhcpRange, dnsNameservers, gatewayEnabled, gatewayIp).
+	 * @param string $region Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function create_network( $params, $region = 'ir-thr-ba1' ) {
+		$payload = array(
+			'availabilityZone' => ! empty( $params['availabilityZone'] ) ? $params['availabilityZone'] : $region,
+			'name'             => sanitize_text_field( $params['name'] ),
+			'cidr'             => sanitize_text_field( $params['cidr'] ),
+		);
+		if ( ! empty( $params['description'] ) ) {
+			$payload['description'] = sanitize_text_field( $params['description'] );
+		}
+		if ( isset( $params['dhcpEnabled'] ) ) {
+			$payload['dhcpEnabled'] = (bool) $params['dhcpEnabled'];
+		}
+		if ( ! empty( $params['dhcpRange'] ) ) {
+			$payload['dhcpRange'] = sanitize_text_field( $params['dhcpRange'] );
+		}
+		if ( ! empty( $params['dnsNameservers'] ) ) {
+			$payload['dnsNameservers'] = sanitize_text_field( $params['dnsNameservers'] );
+		}
+		if ( isset( $params['gatewayEnabled'] ) ) {
+			$payload['gatewayEnabled'] = (bool) $params['gatewayEnabled'];
+		}
+		if ( ! empty( $params['gatewayIp'] ) ) {
+			$payload['gatewayIp'] = sanitize_text_field( $params['gatewayIp'] );
+		}
+		return $this->request( 'networks', 'POST', $payload, array(), 0, $region );
+	}
+
+	/**
+	 * Get details of a single private network (OpenAPI: GET /networks/{id}).
+	 *
+	 * @param string $network_id Network UUID.
+	 * @param string $region     Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function get_network( $network_id, $region = 'ir-thr-ba1' ) {
+		return $this->request( 'networks/' . rawurlencode( $network_id ), 'GET', array(), array(), 0, $region );
+	}
+
+	/**
+	 * Delete a private network (OpenAPI: DELETE /networks/{id}).
+	 *
+	 * @param string $network_id Network UUID.
+	 * @param string $region     Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function delete_network( $network_id, $region = 'ir-thr-ba1' ) {
+		return $this->request(
+			'networks/' . rawurlencode( $network_id ),
+			'DELETE',
+			array( 'availabilityZone' => $region ),
+			array(),
+			0,
+			$region
+		);
+	}
+
+	/**
+	 * Attach a network to a server (OpenAPI: POST /networks/{id}/attach).
+	 *
+	 * @param string $network_id Network UUID.
+	 * @param string $server_id  Server UUID.
+	 * @param string $region     Availability zone / Region.
+	 * @param array  $options    Optional (subnetId, ip, enablePortSecurity).
+	 * @return array|WP_Error
+	 */
+	public function attach_network( $network_id, $server_id, $region = 'ir-thr-ba1', $options = array() ) {
+		$payload = array(
+			'availabilityZone' => $region,
+			'serverId'         => sanitize_text_field( $server_id ),
+		);
+		if ( ! empty( $options['subnetId'] ) ) {
+			$payload['subnetId'] = sanitize_text_field( $options['subnetId'] );
+		}
+		if ( ! empty( $options['ip'] ) ) {
+			$payload['ip'] = sanitize_text_field( $options['ip'] );
+		}
+		if ( isset( $options['enablePortSecurity'] ) ) {
+			$payload['enablePortSecurity'] = (bool) $options['enablePortSecurity'];
+		}
+		return $this->request( 'networks/' . rawurlencode( $network_id ) . '/attach', 'POST', $payload, array(), 0, $region );
+	}
+
+	/**
+	 * Detach a network from a server (OpenAPI: POST /networks/{id}/detach).
+	 *
+	 * @param string $network_id Network UUID.
+	 * @param string $server_id  Server UUID.
+	 * @param string $region     Availability zone / Region.
+	 * @return array|WP_Error
+	 */
+	public function detach_network( $network_id, $server_id, $region = 'ir-thr-ba1' ) {
+		return $this->request(
+			'networks/' . rawurlencode( $network_id ) . '/detach',
+			'POST',
+			array(
+				'availabilityZone' => $region,
+				'serverId'         => sanitize_text_field( $server_id ),
+			),
+			array(),
+			0,
+			$region
+		);
 	}
 
 	/* =========================================================================
@@ -877,8 +1256,10 @@ class Arvan_API_Client {
 			$fixed_margin = (float) get_option( 'arvan_fixed_margin', 0 );
 		}
 
-		$multiplier = 1 + ( (float) $markup_pct / 100 );
-		$retail     = ( (float) $cost_price * $multiplier ) + (float) $fixed_margin;
+		$markup_pct  = min( 20, max( 0, (float) $markup_pct ) );
+		$fixed_margin = max( 0, (float) $fixed_margin );
+		$multiplier = 1 + ( $markup_pct / 100 );
+		$retail     = ( (float) $cost_price * $multiplier ) + $fixed_margin;
 		return round( $retail, 2 );
 	}
 
@@ -1170,6 +1551,36 @@ class Arvan_API_Client {
 
 		// 4. OS & Application Images (OpenAPI: Response-array_response_PublicAPIListImagesData)
 		if ( false !== strpos( $endpoint, 'images' ) ) {
+			if ( false !== strpos( $endpoint, 'batch-delete' ) ) {
+				return array( 'success' => true, 'message' => 'Images batch deleted.' );
+			}
+			if ( 'POST' === $method ) {
+				return array(
+					'message' => 'Image creation request accepted',
+					'data'    => array(
+						'id'               => 'img-' . wp_generate_uuid4(),
+						'name'             => isset( $body['name'] ) ? $body['name'] : 'custom-image',
+						'status'           => 'QUEUED',
+						'availabilityZone' => 'ir-thr-ba1',
+					),
+				);
+			}
+			if ( preg_match( '#images/([a-zA-Z0-9_\-]+)#', $endpoint, $m ) ) {
+				return array(
+					'message' => 'Image details retrieved',
+					'data'    => array(
+						'id'               => $m[1],
+						'name'             => 'Ubuntu 22.04 LTS (Jammy Jellyfish)',
+						'osType'           => 'LINUX',
+						'osVersion'        => '22.04',
+						'minDiskGigaBytes' => 20,
+						'minRamMegaBytes'  => 1024,
+						'status'           => 'ACTIVE',
+						'type'             => 'PUBLIC',
+						'availabilityZone' => 'ir-thr-ba1',
+					),
+				);
+			}
 			return array(
 				'message' => 'Images retrieved successfully',
 				'data'    => array(
@@ -1256,7 +1667,7 @@ class Arvan_API_Client {
 		}
 
 		// 5. Server Provisioning POST (OpenAPI: Response-Detail)
-		if ( 'POST' === $method && false !== strpos( $endpoint, 'servers' ) && false === strpos( $endpoint, 'power' ) && false === strpos( $endpoint, 'reboot' ) && false === strpos( $endpoint, 'rename' ) && false === strpos( $endpoint, 'reset' ) && false === strpos( $endpoint, 'resize' ) && false === strpos( $endpoint, 'rescue' ) ) {
+		if ( 'POST' === $method && false !== strpos( $endpoint, 'servers' ) && false === strpos( $endpoint, 'power' ) && false === strpos( $endpoint, 'reboot' ) && false === strpos( $endpoint, 'rename' ) && false === strpos( $endpoint, 'reset' ) && false === strpos( $endpoint, 'resize' ) && false === strpos( $endpoint, 'rescue' ) && false === strpos( $endpoint, 'terminate' ) && false === strpos( $endpoint, 'batch-delete' ) && false === strpos( $endpoint, 'discard' ) ) {
 			$random_uuid = wp_generate_uuid4();
 			$random_ip   = '185.143.' . wp_rand( 200, 240 ) . '.' . wp_rand( 10, 250 );
 			$server_name = isset( $body['name'] ) ? $body['name'] : 'cloud-instance';
@@ -1311,9 +1722,9 @@ class Arvan_API_Client {
 			);
 		}
 
-		// 6. Server Detail GET (OpenAPI: Response-Detail)
-		if ( 'GET' === $method && preg_match( '#servers/([a-zA-Z0-9_\-]+)#', $endpoint, $matches ) ) {
-			$srv_id = $matches[1];
+		// 6. Server Detail & Inquiry GET (OpenAPI: Response-Detail)
+		if ( 'GET' === $method && preg_match( '#servers/(inquiry/)?([a-zA-Z0-9_\-]+)#', $endpoint, $matches ) ) {
+			$srv_id = $matches[2];
 			return array(
 				'message' => 'Server details retrieved',
 				'data'    => array(
@@ -1342,7 +1753,16 @@ class Arvan_API_Client {
 			);
 		}
 
-		// 7. Server Power & Lifecycle Actions
+		// 7. Server Power, Batch Delete, Discard & Lifecycle Actions
+		if ( false !== strpos( $endpoint, 'batch-delete' ) && false !== strpos( $endpoint, 'servers' ) ) {
+			return array( 'success' => true, 'message' => 'Batch server deletion requests submitted.' );
+		}
+		if ( false !== strpos( $endpoint, 'discard' ) ) {
+			return array( 'success' => true, 'message' => 'Server task discarded.' );
+		}
+		if ( false !== strpos( $endpoint, 'terminate' ) || ( 'DELETE' === $method && false !== strpos( $endpoint, 'servers/' ) ) ) {
+			return array( 'success' => true, 'message' => 'Instance termination request accepted.' );
+		}
 		if ( false !== strpos( $endpoint, 'power-on' ) ) {
 			return array( 'success' => true, 'status' => 'active', 'state' => 'ACTIVE', 'message' => 'Instance powered on.' );
 		}
@@ -1364,12 +1784,21 @@ class Arvan_API_Client {
 		if ( false !== strpos( $endpoint, 'rescue' ) ) {
 			return array( 'success' => true, 'message' => 'Instance rescue mode operation completed.' );
 		}
-		if ( ( 'DELETE' === $method && false !== strpos( $endpoint, 'servers/' ) ) || false !== strpos( $endpoint, 'terminate' ) ) {
-			return array( 'success' => true, 'message' => 'Instance permanently deleted.' );
+		if ( false !== strpos( $endpoint, 'unrescue' ) ) {
+			return array( 'success' => true, 'message' => 'Instance unrescue mode operation completed.' );
 		}
 
-		// 8. Volumes (OpenAPI: Response-array_Volume)
+		// 8. Volumes (OpenAPI: Response-array_Volume / Single / Batch)
 		if ( false !== strpos( $endpoint, 'volumes' ) ) {
+			if ( false !== strpos( $endpoint, 'batch-delete' ) ) {
+				return array( 'success' => true, 'message' => 'Volumes batch deleted.' );
+			}
+			if ( false !== strpos( $endpoint, 'attach' ) ) {
+				return array( 'success' => true, 'message' => 'Volume attached to server.' );
+			}
+			if ( false !== strpos( $endpoint, 'detach' ) ) {
+				return array( 'success' => true, 'message' => 'Volume detached from server.' );
+			}
 			if ( 'POST' === $method ) {
 				return array(
 					'message' => 'Volume created successfully',
@@ -1378,6 +1807,18 @@ class Arvan_API_Client {
 						'name'             => isset( $body['name'] ) ? $body['name'] : 'data-volume',
 						'sizeGigaBytes'    => isset( $body['sizeGigaBytes'] ) ? absint( $body['sizeGigaBytes'] ) : 50,
 						'status'           => 'available',
+						'availabilityZone' => 'ir-thr-ba1',
+					),
+				);
+			}
+			if ( preg_match( '#volumes/([a-zA-Z0-9_\-]+)#', $endpoint, $m ) ) {
+				return array(
+					'message' => 'Volume details retrieved',
+					'data'    => array(
+						'id'               => $m[1],
+						'name'             => 'attached-ssd',
+						'sizeGigaBytes'    => 100,
+						'status'           => 'in-use',
 						'availabilityZone' => 'ir-thr-ba1',
 					),
 				);
@@ -1396,8 +1837,46 @@ class Arvan_API_Client {
 			);
 		}
 
-		// 9. Firewalls (OpenAPI: Response-array_response_PublicAPIListData)
+		// 9. Firewalls (OpenAPI: Response-array_response_PublicAPIListData & Rules)
 		if ( false !== strpos( $endpoint, 'firewalls' ) ) {
+			if ( false !== strpos( $endpoint, 'rules/batch-delete' ) ) {
+				return array( 'success' => true, 'message' => 'Firewall rules deleted.' );
+			}
+			if ( false !== strpos( $endpoint, 'rules' ) && 'POST' === $method ) {
+				return array(
+					'message' => 'Firewall rule created successfully',
+					'data'    => array(
+						'id'        => 'rule-' . wp_rand( 100, 999 ),
+						'direction' => isset( $body['direction'] ) ? $body['direction'] : 'INGRESS',
+						'protocol'  => isset( $body['protocol'] ) ? $body['protocol'] : 'TCP',
+					),
+				);
+			}
+			if ( false !== strpos( $endpoint, 'batch-delete' ) ) {
+				return array( 'success' => true, 'message' => 'Firewalls batch deleted.' );
+			}
+			if ( 'POST' === $method ) {
+				return array(
+					'message' => 'Firewall created successfully',
+					'data'    => array(
+						'id'               => 'fw-' . wp_rand( 100, 999 ),
+						'name'             => isset( $body['name'] ) ? $body['name'] : 'custom-firewall',
+						'availabilityZone' => 'ir-thr-ba1',
+					),
+				);
+			}
+			if ( preg_match( '#firewalls/([a-zA-Z0-9_\-]+)#', $endpoint, $m ) ) {
+				return array(
+					'message' => 'Firewall details retrieved',
+					'data'    => array(
+						'id'               => $m[1],
+						'name'             => 'default-web-firewall',
+						'availabilityZone' => 'ir-thr-ba1',
+						'rulesCount'       => 3,
+						'rules'            => array(),
+					),
+				);
+			}
 			return array(
 				'message' => 'Firewalls retrieved',
 				'data'    => array(
@@ -1411,8 +1890,59 @@ class Arvan_API_Client {
 			);
 		}
 
-		// 10. Networks (OpenAPI: Response-array_standardnetwork_NetworkResponse)
+		// 10. Security Groups
+		if ( false !== strpos( $endpoint, 'security-groups' ) ) {
+			if ( false !== strpos( $endpoint, 'attach' ) ) {
+				return array( 'success' => true, 'message' => 'Security group attached.' );
+			}
+			if ( false !== strpos( $endpoint, 'detach' ) ) {
+				return array( 'success' => true, 'message' => 'Security group detached.' );
+			}
+			return array(
+				'message' => 'Security groups retrieved',
+				'data'    => array(
+					array(
+						'id'          => 'sg-101',
+						'name'        => 'default-sec-group',
+						'description' => 'Default security group',
+					),
+				),
+			);
+		}
+
+		// 11. Networks (OpenAPI: Response-array_standardnetwork_NetworkResponse)
 		if ( false !== strpos( $endpoint, 'networks' ) ) {
+			if ( false !== strpos( $endpoint, 'attach' ) ) {
+				return array( 'success' => true, 'message' => 'Network attached to server.' );
+			}
+			if ( false !== strpos( $endpoint, 'detach' ) ) {
+				return array( 'success' => true, 'message' => 'Network detached from server.' );
+			}
+			if ( 'DELETE' === $method ) {
+				return array( 'success' => true, 'message' => 'Network deleted.' );
+			}
+			if ( 'POST' === $method ) {
+				return array(
+					'message' => 'Network created successfully',
+					'data'    => array(
+						'id'               => 'net-' . wp_rand( 100, 999 ),
+						'name'             => isset( $body['name'] ) ? $body['name'] : 'custom-vpc',
+						'cidr'             => isset( $body['cidr'] ) ? $body['cidr'] : '192.168.10.0/24',
+						'availabilityZone' => 'ir-thr-ba1',
+					),
+				);
+			}
+			if ( preg_match( '#networks/([a-zA-Z0-9_\-]+)#', $endpoint, $m ) ) {
+				return array(
+					'message' => 'Network details retrieved',
+					'data'    => array(
+						'id'               => $m[1],
+						'name'             => 'default-private-net',
+						'cidr'             => '192.168.1.0/24',
+						'availabilityZone' => 'ir-thr-ba1',
+					),
+				);
+			}
 			return array(
 				'message' => 'Networks retrieved',
 				'data'    => array(

@@ -88,7 +88,7 @@ export const AdminSettingsView: React.FC<AdminSettingsViewProps> = ({
                 type="password"
                 value={formData.apiKey}
                 onChange={(e) => setFormData({ ...formData, apiKey: e.target.value })}
-                placeholder="Apikey 98a7bc12-d09f-4351-a89c-34d092e118a9"
+                placeholder={formData.hasApiKey ? '••••••••••••••••••••••••••••••••' : 'Apikey 98a7bc12-d09f-4351-a89c-34d092e118a9'}
                 className="flex-1 font-mono text-xs"
               />
               <Button
@@ -172,9 +172,9 @@ export const AdminSettingsView: React.FC<AdminSettingsViewProps> = ({
               <Input
                 type="number"
                 min="0"
-                max="500"
+                max="20"
                 value={formData.markupPct}
-                onChange={(e) => setFormData({ ...formData, markupPct: Number(e.target.value) || 0 })}
+                onChange={(e) => setFormData({ ...formData, markupPct: Math.min(20, Math.max(0, Number(e.target.value) || 0)) })}
                 className="pe-12 font-mono font-bold text-arvan-teal"
               />
               <span className="absolute end-4 top-3 text-xs font-bold text-slate-400">%</span>

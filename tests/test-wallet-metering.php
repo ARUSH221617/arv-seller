@@ -51,6 +51,19 @@ class Mock_WPDB {
 	}
 
 	public function get_var( $sql ) {
+		if ( strpos( $sql, 'GET_LOCK' ) !== false || strpos( $sql, 'RELEASE_LOCK' ) !== false ) {
+			return 1;
+		}
+		if ( preg_match( '/SELECT id FROM wp_arvan_transactions WHERE type = \'([^\']+)\' AND reference_id = \'([^\']+)\'/', $sql, $m ) ) {
+			$type = $m[1];
+			$ref = $m[2];
+			foreach ( $this->transactions as $t ) {
+				if ( isset( $t['type'], $t['reference_id'] ) && $t['type'] === $type && $t['reference_id'] === $ref ) {
+					return $t['id'];
+				}
+			}
+			return null;
+		}
 		if ( preg_match( '/SUM\(hourly_cost\) FROM wp_arvan_resources WHERE user_id = (\d+)/', $sql, $m ) ) {
 			$uid = (int) $m[1];
 			$sum = 0;
@@ -65,7 +78,7 @@ class Mock_WPDB {
 	}
 
 	public function get_results( $sql ) {
-		if ( strpos( $sql, 'FROM wp_arvan_resources WHERE status IN' ) !== false ) {
+		if ( strpos( $sql, 'FROM wp_arvan_resources' ) !== false && strpos( $sql, 'status IN' ) !== false ) {
 			$out = array();
 			foreach ( $this->resources as $res ) {
 				if ( in_array( $res->status, array( 'active', 'running' ) ) && $res->hourly_cost > 0 ) {
@@ -132,6 +145,10 @@ $mock_options = array(
 	'arvan_sandbox_mode'      => 1,
 	'arvan_api_key'           => '',
 );
+
+if ( ! defined( 'HOUR_IN_SECONDS' ) ) {
+	define( 'HOUR_IN_SECONDS', 3600 );
+}
 
 function get_option( $name, $default = false ) {
 	global $mock_options;

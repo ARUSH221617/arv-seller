@@ -20,6 +20,20 @@ delete_option( 'arvan_fixed_margin' );
 delete_option( 'arvan_currency' );
 delete_option( 'arvan_default_region' );
 delete_option( 'arvan_store_name' );
+delete_option( 'arvan_store_tagline' );
+delete_option( 'arvan_store_logo_url' );
+delete_option( 'arvan_store_favicon_url' );
+delete_option( 'arvan_master_theme' );
+delete_option( 'arvan_brand_primary_color' );
+delete_option( 'arvan_brand_secondary_color' );
 delete_option( 'arvan_support_email' );
 delete_option( 'arvan_support_phone' );
 delete_option( 'arvan_sandbox_mode' );
+delete_option( 'arvan_schema_version' );
+delete_option( 'arvan_custom_text_overrides' );
+delete_option( 'arvan_customization_config' );
+delete_option( 'arvan_gateway_merchant_id' );
+
+// Clean transients
+global $wpdb;
+$wpdb->query( "DELETE FROM {$wpdb->options} WHERE option_name LIKE '_transient_arvan_%' OR option_name LIKE '_transient_timeout_arvan_%'" );

@@ -23,6 +23,8 @@ if ( ! defined( 'WPINC' ) ) {
  */
 class Arvan_Activator {
 
+	const SCHEMA_VERSION = '1.1.0';
+
 	/**
 	 * Run all activation routines.
 	 *
@@ -34,6 +36,16 @@ class Arvan_Activator {
 		self::schedule_metering_cron();
 		self::register_rewrite_rules();
 		flush_rewrite_rules();
+	}
+
+	/**
+	 * Apply schema upgrades for existing installations.
+	 */
+	public static function maybe_upgrade() {
+		if ( self::SCHEMA_VERSION !== get_option( 'arvan_schema_version' ) ) {
+			self::create_database_tables();
+			update_option( 'arvan_schema_version', self::SCHEMA_VERSION, false );
+		}
 	}
 
 	/**
@@ -82,7 +94,8 @@ class Arvan_Activator {
 			PRIMARY KEY  (id),
 			KEY user_id (user_id),
 			KEY wallet_id (wallet_id),
-			KEY reference_id (reference_id)
+			KEY reference_id (reference_id),
+			UNIQUE KEY transaction_source (type, reference_id)
 		) $charset_collate;";
 
 		dbDelta( $sql_transactions );
@@ -105,11 +118,32 @@ class Arvan_Activator {
 			PRIMARY KEY  (id),
 			KEY user_id (user_id),
 			KEY service_type (service_type),
-			KEY arvan_resource_id (arvan_resource_id),
+			UNIQUE KEY arvan_resource_id (arvan_resource_id),
 			KEY status (status)
 		) $charset_collate;";
 
 		dbDelta( $sql_resources );
+
+		// 4. Gateway payments. Amount and ownership are fixed before redirect.
+		$table_payments = $wpdb->prefix . 'arvan_payments';
+		$sql_payments   = "CREATE TABLE $table_payments (
+			id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+			user_id bigint(20) unsigned NOT NULL,
+			gateway varchar(30) NOT NULL DEFAULT 'zarinpal',
+			authority varchar(100) NOT NULL,
+			amount decimal(15,2) NOT NULL,
+			status varchar(20) NOT NULL DEFAULT 'pending',
+			gateway_reference varchar(100) DEFAULT NULL,
+			created_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+			verified_at datetime DEFAULT NULL,
+			PRIMARY KEY  (id),
+			UNIQUE KEY gateway_authority (gateway, authority),
+			KEY user_id (user_id),
+			KEY status (status)
+		) $charset_collate;";
+
+		dbDelta( $sql_payments );
+		update_option( 'arvan_schema_version', self::SCHEMA_VERSION, false );
 	}
 
 	/**
@@ -131,7 +165,7 @@ class Arvan_Activator {
 		}
 
 		if ( false === get_option( 'arvan_api_key' ) ) {
-			add_option( 'arvan_api_key', '' );
+			add_option( 'arvan_api_key', '', '', false );
 		}
 
 		if ( false === get_option( 'arvan_default_region' ) ) {

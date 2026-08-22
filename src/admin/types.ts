@@ -2,6 +2,7 @@ import { SupportedLanguage, Direction, CustomizationSettings } from '../types';
 
 export interface AdminSettingsData extends CustomizationSettings {
   apiKey: string;
+  hasApiKey?: boolean;
   sandboxMode: boolean;
   markupPct: number;
   fixedMargin: number;

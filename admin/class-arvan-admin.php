@@ -178,7 +178,8 @@ class Arvan_Admin {
 				'nonce'      => wp_create_nonce( 'arvan_admin_nonce' ),
 				'activeTab'  => $current_page_tab,
 				'settings'   => array(
-					'apiKey'             => get_option( 'arvan_api_key', '' ),
+					'apiKey'             => '',
+					'hasApiKey'          => '' !== get_option( 'arvan_api_key', '' ),
 					'sandboxMode'        => (bool) get_option( 'arvan_sandbox_mode', 1 ),
 					'markupPct'          => (float) get_option( 'arvan_markup_percentage', 20 ),
 					'fixedMargin'        => (float) get_option( 'arvan_fixed_margin', 0 ),
@@ -499,8 +500,14 @@ class Arvan_Admin {
 			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'arv-seller' ) ) );
 		}
 
-		$api_key = isset( $_POST['api_key'] ) ? sanitize_text_field( wp_unslash( $_POST['api_key'] ) ) : null;
-		$client  = new Arvan_API_Client( $api_key );
+		$api_key = isset( $_POST['api_key'] ) ? sanitize_text_field( wp_unslash( $_POST['api_key'] ) ) : '';
+		if ( '' === $api_key ) {
+			$api_key = (string) get_option( 'arvan_api_key', '' );
+		}
+		if ( '' === $api_key ) {
+			wp_send_json_error( array( 'message' => __( 'Enter an API key before testing the live connection.', 'arv-seller' ) ) );
+		}
+		$client  = new Arvan_API_Client( $api_key, false );
 		$res     = $client->test_connection();
 
 		if ( $res['success'] ) {
@@ -520,17 +527,17 @@ class Arvan_Admin {
 			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'arv-seller' ) ) );
 		}
 
-		if ( isset( $_POST['arvan_api_key'] ) ) {
-			update_option( 'arvan_api_key', sanitize_text_field( wp_unslash( $_POST['arvan_api_key'] ) ) );
+		if ( isset( $_POST['arvan_api_key'] ) && '' !== trim( (string) $_POST['arvan_api_key'] ) ) {
+			update_option( 'arvan_api_key', sanitize_text_field( wp_unslash( $_POST['arvan_api_key'] ) ), false );
 		}
 		if ( isset( $_POST['arvan_sandbox_mode'] ) ) {
 			update_option( 'arvan_sandbox_mode', '1' === $_POST['arvan_sandbox_mode'] ? 1 : 0 );
 		}
 		if ( isset( $_POST['arvan_markup_percentage'] ) ) {
-			update_option( 'arvan_markup_percentage', (float) $_POST['arvan_markup_percentage'] );
+			update_option( 'arvan_markup_percentage', min( 20, max( 0, (float) $_POST['arvan_markup_percentage'] ) ) );
 		}
 		if ( isset( $_POST['arvan_fixed_margin'] ) ) {
-			update_option( 'arvan_fixed_margin', (float) $_POST['arvan_fixed_margin'] );
+			update_option( 'arvan_fixed_margin', max( 0, (float) $_POST['arvan_fixed_margin'] ) );
 		}
 		if ( isset( $_POST['arvan_currency'] ) ) {
 			update_option( 'arvan_currency', sanitize_text_field( wp_unslash( $_POST['arvan_currency'] ) ) );
@@ -781,19 +788,22 @@ class Arvan_Admin {
 		$region     = ! empty( $res->region ) ? $res->region : 'ir-thr-c2';
 
 		if ( 'force_power_off' === $action || 'power_off' === $action ) {
-			$api_client->power_off_server( $res->arvan_resource_id, $region );
-			$wpdb->update( $table_resources, array( 'status' => 'stopped' ), array( 'id' => $res->id ), array( '%s' ), array( '%d' ) );
-			wp_send_json_success( array( 'status' => 'stopped', 'message' => __( 'Instance powered off by administrator.', 'arv-seller' ) ) );
+			$result = $api_client->power_off_server( $res->arvan_resource_id, $region );
+			$new_status = 'powering_off';
 		} elseif ( 'power_on' === $action ) {
-			$api_client->power_on_server( $res->arvan_resource_id, $region );
-			$wpdb->update( $table_resources, array( 'status' => 'active' ), array( 'id' => $res->id ), array( '%s' ), array( '%d' ) );
-			wp_send_json_success( array( 'status' => 'active', 'message' => __( 'Instance powered on by administrator.', 'arv-seller' ) ) );
+			$result = $api_client->power_on_server( $res->arvan_resource_id, $region );
+			$new_status = 'powering_on';
 		} elseif ( 'force_delete' === $action ) {
-			$api_client->delete_server( $res->arvan_resource_id, $region );
-			$wpdb->delete( $table_resources, array( 'id' => $res->id ), array( '%d' ) );
-			wp_send_json_success( array( 'deleted' => true, 'message' => __( 'Instance purged by administrator.', 'arv-seller' ) ) );
+			$result = $api_client->delete_server( $res->arvan_resource_id, $region );
+			$new_status = 'deleting';
 		} else {
 			wp_send_json_error( array( 'message' => __( 'Unknown admin action.', 'arv-seller' ) ) );
 		}
+
+		if ( is_wp_error( $result ) ) {
+			wp_send_json_error( array( 'message' => $result->get_error_message() ) );
+		}
+		$wpdb->update( $table_resources, array( 'status' => $new_status, 'updated_at' => current_time( 'mysql' ) ), array( 'id' => $res->id ), array( '%s', '%s' ), array( '%d' ) );
+		wp_send_json_success( array( 'deleted' => false, 'status' => $new_status, 'message' => __( 'ArvanCloud accepted the lifecycle request.', 'arv-seller' ) ) );
 	}
 }

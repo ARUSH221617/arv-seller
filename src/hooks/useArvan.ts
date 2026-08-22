@@ -174,26 +174,26 @@ export function useArvan() {
       password: payload.password,
     });
 
-    if (res.success || res.data?.instance_uuid || res.data?.resource_id) {
-      const assignedIp = res.data?.ip_address || res.data?.public_ip || `185.143.${Math.floor(Math.random() * 200) + 10}.${Math.floor(Math.random() * 200) + 10}`;
+    if (res.success && res.data?.resource_id) {
       const newServer: CloudServerInstance = {
-        id: res.data?.resource_id || Date.now(),
+        id: res.data.resource_id,
         name: payload.name,
-        arvan_uuid: res.data?.arvan_id || res.data?.instance_uuid || `srv-${Math.random().toString(36).substring(2, 8)}`,
-        status: 'active',
-        state: 'ACTIVE',
+        arvan_uuid: res.data.arvan_id || '',
+        status: res.data.status || 'building',
+        state: 'BUILD',
         region_id: payload.region_id,
         availabilityZone: payload.region_id,
         flavor_id: payload.flavor_id,
         image_id: payload.image_id,
         disk_size: payload.disk_size,
-        public_ip: assignedIp,
+        public_ip: '',
         hourly_rate: cost,
         created_at: new Date().toISOString().replace('T', ' ').substring(0, 19),
       };
       setServers((prev) => [newServer, ...prev]);
       setBurnRate((prev) => prev + cost);
-      addToast('success', t('instantDeploy') + ': ' + newServer.name + ' (' + newServer.public_ip + ')');
+      addToast('success', res.data.message || t('instantDeploy') + ': ' + newServer.name);
+      refreshDashboardData();
       return true;
     } else {
       if (res.data?.insufficient_funds) {
@@ -212,22 +212,12 @@ export function useArvan() {
     });
 
     if (res && res.success) {
-      if (actionType === 'delete') {
-        setServers((prev) => prev.filter((s) => s.id !== serverId));
-        addToast('info', res.data?.message || (t('delete') + ': ' + t('stopped')));
-      } else {
-        setServers((prev) =>
-          prev.map((s) => {
-            if (s.id === serverId) {
-              if (actionType === 'power_off') return { ...s, status: 'stopped' };
-              if (actionType === 'power_on') return { ...s, status: 'active' };
-              if (actionType === 'reboot') return { ...s, status: 'active' };
-            }
-            return s;
-          })
-        );
-        addToast('success', res.data?.message || t('Action completed successfully.'));
+      const acceptedStatus = res.data?.status;
+      if (acceptedStatus) {
+        setServers((prev) => prev.map((s) => (s.id === serverId ? { ...s, status: acceptedStatus } : s)));
       }
+      addToast('info', res.data?.message || t('Action completed successfully.'));
+      refreshDashboardData();
     } else {
       addToast('error', res.data?.message || t('Action failed.'));
     }
@@ -255,22 +245,97 @@ export function useArvan() {
   }, [refreshDashboardData, rawData.isLogged]);
 
   const topupWallet = async (amount: number) => {
-    await callAjax('arvan_topup_wallet', { amount });
-    const depositAmount = Number(amount);
-    setBalance((prev) => prev + depositAmount);
-    setTransactions((prev) => [
-      {
-        id: Date.now(),
-        type: 'deposit',
-        amount: depositAmount,
-        balance_after: balance + depositAmount,
-        description: `${t('txDeposit')}: ${depositAmount.toLocaleString()} ${rawData.currency} (Ref: TRX-${Math.floor(Math.random() * 90000) + 10000})`,
-        created_at: new Date().toISOString().replace('T', ' ').substring(0, 19),
-      },
-      ...prev,
-    ]);
+    const res = await callAjax('arvan_topup_wallet', { amount: Number(amount) });
+
+    if (!res || !res.success) {
+      addToast('error', res?.data?.message || t('Action failed.'));
+      return;
+    }
+
+    if (res.data?.redirect_url) {
+      window.location.href = res.data.redirect_url;
+      return;
+    }
+
+    if (typeof res.data?.new_balance === 'number') {
+      setBalance(res.data.new_balance);
+    }
     setIsDepositOpen(false);
-    addToast('success', t('topUp') + ' + ' + depositAmount.toLocaleString() + ' ' + rawData.currency);
+    addToast('success', res.data?.message || t('topUp'));
+    refreshDashboardData();
+  };
+
+  // IaaS Operations
+  const [iaasResources, setIaasResources] = useState<{
+    volumes: Array<{ id: string; name: string; sizeGigaBytes: number; status: string }>;
+    networks: Array<{ id: string; name: string; cidr: string }>;
+    firewalls: Array<{ id: string; name: string; rulesCount?: number }>;
+  }>({ volumes: [], networks: [], firewalls: [] });
+
+  const fetchIaasResources = useCallback(async (region = 'ir-thr-ba1') => {
+    const res = await callAjax('arvan_get_iaas_resources', { region });
+    if (res && res.success && res.data) {
+      setIaasResources({
+        volumes: res.data.volumes || [],
+        networks: res.data.networks || [],
+        firewalls: res.data.firewalls || [],
+      });
+    }
+  }, [callAjax]);
+
+  const createVolume = async (name: string, sizeGigaBytes: number, region = 'ir-thr-ba1') => {
+    const res = await callAjax('arvan_create_volume', { name, sizeGigaBytes, availabilityZone: region });
+    if (res && res.success) {
+      addToast('success', res.data?.message || t('Storage volume created.'));
+      fetchIaasResources(region);
+      return true;
+    }
+    addToast('error', res?.data?.message || t('Action failed.'));
+    return false;
+  };
+
+  const deleteVolume = async (volumeId: string, region = 'ir-thr-ba1') => {
+    const res = await callAjax('arvan_delete_volume', { volumeId, availabilityZone: region });
+    if (res && res.success) {
+      addToast('success', res.data?.message || t('Volume deleted.'));
+      fetchIaasResources(region);
+      return true;
+    }
+    addToast('error', res?.data?.message || t('Action failed.'));
+    return false;
+  };
+
+  const attachVolume = async (volumeId: string, serverId: string, region = 'ir-thr-ba1') => {
+    const res = await callAjax('arvan_attach_volume', { volumeId, serverId, availabilityZone: region });
+    if (res && res.success) {
+      addToast('success', res.data?.message || t('Volume attached.'));
+      fetchIaasResources(region);
+      return true;
+    }
+    addToast('error', res?.data?.message || t('Action failed.'));
+    return false;
+  };
+
+  const createNetwork = async (name: string, cidr: string, region = 'ir-thr-ba1') => {
+    const res = await callAjax('arvan_create_network', { name, cidr, availabilityZone: region });
+    if (res && res.success) {
+      addToast('success', res.data?.message || t('Private network created.'));
+      fetchIaasResources(region);
+      return true;
+    }
+    addToast('error', res?.data?.message || t('Action failed.'));
+    return false;
+  };
+
+  const createFirewall = async (name: string, region = 'ir-thr-ba1') => {
+    const res = await callAjax('arvan_create_firewall', { name, availabilityZone: region });
+    if (res && res.success) {
+      addToast('success', res.data?.message || t('Firewall created.'));
+      fetchIaasResources(region);
+      return true;
+    }
+    addToast('error', res?.data?.message || t('Action failed.'));
+    return false;
   };
 
   return {
@@ -312,5 +377,12 @@ export function useArvan() {
     deployServer,
     handleServerPower,
     topupWallet,
+    iaasResources,
+    fetchIaasResources,
+    createVolume,
+    deleteVolume,
+    attachVolume,
+    createNetwork,
+    createFirewall,
   };
 }

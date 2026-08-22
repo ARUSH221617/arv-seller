@@ -149,6 +149,20 @@ class Arvan_Wallet {
 		// Begin ACID transaction with row lock
 		$wpdb->query( 'START TRANSACTION' );
 
+		if ( null !== $reference_id && '' !== $reference_id ) {
+			$duplicate = $wpdb->get_var(
+				$wpdb->prepare(
+					"SELECT id FROM {$table_transactions} WHERE type = %s AND reference_id = %s LIMIT 1 FOR UPDATE",
+					sanitize_text_field( $type ),
+					sanitize_text_field( $reference_id )
+				)
+			);
+			if ( $duplicate ) {
+				$wpdb->query( 'ROLLBACK' );
+				return new WP_Error( 'duplicate_transaction', __( 'This wallet transaction was already processed.', 'arv-seller' ) );
+			}
+		}
+
 		$wallet = $wpdb->get_row(
 			$wpdb->prepare(
 				"SELECT id, balance, status FROM {$table_wallets} WHERE user_id = %d FOR UPDATE",

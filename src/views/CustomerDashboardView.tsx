@@ -15,6 +15,9 @@ import {
   ArrowUpRight,
   ArrowDownLeft,
   Check,
+  HardDrive,
+  Network,
+  Shield,
 } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
@@ -38,6 +41,16 @@ interface CustomerDashboardViewProps {
   customTitle?: string;
   customDescription?: string;
   walletTitle?: string;
+  iaasResources?: {
+    volumes: Array<{ id: string; name: string; sizeGigaBytes: number; status: string }>;
+    networks: Array<{ id: string; name: string; cidr: string }>;
+    firewalls: Array<{ id: string; name: string; rulesCount?: number }>;
+  };
+  onFetchIaas?: () => void;
+  onCreateVolume?: (name: string, size: number) => Promise<boolean>;
+  onDeleteVolume?: (volumeId: string) => Promise<boolean>;
+  onCreateNetwork?: (name: string, cidr: string) => Promise<boolean>;
+  onCreateFirewall?: (name: string) => Promise<boolean>;
   onOpenDeposit: () => void;
   onServerPower: (serverId: number, action: 'power_on' | 'power_off' | 'reboot' | 'delete') => Promise<void>;
   onNavigateDeploy: () => void;
@@ -55,12 +68,29 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
   customTitle,
   customDescription,
   walletTitle,
+  iaasResources,
+  onFetchIaas,
+  onCreateVolume,
+  onDeleteVolume,
+  onCreateNetwork,
+  onCreateFirewall,
   onOpenDeposit,
   onServerPower,
   onNavigateDeploy,
 }) => {
   const [copiedIp, setCopiedIp] = useState<string | null>(null);
   const [loadingActionId, setLoadingActionId] = useState<number | null>(null);
+  const [volName, setVolName] = useState('');
+  const [volSize, setVolSize] = useState(50);
+  const [netName, setNetName] = useState('');
+  const [netCidr, setNetCidr] = useState('192.168.10.0/24');
+  const [fwName, setFwName] = useState('');
+
+  React.useEffect(() => {
+    if (onFetchIaas) {
+      onFetchIaas();
+    }
+  }, [onFetchIaas]);
 
   const isLowBalance = remainingHours > 0 && remainingHours < 12;
   const isSuspended = balance <= 0 && servers.length > 0;
@@ -363,7 +393,163 @@ export const CustomerDashboardView: React.FC<CustomerDashboardViewProps> = ({
         </CardContent>
       </Card>
 
-      {/* 5. Atomic Wallet Ledger Logs */}
+      {/* 5. Cloud Storage Volumes & Infrastructure Resources */}
+      <Card elevation={1}>
+        <CardHeader>
+          <CardTitle>
+            <HardDrive className="h-5 w-5 text-arvan-teal" />
+            <span>{t('Storage Volumes')}</span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="text"
+              placeholder={t('Volume Name')}
+              value={volName}
+              onChange={(e) => setVolName(e.target.value)}
+              className="flex h-9 rounded-xl border border-slate-200 bg-white px-3 text-xs"
+            />
+            <input
+              type="number"
+              min="10"
+              max="2000"
+              placeholder={t('Size (GB)')}
+              value={volSize}
+              onChange={(e) => setVolSize(Number(e.target.value))}
+              className="flex h-9 w-24 rounded-xl border border-slate-200 bg-white px-3 text-xs"
+            />
+            <Button
+              size="sm"
+              onClick={() => {
+                if (onCreateVolume && volName) {
+                  onCreateVolume(volName, volSize);
+                  setVolName('');
+                }
+              }}
+              className="gap-1 text-xs font-bold"
+            >
+              <Plus className="h-3.5 w-3.5" />
+              <span>{t('Create Volume')}</span>
+            </Button>
+          </div>
+
+          <div className="divide-y divide-slate-100 text-xs">
+            {(iaasResources?.volumes || []).map((vol) => (
+              <div key={vol.id} className="py-2.5 flex items-center justify-between">
+                <div>
+                  <span className="font-bold text-slate-900">{vol.name}</span>
+                  <span className="text-slate-400 ms-2">({vol.sizeGigaBytes} GB &bull; {vol.status})</span>
+                </div>
+                {onDeleteVolume && (
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    onClick={() => onDeleteVolume(vol.id)}
+                    className="text-arvan-rose hover:bg-rose-50 h-7 px-2"
+                  >
+                    <Trash2 className="h-3.5 w-3.5" />
+                  </Button>
+                )}
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* 6. VPC Networks & Security Firewalls */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Private Networks */}
+        <Card elevation={1}>
+          <CardHeader>
+            <CardTitle>
+              <Network className="h-5 w-5 text-arvan-teal" />
+              <span>{t('Private Networks (VPC)')}</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                placeholder={t('VPC Name')}
+                value={netName}
+                onChange={(e) => setNetName(e.target.value)}
+                className="flex h-9 flex-1 rounded-xl border border-slate-200 bg-white px-3 text-xs"
+              />
+              <input
+                type="text"
+                placeholder="192.168.10.0/24"
+                value={netCidr}
+                onChange={(e) => setNetCidr(e.target.value)}
+                className="flex h-9 w-32 rounded-xl border border-slate-200 bg-white px-3 text-xs"
+              />
+              <Button
+                size="sm"
+                onClick={() => {
+                  if (onCreateNetwork && netName) {
+                    onCreateNetwork(netName, netCidr);
+                    setNetName('');
+                  }
+                }}
+                className="text-xs font-bold"
+              >
+                <Plus className="h-3.5 w-3.5" />
+              </Button>
+            </div>
+            <div className="divide-y divide-slate-100 text-xs">
+              {(iaasResources?.networks || []).map((net) => (
+                <div key={net.id} className="py-2 flex items-center justify-between">
+                  <span className="font-bold text-slate-800">{net.name}</span>
+                  <span className="font-mono text-slate-500">{net.cidr}</span>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Security Firewalls */}
+        <Card elevation={1}>
+          <CardHeader>
+            <CardTitle>
+              <Shield className="h-5 w-5 text-arvan-teal" />
+              <span>{t('Firewalls & Security Groups')}</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                placeholder={t('Firewall Name')}
+                value={fwName}
+                onChange={(e) => setFwName(e.target.value)}
+                className="flex h-9 flex-1 rounded-xl border border-slate-200 bg-white px-3 text-xs"
+              />
+              <Button
+                size="sm"
+                onClick={() => {
+                  if (onCreateFirewall && fwName) {
+                    onCreateFirewall(fwName);
+                    setFwName('');
+                  }
+                }}
+                className="text-xs font-bold"
+              >
+                <Plus className="h-3.5 w-3.5" />
+              </Button>
+            </div>
+            <div className="divide-y divide-slate-100 text-xs">
+              {(iaasResources?.firewalls || []).map((fw) => (
+                <div key={fw.id} className="py-2 flex items-center justify-between">
+                  <span className="font-bold text-slate-800">{fw.name}</span>
+                  <Badge variant="outline">{fw.rulesCount || 0} {t('rules')}</Badge>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* 7. Atomic Wallet Ledger Logs */}
       <Card elevation={1}>
         <CardHeader>
           <CardTitle>

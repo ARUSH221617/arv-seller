@@ -54,6 +54,8 @@ register_deactivation_hook( __FILE__, 'deactivate_arvan_reseller' );
  * Load core orchestrator class.
  */
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-arvan-reseller.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-arvan-activator.php';
+add_action( 'plugins_loaded', array( 'Arvan_Activator', 'maybe_upgrade' ) );
 
 /**
  * Begins execution of the plugin.

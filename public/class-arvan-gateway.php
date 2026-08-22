@@ -53,7 +53,7 @@ class Arvan_Gateway {
 	 * @return array|WP_Error Array with 'payment_url' and 'authority' or WP_Error.
 	 */
 	public function request_payment( $user_id, $amount, $callback_url, $description = 'Wallet Top-up' ) {
-		$amount = (float) $amount;
+		$amount = round( (float) $amount, 2 );
 
 		if ( $amount < 1000 ) {
 			return new WP_Error( 'invalid_amount', __( 'Minimum deposit amount is 1,000 Tomans.', 'arv-seller' ) );
@@ -87,8 +87,26 @@ class Arvan_Gateway {
 		$body = json_decode( wp_remote_retrieve_body( $response ), true );
 
 		if ( isset( $body['data']['code'] ) && 100 === $body['data']['code'] ) {
-			$authority   = $body['data']['authority'];
+			$authority   = sanitize_text_field( $body['data']['authority'] );
 			$payment_url = "https://www.zarinpal.com/pg/StartPay/{$authority}";
+
+			global $wpdb;
+			$inserted = $wpdb->insert(
+				$wpdb->prefix . 'arvan_payments',
+				array(
+					'user_id'   => absint( $user_id ),
+					'gateway'   => $this->driver,
+					'authority' => $authority,
+					'amount'    => $amount,
+					'status'    => 'pending',
+					'created_at'=> current_time( 'mysql' ),
+				),
+				array( '%d', '%s', '%s', '%f', '%s', '%s' )
+			);
+
+			if ( false === $inserted ) {
+				return new WP_Error( 'payment_persistence_failed', __( 'Payment request could not be recorded. No wallet credit was issued.', 'arv-seller' ) );
+			}
 
 			return array(
 				'authority'   => $authority,
@@ -137,5 +155,58 @@ class Arvan_Gateway {
 		}
 
 		return new WP_Error( 'verification_failed', __( 'Payment verification failed or was cancelled.', 'arv-seller' ), $body );
+	}
+
+	/**
+	 * Verify and credit one persisted payment exactly once.
+	 *
+	 * @param string $authority Gateway authority.
+	 * @return array|WP_Error
+	 */
+	public function complete_payment( $authority ) {
+		global $wpdb;
+		$table = $wpdb->prefix . 'arvan_payments';
+		$authority = sanitize_text_field( $authority );
+		$payment = $wpdb->get_row(
+			$wpdb->prepare( "SELECT * FROM {$table} WHERE gateway = %s AND authority = %s LIMIT 1", $this->driver, $authority )
+		);
+
+		if ( ! $payment ) {
+			return new WP_Error( 'payment_not_found', __( 'Payment request was not found.', 'arv-seller' ) );
+		}
+		if ( 'verified' === $payment->status ) {
+			return array( 'success' => true, 'ref_id' => $payment->gateway_reference, 'already_verified' => true );
+		}
+		if ( 'pending' !== $payment->status ) {
+			return new WP_Error( 'payment_not_pending', __( 'Payment is not pending verification.', 'arv-seller' ) );
+		}
+
+		$verification = $this->verify_payment( $authority, (float) $payment->amount );
+		if ( is_wp_error( $verification ) ) {
+			$wpdb->update( $table, array( 'status' => 'failed' ), array( 'id' => $payment->id, 'status' => 'pending' ), array( '%s' ), array( '%d', '%s' ) );
+			return $verification;
+		}
+
+		$reference = (string) $verification['ref_id'];
+		$credit = Arvan_Wallet::credit(
+			(int) $payment->user_id,
+			(float) $payment->amount,
+			'topup',
+			'ZARINPAL-' . $reference,
+			sprintf( __( 'Verified Zarinpal wallet top-up (Ref: %s)', 'arv-seller' ), $reference )
+		);
+		if ( is_wp_error( $credit ) && 'duplicate_transaction' !== $credit->get_error_code() ) {
+			return $credit;
+		}
+
+		$wpdb->update(
+			$table,
+			array( 'status' => 'verified', 'gateway_reference' => $reference, 'verified_at' => current_time( 'mysql' ) ),
+			array( 'id' => $payment->id, 'status' => 'pending' ),
+			array( '%s', '%s', '%s' ),
+			array( '%d', '%s' )
+		);
+
+		return array( 'success' => true, 'ref_id' => $reference, 'credit' => $credit );
 	}
 }
